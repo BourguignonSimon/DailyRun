@@ -5,8 +5,8 @@ Ce dossier est le point d’entrée des livrables produits par la tâche program
 
 ## Livrables attendus
 
-- `synthese.docx` — synthèse décisionnelle en français.
-- `comparatif.xlsx` — comparaison structurée des 20 écosystèmes retenus.
+- `synthese.md` — synthèse décisionnelle en français.
+- `comparatif.md` — comparaison structurée des 20 écosystèmes retenus.
 - `analyse-detaillee.md` — analyse complète et méthodologie.
 - `bonnes-pratiques-developpement.md` — recommandations transversales et particularités par fournisseur.
 - `sources.md` — sources consultées, URL et dates de vérification.
@@ -15,8 +15,6 @@ Ce dossier est le point d’entrée des livrables produits par la tâche program
 ## Cadence
 
 Automatisation active : `Observatoire mensuel LLM et agents IA`.
-
-Mise à jour le premier lundi de chaque mois à 09:00, heure de Bruxelles. Première exécution prévue le 3 août 2026.
 
 ## Principes
 
