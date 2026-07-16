@@ -1,0 +1,25 @@
+# DailyRun
+# Observatoire LLM et agents IA — Belgique
+
+Ce dossier est le point d’entrée des livrables produits par la tâche programmée.
+
+## Livrables attendus
+
+- `synthese.docx` — synthèse décisionnelle en français.
+- `comparatif.xlsx` — comparaison structurée des 20 écosystèmes retenus.
+- `analyse-detaillee.md` — analyse complète et méthodologie.
+- `bonnes-pratiques-developpement.md` — recommandations transversales et particularités par fournisseur.
+- `sources.md` — sources consultées, URL et dates de vérification.
+- `historique.md` — changements significatifs observés entre deux exécutions.
+
+## Cadence
+
+Automatisation active : `Observatoire mensuel LLM et agents IA`.
+
+Mise à jour le premier lundi de chaque mois à 09:00, heure de Bruxelles. Première exécution prévue le 3 août 2026.
+
+## Principes
+
+L’étude porte sur les offres grand public et les API, avec une attention particulière aux prix applicables depuis la Belgique, à la disponibilité locale, au français et au néerlandais, à la sécurité, à la confidentialité, au RGPD et aux bonnes pratiques de développement publiées par les fournisseurs.
+
+Les informations instables doivent être vérifiées à chaque exécution auprès de sources officielles. Toute estimation, conversion de devise ou donnée incomplète doit être signalée comme telle.
