@@ -1,6 +1,6 @@
 # Registre des sources
 
-Consultation: **17 juillet 2026**, heure de Bruxelles. Les URL sont dédupliquées. « Non publiée » signifie que la page n’affiche pas de date exploitable. Les pages dynamiques peuvent évoluer sans changer d’URL.
+Consultation initiale: **17 juillet 2026**. Révision de suivi: **18 juillet 2026**, heure de Bruxelles (sources S61–S65). Les URL sont dédupliquées. « Non publiée » signifie que la page n’affiche pas de date exploitable. Les pages dynamiques peuvent évoluer sans changer d’URL.
 
 | ID | Acteur | Sujet | Nature | URL exacte | Publication / mise à jour connue | Consultation |
 |---|---|---|---|---|---|---|
@@ -64,6 +64,11 @@ Consultation: **17 juillet 2026**, heure de Bruxelles. Les URL sont dédupliqué
 | S58 | Union européenne | Obligations GPAI | Source institutionnelle | <https://digital-strategy.ec.europa.eu/en/faqs/guidelines-obligations-general-purpose-ai-providers> | 2025-11 | 2026-07-17 |
 | S59 | Conseil de l’UE | Calendrier AI Act modifié | Source institutionnelle | <https://www.consilium.europa.eu/en/policies/artificial-intelligence-act/timeline-artificial-intelligence/> | 2026-07 | 2026-07-17 |
 | S60 | Moonshot | Lancement Kimi K3 et position de marché | Source indépendante | <https://www.axios.com/2026/07/16/moonshot-kimi-ai-china-model-openai-anthropic> | 2026-07-16 | 2026-07-17 |
+| S61 | OpenAI | GPT-5.6 Sol/Terra/Luna: annonce, contexte, prix, disponibilité GA | Publication officielle | <https://openai.com/index/gpt-5-6/> | 2026-07-09 | 2026-07-18 |
+| S62 | OpenAI | GPT-5.6 dans ChatGPT/Codex; réglage Max, Ultra Mode, Programmatic Tool Calling, multi-agent | Centre d’aide officiel | <https://help.openai.com/en/articles/20001325-a-preview-of-gpt-56-sol-terra-and-luna> | 2026-07 | 2026-07-18 |
+| S63 | Anthropic | Introduction de Claude Fable 5 et Mythos 5; positionnement, contexte, prix | Documentation officielle | <https://platform.claude.com/docs/en/about-claude/models/introducing-claude-fable-5-and-claude-mythos-5> | 2026-06-09 | 2026-07-18 |
+| S64 | Artificial Analysis | Kimi K3: Intelligence/Coding/Agentic Index, prix, position | Source indépendante | <https://artificialanalysis.ai/models/kimi-k3> | 2026-07 | 2026-07-18 |
+| S65 | Moonshot / presse | Kimi K3: poids ouverts (27/07), licence MIT modifiée, spécifications | Source indépendante | <https://venturebeat.com/technology/chinas-moonshot-ai-releases-kimi-k3-the-largest-open-source-model-ever-rivaling-top-u-s-systems> | 2026-07-16 | 2026-07-18 |
 
 ## Sources non retenues
 

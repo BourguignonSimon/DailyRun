@@ -1,6 +1,6 @@
 # Observatoire LLM et agents IA — Belgique
 
-Édition vérifiée le **17 juillet 2026**. Cette première édition couvre exactement 20 écosystèmes et sépare modèles, applications, plateformes API, assistants de code et agents autonomes.
+Édition vérifiée le **17 juillet 2026**, révision de suivi le **18 juillet 2026**. Elle couvre exactement 20 écosystèmes et sépare modèles, applications, plateformes API, assistants de code et agents autonomes.
 
 ## Livrables
 
@@ -13,8 +13,8 @@
 
 ## Principaux changements constatés
 
-- Première publication dans ce dépôt; aucune édition précédente n’était disponible.
-- Frontière 2026: GPT-5.5, Claude Opus 4.8/Sonnet 5, Gemini 3.5 Flash, Grok 4.5, Mistral Medium 3.5, Qwen 3.7, GLM-5.2 et Kimi K3.
+- Révision du 18 juillet 2026 (voir [historique](historique.md)): OpenAI **GPT-5.6 (Sol/Terra/Luna)** en GA depuis le 9 juillet remplace GPT-5.5 comme frontière; ajout du palier Anthropic **Claude Fable 5** (bascule crédits mesurés le 20/07); **Kimi K3** confirmé par des indices indépendants (poids ouverts annoncés le 27/07).
+- Frontière 2026: GPT-5.6 (Sol/Terra/Luna), Claude Fable 5/Opus 4.8/Sonnet 5, Gemini 3.5 Flash, Grok 4.5, Mistral Medium 3.5, Qwen 3.7, GLM-5.2 et Kimi K3.
 - Les offres agents deviennent des produits facturés séparément ou des boucles consommant modèle, outils et calcul; le coût par tâche remplace progressivement le seul coût par jeton.
 - Pour la Belgique, les prix publics restent souvent en USD hors TVA. Conversions indicatives avec les taux BCE du 14 juillet 2026: **1 EUR = 1,1405 USD = 7,7327 CNY**. TVA belge standard: **21 %**; le traitement réel dépend du statut client et de la facture.
 - Les obligations de transparence de l’AI Act entrent en application en août 2026; le calendrier des systèmes à haut risque a été modifié en juin 2026. Analyse informative, pas avis juridique.

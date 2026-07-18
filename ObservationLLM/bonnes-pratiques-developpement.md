@@ -1,6 +1,6 @@
 # Bonnes pratiques de développement
 
-État vérifié le **17 juillet 2026**. Les mentions distinguent **[Officiel]** recommandation publiée par un fournisseur, **[Consensus]** pratique convergente entre plusieurs fournisseurs et **[Déduction]** conclusion analytique de cet observatoire.
+État vérifié le **17 juillet 2026**, révision de suivi **18 juillet 2026** (OpenAI GPT-5.6, Anthropic Fable 5). Les mentions distinguent **[Officiel]** recommandation publiée par un fournisseur, **[Consensus]** pratique convergente entre plusieurs fournisseurs et **[Déduction]** conclusion analytique de cet observatoire.
 
 ## Architecture de référence
 
@@ -73,11 +73,11 @@ Tracer request ID, version modèle, version prompt, outils, temps, jetons/cache,
 
 ### 1. OpenAI
 
-**[Officiel, S01/S05]** Utiliser snapshots pour stabilité, Responses/Agents SDK pour outils, structured outputs, streaming, batch/flex et IDs de requête. **[Déduction]** Tester le seuil >272 k de GPT-5.5 avant d’autoriser des contextes géants; séparer budget outils et tokens.
+**[Officiel, S01/S05/S61–S62]** Utiliser snapshots pour stabilité, Responses/Agents SDK pour outils, structured outputs, streaming, batch/flex et IDs de requête. Depuis GPT-5.6 (GA 09/07): choisir le palier utile (Luna économique, Terra équilibré, Sol phare) plutôt que la frontière par défaut; le réglage Max, Ultra Mode, Programmatic Tool Calling et la bêta multi-agents (Responses) sont à évaluer sous garde-fous. **[Déduction]** Re-vérifier le seuil et le multiplicateur long contexte pour GPT-5.6 avant d’autoriser des contextes géants (le palier >272 k était documenté pour GPT-5.5); séparer budget outils et tokens; encadrer la génération de code par Programmatic Tool Calling comme un outil à sandboxer.
 
 ### 2. Anthropic
 
-**[Officiel, S06–S08]** Exploiter prompt caching, batch -50 %, modèles datés et budget de raisonnement approprié. **[Déduction]** Réserver Opus aux tâches où le gain de réussite compense le prix; surveiller dépréciations et options de résidence.
+**[Officiel, S06–S08, S63]** Exploiter prompt caching, batch -50 %, modèles datés et budget de raisonnement approprié. Le palier **Fable 5** (10/50 USD par million) est le plus cher du catalogue: sa **bascule vers une facturation à crédits mesurés le 20/07/2026** impose de recalculer les budgets et plafonds avant cette date. **[Déduction]** Réserver Fable 5/Opus aux tâches où le gain de réussite compense le prix; alerter sur toute consommation Fable 5 après le 20/07; surveiller dépréciations et options de résidence.
 
 ### 3. Google
 
@@ -145,7 +145,7 @@ Tracer request ID, version modèle, version prompt, outils, temps, jetons/cache,
 
 ### 19. Moonshot/Kimi
 
-**[Officiel, S49–S50]** Kimi recommande instructions claires, détails, délimiteurs, étapes, exemples, texte de référence et résumé des longues conversations; Kimi Code peut utiliser sous-agents, hooks et MCP. **[Déduction]** Activer hooks d’approbation et sandbox; ne pas exposer une clé API côté client.
+**[Officiel, S49–S50]** Kimi recommande instructions claires, détails, délimiteurs, étapes, exemples, texte de référence et résumé des longues conversations; Kimi Code peut utiliser sous-agents, hooks et MCP. **[Déduction]** Activer hooks d’approbation et sandbox; ne pas exposer une clé API côté client. Pour Kimi K3, prévoir la revue de la **licence MIT modifiée** et le scan des poids annoncés le 27/07/2026 avant tout auto-hébergement; s’appuyer sur les indices indépendants [S64] plutôt que sur les scores auto-déclarés.
 
 ### 20. Z.AI/GLM
 

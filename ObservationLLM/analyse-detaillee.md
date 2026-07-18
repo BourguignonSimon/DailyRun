@@ -1,6 +1,6 @@
 # Analyse détaillée
 
-Vérification: **17 juillet 2026**. Point de vue: particulier ou développeur résidant en Belgique. Cette analyse est informative; les volets RGPD et AI Act ne constituent pas un avis juridique.
+Vérification: **17 juillet 2026**, révision de suivi **18 juillet 2026** (sections OpenAI, Anthropic et Moonshot/Kimi). Point de vue: particulier ou développeur résidant en Belgique. Cette analyse est informative; les volets RGPD et AI Act ne constituent pas un avis juridique.
 
 ## Méthodologie et sélection
 
@@ -18,7 +18,7 @@ Les scores publiés par un fournisseur sont des **capacités déclarées** jusqu
 
 ### 1. OpenAI
 
-**Positionnement.** GPT-5.5 est un modèle frontière texte/vision en entrée, 1,05 M de contexte et 128 k de sortie; ChatGPT est l’application, l’API Responses la plateforme, Codex l’agent de code [S01–S02]. Outils natifs: web, fichiers, génération d’image, interpréteur, shell hébergé, patch, computer use et MCP.
+**Positionnement.** Depuis le 9 juillet 2026, la frontière OpenAI est la famille **GPT-5.6 (Sol phare, Terra équilibré, Luna économique)**, disponible en API et dans Codex, texte/vision en entrée, 1,05 M de contexte et 128 k de sortie; elle remplace GPT-5.5 [S61–S62]. ChatGPT est l’application, l’API Responses la plateforme, Codex l’agent de code [S01–S02]. Outils natifs: web, fichiers, génération d’image, interpréteur, shell hébergé, patch, computer use et MCP. GPT-5.6 ajoute un réglage de raisonnement Max, Ultra Mode (coordination d’agents en parallèle), Programmatic Tool Calling (génération de JavaScript pour orchestrer les outils) et une bêta multi-agents dans l’API Responses [S62].
 
 **Belgique.** L’usage est largement pertinent en français et néerlandais, mais la qualité doit être testée par domaine. L’API publie l’absence d’entraînement par défaut et des contrôles de résidence EEE pour clients/services éligibles [S03]. Les prix de l’API sont en USD hors taxes; le prix ChatGPT belge exact et la TVA doivent être confirmés au checkout.
 
@@ -26,9 +26,9 @@ Les scores publiés par un fournisseur sont des **capacités déclarées** jusqu
 
 ### 2. Anthropic
 
-**Positionnement.** Opus 4.8 vise les tâches difficiles; Sonnet 5/4.6 offre un compromis coût-vitesse; Claude Code est l’agent de développement. Le catalogue publié atteint 1 M de contexte pour le haut de gamme [S06–S08].
+**Positionnement.** Le catalogue s’étend désormais avec **Claude Fable 5** (palier « Mythos-class », introduit le 9 juin 2026), au-dessus d’Opus 4.8: 10 USD/M en entrée, 50 USD/M en sortie — le modèle le plus cher du catalogue — contexte 1 M, sortie max 128 k, disponible via API Anthropic, Amazon Bedrock, Google Cloud et Microsoft Foundry [S63]. Opus 4.8 vise les tâches difficiles; Sonnet 5/4.6 offre un compromis coût-vitesse; Claude Code est l’agent de développement. Le catalogue publié atteint 1 M de contexte pour le haut de gamme [S06–S08].
 
-**Belgique et données.** Application et API sont pertinentes pour FR/NL, à valider sur le corpus réel. DPA, résidence et rétention varient entre API directe, AWS et Google Cloud; la résidence peut ajouter un multiplicateur. Vérifier le contrat exact.
+**Belgique et données.** Application et API sont pertinentes pour FR/NL, à valider sur le corpus réel. **Événement tarifaire à surveiller: l’accès inclus à Fable 5 sur les plans Pro/Max/Team a été étendu jusqu’au 19 juillet 2026, puis bascule vers une facturation à crédits mesurés (10/50 USD par million) à partir du 20 juillet 2026** [S63]. DPA, résidence et rétention varient entre API directe, AWS et Google Cloud; la résidence peut ajouter un multiplicateur. Vérifier le contrat exact.
 
 **Développement.** Excellente capacité d’outils et de code. Utiliser prompt caching pour les préfixes stables, batch pour l’asynchrone, budget d’effort raisonnable, et identifiants datés. Les dépréciations publiées imposent un inventaire de modèles.
 
@@ -144,9 +144,9 @@ Les scores publiés par un fournisseur sont des **capacités déclarées** jusqu
 
 ### 19. Moonshot AI / Kimi
 
-**Positionnement.** Kimi couvre modèles open weight, application, Kimi Code CLI et SDK agent. Kimi K3 annoncé le 16 juillet 2026 est trop récent pour une conclusion indépendante robuste [S48–S51, S60].
+**Positionnement.** Kimi couvre modèles open weight, application, Kimi Code CLI et SDK agent. **Kimi K3 (annoncé le 16 juillet 2026) dispose désormais de mesures indépendantes**: modèle MoE de 2,8 T de paramètres (16 experts actifs sur 896, ~1,8 %), contexte 1 M, vision native; Artificial Analysis publie un Intelligence Index de 57, un Coding Index de 76 et un Agentic Index de 50, plaçant K3 parmi les meilleurs modèles ouverts, sous les modèles de tête d’OpenAI et d’Anthropic [S64]. Prix API: 0,30 USD/M en cache-hit, 3 USD/M en entrée non cachée, 15 USD/M en sortie. Les **poids ouverts sont annoncés pour le 27 juillet 2026 sous licence MIT modifiée**, sur l’organisation Hugging Face de Moonshot [S64–S65]. Les scores auto-déclarés restent distincts des mesures indépendantes ci-dessus [S48–S51, S60].
 
-**Belgique.** Les poids améliorent la portabilité. API directe, abonnement, DPA, région, TVA et qualité FR/NL restent à confirmer. Le CLI peut lire/écrire, lancer des commandes, utiliser MCP et sous-agents: permissions minimales obligatoires.
+**Belgique.** Les poids améliorent la portabilité. Disponibilité commerciale belge, facture EUR, DPA, région UE et qualité FR/NL restent à confirmer avant données personnelles ou confidentielles. Le CLI peut lire/écrire, lancer des commandes, utiliser MCP et sous-agents: permissions minimales obligatoires.
 
 ### 20. Z.AI / GLM
 

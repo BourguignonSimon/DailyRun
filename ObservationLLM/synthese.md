@@ -1,4 +1,4 @@
-# Synthèse décisionnelle — 17 juillet 2026
+# Synthèse décisionnelle — 17 juillet 2026 (révisée le 18 juillet 2026)
 
 ## Verdict en une minute
 
@@ -19,7 +19,17 @@ Il n’existe pas un « meilleur LLM » unique. Pour un résident belge, le choi
 
 ## Ce qui a changé
 
-Cette première édition n’avait pas de base antérieure dans le dépôt. Les faits marquants vérifiés sont:
+### Révision du 18 juillet 2026 (par rapport à l’édition du 17 juillet)
+
+Trois évolutions significatives ont été vérifiées et intégrées:
+
+- **OpenAI — GPT-5.6 (Sol, Terra, Luna).** La famille GPT-5.6 est disponible en API et dans Codex depuis le 9 juillet 2026; elle remplace GPT-5.5 comme frontière et n’avait pas été captée le 17 juillet. Contexte 1,05 M, sortie max 128 k. Prix par million entrée/sortie: Luna 1/6, Terra 2,50/15, Sol 5/30 USD. Nouveautés utiles au développement: réglage Max, Ultra Mode (coordination d’agents en parallèle), Programmatic Tool Calling (le modèle écrit du JavaScript pour orchestrer des outils) et bêta multi-agents dans l’API Responses [S61–S62].
+- **Anthropic — Claude Fable 5 (« Mythos-class »).** Palier au-dessus d’Opus 4.8, à 10 USD/M en entrée et 50 USD/M en sortie (le plus cher du catalogue), contexte 1 M, sortie max 128 k. **Point d’attention pour la Belgique et l’UE: la bascule vers une facturation à crédits mesurés (10/50 USD par million) débute le 20 juillet 2026**, après une fenêtre d’accès inclus étendue jusqu’au 19 juillet sur les plans Pro/Max/Team; disponible via API Anthropic, Amazon Bedrock, Google Cloud et Microsoft Foundry [S63].
+- **Moonshot — Kimi K3, mesures indépendantes.** Les capacités, hier « à confirmer », sont désormais étayées: Artificial Analysis publie un Intelligence Index de 57, un Coding Index de 76 et un Agentic Index de 50; 2,8 T de paramètres (16 experts actifs sur 896), contexte 1 M, vision native. Prix 0,30 (cache) / 3 (entrée) / 15 (sortie) USD par million. Poids ouverts annoncés pour le 27 juillet 2026 sous licence MIT modifiée. Disponibilité commerciale belge, DPA et facture EUR restent à confirmer [S64–S65].
+
+### Édition initiale du 17 juillet 2026
+
+Cette première édition n’avait pas de base antérieure dans le dépôt. Les faits marquants vérifiés étaient:
 
 - OpenAI positionne GPT-5.5 comme modèle frontière à 1,05 M de contexte; entrée 5 USD/M, sortie 30 USD/M, cache 0,50 USD/M. Au-delà de 272 k en entrée, un multiplicateur long contexte s’applique [S01–S02].
 - Anthropic affiche Opus 4.8 et Sonnet 5, avec 1 M de contexte pour les modèles de tête; batch à moitié prix et mécanismes de cache/résidence [S06–S08].
@@ -38,7 +48,7 @@ Les offres explicitement disponibles dans l’EEE incluent notamment Gemini API;
 
 ## Capacités: ne pas confondre les produits
 
-- **Modèle**: moteur probabiliste, par exemple GPT-5.5, Claude Opus 4.8 ou Gemini 3.5 Flash.
+- **Modèle**: moteur probabiliste, par exemple GPT-5.6 Sol, Claude Fable 5/Opus 4.8 ou Gemini 3.5 Flash.
 - **Application**: ChatGPT, Claude, Gemini, Grok, Vibe, Perplexity; elle ajoute recherche, fichiers, mémoire et interface.
 - **Plateforme API**: endpoints, SDK, quotas, cache, batch, observabilité et outils.
 - **Assistant de code**: Copilot ou Cursor, intégré à l’IDE et au dépôt.
