@@ -1,4 +1,6 @@
-# Synthèse décisionnelle — 17 juillet 2026
+# Synthèse décisionnelle — 19 juillet 2026
+
+*Revérification du 19 juillet 2026 par rapport à l’état du 17 juillet. Faits nouveaux marqués « corroboré presse » dans [sources.md](sources.md) lorsque la page officielle était inaccessible au contrôle: à confirmer avant tout usage engageant.*
 
 ## Verdict en une minute
 
@@ -17,22 +19,22 @@ Il n’existe pas un « meilleur LLM » unique. Pour un résident belge, le choi
 | Production UE sensible | Mistral ou cloud avec région UE | IBM / AWS / Azure / Google Cloud | DPA, région, contrôles et déploiement privé | Vérifier service, région et sous-traitants exacts |
 | Open weight / sur site | Llama, Mistral, Nemotron | Qwen, Kimi, GLM, DeepSeek | Contrôle et portabilité | Licence, sécurité, capacité GPU, évaluation locale |
 
-## Ce qui a changé
+## Ce qui a changé depuis le 17 juillet 2026
 
-Cette première édition n’avait pas de base antérieure dans le dépôt. Les faits marquants vérifiés sont:
+Cette exécution a détecté plusieurs changements significatifs, dont certains que l’édition initiale (pourtant très récente) avait manqués ou datés de façon obsolète. Détail complet et confidences dans [historique.md](historique.md).
 
-- OpenAI positionne GPT-5.5 comme modèle frontière à 1,05 M de contexte; entrée 5 USD/M, sortie 30 USD/M, cache 0,50 USD/M. Au-delà de 272 k en entrée, un multiplicateur long contexte s’applique [S01–S02].
-- Anthropic affiche Opus 4.8 et Sonnet 5, avec 1 M de contexte pour les modèles de tête; batch à moitié prix et mécanismes de cache/résidence [S06–S08].
-- Google propose Gemini 3.5 Flash à 1,50 USD/M en entrée et 9 USD/M en sortie, avec cache, batch, Flex, Priority, recherche et agents facturés séparément [S09–S11].
-- xAI propose Grok 4.5 à 500 k de contexte, 2/6 USD par million de jetons en contexte court et 4/12 USD en long contexte [S22].
-- Mistral met en avant Mistral Medium 3.5 pour agents/code et une API européenne; Mistral Large est affiché à 2/6 USD par million et batch à -50 % [S19–S21].
-- GitHub remplace la logique de requêtes premium par des crédits IA: Pro 10 USD, Pro+ 39 USD, Max 100 USD; l’usage agent et les modèles chers consomment davantage [S37–S38].
-- Cursor a mis à jour sa politique le 15 juillet 2026: Privacy Mode interdit l’entraînement et s’appuie sur des accords de rétention zéro, sous réserve d’enquêtes d’abus [S42].
-- Kimi K3 a été annoncé le 16 juillet 2026; sa nouveauté impose de séparer capacités déclarées, poids disponibles et qualité mesurée indépendamment [S48–S51, S60].
+- **AI Act — le calendrier a bougé.** Le Digital Omnibus IA (signé le 8 juillet 2026) reporte les obligations « haut risque » autonomes au **2 décembre 2027** (et 2 août 2028 pour les produits réglementés), mais **les obligations de transparence de l’article 50 restent au 2 août 2026** (déclarer l’interaction IA, marquer les contenus générés; grâce du marquage jusqu’au 2 décembre 2026 pour les systèmes déjà en marché). Ne pas confondre report du haut risque et maintien de la transparence [S63].
+- **RGPD — nouvelles lignes directrices EDPB** sur le web scraping pour l’IA générative, l’anonymisation et la blockchain (8 juillet 2026, consultation jusqu’au 30 octobre): la visibilité publique ne vaut pas base légale [S64].
+- **OpenAI GPT-5.6 (Sol/Terra/Luna), GA le 9 juillet 2026**, remplace GPT-5.5 en tête d’affiche; prix Sol 5/30, Terra 2,50/15, Luna 1/6 USD par million, contexte 1 M. GPT-5.5 reste disponible [S61].
+- **xAI Grok 4.5 reste bloqué dans l’UE** (27 États) au ~16 juillet, au titre de l’AI Act et du RGPD; pas de date d’ouverture confirmée. Point à connaître avant de bâtir sur Grok depuis la Belgique [S66].
+- **Kimi K3 (Moonshot) confirmé**: ~2,8 T de paramètres, contexte 1 M, n° 1 sur LMArena Frontend Code Arena devant Claude Fable 5; prix API ~0,30/3 USD entrée (cache-hit/miss), ~15 USD sortie. **Poids pas encore publiés (attendus le 27 juillet, licence MIT modifiée)** [S62].
+- **DeepSeek passe à V4** avec une **tarification heures pleines/creuses** (prix doublés en heures de pointe) et retrait des alias hérités le 24 juillet; la grille V3.2 de l’édition initiale est probablement dépassée (à confirmer sur la page officielle) [S65].
+- **Hugging Face — incident de sécurité (16 juillet)**: intrusion pilotée par un système d’agents IA autonomes, accès limité à des jeux de données internes et à des identifiants; modèles/datasets/Spaces publics non altérés. Rappel: un attaquant agentique n’est lié par aucune politique d’usage [S67].
+- **Autres**: Perplexity SPACE + Comet Enterprise (15 juillet) [S68]; NVIDIA Nemotron parole/RAG/sécurité (15 juillet) [S69]; Replit passe l’Agent à une tarification « à l’effort » [S70]; Gemini 3.5 Pro reporté [S71]. Anthropic, Mistral, Z.AI/GLM, Meta, Microsoft, AWS, Cohere, IBM, Cursor, GitHub Copilot: pas de changement de fond dans la fenêtre.
 
 ## Prix et Belgique
 
-Taux indicatifs BCE du 14 juillet 2026: **1 EUR = 1,1405 USD = 7,7327 CNY** [S55]. Donc 20 USD ≈ 17,54 EUR hors TVA; avec 21 % de TVA belge, ≈ 21,22 EUR si la TVA n’est pas déjà incluse. Un prix affiché en EUR à un consommateur peut déjà inclure la TVA; un prix B2B ou API l’exclut souvent. Le checkout et la facture priment toujours.
+Dernier taux de référence BCE au 17 juillet 2026: **1 EUR = 1,1435 USD = 7,7501 CNY** [S55] (contre 1,1405 / 7,7327 au 14 juillet; dérive < 0,3 %, non matérielle pour les estimations arrondies). Donc 20 USD ≈ 17,49 EUR hors TVA; avec 21 % de TVA belge, ≈ 21,16 EUR si la TVA n’est pas déjà incluse. Un prix affiché en EUR à un consommateur peut déjà inclure la TVA; un prix B2B ou API l’exclut souvent. Le checkout et la facture priment toujours.
 
 Les offres explicitement disponibles dans l’EEE incluent notamment Gemini API; OpenAI publie des contrôles de résidence européenne pour certains clients/services [S03, S11]. Pour DeepSeek, Qwen, Kimi et GLM, **la disponibilité commerciale en Belgique, la facturation EUR, la TVA et la localisation des données restent à confirmer** avant usage de données personnelles ou confidentielles.
 
@@ -46,7 +48,7 @@ Les offres explicitement disponibles dans l’EEE incluent notamment Gemini API;
 
 ## Sécurité, RGPD et AI Act
 
-Aucun fournisseur ne rend automatiquement un cas d’usage conforme. Pour toute donnée personnelle: finalité, minimisation, base juridique, DPA, transferts, rétention, droits des personnes, journalisation et analyse d’impact si nécessaire. Le 2 août 2026 reste un jalon important de transparence; les dates des systèmes à haut risque ont été révisées en 2026 [S57–S59]. Ceci n’est pas un avis juridique.
+Aucun fournisseur ne rend automatiquement un cas d’usage conforme. Pour toute donnée personnelle: finalité, minimisation, base juridique, DPA, transferts, rétention, droits des personnes, journalisation et analyse d’impact si nécessaire. **Le 2 août 2026 reste la date des obligations de transparence de l’article 50** (interaction IA déclarée, contenus générés marqués), y compris après le Digital Omnibus; ce dernier a en revanche reporté les obligations « haut risque » autonomes au **2 décembre 2027** (produits réglementés: 2 août 2028) [S57–S59, S63]. Les nouvelles lignes directrices EDPB sur le web scraping, l’anonymisation et la blockchain (8 juillet 2026) précisent le volet RGPD [S64]. Ceci n’est pas un avis juridique.
 
 Pour les offres grand public, vérifier le réglage d’entraînement. OpenAI API n’entraîne pas par défaut [S03]; GitHub permet l’opt-out pour les plans individuels et n’entraîne pas sur Business/Enterprise [S37]; Cursor Privacy Mode exclut l’entraînement [S42]. Les contrats, régions et rétentions doivent être vérifiés produit par produit.
 

@@ -1,6 +1,8 @@
 # Registre des sources
 
-Consultation: **17 juillet 2026**, heure de Bruxelles. Les URL sont dédupliquées. « Non publiée » signifie que la page n’affiche pas de date exploitable. Les pages dynamiques peuvent évoluer sans changer d’URL.
+Consultation initiale: **17 juillet 2026**. Revérification et ajouts: **19 juillet 2026**, heure de Bruxelles. Les URL sont dédupliquées. « Non publiée » signifie que la page n’affiche pas de date exploitable. Les pages dynamiques peuvent évoluer sans changer d’URL.
+
+Note sur la vérification du 19 juillet: plusieurs pages officielles (openai.com, x.ai, mistral.ai, ecb.europa.eu, huggingface.co) ont renvoyé un blocage (403/anti-robot) au moment du contrôle. Les faits nouveaux ci-dessous marqués « corroboré presse » reposent sur plusieurs sources secondaires réputées et datées plutôt que sur une lecture directe de la page primaire; ils sont à confirmer sur la source officielle avant tout usage engageant. Les identifiants S61–S71 sont ajoutés lors de cette exécution.
 
 | ID | Acteur | Sujet | Nature | URL exacte | Publication / mise à jour connue | Consultation |
 |---|---|---|---|---|---|---|
@@ -58,13 +60,24 @@ Consultation: **17 juillet 2026**, heure de Bruxelles. Les URL sont dédupliqué
 | S52 | Z.AI | Prix GLM, cache et outils | Documentation officielle | <https://docs.z.ai/guides/overview/pricing> | Dynamique | 2026-07-17 |
 | S53 | Z.AI | Catalogue, contexte et langues | Documentation officielle | <https://docs.z.ai/guides/overview/overview> | Dynamique | 2026-07-17 |
 | S54 | Z.AI | Coding Plan | Page officielle | <https://z.ai/subscribe> | Dynamique | 2026-07-17 |
-| S55 | BCE | Taux EUR/USD/CNY | Source institutionnelle | <https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html> | 2026-07-14 | 2026-07-17 |
+| S55 | BCE | Taux EUR/USD/CNY | Source institutionnelle | <https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html> | 2026-07-17 (dernier taux de référence) | 2026-07-19 |
 | S56 | Belgique | Taux de TVA | Source institutionnelle | <https://finance.belgium.be/en/enterprises/vat/vat-obligation/rates-and-calculation/vat-rates> | Non publiée | 2026-07-17 |
 | S57 | Union européenne | AI Act, calendrier et transparence | Source institutionnelle | <https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai> | 2026-07 | 2026-07-17 |
 | S58 | Union européenne | Obligations GPAI | Source institutionnelle | <https://digital-strategy.ec.europa.eu/en/faqs/guidelines-obligations-general-purpose-ai-providers> | 2025-11 | 2026-07-17 |
 | S59 | Conseil de l’UE | Calendrier AI Act modifié | Source institutionnelle | <https://www.consilium.europa.eu/en/policies/artificial-intelligence-act/timeline-artificial-intelligence/> | 2026-07 | 2026-07-17 |
 | S60 | Moonshot | Lancement Kimi K3 et position de marché | Source indépendante | <https://www.axios.com/2026/07/16/moonshot-kimi-ai-china-model-openai-anthropic> | 2026-07-16 | 2026-07-17 |
+| S61 | OpenAI | Famille GPT-5.6 (Sol/Terra/Luna), sortie et prix | Annonce officielle + presse (corroboré presse) | <https://openai.com/index/gpt-5-6/> | 2026-07-09 | 2026-07-19 |
+| S62 | Moonshot | Kimi K3: paramètres, contexte, benchmarks, prix API, poids | Presse réputée + éval indépendante (corroboré presse) | <https://simonwillison.net/2026/Jul/16/kimi-k3/> | 2026-07-16 | 2026-07-19 |
+| S63 | Union européenne / Conseil | Digital Omnibus IA: report haut risque à déc. 2027, art. 50 maintenu au 2 août 2026 | Source institutionnelle + analyses juridiques | <https://www.gibsondunn.com/eu-ai-act-omnibus-agreement-postponed-high-risk-deadlines-and-other-key-changes/> | 2026-07 (signé 2026-07-08) | 2026-07-19 |
+| S64 | EDPB | Lignes directrices 03/2026 web scraping IA générative + anonymisation | Source institutionnelle | <https://www.edpb.europa.eu/news/news/2026_en> | 2026-07-08 | 2026-07-19 |
+| S65 | DeepSeek | Passage à V4, tarification heures pleines/creuses, retrait des alias | Presse réputée + docs API (corroboré presse) | <https://technode.com/2026/06/30/deepseek-v4/> | 2026-06-30 | 2026-07-19 |
+| S66 | xAI / UE | Grok 4.5 bloqué dans l’UE (AI Act risque systémique + RGPD) | Presse réputée (corroboré presse) | <https://www.trendingtopics.eu/grok-4-5-eu/> | 2026-07 | 2026-07-19 |
+| S67 | Hugging Face | Divulgation d’incident de sécurité (intrusion pilotée par agent IA) | Communication officielle | <https://huggingface.co/blog/security-incident-july-2026> | 2026-07-16 | 2026-07-19 |
+| S68 | Perplexity | SPACE (bac à sable agentique) et Comet Enterprise | Presse réputée (corroboré presse) | <https://siliconangle.com/2026/07/15/perplexity-space-comet-enterprise/> | 2026-07-15 | 2026-07-19 |
+| S69 | NVIDIA | Modèles Nemotron parole/RAG multimodal/sécurité; adoption entreprises japonaises | Communication officielle | <https://nvidianews.nvidia.com/news> | 2026-07-15 | 2026-07-19 |
+| S70 | Replit | Tarification de l’Agent basée sur l’effort | Page officielle | <https://replit.com/blog/effort-based-pricing> | 2026-07-01 | 2026-07-19 |
+| S71 | Google | Report signalé de Gemini 3.5 Pro | Presse réputée (corroboré presse) | <https://9to5google.com/2026/07/16/gemini-3-5-pro-delays/> | 2026-07-16 | 2026-07-19 |
 
 ## Sources non retenues
 
-Les agrégateurs de prix, billets Reddit et comparatifs non reproductibles n’ont pas servi à fixer les caractéristiques. Ils ont uniquement orienté des vérifications sur les pages officielles. Les dates « dynamique » indiquent une page vivante sans date de version stable.
+Les agrégateurs de prix, billets Reddit et comparatifs non reproductibles n’ont pas servi à fixer les caractéristiques. Ils ont uniquement orienté des vérifications sur les pages officielles. Les dates « dynamique » indiquent une page vivante sans date de version stable. Pour l’exécution du 19 juillet 2026, l’absence d’accès direct à certaines pages primaires (blocage anti-robot) est explicitement signalée par la mention « corroboré presse »; ces éléments seront reconfirmés à la prochaine exécution disposant d’un accès non filtré.

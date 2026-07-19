@@ -1,6 +1,6 @@
 # Bonnes pratiques de développement
 
-État vérifié le **17 juillet 2026**. Les mentions distinguent **[Officiel]** recommandation publiée par un fournisseur, **[Consensus]** pratique convergente entre plusieurs fournisseurs et **[Déduction]** conclusion analytique de cet observatoire.
+État vérifié le **17 juillet 2026**, revérifié le **19 juillet 2026**. Les mentions distinguent **[Officiel]** recommandation publiée par un fournisseur, **[Consensus]** pratique convergente entre plusieurs fournisseurs et **[Déduction]** conclusion analytique de cet observatoire.
 
 ## Architecture de référence
 
@@ -56,8 +56,9 @@ Tracer request ID, version modèle, version prompt, outils, temps, jetons/cache,
 - Classer les données avant envoi; minimiser et pseudonymiser.
 - Signer DPA et clauses de transfert; vérifier durée de rétention, entraînement, suppression, chiffrement, SSO/RBAC, audit et certifications.
 - Modéliser prompt injection, exfiltration, tool poisoning, SSRF, code arbitraire, escalade de privilèges, supply chain et fuite inter-utilisateurs.
+- **[Officiel, S67]** Traiter tout dataset, modèle ou poids distant comme une surface de code arbitraire: l’incident Hugging Face du 16 juillet 2026 (intrusion pilotée par agents IA autonomes via un chargeur de dataset distant et une injection de template) montre qu’un attaquant agentique n’est lié par aucune politique d’usage, alors que les garde-fous des modèles hébergés peuvent gêner la défense. Scanner poids/datasets, épingler les digests, isoler l’inférence, faire tourner les secrets et surveiller les actions automatisées.
 - Filtrer entrée et sortie selon le risque, mais ne jamais considérer un garde-fou fournisseur comme contrôle unique.
-- Documenter supervision humaine, transparence à l’utilisateur et limites. Revoir le calendrier AI Act [S57–S59].
+- Documenter supervision humaine, transparence à l’utilisateur et limites. **Calendrier AI Act à jour (Digital Omnibus, signé le 8 juillet 2026): l’article 50 (transparence — déclarer l’interaction IA, marquer les contenus générés) reste applicable au 2 août 2026, avec un délai de grâce du marquage art. 50(2) jusqu’au 2 décembre 2026 pour les systèmes déjà en marché; les obligations « haut risque » autonomes sont reportées au 2 décembre 2027 (produits réglementés: 2 août 2028). Prévoir dès maintenant l’étiquetage et l’information utilisateur.** Tenir compte aussi des lignes directrices EDPB du 8 juillet 2026 sur le web scraping, l’anonymisation et la blockchain (consultation jusqu’au 30 octobre) [S57–S59, S63–S64].
 
 ## Coût, performance et résilience
 
@@ -73,7 +74,7 @@ Tracer request ID, version modèle, version prompt, outils, temps, jetons/cache,
 
 ### 1. OpenAI
 
-**[Officiel, S01/S05]** Utiliser snapshots pour stabilité, Responses/Agents SDK pour outils, structured outputs, streaming, batch/flex et IDs de requête. **[Déduction]** Tester le seuil >272 k de GPT-5.5 avant d’autoriser des contextes géants; séparer budget outils et tokens.
+**[Officiel, S01/S05/S61]** Utiliser snapshots pour stabilité, Responses/Agents SDK pour outils, structured outputs, streaming, batch/flex et IDs de requête. La famille GPT-5.6 (Sol/Terra/Luna, GA le 9 juillet 2026) ajoute trois tiers de coût/capacité: router vers Luna/Terra par défaut et réserver Sol aux cas difficiles. **[Déduction]** Tester le seuil >272 k de GPT-5.5 avant d’autoriser des contextes géants; épingler le tier GPT-5.6 choisi et rejouer les évals avant de migrer depuis 5.5; séparer budget outils et tokens.
 
 ### 2. Anthropic
 
@@ -105,7 +106,7 @@ Tracer request ID, version modèle, version prompt, outils, temps, jetons/cache,
 
 ### 9. DeepSeek
 
-**[Officiel, S25–S26]** Utiliser cache lorsque le préfixe est identique et vérifier le modèle exact derrière les alias. **[Déduction]** Héberger les poids via fournisseur UE pour données sensibles; ajouter délais plus longs, fallback et revue de politique de données.
+**[Officiel, S25–S26/S65]** Utiliser cache lorsque le préfixe est identique et vérifier le modèle exact derrière les alias — les alias hérités `deepseek-chat`/`deepseek-reasoner` sont retirés le 24 juillet 2026 au profit de V4. **[Déduction]** Intégrer la **tarification heures pleines/creuses de V4** (prix doublés en pointe) dans le calcul de coût et, si possible, décaler les tâches batch en heures creuses. Héberger les poids via un fournisseur UE pour données sensibles (l’API stocke en Chine, app interdite en Italie); ajouter délais plus longs, fallback et revue de politique de données.
 
 ### 10. Alibaba/Qwen
 
@@ -145,7 +146,7 @@ Tracer request ID, version modèle, version prompt, outils, temps, jetons/cache,
 
 ### 19. Moonshot/Kimi
 
-**[Officiel, S49–S50]** Kimi recommande instructions claires, détails, délimiteurs, étapes, exemples, texte de référence et résumé des longues conversations; Kimi Code peut utiliser sous-agents, hooks et MCP. **[Déduction]** Activer hooks d’approbation et sandbox; ne pas exposer une clé API côté client.
+**[Officiel, S49–S50/S62]** Kimi recommande instructions claires, détails, délimiteurs, étapes, exemples, texte de référence et résumé des longues conversations; Kimi Code peut utiliser sous-agents, hooks et MCP. Kimi K3 (~2,8 T, contexte 1 M) est fort sur le code, mais **ses poids ne sont pas encore publiés (attendus le 27 juillet 2026, licence MIT modifiée)**: ne pas planifier de déploiement open weight avant leur sortie effective et la revue de licence. **[Déduction]** Activer hooks d’approbation et sandbox; données de la plateforme à Singapour et usage d’entraînement sans opt-out documenté — ne pas exposer une clé API côté client ni y envoyer de données sensibles avant validation contractuelle.
 
 ### 20. Z.AI/GLM
 
