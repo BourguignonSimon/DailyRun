@@ -1,6 +1,8 @@
 # Bonnes pratiques de développement
 
-État vérifié le **17 juillet 2026**. Les mentions distinguent **[Officiel]** recommandation publiée par un fournisseur, **[Consensus]** pratique convergente entre plusieurs fournisseurs et **[Déduction]** conclusion analytique de cet observatoire.
+État vérifié le **20 juillet 2026** (édition précédente 17 juillet). Les mentions distinguent **[Officiel]** recommandation publiée par un fournisseur, **[Consensus]** pratique convergente entre plusieurs fournisseurs et **[Déduction]** conclusion analytique de cet observatoire.
+
+> **Nouveautés de développement intégrées cette exécution :** palier **Luna** de GPT-5.6 (routage volume), **Fable 5/Mythos 5** sans zéro-rétention (implication RGPD sur le routage), **tarification heure pleine/creuse de DeepSeek V4** (le temps devient une dimension de routage), **Kimi K2.7 Code** sélectionnable dans GitHub Copilot, et le jalon de sanctions AI Act du 2 août 2026. Détails datés : [historique.md](historique.md).
 
 ## Architecture de référence
 
@@ -57,7 +59,7 @@ Tracer request ID, version modèle, version prompt, outils, temps, jetons/cache,
 - Signer DPA et clauses de transfert; vérifier durée de rétention, entraînement, suppression, chiffrement, SSO/RBAC, audit et certifications.
 - Modéliser prompt injection, exfiltration, tool poisoning, SSRF, code arbitraire, escalade de privilèges, supply chain et fuite inter-utilisateurs.
 - Filtrer entrée et sortie selon le risque, mais ne jamais considérer un garde-fou fournisseur comme contrôle unique.
-- Documenter supervision humaine, transparence à l’utilisateur et limites. Revoir le calendrier AI Act [S57–S59].
+- Documenter supervision humaine, transparence à l’utilisateur et limites. Revoir le calendrier AI Act : **à partir du 2 août 2026, l’AI Office peut sanctionner les fournisseurs de GPAI (jusqu’à 15 M€ ou 3 % du CA) et enquêter** ; les obligations « haut risque » sont reportées (Annexe III au 2 décembre 2027, Annexe I au 2 août 2028) par le Digital Omnibus [S57–S59, S73].
 
 ## Coût, performance et résilience
 
@@ -73,11 +75,11 @@ Tracer request ID, version modèle, version prompt, outils, temps, jetons/cache,
 
 ### 1. OpenAI
 
-**[Officiel, S01/S05]** Utiliser snapshots pour stabilité, Responses/Agents SDK pour outils, structured outputs, streaming, batch/flex et IDs de requête. **[Déduction]** Tester le seuil >272 k de GPT-5.5 avant d’autoriser des contextes géants; séparer budget outils et tokens.
+**[Officiel, S01/S05]** Utiliser snapshots pour stabilité, Responses/Agents SDK pour outils, structured outputs, streaming, batch/flex et IDs de requête. **[Déduction]** Avec la famille **GPT-5.6**, mettre en place un routeur **Luna (1/6) → Terra (2,50/15) → Sol (5/30)** : Luna d’abord, escalade sur faible confiance ou cas critique. Séparer budget outils et tokens ; surveiller les seuils long contexte (~1,05 M). **Chiffres rapportés cette exécution (openai.com bloqué) : revérifier avant de figer un budget.**
 
 ### 2. Anthropic
 
-**[Officiel, S06–S08]** Exploiter prompt caching, batch -50 %, modèles datés et budget de raisonnement approprié. **[Déduction]** Réserver Opus aux tâches où le gain de réussite compense le prix; surveiller dépréciations et options de résidence.
+**[Officiel, S06–S08, S64]** Exploiter prompt caching, batch -50 %, modèles datés et budget de raisonnement approprié. **Fable 5 et Mythos 5 sont des « Covered Models » : rétention 30 jours, pas de zéro-rétention** — si un cas exige la ZDR, router vers Opus 4.8 ou Sonnet 5. La résidence `us` ajoute ×1,1, les endpoints régionaux +10 %. **[Déduction]** Réserver Fable 5 aux tâches où le gain de réussite compense le prix (10/50) ; profiter du prix d’introduction de Sonnet 5 (2/10) **avant le passage à 3/15 le 1er septembre 2026** ; surveiller dépréciations et options de résidence.
 
 ### 3. Google
 
@@ -93,7 +95,7 @@ Tracer request ID, version modèle, version prompt, outils, temps, jetons/cache,
 
 ### 6. Meta
 
-**[Officiel, S18]** Vérifier licence et carte du modèle avant téléchargement/déploiement. **[Déduction]** Pour Llama auto-hébergé, ajouter serveur d’inférence, isolation, modération, évaluation et procédure de mise à jour; « open weight » ne signifie pas open source complet.
+**[Officiel, S18, S65]** Vérifier licence et carte du modèle avant téléchargement/déploiement. **Nouvelle option : Muse Spark 1.1 via la Meta Model API payante (1,25/4,25)** — traiter comme un fournisseur propriétaire (DPA, région UE, rétention à vérifier), pas comme un poids ouvert. **[Déduction]** Pour Llama auto-hébergé, ajouter serveur d’inférence, isolation, modération, évaluation et procédure de mise à jour ; « open weight » ne signifie pas open source complet.
 
 ### 7. Mistral
 
@@ -105,7 +107,7 @@ Tracer request ID, version modèle, version prompt, outils, temps, jetons/cache,
 
 ### 9. DeepSeek
 
-**[Officiel, S25–S26]** Utiliser cache lorsque le préfixe est identique et vérifier le modèle exact derrière les alias. **[Déduction]** Héberger les poids via fournisseur UE pour données sensibles; ajouter délais plus longs, fallback et revue de politique de données.
+**[Officiel, S25–S26, S68]** Utiliser cache lorsque le préfixe est identique et vérifier le modèle exact derrière les alias. **DeepSeek V4 introduit une tarification heure pleine/creuse (×2 de 9h–12h et 14h–18h Beijing, soit ~3h–11h heure belge selon saison) : planifier les charges batch/asynchrones en heure creuse et intégrer l’heure comme dimension de routage.** **[Déduction]** Héberger les poids via fournisseur UE pour données sensibles ; ajouter délais plus longs, fallback et revue de politique de données ; tenir compte de la plainte belge en cours [S74].
 
 ### 10. Alibaba/Qwen
 
@@ -125,7 +127,7 @@ Tracer request ID, version modèle, version prompt, outils, temps, jetons/cache,
 
 ### 14. GitHub Copilot
 
-**[Officiel, S37–S38]** Plans payants incluent crédits IA; modèles et tâches consomment différemment. B/E n’entraîne pas sur données client. **[Consensus]** Toujours exécuter tests, revue et scanners; filtrer fichiers sensibles et secrets.
+**[Officiel, S37–S38, S70]** Plans payants incluent crédits IA; modèles et tâches consomment différemment. B/E n’entraîne pas sur données client. **Nouveautés : Kimi K2.7 Code est le premier modèle open weight sélectionnable dans le sélecteur ; Copilot vision est généralisé ; Gemini 2.5 Pro et Gemini 3 Flash sont dépréciés le 31 juillet — auditer les configurations qui les épinglent.** **[Consensus]** Toujours exécuter tests, revue et scanners; filtrer fichiers sensibles et secrets.
 
 ### 15. Perplexity
 
@@ -145,7 +147,7 @@ Tracer request ID, version modèle, version prompt, outils, temps, jetons/cache,
 
 ### 19. Moonshot/Kimi
 
-**[Officiel, S49–S50]** Kimi recommande instructions claires, détails, délimiteurs, étapes, exemples, texte de référence et résumé des longues conversations; Kimi Code peut utiliser sous-agents, hooks et MCP. **[Déduction]** Activer hooks d’approbation et sandbox; ne pas exposer une clé API côté client.
+**[Officiel, S49–S50, S66]** Kimi recommande instructions claires, détails, délimiteurs, étapes, exemples, texte de référence et résumé des longues conversations; Kimi Code peut utiliser sous-agents, hooks et MCP. **Kimi K3 (API en ligne, 3/0,30/15 USD/M, 1 M de contexte) est disponible avant ses poids (annoncés le 27 juillet) : ne pas présumer la portabilité tant que les poids ne sont pas publiés et évalués localement.** **[Déduction]** Activer hooks d’approbation et sandbox; ne pas exposer une clé API côté client.
 
 ### 20. Z.AI/GLM
 

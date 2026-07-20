@@ -1,6 +1,6 @@
 # Comparatif structuré — édition Belgique
 
-Mise à jour: **17 juillet 2026**. Ce fichier remplace le classeur Excel demandé initialement: le dépôt a explicitement migré vers Markdown le 16 juillet 2026. Les « feuilles » sont les sections ci-dessous. Les références Sxx renvoient à [sources.md](sources.md).
+Mise à jour: **20 juillet 2026** (édition précédente 17 juillet). Ce fichier remplace le classeur Excel demandé initialement: le dépôt a explicitement migré vers Markdown le 16 juillet 2026. Les « feuilles » sont les sections ci-dessous. Les références Sxx renvoient à [sources.md](sources.md). Niveau de vérification cette exécution : Anthropic vérifié en source primaire ; OpenAI **rapporté** (openai.com bloqué par le proxy) ; taux CNY et BCE non revérifiés (pages BCE bloquées).
 
 - [Vue d’ensemble](#vue-densemble)
 - [Prix particuliers](#prix-particuliers)
@@ -15,15 +15,15 @@ Mise à jour: **17 juillet 2026**. Ce fichier remplace le classeur Excel demand�
 
 | # | Entreprise / écosystème | Catégorie dominante | Offre phare vérifiée | Pertinence Belgique | Force principale | Limite principale | Sources |
 |---:|---|---|---|---|---|---|---|
-| 1 | OpenAI | Modèles + app + API + agent code | GPT-5.5, ChatGPT, Codex | Élevée | Écosystème complet et outils | Coût frontière et verrouillage | S01–S05 |
-| 2 | Anthropic | Modèles + app + API + agent code | Opus 4.8, Sonnet 5, Claude Code | Élevée | Raisonnement, code, long contexte | Prix Opus; options régionales payantes | S06–S08 |
+| 1 | OpenAI | Modèles + app + API + agent code | GPT-5.6 (Sol/Terra/Luna), ChatGPT, Codex, ChatGPT Work | Élevée | Écosystème complet et outils | Coût frontière et verrouillage | S01–S05, S61–S63 |
+| 2 | Anthropic | Modèles + app + API + agent code | Fable 5, Opus 4.8, Sonnet 5, Claude Code | Élevée | Raisonnement, code, long contexte | Prix Fable/Opus; résidence payante; pas de ZDR sur Fable/Mythos | S06–S08, S64 |
 | 3 | Google | Modèles + app + API + cloud | Gemini 3.5 Flash, Gemini API | Élevée | Multimodal, 1 M, recherche | Complexité des surfaces et tarifs | S09–S11 |
 | 4 | Microsoft | Cloud + productivité + agents | Azure OpenAI, M365 Copilot, Copilot Studio | Très élevée | Intégration M365/Azure, identité | Licences et coûts imbriqués | S12–S14 |
 | 5 | AWS | Plateforme multi-modèles + agents | Bedrock, Agents, AgentCore | Très élevée | Choix de modèles et régions | Tarification composite | S15–S17 |
-| 6 | Meta | Open weight + app | Llama 4, Meta AI | Moyenne | Poids et écosystème open | Licence et disponibilité produit UE à vérifier | S18 |
+| 6 | Meta | Open weight + app + API payante | Llama 4, Meta AI, Muse Spark 1.1 | Moyenne | Poids ouverts + désormais API propriétaire | Bascule vers offre payante; disponibilité UE à vérifier | S18, S65 |
 | 7 | Mistral | Modèles UE + app + API | Medium 3.5, Large, Vibe | Très élevée | Acteur européen, open weight | Catalogue et licences variables | S19–S21 |
 | 8 | xAI | Modèles + app + API | Grok 4.5 | Élevée | Contexte, temps réel, outils | Gouvernance et rétention à valider | S22–S24 |
-| 9 | DeepSeek | Modèles + app + API + poids | DeepSeek Chat/V3.2 | Moyenne | Rapport coût/capacité | Région, données, disponibilité belge | S25–S26 |
+| 9 | DeepSeek | Modèles + app + API + poids | DeepSeek V4 (Pro/Flash), Chat | Moyenne | Rapport coût/capacité | Région, données, disponibilité belge; tarif heure pleine/creuse | S25–S26, S68 |
 | 10 | Alibaba/Qwen | Modèles + cloud + poids | Qwen 3.7, Model Studio | Moyenne | Catalogue large, code, prix | Facturation/région et support UE | S27–S28 |
 | 11 | NVIDIA | Modèles + déploiement + agents | Nemotron 3, NIM, NeMo | Élevée en entreprise | Exploitation, optimisation, garde-fous | Coût infra et complexité | S29–S31 |
 | 12 | Cohere | Modèles entreprise + RAG | Command A+ / North | Élevée en entreprise | RAG, multilingue, privé | Peu d’offre grand public | S32–S34 |
@@ -33,12 +33,12 @@ Mise à jour: **17 juillet 2026**. Ce fichier remplace le classeur Excel demand�
 | 16 | Anysphere/Cursor | Éditeur et agents de code | Cursor | Très élevée pour développeurs | UX agentique sur dépôt | Dépendance aux modèles tiers et crédits | S41–S43 |
 | 17 | Replit | Création/déploiement agentique | Replit Agent | Élevée pour prototypes | De l’idée au déploiement | Coût par crédits, contrôle infra | S44 |
 | 18 | Hugging Face | Hub + inference open | Hub, Providers, Endpoints | Très élevée pour open source | Portabilité et catalogue | Qualité/sécurité dépend du modèle/provider | S45–S47 |
-| 19 | Moonshot/Kimi | Modèles + app + agent code | Kimi K3/K2.7, Kimi Code | Moyenne | Open weight, code, agents | Offre belge, DPA et prix officiel à confirmer | S48–S51, S60 |
+| 19 | Moonshot/Kimi | Modèles + app + agent code | Kimi K3 (2,8 T), K2.7 Code, Kimi Code | Moyenne–élevée (open weight) | Plus grand open weight, code, agents | Offre belge/DPA à confirmer; poids attendus le 27 juillet | S48–S51, S66 |
 | 20 | Z.AI/GLM | Modèles + API + agent code | GLM-5.2, Coding Plan | Moyenne | Code agentique et prix | Français/NL, région UE et DPA à confirmer | S52–S54 |
 
 ## Prix particuliers
 
-Prix catalogue observés. Conversion: USD ÷ 1,1405; CNY ÷ 7,7327. La colonne TVA est prudente: « checkout » signifie que l’inclusion doit être confirmée sur la facture belge.
+Prix catalogue observés. Conversion: USD ÷ 1,1435 (BCE 17 juillet 2026); CNY ÷ 7,7327 (14 juillet, non revérifié). La colonne TVA est prudente: « checkout » signifie que l’inclusion doit être confirmée sur la facture belge.
 
 | Offre | Prix origine | Estimation EUR HT | Estimation EUR avec 21 % si non incluse | TVA / remarque | Source |
 |---|---:|---:|---:|---|---|
@@ -54,16 +54,18 @@ Prix catalogue observés. Conversion: USD ÷ 1,1405; CNY ÷ 7,7327. La colonne T
 
 ## Prix API
 
-Prix par **1 million de jetons** sauf mention. HT et hors outils. Les prix EUR sont des estimations arrondies. « Modèle dépendant » évite de comparer un agrégateur/cloud à un modèle unique.
+Prix par **1 million de jetons** sauf mention. HT et hors outils. Les prix EUR sont des estimations arrondies (÷1,1435 USD ; CNY ÷7,7327). « Modèle dépendant » évite de comparer un agrégateur/cloud à un modèle unique. Les lignes OpenAI sont **rapportées** (source primaire bloquée).
 
 | Acteur / modèle représentatif | Contexte | Entrée origine | Cache origine | Sortie origine | Entrée EUR | Sortie EUR | Batch / classe | Outils / remarques | Source |
 |---|---:|---:|---:|---:|---:|---:|---|---|---|
-| OpenAI GPT-5.5 | 1,05 M | 5 USD | 0,50 USD | 30 USD | 4,38 € | 26,30 € | Batch/Flex -50 %; Priority ×2,5 | >272 k: entrée ×2, sortie ×1,5; outils séparés | S01–S02 |
-| Anthropic Claude Opus 4.8, API directe | 1 M | 5 USD | lecture 0,50 USD; écritures selon durée | 25 USD | 4,38 € | 21,92 € | Batch -50 % | Résidence et fast peuvent ajouter un multiplicateur | S06–S08 |
+| OpenAI GPT-5.6 Sol (rapporté) | ~1,05 M | 5 USD | ND | 30 USD | 4,37 € | 26,24 € | Terra 2,50/15; **Luna 1/6** | Frontière; sortie 128 k; openai.com bloqué, à revérifier | S61–S62 |
+| Anthropic Claude Fable 5 | 1 M | 10 USD | hit 1 USD; écritures 12,50/20 | 50 USD | 8,75 € | 43,73 € | Batch -50 % (5/25) | Pas de ZDR; rétention 30 j; le plus capable diffusé | S64 |
+| Anthropic Claude Opus 4.8, API directe | 1 M | 5 USD | hit 0,50 USD; écritures selon durée | 25 USD | 4,37 € | 21,86 € | Batch -50 % | Fast en préversion 10/50; résidence `us` ×1,1 | S06–S08 |
+| Anthropic Claude Sonnet 5 | 1 M | 2 USD (intro) | selon durée | 10 USD (intro) | 1,75 € | 8,75 € | Batch -50 % | **Passe à 3/15 le 1er sept. 2026** | S07–S08 |
 | Google Gemini 3.5 Flash | 1 M | 1,50 USD | 0,15 USD + stockage | 9 USD | 1,32 € | 7,89 € | Batch/Flex 0,75/4,50; Priority 2,70/16,20 | Search/Maps 14 USD/1 000 requêtes après quota | S09–S10 |
 | Mistral Large | À confirmer par version | 2 USD | ND | 6 USD | 1,75 € | 5,26 € | Batch -50 % | OCR, audio et autres outils séparés | S19 |
 | xAI Grok 4.5 court | 500 k | 2 USD | 0,50 USD | 6 USD | 1,75 € | 5,26 € | Batch affichable | Long contexte 4/1/12 USD | S22 |
-| DeepSeek chat | 64 k sur page contrôlée | 0,27 USD miss | 0,07 USD hit | 1,10 USD | 0,24 € | 0,96 € | À confirmer | Version et horaires peuvent changer | S25 |
+| DeepSeek V4-Pro (heure creuse) | 1 M | ¥3,00 miss | ¥0,025 hit | ¥6,00 | 0,39 € | 0,78 € | **×2 en heure pleine** (9–12h, 14–18h Beijing) | V4-Flash ¥1/¥2; version officielle imminente | S68 |
 | Alibaba Qwen 3.7 max global | 1 M | 12 CNY | Remise cache publiée | 36 CNY | 1,55 € | 4,66 € | Promotions variables | Régions global/US/Chine distinctes | S27 |
 | Cohere Command A | 256 k | 2,50 USD | ND | 10 USD | 2,19 € | 8,77 € | ND | Essai 1 000 appels/mois; prod 500 RPM | S32–S34 |
 | IBM Granite 4 h small | Selon modèle | 0,06 USD | ND | 0,25 USD | 0,05 € | 0,22 € | ND | Prix indicatifs, taxes exclues | S35 |
@@ -75,7 +77,9 @@ Prix par **1 million de jetons** sauf mention. HT et hors outils. Les prix EUR s
 | GitHub Copilot / Cursor / Replit | Abonnement/crédits | Non comparable par jeton | — | — | — | — | Crédits/usage | Mesurer coût par tâche | S37–S44 |
 | Perplexity Sonar/Agent API | Modèle et recherche | Voir grille dynamique | Selon modèle | Voir grille | — | — | Provider/modèle | Frais de recherche possibles | S39–S40 |
 | Hugging Face Providers | Provider choisi | Sans majoration HF annoncée | Provider | Provider | — | — | PAYG | Routage ou clé propre; Endpoint à l’heure | S45–S47 |
-| Moonshot Kimi | Version/région | Non publié de façon stable dans source officielle accessible | ND | ND | — | — | À confirmer | Poids disponibles séparément | S48–S51 |
+| Moonshot Kimi K3 | 1 M | 3 USD | 0,30 USD hit | 15 USD | 2,62 € | 13,12 € | ND | 2,8 T (~50 B actifs); **poids ouverts d’ici le 27 juillet** | S66 |
+| Meta Muse Spark 1.1 | 1 M | 1,25 USD | ND | 4,25 USD | 1,09 € | 3,72 € | ND | Nouvelle Meta Model API payante | S65 |
+| Thinking Machines Inkling | 1 M | Auto-hébergé/provider | — | Auto-hébergé/provider | — | — | Selon hôte | Poids Apache 2.0 sur Hugging Face | S67 |
 
 ## Capacités
 
@@ -109,7 +113,7 @@ Légende: **Oui** publié; **Partiel** dépend du modèle/produit; **ND** non pu
 | Acteur/surface | Entraînement des données | Rétention / chiffrement | DPA / région | Appréciation Belgique |
 |---|---|---|---|---|
 | OpenAI API | Non par défaut, opt-in | Rétention selon endpoint; chiffrement publié | DPA et résidence EEE pour services éligibles | Bon si endpoint/région vérifiés; app grand public séparée |
-| Anthropic API/Cloud | Contrat et surface à vérifier | Cache/rétention documentés par offre | DPA/résidence avec options et clouds | Solide entreprise; coût résidence à intégrer |
+| Anthropic API/Cloud | Contrat et surface à vérifier | Cache/rétention documentés; **Fable 5/Mythos 5 = rétention 30 j, pas de ZDR** | DPA/résidence; `us` ×1,1, régional +10 % | Solide entreprise; coût résidence à intégrer; choisir Opus/Sonnet si ZDR requis |
 | Google Gemini API payant | Données payantes non utilisées pour améliorer produits selon grille | Contrôles Cloud selon surface | EEE disponible; Vertex ajoute gouvernance | Bien adapté UE via projet payant/cloud |
 | Microsoft/Azure | Données entreprise non utilisées pour entraîner modèles de base selon service | Chiffrement, réseau, politiques Azure | DPA Microsoft, régions UE | Très solide si architecture Azure maîtrisée |
 | AWS Bedrock | Isolation service publiée; vérifier chaque provider | KMS/VPC/logs configurables | DPA AWS, régions UE | Solide, responsabilité de configuration élevée |
@@ -139,9 +143,9 @@ Légende: **Oui** publié; **Partiel** dépend du modèle/produit; **ND** non pu
 
 La sélection combine cinq signaux qualitatifs: adoption/présence marché 30 %, qualité/portée des modèles 25 %, maturité API/outils/agents 20 %, écosystème développeur 15 %, disponibilité et pertinence Europe/Belgique 10 %. La liste est plafonnée à exactement 20. Les sorties de la prochaine édition exigeront un signal durable supérieur à l’acteur remplacé; une nouveauté seule ne suffit pas.
 
-Les benchmarks fournisseur restent dans [analyse-detaillee.md](analyse-detaillee.md) avec protocole et avertissements. Aucun score de sources hétérogènes n’est moyenné. Les prix sont des snapshots catalogue au 17 juillet 2026; remises, contrats et taxes varient.
+Les benchmarks fournisseur restent dans [analyse-detaillee.md](analyse-detaillee.md) avec protocole et avertissements. Aucun score de sources hétérogènes n’est moyenné. Les prix sont des snapshots catalogue au 20 juillet 2026; remises, contrats et taxes varient.
 
-Contrôles effectués: 20 lignes exactes dans Vue d’ensemble; unités de prix homogènes; conversions recalculées avec S55; liens Markdown relatifs; valeurs inconnues marquées ND/à confirmer. Les filtres, volets figés et formules Excel ne sont pas applicables à Markdown.
+Contrôles effectués: 20 lignes exactes dans Vue d’ensemble; unités de prix homogènes; conversions recalculées avec S55; liens Markdown relatifs; valeurs inconnues marquées ND/à confirmer; niveau de vérification indiqué (primaire/rapporté). Les filtres, volets figés et formules Excel ne sont pas applicables à Markdown.
 
 ## Sources
 

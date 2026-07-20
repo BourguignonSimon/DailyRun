@@ -1,6 +1,8 @@
 # Registre des sources
 
-Consultation: **17 juillet 2026**, heure de Bruxelles. Les URL sont dédupliquées. « Non publiée » signifie que la page n’affiche pas de date exploitable. Les pages dynamiques peuvent évoluer sans changer d’URL.
+Consultation : **17 juillet 2026** (S01–S60) et **20 juillet 2026** (S61–S74, revérifications), heure de Bruxelles. Les URL sont dédupliquées. « Non publiée » signifie que la page n’affiche pas de date exploitable. Les pages dynamiques peuvent évoluer sans changer d’URL.
+
+> **Limites de vérification du 20 juillet 2026.** Le proxy de sortie a renvoyé **HTTP 403** pour openai.com et ses sous-domaines, pour les pages presse d’anthropic.com, et pour **toutes les pages de la BCE** (eurofxref). En conséquence : les tarifs Anthropic (S64) proviennent des pages plateforme accessibles (platform.claude.com) et sont **vérifiés en source primaire** ; les faits OpenAI (S61–S63) sont **rapportés** via des sources secondaires concordantes, source primaire non atteinte ; le taux BCE EUR/USD du 17 juillet (1,1435) est issu de résultats de recherche, et le **taux CNY n’a pas pu être revérifié** (7,7327 du 14 juillet conservé à titre indicatif). Les niveaux sont indiqués dans la colonne « Nature ».
 
 | ID | Acteur | Sujet | Nature | URL exacte | Publication / mise à jour connue | Consultation |
 |---|---|---|---|---|---|---|
@@ -64,7 +66,23 @@ Consultation: **17 juillet 2026**, heure de Bruxelles. Les URL sont dédupliqué
 | S58 | Union européenne | Obligations GPAI | Source institutionnelle | <https://digital-strategy.ec.europa.eu/en/faqs/guidelines-obligations-general-purpose-ai-providers> | 2025-11 | 2026-07-17 |
 | S59 | Conseil de l’UE | Calendrier AI Act modifié | Source institutionnelle | <https://www.consilium.europa.eu/en/policies/artificial-intelligence-act/timeline-artificial-intelligence/> | 2026-07 | 2026-07-17 |
 | S60 | Moonshot | Lancement Kimi K3 et position de marché | Source indépendante | <https://www.axios.com/2026/07/16/moonshot-kimi-ai-china-model-openai-anthropic> | 2026-07-16 | 2026-07-17 |
+| S61 | OpenAI | Famille GPT-5.6 (Sol/Terra/Luna) et prix | Publication officielle (bloquée, rapportée) | <https://openai.com/index/gpt-5-6/> | 2026-07-09 | 2026-07-20 |
+| S62 | OpenAI | Tarifs GPT-5.6 par palier | Agrégateur secondaire | <https://www.aipricing.guru/openai-pricing/> | 2026-07 | 2026-07-20 |
+| S63 | OpenAI | ChatGPT Work (agent bureautique) | Presse secondaire | <https://www.axios.com/2026/07/09/ai-openai-gpt-release> | 2026-07-09 | 2026-07-20 |
+| S64 | Anthropic | Claude Fable 5 / Mythos 5, prix, contexte, rétention | Documentation officielle (vérifiée) | <https://platform.claude.com/docs/en/about-claude/models/introducing-claude-fable-5-and-claude-mythos-5> | Non publiée | 2026-07-20 |
+| S65 | Meta | Muse Spark 1.1 et Meta Model API payante | Presse secondaire | <https://www.marktechpost.com/2026/07/09/meta-superintelligence-labs-releases-muse-spark-1-1/> | 2026-07-09 | 2026-07-20 |
+| S66 | Moonshot | Kimi K3 : specs, API, prix, benchmarks | Presse + docs plateforme | <https://venturebeat.com/technology/chinas-moonshot-ai-releases-kimi-k3-the-largest-open-source-model-ever-rivaling-top-u-s-systems> | 2026-07-16 | 2026-07-20 |
+| S67 | Thinking Machines | Inkling (975 B, Apache 2.0, Hugging Face) | Publication officielle + presse | <https://thinkingmachines.ai/news/introducing-inkling/> | 2026-07-15 | 2026-07-20 |
+| S68 | DeepSeek | V4 officiel et tarification heure pleine/creuse | Presse secondaire | <https://technode.com/2026/06/30/deepseek-to-launch-v4-in-mid-july-with-new-peak-time-api-pricing/> | 2026-06-30 | 2026-07-20 |
+| S69 | xAI | Grok 4.5 : code/agentique, intégrations | Publication officielle | <https://x.ai/news/grok-amazon-bedrock> | 2026-07 | 2026-07-20 |
+| S70 | GitHub | Copilot : Kimi K2.7 Code, vision, dépréciations | Changelog officiel | <https://github.blog/changelog/month/07-2026/> | 2026-07 | 2026-07-20 |
+| S71 | Microsoft | Copilot : Library, GPT-5 Agent Builder, Agent Store | Release notes officielles | <https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes> | 2026-07 | 2026-07-20 |
+| S72 | Mistral | Small 4, Robostral Navigate, Leanstral 1.5, MoE | Actualités officielles | <https://mistral.ai/news/> | 2026-07 | 2026-07-20 |
+| S73 | Union européenne | AI Act : sanctions GPAI 2 août 2026, Digital Omnibus | Analyse juridique secondaire | <https://www.gibsondunn.com/eu-ai-act-omnibus-agreement-postponed-high-risk-deadlines-and-other-key-changes/> | 2026 | 2026-07-20 |
+| S74 | Belgique/UE | Scrutin RGPD et plainte belge contre DeepSeek | Analyse secondaire | <https://www.gdpreu.org/deepseek-ai-under-eu-scrutiny/> | 2026 | 2026-07-20 |
 
 ## Sources non retenues
 
 Les agrégateurs de prix, billets Reddit et comparatifs non reproductibles n’ont pas servi à fixer les caractéristiques. Ils ont uniquement orienté des vérifications sur les pages officielles. Les dates « dynamique » indiquent une page vivante sans date de version stable.
+
+**Exception du 20 juillet 2026 :** le proxy ayant bloqué plusieurs pages primaires (openai.com, presse anthropic.com, BCE), certaines sources secondaires (S62, S63, S65, S66, S68) ont exceptionnellement servi à documenter des faits, avec la mention explicite « rapporté ». Ces éléments — en particulier les tarifs GPT-5.6 et le taux de change CNY — doivent être revérifiés en source primaire dès qu’un accès non contraint est disponible. À l’inverse, S64 (Anthropic) a bien été récupéré sur la page plateforme officielle.

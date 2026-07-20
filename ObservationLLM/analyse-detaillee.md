@@ -1,36 +1,38 @@
 # Analyse détaillée
 
-Vérification: **17 juillet 2026**. Point de vue: particulier ou développeur résidant en Belgique. Cette analyse est informative; les volets RGPD et AI Act ne constituent pas un avis juridique.
+Vérification: **20 juillet 2026** (édition précédente 17 juillet). Point de vue: particulier ou développeur résidant en Belgique. Cette analyse est informative; les volets RGPD et AI Act ne constituent pas un avis juridique.
+
+> **Note de vérification.** Cette exécution a subi un proxy restrictif : openai.com et les pages BCE ont renvoyé HTTP 403. Les faits Anthropic sont vérifiés en source primaire (platform.claude.com) ; les faits OpenAI sont **rapportés** via des sources secondaires concordantes ; Kimi K3, Inkling, DeepSeek V4, Meta Muse Spark et le calendrier AI Act reposent sur plusieurs sources secondaires. Voir [historique.md](historique.md) pour le journal daté.
 
 ## Méthodologie et sélection
 
 Cinq familles de signaux ont été examinées: adoption/présence marché (30 %), qualité et portée des modèles (25 %), maturité API/outils/agents (20 %), écosystème développeur (15 %), disponibilité et pertinence Europe/Belgique (10 %). Les pondérations servent à décider l’inclusion, pas à produire un faux score précis. Les 20 retenus couvrent quatre rôles qui se chevauchent: concepteurs de modèles, applications, plateformes cloud/API et agents de code.
 
-L’édition précédente n’existait pas dans le dépôt. **Entrées: les 20 acteurs. Sorties: aucune.** À partir de la prochaine édition, une entrée exigera plusieurs signaux durables et entraînera une sortie explicitement motivée. Les candidats à surveiller comprennent MiniMax, Databricks/Mosaic, Oracle OCI, Salesforce et les plateformes d’orchestration indépendantes; ils ne sont pas inclus pour conserver exactement 20 acteurs.
+L’édition du 17 juillet a établi la base. **Cette exécution (20 juillet) ne modifie pas la composition : 20 acteurs, aucune entrée/sortie.** À partir de la prochaine édition, une entrée exigera plusieurs signaux durables et entraînera une sortie explicitement motivée. Les candidats à surveiller comprennent désormais **Thinking Machines (Inkling, 975 B, Apache 2.0, 15 juillet)** en plus de MiniMax, Databricks/Mosaic, Oracle OCI, Salesforce et les plateformes d’orchestration indépendantes ; ils ne sont pas inclus pour conserver exactement 20 acteurs. Inkling est le signal le plus fort à réévaluer : premier modèle de Thinking Machines (Mira Murati), plus grand open weight d’origine américaine, mais positionné comme base de fine-tuning, pas comme meilleur modèle absolu [S67].
 
 Chaque fait volatil renvoie au registre [sources.md](sources.md). Les prix sont des snapshots, les pages dynamiques pouvant changer sans version. Les conversions utilisent S55 et la TVA standard belge S56. Une disponibilité non explicitement vérifiée est « à confirmer ».
 
 ## Comment lire les benchmarks
 
-Les scores publiés par un fournisseur sont des **capacités déclarées** jusqu’à reproduction. Exemple: OpenAI publie pour GPT-5.5 82,7 % sur Terminal-Bench 2.0 et 58,6 % sur SWE-Bench Pro, tout en signalant un risque de mémorisation sur ce dernier [S02]. Z.AI revendique 77,8 sur SWE-bench Verified pour GLM-5 dans sa propre documentation [S53]. Ces protocoles, versions, échafaudages, budgets d’outils et dates diffèrent: ils ne sont pas comparés directement ici. La décision doit reposer sur un jeu d’évaluation interne daté, versionné et reproductible.
+Les scores publiés par un fournisseur sont des **capacités déclarées** jusqu’à reproduction. Exemple récent : Kimi K3 est annoncé **#1 sur Frontend Code Arena (1 679)** — une arène publique donc observable — mais **3e sur GDPval-AA v2 (1 687)** derrière Fable 5 et GPT-5.6 Sol, chiffre issu d’une évaluation tierce (Artificial Analysis) non réexécutée localement [S66]. Ces protocoles, versions, échafaudages, budgets d’outils et dates diffèrent : ils ne sont pas comparés directement ici. La décision doit reposer sur un jeu d’évaluation interne daté, versionné et reproductible. Règle maintenue : distinguer capacités déclarées, poids réellement disponibles et qualité mesurée indépendamment — particulièrement pertinent pour Kimi K3, dont les poids ne sont annoncés que « d’ici le 27 juillet ».
 
 ## Analyse des 20 écosystèmes
 
 ### 1. OpenAI
 
-**Positionnement.** GPT-5.5 est un modèle frontière texte/vision en entrée, 1,05 M de contexte et 128 k de sortie; ChatGPT est l’application, l’API Responses la plateforme, Codex l’agent de code [S01–S02]. Outils natifs: web, fichiers, génération d’image, interpréteur, shell hébergé, patch, computer use et MCP.
+**Positionnement (mis à jour).** La **famille GPT-5.6** est généralisée depuis le 9 juillet 2026 : **Sol** frontière (5/30 USD/M), **Terra** équilibré (2,50/15), **Luna** nouveau palier volume bon marché (1/6). Contexte ~1,05 M, sortie 128 k ; la rumeur de 1,5 M ne s’est pas concrétisée. GPT-5.5 reste en ligne, non déprécié. ChatGPT est l’application, l’API Responses la plateforme, Codex l’agent de code ; **ChatGPT Work** (agent produisant documents, feuilles, présentations, rapports) est lancé le même jour [S61–S63]. Outils natifs : web, fichiers, génération d’image, interpréteur, shell hébergé, patch, computer use et MCP. **Attention vérification : openai.com était inaccessible cette exécution ; ces chiffres sont rapportés et à revérifier en source primaire.**
 
-**Belgique.** L’usage est largement pertinent en français et néerlandais, mais la qualité doit être testée par domaine. L’API publie l’absence d’entraînement par défaut et des contrôles de résidence EEE pour clients/services éligibles [S03]. Les prix de l’API sont en USD hors taxes; le prix ChatGPT belge exact et la TVA doivent être confirmés au checkout.
+**Belgique.** L’usage est largement pertinent en français et néerlandais, mais la qualité doit être testée par domaine. L’API publie l’absence d’entraînement par défaut et des contrôles de résidence EEE pour clients/services éligibles [S03]. Les prix de l’API sont en USD hors taxes; le prix ChatGPT belge exact et la TVA doivent être confirmés au checkout. Le palier **Luna** change l’arbitrage coût pour les charges de volume : à évaluer contre Gemini 3.5 Flash et Sonnet 5 intro.
 
-**Développement.** SDK larges, sorties structurées, function calling, streaming, batch/flex/priority et snapshots. Épingler le snapshot, journaliser les request IDs, maintenir des évaluations avant migration [S05]. Coût long contexte et outils à budgéter séparément.
+**Développement.** SDK larges, sorties structurées, function calling, streaming, batch/flex/priority et snapshots. Épingler le snapshot, journaliser les request IDs, maintenir des évaluations avant migration [S05]. Router Luna/Terra/Sol selon la difficulté; coût long contexte et outils à budgéter séparément.
 
 ### 2. Anthropic
 
-**Positionnement.** Opus 4.8 vise les tâches difficiles; Sonnet 5/4.6 offre un compromis coût-vitesse; Claude Code est l’agent de développement. Le catalogue publié atteint 1 M de contexte pour le haut de gamme [S06–S08].
+**Positionnement (corrigé et vérifié en source primaire).** **Claude Fable 5** est « le modèle le plus capable largement diffusé » d’Anthropic (10/50 USD/M, 1 M de contexte sans surcoût long contexte, sortie 128 k), disponible depuis le 9 juin 2026 — l’édition du 17 juillet, qui nommait Opus 4.8 comme tête de série, le manquait. **Claude Mythos 5** est la variante à diffusion restreinte (mêmes specs, sans classifieurs de sécurité). Opus 4.8 (5/25 USD/M) vise toujours les tâches difficiles ; Sonnet 5 offre le compromis coût-vitesse ; Claude Code est l’agent de développement. Le catalogue atteint 1 M de contexte pour le haut de gamme [S06–S08, S64].
 
-**Belgique et données.** Application et API sont pertinentes pour FR/NL, à valider sur le corpus réel. DPA, résidence et rétention varient entre API directe, AWS et Google Cloud; la résidence peut ajouter un multiplicateur. Vérifier le contrat exact.
+**Belgique et données.** Application et API sont pertinentes pour FR/NL, à valider sur le corpus réel. **Point RGPD important : Fable 5 et Mythos 5 sont des « Covered Models » — rétention 30 jours et pas de zéro-rétention (ZDR).** Pour un besoin ZDR, préférer Opus 4.8 ou Sonnet 5. **Sonnet 5 est en prix d’introduction 2/10 USD/M jusqu’au 31 août 2026, puis 3/15 le 1er septembre.** Résidence : `inference_geo:"us"` applique un multiplicateur ×1,1 ; les endpoints régionaux Bedrock/Google Cloud ajoutent +10 % sur le tarif global. Vérifier le contrat exact.
 
-**Développement.** Excellente capacité d’outils et de code. Utiliser prompt caching pour les préfixes stables, batch pour l’asynchrone, budget d’effort raisonnable, et identifiants datés. Les dépréciations publiées imposent un inventaire de modèles.
+**Développement.** Excellente capacité d’outils et de code. Utiliser prompt caching pour les préfixes stables, batch -50 % pour l’asynchrone, budget d’effort raisonnable, et identifiants datés. Réserver Fable 5 aux tâches où le gain compense le prix ; le mode Fast d’Opus 4.8 en préversion (10/50) est bien moins cher que celui d’Opus 4.7 (30/150). Les dépréciations publiées imposent un inventaire de modèles.
 
 ### 3. Google
 
@@ -58,9 +60,9 @@ Les scores publiés par un fournisseur sont des **capacités déclarées** jusqu
 
 ### 6. Meta
 
-**Positionnement.** Llama est d’abord une famille de poids et un écosystème; Meta AI est une application distincte [S18]. Le coût API dépend du fournisseur ou de l’infrastructure.
+**Positionnement (mis à jour).** Llama reste une famille de poids et un écosystème ; Meta AI est l’application. **Nouveauté du 9 juillet : Muse Spark 1.1**, modèle agentique multimodal (1 M de contexte) diffusé via une **nouvelle Meta Model API payante (1,25/4,25 USD/M)**. C’est une bascule stratégique : Meta ne se limite plus aux poids ouverts et propose désormais un modèle propriétaire facturé à l’usage [S18, S65]. Le coût des Llama auto-hébergés dépend toujours du fournisseur ou de l’infrastructure.
 
-**Belgique.** Vérifier la licence du modèle, les restrictions d’usage et la disponibilité exacte des fonctions Meta AI dans l’UE. Le français est généralement utilisable; le néerlandais doit être évalué. L’auto-hébergement donne du contrôle mais crée les obligations d’exploitant.
+**Belgique.** Vérifier la licence du modèle, les restrictions d’usage et la disponibilité exacte de Meta AI et de la Meta Model API dans l’UE (facturation EUR, DPA, région à confirmer). Le français est généralement utilisable ; le néerlandais doit être évalué. L’auto-hébergement donne du contrôle mais crée les obligations d’exploitant.
 
 ### 7. Mistral AI
 
@@ -80,9 +82,9 @@ Les scores publiés par un fournisseur sont des **capacités déclarées** jusqu
 
 ### 9. DeepSeek
 
-**Positionnement.** Modèles très compétitifs en coût, application gratuite, API et poids. La page prix contrôlée publie cache hit/miss et contexte, mais peut précéder une version plus récente [S25–S26].
+**Positionnement (mis à jour).** Modèles très compétitifs en coût, application gratuite, API et poids. **DeepSeek V4** passe de préversion (poids ouverts en avril) à version officielle « mi-juillet » (imminente, non confirmée expédiée au 19 juillet) : V4-Pro (1,6 T/49 B actifs) et V4-Flash (284 B/13 B), 1 M de contexte. **Première tarification heure pleine/creuse** : prix doublés de 9h–12h et 14h–18h (Beijing), rate inchangé hors de ces plages, alerte e-mail 24 h avant. Le temps devient une dimension de routage à intégrer [S25–S26, S68].
 
-**Belgique.** Disponibilité commerciale, DPA, transferts, rétention, usage d’entraînement et facture belge sont à confirmer. Pour données sensibles, préférer des poids hébergés par un fournisseur UE après revue de licence.
+**Belgique.** Disponibilité commerciale, DPA, transferts, rétention, usage d’entraînement et facture belge sont à confirmer. **Contexte réglementaire : un groupe de consommateurs belge a déposé plainte sur les transferts de données vers la Chine, et la Commission examine la conformité UE [S74].** Pour données sensibles, préférer des poids hébergés par un fournisseur UE après revue de licence, et tenir compte du décalage horaire pour la tarification.
 
 ### 10. Alibaba Cloud / Qwen
 
@@ -144,9 +146,9 @@ Les scores publiés par un fournisseur sont des **capacités déclarées** jusqu
 
 ### 19. Moonshot AI / Kimi
 
-**Positionnement.** Kimi couvre modèles open weight, application, Kimi Code CLI et SDK agent. Kimi K3 annoncé le 16 juillet 2026 est trop récent pour une conclusion indépendante robuste [S48–S51, S60].
+**Positionnement (mis à jour).** Kimi couvre modèles open weight, application, Kimi Code CLI et SDK agent. **Kimi K3 est passé d’« annonce trop récente » à un acteur concret :** API en ligne depuis le 16 juillet (`api.moonshot.ai/v1`, `kimi-k3`), **2,8 T de paramètres MoE (896 experts, ~50 B actifs, « 2,8T-A50B »)**, plus grand modèle open weight à ce jour, 1 M de contexte, architecture « Kimi Delta Attention », multimodal. **Tarif API 3/0,30/15 USD/M ; abonnements app 19–199 USD/mois.** **Les poids ouverts sont annoncés « d’ici le 27 juillet 2026 » et ne sont pas encore publiés au 20 juillet** — la distinction capacités déclarées / poids disponibles / qualité indépendante reste donc décisive. Benchmarks : #1 Frontend Code Arena, 3e GDPval-AA v2 (éval tierce) [S48–S51, S66].
 
-**Belgique.** Les poids améliorent la portabilité. API directe, abonnement, DPA, région, TVA et qualité FR/NL restent à confirmer. Le CLI peut lire/écrire, lancer des commandes, utiliser MCP et sous-agents: permissions minimales obligatoires.
+**Belgique.** Les poids (à venir) amélioreront la portabilité. API directe, abonnement, DPA, région, TVA et qualité FR/NL restent à confirmer avant données sensibles. Le CLI peut lire/écrire, lancer des commandes, utiliser MCP et sous-agents : permissions minimales obligatoires. K2.7 Code est désormais aussi sélectionnable dans GitHub Copilot (1er open weight du sélecteur) [S70].
 
 ### 20. Z.AI / GLM
 
@@ -165,4 +167,4 @@ Les scores publiés par un fournisseur sont des **capacités déclarées** jusqu
 
 ## Limites
 
-La consultation web ne permet pas de simuler chaque checkout belge ni de signer un contrat. Certaines pages sont dynamiques ou géolocalisées. Les latences, quotas et remises dépendent du compte. Les incidents publics n’ont été inclus que lorsqu’une source primaire et un impact encore pertinent étaient disponibles; aucun incident spécifique suffisamment récent et vérifié n’a été ajouté cette fois. Une prochaine édition doit comparer les changements à cet état initial.
+La consultation web ne permet pas de simuler chaque checkout belge ni de signer un contrat. Certaines pages sont dynamiques ou géolocalisées. Les latences, quotas et remises dépendent du compte. **Limite spécifique à cette exécution : le proxy a bloqué openai.com et les pages BCE (HTTP 403) ; les chiffres OpenAI et le taux CNY sont donc à revérifier hors environnement contraint.** Les benchmarks Kimi/Inkling proviennent de leaderboards ou d’évaluations tierces non réexécutées localement. Contexte réglementaire ajouté : jalon AI Act du 2 août 2026 (sanctions GPAI possibles) et plainte belge contre DeepSeek. La prochaine édition comparera à l’état du 20 juillet consigné dans [historique.md](historique.md).
