@@ -1,6 +1,6 @@
 # Bonnes pratiques de développement
 
-État vérifié le **17 juillet 2026**. Les mentions distinguent **[Officiel]** recommandation publiée par un fournisseur, **[Consensus]** pratique convergente entre plusieurs fournisseurs et **[Déduction]** conclusion analytique de cet observatoire.
+État vérifié le **17 juillet 2026**, ré-vérification ciblée le **21 juillet 2026** (nouveaux modèles de tête et jalon AI Act du 2 août). Les mentions distinguent **[Officiel]** recommandation publiée par un fournisseur, **[Consensus]** pratique convergente entre plusieurs fournisseurs et **[Déduction]** conclusion analytique de cet observatoire.
 
 ## Architecture de référence
 
@@ -57,7 +57,7 @@ Tracer request ID, version modèle, version prompt, outils, temps, jetons/cache,
 - Signer DPA et clauses de transfert; vérifier durée de rétention, entraînement, suppression, chiffrement, SSO/RBAC, audit et certifications.
 - Modéliser prompt injection, exfiltration, tool poisoning, SSRF, code arbitraire, escalade de privilèges, supply chain et fuite inter-utilisateurs.
 - Filtrer entrée et sortie selon le risque, mais ne jamais considérer un garde-fou fournisseur comme contrôle unique.
-- Documenter supervision humaine, transparence à l’utilisateur et limites. Revoir le calendrier AI Act [S57–S59].
+- Documenter supervision humaine, transparence à l’utilisateur et limites. **Échéance imminente:** au 2 août 2026 (J-12), les obligations de transparence de l’article 50 (divulgation chatbot, marquage lisible par machine des contenus générés, étiquetage des deepfakes) s’appliquent, avec pouvoirs d’exécution sur les GPAI; report ciblé au 2 décembre 2026 pour le marquage des systèmes préexistants. Auditer dès maintenant tout produit destiné au public [S57–S59, S65].
 
 ## Coût, performance et résilience
 
@@ -73,15 +73,15 @@ Tracer request ID, version modèle, version prompt, outils, temps, jetons/cache,
 
 ### 1. OpenAI
 
-**[Officiel, S01/S05]** Utiliser snapshots pour stabilité, Responses/Agents SDK pour outils, structured outputs, streaming, batch/flex et IDs de requête. **[Déduction]** Tester le seuil >272 k de GPT-5.5 avant d’autoriser des contextes géants; séparer budget outils et tokens.
+**[Officiel, S01/S05/S61]** Utiliser snapshots pour stabilité, Responses/Agents SDK pour outils, structured outputs, streaming, batch/flex et IDs de requête. **[Déduction]** La série GPT-5.6 (Sol/Terra/Luna) étant récente, revérifier contexte, cache et classes tarifaires avant migration; épingler la version, tester le seuil de long contexte avant d’autoriser des contextes géants et séparer budget outils et tokens.
 
 ### 2. Anthropic
 
-**[Officiel, S06–S08]** Exploiter prompt caching, batch -50 %, modèles datés et budget de raisonnement approprié. **[Déduction]** Réserver Opus aux tâches où le gain de réussite compense le prix; surveiller dépréciations et options de résidence.
+**[Officiel, S06–S08, S62]** Exploiter prompt caching, batch -50 %, IDs de modèles datés/épinglés (format sans date depuis la génération 4.6, toujours des snapshots figés) et budget de raisonnement approprié. **[Déduction]** Réserver Fable 5 (10/50) et Opus 4.8 (5/25) aux tâches où le gain de réussite compense le prix; utiliser Sonnet 5 (intro 2/10 jusqu’au 31/08/2026) et Haiku 4.5 pour le volume; surveiller dépréciations et options de résidence.
 
 ### 3. Google
 
-**[Officiel, S09–S11]** Le payant exclut l’usage d’amélioration selon la grille; cache, batch, Flex, Priority, Search grounding et file search ont des unités séparées. **[Déduction]** Pour production UE, préférer projet payant et contrôles Vertex plutôt que tier gratuit.
+**[Officiel, S09–S11, S64]** Le payant exclut l’usage d’amélioration selon la grille; cache, batch, Flex, Priority, Search grounding et file search ont des unités séparées. Pour l’open weight, Gemma 4 est sous licence Apache 2.0 (usage commercial sans restriction). **[Déduction]** Pour production UE, préférer projet payant et contrôles Vertex plutôt que tier gratuit; pour l’auto-hébergement, Gemma 4 (Apache 2.0) simplifie la conformité de licence mais transfère les obligations d’exploitant.
 
 ### 4. Microsoft
 

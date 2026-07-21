@@ -1,6 +1,6 @@
 # Analyse détaillée
 
-Vérification: **17 juillet 2026**. Point de vue: particulier ou développeur résidant en Belgique. Cette analyse est informative; les volets RGPD et AI Act ne constituent pas un avis juridique.
+Vérification: **17 juillet 2026**, ré-vérification ciblée le **21 juillet 2026** (modèles de tête OpenAI/Anthropic/Google et calendrier AI Act). Point de vue: particulier ou développeur résidant en Belgique. Cette analyse est informative; les volets RGPD et AI Act ne constituent pas un avis juridique.
 
 ## Méthodologie et sélection
 
@@ -18,7 +18,7 @@ Les scores publiés par un fournisseur sont des **capacités déclarées** jusqu
 
 ### 1. OpenAI
 
-**Positionnement.** GPT-5.5 est un modèle frontière texte/vision en entrée, 1,05 M de contexte et 128 k de sortie; ChatGPT est l’application, l’API Responses la plateforme, Codex l’agent de code [S01–S02]. Outils natifs: web, fichiers, génération d’image, interpréteur, shell hébergé, patch, computer use et MCP.
+**Positionnement.** La série **GPT-5.6 (Sol, Terra, Luna)**, déployée vers le 9 juillet 2026, devient la ligne de tête: GPT-5.6 Sol est orienté raisonnement frontière et travail agentique de longue durée, aux tarifs API 5 USD/M entrée et 30 USD/M sortie [S61]. GPT-5.5 (1,05 M de contexte, 128 k de sortie) reste disponible comme génération précédente [S01–S02]. ChatGPT est l’application, l’API Responses la plateforme, Codex l’agent de code. Outils natifs: web, fichiers, génération d’image, interpréteur, shell hébergé, patch, computer use et MCP. **Fiabilité:** les pages OpenAI renvoient un HTTP 403 via le proxy; prix et positionnement de GPT-5.6 proviennent de la recherche sur domaines officiels, contexte exact et classes tarifaires à reconfirmer.
 
 **Belgique.** L’usage est largement pertinent en français et néerlandais, mais la qualité doit être testée par domaine. L’API publie l’absence d’entraînement par défaut et des contrôles de résidence EEE pour clients/services éligibles [S03]. Les prix de l’API sont en USD hors taxes; le prix ChatGPT belge exact et la TVA doivent être confirmés au checkout.
 
@@ -26,7 +26,7 @@ Les scores publiés par un fournisseur sont des **capacités déclarées** jusqu
 
 ### 2. Anthropic
 
-**Positionnement.** Opus 4.8 vise les tâches difficiles; Sonnet 5/4.6 offre un compromis coût-vitesse; Claude Code est l’agent de développement. Le catalogue publié atteint 1 M de contexte pour le haut de gamme [S06–S08].
+**Positionnement.** **Claude Fable 5** (`claude-fable-5`, GA le 9 juin 2026) est désormais le modèle le plus capable en disponibilité générale, au-dessus d’Opus 4.8: 1 M de contexte, 128 k de sortie, raisonnement adaptatif toujours actif, prix 10 USD/M entrée et 50 USD/M sortie [S62]. Opus 4.8 (5/25) reste conseillé pour le codage agentique et l’entreprise; Sonnet 5 offre le meilleur compromis coût-vitesse (intro 2/10 jusqu’au 31 août 2026, standard 3/15); Haiku 4.5 est le plus rapide (1/5, 200 k). **Claude Mythos 5** (`claude-mythos-5`) partage les specs de Fable 5 mais reste en accès sur invitation (Project Glasswing, cybersécurité défensive). Claude Code est l’agent de développement. Un billet Anthropic « Redeploying Claude Fable 5 » existe mais n’a pas pu être lu (403); l’événement est signalé sans détail vérifié [S06–S08, S62, S63].
 
 **Belgique et données.** Application et API sont pertinentes pour FR/NL, à valider sur le corpus réel. DPA, résidence et rétention varient entre API directe, AWS et Google Cloud; la résidence peut ajouter un multiplicateur. Vérifier le contrat exact.
 
@@ -34,7 +34,7 @@ Les scores publiés par un fournisseur sont des **capacités déclarées** jusqu
 
 ### 3. Google
 
-**Positionnement.** Gemini combine multimodalité, contexte 1 M, recherche Google/Maps et agents managés. Gemini 3.5 Flash est présenté comme modèle rapide à intelligence élevée [S09–S11]. Gemini app, AI Studio, Gemini API et Vertex AI sont des surfaces différentes.
+**Positionnement.** Gemini combine multimodalité, contexte 1 M, recherche Google/Maps et agents managés. Gemini 3.5 Flash est présenté comme modèle rapide à intelligence élevée [S09–S11]. Gemini app, AI Studio, Gemini API et Vertex AI sont des surfaces différentes. Côté open weight, **Gemma 4** est repassé sous **licence Apache 2.0** (levée des restrictions commerciales), en tailles E2B/E4B/12B/26B A4B/31B, 256 k de contexte et 140+ langues, avec une mise à jour furtive le 16 juillet 2026 (Flash Attention 4, corrections d’appel d’outils, vision) [S64]. C’est un signal fort pour l’auto-hébergement en Belgique, sous réserve des obligations d’exploitant.
 
 **Belgique.** Les tiers gratuits et payants Gemini API sont annoncés disponibles dans de nombreuses régions, y compris EEE [S11]. Le payant n’utilise pas le contenu pour améliorer les produits selon la grille; le gratuit le peut [S09]. Facturation et TVA à vérifier dans le projet Google Cloud.
 

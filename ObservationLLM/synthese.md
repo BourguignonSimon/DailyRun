@@ -1,4 +1,6 @@
-# Synthèse décisionnelle — 17 juillet 2026
+# Synthèse décisionnelle — 21 juillet 2026
+
+> Ré-vérification ciblée du 21 juillet 2026 (base: édition du 17 juillet). Changements significatifs intégrés: nouvelle série frontière **OpenAI GPT-5.6 (Sol/Terra/Luna)**, **Anthropic Claude Fable 5** désormais modèle le plus capable en disponibilité générale (+ Mythos 5 sur invitation), **Google Gemma 4** repassé sous licence Apache 2.0, et **jalon AI Act du 2 août 2026 à J-12**. Détail dans [historique.md](historique.md).
 
 ## Verdict en une minute
 
@@ -17,18 +19,18 @@ Il n’existe pas un « meilleur LLM » unique. Pour un résident belge, le choi
 | Production UE sensible | Mistral ou cloud avec région UE | IBM / AWS / Azure / Google Cloud | DPA, région, contrôles et déploiement privé | Vérifier service, région et sous-traitants exacts |
 | Open weight / sur site | Llama, Mistral, Nemotron | Qwen, Kimi, GLM, DeepSeek | Contrôle et portabilité | Licence, sécurité, capacité GPU, évaluation locale |
 
-## Ce qui a changé
+## Ce qui a changé depuis le 17 juillet 2026
 
-Cette première édition n’avait pas de base antérieure dans le dépôt. Les faits marquants vérifiés sont:
+Ré-vérification ciblée quatre jours après l’édition initiale. Faits marquants nouveaux, confirmés sur sources officielles:
 
-- OpenAI positionne GPT-5.5 comme modèle frontière à 1,05 M de contexte; entrée 5 USD/M, sortie 30 USD/M, cache 0,50 USD/M. Au-delà de 272 k en entrée, un multiplicateur long contexte s’applique [S01–S02].
-- Anthropic affiche Opus 4.8 et Sonnet 5, avec 1 M de contexte pour les modèles de tête; batch à moitié prix et mécanismes de cache/résidence [S06–S08].
-- Google propose Gemini 3.5 Flash à 1,50 USD/M en entrée et 9 USD/M en sortie, avec cache, batch, Flex, Priority, recherche et agents facturés séparément [S09–S11].
-- xAI propose Grok 4.5 à 500 k de contexte, 2/6 USD par million de jetons en contexte court et 4/12 USD en long contexte [S22].
-- Mistral met en avant Mistral Medium 3.5 pour agents/code et une API européenne; Mistral Large est affiché à 2/6 USD par million et batch à -50 % [S19–S21].
-- GitHub remplace la logique de requêtes premium par des crédits IA: Pro 10 USD, Pro+ 39 USD, Max 100 USD; l’usage agent et les modèles chers consomment davantage [S37–S38].
-- Cursor a mis à jour sa politique le 15 juillet 2026: Privacy Mode interdit l’entraînement et s’appuie sur des accords de rétention zéro, sous réserve d’enquêtes d’abus [S42].
-- Kimi K3 a été annoncé le 16 juillet 2026; sa nouveauté impose de séparer capacités déclarées, poids disponibles et qualité mesurée indépendamment [S48–S51, S60].
+- **OpenAI lance la série GPT-5.6 (Sol, Terra, Luna).** GPT-5.6 Sol devient le modèle de tête, orienté raisonnement frontière et travail agentique de longue durée; annonce/déploiement vers le 9 juillet 2026, prix API 5 USD/M entrée et 30 USD/M sortie. Il **remplace GPT-5.5** comme phare OpenAI de l’observatoire [S61]. Fiabilité: pages OpenAI en 403 via le proxy, contexte exact à reconfirmer.
+- **Anthropic — Claude Fable 5 est désormais le modèle le plus capable en disponibilité générale**, au-dessus d’Opus 4.8: GA le 9 juin 2026, 1 M de contexte, 128 k de sortie, raisonnement adaptatif toujours actif, 10 USD/M entrée et 50 USD/M sortie. Claude Mythos 5 partage ses specs mais reste sur invitation (Project Glasswing, cybersécurité défensive). L’édition du 17 juillet avait omis ce duo: corrigé [S62].
+- **Sonnet 5** conserve un prix d’introduction 2/10 USD par million jusqu’au 31 août 2026 (standard 3/15) [S62].
+- **Google Gemma 4** repasse sous **licence Apache 2.0** (levée des restrictions commerciales de l’ancienne licence Gemma): poids ouverts E2B/E4B/12B/26B A4B/31B, 256 k de contexte, 140+ langues, avec une mise à jour furtive le 16 juillet 2026 (Flash Attention 4, corrections d’outils, vision) [S64].
+- **AI Act — J-12 avant le 2 août 2026.** Obligations de transparence (article 50) et pouvoirs d’exécution sur les GPAI applicables à cette date, amendes jusqu’au plus élevé de 15 M€ ou 3 % du CA mondial; report ciblé au 2 décembre 2026 (marquage lisible par machine des systèmes préexistants) et au 2 août 2027 (GPAI d’avant août 2025) [S65].
+- **Kimi K3** (annoncé le 16 juillet) reste trop récent pour une conclusion indépendante robuste [S60].
+
+Rappel des faits déjà établis le 17 juillet (inchangés): Gemini 3.5 Flash 1,50/9 USD [S09–S11]; Grok 4.5 500 k, 2/6 court et 4/12 long [S22]; Mistral Medium 3.5/Large et API UE [S19–S21]; GitHub Copilot Pro/Pro+/Max à crédits IA [S37–S38]; Cursor Privacy Mode/ZDR [S42].
 
 ## Prix et Belgique
 
@@ -38,7 +40,7 @@ Les offres explicitement disponibles dans l’EEE incluent notamment Gemini API;
 
 ## Capacités: ne pas confondre les produits
 
-- **Modèle**: moteur probabiliste, par exemple GPT-5.5, Claude Opus 4.8 ou Gemini 3.5 Flash.
+- **Modèle**: moteur probabiliste, par exemple GPT-5.6 Sol, Claude Fable 5, Claude Opus 4.8 ou Gemini 3.5 Flash.
 - **Application**: ChatGPT, Claude, Gemini, Grok, Vibe, Perplexity; elle ajoute recherche, fichiers, mémoire et interface.
 - **Plateforme API**: endpoints, SDK, quotas, cache, batch, observabilité et outils.
 - **Assistant de code**: Copilot ou Cursor, intégré à l’IDE et au dépôt.
@@ -46,7 +48,7 @@ Les offres explicitement disponibles dans l’EEE incluent notamment Gemini API;
 
 ## Sécurité, RGPD et AI Act
 
-Aucun fournisseur ne rend automatiquement un cas d’usage conforme. Pour toute donnée personnelle: finalité, minimisation, base juridique, DPA, transferts, rétention, droits des personnes, journalisation et analyse d’impact si nécessaire. Le 2 août 2026 reste un jalon important de transparence; les dates des systèmes à haut risque ont été révisées en 2026 [S57–S59]. Ceci n’est pas un avis juridique.
+Aucun fournisseur ne rend automatiquement un cas d’usage conforme. Pour toute donnée personnelle: finalité, minimisation, base juridique, DPA, transferts, rétention, droits des personnes, journalisation et analyse d’impact si nécessaire. Le **2 août 2026 (J-12)** est un jalon imminent: obligations de transparence de l’article 50 (divulgation chatbot, marquage des contenus générés, étiquetage des deepfakes) et pouvoirs d’exécution sur les GPAI, amendes jusqu’au plus élevé de 15 M€ ou 3 % du CA mondial; reports ciblés au 2 décembre 2026 et au 2 août 2027 [S57–S59, S65]. Ceci n’est pas un avis juridique.
 
 Pour les offres grand public, vérifier le réglage d’entraînement. OpenAI API n’entraîne pas par défaut [S03]; GitHub permet l’opt-out pour les plans individuels et n’entraîne pas sur Business/Enterprise [S37]; Cursor Privacy Mode exclut l’entraînement [S42]. Les contrats, régions et rétentions doivent être vérifiés produit par produit.
 

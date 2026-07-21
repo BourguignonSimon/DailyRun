@@ -1,6 +1,6 @@
 # Registre des sources
 
-Consultation: **17 juillet 2026**, heure de Bruxelles. Les URL sont dédupliquées. « Non publiée » signifie que la page n’affiche pas de date exploitable. Les pages dynamiques peuvent évoluer sans changer d’URL.
+Consultation initiale: **17 juillet 2026**; ré-vérification ciblée: **21 juillet 2026**, heure de Bruxelles. Le 21 juillet, seules les pages à fort risque de changement ont été recontrôlées (releases de modèles OpenAI/Anthropic/Google, calendrier AI Act) et les sources S61–S65 ajoutées; les sources S01–S60 conservent leur date de consultation du 17 juillet sauf indication contraire. Les URL sont dédupliquées. « Non publiée » signifie que la page n’affiche pas de date exploitable. Les pages dynamiques peuvent évoluer sans changer d’URL. Note d’accès: certaines pages OpenAI renvoient un HTTP 403 via le proxy de consultation; les données correspondantes proviennent de la recherche restreinte aux domaines officiels et sont marquées à reconfirmer.
 
 | ID | Acteur | Sujet | Nature | URL exacte | Publication / mise à jour connue | Consultation |
 |---|---|---|---|---|---|---|
@@ -64,6 +64,11 @@ Consultation: **17 juillet 2026**, heure de Bruxelles. Les URL sont dédupliqué
 | S58 | Union européenne | Obligations GPAI | Source institutionnelle | <https://digital-strategy.ec.europa.eu/en/faqs/guidelines-obligations-general-purpose-ai-providers> | 2025-11 | 2026-07-17 |
 | S59 | Conseil de l’UE | Calendrier AI Act modifié | Source institutionnelle | <https://www.consilium.europa.eu/en/policies/artificial-intelligence-act/timeline-artificial-intelligence/> | 2026-07 | 2026-07-17 |
 | S60 | Moonshot | Lancement Kimi K3 et position de marché | Source indépendante | <https://www.axios.com/2026/07/16/moonshot-kimi-ai-china-model-openai-anthropic> | 2026-07-16 | 2026-07-17 |
+| S61 | OpenAI | Série GPT-5.6 (Sol/Terra/Luna), prix et positionnement | Documentation / annonce officielle (403 en lecture directe) | <https://developers.openai.com/api/docs/models/gpt-5.6-sol> ; <https://openai.com/index/gpt-5-6/> | 2026-07 (déploiement ~09 juil.) | 2026-07-21 |
+| S62 | Anthropic | Claude Fable 5 et Mythos 5: specs, IDs, prix, lineup | Documentation officielle | <https://platform.claude.com/docs/en/about-claude/models/overview> ; <https://platform.claude.com/docs/en/about-claude/models/introducing-claude-fable-5-and-claude-mythos-5> | GA 2026-06-09 | 2026-07-21 |
+| S63 | Anthropic | Redéploiement de Claude Fable 5 (événement) | Publication officielle (403, non lue directement) | <https://www.anthropic.com/news/redeploying-fable-5> | 2026 | 2026-07-21 |
+| S64 | Google | Gemma 4 open weight, licence Apache 2.0, tailles et MàJ | Blog officiel + carte modèle | <https://blog.google/innovation-and-ai/technology/developers-tools/gemma-4/> ; <https://ai.google.dev/gemma/docs/core/model_card_4> | 2026-04-02, MàJ 2026-07-16 | 2026-07-21 |
+| S65 | Union européenne | AI Act — jalons du 2 août 2026 (art. 50 + GPAI) | Source institutionnelle | <https://ai-act-service-desk.ec.europa.eu/en/ai-act/timeline/timeline-implementation-eu-ai-act> | 2026-07 | 2026-07-21 |
 
 ## Sources non retenues
 
