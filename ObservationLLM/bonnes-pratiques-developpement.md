@@ -1,6 +1,6 @@
 # Bonnes pratiques de développement
 
-État vérifié le **17 juillet 2026**. Les mentions distinguent **[Officiel]** recommandation publiée par un fournisseur, **[Consensus]** pratique convergente entre plusieurs fournisseurs et **[Déduction]** conclusion analytique de cet observatoire.
+État vérifié le **23 juillet 2026** (base du 17 juillet). Les mentions distinguent **[Officiel]** recommandation publiée par un fournisseur, **[Consensus]** pratique convergente entre plusieurs fournisseurs et **[Déduction]** conclusion analytique de cet observatoire. Les principes ci-dessous sont stables d’une édition à l’autre; les changements de cette exécution portent surtout sur les modèles et le calendrier réglementaire (voir [historique.md](historique.md)).
 
 ## Architecture de référence
 
@@ -57,7 +57,7 @@ Tracer request ID, version modèle, version prompt, outils, temps, jetons/cache,
 - Signer DPA et clauses de transfert; vérifier durée de rétention, entraînement, suppression, chiffrement, SSO/RBAC, audit et certifications.
 - Modéliser prompt injection, exfiltration, tool poisoning, SSRF, code arbitraire, escalade de privilèges, supply chain et fuite inter-utilisateurs.
 - Filtrer entrée et sortie selon le risque, mais ne jamais considérer un garde-fou fournisseur comme contrôle unique.
-- Documenter supervision humaine, transparence à l’utilisateur et limites. Revoir le calendrier AI Act [S57–S59].
+- Documenter supervision humaine, transparence à l’utilisateur et limites. Revoir le calendrier AI Act, mis à jour par le paquet « Digital Omnibus » (haut risque reporté à déc. 2027/août 2028; transparence Art. 50 et exécution GPAI toujours au 2 août 2026; marquage des contenus générés au 2 déc. 2026) [S57–S59, S71–S73].
 
 ## Coût, performance et résilience
 
@@ -73,15 +73,15 @@ Tracer request ID, version modèle, version prompt, outils, temps, jetons/cache,
 
 ### 1. OpenAI
 
-**[Officiel, S01/S05]** Utiliser snapshots pour stabilité, Responses/Agents SDK pour outils, structured outputs, streaming, batch/flex et IDs de requête. **[Déduction]** Tester le seuil >272 k de GPT-5.5 avant d’autoriser des contextes géants; séparer budget outils et tokens.
+**[Officiel, S01/S05]** Utiliser snapshots pour stabilité, Responses/Agents SDK pour outils, structured outputs, streaming, batch/flex et IDs de requête. **[Déduction]** Inventorier le modèle réel derrière l’alias: la frontière serait passée à **GPT-5.6** (Sol/Terra/Luna, à confirmer, source primaire bloquée cette exécution) [S66]; re-tester les évaluations avant migration depuis GPT-5.5. Tester le seuil >272 k avant d’autoriser des contextes géants; séparer budget outils et tokens.
 
 ### 2. Anthropic
 
-**[Officiel, S06–S08]** Exploiter prompt caching, batch -50 %, modèles datés et budget de raisonnement approprié. **[Déduction]** Réserver Opus aux tâches où le gain de réussite compense le prix; surveiller dépréciations et options de résidence.
+**[Officiel, S06–S08, S61]** Exploiter prompt caching, batch -50 %, modèles datés et budget de raisonnement approprié. La tête de gamme est désormais **Fable 5** (10/1/50 USD); **Sonnet 5** est en prix de lancement 2/10 jusqu’au 31 août 2026. Le tokenizer récent (Opus 4.7+, Fable/Mythos 5, Sonnet 5) consomme ~30 % de jetons en plus: recompter les budgets. **[Déduction]** Réserver Fable 5/Opus aux tâches où le gain de réussite compense le prix; escalader depuis Sonnet/Haiku. Surveiller dépréciations (ex. Fast mode d’Opus 4.7 retiré le 24 juillet 2026) et options de résidence.
 
 ### 3. Google
 
-**[Officiel, S09–S11]** Le payant exclut l’usage d’amélioration selon la grille; cache, batch, Flex, Priority, Search grounding et file search ont des unités séparées. **[Déduction]** Pour production UE, préférer projet payant et contrôles Vertex plutôt que tier gratuit.
+**[Officiel, S09–S11, S64]** Le payant exclut l’usage d’amélioration selon la grille; cache, batch, Flex, Priority, Search grounding et file search ont des unités séparées. Le modèle rapide de référence est passé à **Gemini 3.6 Flash** (1,50/0,15/7,50; sortie en baisse); vérifier le slug exact et re-évaluer avant bascule. **[Déduction]** Pour production UE, préférer projet payant et contrôles Vertex plutôt que tier gratuit.
 
 ### 4. Microsoft
 
@@ -105,7 +105,7 @@ Tracer request ID, version modèle, version prompt, outils, temps, jetons/cache,
 
 ### 9. DeepSeek
 
-**[Officiel, S25–S26]** Utiliser cache lorsque le préfixe est identique et vérifier le modèle exact derrière les alias. **[Déduction]** Héberger les poids via fournisseur UE pour données sensibles; ajouter délais plus longs, fallback et revue de politique de données.
+**[Officiel, S25–S26, S67]** Vérifier le modèle exact derrière les alias: la famille est passée à **V4** (`deepseek-v4-pro`/`deepseek-v4-flash`) et les alias `deepseek-chat`/`deepseek-reasoner` sont retirés le 24 juillet 2026 — mettre à jour le paramètre `model` avant cette date. Utiliser cache lorsque le préfixe est identique. **[Déduction]** Héberger les poids via fournisseur UE pour données sensibles; ajouter délais plus longs, fallback et revue de politique de données. Grille V4 à confirmer sur source primaire.
 
 ### 10. Alibaba/Qwen
 

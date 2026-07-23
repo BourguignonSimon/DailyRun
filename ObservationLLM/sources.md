@@ -1,6 +1,8 @@
 # Registre des sources
 
-Consultation: **17 juillet 2026**, heure de Bruxelles. Les URL sont dédupliquées. « Non publiée » signifie que la page n’affiche pas de date exploitable. Les pages dynamiques peuvent évoluer sans changer d’URL.
+Consultation initiale: **17 juillet 2026**. Re-vérification: **23 juillet 2026**, heure de Bruxelles. Les URL sont dédupliquées. « Non publiée » signifie que la page n’affiche pas de date exploitable. Les pages dynamiques peuvent évoluer sans changer d’URL.
+
+**Limite de sortie réseau (exécution du 23 juillet 2026).** La politique proxy de la session a renvoyé un 403 (CONNECT refusé) sur plusieurs domaines officiels: `openai.com`, `developers.openai.com`, `platform.openai.com`, `help.openai.com`, `blog.google`, `ai.google.dev`, `docs.cloud.google.com`, `api-docs.deepseek.com`, `platform.kimi.ai`, `www.ecb.europa.eu`. Pour ces sources, les faits proviennent d’**extraits de recherche citant la page officielle**, non d’une lecture directe. Ils sont notés « source primaire non lue cette exécution » et « à confirmer ». Les pages effectivement lues le 23 juillet: `platform.claude.com` (Anthropic) et `cloud.google.com/vertex-ai` (Google). Les lignes S01–S60 conservent leur dernière date de consultation confirmée (17 juillet); seules les sources re-vérifiées ou ajoutées portent la date du 23 juillet.
 
 | ID | Acteur | Sujet | Nature | URL exacte | Publication / mise à jour connue | Consultation |
 |---|---|---|---|---|---|---|
@@ -58,13 +60,35 @@ Consultation: **17 juillet 2026**, heure de Bruxelles. Les URL sont dédupliqué
 | S52 | Z.AI | Prix GLM, cache et outils | Documentation officielle | <https://docs.z.ai/guides/overview/pricing> | Dynamique | 2026-07-17 |
 | S53 | Z.AI | Catalogue, contexte et langues | Documentation officielle | <https://docs.z.ai/guides/overview/overview> | Dynamique | 2026-07-17 |
 | S54 | Z.AI | Coding Plan | Page officielle | <https://z.ai/subscribe> | Dynamique | 2026-07-17 |
-| S55 | BCE | Taux EUR/USD/CNY | Source institutionnelle | <https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html> | 2026-07-14 | 2026-07-17 |
+| S55 | BCE | Taux EUR/USD/CNY | Source institutionnelle | <https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html> | EUR/USD 1,1408 (2026-07-22); EUR/CNY 7,7255 (2026-07-21) | 2026-07-23 (extrait; page bloquée) |
 | S56 | Belgique | Taux de TVA | Source institutionnelle | <https://finance.belgium.be/en/enterprises/vat/vat-obligation/rates-and-calculation/vat-rates> | Non publiée | 2026-07-17 |
 | S57 | Union européenne | AI Act, calendrier et transparence | Source institutionnelle | <https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai> | 2026-07 | 2026-07-17 |
 | S58 | Union européenne | Obligations GPAI | Source institutionnelle | <https://digital-strategy.ec.europa.eu/en/faqs/guidelines-obligations-general-purpose-ai-providers> | 2025-11 | 2026-07-17 |
 | S59 | Conseil de l’UE | Calendrier AI Act modifié | Source institutionnelle | <https://www.consilium.europa.eu/en/policies/artificial-intelligence-act/timeline-artificial-intelligence/> | 2026-07 | 2026-07-17 |
 | S60 | Moonshot | Lancement Kimi K3 et position de marché | Source indépendante | <https://www.axios.com/2026/07/16/moonshot-kimi-ai-china-model-openai-anthropic> | 2026-07-16 | 2026-07-17 |
 
+## Sources ajoutées le 23 juillet 2026
+
+Nouvelles sources liées aux changements observés dans la fenêtre 2026-07-17 → 2026-07-23. La colonne « Statut » indique si la page officielle a été lue directement (« lue »), ou seulement citée via extrait de recherche parce que le domaine était bloqué (« primaire non lue »).
+
+| ID | Acteur | Sujet | Nature | URL exacte | Publication / mise à jour connue | Statut / consultation |
+|---|---|---|---|---|---|---|
+| S61 | Anthropic | Fable 5 et Mythos 5: specs, API, sûreté | Documentation officielle | <https://platform.claude.com/docs/en/about-claude/models/introducing-claude-fable-5-and-claude-mythos-5> | Non publiée | Lue 2026-07-23 |
+| S62 | Anthropic | Redéploiement mondial de Fable 5 (1er juillet) | Publication officielle | <https://www.anthropic.com/news/redeploying-fable-5> | 2026-07-01 | Primaire non lue (403); extrait domaine officiel 2026-07-23 |
+| S63 | Anthropic | Contrôles d’export et suspension d’accès | Publication officielle | <https://www.anthropic.com/news/fable-mythos-access> | 2026-06 | Primaire non lue (403); extrait domaine officiel 2026-07-23 |
+| S64 | Google | Prix Vertex AI: Gemini 3.6 Flash, 3.5 Flash-Lite, 3.1 Pro | Page officielle | <https://cloud.google.com/vertex-ai/generative-ai/pricing> | Non publiée | Lue 2026-07-23 |
+| S65 | Google | Annonce Gemini 3.6 Flash / 3.5 Flash-Lite / Cyber | Publication officielle | <https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-6-flash-3-5-flash-lite-3-5-flash-cyber/> | 2026-07-21 | Primaire non lue (403); extrait 2026-07-23 |
+| S66 | OpenAI | Famille GPT-5.6 (Sol/Terra/Luna) | Publication officielle | <https://openai.com/index/gpt-5-6/> | ~2026-07-09 (rapporté) | Primaire non lue (403); consensus de recherche non vérifié 2026-07-23 |
+| S67 | DeepSeek | V4 (Pro/Flash), contexte 1 M, retrait des noms hérités | Documentation officielle | <https://api-docs.deepseek.com/updates/> | Preview 2026-04-24; retrait legacy 2026-07-24 | Primaire non lue (403); extrait 2026-07-23 |
+| S68 | Moonshot | Kimi K3: specs et prix | Documentation officielle | <https://platform.kimi.ai/docs/pricing/chat-v1> | 2026-07-16 | Primaire non lue (403); corroboré multi-sources 2026-07-23 |
+| S69 | Alibaba | Qwen3.8-Max-Preview (WAIC) | Presse de référence | <https://www.bloomberg.com/news/articles/2026-07-19/alibaba-s-qwen-unveils-preview-of-flagship-ai-model> | 2026-07-19 | Indépendante; page Qwen non lue 2026-07-23 |
+| S70 | Alibaba | Qwen-Image-3.0 | Source indépendante | <https://www.unite.ai/alibaba-launches-qwen-image-3-0-without-benchmarks-or-weights/> | 2026-07-21 | Indépendante 2026-07-23 |
+| S71 | Conseil de l’UE | Accord final: simplification de l’AI Act (Digital Omnibus) | Source institutionnelle | <https://www.consilium.europa.eu/en/press/press-releases/2026/06/29/artificial-intelligence-council-gives-final-green-light-to-simplify-and-streamline-rules/> | 2026-06-29 | Primaire non lue (403); extrait 2026-07-23 |
+| S72 | Conseil de l’UE | Accord provisoire de simplification | Source institutionnelle | <https://www.consilium.europa.eu/en/press/press-releases/2026/05/07/artificial-intelligence-council-and-parliament-agree-to-simplify-and-streamline-rules/> | 2026-05-07 | Primaire non lue (403); extrait 2026-07-23 |
+| S73 | Commission UE | Obligations GPAI sous l’AI Act (fiche) | Source institutionnelle | <https://digital-strategy.ec.europa.eu/en/factpages/general-purpose-ai-obligations-under-ai-act> | 2026 | Extrait 2026-07-23 |
+| S74 | Belgique | Reclassements TVA sectoriels (1er mars 2026), taux standard inchangé | Source institutionnelle | <https://finance.belgium.be/en/enterprises/vat/vat-obligation/rates-and-calculation/vat-rates> | 2026 | Extrait 2026-07-23 |
+| S75 | NIST/CAISI | Évaluation tierce de GLM-5.2 (évaluation externe, pas un changement d’offre) | Source institutionnelle | <https://www.nist.gov/news-events/news/2026/07/caisi-assessment-zais-glm-52> | 2026-07-17 | Extrait 2026-07-23 |
+
 ## Sources non retenues
 
-Les agrégateurs de prix, billets Reddit et comparatifs non reproductibles n’ont pas servi à fixer les caractéristiques. Ils ont uniquement orienté des vérifications sur les pages officielles. Les dates « dynamique » indiquent une page vivante sans date de version stable.
+Les agrégateurs de prix, billets Reddit et comparatifs non reproductibles n’ont pas servi à fixer les caractéristiques. Ils ont uniquement orienté des vérifications sur les pages officielles. Les dates « dynamique » indiquent une page vivante sans date de version stable. Cette exécution, faute d’accès direct à certains domaines officiels, plusieurs figures (GPT-5.6, DeepSeek V4, Kimi K3) restent au statut « à confirmer » tant qu’une lecture primaire n’a pas eu lieu.

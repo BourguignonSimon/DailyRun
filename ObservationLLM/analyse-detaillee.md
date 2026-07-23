@@ -1,6 +1,8 @@
 # Analyse détaillée
 
-Vérification: **17 juillet 2026**. Point de vue: particulier ou développeur résidant en Belgique. Cette analyse est informative; les volets RGPD et AI Act ne constituent pas un avis juridique.
+Vérification: **23 juillet 2026** (re-vérification; base initiale du 17 juillet). Point de vue: particulier ou développeur résidant en Belgique. Cette analyse est informative; les volets RGPD et AI Act ne constituent pas un avis juridique.
+
+> **Fiabilité de cette exécution.** La politique réseau a bloqué (403) plusieurs domaines officiels (OpenAI, DeepSeek, Kimi, une partie de Google, la BCE). Les faits issus de ces domaines reposent sur des extraits citant la page officielle, non sur une lecture directe; ils sont signalés « à confirmer ». Pages effectivement lues: platform.claude.com et cloud.google.com/vertex-ai. Détails et changements: [historique.md](historique.md).
 
 ## Méthodologie et sélection
 
@@ -18,7 +20,7 @@ Les scores publiés par un fournisseur sont des **capacités déclarées** jusqu
 
 ### 1. OpenAI
 
-**Positionnement.** GPT-5.5 est un modèle frontière texte/vision en entrée, 1,05 M de contexte et 128 k de sortie; ChatGPT est l’application, l’API Responses la plateforme, Codex l’agent de code [S01–S02]. Outils natifs: web, fichiers, génération d’image, interpréteur, shell hébergé, patch, computer use et MCP.
+**Positionnement.** Au 23 juillet 2026, la frontière semble être la famille **GPT-5.6** (Sol/Terra/Luna, GA ~9 juillet), qui remplacerait GPT-5.5 — **à confirmer sur source primaire**, openai.com étant bloqué cette exécution [S66]. Prix rapportés (non vérifiés): Sol 5/30, Terra 2,50/15, Luna 1/6 USD par million. Sur la base précédente, GPT-5.5 est un modèle frontière texte/vision, 1,05 M de contexte et 128 k de sortie; ChatGPT est l’application, l’API Responses la plateforme, Codex l’agent de code [S01–S02]. Outils natifs: web, fichiers, génération d’image, interpréteur, shell hébergé, patch, computer use et MCP.
 
 **Belgique.** L’usage est largement pertinent en français et néerlandais, mais la qualité doit être testée par domaine. L’API publie l’absence d’entraînement par défaut et des contrôles de résidence EEE pour clients/services éligibles [S03]. Les prix de l’API sont en USD hors taxes; le prix ChatGPT belge exact et la TVA doivent être confirmés au checkout.
 
@@ -26,7 +28,7 @@ Les scores publiés par un fournisseur sont des **capacités déclarées** jusqu
 
 ### 2. Anthropic
 
-**Positionnement.** Opus 4.8 vise les tâches difficiles; Sonnet 5/4.6 offre un compromis coût-vitesse; Claude Code est l’agent de développement. Le catalogue publié atteint 1 M de contexte pour le haut de gamme [S06–S08].
+**Positionnement.** La tête de gamme est **Claude Fable 5** (`claude-fable-5`), modèle le plus capable largement diffusé, **au-dessus d’Opus 4.8**: 1 M de contexte, 128 k de sortie (300 k en batch bêta), texte+image en entrée, « thinking » toujours actif, classificateurs de sûreté pouvant refuser. Prix API 10/1/50 USD par million, batch −50 % (5/25); GA le 9 juin 2026, redéployé mondialement le 1er juillet après suspension liée aux contrôles d’export US (12–30 juin). Un sibling **Mythos 5** partage specs et prix mais sans classificateurs, en disponibilité restreinte sur invitation (Project Glasswing, cyber défensive), rétention 30 jours, pas de ZDR [S61–S63]. Opus 4.8 (5/0,50/25) vise les tâches difficiles; **Sonnet 5** est en prix de lancement 2/10 USD jusqu’au 31 août 2026 puis 3/15; Sonnet 4.6 et Haiku 4.5 complètent la grille; Claude Code est l’agent de développement. Le catalogue atteint 1 M de contexte sur le haut de gamme [S06–S08, S61].
 
 **Belgique et données.** Application et API sont pertinentes pour FR/NL, à valider sur le corpus réel. DPA, résidence et rétention varient entre API directe, AWS et Google Cloud; la résidence peut ajouter un multiplicateur. Vérifier le contrat exact.
 
@@ -34,7 +36,7 @@ Les scores publiés par un fournisseur sont des **capacités déclarées** jusqu
 
 ### 3. Google
 
-**Positionnement.** Gemini combine multimodalité, contexte 1 M, recherche Google/Maps et agents managés. Gemini 3.5 Flash est présenté comme modèle rapide à intelligence élevée [S09–S11]. Gemini app, AI Studio, Gemini API et Vertex AI sont des surfaces différentes.
+**Positionnement.** Gemini combine multimodalité, contexte 1 M, recherche Google/Maps et agents managés. Depuis le **21 juillet 2026**, le modèle rapide de référence est **Gemini 3.6 Flash** (1,50/0,15/7,50 USD par million; la sortie baisse de 9 → 7,50 vs 3.5 Flash), accompagné de **Gemini 3.5 Flash-Lite** (0,30/0,03/2,50) et **3.5 Flash Cyber** (sécurité); le palier Pro courant est **Gemini 3.1 Pro Preview**, et Google annonce le pré-entraînement de **Gemini 4** [S64]. Gemini 3.5 Flash reste listé. Gemini app, AI Studio, Gemini API et Vertex AI sont des surfaces différentes.
 
 **Belgique.** Les tiers gratuits et payants Gemini API sont annoncés disponibles dans de nombreuses régions, y compris EEE [S11]. Le payant n’utilise pas le contenu pour améliorer les produits selon la grille; le gratuit le peut [S09]. Facturation et TVA à vérifier dans le projet Google Cloud.
 
@@ -80,15 +82,15 @@ Les scores publiés par un fournisseur sont des **capacités déclarées** jusqu
 
 ### 9. DeepSeek
 
-**Positionnement.** Modèles très compétitifs en coût, application gratuite, API et poids. La page prix contrôlée publie cache hit/miss et contexte, mais peut précéder une version plus récente [S25–S26].
+**Positionnement.** Modèles très compétitifs en coût, application gratuite, API et poids. La famille est passée à **DeepSeek V4** (`deepseek-v4-pro`, `deepseek-v4-flash`, 1 M de contexte, modes Thinking/Non-Thinking, interfaces compatibles OpenAI et Anthropic); les alias hérités `deepseek-chat`/`deepseek-reasoner` (endpoints V3.2) sont **retirés à compter du 24 juillet 2026**. Preview annoncée le 24 avril 2026; date de lancement complet non confirmée officiellement. **La grille tarifaire n’a pas pu être lue** (api-docs.deepseek.com bloqué): les chiffres circulant chez les agrégateurs (V4-Pro ~0,435/0,87, V4-Flash ~0,14/0,28, régime peak/off-peak) ne sont **pas** repris ici comme faits [S25–S26, S67].
 
 **Belgique.** Disponibilité commerciale, DPA, transferts, rétention, usage d’entraînement et facture belge sont à confirmer. Pour données sensibles, préférer des poids hébergés par un fournisseur UE après revue de licence.
 
 ### 10. Alibaba Cloud / Qwen
 
-**Positionnement.** Qwen propose généralistes, code et multimodal, en poids et via Model Studio. Qwen 3.7 max global est tarifé en CNY avec régions global/US/Chine distinctes [S27–S28].
+**Positionnement.** Qwen propose généralistes, code et multimodal, en poids et via Model Studio. Le **19 juillet 2026** (WAIC, Shanghai), Alibaba a présenté **Qwen3.8-Max-Preview** — MoE clairsemé ~2,4 T, multimodal (texte/image/vidéo/documents), ~1 M de contexte — accessible en preview via Token Plan/Qoder à ~10 % du tarif standard, **sans poids, licence ni prix au jeton publiés**; annonce corroborée par la presse mais page Qwen non lue directement [S69]. **Qwen-Image-3.0** (3e génération d’image) a suivi le 21 juillet [S70]. Les tarifs Model Studio antérieurs restent en CNY avec régions global/US/Chine distinctes [S27–S28].
 
-**Belgique.** Le mot « global » ne prouve pas disponibilité, localisation UE ni facture conforme en Belgique. Vérifier compte, région, DPA, support et langues; FR/NL sont à tester.
+**Belgique.** Le mot « global » ne prouve pas disponibilité, localisation UE ni facture conforme en Belgique. Une preview sans licence ni prix stable ne doit pas fonder un choix de production. Vérifier compte, région, DPA, support et langues; FR/NL sont à tester.
 
 ### 11. NVIDIA
 
@@ -144,7 +146,7 @@ Les scores publiés par un fournisseur sont des **capacités déclarées** jusqu
 
 ### 19. Moonshot AI / Kimi
 
-**Positionnement.** Kimi couvre modèles open weight, application, Kimi Code CLI et SDK agent. Kimi K3 annoncé le 16 juillet 2026 est trop récent pour une conclusion indépendante robuste [S48–S51, S60].
+**Positionnement.** Kimi couvre modèles open weight, application, Kimi Code CLI et SDK agent. **Kimi K3** (annoncé le 16 juillet) s’est précisé dans la fenêtre: MoE ~2,8 T, multimodal natif, 1 M de contexte, « thinking » permanent; prix rapporté **3 / 0,30 / 15 USD** par million; poids ouverts attendus ~27 juillet 2026. La page tarifaire officielle étant bloquée (403), le prix est **corroboré multi-sources mais non primaire** [S48–S51, S60, S68].
 
 **Belgique.** Les poids améliorent la portabilité. API directe, abonnement, DPA, région, TVA et qualité FR/NL restent à confirmer. Le CLI peut lire/écrire, lancer des commandes, utiliser MCP et sous-agents: permissions minimales obligatoires.
 
@@ -163,6 +165,16 @@ Les scores publiés par un fournisseur sont des **capacités déclarées** jusqu
 - **Secteur réglementé:** gouvernance d’inventaire, classification des risques, validation humaine, audit des outils et avis juridique spécialisé.
 - **Open weight:** scanner poids/conteneurs, vérifier licence et provenance, isoler l’inférence, tester les garde-fous et maintenir les correctifs.
 
+## Note réglementaire (AI Act, mise à jour du 23 juillet 2026)
+
+Le paquet de simplification **« Digital Omnibus »** de l’AI Act a été adopté (proposition 19 nov. 2025; accord provisoire 7 mai 2026; Parlement 16 juin; Conseil 29 juin; signature 8 juillet 2026; publication au JO imminente). Effets pour un projet belge:
+
+- **Systèmes à haut risque reportés:** Annexe III (recrutement, scoring crédit, police, éducation, frontières) de 2 août 2026 à **2 décembre 2027**; Annexe I (produits réglementés: dispositifs médicaux, machines, véhicules, jouets) à **2 août 2028**.
+- **Le 2 août 2026 reste en vigueur** pour les obligations de transparence (Art. 50), les nouvelles interdictions Art. 5 (imagerie intime non consentie, CSAM) et l’applicabilité des pouvoirs d’exécution et amendes sur les fournisseurs GPAI (Art. 101; jusqu’à 3 % du CA mondial ou 15 M€). Les obligations GPAI sont en vigueur depuis le 2 août 2025; les modèles GPAI mis sur le marché avant cette date doivent se conformer au 2 août 2027.
+- Marquage des contenus générés: délai ramené de 6 à **3 mois** (échéance 2 déc. 2026); bacs à sable nationaux reportés au 2 déc. 2027.
+
+Ces éléments proviennent d’extraits citant les communiqués du Conseil et les fiches de la Commission (proxy bloquant la lecture directe): **à re-confirmer sur eur-lex à la publication au JO** [S57–S59, S71–S73]. Ceci n’est pas un avis juridique.
+
 ## Limites
 
-La consultation web ne permet pas de simuler chaque checkout belge ni de signer un contrat. Certaines pages sont dynamiques ou géolocalisées. Les latences, quotas et remises dépendent du compte. Les incidents publics n’ont été inclus que lorsqu’une source primaire et un impact encore pertinent étaient disponibles; aucun incident spécifique suffisamment récent et vérifié n’a été ajouté cette fois. Une prochaine édition doit comparer les changements à cet état initial.
+La consultation web ne permet pas de simuler chaque checkout belge ni de signer un contrat. Certaines pages sont dynamiques ou géolocalisées. Les latences, quotas et remises dépendent du compte. **Contrainte propre à l’exécution du 23 juillet 2026:** plusieurs domaines officiels (OpenAI, DeepSeek, Kimi, une partie de Google, la BCE) étaient bloqués par la politique réseau; les faits correspondants (GPT-5.6, grille DeepSeek V4, prix Kimi K3, clause EEE Google, taux BCE) sont marqués « à confirmer » et devront être re-vérifiés depuis un réseau non restreint. Les incidents publics n’ont été inclus que lorsqu’une source primaire et un impact encore pertinent étaient disponibles; aucun incident spécifique suffisamment récent et vérifié n’a été ajouté cette fois. La prochaine édition doit comparer les changements à l’état du 23 juillet 2026.
