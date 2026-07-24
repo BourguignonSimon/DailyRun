@@ -1,6 +1,8 @@
 # Registre des sources
 
-Consultation: **17 juillet 2026**, heure de Bruxelles. Les URL sont dédupliquées. « Non publiée » signifie que la page n’affiche pas de date exploitable. Les pages dynamiques peuvent évoluer sans changer d’URL.
+Consultation initiale: **17 juillet 2026**; revérification et ajouts: **24 juillet 2026**, heure de Bruxelles. Les URL sont dédupliquées. « Non publiée » signifie que la page n’affiche pas de date exploitable. Les pages dynamiques peuvent évoluer sans changer d’URL.
+
+> **Réserve d’accès (24 juillet 2026).** Lors de cette exécution, la politique d’egress du réseau a renvoyé un refus (proxy 403 sur CONNECT, non contourné) pour l’accès direct à de nombreux domaines officiels, dont: openai.com, developers.openai.com, ai.google.dev, blog.google, docs.x.ai, api-docs.deepseek.com, docs.z.ai, z.ai, help.aliyun.com, platform.moonshot.ai, cursor.com, github.blog, replit.com, huggingface.co, docs.perplexity.ai, aws.amazon.com (Bedrock), mistral.ai, cohere.com, ibm.com, learn.microsoft.com, europa.eu, consilium.europa.eu, ecb.europa.eu, finance.belgium.be. La vérification des changements de la semaine a donc reposé sur la **recherche restreinte aux domaines officiels** et, à défaut, sur des **sources secondaires** (marquées ci-dessous). Ont pu être lues en direct: platform.claude.com (Anthropic), la page de prix Microsoft 365 Copilot, et github.com/features/copilot/plans. Les identifiants S61–S66 et les faits modifiés au 24 juillet sont à revérifier sur les pages primaires dès que l’accès direct sera rétabli.
 
 | ID | Acteur | Sujet | Nature | URL exacte | Publication / mise à jour connue | Consultation |
 |---|---|---|---|---|---|---|
@@ -65,6 +67,21 @@ Consultation: **17 juillet 2026**, heure de Bruxelles. Les URL sont dédupliqué
 | S59 | Conseil de l’UE | Calendrier AI Act modifié | Source institutionnelle | <https://www.consilium.europa.eu/en/policies/artificial-intelligence-act/timeline-artificial-intelligence/> | 2026-07 | 2026-07-17 |
 | S60 | Moonshot | Lancement Kimi K3 et position de marché | Source indépendante | <https://www.axios.com/2026/07/16/moonshot-kimi-ai-china-model-openai-anthropic> | 2026-07-16 | 2026-07-17 |
 
+## Ajouts du 24 juillet 2026 (changements observés)
+
+Ces entrées documentent les mouvements de la semaine. Sauf mention « lu en direct », la page officielle n’a pas pu être ouverte (egress bloqué): la donnée provient de la recherche sur le domaine officiel ou d’une source secondaire, et reste à revérifier.
+
+| ID | Acteur | Sujet | Nature | URL exacte | Publication / mise à jour connue | Consultation |
+|---|---|---|---|---|---|---|
+| S61 | OpenAI | GPT-5.6 Sol/Terra/Luna, nouveau phare, prix/contexte | Publication officielle (via recherche, page bloquée) | <https://openai.com/index/gpt-5-6/> | 2026-07 | 2026-07-24 |
+| S62 | Google | Gemini 3.6 Flash (GA), 3.5 Flash-Lite, 3.5 Flash Cyber; prix sortie 7,50 USD/M | Blog/documentation officiels (via recherche, page bloquée) | <https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-6-flash-3-5-flash-lite-3-5-flash-cyber/> | 2026-07-21 | 2026-07-24 |
+| S63 | Alibaba/Qwen | Qwen3.8-Max-Preview (19/07) et Qwen-Audio-3.0-TTS (20/07) | Source secondaire (help.aliyun.com bloqué) | <https://www.marktechpost.com/2026/07/19/alibaba-previews-qwen3-8-max-a-2-4-trillion-parameter-multimodal-model-days-after-moonshots-kimi-k3-open-weight-launch/> | 2026-07-19 | 2026-07-24 |
+| S64 | Moonshot | Poids Kimi K3 datés du 27/07 (MIT modifiée), spécifications | Source secondaire + dépôt officiel GitHub kimi-code | <https://github.com/moonshotai/kimi-code> | 2026-07-24 | 2026-07-24 |
+| S65 | Microsoft | OpenAI activé comme sous-traitant M365 Copilot et Copilot Studio (24/07) | Message Center MC1422074 (via miroir; learn.microsoft.com bloqué) | <https://learn.microsoft.com/en-us/microsoft-365/copilot/openai-subprocessor> | 2026-07-24 | 2026-07-24 |
+| S66 | Union européenne | Digital Omnibus IA: report du haut risque (déc. 2027 / août 2028); 2 août 2026 maintenu | Source secondaire (europa.eu/consilium bloqués) | <https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai> | 2026-07-08 (signature) | 2026-07-24 |
+
 ## Sources non retenues
 
 Les agrégateurs de prix, billets Reddit et comparatifs non reproductibles n’ont pas servi à fixer les caractéristiques. Ils ont uniquement orienté des vérifications sur les pages officielles. Les dates « dynamique » indiquent une page vivante sans date de version stable.
+
+**Note d’exécution du 24 juillet 2026.** Faute d’accès direct aux pages primaires (egress bloqué), certains faits de la semaine reposent exceptionnellement sur des sources secondaires ou sur des extraits de recherche de domaines officiels. Ils sont explicitement marqués comme tels dans les livrables (« [recherche] », « [secondaire] », « à confirmer/revérifier ») et ne doivent pas être considérés comme vérifiés au même niveau que les entrées S01–S59 lues en direct le 17 juillet. L’ancre de conversion de devises reste le taux BCE vérifié du 14 juillet 2026 [S55], la page ECB n’ayant pas été atteignable cette fois; les indications secondaires (EUR/USD ≈ 1,1408 au 22 juillet) suggèrent un change stable.

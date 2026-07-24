@@ -1,4 +1,6 @@
-# Synthèse décisionnelle — 17 juillet 2026
+# Synthèse décisionnelle — 24 juillet 2026
+
+> Mise à jour du 24 juillet 2026. Changements marquants depuis le 17 juillet: OpenAI **GPT-5.6** (Sol/Terra/Luna, Sol devient le phare), Google **Gemini 3.6 Flash** (sortie à 7,50 USD/M), **Qwen3.8-Max-Preview** et **DeepSeek V4**, poids **Kimi K3** attendus le 27 juillet, Microsoft ajoutant **OpenAI comme sous-traitant** de M365 Copilot, et le jalon **AI Act du 2 août 2026** désormais imminent. Détail et réserves de vérification: [historique](historique.md). Cette exécution a subi un blocage réseau des accès directs aux sources officielles: plusieurs faits sont issus de la recherche et à revérifier (voir historique).
 
 ## Verdict en une minute
 
@@ -17,18 +19,20 @@ Il n’existe pas un « meilleur LLM » unique. Pour un résident belge, le choi
 | Production UE sensible | Mistral ou cloud avec région UE | IBM / AWS / Azure / Google Cloud | DPA, région, contrôles et déploiement privé | Vérifier service, région et sous-traitants exacts |
 | Open weight / sur site | Llama, Mistral, Nemotron | Qwen, Kimi, GLM, DeepSeek | Contrôle et portabilité | Licence, sécurité, capacité GPU, évaluation locale |
 
-## Ce qui a changé
+## Ce qui a changé depuis le 17 juillet 2026
 
-Cette première édition n’avait pas de base antérieure dans le dépôt. Les faits marquants vérifiés sont:
+Changements significatifs observés en une semaine (détail et niveau de preuve dans [historique](historique.md); certains faits sont issus de la recherche, l’accès direct aux sources officielles ayant été bloqué cette fois):
 
-- OpenAI positionne GPT-5.5 comme modèle frontière à 1,05 M de contexte; entrée 5 USD/M, sortie 30 USD/M, cache 0,50 USD/M. Au-delà de 272 k en entrée, un multiplicateur long contexte s’applique [S01–S02].
-- Anthropic affiche Opus 4.8 et Sonnet 5, avec 1 M de contexte pour les modèles de tête; batch à moitié prix et mécanismes de cache/résidence [S06–S08].
-- Google propose Gemini 3.5 Flash à 1,50 USD/M en entrée et 9 USD/M en sortie, avec cache, batch, Flex, Priority, recherche et agents facturés séparément [S09–S11].
-- xAI propose Grok 4.5 à 500 k de contexte, 2/6 USD par million de jetons en contexte court et 4/12 USD en long contexte [S22].
-- Mistral met en avant Mistral Medium 3.5 pour agents/code et une API européenne; Mistral Large est affiché à 2/6 USD par million et batch à -50 % [S19–S21].
-- GitHub remplace la logique de requêtes premium par des crédits IA: Pro 10 USD, Pro+ 39 USD, Max 100 USD; l’usage agent et les modèles chers consomment davantage [S37–S38].
-- Cursor a mis à jour sa politique le 15 juillet 2026: Privacy Mode interdit l’entraînement et s’appuie sur des accords de rétention zéro, sous réserve d’enquêtes d’abus [S42].
-- Kimi K3 a été annoncé le 16 juillet 2026; sa nouveauté impose de séparer capacités déclarées, poids disponibles et qualité mesurée indépendamment [S48–S51, S60].
+- **OpenAI — GPT-5.6.** Nouvelle famille Sol/Terra/Luna; **Sol** devient le modèle phare au-dessus de GPT-5.5, sur ChatGPT, Codex et l’API. Sol: 1,05 M de contexte, prix affichés 5 USD entrée / 30 USD sortie par million. GPT-5.5 reste disponible [S61].
+- **Google — Gemini 3.6 Flash (GA).** Sortie ramenée à **7,50 USD/M** (contre 9), entrée 1,50 USD/M, contexte 1 M. Ajout de 3.5 Flash-Lite (GA) et 3.5 Flash Cyber (pilote sécurité restreint). Disponibilité EEE des nouveaux modèles à confirmer [S62].
+- **Anthropic — inchangé dans la fenêtre**, mais le catalogue vérifié inclut désormais **Claude Fable 5** (10/50 USD/M, 1 M) au-dessus d’Opus 4.8 et Sonnet 5 (correction de périmètre; Fable 5 en GA depuis le 9 juin) [S06–S08].
+- **Alibaba/Qwen — Qwen3.8-Max-Preview** (19 juillet, 2,4 T, multimodal) et **Qwen-Audio-3.0-TTS** (20 juillet), via Model Studio; à confirmer [S63].
+- **DeepSeek — bascule V4**: retrait des alias `deepseek-chat`/`deepseek-reasoner` le 24 juillet, tarification heures pleines/creuses; à confirmer [S25].
+- **Moonshot/Kimi — poids K3** annoncés pour le 27 juillet 2026 (pas encore publiés), CLI `kimi-code` mise à jour le 24 juillet [S48–S51, S64].
+- **Microsoft — OpenAI sous-traitant** de M365 Copilot et Copilot Studio (activation par défaut le 24 juillet, opt-out possible): point RGPD à traiter [S65].
+- **GitHub Copilot** ajoute Gemini 3.6 Flash, la visibilité des crédits par cycle et un tableau de bord d’impact (20–22 juillet); prix inchangés [S37–S38]. **Cursor** double l’usage inclus des modèles maison et lance **Cursor Router** (mode Auto à trois profils) le 22 juillet; politique de données inchangée [S41–S42].
+- **AI Act — le 2 août 2026 est imminent**: transparence (art. 50), pouvoirs GPAI et surveillance nationale. Le Digital Omnibus (signé le 8 juillet) reporte le haut risque à décembre 2027/août 2028 [S57–S59, S66].
+- **xAI, AWS, Meta, Mistral, Cohere, IBM, NVIDIA, Z.AI/GLM, Replit, Hugging Face, Perplexity** — pas de changement confirmé dans la fenêtre.
 
 ## Prix et Belgique
 
@@ -38,7 +42,7 @@ Les offres explicitement disponibles dans l’EEE incluent notamment Gemini API;
 
 ## Capacités: ne pas confondre les produits
 
-- **Modèle**: moteur probabiliste, par exemple GPT-5.5, Claude Opus 4.8 ou Gemini 3.5 Flash.
+- **Modèle**: moteur probabiliste, par exemple GPT-5.6 Sol, Claude Fable 5/Opus 4.8 ou Gemini 3.6 Flash.
 - **Application**: ChatGPT, Claude, Gemini, Grok, Vibe, Perplexity; elle ajoute recherche, fichiers, mémoire et interface.
 - **Plateforme API**: endpoints, SDK, quotas, cache, batch, observabilité et outils.
 - **Assistant de code**: Copilot ou Cursor, intégré à l’IDE et au dépôt.
@@ -46,7 +50,7 @@ Les offres explicitement disponibles dans l’EEE incluent notamment Gemini API;
 
 ## Sécurité, RGPD et AI Act
 
-Aucun fournisseur ne rend automatiquement un cas d’usage conforme. Pour toute donnée personnelle: finalité, minimisation, base juridique, DPA, transferts, rétention, droits des personnes, journalisation et analyse d’impact si nécessaire. Le 2 août 2026 reste un jalon important de transparence; les dates des systèmes à haut risque ont été révisées en 2026 [S57–S59]. Ceci n’est pas un avis juridique.
+Aucun fournisseur ne rend automatiquement un cas d’usage conforme. Pour toute donnée personnelle: finalité, minimisation, base juridique, DPA, transferts, rétention, droits des personnes, journalisation et analyse d’impact si nécessaire. **Le 2 août 2026 est désormais imminent** (~9 jours): transparence (art. 50), pouvoirs d’exécution GPAI de la Commission et pouvoirs pleins des autorités nationales de surveillance. Le Digital Omnibus IA (signé le 8 juillet 2026) reporte les obligations à haut risque à décembre 2027 (annexe III) et août 2028 (annexe I) [S57–S59, S66]. Point d’actualité RGPD: Microsoft ajoute OpenAI à la liste des sous-traitants de M365 Copilot le 24 juillet — vérifier l’opt-out et informer les personnes [S65]. Ceci n’est pas un avis juridique.
 
 Pour les offres grand public, vérifier le réglage d’entraînement. OpenAI API n’entraîne pas par défaut [S03]; GitHub permet l’opt-out pour les plans individuels et n’entraîne pas sur Business/Enterprise [S37]; Cursor Privacy Mode exclut l’entraînement [S42]. Les contrats, régions et rétentions doivent être vérifiés produit par produit.
 

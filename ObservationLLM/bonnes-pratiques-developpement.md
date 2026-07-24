@@ -1,6 +1,6 @@
 # Bonnes pratiques de développement
 
-État vérifié le **17 juillet 2026**. Les mentions distinguent **[Officiel]** recommandation publiée par un fournisseur, **[Consensus]** pratique convergente entre plusieurs fournisseurs et **[Déduction]** conclusion analytique de cet observatoire.
+État vérifié le **24 juillet 2026** (révision de l’édition du 17 juillet). Les mentions distinguent **[Officiel]** recommandation publiée par un fournisseur, **[Consensus]** pratique convergente entre plusieurs fournisseurs et **[Déduction]** conclusion analytique de cet observatoire. Les principes ci-dessous sont stables d’une semaine à l’autre; seules quelques particularités de fournisseurs ont été rafraîchies (voir [historique](historique.md)).
 
 ## Architecture de référence
 
@@ -57,7 +57,8 @@ Tracer request ID, version modèle, version prompt, outils, temps, jetons/cache,
 - Signer DPA et clauses de transfert; vérifier durée de rétention, entraînement, suppression, chiffrement, SSO/RBAC, audit et certifications.
 - Modéliser prompt injection, exfiltration, tool poisoning, SSRF, code arbitraire, escalade de privilèges, supply chain et fuite inter-utilisateurs.
 - Filtrer entrée et sortie selon le risque, mais ne jamais considérer un garde-fou fournisseur comme contrôle unique.
-- Documenter supervision humaine, transparence à l’utilisateur et limites. Revoir le calendrier AI Act [S57–S59].
+- Documenter supervision humaine, transparence à l’utilisateur et limites. **Échéance imminente: le 2 août 2026** applique les obligations de transparence (art. 50: marquage des contenus générés, information des personnes), les pouvoirs GPAI de la Commission et la surveillance nationale; le Digital Omnibus reporte le haut risque à décembre 2027/août 2028. Préparer marquage des sorties, mentions d’interaction IA et inventaire des systèmes dès maintenant [S57–S59, S66].
+- Tenir à jour la liste des sous-traitants: p. ex. Microsoft ajoute OpenAI comme sous-traitant de M365 Copilot le 24 juillet 2026 (opt-out) — revoir le paramètre et le registre des traitements [S65].
 
 ## Coût, performance et résilience
 
@@ -73,7 +74,7 @@ Tracer request ID, version modèle, version prompt, outils, temps, jetons/cache,
 
 ### 1. OpenAI
 
-**[Officiel, S01/S05]** Utiliser snapshots pour stabilité, Responses/Agents SDK pour outils, structured outputs, streaming, batch/flex et IDs de requête. **[Déduction]** Tester le seuil >272 k de GPT-5.5 avant d’autoriser des contextes géants; séparer budget outils et tokens.
+**[Officiel, S01/S05]** Utiliser snapshots pour stabilité, Responses/Agents SDK pour outils, structured outputs, streaming, batch/flex et IDs de requête. **[Déduction]** Avec l’arrivée de **GPT-5.6 (Sol/Terra/Luna)**, réévaluer le choix Sol/Terra/Luna par tâche via une évaluation datée avant de migrer depuis GPT-5.5; tester le seuil long contexte (>272 k) avant d’autoriser des contextes géants; séparer budget outils et tokens.
 
 ### 2. Anthropic
 
@@ -81,7 +82,7 @@ Tracer request ID, version modèle, version prompt, outils, temps, jetons/cache,
 
 ### 3. Google
 
-**[Officiel, S09–S11]** Le payant exclut l’usage d’amélioration selon la grille; cache, batch, Flex, Priority, Search grounding et file search ont des unités séparées. **[Déduction]** Pour production UE, préférer projet payant et contrôles Vertex plutôt que tier gratuit.
+**[Officiel, S09–S11]** Le payant exclut l’usage d’amélioration selon la grille; cache, batch, Flex, Priority, Search grounding et file search ont des unités séparées. **[Déduction]** Comparer **Gemini 3.6 Flash** (sortie 7,50 USD/M) et 3.5 Flash-Lite au 3.5 Flash sur coût/qualité réels; pour production UE, préférer projet payant et contrôles Vertex plutôt que tier gratuit, et confirmer la disponibilité EEE des nouveaux modèles.
 
 ### 4. Microsoft
 
@@ -133,7 +134,7 @@ Tracer request ID, version modèle, version prompt, outils, temps, jetons/cache,
 
 ### 16. Cursor
 
-**[Officiel, S42–S43]** Imposer Privacy Mode, ZDR providers, règles de projet et contrôles d’équipe. **[Déduction]** Limiter commandes, MCP et répertoire; suivre usage par agent/modèle et revoir chaque diff.
+**[Officiel, S42–S43]** Imposer Privacy Mode, ZDR providers, règles de projet et contrôles d’équipe. **[Déduction]** Limiter commandes, MCP et répertoire; suivre usage par agent/modèle et revoir chaque diff. Depuis le 22 juillet 2026, le mode Auto passe par **Cursor Router** (profils Intelligence/Balance/Coût): fixer par politique d’équipe le profil et les modèles autorisés plutôt que de laisser le routage par défaut décider du coût.
 
 ### 17. Replit
 
