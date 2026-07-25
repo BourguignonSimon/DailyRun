@@ -1,6 +1,6 @@
 # Registre des sources
 
-Consultation: **17 juillet 2026**, heure de Bruxelles. Les URL sont dédupliquées. « Non publiée » signifie que la page n’affiche pas de date exploitable. Les pages dynamiques peuvent évoluer sans changer d’URL.
+Consultation: **25 juillet 2026**, heure de Bruxelles (édition précédente: 17 juillet 2026; les sources S01–S60 conservent leur date de consultation d’origine sauf mention contraire). Les URL sont dédupliquées. « Non publiée » signifie que la page n’affiche pas de date exploitable. Les pages dynamiques peuvent évoluer sans changer d’URL.
 
 | ID | Acteur | Sujet | Nature | URL exacte | Publication / mise à jour connue | Consultation |
 |---|---|---|---|---|---|---|
@@ -58,13 +58,23 @@ Consultation: **17 juillet 2026**, heure de Bruxelles. Les URL sont dédupliqué
 | S52 | Z.AI | Prix GLM, cache et outils | Documentation officielle | <https://docs.z.ai/guides/overview/pricing> | Dynamique | 2026-07-17 |
 | S53 | Z.AI | Catalogue, contexte et langues | Documentation officielle | <https://docs.z.ai/guides/overview/overview> | Dynamique | 2026-07-17 |
 | S54 | Z.AI | Coding Plan | Page officielle | <https://z.ai/subscribe> | Dynamique | 2026-07-17 |
-| S55 | BCE | Taux EUR/USD/CNY | Source institutionnelle | <https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html> | 2026-07-14 | 2026-07-17 |
+| S55 | BCE | Taux EUR/USD (1,1392 le 23-07); CNY non revérifié ce cycle | Source institutionnelle | <https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html> | 2026-07-23 | 2026-07-25 |
 | S56 | Belgique | Taux de TVA | Source institutionnelle | <https://finance.belgium.be/en/enterprises/vat/vat-obligation/rates-and-calculation/vat-rates> | Non publiée | 2026-07-17 |
 | S57 | Union européenne | AI Act, calendrier et transparence | Source institutionnelle | <https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai> | 2026-07 | 2026-07-17 |
 | S58 | Union européenne | Obligations GPAI | Source institutionnelle | <https://digital-strategy.ec.europa.eu/en/faqs/guidelines-obligations-general-purpose-ai-providers> | 2025-11 | 2026-07-17 |
 | S59 | Conseil de l’UE | Calendrier AI Act modifié | Source institutionnelle | <https://www.consilium.europa.eu/en/policies/artificial-intelligence-act/timeline-artificial-intelligence/> | 2026-07 | 2026-07-17 |
 | S60 | Moonshot | Lancement Kimi K3 et position de marché | Source indépendante | <https://www.axios.com/2026/07/16/moonshot-kimi-ai-china-model-openai-anthropic> | 2026-07-16 | 2026-07-17 |
+| S61 | OpenAI | Famille GPT-5.6 (Luna/Terra/Sol), prix, contexte, fonctions API | Documentation officielle | <https://developers.openai.com/api/docs/models/gpt-5.6> | 2026-07 | 2026-07-25 |
+| S62 | Anthropic | Claude Opus 5: prix, contexte, effort, Fast mode, changements | Documentation officielle | <https://platform.claude.com/docs/en/about-claude/models/whats-new-opus-5> | 2026-07-24 | 2026-07-25 |
+| S63 | Google | Gemini 3.6 Flash: prix entrée/sortie, cache, efficacité | Documentation officielle | <https://ai.google.dev/gemini-api/docs/pricing> | 2026-07-21 | 2026-07-25 |
+| S64 | Moonshot | Kimi K3: 2,8 T MoE, 1 M contexte, licence MIT modifiée, poids | Source indépendante + organisation officielle | <https://github.com/moonshotai> | 2026-07-16 | 2026-07-25 |
+| S65 | xAI | Grok 4.5: prix, seuil 200 k, co-entraînement Cursor | Documentation officielle | <https://docs.x.ai/developers/pricing> | 2026-07-08 | 2026-07-25 |
+| S66 | SpaceX / Anysphere | Rachat de Cursor par SpaceX (60 Md USD), clôture T3 2026 | Source indépendante | <https://www.cnbc.com/2026/06/16/spacex-spcx-cursor-acquisition-ipo.html> | 2026-06-16 | 2026-07-25 |
+| S67 | Mistral | Robostral Navigate, OCR 4, MoE « fat but sparse » en accès anticipé | Source indépendante | <https://techcrunch.com/2026/07/04/what-is-mistral-ai-everything-to-know-about-the-openai-competitor/> | 2026-07 | 2026-07-25 |
+| S68 | Union européenne | AI Act: article 50 et pouvoirs GPAI applicables le 2 août 2026; Digital Omnibus | Source institutionnelle | <https://artificialintelligenceact.eu/implementation-timeline/> | 2026-07 | 2026-07-25 |
 
 ## Sources non retenues
 
 Les agrégateurs de prix, billets Reddit et comparatifs non reproductibles n’ont pas servi à fixer les caractéristiques. Ils ont uniquement orienté des vérifications sur les pages officielles. Les dates « dynamique » indiquent une page vivante sans date de version stable.
+
+**Notes de vérification du cycle 25 juillet 2026.** La page officielle Anthropic « What's new in Claude Opus 5 » (S62) a été récupérée directement et confirme prix, contexte, effort et Fast mode. Les pages officielles OpenAI GPT-5.6 (S61) et Google Gemini 3.6 Flash (S63) n’ont pas pu être récupérées directement ce cycle (blocage proxy/HTTP 403); leurs valeurs proviennent de l’index de recherche citant ces pages officielles et de sources presse concordantes (edenai, finout, venturebeat), à revérifier au prochain cycle sur les pages sources. Le taux BCE USD (1,1392, 23-07) provient de l’index de recherche; le fichier XML BCE a renvoyé 403. Le taux CNY (7,7327) date du 14 juillet et n’a pas été revérifié: impact limité (uniquement Qwen).

@@ -1,4 +1,6 @@
-# Synthèse décisionnelle — 17 juillet 2026
+# Synthèse décisionnelle — 25 juillet 2026
+
+> Mise à jour du 25 juillet 2026. Édition précédente: 17 juillet 2026. Cette semaine a été marquée par un renouvellement des modèles de tête chez les trois principaux fournisseurs (**OpenAI GPT-5.6**, **Anthropic Claude Opus 5**, **Google Gemini 3.6 Flash**), la confirmation de **Kimi K3** en open weight et une consolidation structurelle majeure (**SpaceX/xAI rachète Cursor**). Détails datés dans [historique.md](historique.md).
 
 ## Verdict en une minute
 
@@ -17,28 +19,27 @@ Il n’existe pas un « meilleur LLM » unique. Pour un résident belge, le choi
 | Production UE sensible | Mistral ou cloud avec région UE | IBM / AWS / Azure / Google Cloud | DPA, région, contrôles et déploiement privé | Vérifier service, région et sous-traitants exacts |
 | Open weight / sur site | Llama, Mistral, Nemotron | Qwen, Kimi, GLM, DeepSeek | Contrôle et portabilité | Licence, sécurité, capacité GPU, évaluation locale |
 
-## Ce qui a changé
+## Ce qui a changé depuis le 17 juillet 2026
 
-Cette première édition n’avait pas de base antérieure dans le dépôt. Les faits marquants vérifiés sont:
+Semaine de renouvellement des modèles de tête. Faits marquants vérifiés:
 
-- OpenAI positionne GPT-5.5 comme modèle frontière à 1,05 M de contexte; entrée 5 USD/M, sortie 30 USD/M, cache 0,50 USD/M. Au-delà de 272 k en entrée, un multiplicateur long contexte s’applique [S01–S02].
-- Anthropic affiche Opus 4.8 et Sonnet 5, avec 1 M de contexte pour les modèles de tête; batch à moitié prix et mécanismes de cache/résidence [S06–S08].
-- Google propose Gemini 3.5 Flash à 1,50 USD/M en entrée et 9 USD/M en sortie, avec cache, batch, Flex, Priority, recherche et agents facturés séparément [S09–S11].
-- xAI propose Grok 4.5 à 500 k de contexte, 2/6 USD par million de jetons en contexte court et 4/12 USD en long contexte [S22].
-- Mistral met en avant Mistral Medium 3.5 pour agents/code et une API européenne; Mistral Large est affiché à 2/6 USD par million et batch à -50 % [S19–S21].
-- GitHub remplace la logique de requêtes premium par des crédits IA: Pro 10 USD, Pro+ 39 USD, Max 100 USD; l’usage agent et les modèles chers consomment davantage [S37–S38].
-- Cursor a mis à jour sa politique le 15 juillet 2026: Privacy Mode interdit l’entraînement et s’appuie sur des accords de rétention zéro, sous réserve d’enquêtes d’abus [S42].
-- Kimi K3 a été annoncé le 16 juillet 2026; sa nouveauté impose de séparer capacités déclarées, poids disponibles et qualité mesurée indépendamment [S48–S51, S60].
+- **OpenAI GPT-5.6** remplace GPT-5.5 comme famille frontière, en trois tailles: **Luna** (1/6 USD par million entrée/sortie), **Terra** (2,50/15 USD) et **Sol** (5/30 USD), 1 M de contexte, cutoff connaissance février 2026, disponibilité générale le 9 juillet 2026 sur ChatGPT, Codex et l’API. Nouvelles fonctions d’API: appel d’outils programmatique, orchestration multi-agents et points de rupture de cache de prompt [S61]. GPT-5.5 reste disponible; revérifier le comportement long contexte par modèle.
+- **Anthropic Claude Opus 5** (24 juillet 2026) succède à Opus 4.8 au **même prix, 5/25 USD** par million entrée/sortie; 1 M de contexte, 128 k de sortie, raisonnement activé par défaut (changement cassant), Fast mode à 10/50 USD, minimum de cache abaissé à 512 jetons, changements d’outils en cours de conversation (bêta). Anthropic le présente comme « intelligence frontière à la moitié du coût de Fable 5 ». Opus 4.8 et Sonnet 5 restent disponibles [S62].
+- **Google Gemini 3.6 Flash** (21 juillet 2026): entrée inchangée à **1,50 USD**, sortie abaissée de 9 à **7,50 USD** par million (-16,7 %), cache 0,15 USD + stockage 1 USD/M/h, et ~17 % de jetons de sortie en moins à tâche égale. Gemini 3.5 Pro annoncé à venir [S63].
+- **Moonshot Kimi K3** (16 juillet 2026) est désormais confirmé: MoE 2,8 T de paramètres, 1 M de contexte, entrées texte/image/vidéo, poids sous licence MIT modifiée annoncés pour le 27 juillet 2026; premier au Frontend Code Arena au moment de l’annonce. Rappel: capacités déclarées à revalider en interne [S64].
+- **Consolidation majeure**: SpaceX (fusionné avec xAI depuis février 2026) a conclu le 16 juin 2026 le rachat d’**Anysphere/Cursor pour 60 Md USD** en actions, clôture attendue au T3 2026 sous réserve réglementaire. Grok 4.5 (8 juillet 2026, 2/6 USD court contexte, 4/12 au-delà de 200 k) a été co-entraîné avec Cursor. L’indépendance de Cursor (n°16) devient un point de vigilance [S65–S66].
+- **Mistral** élargit hors du texte: modèle de navigation robotique Robostral Navigate, Mistral OCR 4 (boîtes englobantes, scores de confiance) et un nouveau MoE « fat but sparse » en accès anticipé partenaires [S67].
+- **AI Act — échéance imminente**: le 2 août 2026, les obligations de transparence de l’article 50 (marquage des contenus, divulgation des chatbots, étiquetage des hypertrucages) et les pouvoirs d’exécution GPAI de la Commission entrent en vigueur. Le Digital Omnibus (approbation finale du Parlement le 16 juin 2026) a repoussé de 12 à 16 mois les obligations « haut risque » mais a laissé l’article 50 et les GPAI intacts. Sanctions jusqu’au plus élevé de 15 M€ ou 3 % du CA mondial [S57–S59, S68].
 
 ## Prix et Belgique
 
-Taux indicatifs BCE du 14 juillet 2026: **1 EUR = 1,1405 USD = 7,7327 CNY** [S55]. Donc 20 USD ≈ 17,54 EUR hors TVA; avec 21 % de TVA belge, ≈ 21,22 EUR si la TVA n’est pas déjà incluse. Un prix affiché en EUR à un consommateur peut déjà inclure la TVA; un prix B2B ou API l’exclut souvent. Le checkout et la facture priment toujours.
+Taux indicatif BCE du 23 juillet 2026: **1 EUR = 1,1392 USD** [S55]; le taux CNY (7,7327 le 14 juillet) n’a pas été revérifié ce cycle et reste indicatif. La légère variation USD (−0,1 %) ne modifie pas les estimations EUR arrondies. Donc 20 USD ≈ 17,56 EUR hors TVA; avec 21 % de TVA belge, ≈ 21,25 EUR si la TVA n’est pas déjà incluse. Un prix affiché en EUR à un consommateur peut déjà inclure la TVA; un prix B2B ou API l’exclut souvent. Le checkout et la facture priment toujours.
 
 Les offres explicitement disponibles dans l’EEE incluent notamment Gemini API; OpenAI publie des contrôles de résidence européenne pour certains clients/services [S03, S11]. Pour DeepSeek, Qwen, Kimi et GLM, **la disponibilité commerciale en Belgique, la facturation EUR, la TVA et la localisation des données restent à confirmer** avant usage de données personnelles ou confidentielles.
 
 ## Capacités: ne pas confondre les produits
 
-- **Modèle**: moteur probabiliste, par exemple GPT-5.5, Claude Opus 4.8 ou Gemini 3.5 Flash.
+- **Modèle**: moteur probabiliste, par exemple GPT-5.6, Claude Opus 5 ou Gemini 3.6 Flash.
 - **Application**: ChatGPT, Claude, Gemini, Grok, Vibe, Perplexity; elle ajoute recherche, fichiers, mémoire et interface.
 - **Plateforme API**: endpoints, SDK, quotas, cache, batch, observabilité et outils.
 - **Assistant de code**: Copilot ou Cursor, intégré à l’IDE et au dépôt.
@@ -46,7 +47,7 @@ Les offres explicitement disponibles dans l’EEE incluent notamment Gemini API;
 
 ## Sécurité, RGPD et AI Act
 
-Aucun fournisseur ne rend automatiquement un cas d’usage conforme. Pour toute donnée personnelle: finalité, minimisation, base juridique, DPA, transferts, rétention, droits des personnes, journalisation et analyse d’impact si nécessaire. Le 2 août 2026 reste un jalon important de transparence; les dates des systèmes à haut risque ont été révisées en 2026 [S57–S59]. Ceci n’est pas un avis juridique.
+Aucun fournisseur ne rend automatiquement un cas d’usage conforme. Pour toute donnée personnelle: finalité, minimisation, base juridique, DPA, transferts, rétention, droits des personnes, journalisation et analyse d’impact si nécessaire. **Le 2 août 2026 (dans quelques jours)**, les obligations de transparence de l’article 50 et les pouvoirs d’exécution GPAI de la Commission deviennent applicables; le Digital Omnibus a repoussé le « haut risque » de 12 à 16 mois mais a laissé ces deux volets intacts [S57–S59, S68]. Ceci n’est pas un avis juridique.
 
 Pour les offres grand public, vérifier le réglage d’entraînement. OpenAI API n’entraîne pas par défaut [S03]; GitHub permet l’opt-out pour les plans individuels et n’entraîne pas sur Business/Enterprise [S37]; Cursor Privacy Mode exclut l’entraînement [S42]. Les contrats, régions et rétentions doivent être vérifiés produit par produit.
 
