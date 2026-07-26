@@ -1,6 +1,8 @@
 # Registre des sources
 
-Consultation: **17 juillet 2026**, heure de Bruxelles. Les URL sont dédupliquées. « Non publiée » signifie que la page n’affiche pas de date exploitable. Les pages dynamiques peuvent évoluer sans changer d’URL.
+Consultation initiale: **17 juillet 2026**. Dernière revérification: **26 juillet 2026**, heure de Bruxelles. Les URL sont dédupliquées. « Non publiée » signifie que la page n’affiche pas de date exploitable. Les pages dynamiques peuvent évoluer sans changer d’URL.
+
+**Fiabilité de la revérification du 26 juillet 2026.** La majorité des pages officielles ont renvoyé HTTP 403 à la récupération directe (anti-bot/JS). Seules les pages Anthropic (S63) et GitHub Copilot (S37) ont été lues intégralement. Les autres faits proviennent de recherches ciblées sur les domaines officiels (extraits d’index), avec URL officielle citée. Les valeurs numériques non lues directement sont marquées « à confirmer » et gardées à confiance moyenne.
 
 | ID | Acteur | Sujet | Nature | URL exacte | Publication / mise à jour connue | Consultation |
 |---|---|---|---|---|---|---|
@@ -64,6 +66,25 @@ Consultation: **17 juillet 2026**, heure de Bruxelles. Les URL sont dédupliqué
 | S58 | Union européenne | Obligations GPAI | Source institutionnelle | <https://digital-strategy.ec.europa.eu/en/faqs/guidelines-obligations-general-purpose-ai-providers> | 2025-11 | 2026-07-17 |
 | S59 | Conseil de l’UE | Calendrier AI Act modifié | Source institutionnelle | <https://www.consilium.europa.eu/en/policies/artificial-intelligence-act/timeline-artificial-intelligence/> | 2026-07 | 2026-07-17 |
 | S60 | Moonshot | Lancement Kimi K3 et position de marché | Source indépendante | <https://www.axios.com/2026/07/16/moonshot-kimi-ai-china-model-openai-anthropic> | 2026-07-16 | 2026-07-17 |
+
+## Ajouts de l’édition du 26 juillet 2026
+
+| ID | Acteur | Sujet | Nature | URL exacte | Publication / mise à jour connue | Consultation |
+|---|---|---|---|---|---|---|
+| S61 | OpenAI | Préversion GPT-5.6 Sol (nommage Sol/Terra/Luna) | Publication officielle | <https://openai.com/index/previewing-gpt-5-6-sol/> | 2026-07-09 | 2026-07-26 |
+| S62 | OpenAI | GPT-5.6, positionnement et prix des paliers | Publication officielle | <https://openai.com/index/gpt-5-6/> | 2026-07 | 2026-07-26 |
+| S63 | Anthropic | Prix Opus 5, Fable 5, Mythos 5, Sonnet 5 intro, Fast mode | Documentation officielle (page lue) | <https://platform.claude.com/docs/en/about-claude/pricing> | Non publiée | 2026-07-26 |
+| S64 | Google | Gemini 3.6 Flash, 3.5 Flash-Lite, 3.5 Flash Cyber | Blog officiel | <https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-6-flash-3-5-flash-lite-3-5-flash-cyber/> | 2026-07-22 (approx.) | 2026-07-26 |
+| S65 | IBM | Modèles de fondation Granite 4.1 | Blog recherche officiel | <https://research.ibm.com/blog/granite-4-1-ai-foundation-models> | 2026-07-22 | 2026-07-26 |
+| S66 | Microsoft | Mise à jour tarifaire déploiement Foundry (EU Data Zone, APAC) | Blog officiel | <https://techcommunity.microsoft.com/blog/azure-ai-foundry-blog/microsoft-foundry-model-deployment-pricing-update/4535385> | Effet 2026-09-01 | 2026-07-26 |
+| S67 | AWS | GPT-5.6 Sol/Terra/Luna en disponibilité générale sur Bedrock | Annonce officielle | <https://aws.amazon.com/about-aws/whats-new/2026/07/openai-gpt-sol-terra/> | 2026-07-13 (approx.) | 2026-07-26 |
+| S68 | DeepSeek | Préversion V4 (flash/pro), retrait chat/reasoner | Documentation officielle | <https://api-docs.deepseek.com/updates/> | Retrait 2026-07-24 | 2026-07-26 |
+| S69 | Alibaba/Qwen | Qwen3.8-Max-Preview et Token Plan | Blog officiel | <https://qwen.ai/blog?id=qwen3.8-max-preview> | 2026-07 | 2026-07-26 |
+| S70 | Moonshot | Livraison Kimi K3, specs et prix | Forum officiel | <https://forum.moonshot.ai/t/kimi-k3-is-here-our-most-capable-model/480> | 2026-07-23 (approx.) | 2026-07-26 |
+| S71 | Z.AI | GLM-5.2, contexte 1 M et Coding Plan | Blog/documentation officiels | <https://z.ai/blog/glm-5.2> | 2026-07 | 2026-07-26 |
+| S72 | Union européenne | Lignes directrices article 50 (transparence) | Source institutionnelle | <https://digital-strategy.ec.europa.eu/en/news/commission-publishes-guidelines-transparency-obligations-providers-and-deployers-certain-ai-systems> | 2026-07-20 (approx.) | 2026-07-26 |
+| S73 | BCE | Taux de référence EUR/USD/CNY | Source institutionnelle | <https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html> | 2026-07-24 | 2026-07-26 |
+| S74 | Cursor | Journal des changements (mode Auto via Cursor Router) | Documentation officielle | <https://cursor.com/changelog> | 2026-07-22 | 2026-07-26 |
 
 ## Sources non retenues
 

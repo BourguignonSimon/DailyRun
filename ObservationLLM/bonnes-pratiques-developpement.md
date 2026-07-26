@@ -1,6 +1,6 @@
 # Bonnes pratiques de développement
 
-État vérifié le **17 juillet 2026**. Les mentions distinguent **[Officiel]** recommandation publiée par un fournisseur, **[Consensus]** pratique convergente entre plusieurs fournisseurs et **[Déduction]** conclusion analytique de cet observatoire.
+État vérifié le **26 juillet 2026** (édition précédente: 17 juillet 2026). Les mentions distinguent **[Officiel]** recommandation publiée par un fournisseur, **[Consensus]** pratique convergente entre plusieurs fournisseurs et **[Déduction]** conclusion analytique de cet observatoire. Les particularités par fournisseur intègrent les changements du cycle (voir [historique.md](historique.md)).
 
 ## Architecture de référence
 
@@ -57,7 +57,7 @@ Tracer request ID, version modèle, version prompt, outils, temps, jetons/cache,
 - Signer DPA et clauses de transfert; vérifier durée de rétention, entraînement, suppression, chiffrement, SSO/RBAC, audit et certifications.
 - Modéliser prompt injection, exfiltration, tool poisoning, SSRF, code arbitraire, escalade de privilèges, supply chain et fuite inter-utilisateurs.
 - Filtrer entrée et sortie selon le risque, mais ne jamais considérer un garde-fou fournisseur comme contrôle unique.
-- Documenter supervision humaine, transparence à l’utilisateur et limites. Revoir le calendrier AI Act [S57–S59].
+- Documenter supervision humaine, transparence à l’utilisateur et limites. Revoir le calendrier AI Act [S57–S59]. La Commission a publié (~20 juillet 2026) les **lignes directrices finales de l’article 50** (transparence des systèmes interactifs, marquage des contenus générés), applicables au **2 août 2026**: prévoir divulgation « vous parlez à une IA » et marquage des sorties générées le cas échéant [S72].
 
 ## Coût, performance et résilience
 
@@ -73,15 +73,15 @@ Tracer request ID, version modèle, version prompt, outils, temps, jetons/cache,
 
 ### 1. OpenAI
 
-**[Officiel, S01/S05]** Utiliser snapshots pour stabilité, Responses/Agents SDK pour outils, structured outputs, streaming, batch/flex et IDs de requête. **[Déduction]** Tester le seuil >272 k de GPT-5.5 avant d’autoriser des contextes géants; séparer budget outils et tokens.
+**[Officiel, S01/S05, S61–S62]** Utiliser snapshots pour stabilité, Responses/Agents SDK pour outils, structured outputs, streaming, batch/flex et IDs de requête. **[Déduction]** Avec le nouveau nommage GPT-5.6 (Sol/Terra/Luna), épingler explicitement le palier ET la génération et revalider les évaluations avant de basculer un alias; vérifier la disponibilité UE (GA d’abord US) avant de dépendre de GPT-5.6 pour des données à résidence. Séparer budget outils et tokens.
 
 ### 2. Anthropic
 
-**[Officiel, S06–S08]** Exploiter prompt caching, batch -50 %, modèles datés et budget de raisonnement approprié. **[Déduction]** Réserver Opus aux tâches où le gain de réussite compense le prix; surveiller dépréciations et options de résidence.
+**[Officiel, S06–S08, S63]** Exploiter prompt caching, batch -50 %, modèles datés et budget de raisonnement approprié. Noter Opus 5 en tête (+ Fable 5/Mythos 5 limités), le prix d’introduction Sonnet 5 (jusqu’au 31 août) et le Fast mode (hors Batch). **[Déduction]** Réserver Opus 5 / Fast mode aux tâches où le gain de réussite compense le prix; intégrer le multiplicateur ×1,1 de `inference_geo:"us"` (Claude 4.6+) si résidence US; surveiller les dépréciations.
 
 ### 3. Google
 
-**[Officiel, S09–S11]** Le payant exclut l’usage d’amélioration selon la grille; cache, batch, Flex, Priority, Search grounding et file search ont des unités séparées. **[Déduction]** Pour production UE, préférer projet payant et contrôles Vertex plutôt que tier gratuit.
+**[Officiel, S09–S11, S64]** Le payant exclut l’usage d’amélioration selon la grille; cache, batch, Flex, Priority, Search grounding et file search ont des unités séparées. La gamme Flash évolue vite (Gemini 3.6 Flash, 3.5 Flash-Lite, Flash Cyber ~22 juillet, avec baisse de fait en sortie): revalider prix et comportement avant de basculer. **[Déduction]** Pour production UE, préférer projet payant et contrôles Vertex plutôt que tier gratuit.
 
 ### 4. Microsoft
 
@@ -105,7 +105,7 @@ Tracer request ID, version modèle, version prompt, outils, temps, jetons/cache,
 
 ### 9. DeepSeek
 
-**[Officiel, S25–S26]** Utiliser cache lorsque le préfixe est identique et vérifier le modèle exact derrière les alias. **[Déduction]** Héberger les poids via fournisseur UE pour données sensibles; ajouter délais plus longs, fallback et revue de politique de données.
+**[Officiel, S25–S26, S68]** Utiliser cache lorsque le préfixe est identique et vérifier le modèle exact derrière les alias. **[Déduction]** Le retrait des endpoints `deepseek-chat`/`deepseek-reasoner` après le 24 juillet 2026 (au profit de V4) illustre le risque des alias non épinglés: migrer vers `deepseek-v4-flash`/`deepseek-v4-pro` et tester avant échéance. Héberger les poids via fournisseur UE pour données sensibles; ajouter délais plus longs, fallback et revue de politique de données.
 
 ### 10. Alibaba/Qwen
 
@@ -121,7 +121,7 @@ Tracer request ID, version modèle, version prompt, outils, temps, jetons/cache,
 
 ### 13. IBM
 
-**[Officiel, S35–S36]** Utiliser Agent Lab, RAG et watsonx.governance pour inventaire/évaluation; les prix varient par pays et taxes. **[Déduction]** Justifier le surcoût de gouvernance par exigences d’audit et intégration hybride.
+**[Officiel, S35–S36, S65]** Utiliser Agent Lab, RAG et watsonx.governance pour inventaire/évaluation; les prix varient par pays et taxes. Granite 4.1 (denses 3B/8B/30B, Apache 2.0) est disponible sur watsonx et Hugging Face; le tarif par jeton du 4.1 n’est pas publié séparément. **[Déduction]** Justifier le surcoût de gouvernance par exigences d’audit et intégration hybride.
 
 ### 14. GitHub Copilot
 
@@ -145,11 +145,11 @@ Tracer request ID, version modèle, version prompt, outils, temps, jetons/cache,
 
 ### 19. Moonshot/Kimi
 
-**[Officiel, S49–S50]** Kimi recommande instructions claires, détails, délimiteurs, étapes, exemples, texte de référence et résumé des longues conversations; Kimi Code peut utiliser sous-agents, hooks et MCP. **[Déduction]** Activer hooks d’approbation et sandbox; ne pas exposer une clé API côté client.
+**[Officiel, S49–S50, S70]** Kimi recommande instructions claires, détails, délimiteurs, étapes, exemples, texte de référence et résumé des longues conversations; Kimi Code peut utiliser sous-agents, hooks et MCP. Kimi K3 est livré (1 M de contexte; 0,30 cache / 3 entrée / 15 sortie USD). **[Déduction]** Activer hooks d’approbation et sandbox; ne pas exposer une clé API côté client; valider FR/NL sur données réelles avant production.
 
 ### 20. Z.AI/GLM
 
-**[Officiel, S52–S54]** Prix distincts entrée/cache/sortie/outils, API OpenAI-compatible, contexte 200 k et plans code à quotas. **[Déduction]** Fixer un plafond web search, vérifier GLM-5.2 contre la grille tarifaire avant production et tester FR/NL.
+**[Officiel, S52–S54, S71]** Prix distincts entrée/cache/sortie/outils, API OpenAI-compatible, contexte 200 k (GLM-5.2 annoncé jusqu’à 1 M) et plans code à quotas; promo Coding Plan (facteur 0,67) jusqu’au 31 juillet 2026. **[Déduction]** Fixer un plafond web search, vérifier la grille tarifaire GLM-5.2 par lecture directe avant production (non lue ce cycle) et tester FR/NL.
 
 ## Checklist de mise en production
 
