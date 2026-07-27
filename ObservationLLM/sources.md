@@ -1,6 +1,8 @@
 # Registre des sources
 
-Consultation: **17 juillet 2026**, heure de Bruxelles. Les URL sont dédupliquées. « Non publiée » signifie que la page n’affiche pas de date exploitable. Les pages dynamiques peuvent évoluer sans changer d’URL.
+Consultation initiale: **17 juillet 2026**. Deuxième consultation: **27 juillet 2026**, heure de Bruxelles. Les URL sont dédupliquées. « Non publiée » signifie que la page n’affiche pas de date exploitable. Les pages dynamiques peuvent évoluer sans changer d’URL.
+
+> **Avertissement de méthode (2ᵉ édition, 27 juillet 2026).** Lors de cette exécution, la politique de sortie réseau de l’environnement a renvoyé **403 CONNECT** pour la quasi-totalité des hôtes officiels (vérifié via `$HTTPS_PROXY/__agentproxy/status`), rendant impossible le **rendu direct** des pages. Les entrées **S01–S60** ont été vérifiées par rendu direct le 17 juillet et sont conservées; les entrées **S61–S75** ajoutées le 27 juillet reposent sur la **recherche web ciblant les domaines officiels** (titres, extraits, dates), **sauf S75** dont le volet GitHub a été vérifié de première main via l’API GitHub authentifiée. Les URL S61–S75 sont donc citées comme sources officielles à reconfirmer par rendu direct dès que l’accès sera rétabli. Aucune politique de blocage n’a été contournée.
 
 | ID | Acteur | Sujet | Nature | URL exacte | Publication / mise à jour connue | Consultation |
 |---|---|---|---|---|---|---|
@@ -64,6 +66,21 @@ Consultation: **17 juillet 2026**, heure de Bruxelles. Les URL sont dédupliqué
 | S58 | Union européenne | Obligations GPAI | Source institutionnelle | <https://digital-strategy.ec.europa.eu/en/faqs/guidelines-obligations-general-purpose-ai-providers> | 2025-11 | 2026-07-17 |
 | S59 | Conseil de l’UE | Calendrier AI Act modifié | Source institutionnelle | <https://www.consilium.europa.eu/en/policies/artificial-intelligence-act/timeline-artificial-intelligence/> | 2026-07 | 2026-07-17 |
 | S60 | Moonshot | Lancement Kimi K3 et position de marché | Source indépendante | <https://www.axios.com/2026/07/16/moonshot-kimi-ai-china-model-openai-anthropic> | 2026-07-16 | 2026-07-17 |
+| S61 | OpenAI | GPT-5.6 Sol: contexte, prix, statut de phare | Documentation officielle (recherche) | <https://developers.openai.com/api/docs/models/gpt-5.6-sol> | 2026-07-09 | 2026-07-27 |
+| S62 | OpenAI | Annonce famille GPT-5.6 (Sol/Terra/Luna) | Publication officielle (recherche) | <https://openai.com/index/gpt-5-6/> | 2026-07-09 | 2026-07-27 |
+| S63 | Anthropic | Claude Opus 5: nouveautés, contexte, effort/raisonnement | Documentation officielle (recherche) | <https://platform.claude.com/docs/en/about-claude/models/whats-new-opus-5> | 2026-07-24 | 2026-07-27 |
+| S64 | Anthropic | Annonce Claude Opus 5 | Publication officielle (recherche) | <https://www.anthropic.com/news/claude-opus-5> | 2026-07-24 | 2026-07-27 |
+| S65 | Anthropic | Notes de version (Opus 5, fast mode, betas, Managed Agents) | Documentation officielle (recherche) | <https://platform.claude.com/docs/en/release-notes/overview> | 2026-07-24 | 2026-07-27 |
+| S66 | Google | Gemini 3.6 Flash, 3.5 Flash-Lite, 3.5 Flash Cyber | Blog officiel (recherche) | <https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-6-flash-3-5-flash-lite-3-5-flash-cyber/> | 2026-07-21 | 2026-07-27 |
+| S67 | Google | Fiche modèle Gemini 3.6 Flash (contexte, prix sortie 7,50 USD) | Documentation officielle (recherche) | <https://ai.google.dev/gemini-api/docs/models/gemini-3.6-flash> | 2026-07-21 | 2026-07-27 |
+| S68 | Microsoft | Extension du partenariat Microsoft × Mistral (Foundry, secteurs régulés) | Publication officielle (recherche) | <https://news.microsoft.com/source/2026/07/21/microsoft-and-mistral-expand-strategic-partnership-to-give-enterprises-and-regulated-industries-frontier-ai-they-can-control/> | 2026-07-21 | 2026-07-27 |
+| S69 | Microsoft | Mistral Medium 3.5 dans Copilot Studio | Blog officiel (recherche) | <https://www.microsoft.com/en-us/microsoft-copilot/blog/copilot-studio/mistral-joins-copilot-studios-growing-lineup-of-model-providers/> | 2026-07-21 | 2026-07-27 |
+| S70 | DeepSeek | Retrait de `deepseek-chat`/`deepseek-reasoner` → `deepseek-v4-flash` | Documentation officielle (recherche) | <https://api-docs.deepseek.com/updates/> | 2026-07-24 | 2026-07-27 |
+| S71 | Alibaba | Notes de version Model Studio, fin de remises Qwen3.7-Max | Documentation officielle (recherche) | <https://www.alibabacloud.com/help/en/model-studio/model-release-notes> | 2026-07 | 2026-07-27 |
+| S72 | GitHub | Tableau de bord « usage metrics impact » Copilot | Changelog officiel (recherche) | <https://github.blog/changelog/2026-07-22-new-copilot-usage-metrics-impact-dashboard/> | 2026-07-22 | 2026-07-27 |
+| S73 | Cursor | Cursor Router pour le mode Auto | Changelog officiel (recherche) | <https://cursor.com/changelog/router> | 2026-07-22 | 2026-07-27 |
+| S74 | Union européenne | Lignes directrices sur les obligations de transparence (AI Act) | Source institutionnelle (recherche) | <https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai> | 2026-07-20 | 2026-07-27 |
+| S75 | Moonshot | Kimi K3: poids ouverts annoncés; org GitHub vérifiée (aucun dépôt K3) | Org. officielle HF + API GitHub (GitHub vérifié) | <https://huggingface.co/moonshotai> ; <https://github.com/moonshotai> | 2026-07-27 | 2026-07-27 |
 
 ## Sources non retenues
 

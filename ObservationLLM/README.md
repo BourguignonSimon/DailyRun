@@ -1,6 +1,6 @@
 # Observatoire LLM et agents IA — Belgique
 
-Édition vérifiée le **17 juillet 2026**. Cette première édition couvre exactement 20 écosystèmes et sépare modèles, applications, plateformes API, assistants de code et agents autonomes.
+Édition vérifiée le **27 juillet 2026** (2ᵉ édition; base précédente le 17 juillet 2026). Elle couvre exactement 20 écosystèmes — inchangés, aucune entrée ni sortie — et sépare modèles, applications, plateformes API, assistants de code et agents autonomes. **Cette édition n’a pas pu rendre directement les pages officielles (blocage réseau 403); les mises à jour reposent sur la recherche web sur domaines officiels et sont signalées à revérifier.** Détail dans l’[historique](historique.md).
 
 ## Livrables
 
@@ -11,13 +11,15 @@
 - [Registre des sources](sources.md)
 - [Historique](historique.md)
 
-## Principaux changements constatés
+## Principaux changements constatés depuis le 17 juillet 2026
 
-- Première publication dans ce dépôt; aucune édition précédente n’était disponible.
-- Frontière 2026: GPT-5.5, Claude Opus 4.8/Sonnet 5, Gemini 3.5 Flash, Grok 4.5, Mistral Medium 3.5, Qwen 3.7, GLM-5.2 et Kimi K3.
-- Les offres agents deviennent des produits facturés séparément ou des boucles consommant modèle, outils et calcul; le coût par tâche remplace progressivement le seul coût par jeton.
-- Pour la Belgique, les prix publics restent souvent en USD hors TVA. Conversions indicatives avec les taux BCE du 14 juillet 2026: **1 EUR = 1,1405 USD = 7,7327 CNY**. TVA belge standard: **21 %**; le traitement réel dépend du statut client et de la facture.
-- Les obligations de transparence de l’AI Act entrent en application en août 2026; le calendrier des systèmes à haut risque a été modifié en juin 2026. Analyse informative, pas avis juridique.
+- **Nouveaux modèles de tête:** Claude **Opus 5** (24 juillet, prix inchangés 5/25 USD) et Google **Gemini 3.6 Flash** (21 juillet, sortie abaissée 9 → 7,50 USD). Correction: OpenAI **GPT-5.6 (Sol)** est le phare depuis le 9 juillet.
+- **Distribution UE:** partenariat **Microsoft × Mistral** étendu (Medium 3.5 + OCR 4 dans Foundry, Medium 3.5 dans Copilot Studio; cadrage souverain/régulé).
+- **Migrations/dépréciations:** DeepSeek retire `deepseek-chat`/`deepseek-reasoner` (→ `deepseek-v4-flash`); Qwen met fin à ses promotions Qwen3.7-Max; Anthropic retire le fast mode d’Opus 4.7.
+- **Outillage code:** Cursor Router (mode Auto) et tableau de bord d’usage GitHub Copilot; aucun changement de prix ni de données.
+- **Kimi K3:** poids ouverts annoncés le 27 juillet, **non confirmés** sur le canal officiel au contrôle.
+- **Belgique:** conversions maintenues aux taux BCE du 14 juillet 2026 (**1 EUR = 1,1405 USD = 7,7327 CNY**) faute d’accès direct; léger tassement de l’euro observé mais non vérifié. TVA belge standard: **21 %** (confirmée).
+- **AI Act:** jalon du **2 août 2026** inchangé; lignes directrices de transparence publiées le 20 juillet. Analyse informative, pas avis juridique.
 
 ## Lecture rapide
 

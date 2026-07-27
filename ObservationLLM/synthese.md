@@ -1,4 +1,6 @@
-# Synthèse décisionnelle — 17 juillet 2026
+# Synthèse décisionnelle — 27 juillet 2026
+
+> Deuxième édition. Des changements significatifs ont été détectés depuis le 17 juillet: Claude Opus 5, Gemini 3.6 Flash (baisse de prix), partenariat Microsoft × Mistral, bascule DeepSeek V4. **Limite d’exécution:** l’accès direct aux pages officielles a été bloqué par la politique réseau (403); les faits proviennent de la recherche web sur domaines officiels, non d’un rendu direct. Voir [historique](historique.md) et [sources](sources.md).
 
 ## Verdict en une minute
 
@@ -17,28 +19,32 @@ Il n’existe pas un « meilleur LLM » unique. Pour un résident belge, le choi
 | Production UE sensible | Mistral ou cloud avec région UE | IBM / AWS / Azure / Google Cloud | DPA, région, contrôles et déploiement privé | Vérifier service, région et sous-traitants exacts |
 | Open weight / sur site | Llama, Mistral, Nemotron | Qwen, Kimi, GLM, DeepSeek | Contrôle et portabilité | Licence, sécurité, capacité GPU, évaluation locale |
 
-## Ce qui a changé
+## Ce qui a changé depuis le 17 juillet 2026
 
-Cette première édition n’avait pas de base antérieure dans le dépôt. Les faits marquants vérifiés sont:
+Changements significatifs confirmés dans la fenêtre (détail et sources dans [historique](historique.md)):
 
-- OpenAI positionne GPT-5.5 comme modèle frontière à 1,05 M de contexte; entrée 5 USD/M, sortie 30 USD/M, cache 0,50 USD/M. Au-delà de 272 k en entrée, un multiplicateur long contexte s’applique [S01–S02].
-- Anthropic affiche Opus 4.8 et Sonnet 5, avec 1 M de contexte pour les modèles de tête; batch à moitié prix et mécanismes de cache/résidence [S06–S08].
-- Google propose Gemini 3.5 Flash à 1,50 USD/M en entrée et 9 USD/M en sortie, avec cache, batch, Flex, Priority, recherche et agents facturés séparément [S09–S11].
-- xAI propose Grok 4.5 à 500 k de contexte, 2/6 USD par million de jetons en contexte court et 4/12 USD en long contexte [S22].
-- Mistral met en avant Mistral Medium 3.5 pour agents/code et une API européenne; Mistral Large est affiché à 2/6 USD par million et batch à -50 % [S19–S21].
-- GitHub remplace la logique de requêtes premium par des crédits IA: Pro 10 USD, Pro+ 39 USD, Max 100 USD; l’usage agent et les modèles chers consomment davantage [S37–S38].
-- Cursor a mis à jour sa politique le 15 juillet 2026: Privacy Mode interdit l’entraînement et s’appuie sur des accords de rétention zéro, sous réserve d’enquêtes d’abus [S42].
-- Kimi K3 a été annoncé le 16 juillet 2026; sa nouveauté impose de séparer capacités déclarées, poids disponibles et qualité mesurée indépendamment [S48–S51, S60].
+- **Anthropic Claude Opus 5 (24 juillet)** devient le modèle de tête: 1 M de contexte, raisonnement activé par défaut, **prix inchangés 5/25 USD par million** (entrée/sortie). Rupture d’API: désactiver le raisonnement n’est permis qu’à effort ≤ `high`. Fast mode étendu à Opus 5, retiré pour Opus 4.7. Opus 4.8 passe « legacy » [S63–S65].
+- **Google Gemini 3.6 Flash (21 juillet)** remplace la 3.5 Flash: entrée inchangée 1,50 USD/M, **sortie abaissée 9 → 7,50 USD/M**. Ajout de 3.5 Flash-Lite (0,30/2,50) et 3.5 Flash Cyber (sécurité) [S66–S67].
+- **Microsoft × Mistral (21 juillet):** Mistral Medium 3.5 et OCR 4 dans Microsoft Foundry, Medium 3.5 dans Copilot Studio, cadrage UE/souverain/secteurs régulés. Renforce l’option européenne côté Microsoft [S68–S69].
+- **DeepSeek (24 juillet):** retrait de `deepseek-chat`/`deepseek-reasoner` au profit de `deepseek-v4-flash` (prix/contexte V4 très inférieurs, **à revérifier**) [S70].
+- **Alibaba/Qwen:** fin de la remise 50 % sur Qwen3.7-Max (~22–23 juillet) et de l’offre 200 requêtes gratuites/jour (31 juillet); fin des mises à jour de Qwen-Turbo [S71].
+- **Outillage code:** GitHub Copilot ajoute un tableau de bord d’usage entreprise (reporting seul); Cursor introduit « Cursor Router » pour le mode Auto (Intelligence/Balance/Cost). Aucun changement de prix ni de données [S72–S73].
+- **Kimi K3 (Moonshot):** sortie de poids ouverts annoncée le 27 juillet, **non confirmée sur canal officiel** au moment du contrôle (dépôt GitHub absent). À traiter en capacité déclarée [S75].
+- **UE — AI Act (20 juillet):** lignes directrices sur les obligations de transparence publiées; **jalon du 2 août 2026 inchangé** [S57, S74].
+
+**Corrections de base** (antérieures à la fenêtre, manquées le 17 juillet): OpenAI **GPT-5.6 (Sol/Terra/Luna)** est le phare depuis le 9 juillet, structure tarifaire de tête identique [S61–S62]; Anthropic **Fable 5/Mythos 5** (9 juin) et **Sonnet 5** (30 juin, lancement 2/10 puis 3/15) [S65]; Cohere **Command A+** couvre 48 langues dont toutes celles de l’UE [S32]; IBM **watsonx.ai v2.4** [S35].
+
+**Limite de méthode cette édition:** aucune page officielle n’a pu être rendue directement (blocage réseau 403). Les faits ci-dessus reposent sur la recherche web ciblant les domaines officiels, sauf la vérification GitHub. Les figures non reconfirmées gardent la valeur du 17 juillet et sont marquées « à revérifier ».
 
 ## Prix et Belgique
 
-Taux indicatifs BCE du 14 juillet 2026: **1 EUR = 1,1405 USD = 7,7327 CNY** [S55]. Donc 20 USD ≈ 17,54 EUR hors TVA; avec 21 % de TVA belge, ≈ 21,22 EUR si la TVA n’est pas déjà incluse. Un prix affiché en EUR à un consommateur peut déjà inclure la TVA; un prix B2B ou API l’exclut souvent. Le checkout et la facture priment toujours.
+Taux indicatifs BCE **maintenus au 14 juillet 2026** faute d’accès direct: **1 EUR = 1,1405 USD = 7,7327 CNY** [S55]. Donc 20 USD ≈ 17,54 EUR hors TVA; avec 21 % de TVA belge, ≈ 21,22 EUR si la TVA n’est pas déjà incluse. Un léger tassement de l’euro (~1,139 USD, ~7,70 CNY) a été observé par recherche autour des 23–24 juillet, **non vérifié directement**; impact négligeable (<0,2 %). Un prix affiché en EUR à un consommateur peut déjà inclure la TVA; un prix B2B ou API l’exclut souvent. Le checkout et la facture priment toujours.
 
 Les offres explicitement disponibles dans l’EEE incluent notamment Gemini API; OpenAI publie des contrôles de résidence européenne pour certains clients/services [S03, S11]. Pour DeepSeek, Qwen, Kimi et GLM, **la disponibilité commerciale en Belgique, la facturation EUR, la TVA et la localisation des données restent à confirmer** avant usage de données personnelles ou confidentielles.
 
 ## Capacités: ne pas confondre les produits
 
-- **Modèle**: moteur probabiliste, par exemple GPT-5.5, Claude Opus 4.8 ou Gemini 3.5 Flash.
+- **Modèle**: moteur probabiliste, par exemple GPT-5.6 Sol, Claude Opus 5 ou Gemini 3.6 Flash.
 - **Application**: ChatGPT, Claude, Gemini, Grok, Vibe, Perplexity; elle ajoute recherche, fichiers, mémoire et interface.
 - **Plateforme API**: endpoints, SDK, quotas, cache, batch, observabilité et outils.
 - **Assistant de code**: Copilot ou Cursor, intégré à l’IDE et au dépôt.

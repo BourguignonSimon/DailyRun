@@ -1,6 +1,6 @@
 # Bonnes pratiques de développement
 
-État vérifié le **17 juillet 2026**. Les mentions distinguent **[Officiel]** recommandation publiée par un fournisseur, **[Consensus]** pratique convergente entre plusieurs fournisseurs et **[Déduction]** conclusion analytique de cet observatoire.
+État vérifié le **27 juillet 2026** (2ᵉ édition). Les mentions distinguent **[Officiel]** recommandation publiée par un fournisseur, **[Consensus]** pratique convergente entre plusieurs fournisseurs et **[Déduction]** conclusion analytique de cet observatoire. Cette édition n’a pas pu rendre directement les pages officielles (blocage réseau 403); les particularités actualisées ci-dessous s’appuient sur la recherche web, à reconfirmer par rendu direct.
 
 ## Architecture de référence
 
@@ -57,7 +57,7 @@ Tracer request ID, version modèle, version prompt, outils, temps, jetons/cache,
 - Signer DPA et clauses de transfert; vérifier durée de rétention, entraînement, suppression, chiffrement, SSO/RBAC, audit et certifications.
 - Modéliser prompt injection, exfiltration, tool poisoning, SSRF, code arbitraire, escalade de privilèges, supply chain et fuite inter-utilisateurs.
 - Filtrer entrée et sortie selon le risque, mais ne jamais considérer un garde-fou fournisseur comme contrôle unique.
-- Documenter supervision humaine, transparence à l’utilisateur et limites. Revoir le calendrier AI Act [S57–S59].
+- Documenter supervision humaine, transparence à l’utilisateur et limites. Revoir le calendrier AI Act [S57–S59]; le jalon du **2 août 2026** (obligations de transparence Art. 50, pouvoirs GPAI) reste en vigueur, et la Commission a publié le **20 juillet 2026** des lignes directrices sur les obligations de transparence à intégrer aux notices utilisateur [S74].
 
 ## Coût, performance et résilience
 
@@ -73,15 +73,15 @@ Tracer request ID, version modèle, version prompt, outils, temps, jetons/cache,
 
 ### 1. OpenAI
 
-**[Officiel, S01/S05]** Utiliser snapshots pour stabilité, Responses/Agents SDK pour outils, structured outputs, streaming, batch/flex et IDs de requête. **[Déduction]** Tester le seuil >272 k de GPT-5.5 avant d’autoriser des contextes géants; séparer budget outils et tokens.
+**[Officiel, S01/S05, S61]** Utiliser snapshots pour stabilité, Responses/Agents SDK pour outils, structured outputs, streaming, batch/flex et IDs de requête. **[Déduction]** Le phare est GPT-5.6 Sol depuis le 9 juillet (même structure tarifaire); tester le seuil >272 k avant d’autoriser des contextes géants; séparer budget outils et tokens; inventorier les modèles dépréciés (échéance 2026-12-11) et cibler un remplacement.
 
 ### 2. Anthropic
 
-**[Officiel, S06–S08]** Exploiter prompt caching, batch -50 %, modèles datés et budget de raisonnement approprié. **[Déduction]** Réserver Opus aux tâches où le gain de réussite compense le prix; surveiller dépréciations et options de résidence.
+**[Officiel, S06–S08, S63–S65]** Exploiter prompt caching (préfixe minimal abaissé à 512 jetons sur Opus 5), batch -50 %, modèles datés et budget d’effort approprié. **[Officiel] Rupture d’API à gérer:** sur **Claude Opus 5** (lancé le 24 juillet), le raisonnement est activé par défaut et ne peut être désactivé qu’à effort ≤ `high` (`xhigh`/`max` + désactivé → HTTP 400); l’échelle d’effort est low/medium/high/xhigh/max. Le fast mode (aperçu, 10/50 USD) est étendu à Opus 5 mais **retiré d’Opus 4.7** (`speed:"fast"` échoue sans repli) — auditer le code qui l’utilise. Nouveaux betas: changement d’outils en cours de conversation, mode `fallbacks` côté serveur. **[Déduction]** Réserver Opus aux tâches où le gain compense le prix (Opus 5 = 5/25 USD, comme 4.8); surveiller dépréciations (Workbench/prompt-tools jusqu’au 2026-08-17) et options de résidence (geo US ×1,1).
 
 ### 3. Google
 
-**[Officiel, S09–S11]** Le payant exclut l’usage d’amélioration selon la grille; cache, batch, Flex, Priority, Search grounding et file search ont des unités séparées. **[Déduction]** Pour production UE, préférer projet payant et contrôles Vertex plutôt que tier gratuit.
+**[Officiel, S09–S11, S66–S67]** Le payant exclut l’usage d’amélioration selon la grille; cache, batch, Flex, Priority, Search grounding et file search ont des unités séparées. **Gemini 3.6 Flash (21 juillet) remplace la 3.5 Flash**: sortie abaissée à 7,50 USD/M (entrée 1,50), 64 k de sortie; réévaluer les budgets en conséquence. Alternatives économiques: 3.5 Flash-Lite (0,30/2,50) et, pour la sécurité applicative, 3.5 Flash Cyber. **[Déduction]** Pour production UE, préférer projet payant et contrôles Vertex plutôt que tier gratuit; reconfirmer les tarifs cache/batch/priority de la 3.6 avant migration (non vérifiés cette édition).
 
 ### 4. Microsoft
 
@@ -105,11 +105,11 @@ Tracer request ID, version modèle, version prompt, outils, temps, jetons/cache,
 
 ### 9. DeepSeek
 
-**[Officiel, S25–S26]** Utiliser cache lorsque le préfixe est identique et vérifier le modèle exact derrière les alias. **[Déduction]** Héberger les poids via fournisseur UE pour données sensibles; ajouter délais plus longs, fallback et revue de politique de données.
+**[Officiel, S25–S26, S70]** Utiliser cache lorsque le préfixe est identique et **vérifier le modèle exact derrière les alias**: les noms `deepseek-chat`/`deepseek-reasoner` ont été retirés le 24 juillet et pointent vers `deepseek-v4-flash` (modes non-raisonnant/raisonnant). Épingler le nom versionné plutôt que l’alias hérité. **[Déduction]** Héberger les poids via fournisseur UE pour données sensibles; ajouter délais plus longs, fallback et revue de politique de données; reconfirmer les prix V4 (non rendus cette édition).
 
 ### 10. Alibaba/Qwen
 
-**[Officiel, S27–S28]** Respecter l’allowlist exacte du Coding Plan et utiliser la clé/base URL dédiée; sinon PAYG peut être facturé. **[Déduction]** Épingler région, devise et version; tester FR/NL et disponibilité avant engagement.
+**[Officiel, S27–S28, S71]** Respecter l’allowlist exacte du Coding Plan et utiliser la clé/base URL dédiée; sinon PAYG peut être facturé. Attention aux promotions expirées: remise 50 % sur Qwen3.7-Max terminée (~22–23 juillet) et offre gratuite (200 requêtes/jour) jusqu’au 31 juillet; Qwen-Turbo n’est plus mis à jour (migrer vers Qwen-Flash). **[Déduction]** Épingler région, devise et version; ne pas construire un budget sur un tarif promotionnel; tester FR/NL et disponibilité avant engagement.
 
 ### 11. NVIDIA
 
@@ -133,7 +133,7 @@ Tracer request ID, version modèle, version prompt, outils, temps, jetons/cache,
 
 ### 16. Cursor
 
-**[Officiel, S42–S43]** Imposer Privacy Mode, ZDR providers, règles de projet et contrôles d’équipe. **[Déduction]** Limiter commandes, MCP et répertoire; suivre usage par agent/modèle et revoir chaque diff.
+**[Officiel, S42–S43, S73]** Imposer Privacy Mode, ZDR providers, règles de projet et contrôles d’équipe. Depuis le 22 juillet, le mode Auto passe par **Cursor Router** (profils Intelligence/Balance/Cost, activé par défaut pour Teams): fixer un profil par défaut et une liste de modèles autorisés au niveau administrateur. **[Déduction]** Limiter commandes, MCP et répertoire; suivre usage par agent/modèle et par profil de routeur, et revoir chaque diff.
 
 ### 17. Replit
 
@@ -145,7 +145,7 @@ Tracer request ID, version modèle, version prompt, outils, temps, jetons/cache,
 
 ### 19. Moonshot/Kimi
 
-**[Officiel, S49–S50]** Kimi recommande instructions claires, détails, délimiteurs, étapes, exemples, texte de référence et résumé des longues conversations; Kimi Code peut utiliser sous-agents, hooks et MCP. **[Déduction]** Activer hooks d’approbation et sandbox; ne pas exposer une clé API côté client.
+**[Officiel, S49–S50]** Kimi recommande instructions claires, détails, délimiteurs, étapes, exemples, texte de référence et résumé des longues conversations; Kimi Code peut utiliser sous-agents, hooks et MCP. **[Déduction]** Le lancement des poids Kimi K3 (annoncé le 27 juillet) n’était pas confirmé sur le dépôt GitHub officiel au contrôle: ne pas intégrer K3 en production tant que poids, licence et prix officiels ne sont pas vérifiés [S75]. Activer hooks d’approbation et sandbox; ne pas exposer une clé API côté client.
 
 ### 20. Z.AI/GLM
 

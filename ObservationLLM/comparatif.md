@@ -1,6 +1,8 @@
 # Comparatif structuré — édition Belgique
 
-Mise à jour: **17 juillet 2026**. Ce fichier remplace le classeur Excel demandé initialement: le dépôt a explicitement migré vers Markdown le 16 juillet 2026. Les « feuilles » sont les sections ci-dessous. Les références Sxx renvoient à [sources.md](sources.md).
+Mise à jour: **27 juillet 2026** (2ᵉ édition). Ce fichier remplace le classeur Excel demandé initialement: le dépôt a explicitement migré vers Markdown le 16 juillet 2026. Les « feuilles » sont les sections ci-dessous. Les références Sxx renvoient à [sources.md](sources.md).
+
+> **Fiabilité de cette édition.** L’accès direct aux pages officielles a été bloqué par la politique réseau (403 CONNECT sur la quasi-totalité des hôtes). Les mises à jour proviennent de la recherche web sur domaines officiels, non d’un rendu de page (sauf vérification GitHub). Les prix non reconfirmés conservent la valeur vérifiée du **17 juillet 2026** et sont signalés « à revérifier ». Les conversions EUR restent calées sur la BCE du 14 juillet 2026.
 
 - [Vue d’ensemble](#vue-densemble)
 - [Prix particuliers](#prix-particuliers)
@@ -15,25 +17,25 @@ Mise à jour: **17 juillet 2026**. Ce fichier remplace le classeur Excel demand�
 
 | # | Entreprise / écosystème | Catégorie dominante | Offre phare vérifiée | Pertinence Belgique | Force principale | Limite principale | Sources |
 |---:|---|---|---|---|---|---|---|
-| 1 | OpenAI | Modèles + app + API + agent code | GPT-5.5, ChatGPT, Codex | Élevée | Écosystème complet et outils | Coût frontière et verrouillage | S01–S05 |
-| 2 | Anthropic | Modèles + app + API + agent code | Opus 4.8, Sonnet 5, Claude Code | Élevée | Raisonnement, code, long contexte | Prix Opus; options régionales payantes | S06–S08 |
-| 3 | Google | Modèles + app + API + cloud | Gemini 3.5 Flash, Gemini API | Élevée | Multimodal, 1 M, recherche | Complexité des surfaces et tarifs | S09–S11 |
-| 4 | Microsoft | Cloud + productivité + agents | Azure OpenAI, M365 Copilot, Copilot Studio | Très élevée | Intégration M365/Azure, identité | Licences et coûts imbriqués | S12–S14 |
+| 1 | OpenAI | Modèles + app + API + agent code | GPT-5.6 Sol (Terra/Luna), ChatGPT, Codex | Élevée | Écosystème complet et outils | Coût frontière et verrouillage | S01–S05, S61–S62 |
+| 2 | Anthropic | Modèles + app + API + agent code | Opus 5, Sonnet 5, Claude Code | Élevée | Raisonnement, code, long contexte | Prix Opus; options régionales payantes | S06–S08, S63–S65 |
+| 3 | Google | Modèles + app + API + cloud | Gemini 3.6 Flash, Gemini API | Élevée | Multimodal, 1 M, recherche | Complexité des surfaces et tarifs | S09–S11, S66–S67 |
+| 4 | Microsoft | Cloud + productivité + agents | Azure OpenAI/Foundry, M365 Copilot, Copilot Studio | Très élevée | Intégration M365/Azure, identité; Mistral en Foundry/Studio | Licences et coûts imbriqués | S12–S14, S68–S69 |
 | 5 | AWS | Plateforme multi-modèles + agents | Bedrock, Agents, AgentCore | Très élevée | Choix de modèles et régions | Tarification composite | S15–S17 |
 | 6 | Meta | Open weight + app | Llama 4, Meta AI | Moyenne | Poids et écosystème open | Licence et disponibilité produit UE à vérifier | S18 |
-| 7 | Mistral | Modèles UE + app + API | Medium 3.5, Large, Vibe | Très élevée | Acteur européen, open weight | Catalogue et licences variables | S19–S21 |
+| 7 | Mistral | Modèles UE + app + API | Medium 3.5, Large, Vibe; aussi via Microsoft Foundry | Très élevée | Acteur européen, open weight | Catalogue et licences variables | S19–S21, S68–S69 |
 | 8 | xAI | Modèles + app + API | Grok 4.5 | Élevée | Contexte, temps réel, outils | Gouvernance et rétention à valider | S22–S24 |
-| 9 | DeepSeek | Modèles + app + API + poids | DeepSeek Chat/V3.2 | Moyenne | Rapport coût/capacité | Région, données, disponibilité belge | S25–S26 |
-| 10 | Alibaba/Qwen | Modèles + cloud + poids | Qwen 3.7, Model Studio | Moyenne | Catalogue large, code, prix | Facturation/région et support UE | S27–S28 |
+| 9 | DeepSeek | Modèles + app + API + poids | DeepSeek V4-flash (noms hérités retirés) | Moyenne | Rapport coût/capacité | Région, données, disponibilité belge | S25–S26, S70 |
+| 10 | Alibaba/Qwen | Modèles + cloud + poids | Qwen 3.7, Model Studio | Moyenne | Catalogue large, code, prix | Facturation/région et support UE; fin de promos | S27–S28, S71 |
 | 11 | NVIDIA | Modèles + déploiement + agents | Nemotron 3, NIM, NeMo | Élevée en entreprise | Exploitation, optimisation, garde-fous | Coût infra et complexité | S29–S31 |
-| 12 | Cohere | Modèles entreprise + RAG | Command A+ / North | Élevée en entreprise | RAG, multilingue, privé | Peu d’offre grand public | S32–S34 |
-| 13 | IBM | Plateforme + gouvernance + modèles | watsonx.ai, Granite, governance | Élevée en entreprise | Gouvernance et hybride | Coût plateforme; écosystème plus restreint | S35–S36 |
-| 14 | GitHub Copilot | Assistant et agents de code | Copilot Pro/Pro+/Max | Très élevée | IDE + GitHub + choix de modèles | Crédits variables par tâche/modèle | S37–S38 |
+| 12 | Cohere | Modèles entreprise + RAG | Command A+ (48 langues, dont UE) / North | Élevée en entreprise | RAG, multilingue, privé | Peu d’offre grand public | S32–S34 |
+| 13 | IBM | Plateforme + gouvernance + modèles | watsonx.ai v2.4, Granite 4.1, governance | Élevée en entreprise | Gouvernance et hybride | Coût plateforme; écosystème plus restreint | S35–S36 |
+| 14 | GitHub Copilot | Assistant et agents de code | Copilot Pro/Pro+/Max | Très élevée | IDE + GitHub + choix de modèles; tableau de bord d’usage | Crédits variables par tâche/modèle | S37–S38, S72 |
 | 15 | Perplexity | Recherche + API | Perplexity, Sonar, Agent API | Élevée | Recherche sourcée | Pas une plateforme générale complète | S39–S40 |
-| 16 | Anysphere/Cursor | Éditeur et agents de code | Cursor | Très élevée pour développeurs | UX agentique sur dépôt | Dépendance aux modèles tiers et crédits | S41–S43 |
+| 16 | Anysphere/Cursor | Éditeur et agents de code | Cursor (Auto via Cursor Router) | Très élevée pour développeurs | UX agentique sur dépôt | Dépendance aux modèles tiers et crédits | S41–S43, S73 |
 | 17 | Replit | Création/déploiement agentique | Replit Agent | Élevée pour prototypes | De l’idée au déploiement | Coût par crédits, contrôle infra | S44 |
 | 18 | Hugging Face | Hub + inference open | Hub, Providers, Endpoints | Très élevée pour open source | Portabilité et catalogue | Qualité/sécurité dépend du modèle/provider | S45–S47 |
-| 19 | Moonshot/Kimi | Modèles + app + agent code | Kimi K3/K2.7, Kimi Code | Moyenne | Open weight, code, agents | Offre belge, DPA et prix officiel à confirmer | S48–S51, S60 |
+| 19 | Moonshot/Kimi | Modèles + app + agent code | Kimi K3 (poids annoncés, non confirmés)/K2.5, Kimi Code | Moyenne | Open weight, code, agents | Offre belge, DPA et prix officiel à confirmer | S48–S51, S60, S75 |
 | 20 | Z.AI/GLM | Modèles + API + agent code | GLM-5.2, Coding Plan | Moyenne | Code agentique et prix | Français/NL, région UE et DPA à confirmer | S52–S54 |
 
 ## Prix particuliers
@@ -58,12 +60,12 @@ Prix par **1 million de jetons** sauf mention. HT et hors outils. Les prix EUR s
 
 | Acteur / modèle représentatif | Contexte | Entrée origine | Cache origine | Sortie origine | Entrée EUR | Sortie EUR | Batch / classe | Outils / remarques | Source |
 |---|---:|---:|---:|---:|---:|---:|---|---|---|
-| OpenAI GPT-5.5 | 1,05 M | 5 USD | 0,50 USD | 30 USD | 4,38 € | 26,30 € | Batch/Flex -50 %; Priority ×2,5 | >272 k: entrée ×2, sortie ×1,5; outils séparés | S01–S02 |
-| Anthropic Claude Opus 4.8, API directe | 1 M | 5 USD | lecture 0,50 USD; écritures selon durée | 25 USD | 4,38 € | 21,92 € | Batch -50 % | Résidence et fast peuvent ajouter un multiplicateur | S06–S08 |
-| Google Gemini 3.5 Flash | 1 M | 1,50 USD | 0,15 USD + stockage | 9 USD | 1,32 € | 7,89 € | Batch/Flex 0,75/4,50; Priority 2,70/16,20 | Search/Maps 14 USD/1 000 requêtes après quota | S09–S10 |
+| OpenAI GPT-5.6 Sol | 1,05 M | 5 USD | 0,50 USD | 30 USD | 4,38 € | 26,30 € | Batch/Flex -50 %; Priority ×2,5 | >272 k: entrée ×2, sortie ×1,5; outils séparés. Phare depuis 09/07; GPT-5.5 reste documenté | S01–S02, S61–S62 |
+| Anthropic Claude Opus 5, API directe | 1 M | 5 USD | lecture 0,50 USD; écritures selon durée | 25 USD | 4,38 € | 21,92 € | Batch -50 % | Prix identiques à Opus 4.8; raisonnement par défaut; fast mode 10/50 USD; résidence ×1,1 (geo US) | S06–S08, S63–S65 |
+| Google Gemini 3.6 Flash | 1 M / 64 k sortie | 1,50 USD | ND (à revérifier) | 7,50 USD | 1,32 € | 6,58 € | Batch/Flex/Priority 3.6 non reconfirmés | Sortie abaissée 9 → 7,50 USD; remplace 3.5 Flash. Aussi 3.5 Flash-Lite 0,30/2,50 | S66–S67 |
 | Mistral Large | À confirmer par version | 2 USD | ND | 6 USD | 1,75 € | 5,26 € | Batch -50 % | OCR, audio et autres outils séparés | S19 |
 | xAI Grok 4.5 court | 500 k | 2 USD | 0,50 USD | 6 USD | 1,75 € | 5,26 € | Batch affichable | Long contexte 4/1/12 USD | S22 |
-| DeepSeek chat | 64 k sur page contrôlée | 0,27 USD miss | 0,07 USD hit | 1,10 USD | 0,24 € | 0,96 € | À confirmer | Version et horaires peuvent changer | S25 |
+| DeepSeek V4-flash | 1 M (rapporté) | 0,14 USD (à revérifier) | 0,028 USD (à revérifier) | 0,28 USD (à revérifier) | 0,12 € | 0,25 € | À confirmer | Noms `deepseek-chat`/`reasoner` retirés le 24/07; base V3.2 (0,27/0,07/1,10, 64 k) remplacée; prix V4 non rendus sur page | S25, S70 |
 | Alibaba Qwen 3.7 max global | 1 M | 12 CNY | Remise cache publiée | 36 CNY | 1,55 € | 4,66 € | Promotions variables | Régions global/US/Chine distinctes | S27 |
 | Cohere Command A | 256 k | 2,50 USD | ND | 10 USD | 2,19 € | 8,77 € | ND | Essai 1 000 appels/mois; prod 500 RPM | S32–S34 |
 | IBM Granite 4 h small | Selon modèle | 0,06 USD | ND | 0,25 USD | 0,05 € | 0,22 € | ND | Prix indicatifs, taxes exclues | S35 |
@@ -139,10 +141,10 @@ Légende: **Oui** publié; **Partiel** dépend du modèle/produit; **ND** non pu
 
 La sélection combine cinq signaux qualitatifs: adoption/présence marché 30 %, qualité/portée des modèles 25 %, maturité API/outils/agents 20 %, écosystème développeur 15 %, disponibilité et pertinence Europe/Belgique 10 %. La liste est plafonnée à exactement 20. Les sorties de la prochaine édition exigeront un signal durable supérieur à l’acteur remplacé; une nouveauté seule ne suffit pas.
 
-Les benchmarks fournisseur restent dans [analyse-detaillee.md](analyse-detaillee.md) avec protocole et avertissements. Aucun score de sources hétérogènes n’est moyenné. Les prix sont des snapshots catalogue au 17 juillet 2026; remises, contrats et taxes varient.
+Les benchmarks fournisseur restent dans [analyse-detaillee.md](analyse-detaillee.md) avec protocole et avertissements. Aucun score de sources hétérogènes n’est moyenné. Les prix sont des snapshots catalogue: modèles/offres réactualisés au **27 juillet 2026** lorsque la recherche l’a confirmé, sinon conservés au 17 juillet 2026 et marqués « à revérifier ». Remises, contrats et taxes varient.
 
-Contrôles effectués: 20 lignes exactes dans Vue d’ensemble; unités de prix homogènes; conversions recalculées avec S55; liens Markdown relatifs; valeurs inconnues marquées ND/à confirmer. Les filtres, volets figés et formules Excel ne sont pas applicables à Markdown.
+Contrôles effectués: 20 lignes exactes dans Vue d’ensemble (aucune entrée/sortie cette édition); unités de prix homogènes; conversions calées sur S55 (14/07); liens Markdown relatifs; valeurs inconnues marquées ND/à revérifier. **Contrainte 2ᵉ édition:** rendu direct des pages officielles impossible (blocage réseau 403); faits issus de la recherche web sur domaines officiels, hors vérification GitHub. Les filtres, volets figés et formules Excel ne sont pas applicables à Markdown.
 
 ## Sources
 
-Registre complet, dates et URL exactes: [sources.md](sources.md). Les prix et capacités sont issus en priorité des identifiants S01–S59; S60 est la seule source indépendante retenue pour un signal de marché très récent.
+Registre complet, dates et URL exactes: [sources.md](sources.md). Les prix et capacités du 17 juillet reposent sur S01–S59 (rendu direct); S60 est une source indépendante pour un signal de marché récent. Les mises à jour du 27 juillet reposent sur S61–S75, obtenues par recherche web sur domaines officiels (sauf le volet GitHub de S75, vérifié de première main) faute d’accès direct aux pages.
