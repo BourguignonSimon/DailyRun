@@ -1,6 +1,8 @@
 # Analyse détaillée
 
-Vérification: **17 juillet 2026**. Point de vue: particulier ou développeur résidant en Belgique. Cette analyse est informative; les volets RGPD et AI Act ne constituent pas un avis juridique.
+Vérification: **29 juillet 2026** (réexécution; base initiale 17 juillet). Point de vue: particulier ou développeur résidant en Belgique. Cette analyse est informative; les volets RGPD et AI Act ne constituent pas un avis juridique.
+
+> **Vérification.** Cette réexécution a subi des blocages **HTTP 403** sur la plupart des pages officielles. Les faits datés du 17 → 29 juillet (S61–S72) reposent sur des annonces officielles indexées + agrégateurs tiers concordants, sauf le dépôt Kimi K3 (S65, vérifié directement). Les noms de modèles et prix récents sont donnés **avec drapeau « officiel à confirmer »**. Le détail des changements figure dans [historique.md](historique.md).
 
 ## Méthodologie et sélection
 
@@ -12,13 +14,13 @@ Chaque fait volatil renvoie au registre [sources.md](sources.md). Les prix sont 
 
 ## Comment lire les benchmarks
 
-Les scores publiés par un fournisseur sont des **capacités déclarées** jusqu’à reproduction. Exemple: OpenAI publie pour GPT-5.5 82,7 % sur Terminal-Bench 2.0 et 58,6 % sur SWE-Bench Pro, tout en signalant un risque de mémorisation sur ce dernier [S02]. Z.AI revendique 77,8 sur SWE-bench Verified pour GLM-5 dans sa propre documentation [S53]. Ces protocoles, versions, échafaudages, budgets d’outils et dates diffèrent: ils ne sont pas comparés directement ici. La décision doit reposer sur un jeu d’évaluation interne daté, versionné et reproductible.
+Les scores publiés par un fournisseur sont des **capacités déclarées** jusqu’à reproduction. Cet avertissement vaut d’autant plus ce cycle: les nouvelles annonces (Opus 5, Gemini 3.6 Flash, GPT-5.6, Kimi K3) n’ont pas pu être ouvertes directement (403) et reposent sur des tiers. Exemple historique: OpenAI publiait pour GPT-5.5 82,7 % sur Terminal-Bench 2.0 et 58,6 % sur SWE-Bench Pro, tout en signalant un risque de mémorisation sur ce dernier [S02]. Z.AI revendique 77,8 sur SWE-bench Verified pour GLM-5 dans sa propre documentation [S53]. Ces protocoles, versions, échafaudages, budgets d’outils et dates diffèrent: ils ne sont pas comparés directement ici. La décision doit reposer sur un jeu d’évaluation interne daté, versionné et reproductible.
 
 ## Analyse des 20 écosystèmes
 
 ### 1. OpenAI
 
-**Positionnement.** GPT-5.5 est un modèle frontière texte/vision en entrée, 1,05 M de contexte et 128 k de sortie; ChatGPT est l’application, l’API Responses la plateforme, Codex l’agent de code [S01–S02]. Outils natifs: web, fichiers, génération d’image, interpréteur, shell hébergé, patch, computer use et MCP.
+**Positionnement.** La famille **GPT-5.6** (noms de paliers durables **Sol** flagship, **Terra** équilibré, **Luna** haut volume) est GA depuis le 9 juillet 2026 selon deux recherches indépendantes — l’édition initiale indiquait « GPT-5.5 », vraisemblable erreur corrigée ici **avec drapeau de vérification** [S68]. Modèle frontière texte/vision, ~1,05 M de contexte; ChatGPT est l’application, l’API Responses la plateforme, Codex l’agent de code [S01–S02]. Outils natifs: web, fichiers, génération d’image, interpréteur, shell hébergé, patch, computer use et MCP. Prix indicatifs (tiers): Sol 5/30, Terra 2,50/15, Luna 1/6 USD; **écritures de cache désormais ×1,25 de l’entrée non mise en cache**.
 
 **Belgique.** L’usage est largement pertinent en français et néerlandais, mais la qualité doit être testée par domaine. L’API publie l’absence d’entraînement par défaut et des contrôles de résidence EEE pour clients/services éligibles [S03]. Les prix de l’API sont en USD hors taxes; le prix ChatGPT belge exact et la TVA doivent être confirmés au checkout.
 
@@ -26,7 +28,7 @@ Les scores publiés par un fournisseur sont des **capacités déclarées** jusqu
 
 ### 2. Anthropic
 
-**Positionnement.** Opus 4.8 vise les tâches difficiles; Sonnet 5/4.6 offre un compromis coût-vitesse; Claude Code est l’agent de développement. Le catalogue publié atteint 1 M de contexte pour le haut de gamme [S06–S08].
+**Positionnement.** **Claude Opus 5** (24 juillet 2026) remplace Opus 4.8 comme modèle de tête, avec raisonnement adaptatif par défaut et un prix annoncé **inchangé (5/25 USD)** [S61]; Sonnet 5 offre le compromis coût-vitesse et passe en **tarif de lancement 2/10 USD jusqu’au 31 août**, devenant le modèle par défaut Free/Pro; Claude Code est l’agent de développement. Le catalogue publié atteint 1 M de contexte pour le haut de gamme [S06–S08]. Faits récents à confirmer sur page officielle (403 ce cycle).
 
 **Belgique et données.** Application et API sont pertinentes pour FR/NL, à valider sur le corpus réel. DPA, résidence et rétention varient entre API directe, AWS et Google Cloud; la résidence peut ajouter un multiplicateur. Vérifier le contrat exact.
 
@@ -34,7 +36,7 @@ Les scores publiés par un fournisseur sont des **capacités déclarées** jusqu
 
 ### 3. Google
 
-**Positionnement.** Gemini combine multimodalité, contexte 1 M, recherche Google/Maps et agents managés. Gemini 3.5 Flash est présenté comme modèle rapide à intelligence élevée [S09–S11]. Gemini app, AI Studio, Gemini API et Vertex AI sont des surfaces différentes.
+**Positionnement.** Gemini combine multimodalité, contexte 1 M, recherche Google/Maps et agents managés. **Gemini 3.6 Flash** (21 juillet 2026) remplace 3.5 Flash comme modèle de travail: cutoff mars 2026, ~17 % de jetons de sortie en moins, **sortie baissée de 9 → 7,50 USD** (entrée 1,50). Ajout le même jour de 3.5 Flash-Lite (0,30/2,50) et 3.5 Flash Cyber (accès restreint); **Gemini 3.5 Pro n’est pas sorti** (report interne) [S09–S11, S62]. Gemini app, AI Studio, Gemini API et Vertex AI sont des surfaces différentes.
 
 **Belgique.** Les tiers gratuits et payants Gemini API sont annoncés disponibles dans de nombreuses régions, y compris EEE [S11]. Le payant n’utilise pas le contenu pour améliorer les produits selon la grille; le gratuit le peut [S09]. Facturation et TVA à vérifier dans le projet Google Cloud.
 
@@ -64,9 +66,9 @@ Les scores publiés par un fournisseur sont des **capacités déclarées** jusqu
 
 ### 7. Mistral AI
 
-**Positionnement.** Acteur européen couvrant poids ouverts, modèles premium, Vibe, Studio, agents, RAG, OCR, audio et code [S19–S21]. Mistral Medium 3.5 est orienté agents/développement; Mistral Large est le généraliste phare affiché.
+**Positionnement.** Acteur européen couvrant poids ouverts, modèles premium, Vibe, Studio, agents, RAG, OCR, audio et code [S19–S21]. Mistral Medium 3.5 (~1,50/7,50 USD, 256 k) est orienté agents/développement; **Mistral Large 3** est le généraliste phare (trackers en désaccord sur le prix). **Nouveau (21 juillet 2026):** partenariat élargi avec Microsoft distribuant les modèles via Foundry/Copilot Studio/Azure, ciblant l’**Europe régulée: cloud souverain, contrôle des données, déploiements déconnectés/contrôlés par le client**; au Sommet AI Now, agent unifié « Vibe » et datacenter d’inférence de Les Ulis (10 MW, Q3 2026) [S64].
 
-**Belgique.** Pertinence élevée: documentation française et options européennes/privées. Ne pas déduire la conformité du siège européen; vérifier DPA, région, rétention et entraînement du plan choisi. Le néerlandais est à tester.
+**Belgique.** Pertinence élevée et **renforcée**: documentation française, options européennes/privées et désormais une voie « souveraine » via Azure. Ne pas déduire la conformité du siège européen ni du label « souverain »; vérifier DPA, région, rétention et entraînement du plan et de la surface choisis. Le néerlandais est à tester.
 
 **Développement.** API simple, batch, modèles spécialisés et déploiement privé. La variété des licences open weight exige un examen version par version.
 
@@ -80,9 +82,9 @@ Les scores publiés par un fournisseur sont des **capacités déclarées** jusqu
 
 ### 9. DeepSeek
 
-**Positionnement.** Modèles très compétitifs en coût, application gratuite, API et poids. La page prix contrôlée publie cache hit/miss et contexte, mais peut précéder une version plus récente [S25–S26].
+**Positionnement.** Modèles très compétitifs en coût, application gratuite, API et poids. **Correction (24 juillet 2026):** les alias hérités `deepseek-chat`/`deepseek-reasoner` sont dépréciés; le phare n’est plus V3.2 mais **V4 Flash** (~0,14/0,0028/0,28 USD) et **V4 Pro** (~0,435/0,87 USD) — source tierce, officiel à confirmer [S25–S26, S66]. Vérifier le modèle exact derrière tout alias résiduel.
 
-**Belgique.** Disponibilité commerciale, DPA, transferts, rétention, usage d’entraînement et facture belge sont à confirmer. Pour données sensibles, préférer des poids hébergés par un fournisseur UE après revue de licence.
+**Belgique.** Disponibilité commerciale, DPA, transferts, rétention, usage d’entraînement et facture belge restent à confirmer. Pour données sensibles, préférer des poids hébergés par un fournisseur UE après revue de licence.
 
 ### 10. Alibaba Cloud / Qwen
 
@@ -140,11 +142,11 @@ Les scores publiés par un fournisseur sont des **capacités déclarées** jusqu
 
 **Positionnement.** Hub des modèles/datasets, Inference Providers sans majoration annoncée, Endpoints dédiés et Spaces [S45–S47]. Ce n’est pas un modèle unique.
 
-**Belgique.** Endpoint AWS eu-west-1 disponible; DPA Enterprise et SOC 2 Type 2 annoncés. Les payloads ne sont pas stockés, logs 30 jours selon page sécurité [S47]. Le modèle et provider choisis conservent leurs propres risques.
+**Belgique.** Endpoint AWS eu-west-1 disponible; DPA Enterprise et SOC 2 Type 2 annoncés. Les payloads ne sont pas stockés, logs 30 jours selon page sécurité [S47]. Le modèle et provider choisis conservent leurs propres risques. **Incident (divulgation 16 juillet 2026):** une intrusion via agent IA autonome a touché une partie de l’infrastructure de production (jeux de données internes limités + plusieurs identifiants de service). Non vérifié sur une page de statut officielle [S67]; à confirmer, faire tourner les clés et appliquer le moindre privilège.
 
 ### 19. Moonshot AI / Kimi
 
-**Positionnement.** Kimi couvre modèles open weight, application, Kimi Code CLI et SDK agent. Kimi K3 annoncé le 16 juillet 2026 est trop récent pour une conclusion indépendante robuste [S48–S51, S60].
+**Positionnement.** Kimi couvre modèles open weight, application, Kimi Code CLI et SDK agent. **Kimi K3 a publié ses open weights vers le 26 juillet 2026** sous « Kimi K3 License »: **2,8 T de paramètres totaux, 104 B activés (MoE), 1 048 576 jetons de contexte**, encodeur vision MoonViT-V2, poids MXFP4 — **dépôt GitHub vérifié directement** [S65]. API `kimi-k3` ~3/0,30/15 USD (structure de prix tierce). Malgré des benchmarks internes forts, la qualité reste une **capacité déclarée** jusqu’à évaluation FR/NL indépendante [S48–S51, S60].
 
 **Belgique.** Les poids améliorent la portabilité. API directe, abonnement, DPA, région, TVA et qualité FR/NL restent à confirmer. Le CLI peut lire/écrire, lancer des commandes, utiliser MCP et sous-agents: permissions minimales obligatoires.
 
@@ -165,4 +167,8 @@ Les scores publiés par un fournisseur sont des **capacités déclarées** jusqu
 
 ## Limites
 
-La consultation web ne permet pas de simuler chaque checkout belge ni de signer un contrat. Certaines pages sont dynamiques ou géolocalisées. Les latences, quotas et remises dépendent du compte. Les incidents publics n’ont été inclus que lorsqu’une source primaire et un impact encore pertinent étaient disponibles; aucun incident spécifique suffisamment récent et vérifié n’a été ajouté cette fois. Une prochaine édition doit comparer les changements à cet état initial.
+La consultation web ne permet pas de simuler chaque checkout belge ni de signer un contrat. Certaines pages sont dynamiques ou géolocalisées. Les latences, quotas et remises dépendent du compte.
+
+**Contrainte majeure de cette réexécution (29 juillet 2026):** la plupart des domaines officiels ont renvoyé **HTTP 403** au récupérateur (openai.com, anthropic.com, ai.google.dev, mistral.ai, api-docs.deepseek.com, platform.moonshot.ai, ecb.europa.eu, news.microsoft.com). Les faits datés du 17 → 29 juillet reposent donc sur des annonces officielles indexées + agrégateurs tiers concordants, **sauf le dépôt Kimi K3 (S65), chargé et vérifié directement**. Chaque nom de modèle ou prix récent porte le drapeau « officiel à confirmer ». Un contrôle depuis la Belgique (hors environnement bloqué) est recommandé avant toute décision d’achat.
+
+**Incident inclus cette fois:** l’intrusion Hugging Face divulguée le 16 juillet 2026 (agent IA autonome) est retenue car chevauchant la fenêtre et pertinente pour la posture de sécurité, tout en étant non vérifiée sur une page de statut officielle [S67]. La sélection des 20 acteurs est **inchangée**: aucun signal durable ne justifie une sortie/entrée ce cycle. La prochaine édition comparera les changements à l’état du 29 juillet 2026.

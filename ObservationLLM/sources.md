@@ -1,6 +1,8 @@
 # Registre des sources
 
-Consultation: **17 juillet 2026**, heure de Bruxelles. Les URL sont dédupliquées. « Non publiée » signifie que la page n’affiche pas de date exploitable. Les pages dynamiques peuvent évoluer sans changer d’URL.
+Consultation initiale: **17 juillet 2026**. Réexécution: **29 juillet 2026**, heure de Bruxelles. Les URL sont dédupliquées. « Non publiée » signifie que la page n’affiche pas de date exploitable. Les pages dynamiques peuvent évoluer sans changer d’URL.
+
+> **Avertissement de vérification (29 juillet 2026).** Lors de la réexécution, la majorité des domaines officiels (openai.com, anthropic.com, ai.google.dev, mistral.ai, api-docs.deepseek.com, platform.moonshot.ai, ecb.europa.eu, news.microsoft.com, docs.x.ai) ont renvoyé **HTTP 403** au récupérateur web de l’environnement. Seul le dépôt GitHub de Kimi K3 (S65) a été chargé et vérifié **directement**. Les sources S61–S72 reposent donc sur des extraits d’annonces officielles indexés recoupés par des agrégateurs/médias tiers concordants, sauf S65. Elles sont marquées « à confirmer sur page officielle ». Les sources S01–S60 dataient d’une exécution où l’accès direct était possible; elles n’ont pas été revérifiées une à une cette fois.
 
 | ID | Acteur | Sujet | Nature | URL exacte | Publication / mise à jour connue | Consultation |
 |---|---|---|---|---|---|---|
@@ -64,6 +66,25 @@ Consultation: **17 juillet 2026**, heure de Bruxelles. Les URL sont dédupliqué
 | S58 | Union européenne | Obligations GPAI | Source institutionnelle | <https://digital-strategy.ec.europa.eu/en/faqs/guidelines-obligations-general-purpose-ai-providers> | 2025-11 | 2026-07-17 |
 | S59 | Conseil de l’UE | Calendrier AI Act modifié | Source institutionnelle | <https://www.consilium.europa.eu/en/policies/artificial-intelligence-act/timeline-artificial-intelligence/> | 2026-07 | 2026-07-17 |
 | S60 | Moonshot | Lancement Kimi K3 et position de marché | Source indépendante | <https://www.axios.com/2026/07/16/moonshot-kimi-ai-china-model-openai-anthropic> | 2026-07-16 | 2026-07-17 |
+
+### Sources ajoutées le 29 juillet 2026
+
+Nature « annonce + tiers »: extrait d’annonce officielle indexé, recoupé par au moins un agrégateur/média indépendant, l’accès direct à la page officielle ayant échoué (403). « Vérifié direct »: page chargée intégralement lors de cette exécution.
+
+| ID | Acteur | Sujet | Nature | URL exacte | Publication / mise à jour connue | Consultation |
+|---|---|---|---|---|---|---|
+| S61 | Anthropic | Claude Opus 5, prix, Sonnet 5 tarif de lancement | Annonce + tiers | <https://www.anthropic.com/news/claude-opus-5> | 2026-07-24 | 2026-07-29 |
+| S62 | Google | Gemini 3.6 Flash, 3.5 Flash-Lite/Cyber, prix | Annonce + tiers | <https://ai.google.dev/gemini-api/docs/pricing> | 2026-07-21 | 2026-07-29 |
+| S63 | Microsoft | MAI-Image-2.5-Pro et MAI-Voice-2-Flash | Blog officiel + tiers | <https://microsoft.ai/news/introducing-mai-image-2-5-pro-and-mai-voice-2-flash/> | 2026-07-23 | 2026-07-29 |
+| S64 | Mistral / Microsoft | Partenariat élargi, IA souveraine UE | Annonce + tiers | <https://news.microsoft.com/source/2026/07/21/microsoft-and-mistral-expand-strategic-partnership-to-give-enterprises-and-regulated-industries-frontier-ai-they-can-control/> | 2026-07-21 | 2026-07-29 |
+| S65 | Moonshot | Kimi K3: poids, paramètres, contexte, licence | Dépôt officiel — **vérifié direct** | <https://github.com/MoonshotAI/Kimi-K3> | 2026-07 (bench « as of 2026-07-23 ») | 2026-07-29 |
+| S66 | DeepSeek | Dépréciation alias, tarifs V4 Flash/Pro | Trackers tiers | <https://www.nxcode.io/resources/news/deepseek-api-pricing-complete-guide-2026> | 2026-07-24 | 2026-07-29 |
+| S67 | Hugging Face | Incident de sécurité (agent autonome) | Média indépendant | <https://jls42.org/en/news/ia-actualites-16-jul-2026> | 2026-07-16 | 2026-07-29 |
+| S68 | OpenAI | GPT-5.6 (Sol/Terra/Luna), prix, cache | Annonce + tiers | <https://openai.com/index/gpt-5-6/> | 2026-07-09 | 2026-07-29 |
+| S69 | Meta | Muse Spark 1.1 (code agentique propriétaire) | Blog officiel + tiers | <https://ai.meta.com/blog/introducing-muse-spark-meta-model-api/> | 2026-07-09 | 2026-07-29 |
+| S70 | Union européenne | AI Act: 2 août 2026, Digital Omnibus | Source institutionnelle + analyse | <https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai> | 2026-07 | 2026-07-29 |
+| S71 | BCE | Taux EUR/USD/CNY (snapshot indexé) | Source institutionnelle (indirecte, 403) | <https://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml> | 2026-07-28 | 2026-07-29 |
+| S72 | Belgique | Taux de TVA standard 21 % maintenu | Source institutionnelle + analyse | <https://finance.belgium.be/en/enterprises/vat/vat-obligation/rates-and-calculation/vat-rates> | 2026 | 2026-07-29 |
 
 ## Sources non retenues
 

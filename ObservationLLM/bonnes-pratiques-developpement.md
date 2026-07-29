@@ -1,6 +1,10 @@
 # Bonnes pratiques de développement
 
-État vérifié le **17 juillet 2026**. Les mentions distinguent **[Officiel]** recommandation publiée par un fournisseur, **[Consensus]** pratique convergente entre plusieurs fournisseurs et **[Déduction]** conclusion analytique de cet observatoire.
+État vérifié le **29 juillet 2026** (réexécution; base 17 juillet). Les mentions distinguent **[Officiel]** recommandation publiée par un fournisseur, **[Consensus]** pratique convergente entre plusieurs fournisseurs et **[Déduction]** conclusion analytique de cet observatoire.
+
+> **À faire avant le 2 août 2026 (AI Act, article 50).** Si vous exposez un système IA à des personnes en UE: divulguer l’interaction avec une IA (chatbots), **marquer de façon lisible par machine les contenus générés** et étiqueter les deepfakes. Ces obligations de transparence s’appliquent dès le 2 août 2026 [S70]. Le filigrane de l’art. 50(2) glisse au 2 décembre 2026 pour les systèmes déjà sur le marché; les obligations haut risque sont reportées à 2027-2028.
+>
+> **Leçon de l’incident Hugging Face (16 juillet 2026).** Un agent IA autonome aurait compromis des identifiants de service [S67]. Traiter les agents et intégrations comme des identités à part entière: clés à courte durée, rotation automatique, moindre privilège, isolation réseau et journal d’audit des actions d’outils.
 
 ## Architecture de référence
 
@@ -57,7 +61,7 @@ Tracer request ID, version modèle, version prompt, outils, temps, jetons/cache,
 - Signer DPA et clauses de transfert; vérifier durée de rétention, entraînement, suppression, chiffrement, SSO/RBAC, audit et certifications.
 - Modéliser prompt injection, exfiltration, tool poisoning, SSRF, code arbitraire, escalade de privilèges, supply chain et fuite inter-utilisateurs.
 - Filtrer entrée et sortie selon le risque, mais ne jamais considérer un garde-fou fournisseur comme contrôle unique.
-- Documenter supervision humaine, transparence à l’utilisateur et limites. Revoir le calendrier AI Act [S57–S59].
+- Documenter supervision humaine, transparence à l’utilisateur et limites. Revoir le calendrier AI Act [S57–S59, S70]: **article 50 (transparence) applicable dès le 2 août 2026**; filigrane art. 50(2) au 2 décembre 2026 pour l’existant; haut risque en 2027-2028.
 
 ## Coût, performance et résilience
 
@@ -73,15 +77,15 @@ Tracer request ID, version modèle, version prompt, outils, temps, jetons/cache,
 
 ### 1. OpenAI
 
-**[Officiel, S01/S05]** Utiliser snapshots pour stabilité, Responses/Agents SDK pour outils, structured outputs, streaming, batch/flex et IDs de requête. **[Déduction]** Tester le seuil >272 k de GPT-5.5 avant d’autoriser des contextes géants; séparer budget outils et tokens.
+**[Officiel, S01/S05, S68]** Utiliser snapshots pour stabilité, Responses/Agents SDK pour outils, structured outputs, streaming, batch/flex et IDs de requête. Choisir le palier GPT-5.6 adapté (Sol frontière, Terra équilibré, Luna haut volume). **[Déduction]** Le changement de tarification du cache (**écritures ×1,25 de l’entrée non mise en cache**) rend le préfixe stable encore plus rentable en lecture mais plus coûteux à (ré)écrire: regrouper les écritures de cache et éviter d’invalider inutilement. Séparer budget outils et tokens.
 
 ### 2. Anthropic
 
-**[Officiel, S06–S08]** Exploiter prompt caching, batch -50 %, modèles datés et budget de raisonnement approprié. **[Déduction]** Réserver Opus aux tâches où le gain de réussite compense le prix; surveiller dépréciations et options de résidence.
+**[Officiel, S06–S08, S61]** Exploiter prompt caching, batch -50 %, modèles datés et budget de raisonnement approprié. Opus 5 (prix inchangé vs 4.8) et le raisonnement adaptatif par défaut invitent à mesurer le coût réel des jetons de raisonnement. **[Déduction]** Profiter du **tarif de lancement Sonnet 5 (2/10 USD jusqu’au 31 août)** pour l’évaluation et le volume; réserver Opus aux tâches où le gain de réussite compense le prix; surveiller dépréciations (Opus 4.8) et options de résidence.
 
 ### 3. Google
 
-**[Officiel, S09–S11]** Le payant exclut l’usage d’amélioration selon la grille; cache, batch, Flex, Priority, Search grounding et file search ont des unités séparées. **[Déduction]** Pour production UE, préférer projet payant et contrôles Vertex plutôt que tier gratuit.
+**[Officiel, S09–S11, S62]** Le payant exclut l’usage d’amélioration selon la grille; cache, batch, Flex, Priority, Search grounding et file search ont des unités séparées. Gemini 3.6 Flash (sortie 7,50 USD, ~17 % de jetons de sortie en moins) améliore le coût par tâche; 3.5 Flash-Lite (0,30/2,50) pour le très haut volume. **[Déduction]** Pour production UE, préférer projet payant et contrôles Vertex plutôt que tier gratuit; réévaluer le routage vers 3.6 Flash / Flash-Lite selon la complexité.
 
 ### 4. Microsoft
 
@@ -97,7 +101,7 @@ Tracer request ID, version modèle, version prompt, outils, temps, jetons/cache,
 
 ### 7. Mistral
 
-**[Officiel, S19–S21]** Choisir Large généraliste, Medium 3.5 pour agents/code, Small pour coût; batch -50 %, agents/RAG/OCR disponibles. **[Déduction]** Profiter de la proximité UE mais valider contrat et licence de chaque poids/version.
+**[Officiel, S19–S21, S64]** Choisir Large 3 généraliste, Medium 3.5 pour agents/code, Small pour coût; batch -50 %, agents/RAG/OCR disponibles. Le partenariat souverain avec Microsoft (21 juillet) ouvre des déploiements contrôlés/déconnectés via Azure pour secteurs régulés. **[Déduction]** Profiter de la proximité UE et de la voie souveraine, mais **ne pas confondre « souverain » et conforme**: valider contrat, région, rétention et licence de chaque poids/version et de chaque surface (API directe vs Azure).
 
 ### 8. xAI
 
@@ -105,7 +109,7 @@ Tracer request ID, version modèle, version prompt, outils, temps, jetons/cache,
 
 ### 9. DeepSeek
 
-**[Officiel, S25–S26]** Utiliser cache lorsque le préfixe est identique et vérifier le modèle exact derrière les alias. **[Déduction]** Héberger les poids via fournisseur UE pour données sensibles; ajouter délais plus longs, fallback et revue de politique de données.
+**[Officiel, S25–S26, S66]** Utiliser cache lorsque le préfixe est identique et vérifier le modèle exact derrière les alias — **les alias `deepseek-chat`/`deepseek-reasoner` sont dépréciés (24 juillet); épingler `deepseek-v4-flash`/`v4-pro` explicitement**. **[Déduction]** Ne jamais dépendre d’un alias hérité en production; héberger les poids via fournisseur UE pour données sensibles; ajouter délais plus longs, fallback et revue de politique de données.
 
 ### 10. Alibaba/Qwen
 
@@ -141,11 +145,11 @@ Tracer request ID, version modèle, version prompt, outils, temps, jetons/cache,
 
 ### 18. Hugging Face
 
-**[Officiel, S45–S47]** Le routage Providers est annoncé sans majoration; Endpoints facture le calcul; eu-west-1, PrivateLink, DPA Enterprise et logs 30 jours sont documentés. **[Déduction]** Évaluer licence, code distant, pickle/malware scan et provider final pour chaque modèle.
+**[Officiel, S45–S47]** Le routage Providers est annoncé sans majoration; Endpoints facture le calcul; eu-west-1, PrivateLink, DPA Enterprise et logs 30 jours sont documentés. **[Déduction]** Évaluer licence, code distant, pickle/malware scan et provider final pour chaque modèle. **Après l’incident du 16 juillet [S67]:** faire tourner tout token HF, restreindre les scopes, préférer des jetons à durée courte et vérifier les avis de sécurité officiels avant d’élargir l’usage.
 
 ### 19. Moonshot/Kimi
 
-**[Officiel, S49–S50]** Kimi recommande instructions claires, détails, délimiteurs, étapes, exemples, texte de référence et résumé des longues conversations; Kimi Code peut utiliser sous-agents, hooks et MCP. **[Déduction]** Activer hooks d’approbation et sandbox; ne pas exposer une clé API côté client.
+**[Officiel, S49–S50, S65]** Kimi recommande instructions claires, détails, délimiteurs, étapes, exemples, texte de référence et résumé des longues conversations; Kimi Code peut utiliser sous-agents, hooks et MCP. **Kimi K3 est disponible en open weights (2,8 T/104 B, 1 M contexte) sous « Kimi K3 License »**: lire la licence (usage code + poids) avant tout déploiement. **[Déduction]** Pour l’auto-hébergement K3, prévoir capacité GPU (MoE, MXFP4), isolation, modération et évaluation FR/NL locale; activer hooks d’approbation et sandbox; ne pas exposer une clé API côté client.
 
 ### 20. Z.AI/GLM
 
