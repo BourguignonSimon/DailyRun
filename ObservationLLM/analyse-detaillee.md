@@ -1,12 +1,12 @@
 # Analyse détaillée
 
-Vérification: **17 juillet 2026**. Point de vue: particulier ou développeur résidant en Belgique. Cette analyse est informative; les volets RGPD et AI Act ne constituent pas un avis juridique.
+Vérification: **30 juillet 2026** (édition précédente : 17 juillet). Point de vue: particulier ou développeur résidant en Belgique. Cette analyse est informative; les volets RGPD et AI Act ne constituent pas un avis juridique. Les changements de juillet (GPT-5.6, Opus 5 / Fable 5, Gemini 3.6, Kimi K3, échéance AI Act) sont intégrés ci-dessous et détaillés dans [historique.md](historique.md).
 
 ## Méthodologie et sélection
 
 Cinq familles de signaux ont été examinées: adoption/présence marché (30 %), qualité et portée des modèles (25 %), maturité API/outils/agents (20 %), écosystème développeur (15 %), disponibilité et pertinence Europe/Belgique (10 %). Les pondérations servent à décider l’inclusion, pas à produire un faux score précis. Les 20 retenus couvrent quatre rôles qui se chevauchent: concepteurs de modèles, applications, plateformes cloud/API et agents de code.
 
-L’édition précédente n’existait pas dans le dépôt. **Entrées: les 20 acteurs. Sorties: aucune.** À partir de la prochaine édition, une entrée exigera plusieurs signaux durables et entraînera une sortie explicitement motivée. Les candidats à surveiller comprennent MiniMax, Databricks/Mosaic, Oracle OCI, Salesforce et les plateformes d’orchestration indépendantes; ils ne sont pas inclus pour conserver exactement 20 acteurs.
+**Édition du 30 juillet 2026 : les 20 acteurs sont conservés, aucune entrée ni sortie.** Malgré la percée médiatique de Kimi K3, Moonshot figurait déjà dans la liste (#19); aucun candidat externe n’a présenté un signal durable supérieur à un acteur en place. Une entrée future exigera plusieurs signaux durables et entraînera une sortie explicitement motivée. Les candidats à surveiller comprennent MiniMax, Databricks/Mosaic, Oracle OCI, Salesforce et les plateformes d’orchestration indépendantes; ils ne sont pas inclus pour conserver exactement 20 acteurs.
 
 Chaque fait volatil renvoie au registre [sources.md](sources.md). Les prix sont des snapshots, les pages dynamiques pouvant changer sans version. Les conversions utilisent S55 et la TVA standard belge S56. Une disponibilité non explicitement vérifiée est « à confirmer ».
 
@@ -18,7 +18,7 @@ Les scores publiés par un fournisseur sont des **capacités déclarées** jusqu
 
 ### 1. OpenAI
 
-**Positionnement.** GPT-5.5 est un modèle frontière texte/vision en entrée, 1,05 M de contexte et 128 k de sortie; ChatGPT est l’application, l’API Responses la plateforme, Codex l’agent de code [S01–S02]. Outils natifs: web, fichiers, génération d’image, interpréteur, shell hébergé, patch, computer use et MCP.
+**Positionnement.** La famille **GPT-5.6** (9 juillet 2026) mène désormais la gamme en trois paliers — Sol (5/30 USD), Terra (2,50/15) et Luna (1/6) — tandis que **GPT-5.5** reste disponible comme modèle à raisonnement intégré (1,05 M de contexte) [S01–S02, S61]. ChatGPT est l’application, l’API Responses la plateforme, Codex l’agent de code. Outils natifs: web, fichiers, génération d’image, interpréteur, shell hébergé, patch, computer use et MCP.
 
 **Belgique.** L’usage est largement pertinent en français et néerlandais, mais la qualité doit être testée par domaine. L’API publie l’absence d’entraînement par défaut et des contrôles de résidence EEE pour clients/services éligibles [S03]. Les prix de l’API sont en USD hors taxes; le prix ChatGPT belge exact et la TVA doivent être confirmés au checkout.
 
@@ -26,7 +26,7 @@ Les scores publiés par un fournisseur sont des **capacités déclarées** jusqu
 
 ### 2. Anthropic
 
-**Positionnement.** Opus 4.8 vise les tâches difficiles; Sonnet 5/4.6 offre un compromis coût-vitesse; Claude Code est l’agent de développement. Le catalogue publié atteint 1 M de contexte pour le haut de gamme [S06–S08].
+**Positionnement.** La gamme s’est réorganisée en juillet autour de quatre paliers : **Fable 5** (palier « Mythos »), modèle le plus capable (~10/50 USD); **Opus 5** (24 juillet 2026) à ~5/25 USD, environ la moitié du prix de Fable 5 et gagnant de 7 des 8 évaluations quantifiées citées; **Sonnet 5** (30 juin, lancement 2/10 jusqu’au 31 août, puis 3/15) pour le compromis coût-vitesse; **Haiku 4.5** (1/5) pour le volume. Claude Code reste l’agent de développement. Le catalogue publié atteint 1 M de contexte pour le haut de gamme [S06–S08, S62–S63]. Opus 4.8, tête de l’édition précédente, est remplacé.
 
 **Belgique et données.** Application et API sont pertinentes pour FR/NL, à valider sur le corpus réel. DPA, résidence et rétention varient entre API directe, AWS et Google Cloud; la résidence peut ajouter un multiplicateur. Vérifier le contrat exact.
 
@@ -34,7 +34,7 @@ Les scores publiés par un fournisseur sont des **capacités déclarées** jusqu
 
 ### 3. Google
 
-**Positionnement.** Gemini combine multimodalité, contexte 1 M, recherche Google/Maps et agents managés. Gemini 3.5 Flash est présenté comme modèle rapide à intelligence élevée [S09–S11]. Gemini app, AI Studio, Gemini API et Vertex AI sont des surfaces différentes.
+**Positionnement.** Gemini combine multimodalité, contexte 1 M, recherche Google/Maps et agents managés. **Gemini 3.6 Flash** (21 juillet 2026) est le nouveau modèle rapide, à 1,50/7,50 USD (-17 % sur la sortie face à 3.5 Flash); **Gemini 3.1 Pro** couvre le raisonnement frontière à 2/12 (>200 k : 4/18) et Flash-Lite le très haut volume [S09–S11, S64]. Gemini app, AI Studio, Gemini API et Vertex AI sont des surfaces différentes.
 
 **Belgique.** Les tiers gratuits et payants Gemini API sont annoncés disponibles dans de nombreuses régions, y compris EEE [S11]. Le payant n’utilise pas le contenu pour améliorer les produits selon la grille; le gratuit le peut [S09]. Facturation et TVA à vérifier dans le projet Google Cloud.
 
@@ -72,7 +72,7 @@ Les scores publiés par un fournisseur sont des **capacités déclarées** jusqu
 
 ### 8. xAI
 
-**Positionnement.** Grok 4.5 est disponible comme app et API; la grille distingue contexte court/long, cache, voix, image et vidéo [S22–S23]. Grok 4.20 a aussi une configuration multi-agent dans sa carte modèle.
+**Positionnement.** Grok 4.5 (8 juillet 2026) est le modèle de tête, présenté par xAI comme « de classe Opus mais plus rapide et moins cher » : 2/6 USD sur 500 k, avec doublement des tarifs au-delà de 200 k, cache 0,20–0,50 et outils serveur à 5 USD/1 000 appels; **Grok 4.3** reste l’option longue (1 M) économique à 1,25/2,50 [S22–S23, S65]. La grille distingue contexte court/long, cache, voix, image et vidéo.
 
 **Belgique.** L’UE est citée dans des cartes modèles précédentes, mais disponibilité, prix local, TVA et résidence de Grok 4.5 doivent être confirmés. La politique grand public ne couvre pas nécessairement l’API entreprise [S24].
 
@@ -80,7 +80,7 @@ Les scores publiés par un fournisseur sont des **capacités déclarées** jusqu
 
 ### 9. DeepSeek
 
-**Positionnement.** Modèles très compétitifs en coût, application gratuite, API et poids. La page prix contrôlée publie cache hit/miss et contexte, mais peut précéder une version plus récente [S25–S26].
+**Positionnement.** Modèles très compétitifs en coût, application gratuite, API et poids. **DeepSeek V4** est annoncé au niveau frontière à très bas prix (~0,87 USD/M en sortie selon la presse), renforçant la pression tarifaire chinoise [S25–S26, S68]. La page prix officielle publie cache hit/miss et contexte, mais peut précéder la dernière version : vérifier le modèle exact derrière l’alias.
 
 **Belgique.** Disponibilité commerciale, DPA, transferts, rétention, usage d’entraînement et facture belge sont à confirmer. Pour données sensibles, préférer des poids hébergés par un fournisseur UE après revue de licence.
 
@@ -144,7 +144,7 @@ Les scores publiés par un fournisseur sont des **capacités déclarées** jusqu
 
 ### 19. Moonshot AI / Kimi
 
-**Positionnement.** Kimi couvre modèles open weight, application, Kimi Code CLI et SDK agent. Kimi K3 annoncé le 16 juillet 2026 est trop récent pour une conclusion indépendante robuste [S48–S51, S60].
+**Positionnement.** Kimi couvre modèles open weight, application, Kimi Code CLI et SDK agent. **Kimi K3** (16 juillet 2026) est désormais confirmé : ~2,8 T de paramètres (MoE, 16/896 experts actifs), 1 M de contexte, vision native, présenté au niveau de Fable 5 pour une fraction du coût. C’est le plus grand modèle open weight publié à ce jour; benchmarks indépendants et couverture presse en font un événement de marché (« nouveau moment DeepSeek ») [S48–S51, S60, S67]. La qualité mesurée reste à confronter à un jeu d’évaluation interne FR/NL.
 
 **Belgique.** Les poids améliorent la portabilité. API directe, abonnement, DPA, région, TVA et qualité FR/NL restent à confirmer. Le CLI peut lire/écrire, lancer des commandes, utiliser MCP et sous-agents: permissions minimales obligatoires.
 
@@ -165,4 +165,4 @@ Les scores publiés par un fournisseur sont des **capacités déclarées** jusqu
 
 ## Limites
 
-La consultation web ne permet pas de simuler chaque checkout belge ni de signer un contrat. Certaines pages sont dynamiques ou géolocalisées. Les latences, quotas et remises dépendent du compte. Les incidents publics n’ont été inclus que lorsqu’une source primaire et un impact encore pertinent étaient disponibles; aucun incident spécifique suffisamment récent et vérifié n’a été ajouté cette fois. Une prochaine édition doit comparer les changements à cet état initial.
+La consultation web ne permet pas de simuler chaque checkout belge ni de signer un contrat. Certaines pages sont dynamiques ou géolocalisées. Cette exécution du 30 juillet a en outre rencontré des blocages (HTTP 403) sur plusieurs pages officielles (Anthropic, Google, Commission européenne, BCE) lors de la récupération automatisée : les nouveaux prix et dates s’appuient alors sur des sources secondaires réputées et sont marqués **à revérifier** dans [sources.md](sources.md). Les latences, quotas et remises dépendent du compte. **Élément le plus actionnable de cette édition : l’entrée en application, le 2 août 2026, des obligations de transparence (article 50) et des pouvoirs GPAI de l’AI Act** — voir [bonnes pratiques](bonnes-pratiques-developpement.md) et [synthèse](synthese.md). Les incidents publics n’ont été inclus que lorsqu’une source primaire et un impact pertinent étaient disponibles.

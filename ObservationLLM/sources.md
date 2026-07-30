@@ -1,6 +1,8 @@
 # Registre des sources
 
-Consultation: **17 juillet 2026**, heure de Bruxelles. Les URL sont dédupliquées. « Non publiée » signifie que la page n’affiche pas de date exploitable. Les pages dynamiques peuvent évoluer sans changer d’URL.
+Consultation initiale : **17 juillet 2026** (S01–S60). Deuxième exécution : **30 juillet 2026** (S61–S72), heure de Bruxelles. Les URL sont dédupliquées. « Non publiée » signifie que la page n’affiche pas de date exploitable. Les pages dynamiques peuvent évoluer sans changer d’URL.
+
+**Avertissement méthodologique (exécution du 30 juillet).** Plusieurs pages officielles (Anthropic, Google, Commission européenne, BCE) ont renvoyé un HTTP 403 lors de la récupération automatisée ce jour-là. Les sources S61–S72 combinent donc des pages officielles vérifiables par ailleurs et des sources secondaires réputées (presse spécialisée, agrégateurs de prix). Les faits qui en découlent sont marqués « à revérifier » dans les autres fichiers et doivent être confirmés sur la page officielle du fournisseur avant tout engagement.
 
 | ID | Acteur | Sujet | Nature | URL exacte | Publication / mise à jour connue | Consultation |
 |---|---|---|---|---|---|---|
@@ -64,6 +66,18 @@ Consultation: **17 juillet 2026**, heure de Bruxelles. Les URL sont dédupliqué
 | S58 | Union européenne | Obligations GPAI | Source institutionnelle | <https://digital-strategy.ec.europa.eu/en/faqs/guidelines-obligations-general-purpose-ai-providers> | 2025-11 | 2026-07-17 |
 | S59 | Conseil de l’UE | Calendrier AI Act modifié | Source institutionnelle | <https://www.consilium.europa.eu/en/policies/artificial-intelligence-act/timeline-artificial-intelligence/> | 2026-07 | 2026-07-17 |
 | S60 | Moonshot | Lancement Kimi K3 et position de marché | Source indépendante | <https://www.axios.com/2026/07/16/moonshot-kimi-ai-china-model-openai-anthropic> | 2026-07-16 | 2026-07-17 |
+| S61 | OpenAI | Famille GPT-5.6 (Sol/Terra/Luna), prix et paliers | Agrégateur de prix (à revérifier officiellement) | <https://www.tldl.io/resources/openai-api-pricing> | 2026-07 (lancement 2026-07-09) | 2026-07-30 |
+| S62 | Anthropic | Claude Opus 5 : lancement, prix, positionnement vs Fable 5 | Source secondaire (à revérifier officiellement) | <https://tech-ish.com/2026/07/24/claude-opus-5-launch-benchmarks-price/> | 2026-07-24 | 2026-07-30 |
+| S63 | Anthropic | Gamme Fable 5 / Opus 5 / Sonnet 5 / Haiku 4.5, prix | Documentation officielle + agrégateur | <https://platform.claude.com/docs/en/about-claude/pricing> | Dynamique | 2026-07-30 |
+| S64 | Google | Gemini 3.6 Flash et 3.1 Pro, prix et contexte | Agrégateur de prix (à revérifier officiellement) | <https://www.tldl.io/resources/google-gemini-api-pricing> | 2026-07 (3.6 Flash 2026-07-21) | 2026-07-30 |
+| S65 | xAI | Grok 4.5 / 4.3, prix API et paliers | Agrégateur de prix (à revérifier officiellement) | <https://benchlm.ai/xai/api-pricing> | 2026-07 (Grok 4.5 2026-07-08) | 2026-07-30 |
+| S66 | Mistral | Grille Large 3 / Medium 3.5 / Small 4 | Agrégateur de prix (à revérifier officiellement) | <https://benchlm.ai/mistral/api-pricing> | 2026-07-21 | 2026-07-30 |
+| S67 | Moonshot | Kimi K3 : 2,8 T paramètres, plus grand open weight, impact | Presse spécialisée | <https://venturebeat.com/technology/chinas-moonshot-ai-releases-kimi-k3-the-largest-open-source-model-ever-rivaling-top-u-s-systems> | 2026-07-17 | 2026-07-30 |
+| S68 | DeepSeek / marché | DeepSeek V4, GLM-5.2, pression prix chinoise | Presse (Fortune) | <https://fortune.com/2026/07/26/china-moonshot-deepseek-zai-kimi-challenging-us-ai-cost/> | 2026-07-26 | 2026-07-30 |
+| S69 | Moonshot / marché | Explication Kimi K3 et réaction de marché | Presse (CNN) | <https://www.cnn.com/2026/07/23/tech/china-ai-moonshot-kimi-explainer-intl-hnk> | 2026-07-23 | 2026-07-30 |
+| S70 | Union européenne | AI Act : obligations du 2 août 2026, article 50, GPAI | Source institutionnelle | <https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai> | 2026-07 | 2026-07-30 |
+| S71 | Analyse AI Act | Détail des obligations du 2 août 2026 et Digital Omnibus | Analyse spécialisée | <https://www.digitalapplied.com/blog/eu-ai-act-august-2026-transparency-obligations-agency-checklist> | 2026-07 | 2026-07-30 |
+| S72 | BCE | Taux EUR/USD (1,1367 au 28/07) et EUR/CNY (~7,74) | Source institutionnelle (via agrégateurs; page BCE en 403) | <https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html> | 2026-07-28 | 2026-07-30 |
 
 ## Sources non retenues
 

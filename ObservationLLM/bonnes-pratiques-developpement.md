@@ -1,6 +1,6 @@
 # Bonnes pratiques de développement
 
-État vérifié le **17 juillet 2026**. Les mentions distinguent **[Officiel]** recommandation publiée par un fournisseur, **[Consensus]** pratique convergente entre plusieurs fournisseurs et **[Déduction]** conclusion analytique de cet observatoire.
+État vérifié le **30 juillet 2026** (édition précédente : 17 juillet). Les mentions distinguent **[Officiel]** recommandation publiée par un fournisseur, **[Consensus]** pratique convergente entre plusieurs fournisseurs et **[Déduction]** conclusion analytique de cet observatoire. Cette édition intègre le cycle de modèles de juillet (GPT-5.6, Opus 5 / Fable 5, Gemini 3.6) et le compte à rebours de l’AI Act (2 août 2026).
 
 ## Architecture de référence
 
@@ -57,7 +57,8 @@ Tracer request ID, version modèle, version prompt, outils, temps, jetons/cache,
 - Signer DPA et clauses de transfert; vérifier durée de rétention, entraînement, suppression, chiffrement, SSO/RBAC, audit et certifications.
 - Modéliser prompt injection, exfiltration, tool poisoning, SSRF, code arbitraire, escalade de privilèges, supply chain et fuite inter-utilisateurs.
 - Filtrer entrée et sortie selon le risque, mais ne jamais considérer un garde-fou fournisseur comme contrôle unique.
-- Documenter supervision humaine, transparence à l’utilisateur et limites. Revoir le calendrier AI Act [S57–S59].
+- Documenter supervision humaine, transparence à l’utilisateur et limites. Revoir le calendrier AI Act [S57–S59, S70–S71].
+- **[Officiel, S70–S71] Échéance imminente — 2 août 2026.** Les obligations de transparence (article 50) entrent en application : divulguer clairement à l’utilisateur qu’il interagit avec une IA (chatbots), marquer les contenus générés par IA de façon lisible par machine et étiqueter les deepfakes. Les pouvoirs de sanction GPAI et la surveillance du marché s’activent le même jour (jusqu’au plus élevé de 15 M€ ou 3 % du CA mondial). Sursis ciblé jusqu’au 2 décembre 2026 pour le marquage lisible par machine des systèmes préexistants. **[Déduction]** Auditer avant le 2 août tout produit exposant une IA à des utilisateurs finaux ou générant des médias; ce n’est pas un avis juridique.
 
 ## Coût, performance et résilience
 
@@ -73,15 +74,15 @@ Tracer request ID, version modèle, version prompt, outils, temps, jetons/cache,
 
 ### 1. OpenAI
 
-**[Officiel, S01/S05]** Utiliser snapshots pour stabilité, Responses/Agents SDK pour outils, structured outputs, streaming, batch/flex et IDs de requête. **[Déduction]** Tester le seuil >272 k de GPT-5.5 avant d’autoriser des contextes géants; séparer budget outils et tokens.
+**[Officiel, S01/S05/S61]** Utiliser snapshots pour stabilité, Responses/Agents SDK pour outils, structured outputs, streaming, batch/flex et IDs de requête. Router entre les paliers GPT-5.6 (Luna pour le volume, Terra par défaut, Sol pour les cas difficiles) plutôt que d’utiliser le plus cher partout. **[Déduction]** Tester le seuil >272 k de GPT-5.5 avant d’autoriser des contextes géants; séparer budget outils et tokens. Le remplacement rapide de GPT-5.5 par GPT-5.6 confirme qu’il faut épingler un snapshot et maintenir une évaluation de non-régression avant migration.
 
 ### 2. Anthropic
 
-**[Officiel, S06–S08]** Exploiter prompt caching, batch -50 %, modèles datés et budget de raisonnement approprié. **[Déduction]** Réserver Opus aux tâches où le gain de réussite compense le prix; surveiller dépréciations et options de résidence.
+**[Officiel, S06–S08, S62–S63]** Exploiter prompt caching, batch -50 %, modèles datés et budget de raisonnement approprié. **[Déduction]** Arbitrer explicitement **Opus 5 vs Fable 5** : Opus 5 remporte la plupart des évaluations citées à ~½ prix, donc réserver Fable 5 aux seuls cas où son surcoût est justifié par un gain mesuré. Descendre vers Sonnet 5 (prix de lancement jusqu’au 31 août) ou Haiku 4.5 dès qu’ils passent l’évaluation. Surveiller dépréciations (Opus 4.8 remplacé) et options de résidence.
 
 ### 3. Google
 
-**[Officiel, S09–S11]** Le payant exclut l’usage d’amélioration selon la grille; cache, batch, Flex, Priority, Search grounding et file search ont des unités séparées. **[Déduction]** Pour production UE, préférer projet payant et contrôles Vertex plutôt que tier gratuit.
+**[Officiel, S09–S11, S64]** Le payant exclut l’usage d’amélioration selon la grille; cache, batch, Flex, Priority, Search grounding et file search ont des unités séparées. Gemini 3.6 Flash (1,50/7,50) est le nouveau point d’équilibre prix/performance; 3.1 Pro pour le raisonnement, en surveillant le palier long contexte >200 k (4/18). **[Déduction]** Pour production UE, préférer projet payant et contrôles Vertex plutôt que tier gratuit.
 
 ### 4. Microsoft
 
@@ -145,7 +146,7 @@ Tracer request ID, version modèle, version prompt, outils, temps, jetons/cache,
 
 ### 19. Moonshot/Kimi
 
-**[Officiel, S49–S50]** Kimi recommande instructions claires, détails, délimiteurs, étapes, exemples, texte de référence et résumé des longues conversations; Kimi Code peut utiliser sous-agents, hooks et MCP. **[Déduction]** Activer hooks d’approbation et sandbox; ne pas exposer une clé API côté client.
+**[Officiel, S49–S50]** Kimi recommande instructions claires, détails, délimiteurs, étapes, exemples, texte de référence et résumé des longues conversations; Kimi Code peut utiliser sous-agents, hooks et MCP. **[Déduction]** Kimi K3 (open weight, ~2,8 T, 1 M de contexte) est attractif en coût mais héberger les poids via un fournisseur UE et valider la licence reste la voie sûre pour données sensibles; activer hooks d’approbation et sandbox; ne pas exposer une clé API côté client [S67].
 
 ### 20. Z.AI/GLM
 
@@ -165,4 +166,5 @@ Tracer request ID, version modèle, version prompt, outils, temps, jetons/cache,
 - [ ] Retries bornés, idempotence, timeouts, circuit breaker et test de panne.
 - [ ] Agent sandboxé, outils allowlistés, étapes/coût bornés, approbations humaines.
 - [ ] Tests, SAST, scan secrets/licences et revue humaine pour code généré.
+- [ ] Transparence AI Act (2 août 2026) : divulgation chatbot, marquage des contenus IA et étiquetage deepfake vérifiés.
 - [ ] Canari, rollback, calendrier de dépréciation et revue mensuelle.
