@@ -1,6 +1,6 @@
 # Analyse détaillée
 
-Vérification: **17 juillet 2026**. Point de vue: particulier ou développeur résidant en Belgique. Cette analyse est informative; les volets RGPD et AI Act ne constituent pas un avis juridique.
+Vérification: **31 juillet 2026** (édition précédente: 17 juillet 2026). Point de vue: particulier ou développeur résidant en Belgique. Cette analyse est informative; les volets RGPD et AI Act ne constituent pas un avis juridique. Ce cycle, la plupart des pages officielles fournisseurs étaient inaccessibles à la lecture automatique directe; les faits ajoutés sont **corroborés** par recoupement et doivent être revérifiés avant engagement (voir [sources.md](sources.md) et [historique.md](historique.md)).
 
 ## Méthodologie et sélection
 
@@ -12,13 +12,13 @@ Chaque fait volatil renvoie au registre [sources.md](sources.md). Les prix sont 
 
 ## Comment lire les benchmarks
 
-Les scores publiés par un fournisseur sont des **capacités déclarées** jusqu’à reproduction. Exemple: OpenAI publie pour GPT-5.5 82,7 % sur Terminal-Bench 2.0 et 58,6 % sur SWE-Bench Pro, tout en signalant un risque de mémorisation sur ce dernier [S02]. Z.AI revendique 77,8 sur SWE-bench Verified pour GLM-5 dans sa propre documentation [S53]. Ces protocoles, versions, échafaudages, budgets d’outils et dates diffèrent: ils ne sont pas comparés directement ici. La décision doit reposer sur un jeu d’évaluation interne daté, versionné et reproductible.
+Les scores publiés par un fournisseur sont des **capacités déclarées** jusqu’à reproduction. Exemple: OpenAI a publié pour GPT-5.5 82,7 % sur Terminal-Bench 2.0 et 58,6 % sur SWE-Bench Pro, tout en signalant un risque de mémorisation sur ce dernier [S02]; la famille GPT-5.6 revendique de nouveaux gains, non reproduits ici [S61]. Z.AI revendique 77,8 sur SWE-bench Verified pour GLM-5 dans sa propre documentation [S53]. Ces protocoles, versions, échafaudages, budgets d’outils et dates diffèrent: ils ne sont pas comparés directement ici. La décision doit reposer sur un jeu d’évaluation interne daté, versionné et reproductible.
 
 ## Analyse des 20 écosystèmes
 
 ### 1. OpenAI
 
-**Positionnement.** GPT-5.5 est un modèle frontière texte/vision en entrée, 1,05 M de contexte et 128 k de sortie; ChatGPT est l’application, l’API Responses la plateforme, Codex l’agent de code [S01–S02]. Outils natifs: web, fichiers, génération d’image, interpréteur, shell hébergé, patch, computer use et MCP.
+**Positionnement.** Le frontière est désormais la **famille GPT-5.6** (Sol phare, Terra équilibré, Luna rapide/économique), lancée le 9 juillet 2026 — 1,05 M de contexte, 128 k de sortie; ChatGPT est l’application, l’API Responses la plateforme, Codex l’agent de code [S01–S02, S61]. Le 30 juillet 2026, baisses de prix (Terra −20 % → 2/12 USD; Luna −80 % → 0,20/1,20 USD; Sol 5/30 USD) et renommage de « Priority » en **Fast mode** [S62]. Outils natifs: web, fichiers, génération d’image, interpréteur, shell hébergé, patch, computer use et MCP. *L’édition précédente listait encore GPT-5.5; correction appliquée.*
 
 **Belgique.** L’usage est largement pertinent en français et néerlandais, mais la qualité doit être testée par domaine. L’API publie l’absence d’entraînement par défaut et des contrôles de résidence EEE pour clients/services éligibles [S03]. Les prix de l’API sont en USD hors taxes; le prix ChatGPT belge exact et la TVA doivent être confirmés au checkout.
 
@@ -26,7 +26,7 @@ Les scores publiés par un fournisseur sont des **capacités déclarées** jusqu
 
 ### 2. Anthropic
 
-**Positionnement.** Opus 4.8 vise les tâches difficiles; Sonnet 5/4.6 offre un compromis coût-vitesse; Claude Code est l’agent de développement. Le catalogue publié atteint 1 M de contexte pour le haut de gamme [S06–S08].
+**Positionnement.** **Claude Opus 5** (publié le 24 juillet 2026) est le nouveau haut de gamme, au **même prix qu’Opus 4.8: 5/25 USD** par million entrée/sortie, cache lecture 0,50 USD, batch 2,50/12,50 USD, 1 M de contexte, sortie max 128 k; Sonnet 5 offre un compromis coût-vitesse (prix d’intro 2/10 USD jusqu’au 31 août 2026, puis 3/15 USD); Claude Code est l’agent de développement. Un **Fast mode** en préversion recherche (10/50 USD) accélère Opus 5/4.8. La grille publie aussi Fable 5 (10/50 USD) et Mythos 5 (disponibilité limitée). Grille lue directement ce cycle [S06–S08, S63].
 
 **Belgique et données.** Application et API sont pertinentes pour FR/NL, à valider sur le corpus réel. DPA, résidence et rétention varient entre API directe, AWS et Google Cloud; la résidence peut ajouter un multiplicateur. Vérifier le contrat exact.
 
@@ -34,7 +34,7 @@ Les scores publiés par un fournisseur sont des **capacités déclarées** jusqu
 
 ### 3. Google
 
-**Positionnement.** Gemini combine multimodalité, contexte 1 M, recherche Google/Maps et agents managés. Gemini 3.5 Flash est présenté comme modèle rapide à intelligence élevée [S09–S11]. Gemini app, AI Studio, Gemini API et Vertex AI sont des surfaces différentes.
+**Positionnement.** Gemini combine multimodalité, contexte 1 M, recherche Google/Maps et agents managés. **Gemini 3.6 Flash** (21 juillet 2026) remplace 3.5 Flash: entrée 1,50 USD inchangée, **sortie ramenée de 9 à 7,50 USD/M**, ~17 % de jetons de sortie en moins, usage ordinateur intégré; nouveaux paliers **3.5 Flash-Lite** (~0,30/2,50 USD) et **3.5 Flash Cyber** (variante sécurité) [S09–S11, S64]. Gemini app, AI Studio, Gemini API et Vertex AI sont des surfaces différentes.
 
 **Belgique.** Les tiers gratuits et payants Gemini API sont annoncés disponibles dans de nombreuses régions, y compris EEE [S11]. Le payant n’utilise pas le contenu pour améliorer les produits selon la grille; le gratuit le peut [S09]. Facturation et TVA à vérifier dans le projet Google Cloud.
 
@@ -44,7 +44,7 @@ Les scores publiés par un fournisseur sont des **capacités déclarées** jusqu
 
 **Positionnement.** Microsoft 365 Copilot est l’application de travail, Azure OpenAI/Foundry la plateforme modèles, Copilot Studio la plateforme agents, GitHub Copilot l’assistant code traité séparément.
 
-**Belgique.** Microsoft affiche des prix EUR hors TVA sur une page européenne; un plan M365 qualifiant peut être requis [S12]. Azure offre régions, identité, réseau et DPA, mais la disponibilité dépend du modèle/déploiement.
+**Belgique.** Microsoft affiche des prix EUR hors TVA sur une page européenne; un plan M365 qualifiant peut être requis [S12]. **Le prix Business relevé au 17 juillet (15,60 €) est à revérifier: une refonte tarifaire est signalée au 1ᵉʳ juillet 2026.** Azure offre régions, identité, réseau et DPA, mais la disponibilité dépend du modèle/déploiement. **Nouveau, pertinent RGPD (24 juillet 2026): OpenAI a été ajouté comme sous-traitant** de Microsoft 365 Copilot et Copilot Studio, donnant accès à des modèles opérés par OpenAI sur son infrastructure (distincts d’Azure OpenAI), avec activation automatique sauf opt-out préalable des administrateurs. Auditer la cartographie des données et le statut d’opt-out [S73].
 
 **Développement.** Choix logique pour organisations déjà sur Entra, M365 et Azure. Risque: addition de licence utilisateur, crédits agents, appels modèle, recherche et connecteurs [S13–S14]. Produire une architecture de coûts complète.
 
@@ -74,19 +74,19 @@ Les scores publiés par un fournisseur sont des **capacités déclarées** jusqu
 
 **Positionnement.** Grok 4.5 est disponible comme app et API; la grille distingue contexte court/long, cache, voix, image et vidéo [S22–S23]. Grok 4.20 a aussi une configuration multi-agent dans sa carte modèle.
 
-**Belgique.** L’UE est citée dans des cartes modèles précédentes, mais disponibilité, prix local, TVA et résidence de Grok 4.5 doivent être confirmés. La politique grand public ne couvre pas nécessairement l’API entreprise [S24].
+**Belgique.** **Nouveau (rapporté, à confirmer): Grok 4.5 est ouvert aux utilisateurs UE dans la console API** [S22]. Prix (2/6 USD court contexte) et contexte (500 k) inchangés. Prix local, TVA et résidence restent à confirmer; la politique grand public ne couvre pas nécessairement l’API entreprise [S24].
 
 **Développement.** Compatibilité API, tool use, structured outputs, files. Surveiller les retraits et redirections de slugs; épingler et tester les versions.
 
 ### 9. DeepSeek
 
-**Positionnement.** Modèles très compétitifs en coût, application gratuite, API et poids. La page prix contrôlée publie cache hit/miss et contexte, mais peut précéder une version plus récente [S25–S26].
+**Positionnement.** Modèles très compétitifs en coût, application gratuite, API et poids. **Bascule vers DeepSeek V4 (à confirmer): `deepseek-chat` et `deepseek-reasoner` ont été retirés le 24 juillet 2026**, remplacés par **V4-Pro** (~1,74/3,48 USD) et **V4-Flash** (~0,14/0,28 USD), avec un contexte porté à **1 M** (contre 64 k sur la grille précédente) [S25–S26, S71]. V4 lui-même date d’avril 2026; l’événement du cycle est l’achèvement de la migration.
 
 **Belgique.** Disponibilité commerciale, DPA, transferts, rétention, usage d’entraînement et facture belge sont à confirmer. Pour données sensibles, préférer des poids hébergés par un fournisseur UE après revue de licence.
 
 ### 10. Alibaba Cloud / Qwen
 
-**Positionnement.** Qwen propose généralistes, code et multimodal, en poids et via Model Studio. Qwen 3.7 max global est tarifé en CNY avec régions global/US/Chine distinctes [S27–S28].
+**Positionnement.** Qwen propose généralistes, code et multimodal, en poids et via Model Studio. **Nouveau phare (à confirmer): Qwen3.8-Max-Preview**, annoncé vers le 19 juillet 2026 au-dessus de Qwen 3.7 Max, avec un tarif de préversion réduit (~10 % du tarif normal, plus remise nocturne 22 h–8 h) [S27–S28, S72]. Prix par jeton et contexte exacts non extraits d’une page officielle lisible; les revendications « 2,4T paramètres » de la presse ne sont pas confirmées. Qwen 3.7 max global reste tarifé en CNY avec régions global/US/Chine distinctes.
 
 **Belgique.** Le mot « global » ne prouve pas disponibilité, localisation UE ni facture conforme en Belgique. Vérifier compte, région, DPA, support et langues; FR/NL sont à tester.
 
@@ -114,7 +114,7 @@ Les scores publiés par un fournisseur sont des **capacités déclarées** jusqu
 
 **Belgique et données.** Plans individuels: interactions susceptibles d’entraîner les modèles sauf opt-out; Business/Enterprise exclus de l’entraînement. Rétention B/E: IDE chat/completion non retenus, autres surfaces jusqu’à 28 jours selon page [S37]. DPA disponible.
 
-**Développement.** Meilleur choix de départ si GitHub/VS Code domine. Mesurer qualité de PR, tests et failles; les sorties ne remplacent pas revue, SAST et tests.
+**Développement.** Meilleur choix de départ si GitHub/VS Code domine. **Nouveau (à confirmer, 29 juillet 2026): les compétences d’agent (SKILL.md) et les serveurs MCP passent en disponibilité générale pour la revue de code** (appels d’outils MCP en lecture seule), et une préversion « Agent » arrive dans Visual Studio (30 juillet) [S67]. Prix inchangés. Mesurer qualité de PR, tests et failles; les sorties ne remplacent pas revue, SAST et tests.
 
 ### 15. Perplexity
 
@@ -128,7 +128,7 @@ Les scores publiés par un fournisseur sont des **capacités déclarées** jusqu
 
 **Données.** Privacy Mode interdit l’entraînement par Cursor et ses providers, annonce des accords ZDR et chiffrement; des données peuvent être conservées lors de détection d’abus [S42]. En équipe, l’imposer par politique.
 
-**Développement.** Excellente ergonomie, mais coûts indexés sur l’usage des modèles et forte cadence de changement. Prévoir règles de dépôt, commandes interdites, validation diff/test et budget.
+**Développement.** Excellente ergonomie, mais coûts indexés sur l’usage des modèles et forte cadence de changement. **Nouveau (à confirmer, 22 juillet 2026): Cursor Router**, un routage intelligent par requête (modes Intelligence/Balance/Cost), activé par défaut pour les équipes, avec des économies annoncées de ~30–60 %; vérifier l’impact sur la reproductibilité et épingler un modèle pour les tâches critiques [S68]. Prévoir règles de dépôt, commandes interdites, validation diff/test et budget.
 
 ### 17. Replit
 
@@ -144,7 +144,7 @@ Les scores publiés par un fournisseur sont des **capacités déclarées** jusqu
 
 ### 19. Moonshot AI / Kimi
 
-**Positionnement.** Kimi couvre modèles open weight, application, Kimi Code CLI et SDK agent. Kimi K3 annoncé le 16 juillet 2026 est trop récent pour une conclusion indépendante robuste [S48–S51, S60].
+**Positionnement.** Kimi couvre modèles open weight, application, Kimi Code CLI et SDK agent. Kimi K3, annoncé le 16 juillet 2026, a vu ses **poids ouverts publiés le 27 juillet 2026** sur Hugging Face (à confirmer), ce qui améliore la portabilité mais laisse la qualité mesurée à évaluer indépendamment [S48–S51, S60, S70].
 
 **Belgique.** Les poids améliorent la portabilité. API directe, abonnement, DPA, région, TVA et qualité FR/NL restent à confirmer. Le CLI peut lire/écrire, lancer des commandes, utiliser MCP et sous-agents: permissions minimales obligatoires.
 
@@ -165,4 +165,4 @@ Les scores publiés par un fournisseur sont des **capacités déclarées** jusqu
 
 ## Limites
 
-La consultation web ne permet pas de simuler chaque checkout belge ni de signer un contrat. Certaines pages sont dynamiques ou géolocalisées. Les latences, quotas et remises dépendent du compte. Les incidents publics n’ont été inclus que lorsqu’une source primaire et un impact encore pertinent étaient disponibles; aucun incident spécifique suffisamment récent et vérifié n’a été ajouté cette fois. Une prochaine édition doit comparer les changements à cet état initial.
+La consultation web ne permet pas de simuler chaque checkout belge ni de signer un contrat. Certaines pages sont dynamiques ou géolocalisées. Les latences, quotas et remises dépendent du compte. **Contrainte spécifique à ce cycle (31 juillet 2026): la plupart des domaines officiels fournisseurs ont renvoyé un blocage réseau (HTTP 403) à l’outil de récupération automatique.** Seule la grille de prix Anthropic a été lue directement; les autres nouveautés sont corroborées par recoupement de sources indépendantes et marquées **à confirmer**, à revérifier manuellement avant tout engagement. Les incidents publics n’ont été inclus que lorsqu’une source primaire et un impact encore pertinent étaient disponibles. Cette édition compare l’état au relevé du 17 juillet 2026 (voir [historique.md](historique.md)); la prochaine devra comparer à l’état du 31 juillet.

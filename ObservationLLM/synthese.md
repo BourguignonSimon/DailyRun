@@ -1,4 +1,4 @@
-# Synthèse décisionnelle — 17 juillet 2026
+# Synthèse décisionnelle — 31 juillet 2026
 
 ## Verdict en une minute
 
@@ -17,28 +17,28 @@ Il n’existe pas un « meilleur LLM » unique. Pour un résident belge, le choi
 | Production UE sensible | Mistral ou cloud avec région UE | IBM / AWS / Azure / Google Cloud | DPA, région, contrôles et déploiement privé | Vérifier service, région et sous-traitants exacts |
 | Open weight / sur site | Llama, Mistral, Nemotron | Qwen, Kimi, GLM, DeepSeek | Contrôle et portabilité | Licence, sécurité, capacité GPU, évaluation locale |
 
-## Ce qui a changé
+## Ce qui a changé depuis le 17 juillet 2026
 
-Cette première édition n’avait pas de base antérieure dans le dépôt. Les faits marquants vérifiés sont:
+Cycle **dense**: trois familles de modèles de tête ont bougé et un jalon réglementaire européen arrive. Niveau de confiance indiqué (**[Vérifié]** lecture directe, **[Corroboré]** recoupement, **[À confirmer]** source unique). Détail et méthode dans [historique.md](historique.md).
 
-- OpenAI positionne GPT-5.5 comme modèle frontière à 1,05 M de contexte; entrée 5 USD/M, sortie 30 USD/M, cache 0,50 USD/M. Au-delà de 272 k en entrée, un multiplicateur long contexte s’applique [S01–S02].
-- Anthropic affiche Opus 4.8 et Sonnet 5, avec 1 M de contexte pour les modèles de tête; batch à moitié prix et mécanismes de cache/résidence [S06–S08].
-- Google propose Gemini 3.5 Flash à 1,50 USD/M en entrée et 9 USD/M en sortie, avec cache, batch, Flex, Priority, recherche et agents facturés séparément [S09–S11].
-- xAI propose Grok 4.5 à 500 k de contexte, 2/6 USD par million de jetons en contexte court et 4/12 USD en long contexte [S22].
-- Mistral met en avant Mistral Medium 3.5 pour agents/code et une API européenne; Mistral Large est affiché à 2/6 USD par million et batch à -50 % [S19–S21].
-- GitHub remplace la logique de requêtes premium par des crédits IA: Pro 10 USD, Pro+ 39 USD, Max 100 USD; l’usage agent et les modèles chers consomment davantage [S37–S38].
-- Cursor a mis à jour sa politique le 15 juillet 2026: Privacy Mode interdit l’entraînement et s’appuie sur des accords de rétention zéro, sous réserve d’enquêtes d’abus [S42].
-- Kimi K3 a été annoncé le 16 juillet 2026; sa nouveauté impose de séparer capacités déclarées, poids disponibles et qualité mesurée indépendamment [S48–S51, S60].
+- **OpenAI [Corroboré].** Le frontière est désormais la famille **GPT-5.6** (Sol/Terra/Luna), lancée le 9 juillet mais manquée par l’édition précédente. Le 30 juillet, **baisses de prix**: Terra −20 % (2/12 USD), Luna −80 % (0,20/1,20 USD); Sol reste à 5/30 USD. « Priority » renommé « Fast mode » [S61–S62].
+- **Anthropic [Vérifié].** **Claude Opus 5** publié le 24 juillet, au **même prix qu’Opus 4.8 (5/25 USD)**; Fast mode en préversion; Sonnet 5 en prix d’intro 2/10 USD jusqu’au 31 août, puis 3/15 USD [S07, S63].
+- **Google [Corroboré].** **Gemini 3.6 Flash** (21 juillet): sortie ramenée de 9 à **7,50 USD/M**, entrée 1,50 USD inchangée, ~17 % de jetons de sortie en moins; nouveaux paliers 3.5 Flash-Lite et 3.5 Flash Cyber [S64].
+- **DeepSeek [À confirmer].** Bascule vers **DeepSeek V4** (contexte 1 M); `deepseek-chat`/`deepseek-reasoner` retirés le 24 juillet [S71].
+- **Alibaba/Qwen [À confirmer].** **Qwen3.8-Max-Preview** (~19 juillet), nouveau phare, tarif de préversion réduit [S72].
+- **Code:** **Cursor Router** (routage multi-modèles, 22 juillet) [S68]; **GitHub Copilot** compétences d’agent + MCP en GA pour la revue de code (29 juillet) [S67]; **Kimi K3** poids ouverts publiés (27 juillet) [S70]; baisse Replit Cloud au 1ᵉʳ août [S69].
+- **Microsoft [À confirmer], pertinent RGPD.** **OpenAI ajouté comme sous-traitant** de M365 Copilot/Copilot Studio le 24 juillet (activation automatique sauf opt-out); à auditer [S73].
+- **Rumeurs exclues:** Meta « Muse Spark »/Llama 4.5, Qwen « 2,4T », Grok 4.3, tarification « heures de pointe » DeepSeek — non confirmées, non retenues.
 
 ## Prix et Belgique
 
-Taux indicatifs BCE du 14 juillet 2026: **1 EUR = 1,1405 USD = 7,7327 CNY** [S55]. Donc 20 USD ≈ 17,54 EUR hors TVA; avec 21 % de TVA belge, ≈ 21,22 EUR si la TVA n’est pas déjà incluse. Un prix affiché en EUR à un consommateur peut déjà inclure la TVA; un prix B2B ou API l’exclut souvent. Le checkout et la facture priment toujours.
+Taux BCE mis à jour: **1 EUR = 1,1476 USD au 30 juillet 2026** (contre 1,1405 le 14 juillet; l’euro se renforce légèrement) [S55]. Donc 20 USD ≈ 17,43 EUR hors TVA; avec 21 % de TVA belge, ≈ 21,09 EUR si la TVA n’est pas déjà incluse. Le taux **EUR/CNY n’a pas pu être reconfirmé** ce cycle (sources divergentes ~7,69 à 8,22): les conversions CNY (Qwen) restent **à confirmer**. Un prix affiché en EUR à un consommateur peut déjà inclure la TVA; un prix B2B ou API l’exclut souvent. Le checkout et la facture priment toujours.
 
 Les offres explicitement disponibles dans l’EEE incluent notamment Gemini API; OpenAI publie des contrôles de résidence européenne pour certains clients/services [S03, S11]. Pour DeepSeek, Qwen, Kimi et GLM, **la disponibilité commerciale en Belgique, la facturation EUR, la TVA et la localisation des données restent à confirmer** avant usage de données personnelles ou confidentielles.
 
 ## Capacités: ne pas confondre les produits
 
-- **Modèle**: moteur probabiliste, par exemple GPT-5.5, Claude Opus 4.8 ou Gemini 3.5 Flash.
+- **Modèle**: moteur probabiliste, par exemple GPT-5.6, Claude Opus 5 ou Gemini 3.6 Flash.
 - **Application**: ChatGPT, Claude, Gemini, Grok, Vibe, Perplexity; elle ajoute recherche, fichiers, mémoire et interface.
 - **Plateforme API**: endpoints, SDK, quotas, cache, batch, observabilité et outils.
 - **Assistant de code**: Copilot ou Cursor, intégré à l’IDE et au dépôt.
@@ -46,7 +46,7 @@ Les offres explicitement disponibles dans l’EEE incluent notamment Gemini API;
 
 ## Sécurité, RGPD et AI Act
 
-Aucun fournisseur ne rend automatiquement un cas d’usage conforme. Pour toute donnée personnelle: finalité, minimisation, base juridique, DPA, transferts, rétention, droits des personnes, journalisation et analyse d’impact si nécessaire. Le 2 août 2026 reste un jalon important de transparence; les dates des systèmes à haut risque ont été révisées en 2026 [S57–S59]. Ceci n’est pas un avis juridique.
+Aucun fournisseur ne rend automatiquement un cas d’usage conforme. Pour toute donnée personnelle: finalité, minimisation, base juridique, DPA, transferts, rétention, droits des personnes, journalisation et analyse d’impact si nécessaire. **Jalon imminent: les obligations de transparence de l’article 50 s’appliquent au 2 août 2026** — déclarer les chatbots, marquer le contenu synthétique en lecture machine, étiqueter les deepfakes; sanctions jusqu’à 15 M€ ou 3 % du CA mondial. Le **règlement (UE) 2026/1744 « Digital Omnibus on AI »** (en vigueur le 27 juillet 2026) a **reporté** les obligations « haut risque » (Annexe III au 2 décembre 2027, Annexe I au 2 août 2028) mais **n’a pas déplacé** l’échéance du 2 août 2026 [S65–S66, S57–S59]. Ceci n’est pas un avis juridique.
 
 Pour les offres grand public, vérifier le réglage d’entraînement. OpenAI API n’entraîne pas par défaut [S03]; GitHub permet l’opt-out pour les plans individuels et n’entraîne pas sur Business/Enterprise [S37]; Cursor Privacy Mode exclut l’entraînement [S42]. Les contrats, régions et rétentions doivent être vérifiés produit par produit.
 

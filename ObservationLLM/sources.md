@@ -1,6 +1,8 @@
 # Registre des sources
 
-Consultation: **17 juillet 2026**, heure de Bruxelles. Les URL sont dédupliquées. « Non publiée » signifie que la page n’affiche pas de date exploitable. Les pages dynamiques peuvent évoluer sans changer d’URL.
+Consultation initiale: 17 juillet 2026. **Reconsultation: 31 juillet 2026**, heure de Bruxelles. Les URL sont dédupliquées. « Non publiée » signifie que la page n’affiche pas de date exploitable. Les pages dynamiques peuvent évoluer sans changer d’URL.
+
+**Note de méthode (cycle du 31 juillet 2026).** La plupart des domaines officiels fournisseurs ont renvoyé un blocage réseau (HTTP 403) à l’outil de récupération automatique lors de ce cycle. **Seule la grille de prix Anthropic (S07) a été lue directement.** Les sources S61 à S76 sont **corroborées par plusieurs résultats de recherche indépendants** citant les pages officielles concernées; leurs dates sont « telles que rapportées par les pages primaires indexées », non « telles que rendues » par l’outil. Elles doivent être **revérifiées manuellement** en ouvrant les URL dans un navigateur avant tout engagement. Cette limite est propre à l’environnement d’exécution et n’affecte pas les faits déjà stables S01–S60.
 
 | ID | Acteur | Sujet | Nature | URL exacte | Publication / mise à jour connue | Consultation |
 |---|---|---|---|---|---|---|
@@ -58,13 +60,38 @@ Consultation: **17 juillet 2026**, heure de Bruxelles. Les URL sont dédupliqué
 | S52 | Z.AI | Prix GLM, cache et outils | Documentation officielle | <https://docs.z.ai/guides/overview/pricing> | Dynamique | 2026-07-17 |
 | S53 | Z.AI | Catalogue, contexte et langues | Documentation officielle | <https://docs.z.ai/guides/overview/overview> | Dynamique | 2026-07-17 |
 | S54 | Z.AI | Coding Plan | Page officielle | <https://z.ai/subscribe> | Dynamique | 2026-07-17 |
-| S55 | BCE | Taux EUR/USD/CNY | Source institutionnelle | <https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html> | 2026-07-14 | 2026-07-17 |
+| S55 | BCE | Taux EUR/USD/CNY | Source institutionnelle | <https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html> | 2026-07-30 (USD 1,1476 confirmé; CNY non reconfirmé) | 2026-07-31 |
 | S56 | Belgique | Taux de TVA | Source institutionnelle | <https://finance.belgium.be/en/enterprises/vat/vat-obligation/rates-and-calculation/vat-rates> | Non publiée | 2026-07-17 |
 | S57 | Union européenne | AI Act, calendrier et transparence | Source institutionnelle | <https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai> | 2026-07 | 2026-07-17 |
 | S58 | Union européenne | Obligations GPAI | Source institutionnelle | <https://digital-strategy.ec.europa.eu/en/faqs/guidelines-obligations-general-purpose-ai-providers> | 2025-11 | 2026-07-17 |
 | S59 | Conseil de l’UE | Calendrier AI Act modifié | Source institutionnelle | <https://www.consilium.europa.eu/en/policies/artificial-intelligence-act/timeline-artificial-intelligence/> | 2026-07 | 2026-07-17 |
 | S60 | Moonshot | Lancement Kimi K3 et position de marché | Source indépendante | <https://www.axios.com/2026/07/16/moonshot-kimi-ai-china-model-openai-anthropic> | 2026-07-16 | 2026-07-17 |
 
+### Sources ajoutées au cycle du 31 juillet 2026
+
+Niveau de confiance: **[V]** lecture primaire directe, **[C]** corroboré par plusieurs sources, **[?]** source unique ou date à confirmer.
+
+| ID | Acteur | Sujet | Confiance | URL exacte | Publication | Consultation |
+|---|---|---|---|---|---|---|
+| S61 | OpenAI | Lancement famille GPT-5.6 (Sol/Terra/Luna) | [C] | <https://openai.com/index/gpt-5-6/> | 2026-07-09 | 2026-07-31 |
+| S62 | OpenAI | Baisse de prix GPT-5.6 et renommage Fast mode | [C] | <https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6/> | 2026-07-30 | 2026-07-31 |
+| S63 | Anthropic | Annonce Claude Opus 5 | [C] | <https://www.anthropic.com/news/claude-opus-5> | 2026-07-24 | 2026-07-31 |
+| S64 | Google | Gemini 3.6 Flash, 3.5 Flash-Lite, 3.5 Flash Cyber | [C] | <https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-6-flash-3-5-flash-lite-3-5-flash-cyber/> | 2026-07-21 | 2026-07-31 |
+| S65 | Union européenne | Règlement (UE) 2026/1744 « Digital Omnibus on AI » | [C] | <https://eur-lex.europa.eu/eli/reg/2026/1744/oj/eng> | 2026-07-24 | 2026-07-31 |
+| S66 | Commission UE | FAQ obligations de transparence, article 50 | [C] | <https://digital-strategy.ec.europa.eu/en/faqs/transparency-obligations-under-article-50-ai-act> | 2026-07 | 2026-07-31 |
+| S67 | GitHub | Compétences d’agent et MCP en GA pour la revue de code | [?] | <https://github.blog/changelog/2026-07-29-copilot-code-review-agent-skills-and-mcp-now-generally-available/> | 2026-07-29 | 2026-07-31 |
+| S68 | Cursor | Lancement Cursor Router | [?] | <https://cursor.com/blog/router> | 2026-07-22 | 2026-07-31 |
+| S69 | Replit | Baisse Replit Cloud et flexibilité de plan | [?] | <https://docs.replit.com/updates/2026/07/24/changelog> | 2026-07-24 | 2026-07-31 |
+| S70 | Moonshot | Poids ouverts Kimi K3 publiés | [?] | <https://huggingface.co/moonshotai> | 2026-07-27 | 2026-07-31 |
+| S71 | DeepSeek | Retrait chat/reasoner, bascule V4 | [?] | <https://api-docs.deepseek.com/updates> | 2026-07-24 | 2026-07-31 |
+| S72 | Alibaba/Qwen | Qwen3.8-Max-Preview | [?] | <https://qwen.ai/blog?id=qwen3.8-max-preview> | 2026-07-19 | 2026-07-31 |
+| S73 | Microsoft | OpenAI ajouté comme sous-traitant M365 Copilot | [?] | <https://learn.microsoft.com/en-us/partner-center/announcements/2026-july> | 2026-07-24 | 2026-07-31 |
+| S74 | AWS | Baisse Bedrock GPT-5.6 et métadonnées produit | [?] | <https://aws.amazon.com/about-aws/whats-new/2026/07/> | 2026-07-30 | 2026-07-31 |
+| S75 | NVIDIA | NVIDIA Agent Toolkit + PhysicsNeMo/CUDA-X | [?] | <https://nvidianews.nvidia.com/> | 2026-07-27 | 2026-07-31 |
+| S76 | Perplexity | Agent de bureau « Personal Computer » (Windows) | [?] | <https://siliconangle.com/2026/07/28/> | 2026-07-28 | 2026-07-31 |
+
 ## Sources non retenues
 
 Les agrégateurs de prix, billets Reddit et comparatifs non reproductibles n’ont pas servi à fixer les caractéristiques. Ils ont uniquement orienté des vérifications sur les pages officielles. Les dates « dynamique » indiquent une page vivante sans date de version stable.
+
+**Rumeurs exclues (cycle du 31 juillet 2026), faute de source officielle:** Meta « Muse Spark » et « Llama 4.5/4.X »; Qwen « 2,4T paramètres »; xAI « Grok 4.3, 1 M contexte »; tarification « heures de pointe » DeepSeek; retrait de six Inference Providers chez Hugging Face (date non confirmée); migration Sonar → Agent API de Perplexity (contenu plausible, date non certaine).

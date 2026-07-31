@@ -1,6 +1,6 @@
 # Observatoire LLM et agents IA — Belgique
 
-Édition vérifiée le **17 juillet 2026**. Cette première édition couvre exactement 20 écosystèmes et sépare modèles, applications, plateformes API, assistants de code et agents autonomes.
+Édition vérifiée le **31 juillet 2026** (édition précédente: 17 juillet 2026). Cette édition couvre exactement 20 écosystèmes et sépare modèles, applications, plateformes API, assistants de code et agents autonomes.
 
 ## Livrables
 
@@ -11,13 +11,14 @@
 - [Registre des sources](sources.md)
 - [Historique](historique.md)
 
-## Principaux changements constatés
+## Principaux changements constatés (cycle du 31 juillet 2026)
 
-- Première publication dans ce dépôt; aucune édition précédente n’était disponible.
-- Frontière 2026: GPT-5.5, Claude Opus 4.8/Sonnet 5, Gemini 3.5 Flash, Grok 4.5, Mistral Medium 3.5, Qwen 3.7, GLM-5.2 et Kimi K3.
-- Les offres agents deviennent des produits facturés séparément ou des boucles consommant modèle, outils et calcul; le coût par tâche remplace progressivement le seul coût par jeton.
-- Pour la Belgique, les prix publics restent souvent en USD hors TVA. Conversions indicatives avec les taux BCE du 14 juillet 2026: **1 EUR = 1,1405 USD = 7,7327 CNY**. TVA belge standard: **21 %**; le traitement réel dépend du statut client et de la facture.
-- Les obligations de transparence de l’AI Act entrent en application en août 2026; le calendrier des systèmes à haut risque a été modifié en juin 2026. Analyse informative, pas avis juridique.
+- Cycle **dense**: trois familles de modèles de tête ont bougé. **GPT-5.6** (Sol/Terra/Luna) est le nouveau frontière OpenAI, avec baisses de prix le 30/07 (Terra −20 %, Luna −80 %); **Claude Opus 5** (24/07, même prix qu’Opus 4.8); **Gemini 3.6 Flash** (21/07, sortie 9 → 7,50 USD). Bascule **DeepSeek V4** (contexte 1 M) et nouveau **Qwen3.8-Max-Preview**.
+- Côté code: **Cursor Router**, **compétences d’agent + MCP** en GA pour la revue GitHub Copilot, **poids ouverts Kimi K3** et baisse Replit Cloud au 1ᵉʳ août.
+- **RGPD:** OpenAI ajouté comme **sous-traitant** de Microsoft 365 Copilot/Copilot Studio (24/07) — à auditer.
+- **AI Act:** le règlement (UE) 2026/1744 « Digital Omnibus » (en vigueur le 27/07) reporte les obligations « haut risque » (Annexe III au 2/12/2027, Annexe I au 2/8/2028), mais les **obligations de transparence de l’article 50 s’appliquent bien au 2 août 2026**.
+- Pour la Belgique, les prix publics restent souvent en USD hors TVA. Conversion mise à jour avec le taux BCE du 30 juillet 2026: **1 EUR = 1,1476 USD**; le taux **EUR/CNY est à reconfirmer** ce cycle. TVA belge standard **21 %** (inchangée).
+- **Fiabilité:** la plupart des pages officielles étaient inaccessibles à la lecture automatique directe ce cycle. Seule la grille Anthropic a été lue en direct; les autres nouveautés sont **corroborées** et marquées à confirmer.
 
 ## Lecture rapide
 

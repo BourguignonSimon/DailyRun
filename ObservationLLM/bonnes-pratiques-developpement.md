@@ -1,6 +1,6 @@
 # Bonnes pratiques de développement
 
-État vérifié le **17 juillet 2026**. Les mentions distinguent **[Officiel]** recommandation publiée par un fournisseur, **[Consensus]** pratique convergente entre plusieurs fournisseurs et **[Déduction]** conclusion analytique de cet observatoire.
+État vérifié le **31 juillet 2026** (édition précédente: 17 juillet 2026). Les mentions distinguent **[Officiel]** recommandation publiée par un fournisseur, **[Consensus]** pratique convergente entre plusieurs fournisseurs et **[Déduction]** conclusion analytique de cet observatoire. Les nouveautés produits de ce cycle (routeurs de modèles, compétences MCP, Fast mode) sont **à confirmer**: la plupart des pages officielles étaient inaccessibles à la lecture directe.
 
 ## Architecture de référence
 
@@ -57,7 +57,7 @@ Tracer request ID, version modèle, version prompt, outils, temps, jetons/cache,
 - Signer DPA et clauses de transfert; vérifier durée de rétention, entraînement, suppression, chiffrement, SSO/RBAC, audit et certifications.
 - Modéliser prompt injection, exfiltration, tool poisoning, SSRF, code arbitraire, escalade de privilèges, supply chain et fuite inter-utilisateurs.
 - Filtrer entrée et sortie selon le risque, mais ne jamais considérer un garde-fou fournisseur comme contrôle unique.
-- Documenter supervision humaine, transparence à l’utilisateur et limites. Revoir le calendrier AI Act [S57–S59].
+- Documenter supervision humaine, transparence à l’utilisateur et limites. **Priorité immédiate: préparer la conformité à l’article 50 de l’AI Act pour le 2 août 2026** — déclarer clairement toute interaction avec une IA, marquer le contenu synthétique en lecture machine et étiqueter les deepfakes. Le règlement (UE) 2026/1744 a reporté les obligations « haut risque » (Annexe III au 2 décembre 2027, Annexe I au 2 août 2028) mais **pas** l’échéance de transparence [S57–S59, S65–S66].
 
 ## Coût, performance et résilience
 
@@ -73,19 +73,19 @@ Tracer request ID, version modèle, version prompt, outils, temps, jetons/cache,
 
 ### 1. OpenAI
 
-**[Officiel, S01/S05]** Utiliser snapshots pour stabilité, Responses/Agents SDK pour outils, structured outputs, streaming, batch/flex et IDs de requête. **[Déduction]** Tester le seuil >272 k de GPT-5.5 avant d’autoriser des contextes géants; séparer budget outils et tokens.
+**[Officiel, S01/S05/S61–S62]** Utiliser snapshots pour stabilité, Responses/Agents SDK pour outils, structured outputs, streaming, batch/flex et IDs de requête. Choisir le bon palier GPT-5.6: **Sol** (frontière), **Terra** (équilibré, moins cher depuis le 30/07) ou **Luna** (rapide/économique). **[Déduction]** « Priority » devient « Fast mode » (`service_tier=fast`), sans rupture; tester le seuil >272 k avant d’autoriser des contextes géants; séparer budget outils et tokens.
 
 ### 2. Anthropic
 
-**[Officiel, S06–S08]** Exploiter prompt caching, batch -50 %, modèles datés et budget de raisonnement approprié. **[Déduction]** Réserver Opus aux tâches où le gain de réussite compense le prix; surveiller dépréciations et options de résidence.
+**[Officiel, S06–S08, S63]** Exploiter prompt caching, batch -50 %, modèles datés et budget de raisonnement approprié. **Claude Opus 5** remplace Opus 4.8 au **même prix (5/25 USD)**; Sonnet 5 est en prix d’intro jusqu’au 31 août 2026 (2/10 USD) puis passe à 3/15 USD — anticiper la hausse. **[Déduction]** Réserver Opus au cas où le gain de réussite compense le prix; réserver le Fast mode (10/50 USD) aux besoins de latence; surveiller dépréciations et options de résidence (`inference_geo` ×1,1).
 
 ### 3. Google
 
-**[Officiel, S09–S11]** Le payant exclut l’usage d’amélioration selon la grille; cache, batch, Flex, Priority, Search grounding et file search ont des unités séparées. **[Déduction]** Pour production UE, préférer projet payant et contrôles Vertex plutôt que tier gratuit.
+**[Officiel, S09–S11, S64]** Le payant exclut l’usage d’amélioration selon la grille; cache, batch, Flex, Priority, Search grounding et file search ont des unités séparées. **Gemini 3.6 Flash** réduit la sortie à 7,50 USD/M et génère ~17 % de jetons en moins; **3.5 Flash-Lite** vise le haut volume à faible latence. **[Déduction]** Pour production UE, préférer projet payant et contrôles Vertex plutôt que tier gratuit; réévaluer le routage vers Flash-Lite pour les sous-agents.
 
 ### 4. Microsoft
 
-**[Officiel, S12–S14]** Utiliser Entra, politiques, budgets et capacité Copilot Studio/Azure adaptée. **[Déduction]** Modéliser la facture complète licence + crédits agent + modèle + recherche/connecteurs; éviter le double comptage des offres.
+**[Officiel, S12–S14, S73]** Utiliser Entra, politiques, budgets et capacité Copilot Studio/Azure adaptée. **RGPD (24/07, à confirmer): OpenAI ajouté comme sous-traitant** de M365 Copilot/Copilot Studio (modèles opérés par OpenAI, distincts d’Azure OpenAI) avec activation automatique sauf opt-out — revoir la liste des sous-traitants, la cartographie des flux et la décision d’opt-out. **[Déduction]** Modéliser la facture complète licence + crédits agent + modèle + recherche/connecteurs; éviter le double comptage des offres.
 
 ### 5. AWS
 
@@ -105,7 +105,7 @@ Tracer request ID, version modèle, version prompt, outils, temps, jetons/cache,
 
 ### 9. DeepSeek
 
-**[Officiel, S25–S26]** Utiliser cache lorsque le préfixe est identique et vérifier le modèle exact derrière les alias. **[Déduction]** Héberger les poids via fournisseur UE pour données sensibles; ajouter délais plus longs, fallback et revue de politique de données.
+**[Officiel, S25–S26, S71]** Utiliser cache lorsque le préfixe est identique et vérifier le modèle exact derrière les alias — **`deepseek-chat`/`deepseek-reasoner` ont été retirés le 24/07 (à confirmer); migrer le paramètre `model` vers `deepseek-v4-pro` ou `deepseek-v4-flash`** (contexte porté à 1 M). **[Déduction]** Héberger les poids via fournisseur UE pour données sensibles; ajouter délais plus longs, fallback et revue de politique de données.
 
 ### 10. Alibaba/Qwen
 
@@ -125,7 +125,7 @@ Tracer request ID, version modèle, version prompt, outils, temps, jetons/cache,
 
 ### 14. GitHub Copilot
 
-**[Officiel, S37–S38]** Plans payants incluent crédits IA; modèles et tâches consomment différemment. B/E n’entraîne pas sur données client. **[Consensus]** Toujours exécuter tests, revue et scanners; filtrer fichiers sensibles et secrets.
+**[Officiel, S37–S38, S67]** Plans payants incluent crédits IA; modèles et tâches consomment différemment. B/E n’entraîne pas sur données client. Les compétences d’agent (SKILL.md) et serveurs **MCP** en revue de code passent en GA (29/07, à confirmer), avec appels d’outils MCP **en lecture seule** — bon garde-fou par défaut. **[Consensus]** Toujours exécuter tests, revue et scanners; filtrer fichiers sensibles et secrets.
 
 ### 15. Perplexity
 
@@ -133,7 +133,7 @@ Tracer request ID, version modèle, version prompt, outils, temps, jetons/cache,
 
 ### 16. Cursor
 
-**[Officiel, S42–S43]** Imposer Privacy Mode, ZDR providers, règles de projet et contrôles d’équipe. **[Déduction]** Limiter commandes, MCP et répertoire; suivre usage par agent/modèle et revoir chaque diff.
+**[Officiel, S42–S43, S68]** Imposer Privacy Mode, ZDR providers, règles de projet et contrôles d’équipe. **Cursor Router** (22/07, à confirmer) route chaque requête vers un modèle selon un mode Intelligence/Balance/Cost et est activé par défaut pour les équipes: pour les tâches critiques et reproductibles, épingler un modèle explicite plutôt que le routage automatique, et suivre le coût par mode. **[Déduction]** Limiter commandes, MCP et répertoire; suivre usage par agent/modèle et revoir chaque diff.
 
 ### 17. Replit
 
