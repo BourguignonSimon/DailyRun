@@ -1,6 +1,6 @@
 # Registre des sources
 
-Consultation: **17 juillet 2026**, heure de Bruxelles. Les URL sont dédupliquées. « Non publiée » signifie que la page n’affiche pas de date exploitable. Les pages dynamiques peuvent évoluer sans changer d’URL.
+Consultation initiale: **17 juillet 2026**; revérification et ajouts: **1er août 2026**, heure de Bruxelles. Les URL sont dédupliquées. « Non publiée » signifie que la page n’affiche pas de date exploitable. Les pages dynamiques peuvent évoluer sans changer d’URL. Les sources S01–S60 datent de l’édition initiale; les sources S61–S68 ci-dessous ont été ajoutées ou revérifiées le 1er août 2026. Note d’exécution: le 1er août, la documentation Anthropic a été récupérée avec succès (S61), tandis que plusieurs pages officielles (OpenAI, Google AI, BCE, institutions UE) ont renvoyé un HTTP 403 à la récupération automatisée; les faits correspondants s’appuient alors sur des sources secondaires clairement marquées « à confirmer ».
 
 | ID | Acteur | Sujet | Nature | URL exacte | Publication / mise à jour connue | Consultation |
 |---|---|---|---|---|---|---|
@@ -64,6 +64,19 @@ Consultation: **17 juillet 2026**, heure de Bruxelles. Les URL sont dédupliqué
 | S58 | Union européenne | Obligations GPAI | Source institutionnelle | <https://digital-strategy.ec.europa.eu/en/faqs/guidelines-obligations-general-purpose-ai-providers> | 2025-11 | 2026-07-17 |
 | S59 | Conseil de l’UE | Calendrier AI Act modifié | Source institutionnelle | <https://www.consilium.europa.eu/en/policies/artificial-intelligence-act/timeline-artificial-intelligence/> | 2026-07 | 2026-07-17 |
 | S60 | Moonshot | Lancement Kimi K3 et position de marché | Source indépendante | <https://www.axios.com/2026/07/16/moonshot-kimi-ai-china-model-openai-anthropic> | 2026-07-16 | 2026-07-17 |
+
+## Sources ajoutées ou revérifiées — 2026-08-01
+
+| ID | Acteur | Sujet | Nature | URL exacte | Publication / mise à jour connue | Consultation | Confiance |
+|---|---|---|---|---|---|---|---|
+| S61 | Anthropic | Famille Claude 5 (Fable 5, Opus 5, Sonnet 5, Haiku 4.5, Mythos 5): IDs, prix, contexte, cutoff, dépréciations | Documentation officielle (récupérée) | <https://platform.claude.com/docs/en/about-claude/models/overview> | Non publiée | 2026-08-01 | Élevée (source primaire) |
+| S62 | OpenAI | Annonce famille GPT-5.6 (Sol/Terra/Luna), frontière et capacités | Publication officielle | <https://openai.com/index/gpt-5-6/> | 2026-07 | 2026-08-01 | Moyenne-élevée (page officielle; contenu non récupéré, HTTP 403) |
+| S63 | OpenAI | GPT-5.6 disponibilité générale (9 juillet 2026), Programmatic Tool Calling, prix par palier et baisses du 30 juillet | Presse spécialisée / agrégateurs | <https://www.marktechpost.com/2026/07/09/openai-releases-gpt-5-6-a-three-tier-model-family-with-programmatic-tool-calling/> | 2026-07-09 | 2026-08-01 | Moyenne (secondaire; tarifs à revalider au barème officiel) |
+| S64 | Google | Gemini 3.6 Flash (défaut app le 21/07), Gemini 3.1 Pro (~2/12 USD), 3.5 Flash (1,50/9), plans grand public | Analyses tierces de tarification | <https://www.cloudzero.com/blog/gemini-pricing/> | 2026 | 2026-08-01 | Moyenne (secondaire; page officielle S09 à revérifier) |
+| S65 | xAI | Grok 4.5 public (8 juillet), modèle de code ~2/6 USD; Grok STT 1.0 (23 juillet) | Suivi de sorties / presse | <https://llm-stats.com/llm-updates> | 2026-07 | 2026-08-01 | Moyenne (secondaire; grille officielle S22 à revérifier) |
+| S66 | Alibaba | Qwen 3.7 Flash publié le 27 juillet 2026 | Suivi de sorties | <https://llm-stats.com/llm-updates> | 2026-07-27 | 2026-08-01 | Moyenne (secondaire) |
+| S67 | Meta | Muse Spark 1.1 (9 juillet), présenté comme premier modèle payant ~1,25/4,25 USD | Suivi de sorties | <https://thursdai.news/releases/2026-07> | 2026-07-09 | 2026-08-01 | Faible-moyenne (secondaire; à confirmer sur source primaire Meta) |
+| S68 | Union européenne | AI Act: pouvoirs d’exécution Commission sur GPAI au 2 août 2026; report haut risque (Annexe III 2 déc. 2027, Annexe I 2 août 2028) via Digital Omnibus | Analyse juridique + résumé de référence | <https://www.gibsondunn.com/eu-ai-act-omnibus-agreement-postponed-high-risk-deadlines-and-other-key-changes/> | 2026-07 | 2026-08-01 | Moyenne-élevée (cabinet + artificialintelligenceact.eu; pages EU officielles HTTP 403) |
 
 ## Sources non retenues
 

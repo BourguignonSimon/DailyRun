@@ -1,6 +1,6 @@
 # Analyse détaillée
 
-Vérification: **17 juillet 2026**. Point de vue: particulier ou développeur résidant en Belgique. Cette analyse est informative; les volets RGPD et AI Act ne constituent pas un avis juridique.
+Vérification: **1er août 2026** (édition précédente: 17 juillet 2026). Point de vue: particulier ou développeur résidant en Belgique. Cette analyse est informative; les volets RGPD et AI Act ne constituent pas un avis juridique.
 
 ## Méthodologie et sélection
 
@@ -12,31 +12,31 @@ Chaque fait volatil renvoie au registre [sources.md](sources.md). Les prix sont 
 
 ## Comment lire les benchmarks
 
-Les scores publiés par un fournisseur sont des **capacités déclarées** jusqu’à reproduction. Exemple: OpenAI publie pour GPT-5.5 82,7 % sur Terminal-Bench 2.0 et 58,6 % sur SWE-Bench Pro, tout en signalant un risque de mémorisation sur ce dernier [S02]. Z.AI revendique 77,8 sur SWE-bench Verified pour GLM-5 dans sa propre documentation [S53]. Ces protocoles, versions, échafaudages, budgets d’outils et dates diffèrent: ils ne sont pas comparés directement ici. La décision doit reposer sur un jeu d’évaluation interne daté, versionné et reproductible.
+Les scores publiés par un fournisseur sont des **capacités déclarées** jusqu’à reproduction. Les classements agrégés (par ex. index d’intelligence/agentique tiers plaçant Claude Fable 5 puis Opus 5 en tête à leur sortie) sont des signaux, pas une vérité: protocoles, versions, échafaudages, budgets d’outils et dates diffèrent et ne sont pas comparés directement ici. La décision doit reposer sur un jeu d’évaluation interne daté, versionné et reproductible, exécuté en français et néerlandais sur des tâches réelles.
 
 ## Analyse des 20 écosystèmes
 
 ### 1. OpenAI
 
-**Positionnement.** GPT-5.5 est un modèle frontière texte/vision en entrée, 1,05 M de contexte et 128 k de sortie; ChatGPT est l’application, l’API Responses la plateforme, Codex l’agent de code [S01–S02]. Outils natifs: web, fichiers, génération d’image, interpréteur, shell hébergé, patch, computer use et MCP.
+**Positionnement.** Depuis le 9 juillet 2026, la famille **GPT-5.6** (Sol frontière, Terra équilibré, Luna économique) est en disponibilité générale et par défaut dans ChatGPT; ChatGPT est l’application, l’API Responses la plateforme, Codex l’agent de code [S01–S02, S62–S63]. Outils natifs: web, fichiers, génération d’image, interpréteur, shell hébergé, patch, computer use et MCP. Nouveauté API: le *Programmatic Tool Calling* (l’API Responses exécute en mémoire des programmes qui coordonnent des outils). Des baisses de prix sur Terra et Luna ont été annoncées le 30 juillet 2026: revalider le barème officiel.
 
 **Belgique.** L’usage est largement pertinent en français et néerlandais, mais la qualité doit être testée par domaine. L’API publie l’absence d’entraînement par défaut et des contrôles de résidence EEE pour clients/services éligibles [S03]. Les prix de l’API sont en USD hors taxes; le prix ChatGPT belge exact et la TVA doivent être confirmés au checkout.
 
-**Développement.** SDK larges, sorties structurées, function calling, streaming, batch/flex/priority et snapshots. Épingler le snapshot, journaliser les request IDs, maintenir des évaluations avant migration [S05]. Coût long contexte et outils à budgéter séparément.
+**Développement.** SDK larges, sorties structurées, function calling, streaming, batch/flex/priority et snapshots. Choisir le bon palier (Sol vs Terra vs Luna) par tâche plutôt que le plus cher par défaut. Épingler le snapshot, journaliser les request IDs, maintenir des évaluations avant migration [S05]. Coût long contexte et outils à budgéter séparément.
 
 ### 2. Anthropic
 
-**Positionnement.** Opus 4.8 vise les tâches difficiles; Sonnet 5/4.6 offre un compromis coût-vitesse; Claude Code est l’agent de développement. Le catalogue publié atteint 1 M de contexte pour le haut de gamme [S06–S08].
+**Positionnement.** La famille **Claude 5** est désormais l’état vérifié [S06, S61]. **Claude Fable 5** (`claude-fable-5`, 10/50 USD, GA 9 juin 2026) est le modèle le plus capable, orienté agents longue durée; **Claude Opus 5** (`claude-opus-5`, 5/25 USD, cutoff mai 2026) est le choix par défaut recommandé pour le code agentique et l’entreprise; **Sonnet 5** (3/15 USD, prix de lancement 2/10 jusqu’au 31 août 2026) équilibre coût et vitesse; **Haiku 4.5** (1/5 USD) est le plus rapide. Tous atteignent 1 M de contexte (200 k pour Haiku) et 128 k de sortie. Opus 4.8 devient « legacy »; Opus 4.1 est retiré le 5 août 2026. Une variante **Mythos 5** (invitation, Projet Glasswing) cible la cybersécurité défensive. Claude Code reste l’agent de développement.
 
-**Belgique et données.** Application et API sont pertinentes pour FR/NL, à valider sur le corpus réel. DPA, résidence et rétention varient entre API directe, AWS et Google Cloud; la résidence peut ajouter un multiplicateur. Vérifier le contrat exact.
+**Belgique et données.** Application et API sont pertinentes pour FR/NL, à valider sur le corpus réel. Les modèles sont disponibles via l’API directe, Amazon Bedrock, Claude Platform on AWS, Google Cloud et Microsoft Foundry; DPA, résidence et rétention varient selon la surface, et la résidence/fast peut ajouter un multiplicateur. Vérifier le contrat exact.
 
-**Développement.** Excellente capacité d’outils et de code. Utiliser prompt caching pour les préfixes stables, batch pour l’asynchrone, budget d’effort raisonnable, et identifiants datés. Les dépréciations publiées imposent un inventaire de modèles.
+**Développement.** Excellente capacité d’outils et de code. Utiliser prompt caching pour les préfixes stables, batch -50 % pour l’asynchrone, le paramètre `effort` (défaut `high` sur Opus 5/Sonnet 5 côté API/Claude Code) et des identifiants datés/pinés. Les dépréciations publiées (retrait Opus 4.1 le 5 août 2026) imposent un inventaire de modèles et une migration planifiée.
 
 ### 3. Google
 
-**Positionnement.** Gemini combine multimodalité, contexte 1 M, recherche Google/Maps et agents managés. Gemini 3.5 Flash est présenté comme modèle rapide à intelligence élevée [S09–S11]. Gemini app, AI Studio, Gemini API et Vertex AI sont des surfaces différentes.
+**Positionnement.** Gemini combine multimodalité, contexte 1 M, recherche Google/Maps et agents managés. **Gemini 3.1 Pro** est le modèle de tête (preview, ~2/12 USD) pour le raisonnement difficile; **Gemini 3.5 Flash** reste à 1,50/9 USD; **Gemini 3.6 Flash** est devenu le modèle par défaut grand public le 21 juillet 2026 [S09–S11, S64]. Gemini app, AI Studio, Gemini API et Vertex AI sont des surfaces différentes.
 
-**Belgique.** Les tiers gratuits et payants Gemini API sont annoncés disponibles dans de nombreuses régions, y compris EEE [S11]. Le payant n’utilise pas le contenu pour améliorer les produits selon la grille; le gratuit le peut [S09]. Facturation et TVA à vérifier dans le projet Google Cloud.
+**Belgique.** Les tiers gratuits et payants Gemini API sont annoncés disponibles dans de nombreuses régions, y compris EEE [S11]. Le payant n’utilise pas le contenu pour améliorer les produits selon la grille; le gratuit le peut [S09]. Côté grand public, les plans (AI Plus, AI Pro, AI Ultra) et leurs modèles évoluent vite; prix EUR/TVA à confirmer au checkout. Facturation et TVA à vérifier dans le projet Google Cloud.
 
 **Développement.** Cache, batch à -50 %, Flex, Priority, outils de grounding, code execution et file search. Compter les jetons de raisonnement et les requêtes de recherche; utiliser Vertex pour réseau, IAM, journalisation et région.
 
@@ -58,7 +58,7 @@ Les scores publiés par un fournisseur sont des **capacités déclarées** jusqu
 
 ### 6. Meta
 
-**Positionnement.** Llama est d’abord une famille de poids et un écosystème; Meta AI est une application distincte [S18]. Le coût API dépend du fournisseur ou de l’infrastructure.
+**Positionnement.** Llama est d’abord une famille de poids et un écosystème; Meta AI est une application distincte [S18]. Le coût API dépend du fournisseur ou de l’infrastructure. Signal récent à confirmer: Meta aurait lancé le 9 juillet 2026 un premier modèle payant (« Muse Spark 1.1 », ~1,25/4,25 USD), ce qui marquerait une inflexion vers une offre commerciale directe [S67].
 
 **Belgique.** Vérifier la licence du modèle, les restrictions d’usage et la disponibilité exacte des fonctions Meta AI dans l’UE. Le français est généralement utilisable; le néerlandais doit être évalué. L’auto-hébergement donne du contrôle mais crée les obligations d’exploitant.
 
@@ -72,7 +72,7 @@ Les scores publiés par un fournisseur sont des **capacités déclarées** jusqu
 
 ### 8. xAI
 
-**Positionnement.** Grok 4.5 est disponible comme app et API; la grille distingue contexte court/long, cache, voix, image et vidéo [S22–S23]. Grok 4.20 a aussi une configuration multi-agent dans sa carte modèle.
+**Positionnement.** Grok 4.5 a été rendu public le 8 juillet 2026, positionné comme modèle de code économique (~2/6 USD), disponible comme app et API; la grille distingue contexte court/long, cache, voix, image et vidéo [S22–S23, S65]. xAI a aussi publié un modèle de transcription (Grok STT 1.0) le 23 juillet 2026. Une configuration multi-agent figure dans la carte modèle.
 
 **Belgique.** L’UE est citée dans des cartes modèles précédentes, mais disponibilité, prix local, TVA et résidence de Grok 4.5 doivent être confirmés. La politique grand public ne couvre pas nécessairement l’API entreprise [S24].
 
@@ -86,7 +86,7 @@ Les scores publiés par un fournisseur sont des **capacités déclarées** jusqu
 
 ### 10. Alibaba Cloud / Qwen
 
-**Positionnement.** Qwen propose généralistes, code et multimodal, en poids et via Model Studio. Qwen 3.7 max global est tarifé en CNY avec régions global/US/Chine distinctes [S27–S28].
+**Positionnement.** Qwen propose généralistes, code et multimodal, en poids et via Model Studio. Qwen 3.7 max global est tarifé en CNY avec régions global/US/Chine distinctes [S27–S28]. Alibaba a publié **Qwen 3.7 Flash** le 27 juillet 2026, renforçant le segment rapide/économique [S66].
 
 **Belgique.** Le mot « global » ne prouve pas disponibilité, localisation UE ni facture conforme en Belgique. Vérifier compte, région, DPA, support et langues; FR/NL sont à tester.
 
@@ -165,4 +165,4 @@ Les scores publiés par un fournisseur sont des **capacités déclarées** jusqu
 
 ## Limites
 
-La consultation web ne permet pas de simuler chaque checkout belge ni de signer un contrat. Certaines pages sont dynamiques ou géolocalisées. Les latences, quotas et remises dépendent du compte. Les incidents publics n’ont été inclus que lorsqu’une source primaire et un impact encore pertinent étaient disponibles; aucun incident spécifique suffisamment récent et vérifié n’a été ajouté cette fois. Une prochaine édition doit comparer les changements à cet état initial.
+La consultation web ne permet pas de simuler chaque checkout belge ni de signer un contrat. Certaines pages sont dynamiques ou géolocalisées. Cette édition, plusieurs pages officielles (OpenAI, Google, institutions UE, BCE) ont renvoyé un HTTP 403 à la récupération automatisée: la famille Claude 5 a été confirmée sur la documentation Anthropic officielle, mais certains tarifs OpenAI/Google et le taux BCE reposent sur des sources secondaires ou la dernière valeur vérifiée et sont marqués « à confirmer ». Les latences, quotas et remises dépendent du compte. Le jalon réglementaire majeur de la période est l’entrée en application, le 2 août 2026, des pouvoirs d’exécution de la Commission sur les fournisseurs GPAI [S57–S59, S68]. La prochaine édition doit comparer les changements à cet état.
