@@ -1,6 +1,6 @@
 # Observatoire LLM et agents IA — Belgique
 
-Édition vérifiée le **17 juillet 2026**. Cette première édition couvre exactement 20 écosystèmes et sépare modèles, applications, plateformes API, assistants de code et agents autonomes.
+Édition vérifiée le **2 août 2026** (deuxième édition; première édition: 17 juillet 2026). L’observatoire couvre exactement 20 écosystèmes et sépare modèles, applications, plateformes API, assistants de code et agents autonomes.
 
 ## Livrables
 
@@ -11,13 +11,14 @@
 - [Registre des sources](sources.md)
 - [Historique](historique.md)
 
-## Principaux changements constatés
+## Principaux changements constatés (depuis le 17 juillet 2026)
 
-- Première publication dans ce dépôt; aucune édition précédente n’était disponible.
-- Frontière 2026: GPT-5.5, Claude Opus 4.8/Sonnet 5, Gemini 3.5 Flash, Grok 4.5, Mistral Medium 3.5, Qwen 3.7, GLM-5.2 et Kimi K3.
-- Les offres agents deviennent des produits facturés séparément ou des boucles consommant modèle, outils et calcul; le coût par tâche remplace progressivement le seul coût par jeton.
-- Pour la Belgique, les prix publics restent souvent en USD hors TVA. Conversions indicatives avec les taux BCE du 14 juillet 2026: **1 EUR = 1,1405 USD = 7,7327 CNY**. TVA belge standard: **21 %**; le traitement réel dépend du statut client et de la facture.
-- Les obligations de transparence de l’AI Act entrent en application en août 2026; le calendrier des systèmes à haut risque a été modifié en juin 2026. Analyse informative, pas avis juridique.
+- **Anthropic** a restructuré sa gamme: **Opus 5** (24 juillet, 5/25 USD, 1 M de contexte, coupure mai 2026, effort low/medium/high), **Fable 5** en tête (10/50 USD), **Sonnet 5** en prix de lancement 2/10 USD jusqu’au 31 août; Opus 4.8 passe en héritage.
+- **OpenAI** a livré la famille **GPT-5.6** (Sol/Terra/Luna, GA le 9 juillet); Sol est le modèle de tête (5/30 USD, 10/45 USD au-delà de 272 k); baisses Luna −80 % / Terra −20 % le 30 juillet.
+- **Google** a lancé **Gemini 3.6 Flash** (21 juillet, 1,50/7,50 USD) et un palier 3.5 Flash-Lite (0,30/2,50 USD).
+- **Moonshot** a publié les **poids ouverts de Kimi K3** (26 juillet, 2,8 T MoE, 1 M de contexte, multimodal); revendications de benchmark à vérifier indépendamment.
+- **AI Act**: le jalon du **2 août 2026 est en application** — transparence de l’article 50, pouvoirs d’exécution GPAI et sanctions; haut risque reporté à décembre 2027 (annexe III) et août 2028 (annexe I). Analyse informative, pas avis juridique.
+- Pour la Belgique, les prix publics restent souvent en USD hors TVA. Conversions indicatives avec le taux BCE du 30 juillet 2026: **1 EUR = 1,1476 USD**. TVA belge standard: **21 %**; le traitement réel dépend du statut client et de la facture.
 
 ## Lecture rapide
 

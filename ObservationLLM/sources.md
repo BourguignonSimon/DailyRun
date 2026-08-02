@@ -1,6 +1,6 @@
 # Registre des sources
 
-Consultation: **17 juillet 2026**, heure de Bruxelles. Les URL sont dédupliquées. « Non publiée » signifie que la page n’affiche pas de date exploitable. Les pages dynamiques peuvent évoluer sans changer d’URL.
+Consultation initiale: **17 juillet 2026**; deuxième consultation (ajouts S61–S66 et revérification des faits volatils): **2 août 2026**, heure de Bruxelles. Les URL sont dédupliquées. « Non publiée » signifie que la page n’affiche pas de date exploitable. Les pages dynamiques peuvent évoluer sans changer d’URL.
 
 | ID | Acteur | Sujet | Nature | URL exacte | Publication / mise à jour connue | Consultation |
 |---|---|---|---|---|---|---|
@@ -64,6 +64,12 @@ Consultation: **17 juillet 2026**, heure de Bruxelles. Les URL sont dédupliqué
 | S58 | Union européenne | Obligations GPAI | Source institutionnelle | <https://digital-strategy.ec.europa.eu/en/faqs/guidelines-obligations-general-purpose-ai-providers> | 2025-11 | 2026-07-17 |
 | S59 | Conseil de l’UE | Calendrier AI Act modifié | Source institutionnelle | <https://www.consilium.europa.eu/en/policies/artificial-intelligence-act/timeline-artificial-intelligence/> | 2026-07 | 2026-07-17 |
 | S60 | Moonshot | Lancement Kimi K3 et position de marché | Source indépendante | <https://www.axios.com/2026/07/16/moonshot-kimi-ai-china-model-openai-anthropic> | 2026-07-16 | 2026-07-17 |
+| S61 | OpenAI | Famille GPT-5.6 Sol/Terra/Luna, contexte et prix | Publication officielle | <https://openai.com/index/gpt-5-6/> | 2026-07-09 | 2026-08-02 |
+| S62 | Anthropic | Lancement Claude Opus 5, prix et contexte | Source indépendante | <https://www.axios.com/2026/07/24/anthropic-releases-new-model-opus-5> | 2026-07-24 | 2026-08-02 |
+| S63 | Google | Gemini 3.6 Flash et 3.5 Flash-Lite, notes de version | Documentation officielle | <https://ai.google.dev/gemini-api/docs/changelog> | 2026-07-21 | 2026-08-02 |
+| S64 | Moonshot | Kimi K3 en poids ouverts (2,8 T MoE, 1 M) et impact marché | Source indépendante | <https://venturebeat.com/technology/chinas-moonshot-ai-releases-kimi-k3-the-largest-open-source-model-ever-rivaling-top-u-s-systems> | 2026-07-26 | 2026-08-02 |
+| S65 | Union européenne | Ce qui s’applique au 2 août 2026 (transparence, GPAI, sanctions) | Analyse spécialisée | <https://www.digitalapplied.com/blog/eu-ai-act-august-2026-transparency-obligations-agency-checklist> | 2026-07 | 2026-08-02 |
+| S66 | BCE | Taux de référence EUR/USD (1,1476) au 30 juillet 2026 | Source institutionnelle | <https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/eurofxref-graph-usd.en.html> | 2026-07-30 | 2026-08-02 |
 
 ## Sources non retenues
 

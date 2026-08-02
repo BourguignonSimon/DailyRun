@@ -1,32 +1,32 @@
 # Analyse détaillée
 
-Vérification: **17 juillet 2026**. Point de vue: particulier ou développeur résidant en Belgique. Cette analyse est informative; les volets RGPD et AI Act ne constituent pas un avis juridique.
+Vérification: **2 août 2026** (deuxième édition). Point de vue: particulier ou développeur résidant en Belgique. Cette analyse est informative; les volets RGPD et AI Act ne constituent pas un avis juridique. **Note du jour: le jalon AI Act du 2 août 2026 est en application** — transparence de l’article 50, pouvoirs d’exécution GPAI et sanctions; haut risque reporté à décembre 2027 (annexe III) et août 2028 (annexe I) [S57–S59].
 
 ## Méthodologie et sélection
 
 Cinq familles de signaux ont été examinées: adoption/présence marché (30 %), qualité et portée des modèles (25 %), maturité API/outils/agents (20 %), écosystème développeur (15 %), disponibilité et pertinence Europe/Belgique (10 %). Les pondérations servent à décider l’inclusion, pas à produire un faux score précis. Les 20 retenus couvrent quatre rôles qui se chevauchent: concepteurs de modèles, applications, plateformes cloud/API et agents de code.
 
-L’édition précédente n’existait pas dans le dépôt. **Entrées: les 20 acteurs. Sorties: aucune.** À partir de la prochaine édition, une entrée exigera plusieurs signaux durables et entraînera une sortie explicitement motivée. Les candidats à surveiller comprennent MiniMax, Databricks/Mosaic, Oracle OCI, Salesforce et les plateformes d’orchestration indépendantes; ils ne sont pas inclus pour conserver exactement 20 acteurs.
+Le périmètre reste identique à l’édition du 17 juillet 2026: **les 20 mêmes acteurs, aucune entrée ni sortie cette fois.** Une entrée future exigera plusieurs signaux durables et entraînera une sortie explicitement motivée. Les candidats à surveiller comprennent MiniMax, Databricks/Mosaic, Oracle OCI, Salesforce et les plateformes d’orchestration indépendantes; ils ne sont pas inclus pour conserver exactement 20 acteurs.
 
-Chaque fait volatil renvoie au registre [sources.md](sources.md). Les prix sont des snapshots, les pages dynamiques pouvant changer sans version. Les conversions utilisent S55 et la TVA standard belge S56. Une disponibilité non explicitement vérifiée est « à confirmer ».
+Chaque fait volatil renvoie au registre [sources.md](sources.md). Les prix sont des snapshots, les pages dynamiques pouvant changer sans version. Les conversions utilisent S66 (BCE, 30 juillet 2026, 1 EUR = 1,1476 USD) et la TVA standard belge S56. Une disponibilité non explicitement vérifiée est « à confirmer ».
 
 ## Comment lire les benchmarks
 
-Les scores publiés par un fournisseur sont des **capacités déclarées** jusqu’à reproduction. Exemple: OpenAI publie pour GPT-5.5 82,7 % sur Terminal-Bench 2.0 et 58,6 % sur SWE-Bench Pro, tout en signalant un risque de mémorisation sur ce dernier [S02]. Z.AI revendique 77,8 sur SWE-bench Verified pour GLM-5 dans sa propre documentation [S53]. Ces protocoles, versions, échafaudages, budgets d’outils et dates diffèrent: ils ne sont pas comparés directement ici. La décision doit reposer sur un jeu d’évaluation interne daté, versionné et reproductible.
+Les scores publiés par un fournisseur sont des **capacités déclarées** jusqu’à reproduction. Exemple récent: Moonshot présente Kimi K3 comme compétitif face à Fable 5 et supérieur à Opus 4.8 et GPT-5.6 Sol sur ses propres mesures [S64, S60]; Anthropic annonce qu’Opus 5 plus que double le score d’Opus 4.8 sur son Frontier-Bench interne [S62]. Ces protocoles, versions, échafaudages, budgets d’outils et dates diffèrent: ils ne sont **pas comparés directement ici** ni agrégés en classement. La décision doit reposer sur un jeu d’évaluation interne daté, versionné et reproductible.
 
 ## Analyse des 20 écosystèmes
 
 ### 1. OpenAI
 
-**Positionnement.** GPT-5.5 est un modèle frontière texte/vision en entrée, 1,05 M de contexte et 128 k de sortie; ChatGPT est l’application, l’API Responses la plateforme, Codex l’agent de code [S01–S02]. Outils natifs: web, fichiers, génération d’image, interpréteur, shell hébergé, patch, computer use et MCP.
+**Positionnement.** La famille **GPT-5.6** (Sol/Terra/Luna, GA le 9 juillet 2026) est le nouveau haut de gamme; **Sol** est le modèle de tête texte/vision, 1,05 M de contexte, 128 k de sortie, coupure février 2026; ChatGPT est l’application, l’API Responses la plateforme, Codex l’agent de code [S01, S61]. GPT-5.5 reste disponible mais sort de la grille principale. Outils natifs: web, fichiers, génération d’image, interpréteur, shell hébergé, patch, computer use et MCP.
 
 **Belgique.** L’usage est largement pertinent en français et néerlandais, mais la qualité doit être testée par domaine. L’API publie l’absence d’entraînement par défaut et des contrôles de résidence EEE pour clients/services éligibles [S03]. Les prix de l’API sont en USD hors taxes; le prix ChatGPT belge exact et la TVA doivent être confirmés au checkout.
 
-**Développement.** SDK larges, sorties structurées, function calling, streaming, batch/flex/priority et snapshots. Épingler le snapshot, journaliser les request IDs, maintenir des évaluations avant migration [S05]. Coût long contexte et outils à budgéter séparément.
+**Développement.** SDK larges, sorties structurées, function calling, streaming, batch/flex/priority et snapshots. Épingler le snapshot, journaliser les request IDs, maintenir des évaluations avant migration [S05]. Coût long contexte à budgéter: au-delà de 272 k, Sol passe à 10/45 USD par million (entrée/sortie); outils facturés séparément.
 
 ### 2. Anthropic
 
-**Positionnement.** Opus 4.8 vise les tâches difficiles; Sonnet 5/4.6 offre un compromis coût-vitesse; Claude Code est l’agent de développement. Le catalogue publié atteint 1 M de contexte pour le haut de gamme [S06–S08].
+**Positionnement.** Gamme restructurée: **Fable 5** est le modèle de tête (10/50 USD); **Opus 5** (24 juillet 2026) vise les tâches difficiles au prix Opus inchangé de 5/25 USD, 1 M de contexte, coupure mai 2026, sélecteur d’effort low/medium/high, désormais par défaut sur Claude Max; **Sonnet 5** (prix de lancement 2/10 USD jusqu’au 31 août, puis 3/15 USD) offre un compromis coût-vitesse; Claude Code est l’agent de développement. Opus 4.8 passe en héritage [S06–S08, S62].
 
 **Belgique et données.** Application et API sont pertinentes pour FR/NL, à valider sur le corpus réel. DPA, résidence et rétention varient entre API directe, AWS et Google Cloud; la résidence peut ajouter un multiplicateur. Vérifier le contrat exact.
 
@@ -34,7 +34,7 @@ Les scores publiés par un fournisseur sont des **capacités déclarées** jusqu
 
 ### 3. Google
 
-**Positionnement.** Gemini combine multimodalité, contexte 1 M, recherche Google/Maps et agents managés. Gemini 3.5 Flash est présenté comme modèle rapide à intelligence élevée [S09–S11]. Gemini app, AI Studio, Gemini API et Vertex AI sont des surfaces différentes.
+**Positionnement.** Gemini combine multimodalité, contexte 1 M, recherche Google/Maps et agents managés. **Gemini 3.6 Flash** (21 juillet 2026, 1,50/7,50 USD) succède à 3.5 Flash avec une sortie moins chère et un meilleur profil code/agents; un palier **3.5 Flash-Lite** (0,30/2,50 USD) cible les sous-agents à haut volume [S09, S63]. Gemini app, AI Studio, Gemini API et Vertex AI sont des surfaces différentes.
 
 **Belgique.** Les tiers gratuits et payants Gemini API sont annoncés disponibles dans de nombreuses régions, y compris EEE [S11]. Le payant n’utilise pas le contenu pour améliorer les produits selon la grille; le gratuit le peut [S09]. Facturation et TVA à vérifier dans le projet Google Cloud.
 
@@ -72,7 +72,7 @@ Les scores publiés par un fournisseur sont des **capacités déclarées** jusqu
 
 ### 8. xAI
 
-**Positionnement.** Grok 4.5 est disponible comme app et API; la grille distingue contexte court/long, cache, voix, image et vidéo [S22–S23]. Grok 4.20 a aussi une configuration multi-agent dans sa carte modèle.
+**Positionnement.** Grok 4.5 (lancement du 8 juillet 2026) est disponible comme app et API et poursuit son déploiement par paliers sur SuperGrok; la grille distingue contexte court/long (2/6 puis 4/12 USD en priorité), cache, voix, image et vidéo [S22–S23]. Grok 4.20 a aussi une configuration multi-agent dans sa carte modèle.
 
 **Belgique.** L’UE est citée dans des cartes modèles précédentes, mais disponibilité, prix local, TVA et résidence de Grok 4.5 doivent être confirmés. La politique grand public ne couvre pas nécessairement l’API entreprise [S24].
 
@@ -144,9 +144,9 @@ Les scores publiés par un fournisseur sont des **capacités déclarées** jusqu
 
 ### 19. Moonshot AI / Kimi
 
-**Positionnement.** Kimi couvre modèles open weight, application, Kimi Code CLI et SDK agent. Kimi K3 annoncé le 16 juillet 2026 est trop récent pour une conclusion indépendante robuste [S48–S51, S60].
+**Positionnement.** Kimi couvre modèles open weight, application, Kimi Code CLI et SDK agent. **Kimi K3** a vu ses poids ouverts gratuits publiés le 26 juillet 2026: 2,8 T de paramètres MoE (16 experts actifs sur 896), 1 M de contexte, multimodal texte/image/vidéo — plus grand modèle en poids ouverts à ce jour. Moonshot le présente comme compétitif face à Fable 5 et supérieur à Opus 4.8/GPT-5.6 Sol: **revendication fournisseur, vérification indépendante en cours** [S48–S51, S60, S64].
 
-**Belgique.** Les poids améliorent la portabilité. API directe, abonnement, DPA, région, TVA et qualité FR/NL restent à confirmer. Le CLI peut lire/écrire, lancer des commandes, utiliser MCP et sous-agents: permissions minimales obligatoires.
+**Belgique.** Les poids ouverts améliorent la portabilité et permettent un hébergement UE, mais déplacent la sécurité vers l’hébergeur (infrastructure, garde-fous, correctifs). API directe, abonnement, DPA, région, TVA et qualité FR/NL restent à confirmer. Le CLI peut lire/écrire, lancer des commandes, utiliser MCP et sous-agents: permissions minimales obligatoires.
 
 ### 20. Z.AI / GLM
 
@@ -165,4 +165,4 @@ Les scores publiés par un fournisseur sont des **capacités déclarées** jusqu
 
 ## Limites
 
-La consultation web ne permet pas de simuler chaque checkout belge ni de signer un contrat. Certaines pages sont dynamiques ou géolocalisées. Les latences, quotas et remises dépendent du compte. Les incidents publics n’ont été inclus que lorsqu’une source primaire et un impact encore pertinent étaient disponibles; aucun incident spécifique suffisamment récent et vérifié n’a été ajouté cette fois. Une prochaine édition doit comparer les changements à cet état initial.
+La consultation web ne permet pas de simuler chaque checkout belge ni de signer un contrat. Certaines pages sont dynamiques ou géolocalisées. Les latences, quotas et remises dépendent du compte. Les revendications de benchmark des fournisseurs (Opus 5, GPT-5.6, Kimi K3) ne sont ni comparées ni agrégées et attendent une vérification indépendante. Les catalogues Mistral affichés par des agrégateurs tiers présentaient des noms divergents (par ex. « Mistral Large 3 », « Magistral Medium ») non recoupés avec la documentation officielle: la fiche Mistral est laissée en l’état, à revérifier sur docs.mistral.ai. Cette édition compare les changements à l’état initial du 17 juillet 2026; voir [historique.md](historique.md).

@@ -1,6 +1,6 @@
 # Comparatif structuré — édition Belgique
 
-Mise à jour: **17 juillet 2026**. Ce fichier remplace le classeur Excel demandé initialement: le dépôt a explicitement migré vers Markdown le 16 juillet 2026. Les « feuilles » sont les sections ci-dessous. Les références Sxx renvoient à [sources.md](sources.md).
+Mise à jour: **2 août 2026**. Ce fichier remplace le classeur Excel demandé initialement: le dépôt a explicitement migré vers Markdown le 16 juillet 2026. Les « feuilles » sont les sections ci-dessous. Les références Sxx renvoient à [sources.md](sources.md).
 
 - [Vue d’ensemble](#vue-densemble)
 - [Prix particuliers](#prix-particuliers)
@@ -15,9 +15,9 @@ Mise à jour: **17 juillet 2026**. Ce fichier remplace le classeur Excel demand�
 
 | # | Entreprise / écosystème | Catégorie dominante | Offre phare vérifiée | Pertinence Belgique | Force principale | Limite principale | Sources |
 |---:|---|---|---|---|---|---|---|
-| 1 | OpenAI | Modèles + app + API + agent code | GPT-5.5, ChatGPT, Codex | Élevée | Écosystème complet et outils | Coût frontière et verrouillage | S01–S05 |
-| 2 | Anthropic | Modèles + app + API + agent code | Opus 4.8, Sonnet 5, Claude Code | Élevée | Raisonnement, code, long contexte | Prix Opus; options régionales payantes | S06–S08 |
-| 3 | Google | Modèles + app + API + cloud | Gemini 3.5 Flash, Gemini API | Élevée | Multimodal, 1 M, recherche | Complexité des surfaces et tarifs | S09–S11 |
+| 1 | OpenAI | Modèles + app + API + agent code | GPT-5.6 Sol/Terra/Luna, ChatGPT, Codex | Élevée | Écosystème complet et outils | Coût frontière et verrouillage | S01–S05, S61 |
+| 2 | Anthropic | Modèles + app + API + agent code | Fable 5, Opus 5, Sonnet 5, Claude Code | Élevée | Raisonnement, code, long contexte | Prix modèle de tête; options régionales payantes | S06–S08, S62 |
+| 3 | Google | Modèles + app + API + cloud | Gemini 3.6 Flash, Gemini API | Élevée | Multimodal, 1 M, recherche | Complexité des surfaces et tarifs | S09–S11, S63 |
 | 4 | Microsoft | Cloud + productivité + agents | Azure OpenAI, M365 Copilot, Copilot Studio | Très élevée | Intégration M365/Azure, identité | Licences et coûts imbriqués | S12–S14 |
 | 5 | AWS | Plateforme multi-modèles + agents | Bedrock, Agents, AgentCore | Très élevée | Choix de modèles et régions | Tarification composite | S15–S17 |
 | 6 | Meta | Open weight + app | Llama 4, Meta AI | Moyenne | Poids et écosystème open | Licence et disponibilité produit UE à vérifier | S18 |
@@ -33,22 +33,22 @@ Mise à jour: **17 juillet 2026**. Ce fichier remplace le classeur Excel demand�
 | 16 | Anysphere/Cursor | Éditeur et agents de code | Cursor | Très élevée pour développeurs | UX agentique sur dépôt | Dépendance aux modèles tiers et crédits | S41–S43 |
 | 17 | Replit | Création/déploiement agentique | Replit Agent | Élevée pour prototypes | De l’idée au déploiement | Coût par crédits, contrôle infra | S44 |
 | 18 | Hugging Face | Hub + inference open | Hub, Providers, Endpoints | Très élevée pour open source | Portabilité et catalogue | Qualité/sécurité dépend du modèle/provider | S45–S47 |
-| 19 | Moonshot/Kimi | Modèles + app + agent code | Kimi K3/K2.7, Kimi Code | Moyenne | Open weight, code, agents | Offre belge, DPA et prix officiel à confirmer | S48–S51, S60 |
+| 19 | Moonshot/Kimi | Modèles + app + agent code | Kimi K3 (poids ouverts), Kimi Code | Moyenne | Open weight 2,8 T, code, agents | Offre belge, DPA et prix officiel à confirmer; benchmarks fournisseur à vérifier | S48–S51, S60, S64 |
 | 20 | Z.AI/GLM | Modèles + API + agent code | GLM-5.2, Coding Plan | Moyenne | Code agentique et prix | Français/NL, région UE et DPA à confirmer | S52–S54 |
 
 ## Prix particuliers
 
-Prix catalogue observés. Conversion: USD ÷ 1,1405; CNY ÷ 7,7327. La colonne TVA est prudente: « checkout » signifie que l’inclusion doit être confirmée sur la facture belge.
+Prix catalogue observés. Conversion: USD ÷ 1,1476 (BCE, 30 juillet 2026). La colonne TVA est prudente: « checkout » signifie que l’inclusion doit être confirmée sur la facture belge.
 
 | Offre | Prix origine | Estimation EUR HT | Estimation EUR avec 21 % si non incluse | TVA / remarque | Source |
 |---|---:|---:|---:|---|---|
-| GitHub Copilot Pro | 10 USD/mois | 8,77 € | 10,61 € | Checkout; 15 USD de crédits totaux annoncés | S37 |
-| GitHub Copilot Pro+ | 39 USD/mois | 34,20 € | 41,38 € | Checkout; 70 USD de crédits | S37 |
-| GitHub Copilot Max | 100 USD/mois | 87,68 € | 106,09 € | Checkout; 200 USD de crédits | S37 |
-| Replit Core annuel | 20 USD/mois équivalent | 17,54 € | 21,22 € | 25 USD de crédits mensuels | S44 |
-| Replit Pro annuel | 95 USD/mois équivalent | 83,30 € | 100,79 € | 100 USD de crédits | S44 |
-| Z.AI Coding Lite annuel | 12,60 USD/mois | 11,05 € | 13,37 € | Promotion; checkout | S54 |
-| Z.AI Coding Pro annuel | 50,40 USD/mois | 44,19 € | 53,47 € | Promotion; checkout | S54 |
+| GitHub Copilot Pro | 10 USD/mois | 8,71 € | 10,54 € | Checkout; 15 USD de crédits totaux annoncés | S37 |
+| GitHub Copilot Pro+ | 39 USD/mois | 33,98 € | 41,12 € | Checkout; 70 USD de crédits | S37 |
+| GitHub Copilot Max | 100 USD/mois | 87,14 € | 105,44 € | Checkout; 200 USD de crédits | S37 |
+| Replit Core annuel | 20 USD/mois équivalent | 17,43 € | 21,09 € | 25 USD de crédits mensuels | S44 |
+| Replit Pro annuel | 95 USD/mois équivalent | 82,78 € | 100,17 € | 100 USD de crédits | S44 |
+| Z.AI Coding Lite annuel | 12,60 USD/mois | 10,98 € | 13,28 € | Promotion; checkout | S54 |
+| Z.AI Coding Pro annuel | 50,40 USD/mois | 43,92 € | 53,14 € | Promotion; checkout | S54 |
 | Microsoft 365 Copilot Business annuel | 15,60 EUR/utilisateur/mois | 15,60 € | 18,88 € | Page indique prix hors TVA; plan M365 requis | S12 |
 | ChatGPT, Claude, Gemini, Mistral, Grok, Perplexity, Cursor | Voir checkout belge | ND | ND | Les pages dynamiques n’ont pas fourni un prix EUR/TVA stable lors du contrôle | S04, S19, S23, S39, S41 |
 
@@ -58,9 +58,9 @@ Prix par **1 million de jetons** sauf mention. HT et hors outils. Les prix EUR s
 
 | Acteur / modèle représentatif | Contexte | Entrée origine | Cache origine | Sortie origine | Entrée EUR | Sortie EUR | Batch / classe | Outils / remarques | Source |
 |---|---:|---:|---:|---:|---:|---:|---|---|---|
-| OpenAI GPT-5.5 | 1,05 M | 5 USD | 0,50 USD | 30 USD | 4,38 € | 26,30 € | Batch/Flex -50 %; Priority ×2,5 | >272 k: entrée ×2, sortie ×1,5; outils séparés | S01–S02 |
-| Anthropic Claude Opus 4.8, API directe | 1 M | 5 USD | lecture 0,50 USD; écritures selon durée | 25 USD | 4,38 € | 21,92 € | Batch -50 % | Résidence et fast peuvent ajouter un multiplicateur | S06–S08 |
-| Google Gemini 3.5 Flash | 1 M | 1,50 USD | 0,15 USD + stockage | 9 USD | 1,32 € | 7,89 € | Batch/Flex 0,75/4,50; Priority 2,70/16,20 | Search/Maps 14 USD/1 000 requêtes après quota | S09–S10 |
+| OpenAI GPT-5.6 Sol | 1,05 M | 5 USD | 0,50 USD | 30 USD | 4,36 € | 26,14 € | Batch/Flex -50 %; Priority ×2,5 | >272 k: 10/45 USD (entrée/sortie); outils séparés; famille Sol/Terra/Luna | S01, S61 |
+| Anthropic Claude Opus 5, API directe | 1 M | 5 USD | lecture 0,50 USD; écritures selon durée | 25 USD | 4,36 € | 21,79 € | Batch -50 % | Prix Opus inchangé; Fable 5 à 10/50 USD; résidence/fast en multiplicateur | S06–S08, S62 |
+| Google Gemini 3.6 Flash | 1 M | 1,50 USD | 0,15 USD + stockage | 7,50 USD | 1,31 € | 6,53 € | Batch/Flex -50 % | Sortie moins chère que 3.5 Flash; 3.5 Flash-Lite 0,30/2,50; Search/Maps facturés | S09, S63 |
 | Mistral Large | À confirmer par version | 2 USD | ND | 6 USD | 1,75 € | 5,26 € | Batch -50 % | OCR, audio et autres outils séparés | S19 |
 | xAI Grok 4.5 court | 500 k | 2 USD | 0,50 USD | 6 USD | 1,75 € | 5,26 € | Batch affichable | Long contexte 4/1/12 USD | S22 |
 | DeepSeek chat | 64 k sur page contrôlée | 0,27 USD miss | 0,07 USD hit | 1,10 USD | 0,24 € | 0,96 € | À confirmer | Version et horaires peuvent changer | S25 |
@@ -101,7 +101,7 @@ Légende: **Oui** publié; **Partiel** dépend du modèle/produit; **ND** non pu
 | Cursor | Modèles multiples | Terminal/MCP | Agent | Index dépôt, rules | Agents et SDK | Éditeur/CLI | Non | Modèle choisi |
 | Replit | Modèles multiples | Shell, DB, déploiement | Agent | Projet | Replit Agent | Plateforme | Non | Produit |
 | Hugging Face | Selon modèle | Selon provider | Externe | Hub/Endpoints | Frameworks tiers | Python/JS | Oui, cœur du Hub | Modèle |
-| Kimi | Texte/vision/vidéo selon version | Oui | App/agent | Long contexte | Kimi Code + sous-agents | SDK/CLI | Oui, licence modifiée | Version |
+| Kimi | Texte/image/vidéo (K3) | Oui | App/agent | Long contexte | Kimi Code + sous-agents | SDK/CLI | Oui, poids ouverts (K3, 2,8 T) | 1 M (K3) |
 | Z.AI | Texte/vision/audio/vidéo | Oui; web payant | Oui | À construire | GLM Code/Coding Plan | Python/Java/OpenAI | Plusieurs GLM | 200 k |
 
 ## Sécurité-RGPD
@@ -139,10 +139,10 @@ Légende: **Oui** publié; **Partiel** dépend du modèle/produit; **ND** non pu
 
 La sélection combine cinq signaux qualitatifs: adoption/présence marché 30 %, qualité/portée des modèles 25 %, maturité API/outils/agents 20 %, écosystème développeur 15 %, disponibilité et pertinence Europe/Belgique 10 %. La liste est plafonnée à exactement 20. Les sorties de la prochaine édition exigeront un signal durable supérieur à l’acteur remplacé; une nouveauté seule ne suffit pas.
 
-Les benchmarks fournisseur restent dans [analyse-detaillee.md](analyse-detaillee.md) avec protocole et avertissements. Aucun score de sources hétérogènes n’est moyenné. Les prix sont des snapshots catalogue au 17 juillet 2026; remises, contrats et taxes varient.
+Les benchmarks fournisseur restent dans [analyse-detaillee.md](analyse-detaillee.md) avec protocole et avertissements. Aucun score de sources hétérogènes n’est moyenné. Les prix sont des snapshots catalogue au 2 août 2026; remises, contrats et taxes varient.
 
-Contrôles effectués: 20 lignes exactes dans Vue d’ensemble; unités de prix homogènes; conversions recalculées avec S55; liens Markdown relatifs; valeurs inconnues marquées ND/à confirmer. Les filtres, volets figés et formules Excel ne sont pas applicables à Markdown.
+Contrôles effectués: 20 lignes exactes dans Vue d’ensemble; unités de prix homogènes; conversions recalculées avec S66 (BCE 30 juillet 2026); liens Markdown relatifs; valeurs inconnues marquées ND/à confirmer. Les filtres, volets figés et formules Excel ne sont pas applicables à Markdown.
 
 ## Sources
 
-Registre complet, dates et URL exactes: [sources.md](sources.md). Les prix et capacités sont issus en priorité des identifiants S01–S59; S60 est la seule source indépendante retenue pour un signal de marché très récent.
+Registre complet, dates et URL exactes: [sources.md](sources.md). Les prix et capacités sont issus en priorité des identifiants S01–S59 et des ajouts S61–S66 de cette édition; S60 et S64 sont les signaux de marché indépendants retenus pour les annonces très récentes (Kimi K3).
