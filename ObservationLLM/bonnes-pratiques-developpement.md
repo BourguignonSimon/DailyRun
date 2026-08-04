@@ -1,6 +1,6 @@
 # Bonnes pratiques de développement
 
-État vérifié le **17 juillet 2026**. Les mentions distinguent **[Officiel]** recommandation publiée par un fournisseur, **[Consensus]** pratique convergente entre plusieurs fournisseurs et **[Déduction]** conclusion analytique de cet observatoire.
+État vérifié le **4 août 2026** (édition précédente 17 juillet 2026). Les mentions distinguent **[Officiel]** recommandation publiée par un fournisseur, **[Consensus]** pratique convergente entre plusieurs fournisseurs et **[Déduction]** conclusion analytique de cet observatoire. Les principes ci-dessous sont stables; cette édition met surtout à jour les particularités par fournisseur (nouvelles familles de modèles) et le rappel AI Act.
 
 ## Architecture de référence
 
@@ -57,7 +57,7 @@ Tracer request ID, version modèle, version prompt, outils, temps, jetons/cache,
 - Signer DPA et clauses de transfert; vérifier durée de rétention, entraînement, suppression, chiffrement, SSO/RBAC, audit et certifications.
 - Modéliser prompt injection, exfiltration, tool poisoning, SSRF, code arbitraire, escalade de privilèges, supply chain et fuite inter-utilisateurs.
 - Filtrer entrée et sortie selon le risque, mais ne jamais considérer un garde-fou fournisseur comme contrôle unique.
-- Documenter supervision humaine, transparence à l’utilisateur et limites. Revoir le calendrier AI Act [S57–S59].
+- Documenter supervision humaine, transparence à l’utilisateur et limites. Revoir le calendrier AI Act à la lumière du Digital Omnibus: haut risque autonome (Annexe III) reporté au **2 décembre 2027**, produits réglementés (Annexe I) au **2 août 2028**, transparence des contenus générés au **2 décembre 2026** (délai réduit de 6 à 3 mois), GPAI en vigueur depuis le 2 août 2025 [S57–S59, S67].
 
 ## Coût, performance et résilience
 
@@ -73,11 +73,11 @@ Tracer request ID, version modèle, version prompt, outils, temps, jetons/cache,
 
 ### 1. OpenAI
 
-**[Officiel, S01/S05]** Utiliser snapshots pour stabilité, Responses/Agents SDK pour outils, structured outputs, streaming, batch/flex et IDs de requête. **[Déduction]** Tester le seuil >272 k de GPT-5.5 avant d’autoriser des contextes géants; séparer budget outils et tokens.
+**[Officiel, S01/S05]** Utiliser snapshots pour stabilité, Responses/Agents SDK pour outils, structured outputs, streaming, batch/flex et IDs de requête. **[Déduction]** Choisir le bon palier GPT-5.6 (Luna/Terra/Sol) selon la difficulté réelle mesurée; réévaluer après la baisse de prix Terra/Luna du 30 juillet; séparer budget outils et tokens.
 
 ### 2. Anthropic
 
-**[Officiel, S06–S08]** Exploiter prompt caching, batch -50 %, modèles datés et budget de raisonnement approprié. **[Déduction]** Réserver Opus aux tâches où le gain de réussite compense le prix; surveiller dépréciations et options de résidence.
+**[Officiel, S06–S08]** Exploiter prompt caching, batch -50 %, modèles datés et budget de raisonnement approprié. **[Déduction]** Réserver Opus 5 aux tâches où le gain de réussite compense le prix; anticiper la fin du prix d’introduction de Sonnet 5 le 31 août 2026 (2/10 → 3/15 USD) dans les budgets; surveiller dépréciations et options de résidence.
 
 ### 3. Google
 
@@ -97,7 +97,7 @@ Tracer request ID, version modèle, version prompt, outils, temps, jetons/cache,
 
 ### 7. Mistral
 
-**[Officiel, S19–S21]** Choisir Large généraliste, Medium 3.5 pour agents/code, Small pour coût; batch -50 %, agents/RAG/OCR disponibles. **[Déduction]** Profiter de la proximité UE mais valider contrat et licence de chaque poids/version.
+**[Officiel, S19–S21]** Choisir Large 3 généraliste (0,50/1,50 USD), Medium 3.5 pour agents/code, Small 4 pour coût; batch -50 %, agents/RAG/OCR disponibles. **[Déduction]** La forte baisse de prix de Large 3 mérite une réévaluation coût/qualité; profiter de la proximité UE mais valider contrat et licence de chaque poids/version.
 
 ### 8. xAI
 
@@ -105,7 +105,7 @@ Tracer request ID, version modèle, version prompt, outils, temps, jetons/cache,
 
 ### 9. DeepSeek
 
-**[Officiel, S25–S26]** Utiliser cache lorsque le préfixe est identique et vérifier le modèle exact derrière les alias. **[Déduction]** Héberger les poids via fournisseur UE pour données sensibles; ajouter délais plus longs, fallback et revue de politique de données.
+**[Officiel, S25–S26]** Migrer vers les identifiants **V4** (`deepseek-v4-pro`/`deepseek-v4-flash`): les alias `deepseek-chat`/`deepseek-reasoner` ont été retirés après le 24 juillet 2026. Utiliser le cache quand le préfixe est identique. **[Déduction]** Héberger les poids via fournisseur UE pour données sensibles; ajouter délais plus longs, fallback et revue de politique de données.
 
 ### 10. Alibaba/Qwen
 

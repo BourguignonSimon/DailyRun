@@ -1,6 +1,6 @@
 # Registre des sources
 
-Consultation: **17 juillet 2026**, heure de Bruxelles. Les URL sont dédupliquées. « Non publiée » signifie que la page n’affiche pas de date exploitable. Les pages dynamiques peuvent évoluer sans changer d’URL.
+Consultation initiale: **17 juillet 2026**. Re-vérification: **4 août 2026**, heure de Bruxelles (lignes S61–S67 et mise à jour de S55). Les URL sont dédupliquées. « Non publiée » signifie que la page n’affiche pas de date exploitable. Les pages dynamiques peuvent évoluer sans changer d’URL. Les mouvements récents (S61–S66) ont été recoupés via des pages officielles et des traceurs de prix indépendants; les valeurs marquées « à confirmer » ailleurs dans le dossier n’ont pas été validées sur une page officielle lors de ce contrôle.
 
 | ID | Acteur | Sujet | Nature | URL exacte | Publication / mise à jour connue | Consultation |
 |---|---|---|---|---|---|---|
@@ -58,12 +58,19 @@ Consultation: **17 juillet 2026**, heure de Bruxelles. Les URL sont dédupliqué
 | S52 | Z.AI | Prix GLM, cache et outils | Documentation officielle | <https://docs.z.ai/guides/overview/pricing> | Dynamique | 2026-07-17 |
 | S53 | Z.AI | Catalogue, contexte et langues | Documentation officielle | <https://docs.z.ai/guides/overview/overview> | Dynamique | 2026-07-17 |
 | S54 | Z.AI | Coding Plan | Page officielle | <https://z.ai/subscribe> | Dynamique | 2026-07-17 |
-| S55 | BCE | Taux EUR/USD/CNY | Source institutionnelle | <https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html> | 2026-07-14 | 2026-07-17 |
+| S55 | BCE | Taux EUR/USD/CNY | Source institutionnelle | <https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html> | EUR/USD 1,1485 au 2026-07-31; EUR/CNY à confirmer | 2026-08-04 |
 | S56 | Belgique | Taux de TVA | Source institutionnelle | <https://finance.belgium.be/en/enterprises/vat/vat-obligation/rates-and-calculation/vat-rates> | Non publiée | 2026-07-17 |
 | S57 | Union européenne | AI Act, calendrier et transparence | Source institutionnelle | <https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai> | 2026-07 | 2026-07-17 |
 | S58 | Union européenne | Obligations GPAI | Source institutionnelle | <https://digital-strategy.ec.europa.eu/en/faqs/guidelines-obligations-general-purpose-ai-providers> | 2025-11 | 2026-07-17 |
 | S59 | Conseil de l’UE | Calendrier AI Act modifié | Source institutionnelle | <https://www.consilium.europa.eu/en/policies/artificial-intelligence-act/timeline-artificial-intelligence/> | 2026-07 | 2026-07-17 |
 | S60 | Moonshot | Lancement Kimi K3 et position de marché | Source indépendante | <https://www.axios.com/2026/07/16/moonshot-kimi-ai-china-model-openai-anthropic> | 2026-07-16 | 2026-07-17 |
+| S61 | OpenAI | Famille GPT-5.6 (Sol/Terra/Luna), GA et baisses de prix | Page officielle + traceurs | <https://openai.com/api/pricing/> | GA 2026-07-09; baisse Terra/Luna 2026-07-30 | 2026-08-04 |
+| S62 | Anthropic | Claude 5 (Opus 5, Fable 5, Sonnet 5) et prix d’introduction | Page officielle | <https://platform.claude.com/docs/en/about-claude/pricing> | Intro Sonnet 5 jusqu’au 2026-08-31 | 2026-08-04 |
+| S63 | Google | Gemini 3.6 Flash / 3.1 Pro / 3.5 Flash-Lite | Documentation officielle | <https://ai.google.dev/gemini-api/docs/pricing> | 2026-07/08; arrêt 2.0 Flash-Lite 2026-06-01 | 2026-08-04 |
+| S64 | Mistral | Large 3, Medium 3.5, Small 4 et prix | Page officielle | <https://mistral.ai/pricing/> | Dynamique | 2026-08-04 |
+| S65 | DeepSeek | Génération V4 et retrait des alias legacy | Documentation officielle | <https://api-docs.deepseek.com/quick_start/pricing-details-usd> | Retrait alias 2026-07-24 | 2026-08-04 |
+| S66 | Microsoft | GPT-5.6 par défaut et promo Business M365 Copilot | Page officielle | <https://www.microsoft.com/en-ie/microsoft-365-copilot/pricing> | Promo 2026-07-01 → 2026-09-30 | 2026-08-04 |
+| S67 | Union européenne / Conseil | Digital Omnibus: report du haut risque et transparence | Source institutionnelle | <https://www.consilium.europa.eu/en/policies/artificial-intelligence-act/timeline-artificial-intelligence/> | Approbation finale 2026-06-29 | 2026-08-04 |
 
 ## Sources non retenues
 
