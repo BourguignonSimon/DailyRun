@@ -2,6 +2,37 @@
 
 Les entrées sont ajoutées sans supprimer les précédentes. Les fichiers courants décrivent toujours le dernier état vérifié.
 
+## 2026-08-05 — Deuxième édition (mise à jour mensuelle)
+
+**Verdict.** Changements **significatifs** détectés depuis le 17 juillet: nouvelles têtes de gamme chez presque tous les acteurs, un virage stratégique de Meta vers le propriétaire, un changement d’API cassant chez DeepSeek, et l’entrée en vigueur d’un jalon majeur de l’AI Act. Les 20 écosystèmes restent identiques (aucune entrée/sortie).
+
+**Périmètre et méthode.** Recherche répartie sur cinq grappes (labos frontière, cloud entreprise, UE/open weight, outils code, modèles chinois + réglementaire/change). **Limite importante de cette édition**: la politique réseau a bloqué l’accès direct (HTTP 403) à la plupart des domaines officiels et institutionnels. Seules les grilles Anthropic (S07) et Google/Vertex (S09) ont été lues directement; le reste provient de restitutions de recherche des pages officielles et de sources indépendantes datées. Les valeurs non confirmées sur source primaire sont marquées « à confirmer » dans tous les fichiers.
+
+**Modèles — nouvelles têtes de gamme.**
+
+- **OpenAI:** famille **GPT-5.6 (Sol / Terra / Luna)** remplace GPT-5.5. Sol flagship 5/30 USD, 1,05 M. **Baisse du 30 juillet:** Terra -20 % (2/12), Luna -80 % (0,20/1,20). Nouveautés: Programmatic Tool Calling, points de rupture de cache explicites (min 30 min), Fast mode Sol [S01–S05].
+- **Anthropic:** **Opus 5** flagship (5/25, 1 M); paliers premium **Fable 5 et Mythos 5** (10/50). **Sonnet 5 en prix de lancement 2/10 jusqu’au 31 août, puis 3/15 le 1er septembre.** Nouveau **tokenizer 4.7+ (~+30 % jetons)**. Résidence `inference_geo:"us"` ×1,1 [S07].
+- **Google:** **Gemini 3.6 Flash** (1,50/7,50, sortie moins chère que 3.5 Flash), **3.5 Flash-Lite** (0,30/2,50) et **3.1 Pro Preview**. Endpoints non-global +10 % depuis le 1er juillet [S09].
+- **Meta:** virage vers le propriétaire — **Muse Spark** (API 1.1 à 1,25/4,25, OpenAI-compatible) devient la tête de gamme. **Llama 4 multimodal reste exclu des licenciés UE** par la licence [S18, S61–S63].
+- **DeepSeek:** génération **V4** (V4-Pro 0,435/0,87; V4-Flash 0,14/0,28; 1 M). **Changement cassant:** endpoints V3.2 (`deepseek-chat`/`deepseek-reasoner`) retirés le 24 juillet; V4-Flash en beta le 31 juillet [S25, S64–S65].
+- **Alibaba/Qwen:** **Qwen3.8-Max** (2/6, cache 0,25, 1 M) remplace 3.7 Max; premier Max à poids ouverts (publication ~10 août, à confirmer) [S27, S66].
+- **Moonshot/Kimi:** **Kimi K3 désormais vérifiable** — poids ouverts publiés le 27 juillet, 3/15 USD, 1 M, meilleur indice open weight (AAII 57), licence propriétaire à paliers de revenus [S48–S51, S60].
+- **Z.AI/GLM:** **GLM-5.2** confirmé flagship (1,40/4,40, poids MIT); contexte porté vers 1 M (à confirmer); palier Coding Max (~112 USD/mois) visible [S52–S54, S67].
+- **Cursor** ajoute **Grok 4.5** au pool first-party; **GitHub Copilot** clarifie les crédits (base 1:1 + flex) et retire l’app Billing Preview le 3 août; **Perplexity** explicite les crédits grand public [S37–S39, S43].
+- Sans changement significatif dans la fenêtre: **xAI** (Grok 4.5), **NVIDIA** (Nemotron 3), **Cohere** (Command A/A+), **IBM** (Granite 4 signés), **Replit**, **Hugging Face**.
+
+**Prix et change.** Nouveaux taux BCE (miroirs, direct bloqué): **1 EUR = 1,1535 USD** (3 août) **= 8,1478 CNY** (5 août) [S55, S69]. L’euro s’est renforcé face au dollar et nettement face au yuan depuis le 17 juillet (baseline 1,1405 / 7,7327). Conversions recalculées dans tous les fichiers. **TVA belge standard: 21 % inchangée** [S56].
+
+**Réglementaire — jalon AI Act.** Le **2 août 2026 est entré en vigueur**: obligations GPAI applicables et **transparence de l’article 50** (chatbots signalés, contenus IA marqués en lisible-machine, notice de reconnaissance d’émotions, étiquetage des deepfakes). Sanctions GPAI jusqu’à **15 M€ ou 3 % du CA mondial**. Carve-out: filigrane lisible-machine des systèmes déjà sur le marché jusqu’au 2 décembre 2026. En sens inverse, un **amendement du 16 juin 2026 reporte la plupart des obligations « haut risque » à décembre 2027 et août 2028** (à confirmer sur EUR-Lex) [S57–S59, S68].
+
+**Sécurité et disponibilité.** Modèles chinois (DeepSeek, Qwen, Kimi, GLM): API directe **non conforme RGPD** (données en Chine/Singapour, pas de représentant UE clair) — voie propre = hébergement UE (Azure Foundry, Bedrock Frankfurt) ou auto-hébergement des poids ouverts (GLM-5.2 MIT est le plus simple). Meilleure souveraineté du panel: **Mistral** (Paris, SecNumCloud, EUR). **Llama 4 multimodal juridiquement bloqué pour les entités UE.** GPT-5.6 disponible en EU Data Zone sur Azure mais **US-only sur Bedrock**.
+
+**Développement.** Ajout de bonnes pratiques transversales: isolation d’agent par dimensions (fichiers + réseau), traiter chaque serveur MCP comme une attribution IAM (OWASP MCP Top 10), développement piloté par l’évaluation avec épinglage prompt/modèle, verrouillage des actions irréversibles dans l’implémentation de l’outil (pas le prompt). Alertes de coût: nouveau tokenizer Anthropic (+30 %), hausse Sonnet 5 (1er sept.), retrait d’alias DeepSeek.
+
+**Fichiers mis à jour.** synthese.md, comparatif.md, analyse-detaillee.md, bonnes-pratiques-developpement.md, sources.md, historique.md.
+
+**Limites / décisions humaines.** Blocage réseau des pages officielles: revalider les valeurs « à confirmer » (surtout prix OpenAI/xAI, contexte GLM-5.2, poids Qwen3.8-Max, taux BCE même-jour USD+CNY, dates AI Act haut risque sur EUR-Lex) avant tout engagement. Les checkouts belges et contrats entreprise n’ont pas été simulés.
+
 ## 2026-07-17 — Édition initiale
 
 **Périmètre.** Création de l’observatoire avec exactement 20 écosystèmes: OpenAI, Anthropic, Google, Microsoft, AWS, Meta, Mistral, xAI, DeepSeek, Alibaba/Qwen, NVIDIA, Cohere, IBM, GitHub Copilot, Perplexity, Cursor, Replit, Hugging Face, Moonshot/Kimi et Z.AI/GLM. Aucune édition précédente n’existait dans ObservationLLM; donc aucune sortie.
