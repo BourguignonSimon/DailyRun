@@ -1,61 +1,62 @@
-# Synthèse décisionnelle — 17 juillet 2026
+# Synthèse décisionnelle — 6 août 2026
+
+> **Édition de revue mensuelle.** Changements **significatifs** depuis le 17 juillet 2026 : trois des quatre modèles de tête ont bougé et le jalon central de l’AI Act est entré en application. Le détail des écarts est dans [historique.md](historique.md).
+>
+> **Avertissement.** Ce cycle, l’ouverture directe des pages officielles a été bloquée (HTTP 403). Les prix ci-dessous proviennent majoritairement de recherches indexant les pages officielles + trackers réputés ; **seuls GitHub Copilot et Microsoft 365 Copilot ont été lus directement**. Traiter les prix comme **indicatifs** et revérifier au checkout. Voir [sources.md](sources.md).
 
 ## Verdict en une minute
 
-Il n’existe pas un « meilleur LLM » unique. Pour un résident belge, le choix dépend surtout de la surface achetée: application grand public, API, plateforme cloud, assistant de code ou agent. Le trio le plus polyvalent reste **OpenAI, Anthropic et Google**. **Mistral** est le choix européen le plus crédible. **AWS, Microsoft et IBM** dominent les besoins de gouvernance et d’intégration d’entreprise. **GitHub Copilot et Cursor** sont les comparaisons prioritaires pour le code. **Perplexity** se distingue pour la recherche sourcée. Les modèles open weight de **Meta, Mistral, NVIDIA, Qwen, DeepSeek, Kimi et GLM** réduisent le verrouillage, mais transfèrent la sécurité et l’exploitation à l’utilisateur.
+Il n’existe pas un « meilleur LLM » unique. Pour un résident belge, le choix dépend surtout de la surface achetée : application grand public, API, plateforme cloud, assistant de code ou agent. Le trio le plus polyvalent reste **OpenAI, Anthropic et Google**, qui ont tous les trois **renouvelé leur modèle de tête** en trois semaines. **Mistral** demeure le choix européen le plus crédible (résidence UE, FR/NL, ZDR sur payant). **Microsoft, AWS et IBM** dominent la gouvernance et l’intégration d’entreprise. **GitHub Copilot et Cursor** restent les comparaisons prioritaires pour le code. **Perplexity** se distingue pour la recherche sourcée. Les modèles open weight (**Meta, Mistral, NVIDIA, Qwen, DeepSeek, Kimi, GLM**) réduisent le verrouillage mais transfèrent sécurité et exploitation à l’utilisateur — et **Meta a basculé son offre de tête vers un modèle à poids fermés indisponible en UE**.
 
 ## Recommandations par profil
 
 | Profil belge | Premier choix | Alternative | Pourquoi | Vigilance |
 |---|---|---|---|---|
 | Particulier polyvalent FR/NL | ChatGPT ou Gemini | Mistral Vibe | Multimodal, recherche, mémoire, écosystème | Prix au checkout, TVA, entraînement des données grand public |
-| Recherche web sourcée | Perplexity | Gemini / ChatGPT recherche | Citations et recherche intégrées | Vérifier les sources primaires, éviter l’automatisation aveugle |
-| Développeur indépendant | OpenAI ou Anthropic API | Gemini / Mistral | SDK matures, outils, sorties structurées | Budgets, snapshots, rétention, clés côté serveur |
+| Recherche web sourcée | Perplexity | Gemini / ChatGPT recherche | Citations et recherche intégrées ; Sonar API désormais ZDR (à confirmer) | Vérifier les sources primaires, éviter l’automatisation aveugle |
+| Développeur indépendant | OpenAI (GPT-5.6) ou Anthropic (Opus 5) API | Gemini / Mistral | SDK matures, outils, sorties structurées, baisses de prix récentes | Budgets, snapshots, rétention, clés côté serveur |
 | Développement quotidien | GitHub Copilot | Cursor | IDE, agent, revue et choix de modèles | Crédits variables, confidentialité du dépôt |
-| Agent de code autonome | Claude Code / Codex | Cursor / Kimi Code | Boucles longues, terminal, outils | Exécuter en sandbox, revue humaine, plafond de coût |
-| PME Microsoft 365 | Microsoft 365 Copilot + Azure | GitHub Copilot | Identité, Office, gouvernance et agents | Licences imbriquées, TVA hors prix B2B |
+| Agent de code autonome | Claude Code / Codex | Cursor / Kimi Code | Boucles longues, terminal, outils | Sandbox, revue humaine, plafond de coût ; **cf. incident Grok Build** |
+| PME Microsoft 365 | Microsoft 365 Copilot + Azure Foundry | GitHub Copilot | Identité, Office, gouvernance, agents | **Grille repricée en USD ; prix EUR non publié**, licences imbriquées |
 | Production UE sensible | Mistral ou cloud avec région UE | IBM / AWS / Azure / Google Cloud | DPA, région, contrôles et déploiement privé | Vérifier service, région et sous-traitants exacts |
-| Open weight / sur site | Llama, Mistral, Nemotron | Qwen, Kimi, GLM, DeepSeek | Contrôle et portabilité | Licence, sécurité, capacité GPU, évaluation locale |
+| Open weight / sur site | Llama (hors UE), Mistral, Nemotron | Qwen, GLM (MIT), DeepSeek (MIT), Kimi (licence custom) | Contrôle et portabilité | Licence, sécurité, capacité GPU, évaluation locale |
 
-## Ce qui a changé
+## Ce qui a changé depuis le 17 juillet 2026
 
-Cette première édition n’avait pas de base antérieure dans le dépôt. Les faits marquants vérifiés sont:
-
-- OpenAI positionne GPT-5.5 comme modèle frontière à 1,05 M de contexte; entrée 5 USD/M, sortie 30 USD/M, cache 0,50 USD/M. Au-delà de 272 k en entrée, un multiplicateur long contexte s’applique [S01–S02].
-- Anthropic affiche Opus 4.8 et Sonnet 5, avec 1 M de contexte pour les modèles de tête; batch à moitié prix et mécanismes de cache/résidence [S06–S08].
-- Google propose Gemini 3.5 Flash à 1,50 USD/M en entrée et 9 USD/M en sortie, avec cache, batch, Flex, Priority, recherche et agents facturés séparément [S09–S11].
-- xAI propose Grok 4.5 à 500 k de contexte, 2/6 USD par million de jetons en contexte court et 4/12 USD en long contexte [S22].
-- Mistral met en avant Mistral Medium 3.5 pour agents/code et une API européenne; Mistral Large est affiché à 2/6 USD par million et batch à -50 % [S19–S21].
-- GitHub remplace la logique de requêtes premium par des crédits IA: Pro 10 USD, Pro+ 39 USD, Max 100 USD; l’usage agent et les modèles chers consomment davantage [S37–S38].
-- Cursor a mis à jour sa politique le 15 juillet 2026: Privacy Mode interdit l’entraînement et s’appuie sur des accords de rétention zéro, sous réserve d’enquêtes d’abus [S42].
-- Kimi K3 a été annoncé le 16 juillet 2026; sa nouveauté impose de séparer capacités déclarées, poids disponibles et qualité mesurée indépendamment [S48–S51, S60].
+- **OpenAI** : modèle phare = **GPT-5.6 Sol** (Sol/Terra/Luna). **Baisses du 30 juil.** : Terra 2/12 USD (−20 %), Luna 0,20/1,20 USD (−80 %) ; Sol inchangé 5/0,50/30 USD, contexte 1,05 M [S02, S66].
+- **Anthropic** : **Claude Opus 5** (24 juil., 5/0,50/25 USD, 1 M). **Sonnet 5** en tarif intro 2/10 USD **jusqu’au 31 août**, puis 3/15 USD [S67, S68].
+- **Google** : **Gemini 3.6 Flash** (21 juil., 1,50/0,15/7,50 USD, 1 M) ; Gemini 3.1 Pro reste le flagship ; 3.5 Pro toujours non sorti [S69].
+- **Meta** : bascule vers **Muse Spark 1.1** (poids fermés, API payante), **preview US, pas d’UE** ; Llama 4 toujours interdit aux domiciliés UE [S70, S71].
+- **Chine / open weight** : **DeepSeek V4** (MIT, 1 M) [S75] ; **Qwen3.8-Max** (3 août, région **Frankfurt UE**) [S76] ; **Kimi K3** documenté, poids ouverts sous licence custom [S77] ; **GLM-5.2** flagship API (MIT, 1 M), fin de promo Coding Plan [S78].
+- **Microsoft** : **reset tarifaire Copilot** (USD 21/18, EUR non publié) ; GPT-5.6 en Foundry [S79]. **AWS** : AgentCore GA + régions **Milan / Espagne** [S80]. **NVIDIA** : extensions Agent Toolkit [S81].
+- **Réglementation** : **AI Act — 2 août 2026** applique transparence (art. 50) et exécution GPAI ; **Digital Omnibus** reporte le haut risque à **2 déc. 2027 / 2 août 2028** [S57, S62, S63].
 
 ## Prix et Belgique
 
-Taux indicatifs BCE du 14 juillet 2026: **1 EUR = 1,1405 USD = 7,7327 CNY** [S55]. Donc 20 USD ≈ 17,54 EUR hors TVA; avec 21 % de TVA belge, ≈ 21,22 EUR si la TVA n’est pas déjà incluse. Un prix affiché en EUR à un consommateur peut déjà inclure la TVA; un prix B2B ou API l’exclut souvent. Le checkout et la facture priment toujours.
+Taux de référence BCE du **4 août 2026** : **1 EUR = 1,1515 USD** ; **EUR/CNY ≈ 7,78–7,79 (à confirmer)** [S61]. L’euro s’est renforcé d’environ 1 % vs USD depuis le 14 juillet, ce qui **abaisse légèrement** le coût en euros des offres facturées en dollars. Donc 20 USD ≈ **17,37 EUR** hors TVA ; avec 21 % de TVA belge, ≈ **21,02 EUR** si la TVA n’est pas déjà incluse. La **TVA standard belge reste 21 %** [S64]. Un prix affiché en EUR à un consommateur peut déjà inclure la TVA ; un prix B2B ou API l’exclut souvent. Le checkout et la facture priment toujours.
 
-Les offres explicitement disponibles dans l’EEE incluent notamment Gemini API; OpenAI publie des contrôles de résidence européenne pour certains clients/services [S03, S11]. Pour DeepSeek, Qwen, Kimi et GLM, **la disponibilité commerciale en Belgique, la facturation EUR, la TVA et la localisation des données restent à confirmer** avant usage de données personnelles ou confidentielles.
+Côté disponibilité UE : **Qwen (Alibaba Cloud, région Frankfurt)** apparaît comme le seul acteur chinois offrant une **piste de résidence UE directe** (EUR/TVA/DPA restant à confirmer) ; **DeepSeek, Kimi, GLM** n’offrent pas de résidence UE en direct — la voie conforme passe par des **poids ouverts auto-hébergés** ou des **hébergeurs UE tiers**. Pour **Anthropic**, l’hébergement UE reste indirect (AWS Bedrock UE, Vertex UE), l’accès natif claude.ai/API défautant sur les USA.
 
-## Capacités: ne pas confondre les produits
+## Capacités : ne pas confondre les produits
 
-- **Modèle**: moteur probabiliste, par exemple GPT-5.5, Claude Opus 4.8 ou Gemini 3.5 Flash.
-- **Application**: ChatGPT, Claude, Gemini, Grok, Vibe, Perplexity; elle ajoute recherche, fichiers, mémoire et interface.
-- **Plateforme API**: endpoints, SDK, quotas, cache, batch, observabilité et outils.
-- **Assistant de code**: Copilot ou Cursor, intégré à l’IDE et au dépôt.
-- **Agent autonome**: boucle qui planifie, appelle des outils, modifie des fichiers et peut agir; le coût et le risque s’accumulent à chaque étape.
+- **Modèle** : moteur probabiliste, par ex. GPT-5.6 Sol, Claude Opus 5 ou Gemini 3.6 Flash.
+- **Application** : ChatGPT, Claude, Gemini, Grok, Vibe, Perplexity ; ajoute recherche, fichiers, mémoire et interface.
+- **Plateforme API** : endpoints, SDK, quotas, cache, batch, observabilité et outils.
+- **Assistant de code** : Copilot ou Cursor, intégré à l’IDE et au dépôt.
+- **Agent autonome** : boucle qui planifie, appelle des outils, modifie des fichiers et peut agir ; le coût et le risque s’accumulent à chaque étape.
 
 ## Sécurité, RGPD et AI Act
 
-Aucun fournisseur ne rend automatiquement un cas d’usage conforme. Pour toute donnée personnelle: finalité, minimisation, base juridique, DPA, transferts, rétention, droits des personnes, journalisation et analyse d’impact si nécessaire. Le 2 août 2026 reste un jalon important de transparence; les dates des systèmes à haut risque ont été révisées en 2026 [S57–S59]. Ceci n’est pas un avis juridique.
+Aucun fournisseur ne rend automatiquement un cas d’usage conforme. Pour toute donnée personnelle : finalité, minimisation, base juridique, DPA, transferts, rétention, droits des personnes, journalisation et analyse d’impact si nécessaire. **L’échéance du 2 août 2026 est désormais effective** : obligations de transparence (art. 50) et pouvoirs d’exécution GPAI ; les obligations « haut risque » ont en revanche été **reportées** (Annexe III au 2 déc. 2027, Annexe I au 2 août 2028) par le Digital Omnibus [S57, S62, S63]. Ceci n’est pas un avis juridique.
 
-Pour les offres grand public, vérifier le réglage d’entraînement. OpenAI API n’entraîne pas par défaut [S03]; GitHub permet l’opt-out pour les plans individuels et n’entraîne pas sur Business/Enterprise [S37]; Cursor Privacy Mode exclut l’entraînement [S42]. Les contrats, régions et rétentions doivent être vérifiés produit par produit.
+Pour les offres grand public, vérifier le réglage d’entraînement. OpenAI API n’entraîne pas par défaut [S03] ; Anthropic n’entraîne pas sur les données des produits commerciaux [S06] ; GitHub permet l’opt-out individuel et n’entraîne pas sur Business/Enterprise [S37] ; Cursor Privacy Mode exclut l’entraînement [S42] ; Mistral n’entraîne pas sur les tiers payants (ZDR) [S73]. **Point de vigilance nouveau** : l’incident **Grok Build** du 14 juillet illustre le risque des agents de code qui exfiltrent des dépôts — sandboxer et limiter les accès [S74].
 
 ## Décisions à prendre
 
 1. Choisir deux fournisseurs maximum pour un pilote de quatre semaines.
 2. Définir trois tâches réelles, une enveloppe de coût et un jeu d’évaluation reproductible.
 3. Interdire les secrets et données personnelles tant que DPA, région et rétention ne sont pas validés.
-4. Épingler les versions de modèles en production et mettre en place un fournisseur de secours.
+4. Épingler les versions de modèles en production (les modèles de tête changent tous les mois) et prévoir un fournisseur de secours.
 5. Mesurer coût par tâche réussie, latence p95, taux d’intervention humaine et incidents, pas seulement prix par jeton.
 
-Détails et sources: [comparatif](comparatif.md), [analyse](analyse-detaillee.md), [bonnes pratiques](bonnes-pratiques-developpement.md), [sources](sources.md).
+Détails et sources : [comparatif](comparatif.md), [analyse](analyse-detaillee.md), [bonnes pratiques](bonnes-pratiques-developpement.md), [sources](sources.md).

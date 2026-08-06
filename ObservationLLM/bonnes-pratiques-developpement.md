@@ -1,6 +1,19 @@
 # Bonnes pratiques de développement
 
-État vérifié le **17 juillet 2026**. Les mentions distinguent **[Officiel]** recommandation publiée par un fournisseur, **[Consensus]** pratique convergente entre plusieurs fournisseurs et **[Déduction]** conclusion analytique de cet observatoire.
+État vérifié le **6 août 2026**. Les mentions distinguent **[Officiel]** recommandation publiée par un fournisseur, **[Consensus]** pratique convergente entre plusieurs fournisseurs et **[Déduction]** conclusion analytique de cet observatoire.
+
+> **Avertissement de ce cycle.** L’accès direct aux pages officielles a été bloqué (HTTP 403) ; les recommandations « [Officiel] » ci-dessous reposent, pour ce cycle, sur des recherches indexant ces pages et la documentation publique. Voir [sources.md](sources.md).
+
+## Nouveautés et renforcements depuis le 17 juillet 2026
+
+Quatre inflexions se dégagent de la documentation fournisseur et de la communauté (S86–S87) :
+
+1. **[Renforcé] Le prompt caching est devenu le premier levier coût/latence.** Placer le contenu stable (prompt système, définitions d’outils) avant le point de cache ; économies annoncées jusqu’à ~90 % de coût et ~85 % de latence sur longs prompts. **Attention :** ajouter ou réordonner un seul outil **invalide le cache du préfixe d’outils** pour tous les prompts — figer les définitions d’outils.
+2. **[Nouveau] Gérer le contexte par élagage (context editing / compaction), pas seulement par résumé.** Purger les résultats d’outils et blocs de raisonnement obsolètes au franchissement de seuils, en préservant la structure de conversation — moins coûteux et moins lossy que re-résumer.
+3. **[Nouveau] MCP (Model Context Protocol) est la couche d’intégration par défaut** pour connecter agents, outils et données. **Mais** la propagation de données inter-serveurs en configuration multi-MCP est un risque de sécurité actif (cadre d’évaluation MCPHunt) : restreindre finement les permissions de chaque serveur MCP et cloisonner les frontières de confiance.
+4. **[Renforcé] Garde-fous comme architecture porteuse, à plusieurs couches** : valider avant l’entrée modèle, avant l’exécution d’outil, et après la sortie — pas un filtre de sortie unique. À traiter comme architecture de premier jour pour un agent.
+
+Rappel de contexte réglementaire : **les obligations de transparence de l’AI Act (art. 50) s’appliquent depuis le 2 août 2026** ; prévoir la divulgation d’interaction IA et le marquage des contenus synthétiques. Le haut risque est reporté à 2027/2028 (Digital Omnibus) [S57, S62, S63].
 
 ## Architecture de référence
 
@@ -57,7 +70,8 @@ Tracer request ID, version modèle, version prompt, outils, temps, jetons/cache,
 - Signer DPA et clauses de transfert; vérifier durée de rétention, entraînement, suppression, chiffrement, SSO/RBAC, audit et certifications.
 - Modéliser prompt injection, exfiltration, tool poisoning, SSRF, code arbitraire, escalade de privilèges, supply chain et fuite inter-utilisateurs.
 - Filtrer entrée et sortie selon le risque, mais ne jamais considérer un garde-fou fournisseur comme contrôle unique.
-- Documenter supervision humaine, transparence à l’utilisateur et limites. Revoir le calendrier AI Act [S57–S59].
+- Documenter supervision humaine, transparence à l’utilisateur et limites. **Depuis le 2 août 2026, les obligations de transparence de l’art. 50 s’appliquent** (divulgation d’interaction IA, marquage des contenus synthétiques/deepfakes) ; le haut risque est reporté (Annexe III 02/12/2027, Annexe I 02/08/2028) [S57, S62–S63].
+- **Sécuriser les intégrations MCP** : restreindre les permissions par serveur, cloisonner les frontières de confiance, surveiller la propagation de données inter-serveurs (MCPHunt) [S87].
 
 ## Coût, performance et résilience
 
@@ -73,43 +87,43 @@ Tracer request ID, version modèle, version prompt, outils, temps, jetons/cache,
 
 ### 1. OpenAI
 
-**[Officiel, S01/S05]** Utiliser snapshots pour stabilité, Responses/Agents SDK pour outils, structured outputs, streaming, batch/flex et IDs de requête. **[Déduction]** Tester le seuil >272 k de GPT-5.5 avant d’autoriser des contextes géants; séparer budget outils et tokens.
+**[Officiel, S01/S05/S66]** Utiliser snapshots pour stabilité, Responses/Agents SDK pour outils, structured outputs, streaming, batch/flex et IDs de requête. **[Déduction]** La famille GPT-5.6 (Sol/Terra/Luna) permet un routage par tâche : réserver Sol aux cas difficiles, Terra/Luna (baisses du 30/07) au volume. Tester le seuil >272 k de Sol avant d’autoriser des contextes géants ; séparer budget outils et tokens.
 
 ### 2. Anthropic
 
-**[Officiel, S06–S08]** Exploiter prompt caching, batch -50 %, modèles datés et budget de raisonnement approprié. **[Déduction]** Réserver Opus aux tâches où le gain de réussite compense le prix; surveiller dépréciations et options de résidence.
+**[Officiel, S06–S08/S67–S68]** Exploiter prompt caching (−90 %), batch −50 %, modèles datés et budget de raisonnement approprié. **[Déduction]** Claude Opus 5 (24/07) remplace Opus 4.8 à prix égal ; le réserver aux tâches où le gain compense le coût, Sonnet 5 pour le compromis (attention : fin du tarif intro le 31/08 → 3/15 USD). Résidence UE seulement via Bedrock/Vertex : en tenir compte pour données personnelles.
 
 ### 3. Google
 
-**[Officiel, S09–S11]** Le payant exclut l’usage d’amélioration selon la grille; cache, batch, Flex, Priority, Search grounding et file search ont des unités séparées. **[Déduction]** Pour production UE, préférer projet payant et contrôles Vertex plutôt que tier gratuit.
+**[Officiel, S09–S11/S69]** Le payant exclut l’usage d’amélioration selon la grille ; cache, batch, Flex, Priority, Search grounding et file search ont des unités séparées. **[Déduction]** Gemini 3.6 Flash (21/07) abaisse la sortie à 7,50 USD ; Gemini 3.1 Pro reste le flagship (3.5 Pro non sorti). Pour production UE, préférer projet payant et contrôles Vertex plutôt que tier gratuit, et vérifier que le modèle récent est bien servi depuis une région UE.
 
 ### 4. Microsoft
 
-**[Officiel, S12–S14]** Utiliser Entra, politiques, budgets et capacité Copilot Studio/Azure adaptée. **[Déduction]** Modéliser la facture complète licence + crédits agent + modèle + recherche/connecteurs; éviter le double comptage des offres.
+**[Officiel, S12–S14/S79]** Utiliser Entra, politiques, budgets et capacité Copilot Studio/Azure Foundry adaptée (GPT-5.6 en preview). **[Déduction]** La grille M365 Copilot a été repricée en USD (21/18) sans prix EUR publié : **confirmer le tarif belge hors TVA auprès d’un partenaire avant achat**. Modéliser la facture complète licence + crédits agent + modèle + recherche/connecteurs ; éviter le double comptage.
 
 ### 5. AWS
 
-**[Officiel, S15–S17]** Choisir Standard/Flex/Priority/Reserved, batch lorsque supporté, IAM minimal, Guardrails, Knowledge Bases et AgentCore. **[Déduction]** Fixer une région et bloquer le cross-region non approuvé; tracer chaque coût aval d’un agent.
+**[Officiel, S15–S17/S80]** Choisir Standard/Flex/Priority/Reserved, batch lorsque supporté, IAM minimal, Guardrails, Knowledge Bases et **AgentCore (GA : harness sans code, Policy, Guardrails intégrés, régions Milan/Espagne)**. **[Déduction]** Fixer une région UE et bloquer le cross-region non approuvé ; activer les Guardrails AgentCore sur chaque action ; tracer chaque coût aval d’un agent.
 
 ### 6. Meta
 
-**[Officiel, S18]** Vérifier licence et carte du modèle avant téléchargement/déploiement. **[Déduction]** Pour Llama auto-hébergé, ajouter serveur d’inférence, isolation, modération, évaluation et procédure de mise à jour; « open weight » ne signifie pas open source complet.
+**[Officiel, S18/S70–S71]** Vérifier licence et carte du modèle avant téléchargement/déploiement. **[Déduction]** Le nouveau modèle de tête **Muse Spark 1.1 (poids fermés) est indisponible en UE**, et **Llama 4 est interdit aux domiciliés UE** : pour un résident belge, Meta est peu exploitable hors app intégrée. Si Llama auto-hébergé (hors contrainte de licence), ajouter serveur d’inférence, isolation, modération, évaluation et procédure de mise à jour ; « open weight » ≠ open source complet.
 
 ### 7. Mistral
 
-**[Officiel, S19–S21]** Choisir Large généraliste, Medium 3.5 pour agents/code, Small pour coût; batch -50 %, agents/RAG/OCR disponibles. **[Déduction]** Profiter de la proximité UE mais valider contrat et licence de chaque poids/version.
+**[Officiel, S19–S21/S72–S73]** Choisir Large 3 généraliste (≈0,50/1,50 USD), Medium 3.5 pour agents/code (≈1,50/7,50 USD), Small pour coût ; batch −50 %, agents/RAG/OCR disponibles ; app Vibe (ex-Le Chat). **[Déduction]** Meilleure option de résidence UE (RGPD-native, ZDR sur payant, FR/NL) : profiter de la proximité UE mais valider DPA, région et licence de chaque poids/version.
 
 ### 8. xAI
 
-**[Officiel, S22]** Tenir compte des paliers court/long contexte, cache, coûts voix/image/vidéo et outils. **[Déduction]** Ne pas laisser un agent franchir le seuil long contexte sans alerte; tester les redirects de modèles retirés.
+**[Officiel, S22/S74]** Tenir compte des paliers court/long contexte, cache, coûts voix/image/vidéo et outils (Grok 4.5, pas de Grok 5). **[Déduction]** **Vigilance données : l’incident Grok Build (14/07) illustre le risque d’exfiltration de dépôts par un CLI agentique** — sandboxer, interdire l’accès réseau sortant non approuvé et les secrets. Ne pas laisser un agent franchir le seuil long contexte sans alerte ; tester les redirects de modèles retirés.
 
 ### 9. DeepSeek
 
-**[Officiel, S25–S26]** Utiliser cache lorsque le préfixe est identique et vérifier le modèle exact derrière les alias. **[Déduction]** Héberger les poids via fournisseur UE pour données sensibles; ajouter délais plus longs, fallback et revue de politique de données.
+**[Officiel, S25–S26/S75]** Génération V4 (Pro/Flash, MIT, 1 M) : **les alias `deepseek-chat`/`deepseek-reasoner` ont été retirés le 24/07** — épingler les ID `deepseek-v4-*`. Utiliser cache si préfixe identique. **[Déduction]** Service direct hébergé en Chine (sous enquête en Belgique) : héberger les poids MIT via fournisseur UE ou hyperscaler UE (Azure/Bedrock/Vertex) pour données sensibles ; délais plus longs, fallback et revue de politique de données.
 
 ### 10. Alibaba/Qwen
 
-**[Officiel, S27–S28]** Respecter l’allowlist exacte du Coding Plan et utiliser la clé/base URL dédiée; sinon PAYG peut être facturé. **[Déduction]** Épingler région, devise et version; tester FR/NL et disponibilité avant engagement.
+**[Officiel, S27–S28/S76]** Qwen3.8-Max (GA 03/08, 1 M) ; respecter l’allowlist exacte du Coding Plan et utiliser la clé/base URL dédiée, sinon PAYG peut être facturé. **[Déduction]** La **région Frankfurt (UE)** de Model Studio est la seule piste de résidence UE directe des acteurs chinois (EUR/TVA/DPA à confirmer ; pas de quota gratuit hors Singapour). Épingler région, devise et version ; tester FR/NL avant engagement.
 
 ### 11. NVIDIA
 
@@ -133,7 +147,7 @@ Tracer request ID, version modèle, version prompt, outils, temps, jetons/cache,
 
 ### 16. Cursor
 
-**[Officiel, S42–S43]** Imposer Privacy Mode, ZDR providers, règles de projet et contrôles d’équipe. **[Déduction]** Limiter commandes, MCP et répertoire; suivre usage par agent/modèle et revoir chaque diff.
+**[Officiel, S42–S43/S85]** Imposer Privacy Mode, ZDR providers, règles de projet et contrôles d’équipe ; **BAA disponible en Enterprise** (Privacy Mode verrouillé org). **[Déduction]** Limiter commandes, MCP et répertoire ; suivre usage par agent/modèle et revoir chaque diff.
 
 ### 17. Replit
 
@@ -145,11 +159,11 @@ Tracer request ID, version modèle, version prompt, outils, temps, jetons/cache,
 
 ### 19. Moonshot/Kimi
 
-**[Officiel, S49–S50]** Kimi recommande instructions claires, détails, délimiteurs, étapes, exemples, texte de référence et résumé des longues conversations; Kimi Code peut utiliser sous-agents, hooks et MCP. **[Déduction]** Activer hooks d’approbation et sandbox; ne pas exposer une clé API côté client.
+**[Officiel, S49–S50/S77]** Kimi K3 (2,8 T, 1 M) désormais documenté ; instructions claires, délimiteurs, étapes, texte de référence et résumé des longues conversations ; Kimi Code peut utiliser sous-agents, hooks et MCP. **[Déduction]** Poids ouverts sous **licence custom « Kimi K3 » (pas MIT)** : examiner l’usage commercial. Données hébergées Chine/Singapour → passer par un hébergeur UE pour données sensibles ; activer hooks d’approbation et sandbox ; ne pas exposer une clé API côté client.
 
 ### 20. Z.AI/GLM
 
-**[Officiel, S52–S54]** Prix distincts entrée/cache/sortie/outils, API OpenAI-compatible, contexte 200 k et plans code à quotas. **[Déduction]** Fixer un plafond web search, vérifier GLM-5.2 contre la grille tarifaire avant production et tester FR/NL.
+**[Officiel, S52–S54/S78]** GLM-5.2 est le flagship API courant (MIT, **contexte porté à 1 M**, 1,40/0,26/4,40 USD) ; API OpenAI-compatible ; **Coding Plan repricé (Lite ≈18 / Pro ≈72 / Max ≈160 USD, fin de promo)**. **[Déduction]** Poids MIT → auto-hébergement UE possible pour données sensibles. Fixer un plafond web search, vérifier GLM-5.2 contre la grille avant production et tester FR/NL.
 
 ## Checklist de mise en production
 

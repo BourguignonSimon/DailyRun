@@ -1,6 +1,8 @@
 # Observatoire LLM et agents IA — Belgique
 
-Édition vérifiée le **17 juillet 2026**. Cette première édition couvre exactement 20 écosystèmes et sépare modèles, applications, plateformes API, assistants de code et agents autonomes.
+Édition vérifiée le **6 août 2026** (deuxième édition, revue mensuelle). L’observatoire couvre exactement 20 écosystèmes et sépare modèles, applications, plateformes API, assistants de code et agents autonomes. Les écarts détaillés depuis le 17 juillet 2026 sont dans l’[historique](historique.md).
+
+> **Avertissement de ce cycle.** L’ouverture directe des pages officielles a été bloquée (HTTP 403) ; seuls GitHub Copilot et Microsoft 365 Copilot ont été lus directement. Les prix sont **indicatifs** — voir [sources.md](sources.md).
 
 ## Livrables
 
@@ -11,13 +13,14 @@
 - [Registre des sources](sources.md)
 - [Historique](historique.md)
 
-## Principaux changements constatés
+## Principaux changements constatés (depuis le 17 juillet 2026)
 
-- Première publication dans ce dépôt; aucune édition précédente n’était disponible.
-- Frontière 2026: GPT-5.5, Claude Opus 4.8/Sonnet 5, Gemini 3.5 Flash, Grok 4.5, Mistral Medium 3.5, Qwen 3.7, GLM-5.2 et Kimi K3.
-- Les offres agents deviennent des produits facturés séparément ou des boucles consommant modèle, outils et calcul; le coût par tâche remplace progressivement le seul coût par jeton.
-- Pour la Belgique, les prix publics restent souvent en USD hors TVA. Conversions indicatives avec les taux BCE du 14 juillet 2026: **1 EUR = 1,1405 USD = 7,7327 CNY**. TVA belge standard: **21 %**; le traitement réel dépend du statut client et de la facture.
-- Les obligations de transparence de l’AI Act entrent en application en août 2026; le calendrier des systèmes à haut risque a été modifié en juin 2026. Analyse informative, pas avis juridique.
+- **Modèles de tête renouvelés** : OpenAI **GPT-5.6 (Sol/Terra/Luna)** avec baisses du 30/07, Anthropic **Claude Opus 5** (24/07), Google **Gemini 3.6 Flash** (21/07). Meta bascule vers **Muse Spark 1.1** (poids fermés, **indisponible en UE**).
+- **Bloc chinois / open weight renouvelé** : **DeepSeek V4** (MIT), **Qwen3.8-Max** (région **Frankfurt UE**), **Kimi K3** (licence custom), **GLM-5.2** (MIT, contexte 1 M).
+- **Entreprise** : reset tarifaire **M365 Copilot** (USD, prix EUR non publié) ; **AWS AgentCore** en GA + régions Milan/Espagne. IBM/Cohere/NVIDIA : modèles de tête inchangés.
+- **Réglementation (le plus conséquent)** : **AI Act — 2 août 2026** applique la transparence (art. 50) et l’exécution GPAI ; le haut risque est reporté à **2 déc. 2027 / 2 août 2028** (Digital Omnibus). Analyse informative, pas avis juridique.
+- **Change** : taux BCE du 4 août 2026, **1 EUR = 1,1515 USD** (EUR/CNY ≈ 7,78–7,79, à confirmer). TVA belge standard maintenue à **21 %**.
+- Le coût par tâche remplace progressivement le seul coût par jeton ; épingler les versions (les têtes de gamme changent tous les mois).
 
 ## Lecture rapide
 
