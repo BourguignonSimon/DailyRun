@@ -1,6 +1,6 @@
 # Bonnes pratiques de développement
 
-État vérifié le **17 juillet 2026**. Les mentions distinguent **[Officiel]** recommandation publiée par un fournisseur, **[Consensus]** pratique convergente entre plusieurs fournisseurs et **[Déduction]** conclusion analytique de cet observatoire.
+État vérifié le **6 août 2026**. Les mentions distinguent **[Officiel]** recommandation publiée par un fournisseur, **[Consensus]** pratique convergente entre plusieurs fournisseurs et **[Déduction]** conclusion analytique de cet observatoire.
 
 ## Architecture de référence
 
@@ -57,7 +57,7 @@ Tracer request ID, version modèle, version prompt, outils, temps, jetons/cache,
 - Signer DPA et clauses de transfert; vérifier durée de rétention, entraînement, suppression, chiffrement, SSO/RBAC, audit et certifications.
 - Modéliser prompt injection, exfiltration, tool poisoning, SSRF, code arbitraire, escalade de privilèges, supply chain et fuite inter-utilisateurs.
 - Filtrer entrée et sortie selon le risque, mais ne jamais considérer un garde-fou fournisseur comme contrôle unique.
-- Documenter supervision humaine, transparence à l’utilisateur et limites. Revoir le calendrier AI Act [S57–S59].
+- Documenter supervision humaine, transparence à l’utilisateur et limites. Depuis le 2 août 2026, intégrer les obligations de transparence applicables de l’article 50 et conserver la preuve du marquage/étiquetage [S75–S76].
 
 ## Coût, performance et résilience
 
@@ -73,15 +73,15 @@ Tracer request ID, version modèle, version prompt, outils, temps, jetons/cache,
 
 ### 1. OpenAI
 
-**[Officiel, S01/S05]** Utiliser snapshots pour stabilité, Responses/Agents SDK pour outils, structured outputs, streaming, batch/flex et IDs de requête. **[Déduction]** Tester le seuil >272 k de GPT-5.5 avant d’autoriser des contextes géants; séparer budget outils et tokens.
+**[Officiel, S61–S63]** Migrer GPT-5.5 vers la famille GPT-5.6 en conservant l’effort comme baseline puis en testant un niveau inférieur; utiliser Responses, snapshots, schémas stricts, cache explicite et raisonnement persistant. Réserver Programmatic Tool Calling aux workflows bornés et multi-agent aux sous-tâches réellement indépendantes. **[Déduction]** Tester le seuil >272 k et comptabiliser séparément écritures/lectures de cache, outils et jetons.
 
 ### 2. Anthropic
 
-**[Officiel, S06–S08]** Exploiter prompt caching, batch -50 %, modèles datés et budget de raisonnement approprié. **[Déduction]** Réserver Opus aux tâches où le gain de réussite compense le prix; surveiller dépréciations et options de résidence.
+**[Officiel, S64]** Pour Opus 5, piloter l’effort, tester les changements de comportement, exploiter prompt caching et batch, et inventorier les modèles retirés. Les organisations Enterprise peuvent évaluer les inference hooks pour une décision allow/deny avant inférence. **[Déduction]** Réserver Opus aux tâches où le gain de réussite compense le prix.
 
 ### 3. Google
 
-**[Officiel, S09–S11]** Le payant exclut l’usage d’amélioration selon la grille; cache, batch, Flex, Priority, Search grounding et file search ont des unités séparées. **[Déduction]** Pour production UE, préférer projet payant et contrôles Vertex plutôt que tier gratuit.
+**[Officiel, S65–S67]** Pour Gemini 3.6 Flash, retirer `temperature`, `top_p`, `top_k` et les tours modèle préremplis; employer instructions système et sorties structurées. Le payant exclut l’usage d’amélioration selon la grille; recherche, cache, agents et fichiers gardent des unités séparées. **[Déduction]** Pour production UE, préférer projet payant et contrôles Vertex plutôt que tier gratuit.
 
 ### 4. Microsoft
 
@@ -89,7 +89,7 @@ Tracer request ID, version modèle, version prompt, outils, temps, jetons/cache,
 
 ### 5. AWS
 
-**[Officiel, S15–S17]** Choisir Standard/Flex/Priority/Reserved, batch lorsque supporté, IAM minimal, Guardrails, Knowledge Bases et AgentCore. **[Déduction]** Fixer une région et bloquer le cross-region non approuvé; tracer chaque coût aval d’un agent.
+**[Officiel, S68–S69]** Ne pas créer de nouvelle dépendance à Agents Classic; migrer vers AgentCore et, le 6 août, mettre à jour namespace, endpoints, IAM, SDK, CLI et registre. Choisir Standard/Flex/Priority/Reserved, batch lorsque supporté, IAM minimal, Guardrails et Knowledge Bases. **[Déduction]** Fixer une région et bloquer le cross-region non approuvé; tracer chaque coût aval d’un agent.
 
 ### 6. Meta
 
@@ -125,7 +125,7 @@ Tracer request ID, version modèle, version prompt, outils, temps, jetons/cache,
 
 ### 14. GitHub Copilot
 
-**[Officiel, S37–S38]** Plans payants incluent crédits IA; modèles et tâches consomment différemment. B/E n’entraîne pas sur données client. **[Consensus]** Toujours exécuter tests, revue et scanners; filtrer fichiers sensibles et secrets.
+**[Officiel, S37–S38/S71]** Plans payants incluent crédits IA; modèles et tâches consomment différemment. Utiliser les budgets/rapports intégrés, régler le niveau de raisonnement des cloud agents et encadrer les automatisations déclenchées par commentaire. B/E n’entraîne pas sur données client. **[Consensus]** Toujours exécuter tests, revue et scanners.
 
 ### 15. Perplexity
 
@@ -133,7 +133,7 @@ Tracer request ID, version modèle, version prompt, outils, temps, jetons/cache,
 
 ### 16. Cursor
 
-**[Officiel, S42–S43]** Imposer Privacy Mode, ZDR providers, règles de projet et contrôles d’équipe. **[Déduction]** Limiter commandes, MCP et répertoire; suivre usage par agent/modèle et revoir chaque diff.
+**[Officiel, S42–S43/S72]** Imposer Privacy Mode, fournisseurs ZDR, règles de projet et contrôles d’équipe. Avec Cursor Router, documenter le mode Cost/Balance/Intelligence, bloquer les modèles non approuvés et attribuer le coût au modèle effectivement routé. **[Déduction]** Limiter commandes, MCP et répertoire; suivre usage par agent/modèle et revoir chaque diff.
 
 ### 17. Replit
 
@@ -145,7 +145,7 @@ Tracer request ID, version modèle, version prompt, outils, temps, jetons/cache,
 
 ### 19. Moonshot/Kimi
 
-**[Officiel, S49–S50]** Kimi recommande instructions claires, détails, délimiteurs, étapes, exemples, texte de référence et résumé des longues conversations; Kimi Code peut utiliser sous-agents, hooks et MCP. **[Déduction]** Activer hooks d’approbation et sandbox; ne pas exposer une clé API côté client.
+**[Officiel, S49–S50/S74]** Kimi recommande instructions claires, délimiteurs, étapes, exemples et résumé des longues conversations; K3 ajoute raisonnement configurable, cache, outils dynamiques et schémas. Désactiver ou isoler la recherche web tant que la documentation la signale en mise à jour. **[Déduction]** Activer hooks d’approbation et sandbox; ne pas exposer une clé API côté client.
 
 ### 20. Z.AI/GLM
 
