@@ -6,39 +6,39 @@ Vérification: **6 août 2026**. Point de vue: particulier ou développeur rési
 
 Cinq familles de signaux ont été examinées: adoption/présence marché (30 %), qualité et portée des modèles (25 %), maturité API/outils/agents (20 %), écosystème développeur (15 %), disponibilité et pertinence Europe/Belgique (10 %). Les pondérations servent à décider l’inclusion, pas à produire un faux score précis. Les 20 retenus couvrent quatre rôles qui se chevauchent: concepteurs de modèles, applications, plateformes cloud/API et agents de code.
 
-Comparée à l’édition du 17 juillet, **entrées: aucune; sorties: aucune**. OpenAI, Anthropic et Google renforcent leur position avec de nouvelles générations; AWS, GitHub et Cursor renforcent leur maturité agentique. MiniMax, Databricks/Mosaic, Oracle OCI, Salesforce et les plateformes d’orchestration indépendantes restent surveillés, mais aucun signal durable n’a justifié de remplacer un acteur retenu.
+Comparée à l’édition du 17 juillet, la sélection est stable: **entrées: aucune; sorties: aucune**. Plusieurs changements de modèles sont importants, mais aucun candidat ne dépasse durablement un acteur retenu sur l’ensemble des cinq signaux. MiniMax, Databricks/Mosaic, Oracle OCI, Salesforce et les plateformes d’orchestration indépendantes restent à surveiller.
 
-Chaque fait volatil renvoie au registre [sources.md](sources.md). Les prix sont des snapshots, les pages dynamiques pouvant changer sans version. Les conversions utilisent S55 et la TVA standard belge S56. Une disponibilité non explicitement vérifiée est « à confirmer ».
+Chaque fait volatil renvoie au registre [sources.md](sources.md). Les prix sont des snapshots, les pages dynamiques pouvant changer sans version. Les conversions utilisent S79 et la TVA standard belge S80. Une disponibilité non explicitement vérifiée est « à confirmer ».
 
 ## Comment lire les benchmarks
 
-Les scores publiés par un fournisseur sont des **capacités déclarées** jusqu’à reproduction. Exemple: OpenAI publie pour GPT-5.6 Sol 88,8 % sur Terminal-Bench 2.1 et 64,6 % sur SWE-Bench Pro [S62]. Z.AI revendique 77,8 sur SWE-bench Verified pour GLM-5 dans sa propre documentation [S53]. Ces protocoles, versions, échafaudages, budgets d’outils et dates diffèrent: ils ne sont pas comparés directement ici. La décision doit reposer sur un jeu d’évaluation interne daté, versionné et reproductible.
+Les scores publiés par un fournisseur sont des **capacités déclarées** jusqu’à reproduction. OpenAI publie des résultats GPT-5.6 sur Agents’ Last Exam, OSWorld 2.0 et plusieurs indices externes, tandis qu’Anthropic publie Opus 5 sur Frontier-Bench v0.1, CursorBench 3.2 et ses évaluations internes [S61, S63]. Z.AI publie pour GLM-5.2 des protocoles distincts sur Terminal-Bench 2.1, SWE-bench Pro et tâches long-horizon [S81]. Versions, harnesses, budgets d’outils, efforts, dates et ensembles diffèrent: aucun score n’est directement agrégé ici. La décision doit reposer sur un jeu d’évaluation interne daté, versionné et reproductible.
 
 ## Analyse des 20 écosystèmes
 
 ### 1. OpenAI
 
-**Positionnement.** GPT-5.6 Sol est le modèle frontière; Terra vise le compromis coût/qualité et Luna le volume. Les trois publient 1,05 M de contexte et 128 k de sortie; ChatGPT est l’application, Responses la plateforme API et Codex l’agent de code [S61–S63]. Outils natifs: web, fichiers, génération d’image, interpréteur, shell hébergé, patch, computer use, MCP, appels programmatiques et multi-agent bêta.
+**Positionnement.** GPT-5.6 est une famille texte/vision à 1,05 M de contexte et 128 k de sortie: Sol pour le plafond, Terra pour l’équilibre et Luna pour le volume. ChatGPT est l’application, Responses l’API et Codex l’agent de code [S61–S62]. Programmatic Tool Calling, raisonnement persisté, cache explicite et multi-agent bêta complètent les outils existants.
 
 **Belgique.** L’usage est largement pertinent en français et néerlandais, mais la qualité doit être testée par domaine. L’API publie l’absence d’entraînement par défaut et des contrôles de résidence EEE pour clients/services éligibles [S03]. Les prix de l’API sont en USD hors taxes; le prix ChatGPT belge exact et la TVA doivent être confirmés au checkout.
 
-**Développement.** SDK larges, sorties structurées, function calling, streaming, batch/flex/priority et snapshots. Épingler le snapshot, journaliser les request IDs, maintenir des évaluations avant migration [S05]. Coût long contexte et outils à budgéter séparément.
+**Développement.** SDK larges, sorties structurées, function calling, streaming, batch/classes et snapshots. Épingler le snapshot, journaliser les request IDs, maintenir des évaluations avant migration [S05]. Pour GPT-5.6, tester l’effort actuel puis un niveau inférieur; encadrer explicitement autonomie, approbations et ambiguïtés [S62].
 
 ### 2. Anthropic
 
-**Positionnement.** Opus 5 vise les tâches difficiles; Sonnet 5 offre un compromis coût-vitesse; Claude Code est l’agent de développement. Opus 5 publie 1 M de contexte, 128 k de sortie et 5/25 USD par million entrée/sortie [S64].
+**Positionnement.** Opus 5 est le modèle quotidien haut de gamme à 5/25 USD/M; Fable 5 reste le plafond général à 10/50, avec garde-fous plus restrictifs; Sonnet 5 couvre le compromis coût-vitesse. Claude Code est l’agent de développement. Le catalogue atteint 1 M de contexte pour le haut de gamme [S63–S64].
 
 **Belgique et données.** Application et API sont pertinentes pour FR/NL, à valider sur le corpus réel. DPA, résidence et rétention varient entre API directe, AWS et Google Cloud; la résidence peut ajouter un multiplicateur. Vérifier le contrat exact.
 
-**Développement.** Excellente capacité d’outils et de code. Utiliser prompt caching pour les préfixes stables, batch pour l’asynchrone, budget d’effort raisonnable, et identifiants datés. Les dépréciations publiées imposent un inventaire de modèles.
+**Développement.** Excellente capacité d’outils et de code. Utiliser prompt caching pour les préfixes stables, batch pour l’asynchrone, effort mesuré et identifiants datés. Opus 5 ajoute effort configurable, Fast à 2× et fallback automatique bêta en cas de blocage de sûreté; les inference hooks entreprise sont en bêta depuis le 5 août [S63, S85].
 
 ### 3. Google
 
-**Positionnement.** Gemini combine multimodalité, contexte 1 M, recherche Google/Maps et agents managés. Gemini 3.6 Flash est GA, publie 64 k de sortie et 1,50/7,50 USD par million entrée/sortie; 3.5 Flash-Lite cible les sous-agents à haut volume [S65–S67]. Gemini app, AI Studio, Gemini API et Vertex AI sont des surfaces différentes.
+**Positionnement.** Gemini combine multimodalité, contexte 1 M, recherche Google/Maps et agents managés. Gemini 3.6 Flash est GA à 1,50/7,50 USD/M et 64 k de sortie; 3.5 Flash-Lite cible le haut débit à 0,30/2,50 [S65]. Gemini app, AI Studio, Gemini API et Vertex AI sont des surfaces différentes.
 
 **Belgique.** Les tiers gratuits et payants Gemini API sont annoncés disponibles dans de nombreuses régions, y compris EEE [S11]. Le payant n’utilise pas le contenu pour améliorer les produits selon la grille; le gratuit le peut [S09]. Facturation et TVA à vérifier dans le projet Google Cloud.
 
-**Développement.** Cache, batch à -50 %, Flex, Priority, outils de grounding, code execution et file search. Compter les jetons de raisonnement et les requêtes de recherche; utiliser Vertex pour réseau, IAM, journalisation et région.
+**Développement.** Cache, batch/Flex/Priority, grounding, code execution, file search et computer use. Gemini 3.6 déprécie les réglages personnalisés `temperature`, `top_p` et `top_k`; tester la migration, les tours modèle préremplis et les paramètres acceptés avant bascule [S65, S86–S87].
 
 ### 4. Microsoft
 
@@ -50,17 +50,17 @@ Les scores publiés par un fournisseur sont des **capacités déclarées** jusqu
 
 ### 5. AWS
 
-**Positionnement.** Bedrock agrège des modèles de nombreux fournisseurs. Depuis le 30 juillet, Bedrock Agents est « Agents Classic », fermé aux nouveaux clients et au catalogue de modèles gelé; AWS recommande AgentCore, qui gère orchestration, outils MCP, mémoire, identité et observabilité [S68].
+**Positionnement.** Bedrock agrège des modèles de nombreux fournisseurs. Bedrock Agents est désormais « Agents Classic », fermé aux nouveaux clients depuis le 30 juillet; AgentCore est la voie recommandée pour opérer des agents de frameworks variés [S15–S17, S88–S89].
 
 **Belgique.** AWS dispose de régions européennes et d’un DPA; cela ne garantit pas que chaque modèle ou fonction reste dans la région choisie. Vérifier le tableau région/modèle et le routage cross-region.
 
-**Développement.** IAM, VPC, KMS, CloudWatch et Guardrails sont des avantages. Le 6 août, Agent Registry change de namespace: endpoints, politiques IAM, SDK, CLI et données de registre doivent être migrés [S69]. Standard/Flex/Priority/Reserved et batch permettent d’adapter coût/latence.
+**Développement.** IAM, VPC, KMS, CloudWatch et Guardrails sont des avantages. Standard/Flex/Priority/Reserved et batch permettent d’adapter coût/latence. Le verrouillage porte sur l’orchestration et les services, même si les modèles restent interchangeables.
 
 ### 6. Meta
 
-**Positionnement.** Llama est d’abord une famille de poids et un écosystème; Meta AI est une application distincte [S18]. Depuis le 24 juillet, Meta AI s’appuie sur Muse Spark 1.1 pour planifier, connecter email/calendrier, produire des présentations et exécuter des tâches récurrentes [S73]. Le coût API dépend du fournisseur ou de l’infrastructure.
+**Positionnement.** Llama est d’abord une famille de poids et un écosystème; Meta AI est une application distincte [S18]. Le coût API dépend du fournisseur ou de l’infrastructure.
 
-**Belgique.** Vérifier la licence du modèle, les restrictions d’usage et la disponibilité exacte des fonctions Meta AI dans l’UE: le déploiement agentique n’est annoncé que dans des « marchés sélectionnés », sans confirmation Belgique dans la source [S73]. Le français est généralement utilisable; le néerlandais doit être évalué.
+**Belgique.** Vérifier la licence du modèle, les restrictions d’usage et la disponibilité exacte des fonctions Meta AI dans l’UE. Le français est généralement utilisable; le néerlandais doit être évalué. L’auto-hébergement donne du contrôle mais crée les obligations d’exploitant.
 
 ### 7. Mistral AI
 
@@ -80,7 +80,7 @@ Les scores publiés par un fournisseur sont des **capacités déclarées** jusqu
 
 ### 9. DeepSeek
 
-**Positionnement.** Modèles très compétitifs en coût, application gratuite, API et poids. La page prix contrôlée publie cache hit/miss et contexte, mais peut précéder une version plus récente [S25–S26].
+**Positionnement.** DeepSeek V4 Pro et Flash offrent 1 M de contexte, jusqu’à 384 k de sortie, modes thinking/non-thinking, JSON et appels d’outils. Les anciens alias `deepseek-chat` et `deepseek-reasoner` ont été retirés le 24 juillet 2026 [S66–S67].
 
 **Belgique.** Disponibilité commerciale, DPA, transferts, rétention, usage d’entraînement et facture belge sont à confirmer. Pour données sensibles, préférer des poids hébergés par un fournisseur UE après revue de licence.
 
@@ -110,7 +110,7 @@ Les scores publiés par un fournisseur sont des **capacités déclarées** jusqu
 
 ### 14. GitHub Copilot
 
-**Positionnement.** Assistant de code multi-modèles avec complétion, chat, CLI, revue, agent local et cloud. Plans individuels: Free, Pro, Pro+, Max; crédits IA variables selon modèle et complexité [S37–S38].
+**Positionnement.** Assistant de code multi-modèles avec complétion, chat, CLI, revue, agent local et cloud. Plans individuels: Free, Pro, Pro+, Max; crédits IA variables selon modèle et complexité [S37–S38]. GPT-5.6, Opus 5 et Kimi K2.7 ont rejoint Copilot, tandis que le service distinct GitHub Models a été retiré le 30 juillet [S73–S74].
 
 **Belgique et données.** Plans individuels: interactions susceptibles d’entraîner les modèles sauf opt-out; Business/Enterprise exclus de l’entraînement. Rétention B/E: IDE chat/completion non retenus, autres surfaces jusqu’à 28 jours selon page [S37]. DPA disponible.
 
@@ -124,7 +124,7 @@ Les scores publiés par un fournisseur sont des **capacités déclarées** jusqu
 
 ### 16. Anysphere / Cursor
 
-**Positionnement.** Éditeur centré agents, index du dépôt, terminal, MCP et choix multi-modèles. Ce n’est pas un modèle de fondation [S41–S43].
+**Positionnement.** Éditeur centré agents, index du dépôt, terminal, MCP et choix multi-modèles. Cursor Router, disponible sur desktop, web, mobile, CLI et SDK, optimise le routage selon coût, équilibre ou intelligence [S75]. Ce n’est pas un modèle de fondation.
 
 **Données.** Privacy Mode interdit l’entraînement par Cursor et ses providers, annonce des accords ZDR et chiffrement; des données peuvent être conservées lors de détection d’abus [S42]. En équipe, l’imposer par politique.
 
@@ -140,17 +140,17 @@ Les scores publiés par un fournisseur sont des **capacités déclarées** jusqu
 
 **Positionnement.** Hub des modèles/datasets, Inference Providers sans majoration annoncée, Endpoints dédiés et Spaces [S45–S47]. Ce n’est pas un modèle unique.
 
-**Belgique.** Endpoint AWS eu-west-1 disponible; DPA Enterprise et SOC 2 Type 2 annoncés. Les payloads ne sont pas stockés, logs 30 jours selon page sécurité [S47]. Le modèle et provider choisis conservent leurs propres risques.
+**Belgique et sécurité.** Endpoint AWS eu-west-1 disponible; DPA Enterprise et SOC 2 Type 2 annoncés. Hugging Face a divulgué une intrusion touchant une partie de son infrastructure et des identifiants, sans preuve de modification des modèles/datasets/Spaces publics; le fournisseur recommande de faire tourner les jetons et vérifier l’activité [S76]. Le compte rendu technique du 27 juillet renforce les exigences d’isolation, de moindre privilège et d’identités courtes [S77].
 
 ### 19. Moonshot AI / Kimi
 
-**Positionnement.** Kimi couvre modèles open weight, application, Kimi Code CLI et SDK agent. La documentation K3 publie 1 M de contexte, raisonnement low/high/max, cache automatique, tool calling et sorties structurées; elle déconseille temporairement la recherche web en cours de mise à jour [S74]. Les mesures indépendantes restent insuffisantes.
+**Positionnement.** Kimi couvre modèles open weight, application, Kimi Code CLI et SDK agent. Kimi K3, 2,8 T paramètres, vision native et 1 M de contexte, est disponible dans l’app, Kimi Work, Kimi Code et l’API; les poids complets étaient annoncés au 27 juillet [S70]. L’API publie cache, outils, JSON Schema et effort low/high/max [S71].
 
-**Belgique.** Les poids améliorent la portabilité. API directe, abonnement, DPA, région, TVA et qualité FR/NL restent à confirmer. Le CLI peut lire/écrire, lancer des commandes, utiliser MCP et sous-agents: permissions minimales obligatoires.
+**Belgique.** Les poids améliorent la portabilité. API directe, abonnement, DPA, région et qualité FR/NL restent à confirmer; la grille indique des prix hors taxes. La politique grand public a été mise à jour le 28 juillet, effective le 4 août [S72]. Le CLI peut lire/écrire, lancer des commandes, utiliser MCP et sous-agents: permissions minimales obligatoires.
 
 ### 20. Z.AI / GLM
 
-**Positionnement.** GLM-5.2 est le nouveau modèle mis en avant, tandis que la grille publique contrôlée détaille GLM-5.1/5 et outils; Coding Plan cible les IDE/agents [S52–S54].
+**Positionnement.** GLM-5.2 est le modèle phare open weight MIT à contexte 1 M pour tâches long-horizon, tandis que la grille API accessible ne publie pas encore clairement son tarif direct; Coding Plan cible les IDE/agents [S52–S54, S81].
 
 **Belgique.** Prix USD attractifs, API compatible et poids ouverts. Les documents contrôlés indiquent surtout anglais/chinois; FR/NL, région UE, DPA, rétention et disponibilité belge sont à confirmer.
 
@@ -165,4 +165,4 @@ Les scores publiés par un fournisseur sont des **capacités déclarées** jusqu
 
 ## Limites
 
-La consultation web ne permet pas de simuler chaque checkout belge ni de signer un contrat. Certaines pages sont dynamiques ou géolocalisées. Les latences, quotas et remises dépendent du compte. Les checkouts grand public, DPA négociés et résidences exactes n’ont pas été simulés. Pour les faits non modifiés, la date de consultation historique reste affichée; les sources S61–S76 portent le contrôle ciblé du 6 août.
+La consultation web ne permet pas de simuler chaque checkout belge ni de signer un contrat. Certaines pages sont dynamiques ou géolocalisées. Les latences, quotas et remises dépendent du compte. L’incident Hugging Face reste en cours d’évaluation quant à l’éventuel impact sur des données partenaires ou clients [S76].

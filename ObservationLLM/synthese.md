@@ -19,22 +19,24 @@ Il n’existe pas un « meilleur LLM » unique. Pour un résident belge, le choi
 
 ## Ce qui a changé
 
-Depuis l’édition du 17 juillet 2026, la sélection reste identique, mais plusieurs offres phares et chemins de migration ont changé:
+La sélection reste inchangée: **aucune entrée, aucune sortie**. Les faits marquants vérifiés depuis le 17 juillet sont:
 
-- OpenAI positionne GPT-5.6 Sol comme modèle frontière (1,05 M de contexte, 128 k de sortie, 5/0,50/30 USD par million entrée/cache-lecture/sortie). Terra et Luna ajoutent des paliers moins coûteux; GPT-5.6 introduit cache explicite, raisonnement persistant, appels d’outils programmatiques et multi-agent bêta [S61–S63].
-- Anthropic a lancé Claude Opus 5 le 24 juillet au même tarif 5/25 USD que 4.8, avec 1 M de contexte et 128 k de sortie. Le 5 août, les inference hooks entreprise sont entrés en bêta et Opus 4.1 a été retiré [S64].
-- Google a rendu Gemini 3.6 Flash GA le 21 juillet: 1,50 USD/M en entrée et 7,50 USD/M en sortie, 1 M de contexte et 64 k de sortie. La migration exige de retirer les paramètres d’échantillonnage dépréciés et les tours modèle préremplis [S65–S67].
-- AWS a fermé Bedrock Agents Classic aux nouveaux clients le 30 juillet et recommande AgentCore. Le namespace Agent Registry change le 6 août, ce qui impose de mettre à jour endpoints, IAM, SDK et données de registre [S68–S69].
-- GitHub Copilot a ajouté Opus 5, Gemini 3.6 Flash et Grok 4.5, les contrôles d’automatisation, le niveau de raisonnement des cloud agents et a retiré l’ancienne app Billing Preview [S71]. Cursor a ajouté Router, des contrôles administrateur et une surface mobile/iPad; le routage Balance/Intelligence est facturé au tarif du modèle choisi [S72].
+- OpenAI a généralisé la famille GPT-5.6: Sol (5/30 USD/M), Terra (2,50/15) et Luna (1/6), tous à 1,05 M de contexte; cache lu à -90 %, écritures explicites à 1,25× [S61–S62].
+- Anthropic a lancé Opus 5 le 24 juillet à 5/25 USD/M, avec effort configurable et mode Fast à 2×; Fable 5 reste le plafond général à 10/50 USD/M avec garde-fous et fallback possibles [S63–S64].
+- Google a mis Gemini 3.6 Flash en GA à 1,50/7,50 USD/M, 1 M de contexte, 64 k de sortie et outils natifs; Gemini 3.5 Flash-Lite vise le volume à 0,30/2,50 [S65].
+- AWS a fermé Bedrock Agents Classic aux nouveaux clients le 30 juillet et recommande AgentCore; le changement de namespace Agent Registry impose de revoir endpoints, IAM, SDK et données de registre [S88–S89].
 - xAI propose Grok 4.5 à 500 k de contexte, 2/6 USD par million de jetons en contexte court et 4/12 USD en long contexte [S22].
-- Mistral met en avant Mistral Medium 3.5 pour agents/code et une API européenne; Mistral Large est affiché à 2/6 USD par million et batch à -50 % [S19–S21].
-- GitHub remplace la logique de requêtes premium par des crédits IA: Pro 10 USD, Pro+ 39 USD, Max 100 USD; l’usage agent et les modèles chers consomment davantage [S37–S38].
+- xAI confirme Grok 4.5 dans la console API pour les utilisateurs UE depuis le 17 juillet [S68].
+- DeepSeek V4 Pro/Flash remplace les alias historiques retirés le 24 juillet: contexte 1 M, cache, outils et API OpenAI/Anthropic compatibles [S66–S67].
+- GitHub Models a été totalement retiré le 30 juillet; Copilot demeure et propose notamment GPT-5.6, Opus 5 et Kimi K2.7 [S73–S74].
+- Cursor Router route les requêtes selon coût, équilibre ou intelligence; les plans belges restent à confirmer au checkout [S75].
 - Cursor a mis à jour sa politique le 15 juillet 2026: Privacy Mode interdit l’entraînement et s’appuie sur des accords de rétention zéro, sous réserve d’enquêtes d’abus [S42].
-- Kimi K3 dispose désormais d’une documentation API officielle décrivant 1 M de contexte, raisonnement configurable, cache, outils et sorties structurées; la page avertit toutefois que la recherche web est en mise à jour [S74].
+- Kimi K3 est disponible en API à 1 M de contexte; les poids complets ont été annoncés pour le 27 juillet et la politique de confidentialité a été mise à jour le 28 juillet [S70–S72].
+- Hugging Face a publié une intrusion agentique et recommande la rotation préventive des jetons; sa reconstruction technique du 27 juillet confirme l’importance de l’isolation, des identités courtes et du blocage de l’accès metadata [S76–S77].
 
 ## Prix et Belgique
 
-Taux indicatifs BCE du 5 août 2026: **1 EUR = 1,1554 USD = 7,7989 CNY** [S55]. Donc 20 USD ≈ 17,31 EUR hors TVA; avec 21 % de TVA belge, ≈ 20,95 EUR si la TVA n’est pas déjà incluse. Un prix affiché en EUR à un consommateur peut déjà inclure la TVA; un prix B2B ou API l’exclut souvent. Le checkout et la facture priment toujours.
+Taux BCE du 5 août 2026: **1 EUR = 1,1554 USD** [S79]. Donc 20 USD ≈ 17,31 EUR hors TVA; avec 21 % de TVA belge, ≈ 20,95 EUR si la TVA n’est pas déjà incluse. Le taux standard belge reste 21 % [S80]. Un prix affiché en EUR à un consommateur peut déjà inclure la TVA; un prix B2B ou API l’exclut souvent. Le checkout et la facture priment toujours.
 
 Les offres explicitement disponibles dans l’EEE incluent notamment Gemini API; OpenAI publie des contrôles de résidence européenne pour certains clients/services [S03, S11]. Pour DeepSeek, Qwen, Kimi et GLM, **la disponibilité commerciale en Belgique, la facturation EUR, la TVA et la localisation des données restent à confirmer** avant usage de données personnelles ou confidentielles.
 
@@ -48,7 +50,7 @@ Les offres explicitement disponibles dans l’EEE incluent notamment Gemini API;
 
 ## Sécurité, RGPD et AI Act
 
-Aucun fournisseur ne rend automatiquement un cas d’usage conforme. Pour toute donnée personnelle: finalité, minimisation, base juridique, DPA, transferts, rétention, droits des personnes, journalisation et analyse d’impact si nécessaire. Depuis le 2 août 2026, l’article 50 impose notamment l’information lors d’une interaction avec une IA et, selon le cas, le marquage ou l’étiquetage de contenus générés/manipulés; la Commission publie des lignes directrices et un code volontaire. Une transition ciblée au 2 décembre 2026 concerne certains systèmes antérieurs [S75–S76]. Ceci n’est pas un avis juridique.
+Aucun fournisseur ne rend automatiquement un cas d’usage conforme. Pour toute donnée personnelle: finalité, minimisation, base juridique, DPA, transferts, rétention, droits des personnes, journalisation et analyse d’impact si nécessaire. L’AI Act s’applique en principe depuis le 2 août 2026: l’article 50 encadre notamment l’information et le marquage de certains contenus; les pouvoirs de contrôle GPAI sont actifs et une transition ciblée court jusqu’au 2 décembre pour certains systèmes antérieurs [S57–S59, S78, S92–S93]. Ceci n’est pas un avis juridique.
 
 Pour les offres grand public, vérifier le réglage d’entraînement. OpenAI API n’entraîne pas par défaut [S03]; GitHub permet l’opt-out pour les plans individuels et n’entraîne pas sur Business/Enterprise [S37]; Cursor Privacy Mode exclut l’entraînement [S42]. Les contrats, régions et rétentions doivent être vérifiés produit par produit.
 

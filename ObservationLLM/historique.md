@@ -2,21 +2,23 @@
 
 Les entrées sont ajoutées sans supprimer les précédentes. Les fichiers courants décrivent toujours le dernier état vérifié.
 
-## 2026-08-06 — Rattrapage et contrôle journalier
+## 2026-08-06 — Mise à jour mensuelle
 
-**Périmètre.** Les 20 écosystèmes sont inchangés: OpenAI, Anthropic, Google, Microsoft, AWS, Meta, Mistral, xAI, DeepSeek, Alibaba/Qwen, NVIDIA, Cohere, IBM, GitHub Copilot, Perplexity, Cursor, Replit, Hugging Face, Moonshot/Kimi et Z.AI/GLM. **Entrées: aucune. Sorties: aucune.** Les signaux de MiniMax, Databricks/Mosaic, Oracle OCI et Salesforce ne justifient pas encore un remplacement durable.
+**Périmètre.** Les 20 écosystèmes restent OpenAI, Anthropic, Google, Microsoft, AWS, Meta, Mistral, xAI, DeepSeek, Alibaba/Qwen, NVIDIA, Cohere, IBM, GitHub Copilot, Perplexity, Cursor, Replit, Hugging Face, Moonshot/Kimi et Z.AI/GLM. **Entrées: aucune. Sorties: aucune.** Le maintien est justifié par les cinq signaux pondérés; aucun candidat ne dépasse durablement l’acteur le plus faible sur l’ensemble adoption, modèles, agents, développeurs et pertinence européenne.
 
-**Modèles et capacités.** GPT-5.6 Sol/Terra/Luna remplace GPT-5.5 comme famille phare OpenAI, avec appels d’outils programmatiques, raisonnement persistant et multi-agent bêta [S61–S63]. Claude Opus 5 remplace Opus 4.8; Anthropic ajoute les inference hooks entreprise et retire Opus 4.1 [S64]. Gemini 3.6 Flash devient GA à 1,50/7,50 USD par million entrée/sortie, avec 1 M de contexte et 64 k de sortie [S65–S67].
+**Modèles et capacités.** GPT-5.6 Sol/Terra/Luna remplace GPT-5.5 comme famille OpenAI de référence; Anthropic lance Opus 5 tout en maintenant Fable 5 au plafond; Gemini 3.6 Flash remplace 3.5 Flash dans le comparatif. DeepSeek V4 Pro/Flash remplace les alias V3.2 retirés le 24 juillet. Kimi K3 est documenté à 1 M de contexte et ses poids complets étaient annoncés au 27 juillet. Grok 4.5 est confirmé dans la console UE [S61–S72].
 
-**Agents et développement.** AWS ferme Agents Classic aux nouveaux clients et recommande AgentCore; le changement de namespace Agent Registry du 6 août impose une migration technique [S68–S69]. GitHub Copilot ajoute Opus 5, Gemini 3.6 Flash, Grok 4.5, contrôles d’automatisation et niveau de raisonnement [S71]. Cursor ajoute Router, contrôles administrateur et surfaces iPhone/iPad [S72]. Meta AI devient agentique dans des marchés sélectionnés [S73]. Kimi K3 documente 1 M de contexte, cache, sorties structurées et outils, avec recherche web temporairement déconseillée [S74].
+**Prix.** Snapshot recalculé avec 1 EUR = 1,1554 USD, taux BCE du 5 août 2026 [S79]. GPT-5.6 Sol: 5/0,50/30 USD par million entrée/cache lu/sortie; Anthropic Opus 5: 5/25; Gemini 3.6 Flash: 1,50/7,50; DeepSeek V4 Pro: 0,435/0,003625/0,87 miss/hit/sortie; Kimi K3: 3/0,30/15. TVA belge standard 21 %; les checkouts et factures priment [S61–S71, S80].
 
-**Prix et Belgique.** Taux BCE du 5 août: 1 EUR = 1,1554 USD = 7,7989 CNY [S55]; toutes les estimations EUR ont été recalculées. Les prix restent hors TVA sauf mention; la TVA belge standard de 21 % et le checkout/la facture priment. Grok 4.5 est explicitement disponible dans la console API pour les utilisateurs UE [S70].
+**Agents et développement.** OpenAI ajoute Programmatic Tool Calling, raisonnement persisté, cache explicite et multi-agent bêta. Cursor Router introduit des modes coût/équilibre/intelligence. GitHub Models est retiré depuis le 30 juillet, mais Copilot accueille GPT-5.6, Opus 5 et Kimi K2.7. AWS a fermé Agents Classic aux nouveaux clients et recommande AgentCore; le namespace Agent Registry évolue. Les guides recommandent aussi de migrer les slugs DeepSeek, de retirer les paramètres d’échantillonnage dépréciés de Gemini 3.6 et de tracer le modèle effectivement routé [S62, S65, S67, S73–S75, S88–S90].
 
-**Sécurité et réglementation.** Les obligations de transparence de l’article 50 s’appliquent depuis le 2 août 2026; la Commission a publié lignes directrices et code volontaire. Une transition ciblée jusqu’au 2 décembre 2026 peut concerner le marquage de certains systèmes antérieurs [S75–S76]. Analyse informative, pas avis juridique.
+**Sécurité et conformité.** Hugging Face publie une intrusion agentique, la rotation préventive des jetons et une chronologie technique; aucun indice de modification des modèles/datasets/Spaces publics n’est annoncé, mais l’évaluation des données partenaires/clients n’était pas close [S76–S77]. Depuis le 2 août 2026, l’AI Act s’applique en principe, l’article 50 et les pouvoirs de contrôle GPAI sont actifs, avec transition ciblée jusqu’au 2 décembre pour certains systèmes antérieurs; l’analyse reste informative [S57–S59, S78, S92–S93]. La politique Kimi a été mise à jour le 28 juillet, effective le 4 août [S72].
+
+**Disponibilité Belgique.** xAI confirme Grok 4.5 dans la console UE. L’EEE reste documenté pour Gemini API; les contrôles/régions d’entreprise doivent toujours être vérifiés service par service. Pour DeepSeek, Qwen, Kimi et GLM, facture EUR, DPA, résidence, rétention et qualité FR/NL restent à confirmer.
 
 **Fichiers mis à jour.** README.md, synthese.md, comparatif.md, analyse-detaillee.md, bonnes-pratiques-developpement.md, sources.md et historique.md.
 
-**Limites / décision humaine.** Checkouts belges, DPA négociés, résidence effective et disponibilité contractuelle n’ont pas été simulés. Décider si les applications utilisent des contenus relevant de l’article 50, si AWS Agents Classic doit être migré, et quels pilotes FR/NL exécuter avant changement de modèle.
+**Limites / décisions humaines.** Plusieurs checkouts belges dynamiques et la page officielle Meta Llama n’étaient pas accessibles de façon stable. Aucun DOCX/XLSX n’existe dans ObservationLLM: contrôle Markdown effectué, règles Excel/Word non applicables. Décision attendue: rotation des jetons Hugging Face si utilisés et choix de deux fournisseurs pour un pilote FR/NL.
 
 ## 2026-07-17 — Édition initiale
 

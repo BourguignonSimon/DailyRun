@@ -57,7 +57,8 @@ Tracer request ID, version modèle, version prompt, outils, temps, jetons/cache,
 - Signer DPA et clauses de transfert; vérifier durée de rétention, entraînement, suppression, chiffrement, SSO/RBAC, audit et certifications.
 - Modéliser prompt injection, exfiltration, tool poisoning, SSRF, code arbitraire, escalade de privilèges, supply chain et fuite inter-utilisateurs.
 - Filtrer entrée et sortie selon le risque, mais ne jamais considérer un garde-fou fournisseur comme contrôle unique.
-- Documenter supervision humaine, transparence à l’utilisateur et limites. Depuis le 2 août 2026, intégrer les obligations de transparence applicables de l’article 50 et conserver la preuve du marquage/étiquetage [S75–S76].
+- Documenter supervision humaine, transparence à l’utilisateur et limites. Depuis le 2 août 2026, traiter l’application générale de l’AI Act et les pouvoirs de contrôle et de sanction GPAI comme exigences actives à qualifier avec le conseil juridique [S57–S59, S78].
+- Après l’incident Hugging Face, interdire l’exécution implicite de code provenant de datasets/modèles, isoler les workers, bloquer l’accès metadata, réduire la portée/durée des identités et préparer une rotation de secrets [S76–S77].
 
 ## Coût, performance et résilience
 
@@ -73,15 +74,15 @@ Tracer request ID, version modèle, version prompt, outils, temps, jetons/cache,
 
 ### 1. OpenAI
 
-**[Officiel, S61–S63]** Migrer GPT-5.5 vers la famille GPT-5.6 en conservant l’effort comme baseline puis en testant un niveau inférieur; utiliser Responses, snapshots, schémas stricts, cache explicite et raisonnement persistant. Réserver Programmatic Tool Calling aux workflows bornés et multi-agent aux sous-tâches réellement indépendantes. **[Déduction]** Tester le seuil >272 k et comptabiliser séparément écritures/lectures de cache, outils et jetons.
+**[Officiel, S05/S61–S62]** Pour GPT-5.6, conserver l’effort actuel comme baseline puis tester un niveau inférieur; utiliser Responses, outils structurés, cache explicite et raisonnement persisté. Encadrer autonomie et approbations dans une politique concise. **[Déduction]** Réserver Sol aux tâches où le gain sur Terra/Luna est mesuré; budgéter cache écrit, outils et multi-agent séparément.
 
 ### 2. Anthropic
 
-**[Officiel, S64]** Pour Opus 5, piloter l’effort, tester les changements de comportement, exploiter prompt caching et batch, et inventorier les modèles retirés. Les organisations Enterprise peuvent évaluer les inference hooks pour une décision allow/deny avant inférence. **[Déduction]** Réserver Opus aux tâches où le gain de réussite compense le prix.
+**[Officiel, S63–S64/S85]** Exploiter prompt caching, batch -50 %, modèles datés et effort approprié. Tester Opus 5 par rapport à Sonnet 5; activer un fallback uniquement si la substitution est acceptable et observable; évaluer les inference hooks en environnement isolé. **[Déduction]** Réserver Fable 5 aux tâches où son plafond compense prix et faux positifs potentiels des garde-fous.
 
 ### 3. Google
 
-**[Officiel, S65–S67]** Pour Gemini 3.6 Flash, retirer `temperature`, `top_p`, `top_k` et les tours modèle préremplis; employer instructions système et sorties structurées. Le payant exclut l’usage d’amélioration selon la grille; recherche, cache, agents et fichiers gardent des unités séparées. **[Déduction]** Pour production UE, préférer projet payant et contrôles Vertex plutôt que tier gratuit.
+**[Officiel, S09–S11/S65/S86–S87]** Le payant exclut l’usage d’amélioration selon la grille; cache, batch, Flex, Priority, Search grounding et file search ont des unités séparées. Pour Gemini 3.6, retirer les paramètres d’échantillonnage dépréciés, éliminer les tours modèle préremplis et tester Computer Use. **[Déduction]** Pour production UE, préférer projet payant et contrôles Vertex au tier gratuit.
 
 ### 4. Microsoft
 
@@ -89,7 +90,7 @@ Tracer request ID, version modèle, version prompt, outils, temps, jetons/cache,
 
 ### 5. AWS
 
-**[Officiel, S68–S69]** Ne pas créer de nouvelle dépendance à Agents Classic; migrer vers AgentCore et, le 6 août, mettre à jour namespace, endpoints, IAM, SDK, CLI et registre. Choisir Standard/Flex/Priority/Reserved, batch lorsque supporté, IAM minimal, Guardrails et Knowledge Bases. **[Déduction]** Fixer une région et bloquer le cross-region non approuvé; tracer chaque coût aval d’un agent.
+**[Officiel, S15–S17/S88–S89]** Choisir Standard/Flex/Priority/Reserved, batch lorsque supporté, IAM minimal, Guardrails, Knowledge Bases et AgentCore. Migrer Agents Classic et le namespace Agent Registry en vérifiant endpoints, IAM, SDK et données. **[Déduction]** Fixer une région et bloquer le cross-region non approuvé; tracer chaque coût aval d’un agent.
 
 ### 6. Meta
 
@@ -101,15 +102,15 @@ Tracer request ID, version modèle, version prompt, outils, temps, jetons/cache,
 
 ### 8. xAI
 
-**[Officiel, S22]** Tenir compte des paliers court/long contexte, cache, coûts voix/image/vidéo et outils. **[Déduction]** Ne pas laisser un agent franchir le seuil long contexte sans alerte; tester les redirects de modèles retirés.
+**[Officiel, S22/S68/S84]** Tenir compte des paliers court/long contexte, cache, coûts voix/image/vidéo et outils; utiliser `prompt_cache_key` pour stabiliser les hits de cache. Grok 4.5 est confirmé dans la console UE. **[Déduction]** Ne pas laisser un agent franchir le seuil 200 k sans alerte.
 
 ### 9. DeepSeek
 
-**[Officiel, S25–S26]** Utiliser cache lorsque le préfixe est identique et vérifier le modèle exact derrière les alias. **[Déduction]** Héberger les poids via fournisseur UE pour données sensibles; ajouter délais plus longs, fallback et revue de politique de données.
+**[Officiel, S66–S67]** Migrer explicitement vers `deepseek-v4-pro` ou `deepseek-v4-flash`; les anciens alias sont retirés. Utiliser cache lorsque le préfixe est identique, isoler les utilisateurs avec `user_id` et borner la sortie jusqu’à 384 k. **[Déduction]** Héberger les poids via fournisseur UE pour données sensibles.
 
 ### 10. Alibaba/Qwen
 
-**[Officiel, S27–S28]** Respecter l’allowlist exacte du Coding Plan et utiliser la clé/base URL dédiée; sinon PAYG peut être facturé. **[Déduction]** Épingler région, devise et version; tester FR/NL et disponibilité avant engagement.
+**[Officiel, S27–S28/S69]** Respecter l’allowlist exacte du Coding Plan et utiliser la clé/base URL dédiée; sinon PAYG peut être facturé. Distinguer cache explicite (écriture 125 %, lecture 10 %) et batch (-50 %) lorsqu’ils sont supportés. **[Déduction]** Épingler région, devise et snapshot; tester FR/NL et disponibilité.
 
 ### 11. NVIDIA
 
@@ -125,7 +126,7 @@ Tracer request ID, version modèle, version prompt, outils, temps, jetons/cache,
 
 ### 14. GitHub Copilot
 
-**[Officiel, S37–S38/S71]** Plans payants incluent crédits IA; modèles et tâches consomment différemment. Utiliser les budgets/rapports intégrés, régler le niveau de raisonnement des cloud agents et encadrer les automatisations déclenchées par commentaire. B/E n’entraîne pas sur données client. **[Consensus]** Toujours exécuter tests, revue et scanners.
+**[Officiel, S37–S38/S73–S74]** Plans payants incluent crédits IA; modèles et tâches consomment différemment. B/E n’entraîne pas sur données client. Ne plus dépendre de GitHub Models, retiré le 30 juillet. **[Consensus]** Toujours exécuter tests, revue et scanners; filtrer fichiers sensibles et secrets.
 
 ### 15. Perplexity
 
@@ -133,7 +134,7 @@ Tracer request ID, version modèle, version prompt, outils, temps, jetons/cache,
 
 ### 16. Cursor
 
-**[Officiel, S42–S43/S72]** Imposer Privacy Mode, fournisseurs ZDR, règles de projet et contrôles d’équipe. Avec Cursor Router, documenter le mode Cost/Balance/Intelligence, bloquer les modèles non approuvés et attribuer le coût au modèle effectivement routé. **[Déduction]** Limiter commandes, MCP et répertoire; suivre usage par agent/modèle et revoir chaque diff.
+**[Officiel, S42–S43/S75]** Imposer Privacy Mode, ZDR providers, règles de projet et contrôles d’équipe. Avec Cursor Router, journaliser le modèle réellement routé, le mode et le coût. **[Déduction]** Limiter commandes, MCP et répertoire; revoir chaque diff.
 
 ### 17. Replit
 
@@ -141,15 +142,15 @@ Tracer request ID, version modèle, version prompt, outils, temps, jetons/cache,
 
 ### 18. Hugging Face
 
-**[Officiel, S45–S47]** Le routage Providers est annoncé sans majoration; Endpoints facture le calcul; eu-west-1, PrivateLink, DPA Enterprise et logs 30 jours sont documentés. **[Déduction]** Évaluer licence, code distant, pickle/malware scan et provider final pour chaque modèle.
+**[Officiel, S45–S47/S76–S77]** Le routage Providers est annoncé sans majoration; Endpoints facture le calcul; eu-west-1, PrivateLink, DPA Enterprise et logs 30 jours sont documentés. Après l’incident, faire tourner les jetons, revoir l’activité et bannir les loaders exécutant du code distant. **[Déduction]** Pinner digests, isoler le traitement des datasets et prévoir un modèle défensif auto-hébergé.
 
 ### 19. Moonshot/Kimi
 
-**[Officiel, S49–S50/S74]** Kimi recommande instructions claires, délimiteurs, étapes, exemples et résumé des longues conversations; K3 ajoute raisonnement configurable, cache, outils dynamiques et schémas. Désactiver ou isoler la recherche web tant que la documentation la signale en mise à jour. **[Déduction]** Activer hooks d’approbation et sandbox; ne pas exposer une clé API côté client.
+**[Officiel, S49–S50/S70–S71]** Kimi recommande instructions claires, délimiteurs et résumés; K3 ajoute effort low/high/max, cache automatique, tools dynamiques et JSON Schema. Kimi Code peut utiliser sous-agents, hooks et MCP. **[Déduction]** Activer approbations et sandbox; ne pas exposer de clé côté client ni utiliser le web search tant que sa mise à jour n’est pas stabilisée.
 
 ### 20. Z.AI/GLM
 
-**[Officiel, S52–S54]** Prix distincts entrée/cache/sortie/outils, API OpenAI-compatible, contexte 200 k et plans code à quotas. **[Déduction]** Fixer un plafond web search, vérifier GLM-5.2 contre la grille tarifaire avant production et tester FR/NL.
+**[Officiel, S52–S54/S81]** Prix distincts entrée/cache/sortie/outils, API compatible et plans code à quotas; GLM-5.2 publie contexte 1 M, effort configurable et poids MIT. **[Déduction]** Fixer un plafond web search, confirmer le tarif GLM-5.2 avant production et tester FR/NL.
 
 ## Checklist de mise en production
 

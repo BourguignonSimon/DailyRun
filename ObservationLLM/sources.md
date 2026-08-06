@@ -1,6 +1,6 @@
 # Registre des sources
 
-Dernier contrôle ciblé: **6 août 2026**, heure de Bruxelles. Les URL sont dédupliquées. Les lignes S01–S60 conservent leur date de consultation historique; S61–S76 documentent les faits nouveaux ou revalidés. « Non publiée » signifie que la page n’affiche pas de date exploitable.
+Dernière consultation: **6 août 2026**, heure de Bruxelles. Les URL sont dédupliquées. « Non publiée » signifie que la page n’affiche pas de date exploitable. Les lignes antérieures conservent leur date de consultation historique; les sources revérifiées ou ajoutées portent la date courante. Les pages dynamiques peuvent évoluer sans changer d’URL.
 
 | ID | Acteur | Sujet | Nature | URL exacte | Publication / mise à jour connue | Consultation |
 |---|---|---|---|---|---|---|
@@ -58,28 +58,43 @@ Dernier contrôle ciblé: **6 août 2026**, heure de Bruxelles. Les URL sont dé
 | S52 | Z.AI | Prix GLM, cache et outils | Documentation officielle | <https://docs.z.ai/guides/overview/pricing> | Dynamique | 2026-07-17 |
 | S53 | Z.AI | Catalogue, contexte et langues | Documentation officielle | <https://docs.z.ai/guides/overview/overview> | Dynamique | 2026-07-17 |
 | S54 | Z.AI | Coding Plan | Page officielle | <https://z.ai/subscribe> | Dynamique | 2026-07-17 |
-| S55 | BCE | Taux EUR/USD/CNY | Source institutionnelle | <https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html> | 2026-08-05 | 2026-08-06 |
-| S56 | Belgique | Taux de TVA | Source institutionnelle | <https://finance.belgium.be/en/enterprises/vat/vat-obligation/rates-and-calculation/vat-rates> | Non publiée | 2026-07-17 |
 | S57 | Union européenne | AI Act, calendrier et transparence | Source institutionnelle | <https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai> | 2026-07 | 2026-07-17 |
 | S58 | Union européenne | Obligations GPAI | Source institutionnelle | <https://digital-strategy.ec.europa.eu/en/faqs/guidelines-obligations-general-purpose-ai-providers> | 2025-11 | 2026-07-17 |
 | S59 | Conseil de l’UE | Calendrier AI Act modifié | Source institutionnelle | <https://www.consilium.europa.eu/en/policies/artificial-intelligence-act/timeline-artificial-intelligence/> | 2026-07 | 2026-07-17 |
 | S60 | Moonshot | Lancement Kimi K3 et position de marché | Source indépendante | <https://www.axios.com/2026/07/16/moonshot-kimi-ai-china-model-openai-anthropic> | 2026-07-16 | 2026-07-17 |
-| S61 | OpenAI | Catalogue GPT-5.6, contexte, outils et prix | Documentation officielle | <https://developers.openai.com/api/docs/models> | Dynamique | 2026-08-06 |
-| S62 | OpenAI | Lancement GPT-5.6 et évaluations fournisseur | Publication officielle | <https://openai.com/index/gpt-5-6/> | 2026-07-09 | 2026-08-06 |
-| S63 | OpenAI | Migration, cache, raisonnement, outils programmatiques et multi-agent | Documentation officielle | <https://developers.openai.com/api/docs/guides/latest-model> | Dynamique | 2026-08-06 |
-| S64 | Anthropic | Opus 5, retraits, inference hooks et changements API | Changelog officiel | <https://platform.claude.com/docs/en/release-notes/overview> | 2026-08-05 | 2026-08-06 |
-| S65 | Google | Gemini 3.6 Flash et changements API | Documentation officielle | <https://ai.google.dev/gemini-api/docs/latest-model> | 2026-07-21 | 2026-08-06 |
-| S66 | Google | Changelog Gemini API | Changelog officiel | <https://ai.google.dev/gemini-api/docs/changelog> | 2026-07-30 | 2026-08-06 |
-| S67 | Google | Dépréciations Gemini API | Documentation officielle | <https://ai.google.dev/gemini-api/docs/deprecations> | 2026-08-03 | 2026-08-06 |
-| S68 | AWS | Agents Classic en maintenance et migration AgentCore | Documentation officielle | <https://docs.aws.amazon.com/bedrock/latest/userguide/agents-classic-maintenance-mode.html> | 2026-07-30 | 2026-08-06 |
-| S69 | AWS | Migration du namespace Agent Registry | Documentation officielle | <https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/registry-concepts.html> | 2026-08-06 | 2026-08-06 |
-| S70 | xAI | Disponibilité UE Grok 4.5 et mises à jour API | Changelog officiel | <https://docs.x.ai/developers/release-notes> | 2026-07-31 | 2026-08-06 |
-| S71 | GitHub | Nouveaux modèles, automatisations, gouvernance et retraits Copilot | Changelog officiel | <https://github.blog/changelog/label/copilot/> | Dynamique | 2026-08-06 |
-| S72 | Cursor | Router, contrôles administrateur et applications mobiles | Changelog officiel | <https://cursor.com/changelog> | 2026-07-29 | 2026-08-06 |
-| S73 | Meta | Meta AI agentique, Muse Spark 1.1 et déploiement limité | Publication officielle | <https://about.fb.com/news/2026/07/meta-ai-muse-spark-doesnt-just-think-it-acts/> | 2026-07-24 | 2026-08-06 |
-| S74 | Moonshot/Kimi | Kimi K3: contexte, raisonnement, cache, outils et avertissement recherche | Documentation officielle | <https://platform.kimi.ai/docs/pricing/chat-k3> | Dynamique | 2026-08-06 |
-| S75 | Commission européenne | Lignes directrices sur la transparence de l’article 50 | Source institutionnelle | <https://digital-strategy.ec.europa.eu/en/news/commission-publishes-guidelines-transparency-obligations-providers-and-deployers-certain-ai-systems> | 2026-07-20; maj 2026-07-24 | 2026-08-06 |
-| S76 | Commission européenne | Application, transition et code de transparence | Source institutionnelle | <https://digital-strategy.ec.europa.eu/en/faqs/signing-code-practice-transparency-ai-generated-content> | 2026-07-17 | 2026-08-06 |
+| S61 | OpenAI | Lancement GPT-5.6, prix et évaluations fournisseur | Publication officielle | <https://openai.com/index/gpt-5-6/> | 2026-07-09 | 2026-08-06 |
+| S62 | OpenAI | Modèles GPT-5.6, contexte, cache, outils et migration | Documentation officielle | <https://developers.openai.com/api/docs/guides/latest-model> | Dynamique | 2026-08-06 |
+| S63 | Anthropic | Lancement Opus 5, prix, effort, Fast et sûreté | Publication officielle | <https://www.anthropic.com/news/claude-opus-5> | 2026-07-24 | 2026-08-06 |
+| S64 | Anthropic | Fable 5, disponibilité, prix et garde-fous | Publication officielle | <https://www.anthropic.com/news/claude-fable-5-mythos-5> | 2026-06-09; mise à jour 2026-07-01 | 2026-08-06 |
+| S65 | Google | Gemini 3.6 Flash et 3.5 Flash-Lite: prix, contexte et migration | Documentation officielle | <https://ai.google.dev/gemini-api/docs/latest-model> | 2026-07-21 | 2026-08-06 |
+| S66 | DeepSeek | V4 Pro/Flash: prix, cache, contexte et sortie | Documentation officielle | <https://api-docs.deepseek.com/quick_start/pricing> | Dynamique | 2026-08-06 |
+| S67 | DeepSeek | V4 et retrait des alias historiques | Journal officiel | <https://api-docs.deepseek.com/updates> | 2026-04-24; retrait 2026-07-24 | 2026-08-06 |
+| S68 | xAI | Grok 4.5, disponibilité UE et recommandations cache | Documentation officielle | <https://docs.x.ai/developers/release-notes> | 2026-07-17 | 2026-08-06 |
+| S69 | Alibaba | Qwen 3.7 Max, prix international, cache et batch | Documentation officielle | <https://www.alibabacloud.com/help/en/model-studio/model-pricing> | 2026-07-15 | 2026-08-06 |
+| S70 | Moonshot/Kimi | Kimi K3, 1 M, vision, poids et disponibilité | Publication officielle | <https://www.kimi.com/ja-jp/blog/kimi-k3> | 2026-07-16 | 2026-08-06 |
+| S71 | Moonshot/Kimi | API K3: prix, taxes, outils, cache et effort | Documentation officielle | <https://www.kimi.com/resources/kimi-k3-pricing> | Dynamique | 2026-08-06 |
+| S72 | Moonshot/Kimi | Politique de confidentialité grand public | Politique officielle | <https://www.kimi.com/user/agreement/userPrivacy?version=v2> | Mise à jour 2026-07-28; effective 2026-08-04 | 2026-08-06 |
+| S73 | GitHub | Retrait complet de GitHub Models | Changelog officiel | <https://github.blog/changelog/2026-07-01-github-models-is-being-fully-retired-on-july-30-2026/> | 2026-07-01; retrait 2026-07-30 | 2026-08-06 |
+| S74 | GitHub | Claude Opus 5 dans Copilot | Changelog officiel | <https://github.blog/changelog/2026-07-24-claude-opus-5-is-now-available-in-github-copilot/> | 2026-07-24 | 2026-08-06 |
+| S75 | Cursor | Cursor Router, mobile et changements produit | Changelog officiel | <https://cursor.com/changelog> | 2026-07-22 à 2026-07-29 | 2026-08-06 |
+| S76 | Hugging Face | Incident de sécurité et mesures recommandées | Publication officielle | <https://huggingface.co/blog/security-incident-july-2026> | 2026-07-16 | 2026-08-06 |
+| S77 | Hugging Face | Chronologie technique de l’intrusion agentique | Publication officielle | <https://huggingface.co/blog/agent-intrusion-technical-timeline> | 2026-07-27 | 2026-08-06 |
+| S78 | Union européenne | Lignes directrices GPAI et pouvoirs de contrôle au 2 août 2026 | Source institutionnelle | <https://digital-strategy.ec.europa.eu/en/policies/guidelines-gpai-providers> | Mise à jour 2026-04-28 | 2026-08-06 |
+| S79 | BCE | Taux EUR/USD de référence | Source institutionnelle | <https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html> | 2026-08-05 | 2026-08-06 |
+| S80 | Belgique | TVA standard belge à 21 % | Source institutionnelle | <https://finance.belgium.be/en/enterprises/vat/vat-obligation/rates-and-calculation/vat-rates> | Non publiée | 2026-08-06 |
+| S81 | Z.AI | GLM-5.2: contexte, poids, effort et protocoles fournisseur | Publication officielle | <https://z.ai/blog/glm-5.2> | 2026-06-16 | 2026-08-06 |
+| S82 | Mistral | Surfaces Vibe, Studio et Admin | Documentation officielle | <https://docs.mistral.ai/getting-started/platform-overview> | Dynamique | 2026-08-06 |
+| S83 | Hugging Face | Inference Providers et intégrations agents | Documentation officielle | <https://huggingface.co/docs/inference-providers/en/index> | Dynamique | 2026-08-06 |
+| S84 | xAI | Grok 4.5: prix, contexte, cache et bonnes pratiques | Documentation officielle | <https://docs.x.ai/developers/grok-4-5> | Dynamique | 2026-08-06 |
+| S85 | Anthropic | Retraits, inference hooks et changements API | Changelog officiel | <https://platform.claude.com/docs/en/release-notes/overview> | 2026-08-05 | 2026-08-06 |
+| S86 | Google | Changelog Gemini API | Changelog officiel | <https://ai.google.dev/gemini-api/docs/changelog> | 2026-07-30 | 2026-08-06 |
+| S87 | Google | Dépréciations Gemini API | Documentation officielle | <https://ai.google.dev/gemini-api/docs/deprecations> | 2026-08-03 | 2026-08-06 |
+| S88 | AWS | Agents Classic en maintenance | Documentation officielle | <https://docs.aws.amazon.com/bedrock/latest/userguide/agents-classic-maintenance-mode.html> | 2026-07-30 | 2026-08-06 |
+| S89 | AWS | Migration du namespace Agent Registry | Documentation officielle | <https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/registry-concepts.html> | 2026-08-06 | 2026-08-06 |
+| S90 | GitHub | Nouveaux modèles, automatisations, gouvernance et retraits Copilot | Changelog officiel | <https://github.blog/changelog/label/copilot/> | Dynamique | 2026-08-06 |
+| S91 | Meta | Meta AI agentique et déploiement limité | Publication officielle | <https://about.fb.com/news/2026/07/meta-ai-muse-spark-doesnt-just-think-it-acts/> | 2026-07-24 | 2026-08-06 |
+| S92 | Commission européenne | Lignes directrices de transparence de l’article 50 | Source institutionnelle | <https://digital-strategy.ec.europa.eu/en/news/commission-publishes-guidelines-transparency-obligations-providers-and-deployers-certain-ai-systems> | 2026-07-20; mise à jour 2026-07-24 | 2026-08-06 |
+| S93 | Commission européenne | Application, transition et code de transparence | Source institutionnelle | <https://digital-strategy.ec.europa.eu/en/faqs/signing-code-practice-transparency-ai-generated-content> | 2026-07-17 | 2026-08-06 |
 
 ## Sources non retenues
 
