@@ -1,6 +1,6 @@
 # Analyse détaillée
 
-Contrôle: **11 août 2026**; faits fournisseurs vérifiés au **6 août 2026** et conservés sans changement significatif. Point de vue: particulier ou développeur résidant en Belgique. Cette analyse est informative; les volets RGPD et AI Act ne constituent pas un avis juridique. Pour l'exécution sur matériel personnel, voir [modeles-locaux-par-hardware.md](modeles-locaux-par-hardware.md).
+Contrôle: **11 août 2026, deuxième passe**; socle fournisseurs vérifié au **6 août 2026**, complété par deux passes de vérification le 11 août. Point de vue: particulier ou développeur résidant en Belgique. Cette analyse est informative; les volets RGPD et AI Act ne constituent pas un avis juridique. Pour l'exécution sur matériel personnel, voir [modeles-locaux-par-hardware.md](modeles-locaux-par-hardware.md).
 
 ## Méthodologie et sélection
 
@@ -26,11 +26,19 @@ Les scores publiés par un fournisseur sont des **capacités déclarées** jusqu
 
 ### 2. Anthropic
 
-**Positionnement.** Opus 5 est le modèle quotidien haut de gamme à 5/25 USD/M; Fable 5 reste le plafond général à 10/50, avec garde-fous plus restrictifs; Sonnet 5 couvre le compromis coût-vitesse. Claude Code est l’agent de développement. Le catalogue atteint 1 M de contexte pour le haut de gamme [S63–S64].
+**Positionnement.** Opus 5 est le modèle quotidien haut de gamme à 5/25 USD/M; Fable 5 reste le plafond général à 10/50, avec garde-fous plus restrictifs; Sonnet 5 couvre le compromis coût-vitesse; Haiku 4.5 tient le palier volume à 1/5. **Claude Mythos 5**, ajouté au catalogue public à 10/50, partage le socle de Fable 5 avec les garde-fous cyber et bio/chimie levés: l’accès est **sur invitation uniquement** dans le cadre de Project Glasswing, sans inscription libre — ce n’est donc pas une option de plan pour un utilisateur belge ordinaire [S07, S116]. Claude Code est l’agent de développement. Le catalogue atteint 1 M de contexte pour le haut de gamme [S63–S64].
 
-**Belgique et données.** Application et API sont pertinentes pour FR/NL, à valider sur le corpus réel. DPA, résidence et rétention varient entre API directe, AWS et Google Cloud; la résidence peut ajouter un multiplicateur. Vérifier le contrat exact.
+**Tarification, vérifiée directement le 11 août** [S07, S115, S117–S118]. Trois éléments changent la comparaison avec les concurrents:
 
-**Développement.** Excellente capacité d’outils et de code. Utiliser prompt caching pour les préfixes stables, batch pour l’asynchrone, effort mesuré et identifiants datés. Opus 5 ajoute effort configurable, Fast à 2× et fallback automatique bêta en cas de blocage de sûreté; les inference hooks entreprise sont en bêta depuis le 5 août [S63, S85].
+- **Le million de jetons est inclus au tarif standard** sur les modèles 4.6 et ultérieurs: une requête de 900 k jetons est facturée au même taux qu’une requête de 9 k. GPT-5.6 et Gemini 3.1 Pro surtaxent au contraire au-delà d’un seuil. Sur une charge à contexte long, l’écart de facture peut s’inverser par rapport aux prix d’entrée de gamme.
+- **Le tokenizer de Claude 4.7 et suivants produit environ 30 % de jetons de plus pour le même texte** que celui de Sonnet 4.6 et antérieurs. Un prix par million identique ne signifie donc pas un coût identique, ni entre fournisseurs, ni même entre générations Anthropic. C’est le piège de comparaison le plus coûteux relevé à ce contrôle.
+- **Fin du tarif d’introduction Sonnet 5 le 31 août 2026**: 2/10 → 3/15 USD/M, batch 1/5 → 1,50/7,50, cache lu 0,20 → 0,30. Échéance à trois semaines au moment de ce contrôle.
+
+**Postes hors jetons.** Recherche web 10 USD/1 000 requêtes; web fetch sans surcoût; exécution de code 1 550 heures gratuites par mois et par organisation puis 0,05 USD/heure/conteneur, et gratuite si combinée à web search ou web fetch; **Claude Managed Agents facture 0,08 USD par heure-session** en plus des jetons, uniquement pendant le statut `running`, sans remise batch. Sur AWS Marketplace et Microsoft Foundry, la facturation passe par des Claude Consumption Units à 0,01 USD l’unité.
+
+**Belgique et données.** Application et API sont pertinentes pour FR/NL, à valider sur le corpus réel. Point important pour un usage européen: **le routage de l’API de première partie est global par défaut**. Le paramètre `inference_geo: "us"` force l’inférence aux États-Unis avec une surtaxe de ×1,1 — ce n’est **pas** une option de résidence UE. Pour une exigence de résidence européenne, la voie documentée passe par Bedrock ou Vertex avec endpoints régionaux ou multi-régionaux, facturés **+10 %** par rapport aux endpoints globaux [S07, S118]. DPA, résidence et rétention varient entre API directe, AWS et Google Cloud; vérifier le contrat exact.
+
+**Développement.** Excellente capacité d’outils et de code. Utiliser prompt caching pour les préfixes stables — l’écriture 5 minutes (×1,25) devient rentable dès une relecture, l’écriture 1 heure (×2) à partir de deux —, batch −50 % pour l’asynchrone, effort mesuré et identifiants datés. Opus 5 ajoute effort configurable, Fast mode à 10/50 en aperçu de recherche (API de première partie uniquement, incompatible avec le Batch API) et fallback automatique bêta en cas de blocage de sûreté; les inference hooks entreprise sont en bêta depuis le 5 août [S07, S63, S85].
 
 ### 3. Google
 
@@ -38,7 +46,7 @@ Les scores publiés par un fournisseur sont des **capacités déclarées** jusqu
 
 **Belgique.** Les tiers gratuits et payants Gemini API sont annoncés disponibles dans de nombreuses régions, y compris EEE [S11]. Le payant n’utilise pas le contenu pour améliorer les produits selon la grille; le gratuit le peut [S09]. Facturation et TVA à vérifier dans le projet Google Cloud.
 
-**Développement.** Cache, batch/Flex/Priority, grounding, code execution, file search et computer use. Gemini 3.6 déprécie les réglages personnalisés `temperature`, `top_p` et `top_k`; tester la migration, les tours modèle préremplis et les paramètres acceptés avant bascule [S65, S86–S87].
+**Développement.** Cache, batch/Flex/Priority, grounding, code execution, file search et computer use. Gemini 3.6 déprécie les réglages personnalisés `temperature`, `top_p` et `top_k`; tester la migration, les tours modèle préremplis et les paramètres acceptés avant bascule [S65, S86, S114].
 
 ### 4. Microsoft
 
@@ -86,9 +94,11 @@ Les scores publiés par un fournisseur sont des **capacités déclarées** jusqu
 
 ### 10. Alibaba Cloud / Qwen
 
-**Positionnement.** Qwen propose généralistes, code et multimodal, en poids et via Model Studio. Qwen 3.7 max global est tarifé en CNY avec régions global/US/Chine distinctes [S27–S28].
+**Positionnement.** Qwen propose généralistes, code et multimodal, en poids et via Model Studio. **Qwen3.8-Max, sorti le 3 août 2026, remplace Qwen 3.7 Max comme modèle phare**: architecture MoE de 2,4 T paramètres dont environ 95 B actifs par requête, attention hybride, contexte de 1 M, tarifé **2 USD en entrée et 6 USD en sortie par million de jetons**, cache d’entrée à 0,25 — soit une parité de prix avec GPT-5.6 Terra pour un modèle positionné sur les tâches autonomes longues. Les poids ouverts ont été annoncés dans la foulée [S122–S123]. Côté open weights, Qwen3.6-27B (dense, Apache 2.0, 256 k) reste la référence locale [S128].
 
-**Belgique.** Le mot « global » ne prouve pas disponibilité, localisation UE ni facture conforme en Belgique. Vérifier compte, région, DPA, support et langues; FR/NL sont à tester.
+**Niveau de preuve.** Ces éléments sont **corroborés par plusieurs sources indépendantes** (Forbes, TechRepublic, presse spécialisée) mais la page tarifaire officielle n’a pas pu être ouverte pendant ce run, le domaine étant bloqué en sortie. Le tarif est à revérifier sur Model Studio avant tout engagement budgétaire.
+
+**Belgique.** Le mot « global » ne prouve pas disponibilité, localisation UE ni facture conforme en Belgique. Un prix agressif ne remplace ni un DPA ni une garantie de résidence: **ne pas envoyer de données personnelles ou confidentielles avant validation contractuelle**. Vérifier compte, région, DPA, support et langues; FR/NL sont à tester.
 
 ### 11. NVIDIA
 
@@ -166,3 +176,5 @@ Les scores publiés par un fournisseur sont des **capacités déclarées** jusqu
 ## Limites
 
 La consultation web ne permet pas de simuler chaque checkout belge ni de signer un contrat. Certaines pages sont dynamiques ou géolocalisées. Les latences, quotas et remises dépendent du compte. L’incident Hugging Face reste en cours d’évaluation quant à l’éventuel impact sur des données partenaires ou clients [S76].
+
+**Limite d’accès propre à cette passe.** Le proxy réseau du poste d’exécution a bloqué en sortie `openai.com`, `platform.openai.com`, `ai.google.dev`, `mistral.ai`, `huggingface.co`, `docs.github.com`, `github.blog` et `ecb.europa.eu`. Seul `platform.claude.com` a pu être ouvert directement, ce qui explique que les faits Anthropic de cette édition soient nettement plus détaillés que les autres — c’est un **biais d’accessibilité, pas un jugement de valeur** sur les fournisseurs. Les autres faits nouveaux reposent sur au moins deux sources indépendantes citant la page officielle et sont signalés comme tels ligne par ligne. Ils doivent être revérifiés à la source dès que l’accès direct sera rétabli. Ce déséquilibre est le principal point appelant une décision humaine: soit on autorise ces domaines depuis l’environnement d’exécution, soit on accepte que la profondeur de vérification reste inégale entre acteurs.

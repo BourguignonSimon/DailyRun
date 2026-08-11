@@ -1,6 +1,15 @@
 # Bonnes pratiques de développement
 
-État vérifié le **6 août 2026**. Les mentions distinguent **[Officiel]** recommandation publiée par un fournisseur, **[Consensus]** pratique convergente entre plusieurs fournisseurs et **[Déduction]** conclusion analytique de cet observatoire.
+État vérifié le **11 août 2026** (socle du 6 août, révisé à la deuxième passe du 11 août). Les mentions distinguent **[Officiel]** recommandation publiée par un fournisseur, **[Consensus]** pratique convergente entre plusieurs fournisseurs et **[Déduction]** conclusion analytique de cet observatoire.
+
+## Nouveautés de ce contrôle
+
+Quatre points ajoutés ou corrigés le 11 août 2026, chacun avec une conséquence concrète sur du code ou un budget.
+
+1. **Le prix par million de jetons ne prédit plus la facture.** Trois mécanismes s'y ajoutent désormais et sont publiés séparément: la **durée de session** des agents managés (0,08 USD/heure chez Anthropic), les **outils serveur** facturés à l'appel (recherche web 10 USD/1 000 chez Anthropic; Web/X Search et Code Execution 5 USD/1 000 chez xAI; 0,01 USD/usage chez Z.AI), et la **surtaxe long contexte** (GPT-5.6 Sol 5/30 → 10/45; Gemini 3.1 Pro 2/12 → 4/18 au-delà de 200 k). **[Déduction]** Instrumentez ces trois postes séparément dans votre télémétrie de coût, sinon vos prévisions dériveront sans que vous sachiez pourquoi [S07, S65, S22].
+2. **Le nombre de jetons n'est pas comparable entre versions d'un même fournisseur.** Claude 4.7 et suivants utilisent un tokenizer qui produit **~30 % de jetons en plus pour le même texte** que Sonnet 4.6 et antérieurs. **[Officiel, S07]** Une migration de version à prix affiché identique **augmente** donc la facture. **[Déduction]** Rejouez votre jeu d'évaluation et comparez le coût réel mesuré, jamais le prix catalogue.
+3. **Un garde-fou de modération peut désormais rester chez vous.** Shieldstral 1.0 (3 B, Apache 2.0) juge texte et image contre une politique écrite **en langage naturel à l'inférence**, sur un seul GPU de 16 Go. **[Déduction]** C'est l'option à considérer quand les contenus utilisateurs ne peuvent légalement pas sortir vers une API tierce. **Testez FR et NL:** l'éditeur annonce une performance multilingue inégale [S119–S121].
+4. **Les retraits de modèles ne sont pas toujours progressifs.** L'arrêt des modèles d'image Google du 17 août provoque une **erreur dure sans période d'avertissement**, et la forme de l'API change: renommer le modèle ne suffit pas. **[Consensus]** Épinglez les identifiants datés, surveillez les pages de dépréciation de chaque fournisseur utilisé, et prévoyez que certaines migrations demandent une réécriture d'appel, pas une substitution [S114].
 
 ## Architecture de référence
 
@@ -78,11 +87,11 @@ Tracer request ID, version modèle, version prompt, outils, temps, jetons/cache,
 
 ### 2. Anthropic
 
-**[Officiel, S63–S64/S85]** Exploiter prompt caching, batch -50 %, modèles datés et effort approprié. Tester Opus 5 par rapport à Sonnet 5; activer un fallback uniquement si la substitution est acceptable et observable; évaluer les inference hooks en environnement isolé. **[Déduction]** Réserver Fable 5 aux tâches où son plafond compense prix et faux positifs potentiels des garde-fous.
+**[Officiel, S63–S64/S85]** Exploiter prompt caching, batch -50 %, modèles datés et effort approprié. Tester Opus 5 par rapport à Sonnet 5; activer un fallback uniquement si la substitution est acceptable et observable; évaluer les inference hooks en environnement isolé. **[Officiel, S07]** Choisir la durée de cache selon le nombre de relectures attendues: une écriture 5 minutes (×1,25) est rentable dès **une** relecture, une écriture 1 heure (×2) à partir de **deux**. Le million de jetons est inclus au tarif standard sur les modèles 4.6+, donc inutile de découper artificiellement un contexte long pour le prix — le découper reste justifié pour la qualité. **[Officiel, S115]** Le tarif d'introduction de Sonnet 5 s'arrête le **31 août 2026** (2/10 → 3/15): rebudgétez et vérifiez si Haiku 4.5 passe votre évaluation sur une part du trafic. **[Officiel, S118]** Le routage est **global par défaut**; `inference_geo: "us"` force les États-Unis avec une surtaxe ×1,1 — ce n'est pas une option de résidence UE, qui passe par Bedrock ou Vertex avec endpoints régionaux (+10 %). **[Déduction]** Réserver Fable 5 aux tâches où son plafond compense prix et faux positifs potentiels des garde-fous; Mythos 5 n'est pas une option de plan produit, l'accès étant sur invitation [S116].
 
 ### 3. Google
 
-**[Officiel, S09–S11/S65/S86–S87]** Le payant exclut l’usage d’amélioration selon la grille; cache, batch, Flex, Priority, Search grounding et file search ont des unités séparées. Pour Gemini 3.6, retirer les paramètres d’échantillonnage dépréciés, éliminer les tours modèle préremplis et tester Computer Use. **[Déduction]** Pour production UE, préférer projet payant et contrôles Vertex au tier gratuit.
+**[Officiel, S09–S11/S65/S86, S114]** Le payant exclut l’usage d’amélioration selon la grille; cache, batch, Flex, Priority, Search grounding et file search ont des unités séparées. Pour Gemini 3.6, retirer les paramètres d’échantillonnage dépréciés, éliminer les tours modèle préremplis et tester Computer Use. **[Déduction]** Pour production UE, préférer projet payant et contrôles Vertex au tier gratuit.
 
 ### 4. Microsoft
 
@@ -98,7 +107,7 @@ Tracer request ID, version modèle, version prompt, outils, temps, jetons/cache,
 
 ### 7. Mistral
 
-**[Officiel, S19–S21]** Choisir Large généraliste, Medium 3.5 pour agents/code, Small pour coût; batch -50 %, agents/RAG/OCR disponibles. **[Déduction]** Profiter de la proximité UE mais valider contrat et licence de chaque poids/version.
+**[Officiel, S19–S21]** Choisir Large généraliste, Medium 3.5 pour agents/code, Small pour coût; batch -50 %, agents/RAG/OCR disponibles. **[Officiel, S119–S120]** Pour la modération, **Shieldstral 1.0 3B** (Apache 2.0) accepte une politique en langage naturel à l'inférence et couvre texte et image sur un GPU de 16 Go: pas de réentraînement pour ajuster une catégorie ou un niveau de sévérité. **[Déduction]** Profiter de la proximité UE mais valider contrat et licence de chaque poids/version; sur Shieldstral, tester explicitement FR et NL, les limites multilingues étant annoncées par l'éditeur [S121].
 
 ### 8. xAI
 
@@ -110,7 +119,7 @@ Tracer request ID, version modèle, version prompt, outils, temps, jetons/cache,
 
 ### 10. Alibaba/Qwen
 
-**[Officiel, S27–S28/S69]** Respecter l’allowlist exacte du Coding Plan et utiliser la clé/base URL dédiée; sinon PAYG peut être facturé. Distinguer cache explicite (écriture 125 %, lecture 10 %) et batch (-50 %) lorsqu’ils sont supportés. **[Déduction]** Épingler région, devise et snapshot; tester FR/NL et disponibilité.
+**[Officiel, S27–S28/S69]** Respecter l’allowlist exacte du Coding Plan et utiliser la clé/base URL dédiée; sinon PAYG peut être facturé. Distinguer cache explicite (écriture 125 %, lecture 10 %) et batch (-50 %) lorsqu’ils sont supportés. **[Déduction, S122–S123]** **Qwen3.8-Max** (3 août 2026, 2/6 USD/M, cache 0,25, contexte 1 M) place Alibaba à parité de prix avec GPT-5.6 Terra: c'est un candidat sérieux à un banc d'essai comparatif, mais la disponibilité commerciale en Belgique, la facturation EUR, le DPA et la résidence des données restent **non confirmés** — ne l'utilisez pas avec des données personnelles ou confidentielles avant validation contractuelle. **[Déduction]** Épingler région, devise et snapshot; tester FR/NL et disponibilité.
 
 ### 11. NVIDIA
 
@@ -126,7 +135,7 @@ Tracer request ID, version modèle, version prompt, outils, temps, jetons/cache,
 
 ### 14. GitHub Copilot
 
-**[Officiel, S37–S38/S73–S74]** Plans payants incluent crédits IA; modèles et tâches consomment différemment. B/E n’entraîne pas sur données client. Ne plus dépendre de GitHub Models, retiré le 30 juillet. **[Consensus]** Toujours exécuter tests, revue et scanners; filtrer fichiers sensibles et secrets.
+**[Officiel, S37–S38/S73–S74/S124]** Depuis le 1er juin 2026, Copilot facture **à l'usage via des GitHub AI Credits**, au tarif jeton du modèle effectivement routé (entrée, sortie, cache). **Les complétions inline et next-edit ne consomment aucun crédit** sur les plans payants; seuls chat, mode agent, revue de code et CLI en consomment — le coût réel dépend donc du mix d'usage, pas du prix affiché. Les crédits promotionnels Business (+30 USD/siège) et Enterprise (+70 USD/siège) s'arrêtent **fin août 2026**. B/E n’entraîne pas sur données client. Ne plus dépendre de GitHub Models, retiré le 30 juillet. **[Déduction]** Relevez la consommation réelle de crédits d'août avant la fin du mois: c'est la seule mesure qui dira si le crédit de base suffira en septembre. **[Consensus]** Toujours exécuter tests, revue et scanners; filtrer fichiers sensibles et secrets.
 
 ### 15. Perplexity
 
@@ -157,6 +166,9 @@ Tracer request ID, version modèle, version prompt, outils, temps, jetons/cache,
 - [ ] Cas d’usage, propriétaire, risque et métrique de réussite documentés.
 - [ ] Fournisseur, modèle, snapshot, région et fallback choisis.
 - [ ] Prix origine, cache, batch, outils, TVA et plafond mensuel vérifiés.
+- [ ] **Postes hors jetons** budgétés séparément: durée de session d’agent, appels d’outils serveur, surtaxe long contexte, prime de résidence régionale.
+- [ ] **Coût mesuré, pas affiché**: coût réel par tâche réussie relevé après changement de version de modèle (le nombre de jetons pour un même texte varie d’une génération à l’autre).
+- [ ] **Calendrier de retrait** des modèles utilisés relevé chez chaque fournisseur, avec la distinction entre substitution d’identifiant et réécriture d’appel.
 - [ ] DPA, sous-traitants, rétention, entraînement, chiffrement et suppression validés.
 - [ ] Secrets côté serveur; RBAC minimal; environnements séparés.
 - [ ] Prompts et schémas versionnés; sorties validées.

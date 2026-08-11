@@ -2,6 +2,33 @@
 
 Les entrées sont ajoutées sans supprimer les précédentes. Les fichiers courants décrivent toujours le dernier état vérifié.
 
+## 2026-08-11 — Deuxième passe (grille Anthropic ouverte, corrections de génération)
+
+**Périmètre.** Les 20 écosystèmes restent inchangés. **Entrées: aucune. Sorties: aucune.** Passe de vérification approfondie, avec ouverture directe de la page tarifaire Anthropic (seul domaine officiel joignable).
+
+**Changements vérifiés.**
+- **Anthropic — fin du tarif d’introduction Sonnet 5 le 31 août 2026.** 2/10 → **3/15 USD/M**, batch 1/5 → 1,50/7,50, cache lu 0,20 → 0,30. Vérifié sur la page officielle [S07, S115]. Le fait avait été noté en passe précédente mais n’était pas remonté dans les livrables décisionnels; il l’est désormais, avec échéance datée.
+- **Anthropic — Claude Mythos 5** apparaît au catalogue public à 10/50 USD/M: même socle que Fable 5 avec garde-fous cyber et bio/chimie levés, **accès sur invitation (Project Glasswing)**, pas d’inscription libre [S07, S116].
+- **Anthropic — tokenizer.** Claude 4.7 et suivants produisent **~30 % de jetons en plus pour le même texte** que Sonnet 4.6 et antérieurs: un prix par million identique ne signifie pas un coût identique [S07].
+- **Anthropic — long contexte.** Le million de jetons est **inclus au tarif standard** sur les modèles 4.6+, sans surtaxe, contrairement à GPT-5.6 (Sol 5/30 → 10/45) et Gemini 3.1 Pro (2/12 → 4/18 au-delà de 200 k) [S07, S61–S62, S65].
+- **Anthropic — postes hors jetons:** agents managés à 0,08 USD/heure-session, recherche web 10 USD/1 000, web fetch inclus, exécution de code 1 550 h gratuites/mois puis 0,05 USD/h, CCU à 0,01 USD sur AWS Marketplace et Microsoft Foundry [S07, S117].
+- **Anthropic — résidence.** Routage global par défaut; `inference_geo: "us"` à ×1,1. **Aucune option « UE seulement » en première partie**: la résidence UE passe par Bedrock ou Vertex avec endpoints régionaux (+10 %) [S07, S118].
+- **Alibaba — Qwen3.8-Max (3 août 2026)** remplace Qwen 3.7 Max: MoE 2,4 T paramètres / ~95 B actifs, contexte 1 M, **2/6 USD/M**, cache 0,25, poids ouverts annoncés [S122–S123].
+- **Mistral — Shieldstral 1.0 (4 août 2026):** classifieur de sûreté 3B multimodal **Apache 2.0**, politique en langage naturel à l’inférence, un GPU de 16 Go. Limite déclarée par l’éditeur: performance multilingue inégale [S119–S121].
+- **Google — arrêts rapprochés:** Imagen 4 et modèles d’image Gemini 3 au **17 août** (erreur dure, changement de forme d’API, cible `gemini-3.1-flash-image`), `gemini-robotics-er-1.6-preview` au 31 août, Gemini 2.5 au 16 octobre [S114].
+- **GitHub — Copilot en facturation à l’usage** (AI Credits) depuis le 1er juin 2026; complétions inline gratuites; **crédits promotionnels Business (+30 USD/siège) et Enterprise (+70 USD/siège) supprimés fin août 2026** [S124].
+- **xAI — grille élargie:** Grok 4.3 à 1,25/2,50, Grok 4.1 Fast à 0,20/0,50 avec **2 M de contexte**, outils serveur à 5 USD/1 000 appels, `grok-voice-latest` → 2.0 le 5 août à 0,08 USD/minute audio [S22].
+- **AI Act — calendrier précisé.** Pouvoirs d’enquête et de sanction GPAI actifs depuis le 2 août 2026 (amendes jusqu’à 15 M€ ou 3 % du CA mondial); article 50 appliqué par les autorités nationales; **délai de grâce au 2 décembre 2026 limité au marquage technique de l’article 50(2)** pour les systèmes antérieurs au 2 août 2026; conformité GPAI des modèles antérieurs au 2 août 2025 due au **2 août 2027**; Digital Omnibus IA (en vigueur le 27 juillet 2026) **reportant** le haut risque au 2 décembre 2027 (annexe III) et au 2 août 2028 (annexe I) [S125–S126]. La mention antérieure « transition ciblée jusqu’au 2 décembre » était exacte mais trop vague: elle est remplacée par le détail ci-dessus.
+- **Taux de conversion.** Passage au taux BCE du **7 août 2026: 1 EUR = 1,1535 USD** (au lieu de 1,1554 du 5 août). **Toutes** les colonnes EUR de comparatif.md ont été recalculées, contrairement à la passe précédente qui avait conservé l’ancien taux.
+
+**Correction de fond — guide local.** Les éditions précédentes recommandaient Gemma 3 et Qwen3 alors que deux familles plus récentes étaient déjà disponibles: **Gemma 4** (2 avril 2026; E2B, E4B, 12B, 26B-A4B MoE, 31B; multimodal; jusqu’à 256 k; **premier Gemma sous Apache 2.0**) et **Qwen3.6-27B** (22 avril 2026; dense; Apache 2.0; 256 k; **~17 Go en Q4_K_M**). Le guide local et la section « Exécution locale » de comparatif.md sont corrigés; les modèles de génération précédente sont conservés en alternative, leurs éditeurs ne les ayant ni retirés ni dépréciés. Une section « Garde-fous et modération en local » est ajoutée pour Shieldstral [S119–S121, S127–S129].
+
+**Ajouts structurels.** Nouvelle feuille « Échéances datées » dans comparatif.md (dates butoirs avec effet concret); section « Frais hors jetons publiés »; section « Trois pièges de comparaison » (tokenizer, long contexte, sièges de code); section « À traiter avant fin août » en tête de synthese.md; section « Nouveautés de ce contrôle » dans bonnes-pratiques-developpement.md.
+
+**Fichiers mis à jour.** ObservationLLM/README.md, synthese.md, comparatif.md, analyse-detaillee.md, bonnes-pratiques-developpement.md, modeles-locaux-par-hardware.md, sources.md (S115–S129, mise à jour de S07 et S22, dédoublonnage de S87/S130 + note d’accès), historique.md, et les JSON du dashboard (run-status.json, latest.json).
+
+**Limites / décisions humaines.** Le proxy réseau a bloqué en sortie `openai.com`, `platform.openai.com`, `ai.google.dev`, `mistral.ai`, `huggingface.co`, `docs.github.com`, `github.blog` et `ecb.europa.eu`; seul `platform.claude.com` a été ouvert directement. Il en résulte un **biais d’accessibilité**: les faits Anthropic sont plus détaillés que les autres, non parce qu’Anthropic serait plus transparent, mais parce que sa page était joignable. Les autres faits reposent sur au moins deux sources indépendantes citant la page officielle. Les empreintes mémoire de Gemma 4 sont **calculées**, pas lues sur la carte modèle, et portent la mention « à confirmer ». La qualité en néerlandais de Gemma 4 et de Shieldstral n’est documentée par aucune source consultée. **Décision attendue:** autoriser ces domaines depuis l’environnement d’exécution, ou accepter une profondeur de vérification inégale entre acteurs. Aucun DOCX/XLSX dans ObservationLLM: contrôle Markdown effectué, workflows Word/Excel non applicables.
+
 ## 2026-08-11 — Contrôle complémentaire (vérification tarifaire et disponibilité)
 
 **Périmètre.** Les 20 écosystèmes restent inchangés. **Entrées: aucune. Sorties: aucune.** Contrôle de vérification des faits les plus volatils (prix API, modèles phares, disponibilité) via recherche web.

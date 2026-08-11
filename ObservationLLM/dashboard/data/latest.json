@@ -1,21 +1,21 @@
 {
   "schemaVersion": 1,
   "run": {
-    "checkedAt": "2026-08-11T12:00:00Z",
-    "factsVerifiedThrough": "2026-08-06",
-    "commit": "8e1119faafc2790b4ed67b3bfe48ea1e7017598e",
-    "model": "Opus 4.8",
-    "result": "Contrôle complémentaire: baisse tarifaire OpenAI GPT-5.6 Terra/Luna (30 juillet) désormais confirmée; arrêt Gemini 2.5 programmé au 16 octobre 2026. Sélection inchangée (20 acteurs)."
+    "checkedAt": "2026-08-11T16:00:00Z",
+    "factsVerifiedThrough": "2026-08-11",
+    "commit": "PENDING",
+    "model": "Opus 5",
+    "result": "Deuxième passe du 11 août: grille tarifaire Anthropic ouverte directement (fin du tarif Sonnet 5 au 31 août, Mythos 5, agents managés, tokenizer, résidence), Qwen3.8-Max remplace Qwen 3.7, Shieldstral 1.0 ajouté, guide local corrigé vers Gemma 4 et Qwen3.6. Sélection inchangée (20 acteurs)."
   },
   "metrics": {
     "actorCount": 20,
     "belgianVatPercent": 21,
-    "eurUsdRate": 1.1554,
-    "rateDate": "2026-08-05"
+    "eurUsdRate": 1.1535,
+    "rateDate": "2026-08-07"
   },
   "headline": {
-    "title": "OpenAI baisse GPT-5.6 : le coût par jeton chute sur les paliers volume.",
-    "detail": "Baisse confirmée du 30 juillet : Terra −20 % (2/12 USD/M), Luna −80 % (0,20/1,20 USD/M), Sol inchangé. Google programme l’arrêt de Gemini 2.5 au 16 octobre 2026."
+    "title": "Trois échéances tombent avant fin août : images Google, Sonnet 5, crédits Copilot.",
+    "detail": "Le 17 août, l’arrêt des modèles d’image Google casse les appels existants en erreur dure. Le 31 août, Claude Sonnet 5 passe de 2/10 à 3/15 USD par million (+50 %). Fin août, les crédits promotionnels Copilot Business et Enterprise disparaissent."
   },
   "decisions": [
     {
@@ -26,17 +26,17 @@
     {
       "profile": "Développement",
       "primary": "GitHub Copilot · Cursor",
-      "why": "À comparer avec Claude Code, Codex et Kimi Code sur un dépôt pilote réel."
+      "why": "Copilot facture désormais à l’usage : mesurez la consommation réelle de crédits avant septembre."
     },
     {
       "profile": "Production UE",
       "primary": "Mistral · cloud avec région UE",
-      "why": "DPA, région, rétention et sous-traitants doivent être validés service par service."
+      "why": "La résidence européenne passe par un cloud partenaire avec endpoint régional, pas par un simple réglage d’API."
     },
     {
       "profile": "100 % local",
-      "primary": "Gemma 3 · Qwen3 · gpt-oss",
-      "why": "Le choix dépend d’abord de la mémoire disponible, du contexte et de la quantification."
+      "primary": "Gemma 4 · Qwen3.6 · gpt-oss",
+      "why": "Nouvelle génération sous Apache 2.0 ; le choix dépend d’abord de la mémoire, du contexte et de la quantification."
     }
   ],
   "actors": [
@@ -49,14 +49,14 @@
     {
       "name": "Anthropic",
       "category": "Plateforme",
-      "flagship": "Claude Opus 5 · Fable 5 · Claude Code",
-      "belgium": "Belgique : disponible, conditions à vérifier"
+      "flagship": "Claude Opus 5 · Sonnet 5 · Mythos 5 (accès limité)",
+      "belgium": "Belgique : routage global par défaut, résidence UE via cloud partenaire"
     },
     {
       "name": "Google",
       "category": "Plateforme",
-      "flagship": "Gemini 3.6 · Gemini API · Vertex AI",
-      "belgium": "EEE : disponibilité documentée"
+      "flagship": "Gemini 3.6 Flash · 3.1 Pro · Vertex AI",
+      "belgium": "EEE : documenté ; arrêts modèles les 17 et 31 août"
     },
     {
       "name": "Microsoft",
@@ -79,13 +79,13 @@
     {
       "name": "Mistral AI",
       "category": "Plateforme",
-      "flagship": "Le Chat · API · modèles ouverts",
-      "belgium": "Acteur européen, services disponibles"
+      "flagship": "Le Chat · API · Shieldstral 1.0 (Apache 2.0)",
+      "belgium": "Acteur européen, garde-fou auto-hébergeable"
     },
     {
       "name": "xAI",
       "category": "Application",
-      "flagship": "Grok 4.5 · API",
+      "flagship": "Grok 4.5 · 4.3 · 4.1 Fast (2 M de contexte)",
       "belgium": "Console API UE annoncée"
     },
     {
@@ -97,8 +97,8 @@
     {
       "name": "Alibaba / Qwen",
       "category": "Open weights",
-      "flagship": "Qwen3 · Qwen3-Coder · Qwen3-VL",
-      "belgium": "Poids disponibles, cloud à confirmer"
+      "flagship": "Qwen3.8-Max · Qwen3.6 open weights",
+      "belgium": "Poids disponibles, DPA et facturation à confirmer"
     },
     {
       "name": "NVIDIA",
@@ -121,8 +121,8 @@
     {
       "name": "GitHub Copilot",
       "category": "Code",
-      "flagship": "Copilot · agents et modèles multiples",
-      "belgium": "Disponible selon abonnement"
+      "flagship": "Copilot · facturation à l’usage (AI Credits)",
+      "belgium": "Crédits promotionnels Business/Enterprise jusqu’à fin août"
     },
     {
       "name": "Perplexity",
@@ -165,22 +165,22 @@
     {
       "label": "Raspberry Pi 5 · 4 Go",
       "kind": "CPU ARM",
-      "tier": "0,3–1,7 B",
-      "primary": "Gemma 3 1B",
+      "tier": "0,3–2,5 B actifs",
+      "primary": "Gemma 4 E2B",
       "alternatives": [
-        "Llama 3.2 1B",
-        "DeepSeek-R1 Distill 1.5B"
+        "Gemma 3 1B",
+        "Llama 3.2 1B"
       ],
-      "avoid": "Modèles de 4B ou plus et contextes longs : le swap détruit la latence.",
-      "summary": "Une petite quantification Q4 et un contexte court sont indispensables. Qwen3 1.7B reste serré."
+      "avoid": "Modèles denses de 4B ou plus et contextes longs : le swap détruit la latence.",
+      "summary": "2,3 B de paramètres actifs pour ~2 Go de RAM. Gemma 3 1B reste plus sûr si la mémoire est disputée."
     },
     {
       "label": "CPU seul · 8 Go",
       "kind": "PC d’entrée de gamme",
-      "tier": "1–4 B",
-      "primary": "Qwen3 4B",
+      "tier": "1–5 B",
+      "primary": "Gemma 4 E4B",
       "alternatives": [
-        "Gemma 3 4B",
+        "Qwen3 4B",
         "Phi-4-mini 3.8B"
       ],
       "avoid": "Les 7–8B tiennent à peine et deviennent trop lents pour un usage fluide.",
@@ -190,25 +190,25 @@
       "label": "CPU seul · 16 Go",
       "kind": "Portable ou mini-PC",
       "tier": "7–14 B",
-      "primary": "Qwen3 8B",
+      "primary": "Gemma 4 12B",
       "alternatives": [
-        "Llama 3.1 8B",
-        "Gemma 3 12B"
+        "Qwen3 8B",
+        "Llama 3.1 8B"
       ],
       "avoid": "Les modèles denses de 24B ou plus et les contextes de 128k.",
-      "summary": "Le meilleur palier sans GPU pour un chat local raisonnablement capable."
+      "summary": "Le meilleur palier sans GPU pour un chat local réellement capable."
     },
     {
       "label": "CPU seul · 32 Go",
       "kind": "Station compacte",
-      "tier": "14–32 B",
-      "primary": "Qwen3-30B-A3B",
+      "tier": "14–32 B (MoE)",
+      "primary": "Gemma 4 26B-A4B",
       "alternatives": [
-        "Gemma 3 27B",
+        "Qwen3-30B-A3B",
         "gpt-oss-20b"
       ],
       "avoid": "Les 70B denses pour une conversation interactive.",
-      "summary": "Les architectures MoE réduisent fortement le coût de calcul par jeton."
+      "summary": "L’empreinte d’un 26 B pour un coût de calcul proche d’un 4 B grâce au MoE."
     },
     {
       "label": "CPU seul · 64 Go",
@@ -216,7 +216,7 @@
       "tier": "30–120 B MoE",
       "primary": "gpt-oss-120b",
       "alternatives": [
-        "Qwen3-30B-A3B",
+        "Gemma 4 26B-A4B",
         "Llama 3.3 70B"
       ],
       "avoid": "Un 70B dense si vous attendez une réponse interactive rapide.",
@@ -226,34 +226,34 @@
       "label": "Apple Silicon · 16 Go",
       "kind": "Mémoire unifiée",
       "tier": "8–14 B",
-      "primary": "Qwen3 14B",
+      "primary": "Gemma 4 12B",
       "alternatives": [
-        "Gemma 3 12B",
+        "Qwen3 14B",
         "Qwen3 8B"
       ],
-      "avoid": "Les 27B et plus : la mémoire est aussi partagée avec macOS.",
+      "avoid": "Les 26B et plus : la mémoire est aussi partagée avec macOS.",
       "summary": "MLX 4-bit ou llama.cpp/Metal offrent le chemin le plus naturel."
     },
     {
       "label": "Apple Silicon · 32 Go",
       "kind": "Mémoire unifiée",
       "tier": "24–32 B",
-      "primary": "Qwen3-Coder-30B",
+      "primary": "Qwen3.6-27B",
       "alternatives": [
-        "Gemma 3 27B",
+        "Gemma 4 26B-A4B",
         "gpt-oss-20b"
       ],
       "avoid": "Les 70B denses, trop serrés et lents pour ce palier.",
-      "summary": "Un bon palier pour le code local et les modèles MoE en mémoire unifiée."
+      "summary": "Dense, 256 k de contexte, ~17 Go en Q4_K_M : un bon palier pour le code local."
     },
     {
       "label": "GPU · 8 Go",
       "kind": "Tout GPU",
-      "tier": "7–8 B",
-      "primary": "Qwen3 8B",
+      "tier": "5–8 B",
+      "primary": "Gemma 4 E4B",
       "alternatives": [
-        "Llama 3.1 8B",
-        "Gemma 3 4B"
+        "Qwen3 8B",
+        "Llama 3.1 8B"
       ],
       "avoid": "Les modèles denses de 14B ou plus en chargement entièrement GPU.",
       "summary": "Conservez un contexte raisonnable afin de laisser de la place au cache KV."
@@ -261,64 +261,68 @@
     {
       "label": "RTX 3060 · 12 Go + 64 Go",
       "kind": "GPU + offload",
-      "tier": "12–14 B GPU · 30B MoE offload",
-      "primary": "Gemma 3 12B",
+      "tier": "12–14 B GPU · 26B MoE offload",
+      "primary": "Gemma 4 12B",
       "alternatives": [
         "Qwen3 14B",
-        "Qwen3-30B-A3B"
+        "Gemma 4 26B-A4B"
       ],
-      "avoid": "Les 32B denses entièrement en GPU; préférez un MoE si l’offload est nécessaire.",
-      "summary": "Votre profil : 12–14B Q4 confortables en VRAM, modèles MoE plus gros grâce aux 64 Go de RAM."
+      "avoid": "Qwen3.6-27B en tout-GPU : dense et ~17 Go, il ne tient pas en 12 Go de VRAM.",
+      "summary": "Votre profil : ~7 Go de poids laissent de la marge au cache KV, et les 64 Go de RAM ouvrent l’offload des MoE."
     },
     {
       "label": "GPU · 16 Go",
       "kind": "Tout GPU",
-      "tier": "14–20 B MoE",
-      "primary": "gpt-oss-20b",
+      "tier": "14 B dense · 26 B MoE",
+      "primary": "Gemma 4 26B-A4B",
       "alternatives": [
-        "Qwen3 14B",
-        "DeepSeek-R1 Distill 14B"
+        "gpt-oss-20b",
+        "Shieldstral 1.0 3B"
       ],
-      "avoid": "Les 32B denses entièrement en VRAM.",
-      "summary": "Le palier idéal pour un MoE de 20B ou un dense de 14B avec contexte confortable."
+      "avoid": "Qwen3.6-27B en tout-GPU (~17 Go) : il ne tient pas.",
+      "summary": "~15 Go, donc serré : gpt-oss-20b laisse plus de marge. Un garde-fou 3B peut tourner à côté."
     },
     {
       "label": "GPU · 24 Go",
       "kind": "Station haut de gamme",
       "tier": "27–32 B",
-      "primary": "Qwen3 32B",
+      "primary": "Qwen3.6-27B",
       "alternatives": [
-        "Gemma 3 27B",
-        "Devstral 24B"
+        "Gemma 4 31B",
+        "Qwen3-Coder 30B"
       ],
       "avoid": "Les 70B entièrement GPU, sauf quantification très agressive ou multi-GPU.",
-      "summary": "Les modèles de code 24–32B deviennent réellement pratiques sans offload."
+      "summary": "Les modèles de code 27–31B deviennent réellement pratiques sans offload."
     }
   ],
   "changes": [
     {
-      "title": "OpenAI baisse GPT-5.6",
-      "detail": "Confirmé (30 juillet): Terra 2,50/15 → 2/12 USD/M (−20 %), Luna 1/6 → 0,20/1,20 USD/M (−80 %); Sol inchangé. Fast Mode Sol remplace Priority (×2,5 vitesse, ×2 prix)."
+      "title": "Sonnet 5 augmente le 31 août",
+      "detail": "Fin du tarif d’introduction : 2/10 → 3/15 USD par million (+50 %), batch 1/5 → 1,50/7,50. Vérifié sur la page officielle Anthropic."
     },
     {
-      "title": "Gemini 2.5 arrêté",
-      "detail": "Google programme l’arrêt de Gemini 2.5 Pro/Flash/Flash-Lite au 16 octobre 2026; migrer vers la famille 3.x."
+      "title": "Images Google arrêtées le 17 août",
+      "detail": "Imagen 4 et les modèles d’image Gemini 3 s’arrêtent en erreur dure, sans avertissement. La forme de l’API change : renommer le modèle ne suffit pas."
     },
     {
-      "title": "Sélection stable",
-      "detail": "Les 20 écosystèmes restent inchangés; aucune entrée ni sortie."
+      "title": "Crédits Copilot réduits fin août",
+      "detail": "Copilot facture à l’usage depuis le 1er juin. Les crédits promotionnels Business (+30 USD) et Enterprise (+70 USD) par siège disparaissent fin août."
     },
     {
-      "title": "Agents cloud",
-      "detail": "AWS Bedrock Agents Classic est fermé aux nouveaux clients; AgentCore devient la voie recommandée."
+      "title": "Qwen3.8-Max à parité de prix",
+      "detail": "MoE de 2,4 T paramètres, ~95 B actifs, contexte 1 M, 2/6 USD par million : Alibaba s’aligne sur GPT-5.6 Terra. DPA et résidence restent à confirmer."
     },
     {
-      "title": "Guide local",
-      "detail": "Tableau de décision du Raspberry Pi 5 aux GPU 24 Go, avec quantification, mémoire, contexte et modèles à éviter."
+      "title": "Un garde-fou qui reste chez vous",
+      "detail": "Shieldstral 1.0 (3B, Apache 2.0) juge texte et image contre une politique écrite en langage naturel, sur un seul GPU de 16 Go. FR et NL à tester."
     },
     {
-      "title": "Belgique",
-      "detail": "Prix souvent publiés en USD hors TVA; le checkout et la facture restent la source décisive pour la TVA belge."
+      "title": "Le prix par jeton ne suffit plus",
+      "detail": "Durée de session d’agent, outils serveur facturés à l’appel et surtaxes long contexte s’ajoutent au tarif affiché. Le tokenizer Claude 4.7+ produit ~30 % de jetons en plus pour le même texte."
+    },
+    {
+      "title": "Guide local corrigé",
+      "detail": "Gemma 4 et Qwen3.6, tous deux sous Apache 2.0, remplacent Gemma 3 et Qwen3 comme choix par défaut sur la plupart des paliers matériels."
     }
   ],
   "documents": [
