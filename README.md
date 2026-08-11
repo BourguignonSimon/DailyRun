@@ -9,6 +9,7 @@ Ce dossier est le point d’entrée des livrables produits par la tâche program
 - `comparatif.md` — comparaison structurée des 20 écosystèmes retenus.
 - `analyse-detaillee.md` — analyse complète et méthodologie.
 - `bonnes-pratiques-developpement.md` — recommandations transversales et particularités par fournisseur.
+- `modeles-locaux-par-hardware.md` — modèles LLM exécutables en local selon le matériel (RAM/VRAM).
 - `sources.md` — sources consultées, URL et dates de vérification.
 - `historique.md` — changements significatifs observés entre deux exécutions.
 
