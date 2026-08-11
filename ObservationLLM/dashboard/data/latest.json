@@ -67,11 +67,12 @@
     { "title": "Belgique", "detail": "Prix souvent publiés en USD hors TVA; le checkout et la facture restent la source décisive pour la TVA belge." }
   ],
   "documents": [
-    { "id": "synthesis", "kind": "Décision", "title": "Synthèse", "url": "https://github.com/BourguignonSimon/DailyRun/blob/main/ObservationLLM/synthese.md" },
-    { "id": "comparison", "kind": "Comparaison", "title": "Comparatif", "url": "https://github.com/BourguignonSimon/DailyRun/blob/main/ObservationLLM/comparatif.md" },
-    { "id": "analysis", "kind": "Méthode", "title": "Analyse détaillée", "url": "https://github.com/BourguignonSimon/DailyRun/blob/main/ObservationLLM/analyse-detaillee.md" },
-    { "id": "local", "kind": "Matériel", "title": "Modèles locaux", "url": "https://github.com/BourguignonSimon/DailyRun/blob/main/ObservationLLM/modeles-locaux-par-hardware.md" },
-    { "id": "practices", "kind": "Production", "title": "Bonnes pratiques", "url": "https://github.com/BourguignonSimon/DailyRun/blob/main/ObservationLLM/bonnes-pratiques-developpement.md" },
-    { "id": "sources", "kind": "Traçabilité", "title": "Sources", "url": "https://github.com/BourguignonSimon/DailyRun/blob/main/ObservationLLM/sources.md" }
+    { "id": "synthesis", "kind": "Décision", "title": "Synthèse", "url": "synthese.html" },
+    { "id": "comparison", "kind": "Comparaison", "title": "Comparatif", "url": "comparatif.html" },
+    { "id": "analysis", "kind": "Méthode", "title": "Analyse détaillée", "url": "analyse-detaillee.html" },
+    { "id": "local", "kind": "Matériel", "title": "Modèles locaux", "url": "modeles-locaux-par-hardware.html" },
+    { "id": "practices", "kind": "Production", "title": "Bonnes pratiques", "url": "bonnes-pratiques-developpement.html" },
+    { "id": "sources", "kind": "Traçabilité", "title": "Sources", "url": "sources.html" },
+    { "id": "history", "kind": "Évolution", "title": "Historique", "url": "historique.html" }
   ]
 }

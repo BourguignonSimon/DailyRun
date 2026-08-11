@@ -4,7 +4,7 @@ Contrôle: **11 août 2026** (faits fournisseurs vérifiés au 6 août 2026, san
 
 ## Livrables
 
-- [Dashboard interactif](https://bourguignonsimon.github.io/DailyRun/)
+- [Dashboard interactif et rapports publics](https://bourguignonsimon.github.io/DailyRun/)
 - [Synthèse décisionnelle](synthese.md)
 - [Comparatif structuré](comparatif.md)
 - [Analyse détaillée](analyse-detaillee.md)
