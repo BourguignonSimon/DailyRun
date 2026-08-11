@@ -1,4 +1,10 @@
 # DailyRun
+
+## Observatoire LLM
+
+- [Ouvrir le dashboard](https://bourguignonsimon.github.io/DailyRun/)
+- [Consulter les livrables](ObservationLLM/README.md)
+
 # Observatoire LLM et agents IA — Belgique
 
 Ce dossier est le point d’entrée des livrables produits par la tâche programmée.
