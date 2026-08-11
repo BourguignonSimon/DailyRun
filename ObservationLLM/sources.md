@@ -1,6 +1,8 @@
 # Registre des sources
 
-Dernière consultation: **6 août 2026**, heure de Bruxelles. Les URL sont dédupliquées. « Non publiée » signifie que la page n’affiche pas de date exploitable. Les lignes antérieures conservent leur date de consultation historique; les sources revérifiées ou ajoutées portent la date courante. Les pages dynamiques peuvent évoluer sans changer d’URL.
+Dernière consultation: **11 août 2026**, heure de Bruxelles. Les URL sont dédupliquées. « Non publiée » signifie que la page n’affiche pas de date exploitable. Les lignes antérieures conservent leur date de consultation historique; les sources revérifiées ou ajoutées portent la date courante. Les pages dynamiques peuvent évoluer sans changer d’URL.
+
+**Limite de vérification de cette exécution (11 août 2026).** L’accès sortant direct à de nombreux domaines officiels (ecb.europa.eu, aws.amazon.com, github.blog, openai.com, claude.com, ai.google.dev, docs.x.ai, api-docs.deepseek.com, docs.z.ai, etc.) a été bloqué par le proxy réseau. Les entrées ajoutées ce jour (S94–S106) s’appuient donc sur les URL officielles datées et sur des corroborations secondaires datées (presse spécialisée), non sur une lecture directe de la page officielle. Les faits marqués « à confirmer » doivent être revérifiés sur la page officielle avant tout usage engageant.
 
 | ID | Acteur | Sujet | Nature | URL exacte | Publication / mise à jour connue | Consultation |
 |---|---|---|---|---|---|---|
@@ -95,6 +97,19 @@ Dernière consultation: **6 août 2026**, heure de Bruxelles. Les URL sont dédu
 | S91 | Meta | Meta AI agentique et déploiement limité | Publication officielle | <https://about.fb.com/news/2026/07/meta-ai-muse-spark-doesnt-just-think-it-acts/> | 2026-07-24 | 2026-08-06 |
 | S92 | Commission européenne | Lignes directrices de transparence de l’article 50 | Source institutionnelle | <https://digital-strategy.ec.europa.eu/en/news/commission-publishes-guidelines-transparency-obligations-providers-and-deployers-certain-ai-systems> | 2026-07-20; mise à jour 2026-07-24 | 2026-08-06 |
 | S93 | Commission européenne | Application, transition et code de transparence | Source institutionnelle | <https://digital-strategy.ec.europa.eu/en/faqs/signing-code-practice-transparency-ai-generated-content> | 2026-07-17 | 2026-08-06 |
+| S94 | Meta | Muse Glimmer: modèle agentique 30B open weight, Apache 2.0 | Page officielle | <https://developer.meta.com/ai/models/muse-glimmer/> | 2026-08-10 | 2026-08-11 |
+| S95 | Meta / indépendant | Couverture Muse Glimmer: licence, exécution locale, positionnement | Source indépendante | <https://venturebeat.com/technology/meta-returns-to-open-source-with-muse-glimmer-an-apache-2-0-licensed-30b-parameter-ai-model-optimized-for-agents-available-now> | 2026-08-10 | 2026-08-11 |
+| S96 | xAI | Grok Image 2.0 (Quality Mode), app et grok.com/imagine; API annoncée | Changelog officiel | <https://docs.x.ai/developers/release-notes> | 2026-08-08 | 2026-08-11 |
+| S97 | DeepSeek / indépendant | Avertissement d’augmentation « significative » des prix API (sans montant ni date) | Source indépendante | <https://technode.com/2026/08/06/deepseek-plans-significant-api-price-increases/> | 2026-08-06 | 2026-08-11 |
+| S98 | Anthropic | Claude Code auto-hébergé (sessions sur infrastructure client), bêta publique | Publication officielle | <https://claude.com/blog/run-claude-code-sessions-on-your-own-compute> | 2026-08-06 | 2026-08-11 |
+| S99 | AWS | AgentCore: politiques temporelles, limitation de débit et langage « Dogwood » (Apache 2.0); AgentCore en GovCloud US | Nouveautés officielles | <https://aws.amazon.com/about-aws/whats-new/2026/08/temporal-policies-agentcore/> | 2026-08-06; GovCloud 2026-08-07 | 2026-08-11 |
+| S100 | GitHub | Kimi K3 en disponibilité générale dans Copilot (3/0,30/15 USD) | Changelog officiel | <https://github.blog/changelog/2026-08-06-kimi-k3-is-now-available-in-github-copilot/> | 2026-08-06 | 2026-08-11 |
+| S101 | Replit | SSO entreprise (Okta / Microsoft Entra via Clerk) et déplacement de projets | Changelog officiel | <https://docs.replit.com/updates/2026/08/07/changelog> | 2026-08-07 | 2026-08-11 |
+| S102 | Alibaba/Qwen / indépendant | Qwen3.8-Max: MoE 2,4 T, 95B actifs, 1 M contexte, 2/6 USD; poids annoncés | Source indépendante | <https://www.marktechpost.com/2026/08/03/alibaba-qwen-releases-qwen3-8-max/> | 2026-08-03 | 2026-08-11 |
+| S103 | UK AI Security Institute / indépendant | Rapport sur des intrusions autonomes d’agents (incidents d’évaluation OpenAI/Anthropic) | Source indépendante | <https://www.forbes.com/sites/ronschmelzer/2026/08/07/openais-security-breach-was-more-alarming-than-we-knew/> | 2026-08-06 à 2026-08-07 | 2026-08-11 |
+| S104 | Reuters / indépendant | Kimi K3 aurait contourné l’environnement de test (sandbox) de l’AISI | Source indépendante | <https://www.deseret.com/business/2026/08/06/donald-trump-ai-artificial-intelligence-agents-autonomous-hacking-security-breaches-openai-sam-altman-anthropic-social-engineering-ai-security-institute/> | 2026-08-07 | 2026-08-11 |
+| S105 | Forbes / indépendant | Évasion de sandbox d’un modèle OpenAI ayant atteint une infrastructure de production Hugging Face | Source indépendante | <https://www.forbes.com/sites/ronschmelzer/2026/08/07/openais-security-breach-was-more-alarming-than-we-knew/> | 2026-08-07 | 2026-08-11 |
+| S106 | BCE / agrégateur | Taux de référence EUR/USD le plus récent confirmé (page BCE inaccessible ce jour) | Source institutionnelle relayée | <https://data.ecb.europa.eu/key-figures/ecb-interest-rates-and-exchange-rates/exchange-rates> | 2026-08-07 | 2026-08-11 |
 
 ## Sources non retenues
 

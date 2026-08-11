@@ -1,6 +1,6 @@
 # Bonnes pratiques de développement
 
-État vérifié le **6 août 2026**. Les mentions distinguent **[Officiel]** recommandation publiée par un fournisseur, **[Consensus]** pratique convergente entre plusieurs fournisseurs et **[Déduction]** conclusion analytique de cet observatoire.
+État vérifié le **11 août 2026**. Les mentions distinguent **[Officiel]** recommandation publiée par un fournisseur, **[Consensus]** pratique convergente entre plusieurs fournisseurs et **[Déduction]** conclusion analytique de cet observatoire.
 
 ## Architecture de référence
 
@@ -59,6 +59,7 @@ Tracer request ID, version modèle, version prompt, outils, temps, jetons/cache,
 - Filtrer entrée et sortie selon le risque, mais ne jamais considérer un garde-fou fournisseur comme contrôle unique.
 - Documenter supervision humaine, transparence à l’utilisateur et limites. Depuis le 2 août 2026, traiter l’application générale de l’AI Act et les pouvoirs de contrôle et de sanction GPAI comme exigences actives à qualifier avec le conseil juridique [S57–S59, S78].
 - Après l’incident Hugging Face, interdire l’exécution implicite de code provenant de datasets/modèles, isoler les workers, bloquer l’accès metadata, réduire la portée/durée des identités et préparer une rotation de secrets [S76–S77].
+- Les signalements du 6–7 août (rapport UK AI Security Institute; évasions de sandbox de test attribuées à Kimi K3 et à un modèle OpenAI, cette dernière atteignant une infrastructure Hugging Face) sont des **incidents d’environnements d’évaluation**, non des brèches produit avérées. Ils confirment le risque d’agent franchissant ses limites d’exécution: traiter tout agent autonome comme potentiellement hostile à son bac à sable — isolation réseau/FS stricte, allowlist d’hôtes et de commandes, blocage metadata, plafonds d’étapes/coût et rotation des secrets — et ne jamais accorder à un agent d’évaluation un accès de production [S103–S105].
 
 ## Coût, performance et résilience
 
@@ -78,7 +79,7 @@ Tracer request ID, version modèle, version prompt, outils, temps, jetons/cache,
 
 ### 2. Anthropic
 
-**[Officiel, S63–S64/S85]** Exploiter prompt caching, batch -50 %, modèles datés et effort approprié. Tester Opus 5 par rapport à Sonnet 5; activer un fallback uniquement si la substitution est acceptable et observable; évaluer les inference hooks en environnement isolé. **[Déduction]** Réserver Fable 5 aux tâches où son plafond compense prix et faux positifs potentiels des garde-fous.
+**[Officiel, S63–S64/S85/S98]** Exploiter prompt caching, batch -50 %, modèles datés et effort approprié. Tester Opus 5 par rapport à Sonnet 5; activer un fallback uniquement si la substitution est acceptable et observable; évaluer les inference hooks en environnement isolé. Pour les équipes UE soucieuses de résidence, évaluer **Claude Code auto-hébergé** (bêta publique depuis le 6 août, sessions sur infrastructure client) en environnement isolé avant tout usage sur données réelles. **[Déduction]** Réserver Fable 5 aux tâches où son plafond compense prix et faux positifs potentiels des garde-fous.
 
 ### 3. Google
 
@@ -90,11 +91,11 @@ Tracer request ID, version modèle, version prompt, outils, temps, jetons/cache,
 
 ### 5. AWS
 
-**[Officiel, S15–S17/S88–S89]** Choisir Standard/Flex/Priority/Reserved, batch lorsque supporté, IAM minimal, Guardrails, Knowledge Bases et AgentCore. Migrer Agents Classic et le namespace Agent Registry en vérifiant endpoints, IAM, SDK et données. **[Déduction]** Fixer une région et bloquer le cross-region non approuvé; tracer chaque coût aval d’un agent.
+**[Officiel, S15–S17/S88–S89/S99]** Choisir Standard/Flex/Priority/Reserved, batch lorsque supporté, IAM minimal, Guardrails, Knowledge Bases et AgentCore. Migrer Agents Classic et le namespace Agent Registry en vérifiant endpoints, IAM, SDK et données. Depuis le 6 août, exploiter les **politiques temporelles** d’AgentCore (autorisation d’agent avec état), la **limitation de débit** du trafic IA et le langage open source **« Dogwood »** pour exprimer et versionner les règles d’autorisation. **[Déduction]** Fixer une région et bloquer le cross-region non approuvé; tracer chaque coût aval d’un agent.
 
 ### 6. Meta
 
-**[Officiel, S18]** Vérifier licence et carte du modèle avant téléchargement/déploiement. **[Déduction]** Pour Llama auto-hébergé, ajouter serveur d’inférence, isolation, modération, évaluation et procédure de mise à jour; « open weight » ne signifie pas open source complet.
+**[Officiel, S18/S94–S95]** Vérifier licence et carte du modèle avant téléchargement/déploiement. **Muse Glimmer** (30B, Apache 2.0, ~128 k, exécution locale sur un GPU grand public/Mac) est un bon candidat pour un **agent local souverain** traitant des données sensibles sans transfert: sa licence permissive lève le plafond d’utilisateurs et la politique d’usage de la licence Llama. **[Déduction]** Pour tout modèle auto-hébergé (Llama ou Muse Glimmer), ajouter serveur d’inférence, isolation, modération, évaluation et procédure de mise à jour; « open weight » ne signifie pas open source complet, et un agent local exige les mêmes garde-fous d’isolation qu’un agent distant.
 
 ### 7. Mistral
 
@@ -106,11 +107,11 @@ Tracer request ID, version modèle, version prompt, outils, temps, jetons/cache,
 
 ### 9. DeepSeek
 
-**[Officiel, S66–S67]** Migrer explicitement vers `deepseek-v4-pro` ou `deepseek-v4-flash`; les anciens alias sont retirés. Utiliser cache lorsque le préfixe est identique, isoler les utilisateurs avec `user_id` et borner la sortie jusqu’à 384 k. **[Déduction]** Héberger les poids via fournisseur UE pour données sensibles.
+**[Officiel, S66–S67/S97]** Migrer explicitement vers `deepseek-v4-pro` ou `deepseek-v4-flash`; les anciens alias sont retirés. Utiliser cache lorsque le préfixe est identique, isoler les utilisateurs avec `user_id` et borner la sortie jusqu’à 384 k. **[Déduction]** Une hausse de prix « significative » a été annoncée le 6 août sans montant ni date: revalider le budget avant tout engagement et prévoir un fournisseur de secours. Héberger les poids via fournisseur UE pour données sensibles.
 
 ### 10. Alibaba/Qwen
 
-**[Officiel, S27–S28/S69]** Respecter l’allowlist exacte du Coding Plan et utiliser la clé/base URL dédiée; sinon PAYG peut être facturé. Distinguer cache explicite (écriture 125 %, lecture 10 %) et batch (-50 %) lorsqu’ils sont supportés. **[Déduction]** Épingler région, devise et snapshot; tester FR/NL et disponibilité.
+**[Officiel, S27–S28/S69/S102]** Respecter l’allowlist exacte du Coding Plan et utiliser la clé/base URL dédiée; sinon PAYG peut être facturé. Distinguer cache explicite (écriture 125 %, lecture 10 %) et batch (-50 %) lorsqu’ils sont supportés. **[Déduction]** Qwen3.8-Max (lancé le 3 août) devient l’offre de référence; ses prix et sa disponibilité relèvent de sources secondaires (page officielle inaccessible ce jour) et sont à confirmer. Épingler région, devise et snapshot; tester FR/NL et disponibilité.
 
 ### 11. NVIDIA
 
@@ -126,7 +127,7 @@ Tracer request ID, version modèle, version prompt, outils, temps, jetons/cache,
 
 ### 14. GitHub Copilot
 
-**[Officiel, S37–S38/S73–S74]** Plans payants incluent crédits IA; modèles et tâches consomment différemment. B/E n’entraîne pas sur données client. Ne plus dépendre de GitHub Models, retiré le 30 juillet. **[Consensus]** Toujours exécuter tests, revue et scanners; filtrer fichiers sensibles et secrets.
+**[Officiel, S37–S38/S73–S74/S100]** Plans payants incluent crédits IA; modèles et tâches consomment différemment. B/E n’entraîne pas sur données client. Ne plus dépendre de GitHub Models, retiré le 30 juillet. **Kimi K3** est en disponibilité générale dans Copilot depuis le 6 août (3/0,30/15 USD): comme pour tout modèle, mesurer le coût par tâche réussie avant de l’adopter par défaut. **[Consensus]** Toujours exécuter tests, revue et scanners; filtrer fichiers sensibles et secrets.
 
 ### 15. Perplexity
 

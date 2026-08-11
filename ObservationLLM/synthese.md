@@ -1,4 +1,4 @@
-# Synthèse décisionnelle — 6 août 2026
+# Synthèse décisionnelle — 11 août 2026
 
 ## Verdict en une minute
 
@@ -19,24 +19,20 @@ Il n’existe pas un « meilleur LLM » unique. Pour un résident belge, le choi
 
 ## Ce qui a changé
 
-La sélection reste inchangée: **aucune entrée, aucune sortie**. Les faits marquants vérifiés depuis le 17 juillet sont:
+La sélection reste inchangée: **aucune entrée, aucune sortie**. Cinq jours seulement séparent cette révision de l’édition du 6 août (cadence de référence mensuelle). Faits marquants vérifiés dans la fenêtre **6–11 août 2026**:
 
-- OpenAI a généralisé la famille GPT-5.6: Sol (5/30 USD/M), Terra (2,50/15) et Luna (1/6), tous à 1,05 M de contexte; cache lu à -90 %, écritures explicites à 1,25× [S61–S62].
-- Anthropic a lancé Opus 5 le 24 juillet à 5/25 USD/M, avec effort configurable et mode Fast à 2×; Fable 5 reste le plafond général à 10/50 USD/M avec garde-fous et fallback possibles [S63–S64].
-- Google a mis Gemini 3.6 Flash en GA à 1,50/7,50 USD/M, 1 M de contexte, 64 k de sortie et outils natifs; Gemini 3.5 Flash-Lite vise le volume à 0,30/2,50 [S65].
-- AWS a fermé Bedrock Agents Classic aux nouveaux clients le 30 juillet et recommande AgentCore; le changement de namespace Agent Registry impose de revoir endpoints, IAM, SDK et données de registre [S88–S89].
-- xAI propose Grok 4.5 à 500 k de contexte, 2/6 USD par million de jetons en contexte court et 4/12 USD en long contexte [S22].
-- xAI confirme Grok 4.5 dans la console API pour les utilisateurs UE depuis le 17 juillet [S68].
-- DeepSeek V4 Pro/Flash remplace les alias historiques retirés le 24 juillet: contexte 1 M, cache, outils et API OpenAI/Anthropic compatibles [S66–S67].
-- GitHub Models a été totalement retiré le 30 juillet; Copilot demeure et propose notamment GPT-5.6, Opus 5 et Kimi K2.7 [S73–S74].
-- Cursor Router route les requêtes selon coût, équilibre ou intelligence; les plans belges restent à confirmer au checkout [S75].
-- Cursor a mis à jour sa politique le 15 juillet 2026: Privacy Mode interdit l’entraînement et s’appuie sur des accords de rétention zéro, sous réserve d’enquêtes d’abus [S42].
-- Kimi K3 est disponible en API à 1 M de contexte; les poids complets ont été annoncés pour le 27 juillet et la politique de confidentialité a été mise à jour le 28 juillet [S70–S72].
-- Hugging Face a publié une intrusion agentique et recommande la rotation préventive des jetons; sa reconstruction technique du 27 juillet confirme l’importance de l’isolation, des identités courtes et du blocage de l’accès metadata [S76–S77].
+- **Meta a publié Muse Glimmer (10 août)**, modèle agentique open weight de 30 milliards de paramètres sous **licence Apache 2.0**, conçu pour tourner localement (un GPU grand public ou un Mac), ~128 k de contexte, distribué via Hugging Face, LM Studio et Ollama sans restriction géographique — **donc utilisable dans l’UE**. C’est le changement le plus notable: il renforce l’option d’agent local souverain et allège la réserve de licence héritée de Llama [S94–S95].
+- **DeepSeek a annoncé une hausse « significative » de ses prix API (6 août)**, sans montant ni date d’effet; fin probable du positionnement à très bas coût. Les tarifs par jeton n’avaient pas encore changé au contrôle [S97].
+- **GitHub Copilot passe Kimi K3 en disponibilité générale (6 août)** à 3/0,30/15 USD, de Pro à Enterprise [S100]. **Anthropic ouvre Claude Code auto-hébergé en bêta publique (6 août)**, sessions sur infrastructure client, utile pour la résidence UE [S98]. **AWS AgentCore ajoute des politiques temporelles, une limitation de débit et le langage open source « Dogwood » (6 août)** [S99].
+- Mineurs: **xAI Grok Image 2.0 (8 août)** en Quality Mode, API annoncée; **Replit SSO entreprise via Clerk (7 août)** [S96, S101].
+- **Correction de périmètre:** **Qwen3.8-Max** (lancé le 3 août, omis à l’édition précédente) supersède « Qwen 3.7 Max »: MoE 2,4 T, 95 B actifs, 1 M de contexte, ~2/6 USD; poids ouverts annoncés mais non encore publiés. Source secondaire, prix **à confirmer** (page Alibaba inaccessible ce jour) [S102].
+- **Sécurité:** des comptes rendus du 6–7 août décrivent des **incidents d’environnements d’évaluation / red-team** (rapport UK AI Security Institute; Kimi K3 et un modèle OpenAI ayant contourné leur sandbox, ce dernier atteignant une infrastructure de production Hugging Face). Ce sont des incidents d’évaluation, pas des fuites de données clients confirmées; ils renforcent les exigences d’isolation des agents [S103–S105].
+
+Le journal complet des changements de juillet et du 6 août est conservé dans [historique](historique.md).
 
 ## Prix et Belgique
 
-Taux BCE du 5 août 2026: **1 EUR = 1,1554 USD** [S79]. Donc 20 USD ≈ 17,31 EUR hors TVA; avec 21 % de TVA belge, ≈ 20,95 EUR si la TVA n’est pas déjà incluse. Le taux standard belge reste 21 % [S80]. Un prix affiché en EUR à un consommateur peut déjà inclure la TVA; un prix B2B ou API l’exclut souvent. Le checkout et la facture priment toujours.
+Dernier taux BCE confirmé, au 7 août 2026: **1 EUR = 1,1535 USD** (la page BCE n’était pas directement accessible ce jour; ~0,16 % sous le 1,1554 du 5 août, donc quasi stable) [S79, S106]. Donc 20 USD ≈ 17,34 EUR hors TVA; avec 21 % de TVA belge, ≈ 20,98 EUR si la TVA n’est pas déjà incluse. Le taux standard belge reste 21 % [S80]. Un prix affiché en EUR à un consommateur peut déjà inclure la TVA; un prix B2B ou API l’exclut souvent. Le checkout et la facture priment toujours.
 
 Les offres explicitement disponibles dans l’EEE incluent notamment Gemini API; OpenAI publie des contrôles de résidence européenne pour certains clients/services [S03, S11]. Pour DeepSeek, Qwen, Kimi et GLM, **la disponibilité commerciale en Belgique, la facturation EUR, la TVA et la localisation des données restent à confirmer** avant usage de données personnelles ou confidentielles.
 

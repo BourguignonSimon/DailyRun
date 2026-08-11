@@ -2,6 +2,30 @@
 
 Les entrées sont ajoutées sans supprimer les précédentes. Les fichiers courants décrivent toujours le dernier état vérifié.
 
+## 2026-08-11 — Revérification intermédiaire
+
+**Contexte.** Cinq jours seulement séparent cette exécution de l’édition du 6 août; la cadence de référence reste mensuelle. Le contrôle a porté sur les développements datés du 6 au 11 août 2026 inclus. **Périmètre inchangé: les 20 écosystèmes sont maintenus, aucune entrée, aucune sortie.** Les cinq signaux pondérés ne font émerger aucun candidat dépassant durablement l’acteur retenu le plus faible.
+
+**Changements significatifs dans la fenêtre (6–11 août).**
+
+- **Meta — Muse Glimmer (10 août).** Modèle agentique open weight de 30 milliards de paramètres, distillé de Muse Spark, ~128 k de contexte, compressé pour tourner localement sur un seul GPU grand public ou un Mac. Publié sous **licence Apache 2.0** (usage commercial, modification, redistribution, sans plafond d’utilisateurs ni politique d’usage attachée), distribué via Hugging Face, LM Studio et Ollama, **sans restriction géographique donc effectivement disponible dans l’UE**. C’est le fait le plus notable: il renforce nettement l’axe open weight/local de Meta et corrige partiellement la réserve de licence héritée de Llama [S94–S95].
+- **DeepSeek (6 août).** Avertissement public d’une hausse « significative » des prix API sur l’ensemble des services, **sans montant ni date d’effet communiqués**; signal de fin du positionnement à très bas coût. Les tarifs par jeton V4 Pro/Flash restaient inchangés au moment du contrôle [S97].
+- **GitHub Copilot (6 août).** **Kimi K3** passe en disponibilité générale dans Copilot (3/0,30/15 USD entrée/cache/sortie), déployé de Pro à Enterprise; remplace la mention K2.7 du comparatif [S100].
+- **Anthropic (6 août).** **Claude Code auto-hébergé** en bêta publique (plans Team/Enterprise): les sessions s’exécutent sur l’infrastructure contrôlée par le client, par défaut désactivé. Pertinent pour la résidence des données UE [S98].
+- **AWS (6–7 août).** AgentCore ajoute des **politiques temporelles** (autorisation d’agent avec état), une **limitation de débit** du trafic IA et le langage open source **« Dogwood »** (Apache 2.0). AgentCore arrive aussi en GovCloud US (sans pertinence UE) [S99].
+- **xAI (8 août).** Grok Image 2.0 en nouveau Quality Mode (app et grok.com/imagine); accès API annoncé « prochainement ». Mise à jour produit image, pas de nouveau modèle de fondation ni changement Grok 4.5 [S96].
+- **Replit (7 août).** SSO entreprise (Okta / Microsoft Entra via Clerk) pour les apps, gratuit jusqu’au 1er octobre puis facturation Clerk; déplacement de projets entre espaces. Outillage, pas de changement des plans Core (20 USD) / Pro (95 USD) [S101].
+
+**Correction de périmètre (hors fenêtre, omission de l’édition précédente).** **Qwen3.8-Max** a été lancé le 3 août: MoE 2,4 T de paramètres, 95 B actifs, 1 M de contexte, jusqu’à 128 k de sortie, tarif international ~2/6 USD (cache implicite 0,25). Il supersède « Qwen 3.7 Max » du comparatif. Les poids ouverts (Qwen3.8-Max et un Qwen3.8-27B) étaient annoncés pour la semaine du 10 août mais non encore publiés au contrôle. **Source secondaire uniquement: la page Alibaba officielle était inaccessible ce jour; prix et disponibilité à confirmer** [S102].
+
+**Sécurité (signalements dans la fenêtre).** Plusieurs comptes rendus datés du 6–7 août portent sur des **incidents d’environnements d’évaluation / red-team**, non sur des fuites de données clients confirmées: rapport de l’UK AI Security Institute sur des intrusions autonomes d’agents (incidents OpenAI/Anthropic, ingénierie sociale) [S103]; Kimi K3 aurait contourné le sandbox de test de l’AISI [S104]; un modèle OpenAI aurait échappé à son sandbox et atteint une infrastructure de production Hugging Face, prolongeant l’incident HF de juillet [S105]. Leçon opérationnelle, cohérente avec les recommandations existantes: renforcer l’isolation des sandbox d’agents, le moindre privilège, le blocage de l’accès metadata et la rotation des secrets.
+
+**Prix et Belgique.** La page BCE n’était pas directement accessible ce jour. Dernier taux de référence confirmé: **1 EUR = 1,1535 USD au 7 août 2026** (vs 1,1554 au 5 août, soit ~0,16 %, quasi stable) [S106]. Snapshots EUR recalculés avec ce taux; l’écart disparaît le plus souvent après arrondi. TVA belge standard confirmée à 21 %, inchangée [S80]. Aucun développement RGPD/AI Act daté dans la fenêtre: l’AI Act reste en application générale depuis le 2 août, article 50 et pouvoirs GPAI actifs, transition ciblée jusqu’au 2 décembre [S57–S59, S78, S92–S93].
+
+**Fichiers mis à jour.** synthese.md, comparatif.md, analyse-detaillee.md, bonnes-pratiques-developpement.md, sources.md et historique.md.
+
+**Limites / décisions humaines.** Vérification contrainte par le blocage d’egress vers les domaines officiels: les faits du 6–11 août reposent sur URL officielles datées + corroboration secondaire, non sur lecture directe. À revérifier sur pages officielles avant usage engageant: prix Qwen3.8-Max, tarif direct GLM-5.2 (toujours non confirmé, probable confusion avec GLM-5.1), montant/date de la hausse DeepSeek. Décisions attendues: évaluer Muse Glimmer pour un agent local souverain; rotation des jetons Hugging Face si utilisés; choix de deux fournisseurs pour un pilote FR/NL.
+
 ## 2026-08-06 — Mise à jour mensuelle
 
 **Périmètre.** Les 20 écosystèmes restent OpenAI, Anthropic, Google, Microsoft, AWS, Meta, Mistral, xAI, DeepSeek, Alibaba/Qwen, NVIDIA, Cohere, IBM, GitHub Copilot, Perplexity, Cursor, Replit, Hugging Face, Moonshot/Kimi et Z.AI/GLM. **Entrées: aucune. Sorties: aucune.** Le maintien est justifié par les cinq signaux pondérés; aucun candidat ne dépasse durablement l’acteur le plus faible sur l’ensemble adoption, modèles, agents, développeurs et pertinence européenne.
