@@ -1,6 +1,6 @@
 # Observatoire LLM et agents IA — Belgique
 
-Contrôle: **11 août 2026** (faits fournisseurs vérifiés au 6 août 2026, sans changement significatif depuis). Cette édition couvre exactement 20 écosystèmes et sépare modèles, applications, plateformes API, assistants de code et agents autonomes. Nouveau ce mois-ci: un guide des **modèles exécutables en local selon le matériel**.
+Contrôle: **11 août 2026** (faits fournisseurs vérifiés au 6 août 2026; contrôle complémentaire du 11 août confirmant deux changements: baisse tarifaire OpenAI GPT-5.6 Terra/Luna du 30 juillet, et arrêt programmé de Gemini 2.5 au 16 octobre 2026). Cette édition couvre exactement 20 écosystèmes et sépare modèles, applications, plateformes API, assistants de code et agents autonomes. Guide dédié: les **modèles exécutables en local selon le matériel**.
 
 ## Livrables
 
@@ -18,7 +18,8 @@ Le dashboard résume le dernier run validé. Son contrat de données et son fonc
 ## Principaux changements constatés
 
 - **Nouveau livrable** [modeles-locaux-par-hardware.md](modeles-locaux-par-hardware.md): tableau de décision par configuration (Raspberry Pi 5, CPU seul 8–64 Go, Apple Silicon 16/32 Go, GPU 8–24 Go, RTX 3060 12 Go), recommandations par catégorie (chat, MoE, raisonnement, code, vision, embeddings), modèles à éviter, marges mémoire et procédure de validation locale.
-- Contrôle du 11 août: **aucun changement significatif** côté fournisseurs depuis le 6 août (mêmes familles de modèles et prix vérifiés).
+- **Baisse tarifaire OpenAI GPT-5.6 (30 juillet, vérifiée au contrôle du 11 août):** Terra passe de 2,50/15 à **2/12 USD/M (−20 %)** et Luna de 1/6 à **0,20/1,20 USD/M (−80 %)**; Sol reste à 5/30. Un « Fast Mode » pour Sol remplace le Priority Processing (×2,5 vitesse, ×2 prix). Ce fait, signalé « à confirmer » le 11 août, est désormais confirmé par l’annonce officielle et des sources indépendantes (S112–S113).
+- **Google Gemini 2.5** (Pro/Flash/Flash-Lite) est programmé pour arrêt au **16 octobre 2026**; migrer vers la famille 3.x (S114).
 - Sélection inchangée: aucune entrée ni sortie parmi les 20 écosystèmes.
 - Frontière vérifiée: GPT-5.6 Sol/Terra/Luna, Claude Opus 5/Fable 5/Sonnet 5, Gemini 3.6 Flash, Grok 4.5, DeepSeek V4, Qwen 3.7, GLM-5.2 et Kimi K3.
 - AWS Bedrock Agents est désormais « Agents Classic », fermé aux nouveaux clients depuis le 30 juillet; AgentCore devient la voie recommandée.
