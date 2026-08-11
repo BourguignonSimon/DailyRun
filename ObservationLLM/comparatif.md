@@ -1,6 +1,6 @@
 # Comparatif structuré — édition Belgique
 
-Contrôle: **11 août 2026** (données fournisseurs vérifiées au 6 août 2026, sans changement significatif depuis). Ce fichier remplace le classeur Excel demandé initialement: le dépôt a explicitement migré vers Markdown le 16 juillet 2026. Les « feuilles » sont les sections ci-dessous. Les références Sxx renvoient à [sources.md](sources.md).
+Contrôle: **11 août 2026** (données fournisseurs vérifiées au 6 août 2026; contrôle complémentaire du 11 août: baisse tarifaire OpenAI GPT-5.6 Terra/Luna du 30 juillet désormais vérifiée, et arrêt Gemini 2.5 programmé au 16 octobre 2026 — voir [Prix API](#prix-api)). Ce fichier remplace le classeur Excel demandé initialement: le dépôt a explicitement migré vers Markdown le 16 juillet 2026. Les « feuilles » sont les sections ci-dessous. Les références Sxx renvoient à [sources.md](sources.md).
 
 - [Vue d’ensemble](#vue-densemble)
 - [Prix particuliers](#prix-particuliers)
@@ -60,9 +60,9 @@ Prix par **1 million de jetons** sauf mention. HT et hors outils. Les prix EUR s
 
 | Acteur / modèle représentatif | Contexte | Entrée origine | Cache origine | Sortie origine | Entrée EUR | Sortie EUR | Batch / classe | Outils / remarques | Source |
 |---|---:|---:|---:|---:|---:|---:|---|---|---|
-| OpenAI GPT-5.6 Sol | 1,05 M | 5 USD | lecture 0,50 USD; écriture 6,25 USD | 30 USD | 4,33 € | 25,96 € | Batch à vérifier par endpoint | Terra 2,50/15; Luna 1/6; outils séparés | S61–S62 |
+| OpenAI GPT-5.6 Sol | 1,05 M | 5 USD | lecture 0,50 USD; écriture 6,25 USD | 30 USD | 4,33 € | 25,96 € | Batch à vérifier par endpoint | Terra 2/12 (≈1,73/10,39 €), Luna 0,20/1,20 (≈0,17/1,04 €) depuis le 30/07; Fast Mode Sol remplace Priority (×2,5 vitesse, ×2 prix); outils séparés | S61–S62, S112 |
 | Anthropic Claude Opus 5, API directe | 1 M | 5 USD | lecture 0,50 USD; écritures selon durée | 25 USD | 4,33 € | 21,64 € | Batch -50 %; Fast ×2 | Fable 5: 10/50; fallback de sûreté configurable | S63–S64 |
-| Google Gemini 3.6 Flash | 1 M | 1,50 USD | Voir grille dynamique | 7,50 USD | 1,30 € | 6,49 € | Batch/Flex/Priority publiés séparément | 64 k sortie; Search/Maps/outils selon grille | S65 |
+| Google Gemini 3.6 Flash | 1 M | 1,50 USD | Voir grille dynamique | 7,50 USD | 1,30 € | 6,49 € | Batch/Flex/Priority publiés séparément | 64 k sortie; Search/Maps/outils selon grille; Gemini 2.5 Pro/Flash/Flash-Lite arrêtés le 16/10/2026 | S65, S114 |
 | Mistral Large | À confirmer par version | 2 USD | ND | 6 USD | 1,73 € | 5,19 € | Batch -50 % | OCR, audio et autres outils séparés | S19 |
 | xAI Grok 4.5 court | 500 k | 2 USD | 0,30 USD | 6 USD | 1,73 € | 5,19 € | Pas de remise batch publiée pour 4.5 | Long contexte ≥200 k: 4/0,60/12 USD | S22, S68 |
 | DeepSeek V4 Pro | 1 M | 0,435 USD miss | 0,003625 USD hit | 0,87 USD | 0,38 € | 0,75 € | Non publié | V4 Flash: 0,14/0,0028/0,28; sortie max 384 k | S66–S67 |

@@ -1,6 +1,6 @@
 # Synthèse décisionnelle — contrôle du 11 août 2026
 
-> Faits fournisseurs vérifiés au 6 août 2026, sans changement significatif constaté au contrôle du 11 août. Nouveauté de ce contrôle: le guide [modèles locaux par matériel](modeles-locaux-par-hardware.md) pour exécuter un LLM sur sa propre machine.
+> Faits fournisseurs vérifiés au 6 août 2026. Contrôle complémentaire du 11 août: **une baisse tarifaire OpenAI GPT-5.6 (Terra −20 %, Luna −80 %, effective le 30 juillet)** auparavant signalée « à confirmer » est désormais **vérifiée** (annonce officielle + sources indépendantes); Google a par ailleurs programmé l’arrêt de Gemini 2.5 au 16 octobre 2026. Rappel du guide [modèles locaux par matériel](modeles-locaux-par-hardware.md) pour exécuter un LLM sur sa propre machine.
 
 ## Verdict en une minute
 
@@ -24,7 +24,9 @@ Il n’existe pas un « meilleur LLM » unique. Pour un résident belge, le choi
 
 La sélection reste inchangée: **aucune entrée, aucune sortie**. Les faits marquants vérifiés depuis le 17 juillet sont:
 
-- OpenAI a généralisé la famille GPT-5.6: Sol (5/30 USD/M), Terra (2,50/15) et Luna (1/6), tous à 1,05 M de contexte; cache lu à -90 %, écritures explicites à 1,25× [S61–S62].
+- **Nouveau (contrôle du 11 août):** OpenAI a baissé les prix API de GPT-5.6 le 30 juillet: **Terra passe de 2,50/15 à 2/12 USD/M (−20 %)** et **Luna de 1/6 à 0,20/1,20 USD/M (−80 %)**; Sol reste à 5/30. Un « Fast Mode » pour Sol remplace Priority Processing (jusqu’à ×2,5 de vitesse, ×2 le prix, intelligence inchangée). Confirmé par l’annonce officielle et des sources indépendantes (CNBC, Axios) [S112–S113].
+- **Nouveau (contrôle du 11 août):** Google a programmé l’arrêt de Gemini 2.5 Pro, Flash et Flash-Lite au **16 octobre 2026**; migrer vers la famille 3.x [S114].
+- OpenAI a généralisé la famille GPT-5.6: Sol (5/30 USD/M), Terra (2/12 depuis le 30/07) et Luna (0,20/1,20 depuis le 30/07), tous à 1,05 M de contexte; cache lu à -90 %, écritures explicites à 1,25× [S61–S62, S112].
 - Anthropic a lancé Opus 5 le 24 juillet à 5/25 USD/M, avec effort configurable et mode Fast à 2×; Fable 5 reste le plafond général à 10/50 USD/M avec garde-fous et fallback possibles [S63–S64].
 - Google a mis Gemini 3.6 Flash en GA à 1,50/7,50 USD/M, 1 M de contexte, 64 k de sortie et outils natifs; Gemini 3.5 Flash-Lite vise le volume à 0,30/2,50 [S65].
 - AWS a fermé Bedrock Agents Classic aux nouveaux clients le 30 juillet et recommande AgentCore; le changement de namespace Agent Registry impose de revoir endpoints, IAM, SDK et données de registre [S88–S89].

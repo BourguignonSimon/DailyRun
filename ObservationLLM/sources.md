@@ -1,6 +1,6 @@
 # Registre des sources
 
-Dernière consultation: **11 août 2026**, heure de Bruxelles (contrôle mensuel; les sources fournisseurs S01–S93 restent vérifiées au 6 août 2026, sans changement significatif constaté depuis). Les URL sont dédupliquées. « Non publiée » signifie que la page n’affiche pas de date exploitable. Les lignes antérieures conservent leur date de consultation historique; les sources revérifiées ou ajoutées portent la date courante. Les pages dynamiques peuvent évoluer sans changer d’URL. Les sources S94–S111 documentent le livrable [modeles-locaux-par-hardware.md](modeles-locaux-par-hardware.md).
+Dernière consultation: **11 août 2026**, heure de Bruxelles (contrôle mensuel; sources fournisseurs S01–S93 vérifiées au 6 août 2026). Contrôle complémentaire du 11 août: une baisse tarifaire OpenAI GPT-5.6 (Terra et Luna, effective le 30 juillet 2026) auparavant signalée « à confirmer » est désormais **vérifiée** via l’annonce officielle et des sources indépendantes (S112–S113); une date d’arrêt Gemini 2.5 (16 octobre 2026) est notée (S114). Les URL sont dédupliquées. « Non publiée » signifie que la page n’affiche pas de date exploitable. Les lignes antérieures conservent leur date de consultation historique; les sources revérifiées ou ajoutées portent la date courante. Les pages dynamiques peuvent évoluer sans changer d’URL. Les sources S94–S111 documentent le livrable [modeles-locaux-par-hardware.md](modeles-locaux-par-hardware.md). Note d’accès: lors de ce contrôle, les domaines officiels openai.com, platform.openai.com et ecb.europa.eu étaient bloqués par le proxy réseau; les faits ont été confirmés via l’index de recherche citant ces pages officielles et via des sources indépendantes fiables.
 
 | ID | Acteur | Sujet | Nature | URL exacte | Publication / mise à jour connue | Consultation |
 |---|---|---|---|---|---|---|
@@ -113,6 +113,9 @@ Dernière consultation: **11 août 2026**, heure de Bruxelles (contrôle mensuel
 | S109 | Local AI Master | Benchmarks Raspberry Pi 5, tokens/s réels | Source indépendante (benchmark) | <https://localaimaster.com/blog/llm-raspberry-pi-5> | 2026 | 2026-08-11 |
 | S110 | Unsloth | Guide d'exécution/quantification gpt-oss | Documentation éditeur (tierce) | <https://unsloth.ai/docs/models/gpt-oss-how-to-run-and-fine-tune> | 2026 | 2026-08-11 |
 | S111 | vLLM | Moteur de service multi-utilisateur, exigences GPU | Documentation officielle | <https://docs.vllm.ai/> | Dynamique | 2026-08-11 |
+| S112 | OpenAI | Baisse tarifaire GPT-5.6 Terra (−20 %) et Luna (−80 %); Fast Mode Sol remplace Priority | Publication officielle | <https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6/> | 2026-07-30 | 2026-08-11 |
+| S113 | CNBC | Confirmation indépendante de la baisse GPT-5.6 Terra/Luna | Source indépendante | <https://www.cnbc.com/2026/07/30/open-ai-price-cut-gpt.html> | 2026-07-30 | 2026-08-11 |
+| S114 | Google | Arrêt programmé de Gemini 2.5 Pro/Flash/Flash-Lite au 16 octobre 2026 | Documentation officielle | <https://ai.google.dev/gemini-api/docs/deprecations> | 2026-08-03 | 2026-08-11 |
 
 ## Sources non retenues
 

@@ -2,6 +2,20 @@
 
 Les entrées sont ajoutées sans supprimer les précédentes. Les fichiers courants décrivent toujours le dernier état vérifié.
 
+## 2026-08-11 — Contrôle complémentaire (vérification tarifaire et disponibilité)
+
+**Périmètre.** Les 20 écosystèmes restent inchangés. **Entrées: aucune. Sorties: aucune.** Contrôle de vérification des faits les plus volatils (prix API, modèles phares, disponibilité) via recherche web.
+
+**Changements vérifiés.**
+- **OpenAI GPT-5.6 — baisse tarifaire confirmée.** Le point « à vérifier » de l’entrée précédente (rumeur d’une baisse Terra/Luna au 30 juillet) est désormais **confirmé**. OpenAI a réduit les prix API le 30 juillet 2026: **Terra de 2,50/15 à 2/12 USD/M (−20 %)** et **Luna de 1/6 à 0,20/1,20 USD/M (−80 %)**; Sol reste à 5/30. Un « Fast Mode » pour Sol remplace le Priority Processing (jusqu’à ×2,5 de vitesse, ×2 le prix, intelligence inchangée). Sources: annonce officielle OpenAI et confirmations indépendantes CNBC/Axios [S112–S113].
+- **Google Gemini 2.5 — arrêt programmé.** Gemini 2.5 Pro, Flash et Flash-Lite sont programmés pour arrêt au **16 octobre 2026**; migration recommandée vers la famille 3.x [S114].
+
+**Faits vérifiés stables.** Anthropic (Opus 5 5/25, Sonnet 5 en prix de lancement 2/10 jusqu’au 31 août puis 3/15, Fable 5 10/50, Haiku 4.5 1/5), Grok 4.5 (500 k; 2/6 court, 4/12 long; cache 0,50), Mistral (Le Chat Pro 14,99 USD/mois; Large 3 0,50/1,50 API) restent cohérents avec les livrables. Le taux BCE indicatif du 7 août 2026 (~1,1535 USD/EUR) est proche du 1,1554 documenté (5 août); le taux de référence documenté est conservé pour éviter une recalcul en cascade sur un écart de ~0,16 %.
+
+**Fichiers mis à jour.** README.md (racine inchangée), ObservationLLM/README.md, synthese.md, comparatif.md (Prix API + en-tête), analyse-detaillee.md (OpenAI, Google), sources.md (S112–S114 + note d’accès), historique.md, et les JSON du dashboard (run-status.json, latest.json).
+
+**Limites / décisions humaines.** Les domaines officiels openai.com, platform.openai.com et ecb.europa.eu étaient bloqués par le proxy réseau lors de ce run: la baisse tarifaire OpenAI est confirmée via l’index de recherche citant l’annonce officielle et via des sources indépendantes fiables, mais la page officielle n’a pas pu être ouverte directement. Aucun DOCX/XLSX dans ObservationLLM: contrôle Markdown effectué. Décision attendue: revérifier la grille officielle OpenAI et le taux BCE directement au prochain passage si le proxy le permet.
+
 ## 2026-08-11 — Contrôle mensuel et ajout du guide « exécution locale »
 
 **Périmètre.** Les 20 écosystèmes restent inchangés (OpenAI, Anthropic, Google, Microsoft, AWS, Meta, Mistral, xAI, DeepSeek, Alibaba/Qwen, NVIDIA, Cohere, IBM, GitHub Copilot, Perplexity, Cursor, Replit, Hugging Face, Moonshot/Kimi, Z.AI/GLM). **Entrées: aucune. Sorties: aucune.**
