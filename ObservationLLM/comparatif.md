@@ -1,6 +1,6 @@
 # Comparatif structuré — édition Belgique
 
-Mise à jour: **6 août 2026**. Ce fichier remplace le classeur Excel demandé initialement: le dépôt a explicitement migré vers Markdown le 16 juillet 2026. Les « feuilles » sont les sections ci-dessous. Les références Sxx renvoient à [sources.md](sources.md).
+Contrôle: **11 août 2026** (données fournisseurs vérifiées au 6 août 2026, sans changement significatif depuis). Ce fichier remplace le classeur Excel demandé initialement: le dépôt a explicitement migré vers Markdown le 16 juillet 2026. Les « feuilles » sont les sections ci-dessous. Les références Sxx renvoient à [sources.md](sources.md).
 
 - [Vue d’ensemble](#vue-densemble)
 - [Prix particuliers](#prix-particuliers)
@@ -8,6 +8,7 @@ Mise à jour: **6 août 2026**. Ce fichier remplace le classeur Excel demandé i
 - [Capacités](#capacités)
 - [Sécurité-RGPD](#sécurité-rgpd)
 - [Développement](#développement)
+- [Exécution locale](#exécution-locale)
 - [Méthodologie](#méthodologie)
 - [Sources](#sources)
 
@@ -136,13 +137,35 @@ Légende: **Oui** publié; **Partiel** dépend du modèle/produit; **ND** non pu
 | DeepSeek/Qwen/Kimi/GLM | API compatibles, poids | Changements rapides | À construire | Prix bas, risque opérationnel | Élevée mais support UE variable |
 | Cohere/IBM | Entreprise | Contrats et versions | Gouvernance forte | Contrat/plateforme | Bonne, plutôt entreprise |
 
+## Exécution locale
+
+Résumé par palier matériel pour exécuter un LLM **sur sa propre machine** (Q4_K_M, contexte modéré). Détail, catégories (chat, MoE, raisonnement, code, vision, embeddings), modèles à éviter et procédure de validation: [modeles-locaux-par-hardware.md](modeles-locaux-par-hardware.md).
+
+| Configuration | Palier réaliste | Modèle principal conseillé | Alternative | Source |
+|---|---|---|---|---|
+| Raspberry Pi 5 · 4 Go RAM | 0,3–1,7 B | Gemma 3 1B | Llama 3.2 1B; LFM2.5-230M | S97–S98, S109 |
+| CPU seul · 8 Go RAM | 1–4 B | Qwen3 4B | Gemma 3 4B; Phi-4-mini | S96–S97 |
+| CPU seul · 16 Go RAM | 7–14 B | Qwen3 8B | Llama 3.1 8B; Gemma 3 12B | S96–S98 |
+| CPU seul · 32 Go RAM | 14–32 B (MoE) | Qwen3-30B-A3B | Gemma 3 27B; gpt-oss-20b | S96, S100 |
+| CPU seul · 64 Go RAM | 30–120 B (MoE) | gpt-oss-120b | Llama 3.3 70B (lent) | S98, S100, S110 |
+| Portable/mini-PC · 16 Go | 7–12 B | Qwen3 8B | Mistral Nemo 12B | S96 |
+| Portable/mini-PC · 32 Go | 14–30 B | Qwen3-30B-A3B | Qwen3 14B | S96 |
+| Apple Silicon · 16 Go | 8–14 B | Qwen3 14B | Gemma 3 12B (MLX) | S96–S97, S102 |
+| Apple Silicon · 32 Go | 24–32 B | Qwen3-Coder 30B | gpt-oss-20b | S96, S100, S102 |
+| GPU · 8 Go VRAM | 7–8 B (tout-GPU) | Qwen3 8B | Llama 3.1 8B | S96, S108 |
+| GPU · 12 Go VRAM (RTX 3060) | 12–14 B (tout-GPU) | Gemma 3 12B | Qwen3-30B-A3B (offload) | S97, S108 |
+| GPU · 16 Go VRAM | 14 B / 20B MoE | gpt-oss-20b | Qwen3 14B | S96, S100 |
+| GPU · 24 Go VRAM (RTX 4090) | 27–32 B (tout-GPU) | Qwen3 32B | Gemma 3 27B; Qwen3-Coder 30B | S96–S97, S108 |
+
+Repères mémoire (octets/param GGUF): Q4_K_M ≈ 0,57; Q5_K_M ≈ 0,68; Q8_0 ≈ 1,0; MXFP4 ≈ 0,53 [S94–S95, S100]. Distinguer **tout-GPU/mémoire unifiée** (rapide) et **offload CPU/GPU** (plus lent, sauf MoE). Vitesses tokens/s indicatives, **à tester** sur le matériel exact [S108–S109].
+
 ## Méthodologie
 
 La sélection combine cinq signaux qualitatifs: adoption/présence marché 30 %, qualité/portée des modèles 25 %, maturité API/outils/agents 20 %, écosystème développeur 15 %, disponibilité et pertinence Europe/Belgique 10 %. La liste est plafonnée à exactement 20. Les sorties de la prochaine édition exigeront un signal durable supérieur à l’acteur remplacé; une nouveauté seule ne suffit pas.
 
 Les benchmarks fournisseur restent dans [analyse-detaillee.md](analyse-detaillee.md) avec protocole et avertissements. Aucun score de sources hétérogènes n’est moyenné. Les prix sont des snapshots catalogue au 6 août 2026; remises, contrats et taxes varient. Entrées: aucune; sorties: aucune.
 
-Contrôles effectués: 20 lignes exactes dans Vue d’ensemble; unités de prix homogènes; conversions recalculées avec S79; liens Markdown relatifs; valeurs inconnues marquées ND/à confirmer. Les filtres, volets figés et formules Excel ne sont pas applicables à Markdown.
+Contrôles effectués: 20 lignes exactes dans Vue d’ensemble; unités de prix homogènes; conversions recalculées avec S79; liens Markdown relatifs; valeurs inconnues marquées ND/à confirmer; section « Exécution locale » ajoutée au contrôle du 11 août avec empreintes mémoire calculées et vitesses marquées « à tester ». Les filtres, volets figés et formules Excel ne sont pas applicables à Markdown.
 
 ## Sources
 

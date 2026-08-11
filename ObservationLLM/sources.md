@@ -1,6 +1,6 @@
 # Registre des sources
 
-Dernière consultation: **6 août 2026**, heure de Bruxelles. Les URL sont dédupliquées. « Non publiée » signifie que la page n’affiche pas de date exploitable. Les lignes antérieures conservent leur date de consultation historique; les sources revérifiées ou ajoutées portent la date courante. Les pages dynamiques peuvent évoluer sans changer d’URL.
+Dernière consultation: **11 août 2026**, heure de Bruxelles (contrôle mensuel; les sources fournisseurs S01–S93 restent vérifiées au 6 août 2026, sans changement significatif constaté depuis). Les URL sont dédupliquées. « Non publiée » signifie que la page n’affiche pas de date exploitable. Les lignes antérieures conservent leur date de consultation historique; les sources revérifiées ou ajoutées portent la date courante. Les pages dynamiques peuvent évoluer sans changer d’URL. Les sources S94–S111 documentent le livrable [modeles-locaux-par-hardware.md](modeles-locaux-par-hardware.md).
 
 | ID | Acteur | Sujet | Nature | URL exacte | Publication / mise à jour connue | Consultation |
 |---|---|---|---|---|---|---|
@@ -95,6 +95,24 @@ Dernière consultation: **6 août 2026**, heure de Bruxelles. Les URL sont dédu
 | S91 | Meta | Meta AI agentique et déploiement limité | Publication officielle | <https://about.fb.com/news/2026/07/meta-ai-muse-spark-doesnt-just-think-it-acts/> | 2026-07-24 | 2026-08-06 |
 | S92 | Commission européenne | Lignes directrices de transparence de l’article 50 | Source institutionnelle | <https://digital-strategy.ec.europa.eu/en/news/commission-publishes-guidelines-transparency-obligations-providers-and-deployers-certain-ai-systems> | 2026-07-20; mise à jour 2026-07-24 | 2026-08-06 |
 | S93 | Commission européenne | Application, transition et code de transparence | Source institutionnelle | <https://digital-strategy.ec.europa.eu/en/faqs/signing-code-practice-transparency-ai-generated-content> | 2026-07-17 | 2026-08-06 |
+| S94 | Ollama | Registre de modèles locaux, tags et quantifications | Registre officiel | <https://ollama.com/library> | Dynamique | 2026-08-11 |
+| S95 | llama.cpp (ggml-org) | Moteur GGUF, k-quants, placement GPU/CPU | Dépôt officiel | <https://github.com/ggml-org/llama.cpp> | Dynamique | 2026-08-11 |
+| S96 | Alibaba/Qwen | Cartes de modèles Qwen3 (chat, coder, VL, embedding) | Organisation officielle Hugging Face | <https://huggingface.co/Qwen> | Dynamique | 2026-08-11 |
+| S97 | Google | Cartes et documentation Gemma 3 (chat, vision) | Documentation officielle | <https://ai.google.dev/gemma/docs> | Dynamique | 2026-08-11 |
+| S98 | Meta | Modèles Llama 3.1/3.2/3.3, licences et tailles | Page officielle | <https://www.llama.com/models/> | Dynamique | 2026-08-11 |
+| S99 | Mistral | Devstral / Codestral: carte modèle et licence | Publication officielle | <https://mistral.ai/news/devstral> | Dynamique | 2026-08-11 |
+| S100 | OpenAI | gpt-oss 20b/120b: architecture MoE, MXFP4, exécution | Publication officielle | <https://openai.com/index/introducing-gpt-oss/> | 2026 | 2026-08-11 |
+| S101 | LM Studio | Interface locale, quantifications et suivi ressources | Page officielle | <https://lmstudio.ai/> | Dynamique | 2026-08-11 |
+| S102 | Apple (ml-explore) | MLX / MLX-LM pour Apple Silicon | Dépôt officiel | <https://github.com/ml-explore/mlx-lm> | Dynamique | 2026-08-11 |
+| S103 | DeepSeek | Distillations R1 (Qwen/Llama), tailles et licences | Organisation officielle Hugging Face | <https://huggingface.co/deepseek-ai> | Dynamique | 2026-08-11 |
+| S104 | Alibaba/Qwen | Qwen3-Embedding: dimensions flexibles, contexte 32 k | Carte modèle officielle | <https://huggingface.co/Qwen/Qwen3-Embedding-8B> | Dynamique | 2026-08-11 |
+| S105 | BAAI | bge-m3: multilingue, dense + sparse + ColBERT | Carte modèle officielle | <https://huggingface.co/BAAI/bge-m3> | Dynamique | 2026-08-11 |
+| S106 | Nomic AI | nomic-embed-text-v2: empreinte minimale, longs documents | Carte modèle officielle | <https://huggingface.co/nomic-ai/nomic-embed-text-v2-moe> | Dynamique | 2026-08-11 |
+| S107 | Google | EmbeddingGemma: embeddings on-device, multilingue | Documentation officielle | <https://ai.google.dev/gemma/docs/embeddinggemma> | Dynamique | 2026-08-11 |
+| S108 | Morph | Classement Ollama par VRAM et SWE-Bench (août 2026) | Source indépendante (benchmark) | <https://www.morphllm.com/best-ollama-models> | 2026-08 | 2026-08-11 |
+| S109 | Local AI Master | Benchmarks Raspberry Pi 5, tokens/s réels | Source indépendante (benchmark) | <https://localaimaster.com/blog/llm-raspberry-pi-5> | 2026 | 2026-08-11 |
+| S110 | Unsloth | Guide d'exécution/quantification gpt-oss | Documentation éditeur (tierce) | <https://unsloth.ai/docs/models/gpt-oss-how-to-run-and-fine-tune> | 2026 | 2026-08-11 |
+| S111 | vLLM | Moteur de service multi-utilisateur, exigences GPU | Documentation officielle | <https://docs.vllm.ai/> | Dynamique | 2026-08-11 |
 
 ## Sources non retenues
 

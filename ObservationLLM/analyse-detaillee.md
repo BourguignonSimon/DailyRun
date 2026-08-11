@@ -1,6 +1,6 @@
 # Analyse détaillée
 
-Vérification: **6 août 2026**. Point de vue: particulier ou développeur résidant en Belgique. Cette analyse est informative; les volets RGPD et AI Act ne constituent pas un avis juridique.
+Contrôle: **11 août 2026**; faits fournisseurs vérifiés au **6 août 2026** et conservés sans changement significatif. Point de vue: particulier ou développeur résidant en Belgique. Cette analyse est informative; les volets RGPD et AI Act ne constituent pas un avis juridique. Pour l'exécution sur matériel personnel, voir [modeles-locaux-par-hardware.md](modeles-locaux-par-hardware.md).
 
 ## Méthodologie et sélection
 

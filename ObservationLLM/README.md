@@ -1,6 +1,6 @@
 # Observatoire LLM et agents IA — Belgique
 
-Édition vérifiée le **6 août 2026**. Cette édition couvre exactement 20 écosystèmes et sépare modèles, applications, plateformes API, assistants de code et agents autonomes.
+Contrôle: **11 août 2026** (faits fournisseurs vérifiés au 6 août 2026, sans changement significatif depuis). Cette édition couvre exactement 20 écosystèmes et sépare modèles, applications, plateformes API, assistants de code et agents autonomes. Nouveau ce mois-ci: un guide des **modèles exécutables en local selon le matériel**.
 
 ## Livrables
 
@@ -8,11 +8,14 @@
 - [Comparatif structuré](comparatif.md)
 - [Analyse détaillée](analyse-detaillee.md)
 - [Bonnes pratiques de développement](bonnes-pratiques-developpement.md)
+- [Modèles locaux par matériel](modeles-locaux-par-hardware.md)
 - [Registre des sources](sources.md)
 - [Historique](historique.md)
 
 ## Principaux changements constatés
 
+- **Nouveau livrable** [modeles-locaux-par-hardware.md](modeles-locaux-par-hardware.md): tableau de décision par configuration (Raspberry Pi 5, CPU seul 8–64 Go, Apple Silicon 16/32 Go, GPU 8–24 Go, RTX 3060 12 Go), recommandations par catégorie (chat, MoE, raisonnement, code, vision, embeddings), modèles à éviter, marges mémoire et procédure de validation locale.
+- Contrôle du 11 août: **aucun changement significatif** côté fournisseurs depuis le 6 août (mêmes familles de modèles et prix vérifiés).
 - Sélection inchangée: aucune entrée ni sortie parmi les 20 écosystèmes.
 - Frontière vérifiée: GPT-5.6 Sol/Terra/Luna, Claude Opus 5/Fable 5/Sonnet 5, Gemini 3.6 Flash, Grok 4.5, DeepSeek V4, Qwen 3.7, GLM-5.2 et Kimi K3.
 - AWS Bedrock Agents est désormais « Agents Classic », fermé aux nouveaux clients depuis le 30 juillet; AgentCore devient la voie recommandée.
@@ -24,7 +27,7 @@
 
 ## Lecture rapide
 
-Pour un particulier belge, commencer par OpenAI, Google ou Mistral; ajouter Perplexity si la recherche sourcée domine. Pour le code, comparer GitHub Copilot, Cursor, Claude Code/Codex et Kimi Code sur un dépôt pilote. Pour une production européenne sensible, privilégier un contrat avec DPA, région UE, rétention documentée et évaluation interne; AWS, Azure, Google Cloud, Mistral et IBM offrent les contrôles les plus structurés selon le service choisi.
+Pour un particulier belge, commencer par OpenAI, Google ou Mistral; ajouter Perplexity si la recherche sourcée domine. Pour le code, comparer GitHub Copilot, Cursor, Claude Code/Codex et Kimi Code sur un dépôt pilote. Pour une production européenne sensible, privilégier un contrat avec DPA, région UE, rétention documentée et évaluation interne; AWS, Azure, Google Cloud, Mistral et IBM offrent les contrôles les plus structurés selon le service choisi. Pour garder les données sur sa propre machine, voir le guide [modèles locaux par matériel](modeles-locaux-par-hardware.md): Gemma 3 et Qwen3 couvrent la plupart des paliers grand public, gpt-oss et Qwen3-30B-A3B (MoE) pour plus de puissance dès 32 Go de RAM.
 
 ## Limites
 

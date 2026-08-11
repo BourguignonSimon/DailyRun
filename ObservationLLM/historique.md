@@ -2,6 +2,20 @@
 
 Les entrées sont ajoutées sans supprimer les précédentes. Les fichiers courants décrivent toujours le dernier état vérifié.
 
+## 2026-08-11 — Contrôle mensuel et ajout du guide « exécution locale »
+
+**Périmètre.** Les 20 écosystèmes restent inchangés (OpenAI, Anthropic, Google, Microsoft, AWS, Meta, Mistral, xAI, DeepSeek, Alibaba/Qwen, NVIDIA, Cohere, IBM, GitHub Copilot, Perplexity, Cursor, Replit, Hugging Face, Moonshot/Kimi, Z.AI/GLM). **Entrées: aucune. Sorties: aucune.**
+
+**Changements fournisseurs.** **Aucun changement significatif** vérifié depuis l'édition du 6 août: mêmes familles de modèles (GPT-5.6 Sol/Terra/Luna, Opus 5/Fable 5, Gemini 3.6 Flash, DeepSeek V4 Pro/Flash, Grok 4.5, Kimi K3, Qwen 3.7, GLM-5.2). La date de contrôle passe au 11 août 2026; les faits fournisseurs S01–S93 sont conservés en l'état vérifié au 6 août. **À vérifier au prochain passage:** une source d'actualité indépendante évoque une baisse tarifaire GPT-5.6 (Luna ~0,20/1,20, Terra ~2/12 au 30 juillet) non confirmée par la documentation officielle citée (S61–S62) — non reportée dans les prix tant que la page officielle n'est pas revérifiée.
+
+**Nouveau livrable.** Ajout de `modeles-locaux-par-hardware.md`: tableau de décision par configuration matérielle (Raspberry Pi 5 4 Go; CPU seul 8/16/32/64 Go; mini-PC/portable 16/32 Go; Apple Silicon 16/32 Go; GPU 8/12/16/24 Go de VRAM; RTX 3060 12 Go + 64 Go RAM), recommandations principales/alternatives, modèles à éviter, marges mémoire, compromis quantification/qualité/vitesse/contexte et procédure de validation locale. Catégories séparées: chat, MoE, raisonnement, code, vision, embeddings. Modèles couverts vérifiés via cartes officielles et bancs indépendants: Gemma 3 (1B–27B), Qwen3 (4B–32B), Qwen3-30B-A3B, Qwen3-Coder 30B, Llama 3.1/3.2/3.3, Devstral 24B, gpt-oss 20b/120b, DeepSeek-R1 distillés, Qwen2.5-VL/Qwen3-VL, bge-m3, Qwen3-Embedding, nomic-embed, EmbeddingGemma [S94–S111].
+
+**Repères mémoire retenus.** Octets/param GGUF: Q4_K_M ≈ 0,57; Q5_K_M ≈ 0,68; Q8_0 ≈ 1,0; MXFP4 ≈ 0,53. Un 8B en Q4_K_M ≈ ~4,7 Go de poids (~6–7 Go en pratique). Distinction tout-GPU vs offload CPU/GPU; avantage vitesse des MoE en offload. Vitesses tokens/s marquées « à tester » car dépendantes du matériel exact.
+
+**Fichiers mis à jour.** Création de modeles-locaux-par-hardware.md; liens ajoutés dans README.md, ObservationLLM/README.md et synthese.md; section « Exécution locale » ajoutée dans comparatif.md; sources S94–S111 ajoutées dans sources.md; dates de contrôle portées au 11 août 2026.
+
+**Limites / décisions humaines.** Les vitesses tokens/s proviennent de bancs indépendants sur matériel proche mais non identique: à tester localement. Aucun DOCX/XLSX dans ObservationLLM: contrôle Markdown effectué, workflows Word/Excel non applicables. Décision attendue: choisir une configuration matérielle cible et deux modèles locaux pour un pilote FR/NL, et revérifier la grille tarifaire OpenAI officielle au prochain passage.
+
 ## 2026-08-06 — Mise à jour mensuelle
 
 **Périmètre.** Les 20 écosystèmes restent OpenAI, Anthropic, Google, Microsoft, AWS, Meta, Mistral, xAI, DeepSeek, Alibaba/Qwen, NVIDIA, Cohere, IBM, GitHub Copilot, Perplexity, Cursor, Replit, Hugging Face, Moonshot/Kimi et Z.AI/GLM. **Entrées: aucune. Sorties: aucune.** Le maintien est justifié par les cinq signaux pondérés; aucun candidat ne dépasse durablement l’acteur le plus faible sur l’ensemble adoption, modèles, agents, développeurs et pertinence européenne.

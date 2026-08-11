@@ -1,4 +1,6 @@
-# Synthèse décisionnelle — 6 août 2026
+# Synthèse décisionnelle — contrôle du 11 août 2026
+
+> Faits fournisseurs vérifiés au 6 août 2026, sans changement significatif constaté au contrôle du 11 août. Nouveauté de ce contrôle: le guide [modèles locaux par matériel](modeles-locaux-par-hardware.md) pour exécuter un LLM sur sa propre machine.
 
 ## Verdict en une minute
 
@@ -16,6 +18,7 @@ Il n’existe pas un « meilleur LLM » unique. Pour un résident belge, le choi
 | PME Microsoft 365 | Microsoft 365 Copilot + Azure | GitHub Copilot | Identité, Office, gouvernance et agents | Licences imbriquées, TVA hors prix B2B |
 | Production UE sensible | Mistral ou cloud avec région UE | IBM / AWS / Azure / Google Cloud | DPA, région, contrôles et déploiement privé | Vérifier service, région et sous-traitants exacts |
 | Open weight / sur site | Llama, Mistral, Nemotron | Qwen, Kimi, GLM, DeepSeek | Contrôle et portabilité | Licence, sécurité, capacité GPU, évaluation locale |
+| Exécution 100 % locale | Gemma 3, Qwen3 (selon RAM/VRAM) | gpt-oss, Qwen3-30B-A3B (MoE) | Données privées, hors ligne, coût nul par jeton | Mémoire disponible, vitesse, FR/NL à tester — voir [guide local](modeles-locaux-par-hardware.md) |
 
 ## Ce qui a changé
 
@@ -62,4 +65,4 @@ Pour les offres grand public, vérifier le réglage d’entraînement. OpenAI AP
 4. Épingler les versions de modèles en production et mettre en place un fournisseur de secours.
 5. Mesurer coût par tâche réussie, latence p95, taux d’intervention humaine et incidents, pas seulement prix par jeton.
 
-Détails et sources: [comparatif](comparatif.md), [analyse](analyse-detaillee.md), [bonnes pratiques](bonnes-pratiques-developpement.md), [sources](sources.md).
+Détails et sources: [comparatif](comparatif.md), [analyse](analyse-detaillee.md), [bonnes pratiques](bonnes-pratiques-developpement.md), [modèles locaux](modeles-locaux-par-hardware.md), [sources](sources.md).
