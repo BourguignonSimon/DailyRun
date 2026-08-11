@@ -1,6 +1,10 @@
 name: Déployer le dashboard de l’observatoire
 
 on:
+  pull_request:
+    paths:
+      - "ObservationLLM/dashboard/**"
+      - ".github/workflows/deploy-observatoire-pages.yml"
   push:
     branches: [main]
     paths:
@@ -36,6 +40,7 @@ jobs:
 
   deploy:
     name: Publier sur GitHub Pages
+    if: github.event_name != 'pull_request'
     needs: validate
     runs-on: ubuntu-latest
     environment:
