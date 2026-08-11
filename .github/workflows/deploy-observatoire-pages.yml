@@ -38,6 +38,21 @@ jobs:
       - name: Vérifier le JavaScript
         run: node --check ObservationLLM/dashboard/app.js
 
+      - name: Générer les pages de contenu
+        run: node ObservationLLM/dashboard/build-content.mjs ObservationLLM/dashboard-dist
+
+      - name: Vérifier les pages générées
+        shell: bash
+        run: |
+          test -f ObservationLLM/dashboard-dist/index.html
+          test -f ObservationLLM/dashboard-dist/synthese.html
+          test -f ObservationLLM/dashboard-dist/comparatif.html
+          test -f ObservationLLM/dashboard-dist/analyse-detaillee.html
+          test -f ObservationLLM/dashboard-dist/bonnes-pratiques-developpement.html
+          test -f ObservationLLM/dashboard-dist/modeles-locaux-par-hardware.html
+          test -f ObservationLLM/dashboard-dist/sources.html
+          test -f ObservationLLM/dashboard-dist/historique.html
+
   deploy:
     name: Publier sur GitHub Pages
     if: github.event_name != 'pull_request'
@@ -53,10 +68,13 @@ jobs:
       - name: Configurer GitHub Pages
         uses: actions/configure-pages@v5
 
+      - name: Générer les pages de contenu
+        run: node ObservationLLM/dashboard/build-content.mjs ObservationLLM/dashboard-dist
+
       - name: Préparer l’artefact statique
         uses: actions/upload-pages-artifact@v4
         with:
-          path: ObservationLLM/dashboard
+          path: ObservationLLM/dashboard-dist
 
       - name: Déployer
         id: deployment

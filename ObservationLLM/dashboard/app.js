@@ -102,9 +102,7 @@ function renderDocuments(data) {
     const link = document.createElement("a");
     link.className = "document-card";
     link.href = doc.url;
-    link.target = "_blank";
-    link.rel = "noreferrer";
-    link.innerHTML = `<span>${doc.kind}</span><strong>${doc.title} ↗</strong>`;
+    link.innerHTML = `<span>${doc.kind}</span><strong>${doc.title} →</strong>`;
     return link;
   }));
   const synthesis = data.documents.find((doc) => doc.id === "synthesis");

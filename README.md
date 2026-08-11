@@ -2,7 +2,7 @@
 
 ## Observatoire LLM
 
-- [Ouvrir le dashboard](https://bourguignonsimon.github.io/DailyRun/)
+- [Ouvrir le dashboard et ses rapports publics](https://bourguignonsimon.github.io/DailyRun/)
 - [Consulter les livrables](ObservationLLM/README.md)
 
 # Observatoire LLM et agents IA — Belgique
