@@ -1,0 +1,58 @@
+name: Déployer le dashboard de l’observatoire
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "ObservationLLM/dashboard/**"
+      - ".github/workflows/deploy-observatoire-pages.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    name: Valider les données
+    runs-on: ubuntu-latest
+    steps:
+      - name: Récupérer le dépôt
+        uses: actions/checkout@v4
+
+      - name: Vérifier les fichiers JSON
+        shell: bash
+        run: |
+          python -m json.tool ObservationLLM/dashboard/data/latest.json >/dev/null
+          python -m json.tool ObservationLLM/dashboard/data/run-status.json >/dev/null
+
+      - name: Vérifier le JavaScript
+        run: node --check ObservationLLM/dashboard/app.js
+
+  deploy:
+    name: Publier sur GitHub Pages
+    needs: validate
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Récupérer le dépôt
+        uses: actions/checkout@v4
+
+      - name: Configurer GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Préparer l’artefact statique
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: ObservationLLM/dashboard
+
+      - name: Déployer
+        id: deployment
+        uses: actions/deploy-pages@v4

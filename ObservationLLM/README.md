@@ -4,6 +4,7 @@ Contrôle: **11 août 2026** (faits fournisseurs vérifiés au 6 août 2026, san
 
 ## Livrables
 
+- [Dashboard interactif](https://bourguignonsimon.github.io/DailyRun/)
 - [Synthèse décisionnelle](synthese.md)
 - [Comparatif structuré](comparatif.md)
 - [Analyse détaillée](analyse-detaillee.md)
@@ -11,6 +12,8 @@ Contrôle: **11 août 2026** (faits fournisseurs vérifiés au 6 août 2026, san
 - [Modèles locaux par matériel](modeles-locaux-par-hardware.md)
 - [Registre des sources](sources.md)
 - [Historique](historique.md)
+
+Le dashboard résume le dernier run validé. Son contrat de données et son fonctionnement sont documentés dans [`dashboard/README.md`](dashboard/README.md).
 
 ## Principaux changements constatés
 

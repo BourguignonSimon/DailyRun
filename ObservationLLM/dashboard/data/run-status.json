@@ -1,0 +1,10 @@
+{
+  "runId": "2026-08-11-fable-5",
+  "status": "completed",
+  "phase": "publication",
+  "model": "Fable 5",
+  "startedAt": "2026-08-11T08:57:39Z",
+  "completedAt": "2026-08-11T09:01:29Z",
+  "commit": "1331adba8a4963682c309b5d825d6e858a6ac2d5",
+  "message": "Observatoire et guide des modèles locaux publiés"
+}

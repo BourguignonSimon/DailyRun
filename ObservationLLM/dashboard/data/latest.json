@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "run": {
+    "checkedAt": "2026-08-11T09:01:29Z",
+    "factsVerifiedThrough": "2026-08-06",
+    "commit": "1331adba8a4963682c309b5d825d6e858a6ac2d5",
+    "model": "Fable 5",
+    "result": "Aucun changement significatif côté fournisseurs depuis le 6 août; ajout du guide des modèles locaux."
+  },
+  "metrics": {
+    "actorCount": 20,
+    "belgianVatPercent": 21,
+    "eurUsdRate": 1.1554,
+    "rateDate": "2026-08-05"
+  },
+  "headline": {
+    "title": "Le local devient un vrai axe de décision.",
+    "detail": "Le nouveau guide relie Raspberry Pi, CPU, Apple Silicon et GPU aux modèles qui tiennent réellement en mémoire."
+  },
+  "decisions": [
+    { "profile": "Usage polyvalent", "primary": "OpenAI · Google · Mistral", "why": "Le meilleur point de départ pour le français, le néerlandais et les usages multimodaux." },
+    { "profile": "Développement", "primary": "GitHub Copilot · Cursor", "why": "À comparer avec Claude Code, Codex et Kimi Code sur un dépôt pilote réel." },
+    { "profile": "Production UE", "primary": "Mistral · cloud avec région UE", "why": "DPA, région, rétention et sous-traitants doivent être validés service par service." },
+    { "profile": "100 % local", "primary": "Gemma 3 · Qwen3 · gpt-oss", "why": "Le choix dépend d’abord de la mémoire disponible, du contexte et de la quantification." }
+  ],
+  "actors": [
+    { "name": "OpenAI", "category": "Plateforme", "flagship": "GPT-5.6 · ChatGPT · API · Codex", "belgium": "Belgique : disponible selon le service" },
+    { "name": "Anthropic", "category": "Plateforme", "flagship": "Claude Opus 5 · Fable 5 · Claude Code", "belgium": "Belgique : disponible, conditions à vérifier" },
+    { "name": "Google", "category": "Plateforme", "flagship": "Gemini 3.6 · Gemini API · Vertex AI", "belgium": "EEE : disponibilité documentée" },
+    { "name": "Microsoft", "category": "Cloud", "flagship": "Azure AI · Microsoft 365 Copilot", "belgium": "Belgique : disponible selon licence" },
+    { "name": "AWS", "category": "Cloud", "flagship": "Bedrock · AgentCore", "belgium": "Régions UE selon le service" },
+    { "name": "Meta", "category": "Open weights", "flagship": "Llama · écosystème open weight", "belgium": "Poids : licence communautaire" },
+    { "name": "Mistral AI", "category": "Plateforme", "flagship": "Le Chat · API · modèles ouverts", "belgium": "Acteur européen, services disponibles" },
+    { "name": "xAI", "category": "Application", "flagship": "Grok 4.5 · API", "belgium": "Console API UE annoncée" },
+    { "name": "DeepSeek", "category": "Open weights", "flagship": "DeepSeek V4 · modèles de raisonnement", "belgium": "Commercial : à confirmer" },
+    { "name": "Alibaba / Qwen", "category": "Open weights", "flagship": "Qwen3 · Qwen3-Coder · Qwen3-VL", "belgium": "Poids disponibles, cloud à confirmer" },
+    { "name": "NVIDIA", "category": "Plateforme", "flagship": "Nemotron · NIM · NeMo", "belgium": "Disponible selon infrastructure" },
+    { "name": "Cohere", "category": "Plateforme", "flagship": "Command · Embed · Rerank", "belgium": "Entreprise : contrat à vérifier" },
+    { "name": "IBM", "category": "Cloud", "flagship": "watsonx · Granite", "belgium": "Contrôles entreprise structurés" },
+    { "name": "GitHub Copilot", "category": "Code", "flagship": "Copilot · agents et modèles multiples", "belgium": "Disponible selon abonnement" },
+    { "name": "Perplexity", "category": "Application", "flagship": "Recherche sourcée · assistant", "belgium": "Disponible, checkout à vérifier" },
+    { "name": "Cursor", "category": "Code", "flagship": "IDE agentique · Router", "belgium": "Plans belges : à confirmer" },
+    { "name": "Replit", "category": "Code", "flagship": "Agent · environnement de développement", "belgium": "Disponibilité web, prix à vérifier" },
+    { "name": "Hugging Face", "category": "Open weights", "flagship": "Hub · Inference · écosystème", "belgium": "Disponible, vigilance sécurité" },
+    { "name": "Moonshot / Kimi", "category": "Application", "flagship": "Kimi K3 · Kimi Code · API", "belgium": "Disponibilité commerciale à confirmer" },
+    { "name": "Z.AI / GLM", "category": "Open weights", "flagship": "GLM-5.2 · API et poids", "belgium": "Disponibilité commerciale à confirmer" }
+  ],
+  "hardware": [
+    { "label": "Raspberry Pi 5 · 4 Go", "kind": "CPU ARM", "tier": "0,3–1,7 B", "primary": "Gemma 3 1B", "alternatives": ["Llama 3.2 1B", "DeepSeek-R1 Distill 1.5B"], "avoid": "Modèles de 4B ou plus et contextes longs : le swap détruit la latence.", "summary": "Une petite quantification Q4 et un contexte court sont indispensables. Qwen3 1.7B reste serré." },
+    { "label": "CPU seul · 8 Go", "kind": "PC d’entrée de gamme", "tier": "1–4 B", "primary": "Qwen3 4B", "alternatives": ["Gemma 3 4B", "Phi-4-mini 3.8B"], "avoid": "Les 7–8B tiennent à peine et deviennent trop lents pour un usage fluide.", "summary": "Q4_K_M avec contexte modéré et au moins 10 % de RAM libre." },
+    { "label": "CPU seul · 16 Go", "kind": "Portable ou mini-PC", "tier": "7–14 B", "primary": "Qwen3 8B", "alternatives": ["Llama 3.1 8B", "Gemma 3 12B"], "avoid": "Les modèles denses de 24B ou plus et les contextes de 128k.", "summary": "Le meilleur palier sans GPU pour un chat local raisonnablement capable." },
+    { "label": "CPU seul · 32 Go", "kind": "Station compacte", "tier": "14–32 B", "primary": "Qwen3-30B-A3B", "alternatives": ["Gemma 3 27B", "gpt-oss-20b"], "avoid": "Les 70B denses pour une conversation interactive.", "summary": "Les architectures MoE réduisent fortement le coût de calcul par jeton." },
+    { "label": "CPU seul · 64 Go", "kind": "Station mémoire", "tier": "30–120 B MoE", "primary": "gpt-oss-120b", "alternatives": ["Qwen3-30B-A3B", "Llama 3.3 70B"], "avoid": "Un 70B dense si vous attendez une réponse interactive rapide.", "summary": "Techniquement ambitieux : mesurez la bande passante mémoire et gardez une marge pour l’OS." },
+    { "label": "Apple Silicon · 16 Go", "kind": "Mémoire unifiée", "tier": "8–14 B", "primary": "Qwen3 14B", "alternatives": ["Gemma 3 12B", "Qwen3 8B"], "avoid": "Les 27B et plus : la mémoire est aussi partagée avec macOS.", "summary": "MLX 4-bit ou llama.cpp/Metal offrent le chemin le plus naturel." },
+    { "label": "Apple Silicon · 32 Go", "kind": "Mémoire unifiée", "tier": "24–32 B", "primary": "Qwen3-Coder-30B", "alternatives": ["Gemma 3 27B", "gpt-oss-20b"], "avoid": "Les 70B denses, trop serrés et lents pour ce palier.", "summary": "Un bon palier pour le code local et les modèles MoE en mémoire unifiée." },
+    { "label": "GPU · 8 Go", "kind": "Tout GPU", "tier": "7–8 B", "primary": "Qwen3 8B", "alternatives": ["Llama 3.1 8B", "Gemma 3 4B"], "avoid": "Les modèles denses de 14B ou plus en chargement entièrement GPU.", "summary": "Conservez un contexte raisonnable afin de laisser de la place au cache KV." },
+    { "label": "RTX 3060 · 12 Go + 64 Go", "kind": "GPU + offload", "tier": "12–14 B GPU · 30B MoE offload", "primary": "Gemma 3 12B", "alternatives": ["Qwen3 14B", "Qwen3-30B-A3B"], "avoid": "Les 32B denses entièrement en GPU; préférez un MoE si l’offload est nécessaire.", "summary": "Votre profil : 12–14B Q4 confortables en VRAM, modèles MoE plus gros grâce aux 64 Go de RAM." },
+    { "label": "GPU · 16 Go", "kind": "Tout GPU", "tier": "14–20 B MoE", "primary": "gpt-oss-20b", "alternatives": ["Qwen3 14B", "DeepSeek-R1 Distill 14B"], "avoid": "Les 32B denses entièrement en VRAM.", "summary": "Le palier idéal pour un MoE de 20B ou un dense de 14B avec contexte confortable." },
+    { "label": "GPU · 24 Go", "kind": "Station haut de gamme", "tier": "27–32 B", "primary": "Qwen3 32B", "alternatives": ["Gemma 3 27B", "Devstral 24B"], "avoid": "Les 70B entièrement GPU, sauf quantification très agressive ou multi-GPU.", "summary": "Les modèles de code 24–32B deviennent réellement pratiques sans offload." }
+  ],
+  "changes": [
+    { "title": "Guide local", "detail": "Ajout d’un tableau de décision du Raspberry Pi 5 aux GPU 24 Go, avec quantification, mémoire, contexte et modèles à éviter." },
+    { "title": "Sélection stable", "detail": "Les 20 écosystèmes restent inchangés; aucun changement fournisseur significatif depuis le contrôle du 6 août." },
+    { "title": "Agents cloud", "detail": "AWS Bedrock Agents Classic est fermé aux nouveaux clients; AgentCore devient la voie recommandée." },
+    { "title": "Code", "detail": "GitHub Models a été retiré; Copilot reste l’offre code et accueille plusieurs familles de modèles." },
+    { "title": "Sécurité", "detail": "Hugging Face a documenté une intrusion agentique; rotation des jetons et revue d’activité sont recommandées." },
+    { "title": "Belgique", "detail": "Prix souvent publiés en USD hors TVA; le checkout et la facture restent la source décisive pour la TVA belge." }
+  ],
+  "documents": [
+    { "id": "synthesis", "kind": "Décision", "title": "Synthèse", "url": "https://github.com/BourguignonSimon/DailyRun/blob/main/ObservationLLM/synthese.md" },
+    { "id": "comparison", "kind": "Comparaison", "title": "Comparatif", "url": "https://github.com/BourguignonSimon/DailyRun/blob/main/ObservationLLM/comparatif.md" },
+    { "id": "analysis", "kind": "Méthode", "title": "Analyse détaillée", "url": "https://github.com/BourguignonSimon/DailyRun/blob/main/ObservationLLM/analyse-detaillee.md" },
+    { "id": "local", "kind": "Matériel", "title": "Modèles locaux", "url": "https://github.com/BourguignonSimon/DailyRun/blob/main/ObservationLLM/modeles-locaux-par-hardware.md" },
+    { "id": "practices", "kind": "Production", "title": "Bonnes pratiques", "url": "https://github.com/BourguignonSimon/DailyRun/blob/main/ObservationLLM/bonnes-pratiques-developpement.md" },
+    { "id": "sources", "kind": "Traçabilité", "title": "Sources", "url": "https://github.com/BourguignonSimon/DailyRun/blob/main/ObservationLLM/sources.md" }
+  ]
+}
