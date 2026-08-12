@@ -37,6 +37,7 @@ jobs:
           python -m json.tool ObservationLLM/dashboard/data/latest.json >/dev/null
           python -m json.tool ObservationLLM/dashboard/data/run-status.json >/dev/null
           python -m json.tool ObservationLLM/dashboard/data/source-registry.json >/dev/null
+          python -m json.tool ObservationLLM/dashboard/data/announcements.json >/dev/null
 
       - name: Vérifier le JavaScript
         run: node --check ObservationLLM/dashboard/app.js

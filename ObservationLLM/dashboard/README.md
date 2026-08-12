@@ -7,6 +7,7 @@ Ce dossier contient le tableau de bord statique publié par GitHub Pages.
 - `data/latest.json` représente uniquement le dernier run terminé et validé.
 - `data/run-status.json` décrit l’état du run courant ou du dernier run.
 - `data/source-registry.json` contient les sources de référence, leur portée et leur indice de confiance.
+- `data/announcements.json` contient les annonces principales, leurs signaux de détection, leurs preuves et une note de confiance expliquée.
 - Les deux fichiers utilisent UTF-8 et doivent rester des JSON valides.
 - `latest.json` n’est remplacé qu’après la validation de tous les livrables Markdown.
 

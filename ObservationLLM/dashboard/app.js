@@ -1,12 +1,14 @@
 const state = {
   data: null,
   sources: [],
+  announcements: [],
   filter: "Tous",
   query: "",
   hostingFilter: "Tous",
   hostingQuery: "",
-  sourceFilter: "85+",
+  sourceFilter: "Toutes",
   sourceQuery: "",
+  announcementFilter: "Toutes",
   selectedHardware: 0
 };
 
@@ -26,7 +28,7 @@ function initials(name) {
   return name.split(/[\s/.-]+/).map((part) => part[0]).filter(Boolean).slice(0, 2).join("").toUpperCase();
 }
 
-function renderHeader(data, status, sources) {
+function renderHeader(data, status, sources, announcements) {
   byId("edition-date").textContent = formatDate(data.run.checkedAt);
   const entities = data.entities || data.actors || [];
   const verified = entities.filter((entity) => entity.status !== "non reverifié" && entity.status !== "source inaccessible").length;
@@ -34,6 +36,7 @@ function renderHeader(data, status, sources) {
   byId("metric-verified").textContent = entities.length ? `${Math.round((verified / entities.length) * 100)} %` : "—";
   byId("metric-regions").textContent = (data.localizations || []).length;
   byId("metric-sources").textContent = sources.filter((source) => source.confidence >= 85).length;
+  byId("metric-announcements").textContent = announcements.length;
   byId("metric-hardware").textContent = data.hardware.length;
   byId("headline-change").textContent = data.headline.title;
   byId("headline-detail").textContent = data.headline.detail;
@@ -87,6 +90,29 @@ function renderActors(data) {
   }));
 }
 
+function renderAnnouncements(announcements) {
+  const categories = ["Toutes", ...new Set(announcements.map((item) => item.category))];
+  byId("announcement-filters").replaceChildren(...categories.map((category) => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = `filter-button${state.announcementFilter === category ? " active" : ""}`;
+    button.textContent = category;
+    button.setAttribute("aria-pressed", state.announcementFilter === category);
+    button.addEventListener("click", () => { state.announcementFilter = category; renderAnnouncements(announcements); });
+    return button;
+  }));
+  const filtered = announcements.filter((item) => state.announcementFilter === "Toutes" || item.category === state.announcementFilter);
+  byId("announcement-empty").hidden = filtered.length > 0;
+  byId("announcement-grid").replaceChildren(...filtered.map((item) => {
+    const card = document.createElement("article");
+    card.className = "announcement-card";
+    const evidence = item.evidence.map((source) => `<a href="${source.url}" target="_blank" rel="noreferrer">${source.label} ↗</a>`).join("");
+    const signals = item.signals.map((source) => `<a href="${source.url}" target="_blank" rel="noreferrer">${source.label}</a>`).join(" · ");
+    card.innerHTML = `<div class="announcement-meta"><span class="tag">${item.category}</span><time datetime="${item.publishedAt}">${formatDate(item.publishedAt)}</time></div><h3>${item.title}</h3><p>${item.summary}</p><div class="announcement-confidence"><div class="confidence-ring" style="--score:${item.confidence}"><strong>${item.confidence}</strong><span>/100</span></div><div><strong>Confiance ${item.confidenceLabel.toLocaleLowerCase("fr")}</strong><small>${item.confidenceReason}</small></div></div><div class="announcement-links">${evidence}</div><small class="signal-sources">Détection : ${signals}</small>${item.caveat ? `<p class="announcement-caveat"><strong>Réserve :</strong> ${item.caveat}</p>` : ""}`;
+    return card;
+  }));
+}
+
 function renderHosting(data) {
   const rows = data.localizations || [];
   const channels = ["Tous", ...new Set(rows.map((row) => row.channel))];
@@ -115,27 +141,29 @@ function renderHosting(data) {
 }
 
 function renderSources(sources) {
-  const levels = ["85+", "95+", "Toutes"];
+  const levels = ["Toutes", "95+", "85+", "Flux X"];
   byId("source-filters").replaceChildren(...levels.map((level) => {
     const button = document.createElement("button");
     button.type = "button";
     button.className = `filter-button${state.sourceFilter === level ? " active" : ""}`;
-    button.textContent = level === "Toutes" ? level : `Confiance ${level}`;
+    button.textContent = level === "Toutes" || level === "Flux X" ? level : `Confiance ${level}`;
     button.setAttribute("aria-pressed", state.sourceFilter === level);
     button.addEventListener("click", () => { state.sourceFilter = level; renderSources(sources); });
     return button;
   }));
   const minimum = state.sourceFilter === "95+" ? 95 : state.sourceFilter === "85+" ? 85 : 0;
+  const xOnly = state.sourceFilter === "Flux X";
   const query = state.sourceQuery.trim().toLocaleLowerCase("fr");
   const filtered = sources.filter((source) => {
     const text = `${source.name} ${source.actor} ${source.baseUrl} ${source.topics.join(" ")}`.toLocaleLowerCase("fr");
-    return source.confidence >= minimum && (!query || text.includes(query));
+    return source.confidence >= minimum && (!xOnly || source.kind === "Flux X officiel") && (!query || text.includes(query));
   });
   byId("source-empty").hidden = filtered.length > 0;
   byId("source-grid").replaceChildren(...filtered.map((source) => {
     const card = document.createElement("article");
     card.className = "source-card";
-    card.innerHTML = `<div class="confidence-ring" style="--score:${source.confidence}"><strong>${source.confidence}</strong><span>/100</span></div><div><span class="tag">${source.primary ? "Primaire" : "Secondaire"}</span><h3><a href="${source.baseUrl}" target="_blank" rel="noreferrer">${source.name} ↗</a></h3><p>${source.topics.join(" · ")}</p><small>${source.rationale} · Vérifié ${source.last_verified_at}</small></div>`;
+    const kind = source.kind || (source.primary ? "Primaire" : "Secondaire");
+    card.innerHTML = `<div class="confidence-ring" style="--score:${source.confidence}"><strong>${source.confidence}</strong><span>/100</span></div><div><span class="tag">${kind}</span><h3><a href="${source.baseUrl}" target="_blank" rel="noreferrer">${source.name} ↗</a></h3><p>${source.topics.join(" · ")}</p><small>${source.rationale} · ${source.role || "Source de preuve"} · Vérifié ${source.last_verified_at}</small></div>`;
     return card;
   }));
 }
@@ -171,7 +199,7 @@ function renderDocuments(data) {
 async function refreshStatus() {
   try {
     const status = await getJson("data/run-status.json");
-    if (state.data) renderHeader(state.data, status, state.sources);
+    if (state.data) renderHeader(state.data, status, state.sources, state.announcements);
   } catch (error) {
     console.warn(error.message);
   }
@@ -179,11 +207,13 @@ async function refreshStatus() {
 
 async function init() {
   try {
-    const [data, status, registry] = await Promise.all([getJson("data/latest.json"), getJson("data/run-status.json"), getJson("data/source-registry.json")]);
+    const [data, status, registry, announcementFeed] = await Promise.all([getJson("data/latest.json"), getJson("data/run-status.json"), getJson("data/source-registry.json"), getJson("data/announcements.json")]);
     state.data = data;
     state.sources = registry.sources || [];
-    renderHeader(data, status, state.sources);
+    state.announcements = announcementFeed.announcements || [];
+    renderHeader(data, status, state.sources, state.announcements);
     renderDecisions(data);
+    renderAnnouncements(state.announcements);
     renderFilters(data);
     renderActors(data);
     renderHosting(data);
