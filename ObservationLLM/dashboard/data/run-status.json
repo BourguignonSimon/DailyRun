@@ -1,8 +1,8 @@
 {
   "runId": "2026-08-12-opus-5-control",
   "status": "running",
-  "phase": "collecte",
+  "phase": "rédaction des livrables",
   "model": "Opus 5",
   "startedAt": "2026-08-12T06:30:00Z",
-  "message": "Contrôle mensuel en cours: vérification des 20 écosystèmes, prix, sécurité et disponibilité en Belgique."
+  "message": "Recherche terminée: changements majeurs détectés (Meta Muse, Nemotron 3.5 Lightning, Qwen3.8-Max, Shieldstral, spécification MCP 2026-07-28). Rédaction en cours."
 }
