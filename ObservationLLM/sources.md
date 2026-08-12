@@ -142,6 +142,12 @@ Dernière consultation: **12 août 2026**, heure de Bruxelles (contrôle mensuel
 | S136 | Hugging Face / CSA | Post-mortem CISO indépendant de l’incident (chaîne d’attaque, identité, cloisonnement) | Source indépendante (analyse) | <https://cloudsecurityalliance.org/artifacts/hugging-face-ciso-post-mortem> | 2026-07 | 2026-08-12 |
 | S137 | GitHub | Crédits IA Copilot (1 crédit = 0,01 USD), plans Pro/Pro+/Max/Business/Enterprise, crédits promotionnels Business/Enterprise jusqu’à fin août 2026 | Source indépendante (suivi tarifaire) | <https://pagecrawl.io/blog/ai-coding-agent-pricing-credit-change-monitoring> | 2026-08 | 2026-08-12 |
 | S138 | Marché des changes | EUR/USD ≈ 1,1542 au 11 août 2026 (cote de marché; référence BCE officielle non ouvrable, domaine bloqué) | Source indépendante (marché) | <https://tradingeconomics.com/euro-area/currency> | 2026-08-11 | 2026-08-12 |
+| S139 | TLDR | Point d’entrée de veille quotidienne ; URL du numéro construite avec `https://tldr.tech/ai/YYYY-MM-DD` | Newsletter secondaire | <https://tldr.tech/ai/> | Dynamique | 2026-08-12 |
+| S140 | TechCrunch | Rubrique consacrée à l’intelligence artificielle | Presse technologique secondaire | <https://techcrunch.com/category/artificial-intelligence/> | Dynamique | 2026-08-12 |
+| S141 | VentureBeat | Rubrique IA et IA d’entreprise | Presse technologique secondaire | <https://venturebeat.com/category/ai/> | Dynamique | 2026-08-12 |
+| S142 | TestingCatalog | Veille de produits, lancements, fuites et rumeurs IA ; corroboration obligatoire | Signal secondaire | <https://www.testingcatalog.com/> | Dynamique | 2026-08-12 |
+| S143 | AI Frontiers | Commentaires experts sur les impacts de l’IA ; opinions attribuées aux auteurs | Newsletter et analyse secondaire | <https://newsletter.ai-frontiers.org/> | Dynamique | 2026-08-12 |
+| S144 | NVIDIA | Portail officiel des projets, laboratoires et publications de recherche NVIDIA | Recherche officielle fournisseur | <https://research.nvidia.com/> | Dynamique | 2026-08-12 |
 
 ## Sources non retenues
 

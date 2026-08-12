@@ -43,6 +43,14 @@ Contrôle : **12 août 2026**. Ce référentiel rassemble les URL de base à pri
 | R29 | arXiv | [cs.CL recent](https://arxiv.org/list/cs.CL/recent) | Prépublications | NLP, LLM, évaluations, méthodes | 68/100 | Public |
 | R30 | MCP | [GitHub Releases](https://github.com/modelcontextprotocol/modelcontextprotocol/releases) | Releases officielles | Spécification, SDK, versions, migration | 97/100 | Public |
 | R31 | GitHub | [@ghchangelog](https://x.com/ghchangelog) | Flux X officiel | Copilot, agents, modèles, dépréciations | 86/100 | Public, indexation variable |
+| R32 | TLDR | [TLDR AI](https://tldr.tech/ai/) | Newsletter de veille | Actualités IA, recherche, outils, lancements | 76/100 | Public, numéro daté |
+| R33 | TechCrunch | [TechCrunch AI](https://techcrunch.com/category/artificial-intelligence/) | Presse technologique | Entreprises, produits, financement, régulation | 82/100 | Public, accès variable |
+| R34 | VentureBeat | [VentureBeat AI](https://venturebeat.com/category/ai/) | Presse technologique | IA d’entreprise, agents, modèles, infrastructure | 80/100 | Public, accès variable |
+| R35 | TestingCatalog | [TestingCatalog](https://www.testingcatalog.com/) | Veille produit et rumeurs | Tests, fonctionnalités en préparation, lancements, rumeurs | 66/100 | Public |
+| R36 | AI Frontiers | [AI Frontiers Newsletter](https://newsletter.ai-frontiers.org/) | Newsletter d’analyse | Impacts, sécurité, gouvernance, recherche | 74/100 | Public, redirection possible |
+| R37 | NVIDIA | [NVIDIA Research](https://research.nvidia.com/) | Recherche officielle fournisseur | Publications, modèles, agents, IA efficace, robotique | 96/100 | Public |
+
+Pour TLDR AI, le run construit l’URL du numéro avec le modèle `https://tldr.tech/ai/YYYY-MM-DD` et la date du jour. TechCrunch, VentureBeat, TLDR AI et AI Frontiers servent à découvrir ou contextualiser des sujets avant retour à la source originale. TestingCatalog est explicitement un signal précoce : toute fuite, fonctionnalité en préparation ou rumeur reste **à confirmer**. NVIDIA Research est primaire pour les travaux de NVIDIA, sans transformer un résultat fournisseur non reproduit en mesure indépendante.
 
 ## Sources X dignes de confiance pour la veille quotidienne
 
