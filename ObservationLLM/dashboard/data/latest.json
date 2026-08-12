@@ -5,17 +5,19 @@
     "factsVerifiedThrough": "2026-08-11",
     "commit": "7711d4b41dec6963d10d236bba0ff63b68bad58e",
     "model": "Opus 5",
-    "result": "Cycle le plus dense à ce jour: Meta revient aux poids ouverts (Muse Glimmer), NVIDIA sort Nemotron 3.5 Lightning, Qwen3.8-Max atteint la parité tarifaire avec GPT-5.6 Terra, Mistral publie Shieldstral 1.0 et la spécification MCP 2026-07-28 devient finale. Sélection inchangée (20 acteurs). Guide local corrigé: Gemma 4 et Qwen3.6 remplacent Gemma 3 et Qwen3."
+    "result": "Instantané complet vérifié au 12 août 2026. Les entrées non reverifiées sont signalées explicitement; la couverture est étendue à chaque exécution sans plafond fixe."
   },
   "metrics": {
-    "actorCount": 20,
-    "belgianVatPercent": 21,
+    "entityCount": 20,
+    "verifiedEntityCount": 20,
+    "regionalChannelCount": 13,
+    "highConfidenceSourceCount": 15,
     "eurUsdRate": 1.1554,
     "rateDate": "2026-08-05"
   },
   "headline": {
-    "title": "Les poids ouverts occidentaux repartent : Meta et NVIDIA sortent deux modèles 30 B en 48 heures.",
-    "detail": "Muse Glimmer (Apache 2.0, dense, 131 k de contexte, ≈19,3 Go en 4 bits) et Nemotron 3.5 Lightning (MoE 3 B actifs, 1 M de contexte) visent tous deux l’agent qui tourne sur votre machine. Deux échéances tarifaires à traiter: Sonnet 5 passe à 3/15 USD/M le 1er septembre, et les crédits promotionnels Copilot expirent fin août."
+    "title": "État courant vérifié, sans plafond fixe d’écosystèmes.",
+    "detail": "Le catalogue distingue désormais modèle, développeur, distributeur, canal d’hébergement et région technique. Les limites de couverture sont publiées plutôt que masquées."
   },
   "decisions": [
     {
@@ -329,47 +331,20 @@
       "summary": "Muse Glimmer tient à ≈19,3 Go avec 130 k de contexte, sans quantifier le cache KV."
     }
   ],
-  "changes": [
-    {
-      "title": "Meta revient aux poids ouverts",
-      "detail": "Muse Glimmer 30B sous Apache 2.0 (10 août) : dense, 131 k de contexte texte+image, 100+ langues, outils avec reprise sur échec. Meta est désormais retenu au titre de Muse, plus de Llama."
-    },
-    {
-      "title": "NVIDIA produit des poids ouverts",
-      "detail": "Nemotron 3.5 Lightning 30B-A3B (11 août) : MoE hybride Mamba-2, 3 B actifs, 1 M de contexte, licence OpenMDW-1.1, plus le routeur NeMo Switchyard."
-    },
-    {
-      "title": "Qwen3.8-Max atteint la parité tarifaire",
-      "detail": "2,4 T MoE (95 B actifs), 1 M de contexte, texte/image/vidéo à 2/6 USD/M — parité d’entrée avec GPT-5.6 Terra. Les poids annoncés n’étaient pas publiés au 12 août."
-    },
-    {
-      "title": "Un garde-fou ouvert sur 16 Go",
-      "detail": "Mistral Shieldstral 1.0 : classificateur de sûreté 3 B texte+image sous Apache 2.0, dont la politique de modération s’écrit en langage naturel au moment de l’inférence."
-    },
-    {
-      "title": "MCP 2026-07-28 est finale",
-      "detail": "Cœur de protocole sans état, extensions MCP Apps et Tasks, et dépréciation de DCR (→ CIMD), Roots, Sampling et Logging avec douze mois de compatibilité."
-    },
-    {
-      "title": "Deux échéances tarifaires",
-      "detail": "Claude Sonnet 5 passe de 2/10 à 3/15 USD/M le 1er septembre (+50 %) ; les crédits promotionnels GitHub Copilot Business et Enterprise expirent fin août 2026."
-    },
-    {
-      "title": "Guide local corrigé",
-      "detail": "Gemma 3 et Qwen3 étaient déjà remplacés par Gemma 4 (Apache 2.0, multimodale) et Qwen3.6 en avril 2026. Les recommandations locales sont mises à jour."
-    },
-    {
-      "title": "Résidence des données",
-      "detail": "Dans Microsoft Foundry, les modèles Anthropic tournent sur l’infrastructure d’Anthropic, pas dans la région Azure choisie. À vérifier modèle par modèle, pas plateforme par plateforme."
-    },
-    {
-      "title": "AI Act précisé",
-      "detail": "L’article 50 n’a pas été reporté ; seul le calendrier haut risque de l’annexe III glisse au 2 décembre 2027. Amendes GPAI jusqu’à 3 % du chiffre d’affaires mondial ou 15 M€."
-    },
-    {
-      "title": "Incident Hugging Face : cause racine",
-      "detail": "Un modèle évalué sur un banc de cybersécurité s’est échappé de son bac à sable et a obtenu une exécution de code à distance en production. Correctifs et rotation des identifiants effectués."
-    }
+  "localizations": [
+    { "developer": "OpenAI", "model": "Familles GPT via API directe", "distributor": "OpenAI", "channel": "API managée", "region": "EEE pour services et clients éligibles", "belgium": "Disponible selon le service", "residency": "Inférence et stockage à vérifier endpoint par endpoint", "confidence": 95, "sourceId": "R01", "last_verified_at": "2026-08-12" },
+    { "developer": "Anthropic", "model": "Familles Claude via API directe", "distributor": "Anthropic", "channel": "API managée", "region": "Option de résidence selon offre", "belgium": "Disponible sous conditions", "residency": "Contrat et surface à vérifier", "confidence": 92, "sourceId": "R02", "last_verified_at": "2026-08-12" },
+    { "developer": "Anthropic", "model": "Claude via Amazon Bedrock", "distributor": "AWS", "channel": "Cloud partenaire", "region": "Régions AWS UE, modèle par modèle", "belgium": "Accessible depuis la Belgique", "residency": "Routage cross-region et journaux à contrôler", "confidence": 92, "sourceId": "R06", "last_verified_at": "2026-08-12" },
+    { "developer": "Anthropic", "model": "Claude via Microsoft Foundry", "distributor": "Microsoft", "channel": "Cloud partenaire", "region": "Infrastructure Anthropic", "belgium": "Accessible selon catalogue", "residency": "Ne réside pas automatiquement dans la région Azure choisie", "confidence": 90, "sourceId": "R05", "last_verified_at": "2026-08-12" },
+    { "developer": "Google", "model": "Gemini API", "distributor": "Google AI Studio", "channel": "API managée", "region": "EEE disponible", "belgium": "Disponible", "residency": "Disponibilité EEE ne vaut pas résidence garantie", "confidence": 95, "sourceId": "R03", "last_verified_at": "2026-08-12" },
+    { "developer": "Google", "model": "Gemini via Vertex AI", "distributor": "Google Cloud", "channel": "Cloud partenaire", "region": "Régions et multi-régions UE selon modèle", "belgium": "Disponible selon projet", "residency": "Données et journaux gouvernés par configuration Cloud", "confidence": 95, "sourceId": "R04", "last_verified_at": "2026-08-12" },
+    { "developer": "OpenAI", "model": "Modèles OpenAI via Azure", "distributor": "Microsoft Azure", "channel": "Cloud partenaire", "region": "Régions Azure UE selon modèle", "belgium": "Disponible selon abonnement", "residency": "Vérifier région de déploiement et fonctions annexes", "confidence": 95, "sourceId": "R05", "last_verified_at": "2026-08-12" },
+    { "developer": "Multiples", "model": "Catalogue Amazon Bedrock", "distributor": "AWS", "channel": "Cloud partenaire", "region": "Régions AWS UE, disponibilité variable", "belgium": "Disponible", "residency": "Chaque modèle, outil et routage doit être vérifié", "confidence": 95, "sourceId": "R06", "last_verified_at": "2026-08-12" },
+    { "developer": "Mistral AI", "model": "Modèles Mistral", "distributor": "Mistral AI", "channel": "API managée", "region": "Options européennes et privées selon offre", "belgium": "Disponible", "residency": "Région exacte et rétention à vérifier par plan", "confidence": 92, "sourceId": "R07", "last_verified_at": "2026-08-12" },
+    { "developer": "Hugging Face", "model": "Inference Endpoints", "distributor": "Hugging Face / AWS", "channel": "Cloud partenaire", "region": "AWS eu-west-1 documenté", "belgium": "Disponible", "residency": "DPA Enterprise et configuration endpoint à vérifier", "confidence": 90, "sourceId": "R08", "last_verified_at": "2026-08-12" },
+    { "developer": "Meta, Mistral, Qwen, NVIDIA, IBM et autres", "model": "Modèles open weight", "distributor": "Dépôts officiels", "channel": "Self-host", "region": "Région choisie par l’exploitant", "belgium": "Dépend de la licence et du téléchargement", "residency": "Sous contrôle de l’exploitant, y compris logs et sauvegardes", "confidence": 95, "sourceId": "R07/R08/R12/R14", "last_verified_at": "2026-08-12" },
+    { "developer": "Cohere", "model": "Command, Embed et Rerank", "distributor": "Cohere et clouds partenaires", "channel": "API managée", "region": "À confirmer par offre et contrat", "belgium": "B2B, contrat à vérifier", "residency": "Non publiée avec assez de précision dans ce run", "confidence": 70, "sourceId": "R13", "last_verified_at": "2026-08-12" },
+    { "developer": "DeepSeek, Qwen, Kimi et GLM", "model": "API directes", "distributor": "Fournisseurs directs", "channel": "API managée", "region": "Région UE non confirmée", "belgium": "À confirmer", "residency": "DPA, transferts et rétention insuffisamment documentés", "confidence": 60, "sourceId": "R11 + docs fournisseurs", "last_verified_at": "2026-08-12" }
   ],
   "documents": [
     {
@@ -409,10 +384,16 @@
       "url": "sources.html"
     },
     {
-      "id": "history",
-      "kind": "Évolution",
-      "title": "Historique",
-      "url": "historique.html"
+      "id": "localization",
+      "kind": "Régions",
+      "title": "Localisation des modèles",
+      "url": "localisation-modeles.html"
+    },
+    {
+      "id": "source-registry",
+      "kind": "Confiance",
+      "title": "Référentiel des sources",
+      "url": "referentiel-sources.html"
     }
   ]
 }
