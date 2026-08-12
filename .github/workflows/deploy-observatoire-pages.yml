@@ -3,11 +3,13 @@ name: Déployer le dashboard de l’observatoire
 on:
   pull_request:
     paths:
+      - "ObservationLLM/*.md"
       - "ObservationLLM/dashboard/**"
       - ".github/workflows/deploy-observatoire-pages.yml"
   push:
     branches: [main]
     paths:
+      - "ObservationLLM/*.md"
       - "ObservationLLM/dashboard/**"
       - ".github/workflows/deploy-observatoire-pages.yml"
   workflow_dispatch:
@@ -34,6 +36,7 @@ jobs:
         run: |
           python -m json.tool ObservationLLM/dashboard/data/latest.json >/dev/null
           python -m json.tool ObservationLLM/dashboard/data/run-status.json >/dev/null
+          python -m json.tool ObservationLLM/dashboard/data/source-registry.json >/dev/null
 
       - name: Vérifier le JavaScript
         run: node --check ObservationLLM/dashboard/app.js
@@ -50,8 +53,9 @@ jobs:
           test -f ObservationLLM/dashboard-dist/analyse-detaillee.html
           test -f ObservationLLM/dashboard-dist/bonnes-pratiques-developpement.html
           test -f ObservationLLM/dashboard-dist/modeles-locaux-par-hardware.html
+          test -f ObservationLLM/dashboard-dist/localisation-modeles.html
+          test -f ObservationLLM/dashboard-dist/referentiel-sources.html
           test -f ObservationLLM/dashboard-dist/sources.html
-          test -f ObservationLLM/dashboard-dist/historique.html
 
   deploy:
     name: Publier sur GitHub Pages

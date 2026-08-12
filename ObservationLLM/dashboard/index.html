@@ -26,9 +26,10 @@
 
     <nav class="section-nav" aria-label="Sections du tableau de bord">
       <a href="#overview">Vue d’ensemble</a>
-      <a href="#actors">20 acteurs</a>
+      <a href="#actors">Catalogue</a>
+      <a href="#hosting">Localisation</a>
+      <a href="#sources">Sources</a>
       <a href="#local">LLM locaux</a>
-      <a href="#changes">Changements</a>
       <a href="#documents">Documents</a>
     </nav>
 
@@ -44,8 +45,8 @@
               <a class="button secondary" id="synthesis-link" href="#documents">Lire la synthèse</a>
             </div>
           </div>
-          <aside class="signal-card" aria-label="Signal principal du dernier run">
-            <span class="signal-label">Signal du jour</span>
+          <aside class="signal-card" aria-label="État du référentiel courant">
+            <span class="signal-label">État du référentiel</span>
             <strong id="headline-change">Chargement…</strong>
             <p id="headline-detail"></p>
           </aside>
@@ -53,9 +54,10 @@
       </section>
 
       <section class="metrics" aria-label="Chiffres clés">
-        <article><span>Écosystèmes suivis</span><strong id="metric-actors">20</strong><small>sélection stable</small></article>
-        <article><span>TVA belge</span><strong id="metric-vat">21 %</strong><small>selon facture</small></article>
-        <article><span>Taux de référence</span><strong id="metric-rate">—</strong><small id="metric-rate-date">conversion indicative</small></article>
+        <article><span>Entités vérifiées</span><strong id="metric-entities">—</strong><small>catalogue sans plafond fixe</small></article>
+        <article><span>Vérifiées ce run</span><strong id="metric-verified">—</strong><small>statut courant explicite</small></article>
+        <article><span>Canaux régionaux</span><strong id="metric-regions">—</strong><small>distribution et hébergement</small></article>
+        <article><span>Sources fortes</span><strong id="metric-sources">—</strong><small>confiance ≥ 85/100</small></article>
         <article><span>Profils locaux</span><strong id="metric-hardware">—</strong><small>du Pi 5 au GPU 24 Go</small></article>
       </section>
 
@@ -69,8 +71,8 @@
 
       <section class="actors-section" id="actors">
         <div class="section-heading">
-          <div><span class="eyebrow">ÉCOSYSTÈMES</span><h2>Les 20 acteurs suivis</h2></div>
-          <p>Filtrez par rôle pour éviter de comparer une application à une plateforme ou à un modèle ouvert.</p>
+          <div><span class="eyebrow">CATALOGUE COURANT</span><h2>Toutes les entités vérifiées</h2></div>
+          <p>La liste n’a pas de plafond fixe. Filtrez par rôle pour éviter de comparer une application à une plateforme ou à un modèle ouvert.</p>
         </div>
         <div class="toolbar">
           <label class="search-field">
@@ -83,6 +85,40 @@
         <p class="empty-state" id="actor-empty" hidden>Aucun acteur ne correspond à ce filtre.</p>
       </section>
 
+      <section class="hosting-section" id="hosting">
+        <div class="section-heading">
+          <div><span class="eyebrow">DISTRIBUTION & RÉGIONS</span><h2>Où le modèle s’exécute-t-il vraiment ?</h2></div>
+          <p>Le siège du fournisseur ne prouve pas la résidence des données. Chaque ligne sépare développeur, distributeur, canal et région technique.</p>
+        </div>
+        <div class="toolbar">
+          <label class="search-field">
+            <span class="sr-only">Rechercher une localisation ou un distributeur</span>
+            <input id="hosting-search" type="search" placeholder="Modèle, distributeur, région…" autocomplete="off">
+          </label>
+          <div class="filters" id="hosting-filters" aria-label="Filtrer les canaux d’hébergement"></div>
+        </div>
+        <div class="hosting-grid" id="hosting-grid" aria-live="polite"></div>
+        <p class="empty-state" id="hosting-empty" hidden>Aucun canal ne correspond à ce filtre.</p>
+        <a class="section-link" href="localisation-modeles.html">Consulter la vue complète de localisation →</a>
+      </section>
+
+      <section class="sources-section" id="sources">
+        <div class="section-heading">
+          <div><span class="eyebrow">RÉFÉRENTIEL COMMUN</span><h2>Sources de recherche et confiance</h2></div>
+          <p>Le score qualifie l’aptitude d’une source à prouver un type de fait. Une page marketing n’est jamais une preuve universelle.</p>
+        </div>
+        <div class="toolbar">
+          <label class="search-field">
+            <span class="sr-only">Rechercher une source</span>
+            <input id="source-search" type="search" placeholder="Domaine, acteur ou sujet…" autocomplete="off">
+          </label>
+          <div class="filters" id="source-filters" aria-label="Filtrer par niveau de confiance"></div>
+        </div>
+        <div class="source-grid" id="source-grid" aria-live="polite"></div>
+        <p class="empty-state" id="source-empty" hidden>Aucune source ne correspond à ce filtre.</p>
+        <a class="section-link" href="referentiel-sources.html">Consulter le référentiel complet →</a>
+      </section>
+
       <section class="local-section" id="local">
         <div class="section-heading light">
           <div><span class="eyebrow">HORS LIGNE</span><h2>Quel modèle tient vraiment chez vous ?</h2></div>
@@ -92,14 +128,6 @@
           <div class="hardware-picker" id="hardware-picker" role="listbox" aria-label="Configuration matérielle"></div>
           <article class="hardware-result" id="hardware-result" aria-live="polite"></article>
         </div>
-      </section>
-
-      <section class="changes-section" id="changes">
-        <div class="section-heading">
-          <div><span class="eyebrow">DERNIER RUN</span><h2>Ce qui mérite votre attention</h2></div>
-          <p>Capacités déclarées, changements de produit et points de vigilance sont conservés séparément.</p>
-        </div>
-        <div class="change-list" id="change-list"></div>
       </section>
 
       <section class="documents-section" id="documents">

@@ -12,8 +12,9 @@ Contrôle: **12 août 2026**. Cycle le plus dense depuis la création de l’obs
 - [Analyse détaillée](analyse-detaillee.md)
 - [Bonnes pratiques de développement](bonnes-pratiques-developpement.md)
 - [Modèles locaux par matériel](modeles-locaux-par-hardware.md)
+- [Localisation, distribution et hébergement des modèles](localisation-modeles.md)
+- [Sources de référence et indices de confiance](referentiel-sources.md)
 - [Registre des sources](sources.md)
-- [Historique](historique.md)
 
 Le dashboard résume le dernier run validé. Son contrat de données et son fonctionnement sont documentés dans [`dashboard/README.md`](dashboard/README.md).
 

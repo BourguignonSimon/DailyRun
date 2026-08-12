@@ -12,8 +12,9 @@ const documents = [
   { source: "analyse-detaillee.md", output: "analyse-detaillee.html", title: "Analyse détaillée", label: "Méthodologie" },
   { source: "bonnes-pratiques-developpement.md", output: "bonnes-pratiques-developpement.html", title: "Bonnes pratiques", label: "Production" },
   { source: "modeles-locaux-par-hardware.md", output: "modeles-locaux-par-hardware.html", title: "Modèles locaux", label: "Matériel" },
+  { source: "localisation-modeles.md", output: "localisation-modeles.html", title: "Localisation des modèles", label: "Régions" },
+  { source: "referentiel-sources.md", output: "referentiel-sources.html", title: "Sources de référence", label: "Confiance" },
   { source: "sources.md", output: "sources.html", title: "Registre des sources", label: "Traçabilité" },
-  { source: "historique.md", output: "historique.html", title: "Historique", label: "Évolution" }
 ];
 
 const escapeHtml = (value) => value
