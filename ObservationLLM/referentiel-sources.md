@@ -42,6 +42,20 @@ Contrôle : **12 août 2026**. Ce référentiel rassemble les URL de base à pri
 | R28 | Hugging Face | [Daily Papers](https://huggingface.co/papers) | Veille recherche | Articles, tendances, agents, modèles | 72/100 | Public |
 | R29 | arXiv | [cs.CL recent](https://arxiv.org/list/cs.CL/recent) | Prépublications | NLP, LLM, évaluations, méthodes | 68/100 | Public |
 | R30 | MCP | [GitHub Releases](https://github.com/modelcontextprotocol/modelcontextprotocol/releases) | Releases officielles | Spécification, SDK, versions, migration | 97/100 | Public |
+| R31 | GitHub | [@ghchangelog](https://x.com/ghchangelog) | Flux X officiel | Copilot, agents, modèles, dépréciations | 86/100 | Public, indexation variable |
+
+## Sources X dignes de confiance pour la veille quotidienne
+
+Une source X entre dans cette liste lorsqu’au moins une de ses annonces obtient **90/100 ou plus** après corroboration par une preuve primaire durable. Cette promotion augmente sa priorité de surveillance, pas la confiance automatique accordée à ses futurs posts.
+
+| Source | Annonce de référence | Confiance de l’annonce | Preuve de promotion | Usage quotidien |
+|---|---|---:|---|---|
+| [@AIatMeta](https://x.com/AIatMeta) | Muse Glimmer | 96/100 | Publication Meta Research | Surveiller en priorité, puis corroborer chaque fait |
+| [@MistralAI](https://x.com/MistralAI) | Shieldstral 1.0 | 94/100 | Carte modèle Mistral | Surveiller en priorité, puis corroborer chaque fait |
+| [@nvidia](https://x.com/nvidia) | Nemotron 3.5 Lightning | 94/100 | Carte modèle NVIDIA | Surveiller en priorité, puis corroborer chaque fait |
+| [@ghchangelog](https://x.com/ghchangelog) | Copilot mémoire et Ollama | 97/100 | Changelog GitHub daté | Surveiller en priorité, puis corroborer chaque fait |
+
+La promotion doit être retirée si le compte change d’identité, publie des informations matériellement corrigées à répétition ou ne peut plus être relié à une source primaire contrôlée.
 
 ## Utilisation des flux X
 

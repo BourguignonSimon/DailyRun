@@ -141,7 +141,7 @@ function renderHosting(data) {
 }
 
 function renderSources(sources) {
-  const levels = ["Toutes", "95+", "85+", "Flux X"];
+  const levels = ["Toutes", "Dignes de confiance", "95+", "85+", "Flux X"];
   byId("source-filters").replaceChildren(...levels.map((level) => {
     const button = document.createElement("button");
     button.type = "button";
@@ -153,17 +153,19 @@ function renderSources(sources) {
   }));
   const minimum = state.sourceFilter === "95+" ? 95 : state.sourceFilter === "85+" ? 85 : 0;
   const xOnly = state.sourceFilter === "Flux X";
+  const trustedOnly = state.sourceFilter === "Dignes de confiance";
   const query = state.sourceQuery.trim().toLocaleLowerCase("fr");
   const filtered = sources.filter((source) => {
     const text = `${source.name} ${source.actor} ${source.baseUrl} ${source.topics.join(" ")}`.toLocaleLowerCase("fr");
-    return source.confidence >= minimum && (!xOnly || source.kind === "Flux X officiel") && (!query || text.includes(query));
+    return source.confidence >= minimum && (!xOnly || source.kind === "Flux X officiel") && (!trustedOnly || source.trustedDaily) && (!query || text.includes(query));
   });
   byId("source-empty").hidden = filtered.length > 0;
   byId("source-grid").replaceChildren(...filtered.map((source) => {
     const card = document.createElement("article");
     card.className = "source-card";
     const kind = source.kind || (source.primary ? "Primaire" : "Secondaire");
-    card.innerHTML = `<div class="confidence-ring" style="--score:${source.confidence}"><strong>${source.confidence}</strong><span>/100</span></div><div><span class="tag">${kind}</span><h3><a href="${source.baseUrl}" target="_blank" rel="noreferrer">${source.name} ↗</a></h3><p>${source.topics.join(" · ")}</p><small>${source.rationale} · ${source.role || "Source de preuve"} · Vérifié ${source.last_verified_at}</small></div>`;
+    const trusted = source.trustedDaily ? `<span class="trust-badge">Source quotidienne de confiance</span>` : "";
+    card.innerHTML = `<div class="confidence-ring" style="--score:${source.confidence}"><strong>${source.confidence}</strong><span>/100</span></div><div><div class="source-tags"><span class="tag">${kind}</span>${trusted}</div><h3><a href="${source.baseUrl}" target="_blank" rel="noreferrer">${source.name} ↗</a></h3><p>${source.topics.join(" · ")}</p><small>${source.rationale} · ${source.role || "Source de preuve"} · Vérifié ${source.last_verified_at}</small>${source.trustBasis ? `<small class="trust-basis">Promotion : ${source.trustBasis}</small>` : ""}</div>`;
     return card;
   }));
 }

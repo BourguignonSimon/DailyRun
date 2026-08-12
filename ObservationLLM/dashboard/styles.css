@@ -146,6 +146,9 @@ h1 em { color: #5d6a5c; font-weight: 400; }
 .source-card h3 a { text-decoration: none; }
 .source-card p { margin: 0 0 8px; color: var(--muted); font-size: .75rem; }
 .source-card small { color: var(--muted); font-size: .64rem; }
+.source-tags { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
+.trust-badge { padding: 5px 8px; border-radius: 999px; background: #dcefc8; color: #315b28; font-size: .62rem; font-weight: 900; text-transform: uppercase; letter-spacing: .035em; }
+.source-card .trust-basis { display: block; margin-top: 7px; color: #315b28; }
 
 .local-section { width: calc(100% + 40px); margin: 100px 0 20px -20px; padding: 70px 50px; border-radius: 28px; background: var(--dark-panel); color: #f8f7ef; }
 .section-heading.light .eyebrow, .local-section .section-heading > p { color: #aab6ad; }

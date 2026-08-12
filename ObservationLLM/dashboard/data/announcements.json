@@ -13,7 +13,7 @@
       "confidence": 94,
       "confidenceLabel": "Forte",
       "confidenceReason": "Carte modèle officielle disponible ; performances fournisseur encore à répliquer indépendamment.",
-      "signals": [{ "label": "@nvidia sur X", "url": "https://x.com/nvidia" }],
+      "signals": [{ "sourceId": "R22", "label": "@nvidia sur X", "url": "https://x.com/nvidia" }],
       "evidence": [{ "label": "Carte modèle NVIDIA", "url": "https://build.nvidia.com/nvidia/nemotron-3.5-lightning-30b-a3b/modelcard" }],
       "caveat": "Le gain de débit annoncé n’est pas traité comme une mesure indépendante."
     },
@@ -27,7 +27,7 @@
       "confidence": 96,
       "confidenceLabel": "Forte",
       "confidenceReason": "Annonce de recherche officielle et caractéristiques recoupées avec les artefacts techniques publiés.",
-      "signals": [{ "label": "@AIatMeta sur X", "url": "https://x.com/AIatMeta" }],
+      "signals": [{ "sourceId": "R20", "label": "@AIatMeta sur X", "url": "https://x.com/AIatMeta" }],
       "evidence": [{ "label": "Annonce Meta Research", "url": "https://research.meta.ai/blog/introducing-muse-glimmer-open-agentic-model" }],
       "caveat": "Les accélérations annoncées par le fournisseur restent à mesurer sur le matériel cible."
     },
@@ -41,7 +41,7 @@
       "confidence": 94,
       "confidenceLabel": "Forte",
       "confidenceReason": "Carte modèle officielle disponible ; scores de sûreté déclarés par le fournisseur.",
-      "signals": [{ "label": "@MistralAI sur X", "url": "https://x.com/MistralAI" }],
+      "signals": [{ "sourceId": "R21", "label": "@MistralAI sur X", "url": "https://x.com/MistralAI" }],
       "evidence": [{ "label": "Carte modèle Mistral", "url": "https://docs.mistral.ai/models/model-cards/shieldstral-1-0" }],
       "caveat": "Les performances doivent être évaluées sur des données françaises et néerlandaises réelles."
     },
@@ -55,7 +55,7 @@
       "confidence": 78,
       "confidenceLabel": "Moyenne",
       "confidenceReason": "Signal officiel et fiche de distribution disponibles, mais preuve primaire durable incomplète pour les poids et la licence.",
-      "signals": [{ "label": "@Alibaba_Qwen sur X", "url": "https://x.com/Alibaba_Qwen" }],
+      "signals": [{ "sourceId": "R23", "label": "@Alibaba_Qwen sur X", "url": "https://x.com/Alibaba_Qwen" }],
       "evidence": [{ "label": "Fiche de distribution", "url": "https://openrouter.ai/qwen/qwen3.8-max" }],
       "caveat": "Les poids annoncés et leur licence restent à confirmer tant que le dépôt officiel n’existe pas."
     },
@@ -69,7 +69,7 @@
       "confidence": 97,
       "confidenceLabel": "Très forte",
       "confidenceReason": "Changelog officiel daté, détails fonctionnels et documentation liée disponibles.",
-      "signals": [{ "label": "RSS GitHub Changelog", "url": "https://github.blog/changelog/feed/" }, { "label": "@ghchangelog sur X", "url": "https://x.com/ghchangelog" }],
+      "signals": [{ "sourceId": "R26", "label": "RSS GitHub Changelog", "url": "https://github.blog/changelog/feed/" }, { "sourceId": "R31", "label": "@ghchangelog sur X", "url": "https://x.com/ghchangelog" }],
       "evidence": [{ "label": "Annonce GitHub", "url": "https://github.blog/changelog/2026-08-11-copilot-memory-and-ollama-in-github-copilot-for-jetbrains/" }],
       "caveat": "La disponibilité dépend de la version du plugin JetBrains et des politiques administrateur."
     },
@@ -83,7 +83,7 @@
       "confidence": 97,
       "confidenceLabel": "Très forte",
       "confidenceReason": "Publication officielle de la spécification et guide de migration disponibles.",
-      "signals": [{ "label": "Blog MCP", "url": "https://blog.modelcontextprotocol.io/" }],
+      "signals": [{ "sourceId": "R30", "label": "Blog MCP", "url": "https://blog.modelcontextprotocol.io/" }],
       "evidence": [{ "label": "Publication officielle MCP", "url": "https://blog.modelcontextprotocol.io/posts/2026-07-28/" }],
       "caveat": "La compatibilité et le calendrier doivent être vérifiés dans chaque SDK utilisé."
     }
