@@ -1,10 +1,10 @@
 {
-  "runId": "2026-08-11-opus-48-control",
+  "runId": "2026-08-12-opus-5-control",
   "status": "completed",
   "phase": "publication",
-  "model": "Opus 4.8",
-  "startedAt": "2026-08-11T00:00:00Z",
-  "completedAt": "2026-08-11T12:00:00Z",
-  "commit": "8e1119faafc2790b4ed67b3bfe48ea1e7017598e",
-  "message": "Contrôle complémentaire publié: baisse GPT-5.6 Terra/Luna confirmée, arrêt Gemini 2.5 au 16/10/2026"
+  "model": "Opus 5",
+  "startedAt": "2026-08-12T06:30:00Z",
+  "completedAt": "2026-08-12T09:15:00Z",
+  "commit": "3ad57faae24f631505fb09a5f288adacfb4bda54",
+  "message": "Contrôle mensuel publié: Meta Muse Glimmer et NVIDIA Nemotron 3.5 Lightning relancent les poids ouverts, Qwen3.8-Max atteint la parité tarifaire, spécification MCP 2026-07-28 finale. Guide local corrigé (Gemma 4, Qwen3.6). Sélection inchangée: 20 acteurs."
 }

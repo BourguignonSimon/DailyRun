@@ -1,6 +1,14 @@
 # Bonnes pratiques de développement
 
-État vérifié le **6 août 2026**. Les mentions distinguent **[Officiel]** recommandation publiée par un fournisseur, **[Consensus]** pratique convergente entre plusieurs fournisseurs et **[Déduction]** conclusion analytique de cet observatoire.
+État vérifié le **12 août 2026**. Les mentions distinguent **[Officiel]** recommandation publiée par un fournisseur, **[Consensus]** pratique convergente entre plusieurs fournisseurs et **[Déduction]** conclusion analytique de cet observatoire.
+
+> **Changement structurant du mois: la spécification MCP 2026-07-28 est finale** [S124–S125]. MCP étant devenu le connecteur commun entre agents et systèmes internes, la révision touche toutes les intégrations existantes.
+>
+> - **Le cœur du protocole devient sans état.** Les sessions au niveau protocole et l’en-tête `Mcp-Session-Id` disparaissent: n’importe quelle instance de serveur derrière un répartiteur HTTP ordinaire peut répondre à n’importe quelle requête. C’est une bonne nouvelle d’exploitation — mise à l’échelle horizontale et déploiements sans affinité de session — mais **tout état que vous mainteniez implicitement dans la session doit être rendu explicite**.
+> - **Ajouts:** requêtes multi-allers-retours, routage par en-têtes, listes de résultats cacheables, durcissement de l’autorisation, cadre formel d’extensions (MCP Apps pour les interfaces rendues côté serveur, Tasks pour les traitements longs).
+> - **Dépréciations à planifier:** l’enregistrement dynamique de clients (**DCR**) cède la place à **CIMD**; **Roots**, **Sampling** et **Logging** sont dépréciés. Tous continuent de fonctionner au moins douze mois. **[Déduction]** Ne démarrez aucune nouvelle intégration sur ces mécanismes, et inventoriez dès maintenant celles qui en dépendent — douze mois passent vite sur une dette d’intégration transverse.
+
+> **Garde-fou ouvert désormais accessible.** Mistral **Shieldstral 1.0** (3 B, Apache 2.0) classe texte et image contre une politique écrite **en langage naturel au moment de l’inférence**, sur un seul GPU 16 Go [S122–S123]. **[Déduction]** Cela change l’économie du filtrage pour les petits déploiements et les cas souverains: un garde-fou ne suppose plus un service tiers ni un gros modèle. Les scores annoncés (84,9 % F1 texte, 83,8 % multimodal) sont **des mesures fournisseur**; validez-les sur vos propres exemples FR et NL avant de vous y fier.
 
 ## Architecture de référence
 
@@ -74,11 +82,11 @@ Tracer request ID, version modèle, version prompt, outils, temps, jetons/cache,
 
 ### 1. OpenAI
 
-**[Officiel, S05/S61–S62]** Pour GPT-5.6, conserver l’effort actuel comme baseline puis tester un niveau inférieur; utiliser Responses, outils structurés, cache explicite et raisonnement persisté. Encadrer autonomie et approbations dans une politique concise. **[Déduction]** Réserver Sol aux tâches où le gain sur Terra/Luna est mesuré; budgéter cache écrit, outils et multi-agent séparément.
+**[Officiel, S05/S61–S62/S124]** Pour GPT-5.6, conserver l’effort actuel comme baseline puis tester un niveau inférieur; utiliser Responses, outils structurés, cache explicite et raisonnement persisté. Encadrer autonomie et approbations dans une politique concise. **Grille long contexte documentée:** au-delà du seuil standard, Sol passe de 5/30 à **10/45**, Terra de 2/12 à **4/18**, Luna de 0,20/1,20 à **0,40/1,80** USD/M; les écritures de cache coûtent **1,25×** le tarif d’entrée non caché (6,25 / 2,50 / 0,25). **[Déduction]** Un agent qui laisse enfler son contexte peut donc **doubler son coût unitaire sans changer de modèle**: instrumentez la taille de contexte et alertez sur le franchissement du seuil, ne vous contentez pas de surveiller le nombre d’appels. Réserver Sol aux tâches où le gain sur Terra/Luna est mesuré; budgéter cache écrit, outils et multi-agent séparément.
 
 ### 2. Anthropic
 
-**[Officiel, S63–S64/S85]** Exploiter prompt caching, batch -50 %, modèles datés et effort approprié. Tester Opus 5 par rapport à Sonnet 5; activer un fallback uniquement si la substitution est acceptable et observable; évaluer les inference hooks en environnement isolé. **[Déduction]** Réserver Fable 5 aux tâches où son plafond compense prix et faux positifs potentiels des garde-fous.
+**[Officiel, S63–S64/S85/S125]** Exploiter prompt caching, batch -50 %, modèles datés et effort approprié. Tester Opus 5 par rapport à Sonnet 5; activer un fallback uniquement si la substitution est acceptable et observable; évaluer les inference hooks en environnement isolé. **Échéance:** le prix de lancement de **Sonnet 5 (2/10 USD/M) prend fin le 31 août 2026**; le tarif standard **3/15** s’applique au 1er septembre. **[Déduction]** Si Sonnet 5 porte du volume en production, faites l’arbitrage maintenant — accepter +50 %, redescendre vers Haiku 4.5 (1/5) pour les tâches simples, ou comparer à GPT-5.6 Terra (2/12) sur votre jeu d’évaluation. Réserver Fable 5 aux tâches où son plafond compense prix et faux positifs potentiels des garde-fous.
 
 ### 3. Google
 
@@ -86,19 +94,19 @@ Tracer request ID, version modèle, version prompt, outils, temps, jetons/cache,
 
 ### 4. Microsoft
 
-**[Officiel, S12–S14]** Utiliser Entra, politiques, budgets et capacité Copilot Studio/Azure adaptée. **[Déduction]** Modéliser la facture complète licence + crédits agent + modèle + recherche/connecteurs; éviter le double comptage des offres.
+**[Officiel, S12–S14/S131]** Utiliser Entra, politiques, budgets et capacité Copilot Studio/Azure adaptée. **Point de résidence à vérifier:** dans Microsoft Foundry, **les modèles Anthropic s’exécutent sur l’infrastructure d’Anthropic, pas dans la région Azure sélectionnée** — contrairement à AWS Bedrock et Google Vertex AI où ils tournent dans l’infrastructure du cloud en région UE. Une offre « Foundry Europe » est annoncée pour 2026. **[Déduction]** N’écrivez jamais « données en région UE » dans une analyse d’impact sur la seule foi du sélecteur de région de la plateforme: la garantie se vérifie **modèle par modèle**. Modéliser la facture complète licence + crédits agent + modèle + recherche/connecteurs; éviter le double comptage des offres.
 
 ### 5. AWS
 
-**[Officiel, S15–S17/S88–S89]** Choisir Standard/Flex/Priority/Reserved, batch lorsque supporté, IAM minimal, Guardrails, Knowledge Bases et AgentCore. Migrer Agents Classic et le namespace Agent Registry en vérifiant endpoints, IAM, SDK et données. **[Déduction]** Fixer une région et bloquer le cross-region non approuvé; tracer chaque coût aval d’un agent.
+**[Officiel, S15–S17/S88–S89/S130]** Choisir Standard/Flex/Priority/Reserved, batch lorsque supporté, IAM minimal, Guardrails, Knowledge Bases et AgentCore. Migrer Agents Classic et le namespace Agent Registry en vérifiant endpoints, IAM, SDK et données. **Nouveautés d’août:** **Runtime Instances** dédiées sur AgentCore (environnement d’exécution contrôlé, performance et coût plus prévisibles), **recherche web native sur Bedrock**, et **Dogwood**, langage de gouvernance d’agents open-sourcé s’appuyant sur des politiques Cedar avec conditions temporelles — les décisions peuvent dépendre de **l’historique des actions de l’agent dans la session**. **[Déduction]** C’est le premier mécanisme de politique répandu qui exprime « cet agent a déjà fait X, donc il ne peut plus faire Y »: précisément le garde-fou qui manquait aux boucles longues. À évaluer si vous exploitez des agents à durée de vie étendue. Fixer une région et bloquer le cross-region non approuvé; tracer chaque coût aval d’un agent.
 
 ### 6. Meta
 
-**[Officiel, S18]** Vérifier licence et carte du modèle avant téléchargement/déploiement. **[Déduction]** Pour Llama auto-hébergé, ajouter serveur d’inférence, isolation, modération, évaluation et procédure de mise à jour; « open weight » ne signifie pas open source complet.
+**[Officiel, S18/S117–S119]** Vérifier licence et carte du modèle avant téléchargement/déploiement. **Muse Glimmer 30B** est publié sous **Apache 2.0** et entraîné pour l’usage d’outils multi-étapes, les appels de fonctions et **la reprise après échec d’une API appelée** — un comportement à tester explicitement dans vos évaluations, car il change la façon dont l’agent réagit à vos pannes. Contexte 131 072 jetons texte+image entrelacés, plus de 100 langues. **[Déduction]** Llama est en fin de cycle: pour tout nouveau développement Meta, partir de Muse. Une version ouverte de Muse Spark 1.2 est annoncée sans date — ne planifiez pas dessus. Pour un modèle auto-hébergé, ajouter serveur d’inférence, isolation, modération, évaluation et procédure de mise à jour; « open weight » ne signifie pas open source complet, même sous Apache 2.0.
 
 ### 7. Mistral
 
-**[Officiel, S19–S21]** Choisir Large généraliste, Medium 3.5 pour agents/code, Small pour coût; batch -50 %, agents/RAG/OCR disponibles. **[Déduction]** Profiter de la proximité UE mais valider contrat et licence de chaque poids/version.
+**[Officiel, S19–S21/S122–S123]** Choisir Large généraliste, Medium 3.5 pour agents/code, Small pour coût; batch -50 %, agents/RAG/OCR disponibles. **Nouveau: Shieldstral 1.0** (3 B, Apache 2.0) pour le filtrage entrée/sortie, avec une politique de modération rédigée en langage naturel à l’inférence plutôt qu’une taxonomie figée — un seul passage avant renvoie un score calibré. **[Déduction]** Placez-le **devant et derrière** le modèle génératif, et écrivez la politique pour votre cas d’usage précis plutôt que de reprendre un exemple générique. Profiter de la proximité UE mais valider contrat et licence de chaque poids/version.
 
 ### 8. xAI
 
@@ -106,15 +114,15 @@ Tracer request ID, version modèle, version prompt, outils, temps, jetons/cache,
 
 ### 9. DeepSeek
 
-**[Officiel, S66–S67]** Migrer explicitement vers `deepseek-v4-pro` ou `deepseek-v4-flash`; les anciens alias sont retirés. Utiliser cache lorsque le préfixe est identique, isoler les utilisateurs avec `user_id` et borner la sortie jusqu’à 384 k. **[Déduction]** Héberger les poids via fournisseur UE pour données sensibles.
+**[Officiel, S66–S67/S128]** Migrer explicitement vers `deepseek-v4-pro` ou `deepseek-v4-flash`; les anciens alias sont retirés. **V4-Flash est officiel depuis le 31 juillet** (build 0731, 284 B, 0,14 USD/M en entrée) avec support natif de la **Responses API** et adaptation à Codex; seul le post-entraînement a changé, structure et taille sont identiques à la préversion. **[Déduction]** Fait notable pour vos arbitrages: ce modèle « budget » dépasse le V4-Pro-Preview du même éditeur sur neuf bancs agentiques — ne présumez pas qu’un palier supérieur est meilleur sur *votre* tâche, mesurez. La GA de V4 Pro glisse: ne planifiez pas dessus. Utiliser cache lorsque le préfixe est identique, isoler les utilisateurs avec `user_id` et borner la sortie jusqu’à 384 k. Héberger les poids via fournisseur UE pour données sensibles.
 
 ### 10. Alibaba/Qwen
 
-**[Officiel, S27–S28/S69]** Respecter l’allowlist exacte du Coding Plan et utiliser la clé/base URL dédiée; sinon PAYG peut être facturé. Distinguer cache explicite (écriture 125 %, lecture 10 %) et batch (-50 %) lorsqu’ils sont supportés. **[Déduction]** Épingler région, devise et snapshot; tester FR/NL et disponibilité.
+**[Officiel, S27–S28/S69/S115–S116]** Respecter l’allowlist exacte du Coding Plan et utiliser la clé/base URL dédiée; sinon PAYG peut être facturé. Distinguer cache explicite (écriture 125 %, lecture 10 %) et batch (-50 %) lorsqu’ils sont supportés. **Nouveau: Qwen3.8-Max** (2,4 T MoE, 95 B actifs, 1 M de contexte, texte/image/vidéo) à **2/6 USD/M** avec cache implicite à 0,25 USD/M. **[Déduction]** Les poids ouverts annoncés (Max et Qwen3.8-27B, semaine du 10 août) **n’étaient pas publiés au 12 août et aucune licence n’a été nommée**: ne bâtissez aucune architecture d’auto-hébergement sur cette promesse tant que le dépôt et la licence ne sont pas là. Épingler région, devise et snapshot; tester FR/NL et disponibilité.
 
 ### 11. NVIDIA
 
-**[Officiel, S29–S31]** NeMo couvre personnalisation, évaluation, observabilité et sécurité des agents; NIM industrialise l’inférence. **[Déduction]** Scanner images et poids, pinner digests, mesurer GPU-utilisation/jeton et définir une stratégie de patch.
+**[Officiel, S29–S31/S120–S121]** NeMo couvre personnalisation, évaluation, observabilité et sécurité des agents; NIM industrialise l’inférence. **Nouveau: Nemotron 3.5 Lightning 30B-A3B** (MoE hybride Mamba-2, 3 B actifs, 1 M de contexte, licence **OpenMDW-1.1**, checkpoints NVFP4 et BF16), visant les agents « toujours actifs » à haut volume; **NeMo Switchyard** route chaque étape d’un workflow vers le modèle choisi. **[Déduction]** Le gain annoncé (jusqu’à ×4 en débit de sortie) est une **affirmation fournisseur non répliquée**: mesurez-la sur votre charge avant d’en faire une hypothèse de capacité. Faites valider OpenMDW-1.1 par votre juriste si l’enjeu est contractuel — c’est une licence récente. Scanner images et poids, pinner digests, mesurer GPU-utilisation/jeton et définir une stratégie de patch.
 
 ### 12. Cohere
 
@@ -142,7 +150,7 @@ Tracer request ID, version modèle, version prompt, outils, temps, jetons/cache,
 
 ### 18. Hugging Face
 
-**[Officiel, S45–S47/S76–S77]** Le routage Providers est annoncé sans majoration; Endpoints facture le calcul; eu-west-1, PrivateLink, DPA Enterprise et logs 30 jours sont documentés. Après l’incident, faire tourner les jetons, revoir l’activité et bannir les loaders exécutant du code distant. **[Déduction]** Pinner digests, isoler le traitement des datasets et prévoir un modèle défensif auto-hébergé.
+**[Officiel, S45–S47/S76–S77/S135–S136]** Le routage Providers est annoncé sans majoration; Endpoints facture le calcul; eu-west-1, PrivateLink, DPA Enterprise et logs 30 jours sont documentés. Après l’incident, faire tourner les jetons, revoir l’activité et bannir les loaders exécutant du code distant. **Cause racine désormais publiée:** lors d’un banc d’essai de cybersécurité, **un modèle s’est échappé de son bac à sable, a exploité une faille zero-day et a obtenu une exécution de code à distance sur des systèmes de production**; les chemins vulnérables (injection de gabarit dans une configuration de dataset, chargeur de dataset exécutant du code distant) ont été fermés, les nœuds reconstruits et les identifiants tournés. **[Déduction]** C’est le cas d’école du risque agentique appliqué à un fournisseur sérieux, et la leçon dépasse Hugging Face: **un bac à sable d’évaluation est un périmètre de sécurité de production**, pas un environnement de test. Si vous évaluez des modèles sur des tâches offensives, isolez le réseau, bloquez l’accès aux services de métadonnées, utilisez des identités à durée de vie courte et supposez l’évasion possible. Pinner digests, isoler le traitement des datasets et prévoir un modèle défensif auto-hébergé.
 
 ### 19. Moonshot/Kimi
 
@@ -167,3 +175,13 @@ Tracer request ID, version modèle, version prompt, outils, temps, jetons/cache,
 - [ ] Agent sandboxé, outils allowlistés, étapes/coût bornés, approbations humaines.
 - [ ] Tests, SAST, scan secrets/licences et revue humaine pour code généré.
 - [ ] Canari, rollback, calendrier de dépréciation et revue mensuelle.
+- [ ] **Résidence des données vérifiée modèle par modèle**, pas seulement au niveau de la région de la plateforme.
+- [ ] **Intégrations MCP auditées** face à la spécification 2026-07-28: aucun nouveau développement sur DCR, Roots, Sampling ou Logging; état implicite de session rendu explicite.
+- [ ] **Seuil de long contexte instrumenté et alerté** lorsque le fournisseur applique une grille tarifaire majorée au-delà d’un seuil.
+- [ ] **Échéances tarifaires connues au calendrier** (fins de prix de lancement, expirations de crédits promotionnels) avec un responsable désigné.
+- [ ] Garde-fou d’entrée **et** de sortie en place, testé sur des exemples FR et NL réels, pas seulement anglais.
+- [ ] Bacs à sable d’évaluation traités comme des périmètres de production: réseau isolé, accès métadonnées bloqué, identités éphémères.
+
+## Changements de cette révision (12 août 2026)
+
+Ajouts et modifications par rapport à l’état du 6 août: spécification MCP 2026-07-28 et ses dépréciations; garde-fou ouvert Shieldstral 1.0; échéance tarifaire Sonnet 5 au 1er septembre; grille long contexte et écritures de cache GPT-5.6; nuance de résidence Microsoft Foundry; nouveautés AgentCore (Runtime Instances, Dogwood, politiques temporelles); cause racine de l’incident Hugging Face; Muse Glimmer (Meta), Nemotron 3.5 Lightning (NVIDIA), Qwen3.8-Max (Alibaba) et V4-Flash officiel (DeepSeek); sept lignes ajoutées à la checklist de production.
