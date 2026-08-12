@@ -394,6 +394,12 @@
       "kind": "Confiance",
       "title": "Référentiel des sources",
       "url": "referentiel-sources.html"
+    },
+    {
+      "id": "tools",
+      "kind": "Écosystème",
+      "title": "100 outils IA majeurs",
+      "url": "outils-ecosysteme-ia.html"
     }
   ]
 }

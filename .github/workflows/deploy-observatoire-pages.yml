@@ -38,6 +38,7 @@ jobs:
           python -m json.tool ObservationLLM/dashboard/data/run-status.json >/dev/null
           python -m json.tool ObservationLLM/dashboard/data/source-registry.json >/dev/null
           python -m json.tool ObservationLLM/dashboard/data/announcements.json >/dev/null
+          python -m json.tool ObservationLLM/dashboard/data/tools-catalog.json >/dev/null
 
       - name: Vérifier le JavaScript
         run: node --check ObservationLLM/dashboard/app.js
@@ -56,6 +57,7 @@ jobs:
           test -f ObservationLLM/dashboard-dist/modeles-locaux-par-hardware.html
           test -f ObservationLLM/dashboard-dist/localisation-modeles.html
           test -f ObservationLLM/dashboard-dist/referentiel-sources.html
+          test -f ObservationLLM/dashboard-dist/outils-ecosysteme-ia.html
           test -f ObservationLLM/dashboard-dist/sources.html
 
   deploy:

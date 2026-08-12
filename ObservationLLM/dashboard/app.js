@@ -2,6 +2,7 @@ const state = {
   data: null,
   sources: [],
   announcements: [],
+  tools: [],
   filter: "Tous",
   query: "",
   hostingFilter: "Tous",
@@ -9,6 +10,8 @@ const state = {
   sourceFilter: "Toutes",
   sourceQuery: "",
   announcementFilter: "Toutes",
+  toolFilter: "Toutes",
+  toolQuery: "",
   selectedHardware: 0
 };
 
@@ -28,7 +31,7 @@ function initials(name) {
   return name.split(/[\s/.-]+/).map((part) => part[0]).filter(Boolean).slice(0, 2).join("").toUpperCase();
 }
 
-function renderHeader(data, status, sources, announcements) {
+function renderHeader(data, status, sources, announcements, tools) {
   byId("edition-date").textContent = formatDate(data.run.checkedAt);
   const entities = data.entities || data.actors || [];
   const verified = entities.filter((entity) => entity.status !== "non reverifié" && entity.status !== "source inaccessible").length;
@@ -37,6 +40,7 @@ function renderHeader(data, status, sources, announcements) {
   byId("metric-regions").textContent = (data.localizations || []).length;
   byId("metric-sources").textContent = sources.filter((source) => source.confidence >= 85).length;
   byId("metric-announcements").textContent = announcements.length;
+  byId("metric-tools").textContent = tools.length;
   byId("metric-hardware").textContent = data.hardware.length;
   byId("headline-change").textContent = data.headline.title;
   byId("headline-detail").textContent = data.headline.detail;
@@ -86,6 +90,35 @@ function renderActors(data) {
     card.className = "actor-card";
     const status = actor.status || "vérifié";
     card.innerHTML = `<div class="actor-top"><span class="actor-initials">${initials(actor.name)}</span><span class="tag">${actor.category}</span></div><h3>${actor.name}</h3><p>${actor.flagship}</p><span class="availability">${actor.belgium}</span><small class="verification">${status} · ${actor.last_verified_at || formatDate(data.run.checkedAt)}</small>`;
+    return card;
+  }));
+}
+
+function renderTools(tools) {
+  const categories = ["Toutes", ...new Set(tools.map((tool) => tool.category))];
+  byId("tool-filters").replaceChildren(...categories.map((category) => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = `filter-button${state.toolFilter === category ? " active" : ""}`;
+    button.textContent = category;
+    button.setAttribute("aria-pressed", state.toolFilter === category);
+    button.addEventListener("click", () => { state.toolFilter = category; renderTools(tools); });
+    return button;
+  }));
+  const query = state.toolQuery.trim().toLocaleLowerCase("fr");
+  const filtered = tools.filter((tool) => {
+    const categoryMatch = state.toolFilter === "Toutes" || tool.category === state.toolFilter;
+    const text = `${tool.name} ${tool.vendor} ${tool.productType} ${tool.focus}`.toLocaleLowerCase("fr");
+    return categoryMatch && (!query || text.includes(query));
+  });
+  byId("tool-empty").hidden = filtered.length > 0;
+  byId("tool-grid").replaceChildren(...filtered.map((tool) => {
+    const card = document.createElement("article");
+    card.className = "tool-card";
+    const update = tool.latestAnnouncement
+      ? `<div class="tool-update"><strong>Nouveauté qualifiée</strong><span>${tool.latestAnnouncement.title}</span><small>${tool.latestAnnouncement.confidence}/100 · ${tool.latestAnnouncement.publishedAt}</small></div>`
+      : `<div class="tool-update pending"><strong>Veille unifiée</strong><span>Aucune annonce qualifiée attachée au catalogue courant.</span><small>${tool.verificationStatus}</small></div>`;
+    card.innerHTML = `<div class="tool-rank"><span>#${String(tool.rank).padStart(3, "0")}</span><span class="tag">${tool.productType}</span></div><h3><a href="${tool.officialUrl}" target="_blank" rel="noreferrer">${tool.name} ↗</a></h3><p>${tool.vendor} · ${tool.focus}</p>${update}<small class="tool-region">${tool.regionMode}</small>`;
     return card;
   }));
 }
@@ -201,7 +234,7 @@ function renderDocuments(data) {
 async function refreshStatus() {
   try {
     const status = await getJson("data/run-status.json");
-    if (state.data) renderHeader(state.data, status, state.sources, state.announcements);
+    if (state.data) renderHeader(state.data, status, state.sources, state.announcements, state.tools);
   } catch (error) {
     console.warn(error.message);
   }
@@ -209,13 +242,15 @@ async function refreshStatus() {
 
 async function init() {
   try {
-    const [data, status, registry, announcementFeed] = await Promise.all([getJson("data/latest.json"), getJson("data/run-status.json"), getJson("data/source-registry.json"), getJson("data/announcements.json")]);
+    const [data, status, registry, announcementFeed, toolCatalog] = await Promise.all([getJson("data/latest.json"), getJson("data/run-status.json"), getJson("data/source-registry.json"), getJson("data/announcements.json"), getJson("data/tools-catalog.json")]);
     state.data = data;
     state.sources = registry.sources || [];
     state.announcements = announcementFeed.announcements || [];
-    renderHeader(data, status, state.sources, state.announcements);
+    state.tools = toolCatalog.tools || [];
+    renderHeader(data, status, state.sources, state.announcements, state.tools);
     renderDecisions(data);
     renderAnnouncements(state.announcements);
+    renderTools(state.tools);
     renderFilters(data);
     renderActors(data);
     renderHosting(data);
@@ -225,6 +260,7 @@ async function init() {
     byId("actor-search").addEventListener("input", (event) => { state.query = event.target.value; renderActors(data); });
     byId("hosting-search").addEventListener("input", (event) => { state.hostingQuery = event.target.value; renderHosting(data); });
     byId("source-search").addEventListener("input", (event) => { state.sourceQuery = event.target.value; renderSources(state.sources); });
+    byId("tool-search").addEventListener("input", (event) => { state.toolQuery = event.target.value; renderTools(state.tools); });
     window.setInterval(refreshStatus, 30000);
   } catch (error) {
     byId("run-chip").querySelector("span:last-child").textContent = "Données indisponibles";

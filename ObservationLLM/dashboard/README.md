@@ -8,6 +8,7 @@ Ce dossier contient le tableau de bord statique publié par GitHub Pages.
 - `data/run-status.json` décrit l’état du run courant ou du dernier run.
 - `data/source-registry.json` contient les sources de référence, leur portée et leur indice de confiance.
 - `data/announcements.json` contient les annonces principales, leurs signaux de détection, leurs preuves et une note de confiance expliquée.
+- `data/tools-catalog.json` contient exactement 100 outils IA majeurs, leur catégorie, leur source officielle et leur dernière nouveauté qualifiée lorsqu’elle existe.
 - Les deux fichiers utilisent UTF-8 et doivent rester des JSON valides.
 - `latest.json` n’est remplacé qu’après la validation de tous les livrables Markdown.
 
@@ -15,7 +16,7 @@ Le dashboard peut être ouvert avec n’importe quel serveur HTTP statique. Une 
 
 ## Génération des pages de contenu
 
-`build-content.mjs` transforme les huit livrables Markdown courants en pages HTML et copie le dashboard dans un dossier de publication. Les vues dédiées à la localisation des modèles et au référentiel des sources sont publiées avec les autres rapports. L’historique éditorial reste dans Git et n’est pas exposé comme contenu courant. Le générateur utilise uniquement Node.js, sans dépendance externe. Le workflow GitHub Pages exécute automatiquement cette génération avant le déploiement.
+`build-content.mjs` transforme les neuf livrables Markdown courants en pages HTML et copie le dashboard dans un dossier de publication. Les vues dédiées à la localisation des modèles, au référentiel des sources et aux 100 outils majeurs sont publiées avec les autres rapports. L’historique éditorial reste dans Git et n’est pas exposé comme contenu courant. Le générateur utilise uniquement Node.js, sans dépendance externe. Le workflow GitHub Pages exécute automatiquement cette génération avant le déploiement.
 
 Exemple local :
 

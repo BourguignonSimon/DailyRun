@@ -27,6 +27,7 @@
     <nav class="section-nav" aria-label="Sections du tableau de bord">
       <a href="#overview">Vue d’ensemble</a>
       <a href="#announcements">Annonces</a>
+      <a href="#tools">100 outils</a>
       <a href="#actors">Catalogue</a>
       <a href="#hosting">Localisation</a>
       <a href="#sources">Sources</a>
@@ -60,6 +61,7 @@
         <article><span>Canaux régionaux</span><strong id="metric-regions">—</strong><small>distribution et hébergement</small></article>
         <article><span>Sources fortes</span><strong id="metric-sources">—</strong><small>confiance ≥ 85/100</small></article>
         <article><span>Annonces principales</span><strong id="metric-announcements">—</strong><small>signaux récents qualifiés</small></article>
+        <article><span>Outils majeurs</span><strong id="metric-tools">—</strong><small>suivis dans le même run</small></article>
         <article><span>Profils locaux</span><strong id="metric-hardware">—</strong><small>du Pi 5 au GPU 24 Go</small></article>
       </section>
 
@@ -81,6 +83,23 @@
           <p>Les choix les plus défendables avant un pilote sur vos propres tâches.</p>
         </div>
         <div class="decision-grid" id="decision-grid"></div>
+      </section>
+
+      <section class="tools-section" id="tools">
+        <div class="section-heading">
+          <div><span class="eyebrow">ÉCOSYSTÈME ÉTENDU</span><h2>100 outils IA majeurs suivis</h2></div>
+          <p>Applications, assistants de code, frameworks d’agents, interfaces, moteurs locaux, plateformes, évaluation, sécurité et données. Les nouveautés sont collectées par le même run que le reste de l’observatoire.</p>
+        </div>
+        <div class="toolbar">
+          <label class="search-field">
+            <span class="sr-only">Rechercher un outil IA</span>
+            <input id="tool-search" type="search" placeholder="Outil, éditeur ou usage…" autocomplete="off">
+          </label>
+          <div class="filters" id="tool-filters" aria-label="Filtrer les outils par catégorie"></div>
+        </div>
+        <div class="tool-grid" id="tool-grid" aria-live="polite"></div>
+        <p class="empty-state" id="tool-empty" hidden>Aucun outil ne correspond à ce filtre.</p>
+        <a class="section-link" href="outils-ecosysteme-ia.html">Consulter la méthodologie et la liste complète →</a>
       </section>
 
       <section class="actors-section" id="actors">
