@@ -1,6 +1,6 @@
 # Localisation, distribution et hébergement des modèles
 
-Contrôle : **12 août 2026**. Cette vue indique où un modèle peut être obtenu ou exécuté. Elle distingue le développeur du modèle, son distributeur et l’hébergeur effectif. Une disponibilité commerciale depuis la Belgique ne garantit ni l’exécution ni le stockage dans l’Union européenne.
+Contrôle : **13 août 2026**. Cette vue indique où un modèle peut être obtenu ou exécuté. Elle distingue le développeur du modèle, son distributeur et l’hébergeur effectif. Une disponibilité commerciale depuis la Belgique ne garantit ni l’exécution ni le stockage dans l’Union européenne.
 
 ## Lecture rapide
 
@@ -21,7 +21,8 @@ Contrôle : **12 août 2026**. Cette vue indique où un modèle peut être obten
 | Google | Gemini via Vertex AI | Google Cloud | Cloud partenaire | Régions et multirégions UE selon le modèle | Selon le projet | Gouvernance par configuration Cloud | 95/100 | [R04](https://cloud.google.com/vertex-ai/generative-ai/docs/) |
 | OpenAI | Modèles OpenAI via Azure | Microsoft Azure | Cloud partenaire | Régions Azure UE selon le modèle | Selon l’abonnement | Vérifier région et fonctions annexes | 95/100 | [R05](https://learn.microsoft.com/azure/ai-foundry/) |
 | Multiples | Catalogue Amazon Bedrock | AWS | Cloud partenaire | Régions AWS UE, disponibilité variable | Disponible | Vérifier chaque modèle, outil et routage | 95/100 | [R06](https://docs.aws.amazon.com/bedrock/) |
-| Mistral AI | Modèles Mistral | Mistral AI | API managée / privé | Options européennes selon l’offre | Disponible | Vérifier région exacte et rétention | 92/100 | [R07](https://docs.mistral.ai/) |
+| Mistral AI | Modèles Mistral | Mistral AI | API managée / privé | **Regional Endpoints en GA depuis le 11/08/2026 : exécution au choix en Europe ou aux États-Unis, à ×1,1 le tarif global. Priority Tier en préversion (×1,75) avec SLA 99,5 %** | Disponible | ⚠️ **Des transferts encadrés et limités vers des sous-traitants hors région restent possibles** : un endpoint UE n’exclut pas tout transfert. Exiger le DPA et la liste nominative des sous-traitants ; SLA en préversion à confirmer contractuellement | 92/100 | [R07](https://docs.mistral.ai/), [S142–S144](sources.md) |
+| xAI (SpaceXAI) | Grok 4.6 | xAI | API managée | **Aucune résidence UE annoncée ; DPA documentant un traitement en `us-east-1` et `us-west-2`** | Grok 4.5 confirmé dans la console UE depuis le 17/07 ; **statut de 4.6 à confirmer** | Ne pas y traiter de données personnelles européennes tant que résidence et DPA ne sont pas établis. **Entité contractante susceptible de changer** à la clôture de l’acquisition d’Anysphere par SpaceX (attendue fin août 2026) | À confirmer | [S68, S139–S141, S147](sources.md) |
 | Multiples | Inference Endpoints | Hugging Face / AWS | Cloud partenaire | AWS `eu-west-1` documenté | Disponible | Vérifier DPA et configuration de l’endpoint | 90/100 | [R08](https://huggingface.co/docs/) |
 | Meta, Mistral, Qwen, NVIDIA, IBM et autres | Modèles à poids ouverts | Dépôts officiels / exploitant | Self-host | Région choisie par l’exploitant | Selon licence et accès | Logs, sauvegardes et dépendances restent à gouverner | 95/100 | Sources officielles propres à chaque modèle |
 | Cohere | Command, Embed et Rerank | Cohere et clouds partenaires | API / cloud partenaire | À confirmer par offre et contrat | B2B à vérifier | Résidence insuffisamment précise | 70/100 | [R13](https://docs.cohere.com/) |

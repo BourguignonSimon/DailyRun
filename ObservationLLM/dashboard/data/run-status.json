@@ -1,10 +1,8 @@
 {
-  "runId": "2026-08-12-opus-5-control",
-  "status": "completed",
-  "phase": "publication",
+  "runId": "2026-08-13-opus-5-control",
+  "status": "running",
+  "phase": "rédaction des livrables",
   "model": "Opus 5",
-  "startedAt": "2026-08-12T06:30:00Z",
-  "completedAt": "2026-08-12T09:15:00Z",
-  "commit": "3ad57faae24f631505fb09a5f288adacfb4bda54",
-  "message": "Dernier état vérifié publié. Le catalogue, les options de localisation et le référentiel des sources sont disponibles dans le dashboard."
+  "startedAt": "2026-08-13T06:30:00Z",
+  "message": "Faits vérifiés au 13 août 2026: Grok 4.6, endpoints régionaux Mistral, GPT-5.6-Cyber. Rédaction en cours."
 }
