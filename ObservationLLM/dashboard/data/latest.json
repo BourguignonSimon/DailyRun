@@ -3,7 +3,7 @@
   "run": {
     "checkedAt": "2026-08-13T09:00:00Z",
     "factsVerifiedThrough": "2026-08-13",
-    "commit": "7711d4b41dec6963d10d236bba0ff63b68bad58e",
+    "commit": "ba7e48e23ecf3ba6f004430489789c70a1473c21",
     "model": "Opus 5",
     "result": "Instantané complet vérifié au 13 août 2026. Trois mouvements fournisseurs (Mistral, xAI, OpenAI) et trois lacunes de couverture corrigées. Les entrées non reverifiées restent signalées explicitement."
   },

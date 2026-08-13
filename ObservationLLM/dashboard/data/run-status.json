@@ -1,8 +1,10 @@
 {
   "runId": "2026-08-13-opus-5-control",
-  "status": "running",
-  "phase": "rédaction des livrables",
+  "status": "completed",
+  "phase": "publication",
   "model": "Opus 5",
   "startedAt": "2026-08-13T06:30:00Z",
-  "message": "Faits vérifiés au 13 août 2026: Grok 4.6, endpoints régionaux Mistral, GPT-5.6-Cyber. Rédaction en cours."
+  "message": "Contrôle du 13 août 2026 publié. Mistral ouvre le choix de région d’inférence, xAI publie Grok 4.6, et deux écosystèmes suivis sont en cours de fusion capitalistique.",
+  "completedAt": "2026-08-13T09:30:00Z",
+  "commit": "ba7e48e23ecf3ba6f004430489789c70a1473c21"
 }
