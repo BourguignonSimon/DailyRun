@@ -1,8 +1,8 @@
 # Comparatif structuré — édition Belgique
 
-Contrôle: **13 août 2026**. Cette édition intègre une **correction tarifaire majeure**: la hausse de Claude Sonnet 5 au 1er septembre est **annulée**, le tarif 2/10 USD/M devenant permanent. Elle intègre également les mouvements du 10 au 12 août: **Mistral Regional Endpoints, Priority Tier et hébergement de modèles ouverts tiers**, **xAI Grok 4.6**, **OpenAI GPT-5.6-Cyber**, plus trois lacunes de couverture corrigées (**Cohere North Mini Code**, **Gemini Omni Flash / Robotics ER 2**, lettre open weights du 24 juillet). Voir [Prix API](#prix-api), [Exécution locale](#exécution-locale) et [Développement](#développement). Ce fichier remplace le classeur Excel demandé initialement: le dépôt a explicitement migré vers Markdown le 16 juillet 2026. Les « feuilles » sont les sections ci-dessous. Les références Sxx renvoient à [sources.md](sources.md).
+Contrôle: **13 août 2026**. Cette édition intègre une **correction tarifaire majeure** issue des pages officielles : Claude Sonnet 5 reste à 2/10 USD/M jusqu’au 31 août, puis passe à 3/15 USD/M le 1er septembre. Elle intègre également les mouvements du 10 au 12 août: **Mistral Regional Endpoints, Priority Tier et hébergement de modèles ouverts tiers**, **xAI Grok 4.6**, **OpenAI GPT-5.6-Cyber**, plus des lacunes de couverture corrigées (**Cohere North Mini Code**, **Gemini Omni Flash**, lettre open weights du 24 juillet). Voir [Prix API](#prix-api), [Exécution locale](#exécution-locale) et [Développement](#développement). Ce fichier remplace le classeur Excel demandé initialement: le dépôt a explicitement migré vers Markdown le 16 juillet 2026. Les « feuilles » sont les sections ci-dessous. Les références Sxx renvoient à [sources.md](sources.md).
 
-> ⚠️ **Niveau de preuve de cette édition.** Les domaines fournisseurs officiels étaient bloqués par la politique de sortie réseau; les faits sont établis via l’index de recherche et par convergence de sources indépendantes. Voir la note d’accès en tête de [sources.md](sources.md). Revérification directe recommandée avant tout engagement contractuel ou budgétaire.
+> ⚠️ **Niveau de preuve de cette édition.** Le run initial a subi un blocage réseau étendu. La correction Sonnet 5 et les dépréciations Imagen ont ensuite été revérifiées directement dans les documentations officielles Anthropic et Google; les autres données conservent leur niveau de preuve antérieur. Voir [sources.md](sources.md). Revérification recommandée avant tout engagement contractuel ou budgétaire.
 
 - [Vue d’ensemble](#vue-densemble)
 - [Prix particuliers](#prix-particuliers)
@@ -41,22 +41,22 @@ Contrôle: **13 août 2026**. Cette édition intègre une **correction tarifaire
 
 ## Prix particuliers
 
-Prix catalogue observés. Conversion: USD ÷ 1,1554, taux BCE du 5 août 2026. La colonne TVA est prudente: « checkout » signifie que l’inclusion doit être confirmée sur la facture belge.
+Prix catalogue observés. Conversion: USD ÷ 1,1554, taux BCE du 5 août 2026. Le montant réellement facturé doit être confirmé au checkout ou sur la facture.
 
-| Offre | Prix origine | Estimation EUR HT | Estimation EUR avec 21 % si non incluse | TVA / remarque | Source |
-|---|---:|---:|---:|---|---|
-| GitHub Copilot Pro | 10 USD/mois | 8,66 € | 10,47 € | Checkout; 15 USD de crédits totaux annoncés | S37, S137 |
-| GitHub Copilot Business | 19 USD/utilisateur/mois | 16,44 € | 19,89 € | Crédits promotionnels +30 USD/mois **expirant fin août 2026** | S137 |
-| GitHub Copilot Enterprise | 39 USD/utilisateur/mois | 33,75 € | 40,84 € | Crédits promotionnels +70 USD/mois **expirant fin août 2026** | S137 |
-| GitHub Copilot Pro+ | 39 USD/mois | 33,75 € | 40,84 € | Checkout; 70 USD de crédits | S37 |
-| GitHub Copilot Max | 100 USD/mois | 86,55 € | 104,73 € | Checkout; 200 USD de crédits | S37 |
-| Replit Core annuel | 20 USD/mois équivalent | 17,31 € | 20,95 € | 25 USD de crédits mensuels | S44 |
-| Replit Pro annuel | 95 USD/mois équivalent | 82,22 € | 99,49 € | 100 USD de crédits | S44 |
-| Z.AI Coding Lite annuel | 12,60 USD/mois | 10,91 € | 13,20 € | Promotion; checkout | S54 |
-| Z.AI Coding Pro annuel | 50,40 USD/mois | 43,62 € | 52,78 € | Promotion; checkout | S54 |
-| Microsoft 365 Copilot Business annuel | 15,60 EUR/utilisateur/mois | 15,60 € | 18,88 € | Page indique prix hors TVA; plan M365 requis | S12 |
-| Mistral Vibe Pro | 14,99 USD/mois | 12,97 € | 15,70 € | Prix catalogue hors taxes; checkout belge à confirmer | S19 |
-| ChatGPT, Claude, Gemini, Grok, Perplexity, Cursor | Voir checkout belge | ND | ND | Les pages dynamiques n’ont pas fourni un prix EUR/TVA stable lors du contrôle | S04, S23, S39, S41 |
+| Offre | Prix origine | Estimation EUR | Facturation / remarque | Source |
+|---|---:|---:|---|---|
+| GitHub Copilot Pro | 10 USD/mois | 8,66 € | Checkout; 15 USD de crédits totaux annoncés | S37, S137 |
+| GitHub Copilot Business | 19 USD/utilisateur/mois | 16,44 € | Crédits promotionnels +30 USD/mois **expirant fin août 2026** | S137 |
+| GitHub Copilot Enterprise | 39 USD/utilisateur/mois | 33,75 € | Crédits promotionnels +70 USD/mois **expirant fin août 2026** | S137 |
+| GitHub Copilot Pro+ | 39 USD/mois | 33,75 € | Checkout; 70 USD de crédits | S37 |
+| GitHub Copilot Max | 100 USD/mois | 86,55 € | Checkout; 200 USD de crédits | S37 |
+| Replit Core annuel | 20 USD/mois équivalent | 17,31 € | 25 USD de crédits mensuels | S44 |
+| Replit Pro annuel | 95 USD/mois équivalent | 82,22 € | 100 USD de crédits | S44 |
+| Z.AI Coding Lite annuel | 12,60 USD/mois | 10,91 € | Promotion; checkout | S54 |
+| Z.AI Coding Pro annuel | 50,40 USD/mois | 43,62 € | Promotion; checkout | S54 |
+| Microsoft 365 Copilot Business annuel | 15,60 EUR/utilisateur/mois | 15,60 € | Plan M365 requis | S12 |
+| Mistral Vibe Pro | 14,99 USD/mois | 12,97 € | Prix catalogue; checkout belge à confirmer | S19 |
+| ChatGPT, Claude, Gemini, Grok, Perplexity, Cursor | Voir checkout belge | ND | Les pages dynamiques n’ont pas fourni un prix EUR stable lors du contrôle | S04, S23, S39, S41 |
 
 ## Prix API
 
@@ -68,10 +68,9 @@ Prix par **1 million de jetons** sauf mention. HT et hors outils. Les prix EUR s
 
 | Échéance | Ce qui change | Impact | Source |
 |---|---|---|---|
-| ~~1er septembre 2026~~ | **Échéance annulée.** Le prix de lancement Claude Sonnet 5 (**2/10 USD/M**) est devenu permanent le 11 août 2026; la bascule vers 3/15 n’aura pas lieu | Aucune action budgétaire requise. ⚠️ Établi par convergence de sources, page tarifaire non ouverte | S158–S159 |
+| **1er septembre 2026** | Fin du prix promotionnel Claude Sonnet 5 (**2/10 USD/M**) et passage au tarif standard **3/15 USD/M** (+50 %) | Arbitrer modèle, cache et batch avant septembre | S158–S159 |
 | **Fin août 2026** | Fin des crédits promotionnels GitHub Copilot Business (+30 USD/mois) et Enterprise (+70 USD/mois) | Hausse de facture nette à périmètre constant | S137 |
 | **Fin août 2026** | Clôture attendue de l’acquisition d’Anysphere/Cursor par SpaceX (procédures réglementaires finalisées le 12/08, **non close** au 13/08) | Entité contractante, facturation, politique de confidentialité et juridiction peuvent changer | S147 |
-| **31 août 2026** | Arrêt de `gemini-robotics-er-1.6-preview` | Migration vers Robotics ER 2 preview (2/10 USD/M) | S152 |
 
 **Multiplicateurs de service (à appliquer au tarif catalogue, pas des lignes de prix distinctes).**
 
@@ -86,14 +85,13 @@ Prix par **1 million de jetons** sauf mention. HT et hors outils. Les prix EUR s
 | Acteur / modèle représentatif | Contexte | Entrée origine | Cache origine | Sortie origine | Entrée EUR | Sortie EUR | Batch / classe | Outils / remarques | Source |
 |---|---:|---:|---:|---:|---:|---:|---|---|---|
 | OpenAI GPT-5.6 Sol | 1,05 M | 5 USD | lecture 0,50 USD; écriture 6,25 USD | 30 USD | 4,33 € | 25,96 € | Batch à vérifier par endpoint | Terra 2/12 (≈1,73/10,39 €), Luna 0,20/1,20 (≈0,17/1,04 €) depuis le 30/07; **long contexte: Sol 10/45, Terra 4/18, Luna 0,40/1,80**; écriture de cache = 1,25× l’entrée; Fast Mode Sol remplace Priority (×2,5 vitesse, ×2 prix) | S61–S62, S112, S124 |
-| Anthropic Claude Opus 5, API directe | 1 M | 5 USD | lecture 0,50 USD; écritures selon durée | 25 USD | 4,33 € | 21,64 € | Batch -50 %; Fast ×2 | Fable 5: 10/50; Haiku 4.5: 1/5; **Sonnet 5: 2/10, tarif rendu permanent le 11/08/2026 (hausse vers 3/15 annulée)**; fallback de sûreté configurable | S63–S64, S158–S159 |
+| Anthropic Claude Opus 5, API directe | 1 M | 5 USD | lecture 0,50 USD; écritures selon durée | 25 USD | 4,33 € | 21,64 € | Batch -50 %; Fast ×2 | Fable 5: 10/50; Haiku 4.5: 1/5; **Sonnet 5: 2/10 jusqu’au 31/08/2026, puis 3/15 à partir du 01/09/2026**; fallback de sûreté configurable | S63–S64, S158–S159 |
 | Google Gemini 3.6 Flash | 1 M | 1,50 USD | Voir grille dynamique | 7,50 USD | 1,30 € | 6,49 € | Batch/Flex/Priority publiés séparément | 64 k sortie; Search/Maps/outils selon grille; Gemini 2.5 Pro/Flash/Flash-Lite arrêtés le 16/10/2026 | S65, S114 |
 | Mistral Large | À confirmer par version | 2 USD | ND | 6 USD | 1,73 € | 5,19 € | Batch -50 % | OCR, audio et autres outils séparés. **Endpoint régional UE/US ×1,1; Priority Tier ×1,75 avec SLA 99,5 % (préversion)** | S19, S142–S144 |
 | **xAI Grok 4.6 court (<200 k)** | 500 k | 2 USD | 0,50 USD | 6 USD | 1,73 € | 5,19 € | **Aucune remise batch** | Remplace Grok 4.5 le 12/08. Variante rapide ×2. Cache: `prompt_cache_key` (Responses) ou `x-grok-conv-id` (Chat Completions) | S139–S141 |
 | **xAI Grok 4.6 long (≥200 k)** | 500 k | 4 USD | 1 USD | 12 USD | 3,46 € | 10,39 € | **Aucune remise batch** | ⚠️ La grille haute s’applique à **tous les jetons de la requête**, pas au seul dépassement: franchir 200 k double la facture de la requête entière | S140 |
 | OpenAI GPT-5.6-Cyber | Selon Sol | 12,50 USD | 1,25 USD | 75 USD | 10,82 € | 64,91 € | ND | **Accès sur dossier (Daybreak Red)**, pas en libre-service. Dérivé de GPT-5.6 Sol, refus réduits sur recherche de vulnérabilités | S145–S146 |
 | Google Gemini Omni Flash | Selon version | 1,50 USD | ND | **17,50 USD (sortie vidéo)** | 1,30 € | 15,15 € | ND | ≈0,10 USD par seconde de vidéo générée; ouvert aux développeurs le 30/06 | S152 |
-| Google Gemini Robotics ER 2 (preview) | Selon version | 2 USD | ND | 10 USD | 1,73 € | 8,66 € | ND | Préversion; `er-1.6-preview` **arrêté le 31/08/2026** | S152 |
 | DeepSeek V4 Pro | 1 M | 0,435 USD miss | 0,003625 USD hit | 0,87 USD | 0,38 € | 0,75 € | Non publié | **V4-Flash 0731 officiel depuis le 31/07** (284 B, 0,14 USD/M entrée, Responses API, adapté Codex); GA de V4 Pro glissante | S66–S67, S128 |
 | Alibaba **Qwen3.8-Max** | 1 M | 2 USD | cache implicite 0,25 USD | 6 USD | 1,73 € | 5,19 € | À confirmer | 2,4 T MoE (95 B actifs), texte/image/vidéo, sortie ≤131 k; **parité tarifaire avec GPT-5.6 Terra**; poids ouverts annoncés (semaine du 10/08) et **toujours non publiés au 13/08, sans licence nommée** | S115–S116, S157 |
 | Cohere Command A | 256 k | 2,50 USD | ND | 10 USD | 2,16 € | 8,66 € | ND | Essai 1 000 appels/mois; prod 500 RPM | S32–S34 |

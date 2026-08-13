@@ -2,6 +2,10 @@
 
 Les entrées sont ajoutées sans supprimer les précédentes. Les fichiers courants décrivent toujours le dernier état vérifié.
 
+## 2026-08-13 — Revérification corrective sur sources primaires
+
+Deux affirmations du contrôle publié plus tôt ont été corrigées après consultation des documentations officielles. Anthropic maintient le prix promotionnel de Claude Sonnet 5 à **2/10 USD/M jusqu’au 31 août 2026**, puis applique **3/15 USD/M à partir du 1er septembre** [S158–S159]. Google confirme l’arrêt au **17 août 2026** de trois endpoints Imagen 4; aucune échéance au 31 août n’est publiée dans le journal Gemini API pour `gemini-robotics-er-1.6-preview`, qui est donc retirée des vues courantes [S152]. Les entrées historiques ci-dessous sont conservées telles qu’elles ont été publiées afin de préserver l’audit.
+
 ## 2026-08-13 — Contrôle mensuel: la souveraineté européenne devient un produit tarifé
 
 **Périmètre.** Les 20 écosystèmes restent inchangés. **Entrées: aucune. Sorties: aucune.** Mais le fait de sélection de ce contrôle est une **consolidation en cours entre deux entrées de la liste**, documentée ci-dessous.

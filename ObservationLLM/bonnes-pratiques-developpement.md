@@ -86,7 +86,7 @@ Tracer request ID, version modèle, version prompt, outils, temps, jetons/cache,
 
 ### 2. Anthropic
 
-**[Officiel, S63–S64/S85/S125]** Exploiter prompt caching, batch -50 %, modèles datés et effort approprié. Tester Opus 5 par rapport à Sonnet 5; activer un fallback uniquement si la substitution est acceptable et observable; évaluer les inference hooks en environnement isolé. **Échéance annulée [S158–S159]:** le prix de lancement de **Sonnet 5 (2/10 USD/M) est devenu permanent le 11 août 2026**; la bascule vers 3/15 au 1er septembre n’aura pas lieu. **[Déduction]** L’arbitrage de coût déclenché par cette échéance est sans objet. Comparer Sonnet 5 à Haiku 4.5 (1/5) ou GPT-5.6 Terra (2/12) reste pertinent sur des critères de qualité et de latence, plus sur un motif budgétaire. Réserver Fable 5 aux tâches où son plafond compense prix et faux positifs potentiels des garde-fous.
+**[Officiel, S63–S64/S85/S125/S158–S159]** Exploiter prompt caching, batch -50 %, modèles datés et effort approprié. Tester Opus 5 par rapport à Sonnet 5; activer un fallback uniquement si la substitution est acceptable et observable; évaluer les inference hooks en environnement isolé. Le prix promotionnel de **Sonnet 5 (2/10 USD/M)** prend fin le 31 août 2026; le tarif standard **3/15 USD/M** s’applique le 1er septembre. **[Déduction]** Comparer Sonnet 5 à Haiku 4.5 (1/5) ou GPT-5.6 Terra (2/12) reste pertinent sur les critères de qualité, latence et budget. Réserver Fable 5 aux tâches où son plafond compense prix et faux positifs potentiels des garde-fous.
 
 ### 3. Google
 

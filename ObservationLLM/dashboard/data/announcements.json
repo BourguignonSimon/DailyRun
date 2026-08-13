@@ -4,15 +4,15 @@
   "methodology": "Les flux X servent à détecter rapidement une annonce. La confiance finale dépend de la corroboration par une source primaire durable et directement responsable du fait.",
   "announcements": [
     {
-      "id": "A20260811-ANTHROPIC-SONNET5-PRIX",
-      "publishedAt": "2026-08-11",
+      "id": "A20260630-ANTHROPIC-SONNET5-PRIX",
+      "publishedAt": "2026-06-30",
       "actor": "Anthropic",
       "category": "Prix",
-      "title": "Le tarif d’introduction de Claude Sonnet 5 devient permanent",
-      "summary": "Le tarif de 2 USD par million de jetons d’entrée et 10 USD en sortie, annoncé au lancement comme promotionnel jusqu’au 31 août 2026, devient le tarif standard. La hausse vers 3/15 USD prévue au 1er septembre 2026 n’aura pas lieu.",
-      "confidence": 85,
-      "confidenceLabel": "Bonne",
-      "confidenceReason": "Page officielle non ouverte directement — domaine bloqué par la politique réseau sortante. Fait établi via l’index de recherche restituant la page officielle et par convergence d’au moins deux sources indépendantes. Réserve supplémentaire : l’index contient encore des articles antérieurs au 11 août annonçant la hausse au 1er septembre ; la chronologie les rend caducs, mais la page tarifaire officielle n’a pas pu être lue.",
+      "title": "La hausse de Claude Sonnet 5 reste prévue au 1er septembre",
+      "summary": "Le tarif promotionnel reste fixé à 2 USD par million de jetons d’entrée et 10 USD en sortie jusqu’au 31 août 2026. Le tarif standard de 3/15 USD s’applique à partir du 1er septembre 2026.",
+      "confidence": 99,
+      "confidenceLabel": "Très forte",
+      "confidenceReason": "Les deux pages officielles Anthropic consultées directement le 13 août 2026 donnent le même calendrier et les mêmes montants.",
       "signals": [
         {
           "sourceId": "R18",
@@ -22,17 +22,17 @@
       ],
       "evidence": [
         {
-          "label": "Page tarifaire officielle (non ouverte, via index)",
+          "label": "Page tarifaire officielle",
           "url": "https://platform.claude.com/docs/en/about-claude/pricing"
         },
         {
-          "label": "Annonce Claude Sonnet 5 (non ouverte, via index)",
-          "url": "https://www.anthropic.com/news/claude-sonnet-5"
+          "label": "What's new in Claude Sonnet 5",
+          "url": "https://platform.claude.com/docs/en/about-claude/models/whats-new-sonnet-5"
         }
       ],
-      "caveat": "À revérifier directement sur la page tarifaire dès que le réseau le permet, avant tout engagement budgétaire.",
-      "belgiumImpact": "Effet direct sur le budget API d’un développeur belge : l’augmentation de 50 % attendue au 1er septembre est annulée. Facturation en USD, conversion EUR à la charge du client.",
-      "verificationStatus": "Vérifié le 2026-08-13 via index — convergence de sources indépendantes",
+      "caveat": "Tarification susceptible d’évoluer; revérifier au moment d’un engagement important.",
+      "belgiumImpact": "Effet direct sur le budget API d’un développeur belge : +50 % sur l’entrée et la sortie à partir du 1er septembre. Facturation en USD, conversion EUR à la charge du client.",
+      "verificationStatus": "Vérifié directement le 2026-08-13 — deux sources officielles concordantes",
       "lastCheckedAt": "2026-08-13"
     },
     {
@@ -108,15 +108,15 @@
       "lastCheckedAt": "2026-08-13"
     },
     {
-      "id": "A20260813-GOOGLE-DEPRECIATIONS-GEMINI",
+      "id": "A20260813-GOOGLE-DEPRECIATIONS-IMAGEN",
       "publishedAt": "2026-08-13",
       "actor": "Google",
       "category": "Dépréciation",
-      "title": "Deux échéances d’arrêt Gemini tombent en août 2026",
-      "summary": "Plusieurs modèles de génération d’images sont arrêtés le 17 août 2026 et `gemini-robotics-er-1.6-preview` est arrêté le 31 août 2026.",
-      "confidence": 78,
-      "confidenceLabel": "Moyenne",
-      "confidenceReason": "Page officielle non ouverte directement — domaine bloqué par la politique réseau sortante. Fait établi via l’index de recherche restituant la page officielle et par convergence d’au moins deux sources indépendantes. La page de dépréciations officielle n’a pas pu être ouverte ; l’échéance la plus proche est à quatre jours, ce qui justifie une publication immédiate assortie d’une réserve.",
+      "title": "Trois endpoints Imagen 4 s’arrêtent le 17 août 2026",
+      "summary": "Google confirme l’arrêt de `imagen-4.0-generate-001`, `imagen-4.0-ultra-generate-001` et `imagen-4.0-fast-generate-001` le 17 août 2026. Aucune échéance au 31 août n’est publiée dans le journal officiel pour `gemini-robotics-er-1.6-preview`.",
+      "confidence": 99,
+      "confidenceLabel": "Très forte",
+      "confidenceReason": "Le journal officiel Gemini API consulté directement le 13 août 2026 donne la liste exacte et la date d’arrêt.",
       "signals": [
         {
           "sourceId": "R19",
@@ -126,17 +126,13 @@
       ],
       "evidence": [
         {
-          "label": "Journal des modifications Gemini API (non ouverte, via index)",
+          "label": "Journal des modifications Gemini API",
           "url": "https://ai.google.dev/gemini-api/docs/changelog"
-        },
-        {
-          "label": "Notes de version Gemini Enterprise",
-          "url": "https://docs.cloud.google.com/gemini/enterprise/docs/release-notes"
         }
       ],
-      "caveat": "La liste exacte des modèles d’image concernés n’a pas pu être établie sur une source primaire : à vérifier avant le 17 août.",
-      "belgiumImpact": "Échéance identique en Belgique : toute intégration reposant sur ces modèles doit être migrée avant la date d’arrêt.",
-      "verificationStatus": "À confirmer sur la page de dépréciations officielle",
+      "caveat": "L’absence d’une échéance Robotics dans cette page ne prouve pas qu’elle ne sera jamais annoncée; elle ne doit simplement pas être présentée comme certaine aujourd’hui.",
+      "belgiumImpact": "Échéance identique en Belgique : toute intégration reposant sur ces trois endpoints Imagen 4 doit être migrée avant le 17 août.",
+      "verificationStatus": "Vérifié directement le 2026-08-13 — source officielle",
       "lastCheckedAt": "2026-08-13"
     },
     {
@@ -375,5 +371,5 @@
       "verificationStatus": "Revérifié le 2026-08-13 — publication officielle consultée"
     }
   ],
-  "verificationNotice": "Contrôle du 13 août 2026. Pour le quatrième contrôle consécutif, la politique réseau sortante de l’environnement d’exécution a bloqué les six points d’entrée obligatoires et la quasi-totalité des domaines fournisseurs. Deux niveaux de preuve coexistent donc dans cette vue : les faits marqués « registre officiel » ont été établis en ouvrant une source primaire durable (PyPI, npm, blog MCP) ; les faits marqués « via index » reposent sur la restitution des pages officielles par l’index de recherche et sur la convergence d’au moins deux sources indépendantes. Aucun fait n’est publié comme certain sur une source unique."
+  "verificationNotice": "Contrôle du 13 août 2026. Le run initial a subi un blocage réseau étendu. La revérification corrective a consulté les documentations officielles Anthropic et Google pour les corrections Sonnet 5 et Imagen. Les autres annonces conservent leur statut explicite : registre officiel, via index ou signal précoce. Aucun signal non corroboré n’est publié comme fait certain."
 }
