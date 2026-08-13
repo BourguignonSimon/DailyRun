@@ -3,7 +3,7 @@
   "run": {
     "checkedAt": "2026-08-13T21:01:00Z",
     "factsVerifiedThrough": "2026-08-13",
-    "commit": "pending-pr",
+    "commit": "4a0a82744a49e7da774f9263a1226ccdeb6fecef",
     "model": "Codex",
     "result": "Contrôle du 13 août 2026 complété par une revérification primaire. Deux informations publiées plus tôt ont été corrigées dans toutes les vues : calendrier tarifaire Sonnet 5 et échéances Gemini. Les entrées non revérifiées intégralement restent signalées."
   },
