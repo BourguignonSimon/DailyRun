@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
   "run": {
-    "checkedAt": "2026-08-12T09:00:00Z",
-    "factsVerifiedThrough": "2026-08-11",
-    "commit": "7711d4b41dec6963d10d236bba0ff63b68bad58e",
+    "checkedAt": "2026-08-13T09:00:00Z",
+    "factsVerifiedThrough": "2026-08-13",
+    "commit": "ba7e48e23ecf3ba6f004430489789c70a1473c21",
     "model": "Opus 5",
-    "result": "Instantané complet vérifié au 12 août 2026. Les entrées non reverifiées sont signalées explicitement; la couverture est étendue à chaque exécution sans plafond fixe."
+    "result": "Instantané complet vérifié au 13 août 2026. Trois mouvements fournisseurs (Mistral, xAI, OpenAI) et trois lacunes de couverture corrigées. Les entrées non reverifiées restent signalées explicitement."
   },
   "metrics": {
     "entityCount": 20,
@@ -16,8 +16,8 @@
     "rateDate": "2026-08-05"
   },
   "headline": {
-    "title": "État courant vérifié, sans plafond fixe d’écosystèmes.",
-    "detail": "Le catalogue distingue désormais modèle, développeur, distributeur, canal d’hébergement et région technique. Les limites de couverture sont publiées plutôt que masquées."
+    "title": "La résidence européenne a désormais un prix et un SLA.",
+    "detail": "Mistral ouvre le choix de région d’inférence (×1,1) et un niveau de service engagé à 99,5 % (×1,75, préversion). xAI publie Grok 4.6. Deux des vingt écosystèmes suivis sont en cours de fusion capitalistique."
   },
   "decisions": [
     {
@@ -26,14 +26,19 @@
       "why": "Le meilleur point de départ pour le français, le néerlandais et les usages multimodaux."
     },
     {
-      "profile": "Développement",
-      "primary": "GitHub Copilot · Cursor",
-      "why": "À comparer avec Claude Code, Codex et Kimi Code sur un dépôt pilote réel. Vérifier la fin des crédits promotionnels fin août."
+      "profile": "Production UE",
+      "primary": "Mistral · endpoint régional UE",
+      "why": "×1,1 pour fixer la région d’inférence ; ×1,75 avec SLA 99,5 % en préversion. Exiger la liste des sous-traitants : des transferts hors région restent possibles."
     },
     {
-      "profile": "Production UE",
-      "primary": "Mistral · cloud avec région UE",
-      "why": "DPA, région, rétention et sous-traitants se valident modèle par modèle, pas seulement plateforme par plateforme."
+      "profile": "Développement",
+      "primary": "GitHub Copilot · Cursor",
+      "why": "À comparer avec Claude Code, Codex et Kimi Code. Crédits promotionnels Copilot et clôture SpaceX↔Cursor tombent fin août."
+    },
+    {
+      "profile": "Coût par jeton",
+      "primary": "Grok 4.6 · GPT-5.6 Terra",
+      "why": "2/6 USD/M chez xAI, mais la grille double au-delà de 200 k jetons sur toute la requête, et aucune résidence UE n’est annoncée."
     },
     {
       "profile": "100 % local",
@@ -41,14 +46,14 @@
       "why": "Le choix dépend d’abord de la mémoire disponible, du contexte et de la quantification."
     },
     {
-      "profile": "Agent local",
-      "primary": "Muse Glimmer 30B · Nemotron 3.5 Lightning",
-      "why": "Apache 2.0 et OpenMDW-1.1; sandbox et plafond d’itérations restent obligatoires, comme en cloud."
+      "profile": "Agent de code local",
+      "primary": "North Mini Code 1.0 30B-A3B",
+      "why": "Apache 2.0, 256 k annoncés, w4a16 ≈ 18–20 Go sur une carte 24 Go. Cache KV lourd en long contexte : mesurer avant de s’engager."
     },
     {
-      "profile": "Garde-fou ouvert",
-      "primary": "Shieldstral 1.0 3B",
-      "why": "Politique de modération écrite en langage naturel à l’inférence; tient sur un seul GPU 16 Go."
+      "profile": "Agent généraliste local",
+      "primary": "Muse Glimmer 30B · Nemotron 3.5 Lightning",
+      "why": "K-Quant ≈ 17 Go pour 24 Go de VRAM. Sandbox et plafond d’itérations restent obligatoires, comme en cloud."
     }
   ],
   "actors": [
@@ -92,13 +97,13 @@
       "name": "Mistral AI",
       "category": "Plateforme",
       "flagship": "Le Chat/Vibe · API · Shieldstral 1.0",
-      "belgium": "Acteur européen, garde-fou ouvert"
+      "belgium": "Endpoint UE disponible (×1,1)"
     },
     {
-      "name": "xAI",
+      "name": "xAI (SpaceXAI)",
       "category": "Application",
-      "flagship": "Grok 4.5 · API",
-      "belgium": "Console API UE annoncée"
+      "flagship": "Grok 4.6 · API",
+      "belgium": "Console UE de 4.6 : à confirmer"
     },
     {
       "name": "DeepSeek",
@@ -121,8 +126,8 @@
     {
       "name": "Cohere",
       "category": "Plateforme",
-      "flagship": "Command · Embed · Rerank",
-      "belgium": "Entreprise : contrat à vérifier"
+      "flagship": "Command A+ · North Mini Code 1.0",
+      "belgium": "B2B ; poids ouverts Apache 2.0"
     },
     {
       "name": "IBM",
@@ -146,7 +151,7 @@
       "name": "Cursor",
       "category": "Code",
       "flagship": "IDE agentique · Router",
-      "belgium": "Plans belges : à confirmer"
+      "belgium": "Acquisition SpaceX en cours de clôture"
     },
     {
       "name": "Replit",
@@ -277,7 +282,8 @@
       "primary": "Qwen3.6-35B-A3B",
       "alternatives": [
         "Muse Glimmer 30B",
-        "Gemma 4 31B"
+        "Gemma 4 31B",
+        "North Mini Code 1.0 w4a16"
       ],
       "avoid": "Les 70B denses, trop serrés et lents pour ce palier.",
       "summary": "Bon palier pour le code local, les MoE et un agent multimodal en mémoire unifiée."
@@ -324,27 +330,183 @@
       "tier": "30–35 B",
       "primary": "Qwen3.6-35B-A3B",
       "alternatives": [
-        "Muse Glimmer 30B",
+        "Muse Glimmer 30B (K-Quant ≈ 17 Go)",
+        "North Mini Code 1.0 w4a16 (code)",
         "Gemma 4 31B"
       ],
-      "avoid": "Les 70B entièrement GPU, sauf quantification très agressive ou multi-GPU.",
-      "summary": "Muse Glimmer tient à ≈19,3 Go avec 130 k de contexte, sans quantifier le cache KV."
+      "avoid": "Les 70B entièrement GPU, sauf quantification très agressive ou multi-GPU. North Mini Code à 256 k de contexte : cache KV insuffisant.",
+      "summary": "Muse Glimmer tient à ≈17 Go en K-Quant (~1,0 % de dégradation). Pour le code, North Mini Code 1.0 en w4a16 occupe ~18–20 Go et laisse 4–6 Go de cache KV."
     }
   ],
   "localizations": [
-    { "developer": "OpenAI", "model": "Familles GPT via API directe", "distributor": "OpenAI", "channel": "API managée", "region": "EEE pour services et clients éligibles", "belgium": "Disponible selon le service", "residency": "Inférence et stockage à vérifier endpoint par endpoint", "confidence": 95, "sourceId": "R01", "last_verified_at": "2026-08-12" },
-    { "developer": "Anthropic", "model": "Familles Claude via API directe", "distributor": "Anthropic", "channel": "API managée", "region": "Option de résidence selon offre", "belgium": "Disponible sous conditions", "residency": "Contrat et surface à vérifier", "confidence": 92, "sourceId": "R02", "last_verified_at": "2026-08-12" },
-    { "developer": "Anthropic", "model": "Claude via Amazon Bedrock", "distributor": "AWS", "channel": "Cloud partenaire", "region": "Régions AWS UE, modèle par modèle", "belgium": "Accessible depuis la Belgique", "residency": "Routage cross-region et journaux à contrôler", "confidence": 92, "sourceId": "R06", "last_verified_at": "2026-08-12" },
-    { "developer": "Anthropic", "model": "Claude via Microsoft Foundry", "distributor": "Microsoft", "channel": "Cloud partenaire", "region": "Infrastructure Anthropic", "belgium": "Accessible selon catalogue", "residency": "Ne réside pas automatiquement dans la région Azure choisie", "confidence": 90, "sourceId": "R05", "last_verified_at": "2026-08-12" },
-    { "developer": "Google", "model": "Gemini API", "distributor": "Google AI Studio", "channel": "API managée", "region": "EEE disponible", "belgium": "Disponible", "residency": "Disponibilité EEE ne vaut pas résidence garantie", "confidence": 95, "sourceId": "R03", "last_verified_at": "2026-08-12" },
-    { "developer": "Google", "model": "Gemini via Vertex AI", "distributor": "Google Cloud", "channel": "Cloud partenaire", "region": "Régions et multi-régions UE selon modèle", "belgium": "Disponible selon projet", "residency": "Données et journaux gouvernés par configuration Cloud", "confidence": 95, "sourceId": "R04", "last_verified_at": "2026-08-12" },
-    { "developer": "OpenAI", "model": "Modèles OpenAI via Azure", "distributor": "Microsoft Azure", "channel": "Cloud partenaire", "region": "Régions Azure UE selon modèle", "belgium": "Disponible selon abonnement", "residency": "Vérifier région de déploiement et fonctions annexes", "confidence": 95, "sourceId": "R05", "last_verified_at": "2026-08-12" },
-    { "developer": "Multiples", "model": "Catalogue Amazon Bedrock", "distributor": "AWS", "channel": "Cloud partenaire", "region": "Régions AWS UE, disponibilité variable", "belgium": "Disponible", "residency": "Chaque modèle, outil et routage doit être vérifié", "confidence": 95, "sourceId": "R06", "last_verified_at": "2026-08-12" },
-    { "developer": "Mistral AI", "model": "Modèles Mistral", "distributor": "Mistral AI", "channel": "API managée", "region": "Options européennes et privées selon offre", "belgium": "Disponible", "residency": "Région exacte et rétention à vérifier par plan", "confidence": 92, "sourceId": "R07", "last_verified_at": "2026-08-12" },
-    { "developer": "Hugging Face", "model": "Inference Endpoints", "distributor": "Hugging Face / AWS", "channel": "Cloud partenaire", "region": "AWS eu-west-1 documenté", "belgium": "Disponible", "residency": "DPA Enterprise et configuration endpoint à vérifier", "confidence": 90, "sourceId": "R08", "last_verified_at": "2026-08-12" },
-    { "developer": "Meta, Mistral, Qwen, NVIDIA, IBM et autres", "model": "Modèles open weight", "distributor": "Dépôts officiels", "channel": "Self-host", "region": "Région choisie par l’exploitant", "belgium": "Dépend de la licence et du téléchargement", "residency": "Sous contrôle de l’exploitant, y compris logs et sauvegardes", "confidence": 95, "sourceId": "R07/R08/R12/R14", "last_verified_at": "2026-08-12" },
-    { "developer": "Cohere", "model": "Command, Embed et Rerank", "distributor": "Cohere et clouds partenaires", "channel": "API managée", "region": "À confirmer par offre et contrat", "belgium": "B2B, contrat à vérifier", "residency": "Non publiée avec assez de précision dans ce run", "confidence": 70, "sourceId": "R13", "last_verified_at": "2026-08-12" },
-    { "developer": "DeepSeek, Qwen, Kimi et GLM", "model": "API directes", "distributor": "Fournisseurs directs", "channel": "API managée", "region": "Région UE non confirmée", "belgium": "À confirmer", "residency": "DPA, transferts et rétention insuffisamment documentés", "confidence": 60, "sourceId": "R11 + docs fournisseurs", "last_verified_at": "2026-08-12" }
+    {
+      "developer": "OpenAI",
+      "model": "Familles GPT via API directe",
+      "distributor": "OpenAI",
+      "channel": "API managée",
+      "region": "EEE pour services et clients éligibles",
+      "belgium": "Disponible selon le service",
+      "residency": "Inférence et stockage à vérifier endpoint par endpoint",
+      "confidence": 95,
+      "sourceId": "R01",
+      "last_verified_at": "2026-08-13"
+    },
+    {
+      "developer": "Anthropic",
+      "model": "Familles Claude via API directe",
+      "distributor": "Anthropic",
+      "channel": "API managée",
+      "region": "Option de résidence selon offre",
+      "belgium": "Disponible sous conditions",
+      "residency": "Contrat et surface à vérifier",
+      "confidence": 92,
+      "sourceId": "R02",
+      "last_verified_at": "2026-08-13"
+    },
+    {
+      "developer": "Anthropic",
+      "model": "Claude via Amazon Bedrock",
+      "distributor": "AWS",
+      "channel": "Cloud partenaire",
+      "region": "Régions AWS UE, modèle par modèle",
+      "belgium": "Accessible depuis la Belgique",
+      "residency": "Routage cross-region et journaux à contrôler",
+      "confidence": 92,
+      "sourceId": "R06",
+      "last_verified_at": "2026-08-13"
+    },
+    {
+      "developer": "Anthropic",
+      "model": "Claude via Microsoft Foundry",
+      "distributor": "Microsoft",
+      "channel": "Cloud partenaire",
+      "region": "Infrastructure Anthropic",
+      "belgium": "Accessible selon catalogue",
+      "residency": "Ne réside pas automatiquement dans la région Azure choisie",
+      "confidence": 90,
+      "sourceId": "R05",
+      "last_verified_at": "2026-08-13"
+    },
+    {
+      "developer": "Google",
+      "model": "Gemini API",
+      "distributor": "Google AI Studio",
+      "channel": "API managée",
+      "region": "EEE disponible",
+      "belgium": "Disponible",
+      "residency": "Disponibilité EEE ne vaut pas résidence garantie",
+      "confidence": 95,
+      "sourceId": "R03",
+      "last_verified_at": "2026-08-13"
+    },
+    {
+      "developer": "Google",
+      "model": "Gemini via Vertex AI",
+      "distributor": "Google Cloud",
+      "channel": "Cloud partenaire",
+      "region": "Régions et multi-régions UE selon modèle",
+      "belgium": "Disponible selon projet",
+      "residency": "Données et journaux gouvernés par configuration Cloud",
+      "confidence": 95,
+      "sourceId": "R04",
+      "last_verified_at": "2026-08-13"
+    },
+    {
+      "developer": "OpenAI",
+      "model": "Modèles OpenAI via Azure",
+      "distributor": "Microsoft Azure",
+      "channel": "Cloud partenaire",
+      "region": "Régions Azure UE selon modèle",
+      "belgium": "Disponible selon abonnement",
+      "residency": "Vérifier région de déploiement et fonctions annexes",
+      "confidence": 95,
+      "sourceId": "R05",
+      "last_verified_at": "2026-08-13"
+    },
+    {
+      "developer": "Multiples",
+      "model": "Catalogue Amazon Bedrock",
+      "distributor": "AWS",
+      "channel": "Cloud partenaire",
+      "region": "Régions AWS UE, disponibilité variable",
+      "belgium": "Disponible",
+      "residency": "Chaque modèle, outil et routage doit être vérifié",
+      "confidence": 95,
+      "sourceId": "R06",
+      "last_verified_at": "2026-08-13"
+    },
+    {
+      "developer": "Mistral AI",
+      "model": "Modèles Mistral",
+      "distributor": "Mistral AI",
+      "channel": "API managée",
+      "region": "Regional Endpoints en GA : Europe ou États-Unis au choix (×1,1)",
+      "belgium": "Disponible",
+      "residency": "Inférence dans la région choisie, sous réserve de transferts encadrés vers des sous-traitants hors région. Exiger DPA et liste des sous-traitants.",
+      "confidence": 92,
+      "sourceId": "R07",
+      "last_verified_at": "2026-08-13"
+    },
+    {
+      "developer": "Hugging Face",
+      "model": "Inference Endpoints",
+      "distributor": "Hugging Face / AWS",
+      "channel": "Cloud partenaire",
+      "region": "AWS eu-west-1 documenté",
+      "belgium": "Disponible",
+      "residency": "DPA Enterprise et configuration endpoint à vérifier",
+      "confidence": 90,
+      "sourceId": "R08",
+      "last_verified_at": "2026-08-13"
+    },
+    {
+      "developer": "Meta, Mistral, Qwen, NVIDIA, IBM et autres",
+      "model": "Modèles open weight",
+      "distributor": "Dépôts officiels",
+      "channel": "Self-host",
+      "region": "Région choisie par l’exploitant",
+      "belgium": "Dépend de la licence et du téléchargement",
+      "residency": "Sous contrôle de l’exploitant, y compris logs et sauvegardes",
+      "confidence": 95,
+      "sourceId": "R07/R08/R12/R14",
+      "last_verified_at": "2026-08-13"
+    },
+    {
+      "developer": "Cohere",
+      "model": "Command, Embed et Rerank",
+      "distributor": "Cohere et clouds partenaires",
+      "channel": "API managée",
+      "region": "À confirmer par offre et contrat",
+      "belgium": "B2B, contrat à vérifier",
+      "residency": "Non publiée avec assez de précision dans ce run",
+      "confidence": 70,
+      "sourceId": "R13",
+      "last_verified_at": "2026-08-13"
+    },
+    {
+      "developer": "DeepSeek, Qwen, Kimi et GLM",
+      "model": "API directes",
+      "distributor": "Fournisseurs directs",
+      "channel": "API managée",
+      "region": "Région UE non confirmée",
+      "belgium": "À confirmer",
+      "residency": "DPA, transferts et rétention insuffisamment documentés",
+      "confidence": 60,
+      "sourceId": "R11 + docs fournisseurs",
+      "last_verified_at": "2026-08-13"
+    },
+    {
+      "developer": "xAI (SpaceXAI)",
+      "model": "Grok 4.6 via API directe",
+      "distributor": "xAI",
+      "channel": "API managée",
+      "region": "Aucune résidence UE annoncée ; traitement documenté en us-east-1 et us-west-2",
+      "belgium": "Console UE confirmée pour 4.5 ; statut de 4.6 à confirmer",
+      "residency": "À confirmer. Entité contractante susceptible de changer à la clôture de l’acquisition d’Anysphere par SpaceX.",
+      "confidence": 60,
+      "sourceId": "S139",
+      "last_verified_at": "2026-08-13"
+    }
   ],
   "documents": [
     {
@@ -394,6 +556,50 @@
       "kind": "Confiance",
       "title": "Référentiel des sources",
       "url": "referentiel-sources.html"
+    }
+  ],
+  "changes": [
+    {
+      "actor": "Mistral AI",
+      "date": "2026-08-11",
+      "summary": "Regional Endpoints en GA (UE ou US, ×1,1) et Priority Tier en préversion (×1,75, SLA 99,5 %). Réserve : transferts encadrés vers des sous-traitants hors région possibles.",
+      "impact": "majeur"
+    },
+    {
+      "actor": "xAI (SpaceXAI)",
+      "date": "2026-08-12",
+      "summary": "Grok 4.6 remplace 4.5 : 500 k de contexte, 2/0,50/6 USD/M sous 200 k et 4/1/12 au-delà, grille haute appliquée à toute la requête. Aucune remise batch.",
+      "impact": "majeur"
+    },
+    {
+      "actor": "SpaceX · Anysphere/Cursor",
+      "date": "2026-08-12",
+      "summary": "Procédures réglementaires finalisées ; clôture attendue avant fin août, non actée. Les deux entrées restent distinctes dans la sélection.",
+      "impact": "structurel"
+    },
+    {
+      "actor": "OpenAI",
+      "date": "2026-08-10",
+      "summary": "GPT-5.6-Cyber à 12,50/75 USD/M, accès réservé au palier Daybreak Red sur candidature. Indisponible en libre-service.",
+      "impact": "modéré"
+    },
+    {
+      "actor": "Cohere",
+      "date": "2026-06-09",
+      "summary": "Lacune corrigée : North Mini Code 1.0, MoE 30B/3B actifs, Apache 2.0, 256 k de contexte, w4a16 ≈ 18–20 Go.",
+      "impact": "correction"
+    },
+    {
+      "actor": "Google",
+      "date": "2026-06-30",
+      "summary": "Lacune corrigée : Gemini Omni Flash (1,50 USD/M entrée, 17,50 sortie vidéo) et Robotics ER 2 preview (2/10). Arrêt de er-1.6-preview le 31 août 2026.",
+      "impact": "correction"
+    },
+    {
+      "actor": "Alibaba / Qwen",
+      "date": "2026-08-13",
+      "summary": "Poids ouverts de Qwen3.8-Max toujours non publiés et licence non nommée, après l’échéance annoncée de la semaine du 10 août.",
+      "impact": "en attente"
     }
   ]
 }
