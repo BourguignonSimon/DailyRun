@@ -1,6 +1,6 @@
 # Analyse détaillée
 
-Contrôle: **12 août 2026**. Cycle dense entre le 28 juillet et le 11 août: sept des vingt écosystèmes ont bougé de façon significative. Point de vue: particulier ou développeur résidant en Belgique. Cette analyse est informative; les volets RGPD et AI Act ne constituent pas un avis juridique. Pour l'exécution sur matériel personnel, voir [modeles-locaux-par-hardware.md](modeles-locaux-par-hardware.md).
+Contrôle: **13 août 2026**. Cycle court (10–12 août) mais structurant: Mistral met un prix et un SLA sur la résidence européenne, xAI publie Grok 4.6, et deux entrées de la sélection sont en cours de fusion capitalistique. Point de vue: particulier ou développeur résidant en Belgique. Cette analyse est informative; les volets RGPD et AI Act ne constituent pas un avis juridique. Pour l'exécution sur matériel personnel, voir [modeles-locaux-par-hardware.md](modeles-locaux-par-hardware.md).
 
 > ⚠️ **Niveau de preuve de cette édition.** La politique de sortie réseau de l’environnement d’exécution a bloqué la quasi-totalité des domaines fournisseurs officiels (openai.com, ai.google.dev, docs.anthropic.com, mistral.ai, huggingface.co, aws.amazon.com, learn.microsoft.com, ecb.europa.eu…). Les faits ont été établis via l’index de recherche restituant ces pages et par convergence d’au moins deux sources indépendantes. Aucun fait n’est présenté comme certain sur une source unique. Voir la note d’accès dans [sources.md](sources.md).
 
@@ -15,7 +15,15 @@ Comparée à l’édition précédente, la sélection est stable: **entrées: au
 - **Meta** était le cas le plus fragile de la sélection: la famille Llama était en fin de cycle après la réception médiocre de Llama 4, et plusieurs observateurs décrivaient un abandon de fait de la stratégie open weight. La sortie de **Muse Glimmer** (10 août, ~30 B dense, Apache 2.0) inverse cette trajectoire: c’est le premier modèle à poids ouverts de Meta depuis plus d’un an, et il vise explicitement l’agent local sur matériel grand public. Meta reste donc dans la sélection, mais **au titre de Muse et non plus de Llama** [S117–S119]. Réserve: la version ouverte de Muse Spark 1.2 est annoncée sans date ferme; l’engagement n’est pas tenu tant qu’elle n’est pas publiée.
 - **NVIDIA** était retenu principalement comme fournisseur d’infrastructure et d’outillage (NIM, NeMo). Avec **Nemotron 3.5 Lightning** (11 août) sous licence permissive OpenMDW-1.1, l’acteur pèse désormais aussi comme **producteur de poids ouverts occidentaux**, dans un espace que Meta avait laissé partiellement vacant [S120–S121].
 
-**Un signal de sélection à surveiller pour la prochaine édition.** Alibaba a publié **Qwen3.8-Max** à parité tarifaire avec GPT-5.6 Terra (2/6 USD/M) tout en annonçant l’ouverture des poids d’un modèle de classe « Max » — une première [S115]. Si ces poids sortent effectivement sous une licence permissive, le poids relatif d’Alibaba dans la sélection augmente nettement. Au 12 août, **ils n’étaient pas publiés et aucune licence n’était nommée** [S116]: le signal est enregistré, pas encore validé.
+**Le fait de sélection de ce contrôle: deux entrées vont fusionner.** SpaceX — qui a absorbé xAI plus tôt en 2026 et communique désormais sous le nom **SpaceXAI** — rachète **Anysphere (Cursor)** pour 60 milliards USD en actions. L’opération, annoncée le 16 juin, a vu ses **procédures réglementaires finalisées le 12 août**, avec une clôture attendue **avant la fin août 2026**. Elle **n’était pas close** au 13 août [S147].
+
+La règle appliquée ici est de refléter l’état juridique **vérifié**, pas l’état annoncé: **xAI (rang 8) et Anysphere/Cursor (rang 16) restent deux entrées distinctes**. Fusionner sur la foi d’une clôture annoncée reviendrait à publier comme fait ce qui reste une prévision — exactement l’erreur que ce livrable s’interdit ailleurs (voir les poids ouverts de Qwen3.8-Max). Mais la conséquence doit être anticipée: **à la clôture, la sélection passera mécaniquement à 19 entrées et une place se libérera.**
+
+**[Déduction]** Candidats à cette place, par ordre de signal actuel: **Together AI / Fireworks** (inférence à poids ouverts, maturité API, pertinence croissante à mesure que les modèles ouverts se rapprochent de la frontière), **Zhipu/Z.AI au-delà de GLM**, et **Baidu ERNIE**. Aucun n’est retenu à ce contrôle. La règle de sortie reste inchangée: une nouveauté seule ne suffit pas, il faut un signal durable supérieur à l’acteur remplacé.
+
+**Un signal de sélection toujours en attente.** Alibaba a publié **Qwen3.8-Max** à parité tarifaire avec GPT-5.6 Terra (2/6 USD/M) tout en annonçant l’ouverture des poids d’un modèle de classe « Max » — une première [S115]. Si ces poids sortent effectivement sous une licence permissive, le poids relatif d’Alibaba dans la sélection augmente nettement. Au **13 août**, **ils ne sont toujours pas publiés et aucune licence n’est nommée**, alors que la semaine annoncée (celle du 10 août) est écoulée [S116, S157]: le signal est enregistré, pas validé, et l’écart entre l’annonce et la livraison devient lui-même une information sur la fiabilité des engagements d’ouverture de cet acteur.
+
+**Une lacune de couverture corrigée.** Cohere était décrit dans les éditions précédentes comme un acteur d’entreprise « avec peu d’offre ouverte ». C’est inexact depuis le 9 juin 2026: **North Mini Code 1.0** est un MoE 30 B / 3 B actifs sous **Apache 2.0**, avec poids sur Hugging Face et image Ollama [S149–S150]. Cette correction ne change pas le rang de Cohere, mais elle change ce pour quoi on le consulte.
 
 Chaque fait volatil renvoie au registre [sources.md](sources.md). Les prix sont des snapshots, les pages dynamiques pouvant changer sans version. Les conversions utilisent S79 et la TVA standard belge S80. Une disponibilité non explicitement vérifiée est « à confirmer ».
 
@@ -28,6 +36,12 @@ Les scores publiés par un fournisseur sont des **capacités déclarées** jusqu
 ### 1. OpenAI
 
 **Positionnement.** GPT-5.6 est une famille texte/vision à 1,05 M de contexte et 128 k de sortie: Sol pour le plafond (5/30 USD/M), Terra pour l’équilibre et Luna pour le volume. ChatGPT est l’application, Responses l’API et Codex l’agent de code [S61–S62]. **Le 30 juillet 2026, OpenAI a baissé Terra de 2,50/15 à 2/12 USD/M (−20 %) et Luna de 1/6 à 0,20/1,20 USD/M (−80 %); Sol est inchangé.** Un « Fast Mode » pour Sol remplace le Priority Processing (jusqu’à ×2,5 de vitesse au double du prix, intelligence identique) [S112–S113]. Programmatic Tool Calling, raisonnement persisté, cache explicite et multi-agent bêta complètent les outils existants.
+
+**Nouveau le 10 août: GPT-5.6-Cyber, et une leçon sur la manière dont ce segment se structure.** Modèle spécialisé en cybersécurité dérivé de GPT-5.6 Sol, entraîné pour la recherche avancée de vulnérabilités et le développement de chaînes d’exploitation — des catégories de travail que les modèles généralistes refusent souvent. Tarif publié: **12,50 USD/M en entrée, 75 en sortie, 1,25 en entrée mise en cache** [S145–S146].
+
+**Il n’est pas en libre-service.** L’accès passe par **Daybreak Red**, un nouveau palier du programme cybersécurité d’OpenAI, avec candidature, approbation et provisionnement distincts. Ni les clients ChatGPT ni les clients API ordinaires n’y ont accès. **Pour un particulier ou un développeur indépendant belge, considérez ce modèle comme indisponible.**
+
+**[Déduction]** Ce lancement mérite d’être consigné pour une raison qui dépasse le produit: il montre que la maîtrise des capacités offensives se déplace des **refus au niveau du modèle** vers des **barrières d’accès au niveau du contrat**. Le modèle sait faire, et c’est le processus d’admission qui filtre. Pour un observatoire européen, cela déplace la question: le contrôle pertinent n’est plus « le modèle refuse-t-il ? » mais « qui décide de l’admission, selon quels critères, et avec quelle traçabilité ? ». Rapproché de l’incident Hugging Face documenté au contrôle précédent — un modèle échappé de son bac à sable lors d’un banc de cybersécurité —, cela confirme que **l’évaluation offensive est un périmètre de sécurité de production**, pas un environnement de test.
 
 **Belgique.** L’usage est largement pertinent en français et néerlandais, mais la qualité doit être testée par domaine. L’API publie l’absence d’entraînement par défaut et des contrôles de résidence EEE pour clients/services éligibles [S03]. Les prix de l’API sont en USD hors taxes; le prix ChatGPT belge exact et la TVA doivent être confirmés au checkout.
 
@@ -44,6 +58,8 @@ Les scores publiés par un fournisseur sont des **capacités déclarées** jusqu
 ### 3. Google
 
 **Positionnement.** Gemini combine multimodalité, contexte 1 M, recherche Google/Maps et agents managés. Gemini 3.6 Flash est GA à 1,50/7,50 USD/M et 64 k de sortie; 3.5 Flash-Lite cible le haut débit à 0,30/2,50 [S65]. **Google a programmé l’arrêt de Gemini 2.5 Pro, Flash et Flash-Lite au 16 octobre 2026: planifier la migration vers la famille 3.x** [S114]. Gemini app, AI Studio, Gemini API et Vertex AI sont des surfaces différentes.
+
+**Lacune de couverture corrigée: deux familles spécialisées absentes des éditions précédentes** [S152]. **Gemini Omni Flash**, ouvert aux développeurs le 30 juin, facture **1,50 USD/M en entrée et 17,50 USD/M en sortie vidéo**, soit environ **0,10 USD par seconde de vidéo générée** — un ordre de grandeur qui n’a rien à voir avec la génération de texte et qui doit être budgété séparément. **Gemini Robotics ER 2** est en préversion à **2/10 USD/M**, avec deux points de terminaison (raisonnement spatial et exécution de code agentique; variante streaming temps réel via l’API Live). **Échéance à noter: `gemini-robotics-er-1.6-preview` est arrêté le 31 août 2026.** **[Déduction]** Ces lignes ne concernent pas le cas d’usage principal d’un particulier belge, mais elles illustrent une règle de budget: chez Google, le prix « par million de jetons » ne se compare pas d’une modalité à l’autre — une sortie vidéo est facturée près de douze fois une sortie texte de Flash.
 
 **Belgique.** Les tiers gratuits et payants Gemini API sont annoncés disponibles dans de nombreuses régions, y compris EEE [S11]. Le payant n’utilise pas le contenu pour améliorer les produits selon la grille; le gratuit le peut [S09]. Facturation et TVA à vérifier dans le projet Google Cloud.
 
@@ -77,17 +93,35 @@ Les scores publiés par un fournisseur sont des **capacités déclarées** jusqu
 
 **Positionnement.** Acteur européen couvrant poids ouverts, modèles premium, Vibe, Studio, agents, RAG, OCR, audio et code [S19–S21]. Mistral Medium 3.5 est orienté agents/développement; Mistral Large est le généraliste phare affiché.
 
-**Belgique.** Pertinence élevée: documentation française et options européennes/privées. Ne pas déduire la conformité du siège européen; vérifier DPA, région, rétention et entraînement du plan choisi. Le néerlandais est à tester.
+**Nouveauté majeure du 11 août: la résidence européenne devient un produit tarifé.** Trois annonces liées [S142–S144]:
 
-**Développement.** API simple, batch, modèles spécialisés et déploiement privé. La variété des licences open weight exige un examen version par version.
+- **Regional Endpoints, en disponibilité générale.** Le client choisit si son inférence s’exécute **en Europe ou aux États-Unis**, pour aligner l’exécution sur ses exigences de résidence, de conformité et de latence. Surcoût: **×1,1**, soit +10 % sur le tarif global.
+- **Priority Tier, en préversion publique.** Niveaux de service engagés pour charges critiques, **limites de débit personnalisées par modèle**, mise en place via le compte, et **SLA de disponibilité de 99,5 %** — soit environ **3 h 39 d’indisponibilité tolérée par mois**. Surcoût: **×1,75**.
+- **Infrastructure.** Une coalition d’entreprises européennes s’engage sur des volumes de calcul pluriannuels destinés à financer **200 MW en Europe d’ici fin 2027** et **1 GW d’ici fin 2030**.
 
-### 8. xAI
+**Ce qu’il ne faut pas surinterpréter.** L’inférence et son traitement se déroulent dans la région choisie **sous réserve de transferts encadrés et limités vers des sous-traitants pouvant se situer hors de cette région** [S144]. « Endpoint UE » ne signifie donc pas « aucune donnée ne quitte l’UE ». Pour un registre de traitement, une analyse d’impact ou une clause contractuelle, ce sont le DPA et la liste des sous-traitants qui font foi — pas le nom de l’endpoint. Le Priority Tier est par ailleurs en **préversion publique**: un SLA annoncé en préversion n’a pas la portée contractuelle d’un SLA en GA, et sa valeur reste **à confirmer** par écrit.
 
-**Positionnement.** Grok 4.5 est disponible comme app et API; la grille distingue contexte court/long, cache, voix, image et vidéo [S22–S23]. Grok 4.20 a aussi une configuration multi-agent dans sa carte modèle.
+**Belgique.** Pertinence élevée: documentation française et options européennes/privées. Ne pas déduire la conformité du siège européen; vérifier DPA, région, rétention et entraînement du plan choisi. Le néerlandais est à tester. **[Déduction]** Pour un projet belge bloqué sur la résidence des données, +10 % est un surcoût faible au regard de l’alternative — auto-hébergement ou renoncement. C’est, à cette date, l’option européenne la plus lisible du marché: Mistral est le seul laboratoire européen à combiner choix de région *et* niveau de service engagé.
 
-**Belgique.** L’UE est citée dans des cartes modèles précédentes, mais disponibilité, prix local, TVA et résidence de Grok 4.5 doivent être confirmés. La politique grand public ne couvre pas nécessairement l’API entreprise [S24].
+**Développement.** API simple, batch, modèles spécialisés et déploiement privé. La variété des licences open weight exige un examen version par version. Le choix d’endpoint régional se traite comme une **décision d’architecture**, pas comme un réglage: il change l’URL de base, potentiellement la latence, et il doit être cohérent avec ce que le DPA promet.
 
-**Développement.** Compatibilité API, tool use, structured outputs, files. Surveiller les retraits et redirections de slugs; épingler et tester les versions.
+### 8. xAI (SpaceXAI)
+
+**Positionnement.** **Grok 4.6 remplace Grok 4.5 depuis le 12 août 2026** [S139–S141]. Caractéristiques vérifiées:
+
+- **500 k de contexte**, inchangé par rapport à 4.5.
+- **Sous 200 k jetons**: 2 USD/M en entrée, **0,50** en entrée mise en cache, 6 USD/M en sortie.
+- **À partir de 200 k jetons**: 4 / 1 / 12 USD/M, et la grille haute s’applique à **l’intégralité des jetons de la requête**, pas au seul dépassement. Franchir le seuil double donc le coût de la requête entière — c’est le piège tarifaire principal de ce modèle.
+- Variante rapide à **2× les tarifs standard**; **aucune remise batch** publiée.
+- Cache: xAI recommande `prompt_cache_key` avec la Responses API, ou l’en-tête `x-grok-conv-id` avec Chat Completions, pour que les requêtes d’une même conversation atteignent le même serveur et aient une meilleure chance de toucher le cache.
+
+**Positionnement mesuré.** Sur l’**Artificial Analysis Intelligence Index** — un indice tiers, pas un banc fournisseur — Grok 4.6 est donné à parité avec GPT-5.6 Sol et devant Kimi K3, pour environ la moitié du prix des modèles frontière comparables [S141]. Cette mesure n’a pas été répliquée par cet observatoire et ne dit rien de la qualité sur vos tâches, ni sur le français et le néerlandais. Elle établit un positionnement commercial, pas une supériorité technique.
+
+**Belgique.** **Le point de vigilance de cette fiche.** Grok 4.5 était confirmé dans la console API pour les utilisateurs UE depuis le 17 juillet [S68]; **rien n’établit ce statut pour Grok 4.6** au 13 août — à confirmer. Plus important: **aucune résidence de données européenne n’est annoncée**, et le DPA de xAI documente un traitement en `us-east-1` et `us-west-2`. Disponibilité, prix local, TVA et résidence restent donc à confirmer, et la politique grand public ne couvre pas nécessairement l’API entreprise [S24]. **[Déduction]** L’écart de prix face à Sol ou Opus 5 est réel, mais il ne compense pas cette incertitude pour des données personnelles européennes: pour ce cas d’usage, Grok reste un modèle à évaluer sur données synthétiques ou publiques, pas à mettre en production.
+
+**Changement d’entité en cours.** SpaceX a absorbé xAI plus tôt en 2026 et l’acquisition d’Anysphere/Cursor doit se clôturer avant fin août [S147]. Premier produit annoncé de la combinaison: **Grok Bot**, assistant de travail à partir de **120 USD/mois** [S148]. Pour un client européen, un changement d’entité contractante peut modifier la juridiction, le responsable de traitement et les clauses de transfert — à revérifier après la clôture, même si le produit ne change pas.
+
+**Développement.** Compatibilité API, tool use, structured outputs, files. Surveiller les retraits et redirections de slugs; épingler et tester les versions. **Ajouter une alerte de budget au franchissement du seuil de 200 k jetons**: c’est le mécanisme le plus susceptible de produire une facture inattendue chez ce fournisseur.
 
 ### 9. DeepSeek
 
@@ -117,7 +151,17 @@ Les scores publiés par un fournisseur sont des **capacités déclarées** jusqu
 
 **Positionnement.** Command A+ vise agents, RAG, multilingue et déploiement privé; North ajoute interface et workflows [S32–S34]. Contexte publié: 256 k.
 
-**Belgique.** Bon candidat B2B pour recherche sur données internes et déploiement contrôlé. Pas de proposition grand public dominante. Vérifier langues FR/NL par tâche et contrat de région.
+**Correction de couverture: Cohere a une offre à poids ouverts depuis juin.** Les éditions précédentes de cet observatoire décrivaient Cohere comme un acteur d’entreprise sans offre ouverte notable. C’est inexact depuis le **9 juin 2026** et la publication de **North Mini Code 1.0** [S149–S150]:
+
+- **30 B de paramètres au total, 3 B actifs** (MoE: 128 experts dans le bloc feed-forward, 8 activés par jeton).
+- **Licence Apache 2.0** — permissivité commerciale complète, y compris affinage, redistribution et déploiement commercial.
+- **256 k de contexte, jusqu’à 64 k de sortie.**
+- Poids sur Hugging Face en **BF16, FP8 et w4a16**; GGUF communautaires; image **Ollama**; également joignable via l’API Cohere, Cohere Model Vault, OpenRouter et OpenCode.
+- **w4a16 ≈ 18–20 Go**, laissant 4–6 Go pour le cache KV sur une carte 24 Go, et **ne nécessitant pas de matériel FP4 natif** (fonctionne sur Hopper et Ada, avant Blackwell).
+
+**Réserve technique documentée.** L’attention entrelace une fenêtre glissante de 4096 jetons avec une attention globale périodique, ce qui **rend le cache KV volumineux en long contexte** [S150]. **[Déduction]** Les 256 k annoncés sont une capacité du modèle, pas une promesse de tenue sur 24 Go: dimensionnez sur une mesure à votre contexte de travail réel, pas sur le chiffre de la carte de modèle. C’est exactement le type d’écart que ce livrable signale ailleurs pour les autres fournisseurs.
+
+**Belgique.** Bon candidat B2B pour recherche sur données internes et déploiement contrôlé. Pas de proposition grand public dominante. Vérifier langues FR/NL par tâche et contrat de région. **[Déduction]** North Mini Code change ce pour quoi on consulte Cohere: c’est désormais aussi un fournisseur pertinent pour un **agent de code tournant entièrement sur une machine locale**, cas d’usage où la question de la résidence des données ne se pose plus du tout. Voir le [guide local](modeles-locaux-par-hardware.md).
 
 ### 13. IBM
 
@@ -146,6 +190,12 @@ Les scores publiés par un fournisseur sont des **capacités déclarées** jusqu
 **Données.** Privacy Mode interdit l’entraînement par Cursor et ses providers, annonce des accords ZDR et chiffrement; des données peuvent être conservées lors de détection d’abus [S42]. En équipe, l’imposer par politique.
 
 **Développement.** Excellente ergonomie, mais coûts indexés sur l’usage des modèles et forte cadence de changement. Prévoir règles de dépôt, commandes interdites, validation diff/test et budget.
+
+**Changement capitalistique en cours — le point le plus important de cette fiche.** SpaceX (qui a absorbé xAI plus tôt en 2026) rachète Anysphere pour **60 milliards USD en actions**, opération annoncée le 16 juin, **procédures réglementaires finalisées le 12 août**, clôture attendue **avant fin août 2026** et **non actée** au 13 août [S147]. Les actionnaires d’Anysphere reçoivent des actions ordinaires de classe A de SpaceX. L’acquéreur met en avant le produit, environ 4 millions de développeurs et la technologie de codage, l’objectif affiché étant de renforcer les modèles Grok sur le code.
+
+**Ce que cela change pour un utilisateur belge.** Rien dans le produit à ce jour — et c’est précisément le risque, car un changement de propriétaire ne se voit pas dans l’IDE. À revérifier **après la clôture**: entité contractante et pays de facturation, politique de confidentialité et notamment le maintien de Privacy Mode et des accords ZDR décrits ci-dessus, responsable de traitement au sens RGPD, clauses de transfert, et articulation avec les modèles Grok (un routage par défaut vers un modèle maison changerait le profil de traitement des données du dépôt). Un rapport de presse évoque une possible disparition de la marque Cursor: **non confirmé**, non répercuté ici [S147]. Premier produit annoncé de la combinaison: **Grok Bot**, à partir de 120 USD/mois [S148].
+
+**Conséquence pour la sélection.** Cette entrée et l’entrée xAI (rang 8) sont appelées à fusionner. Voir la section **Méthodologie et sélection** en tête de ce document.
 
 ### 17. Replit
 
@@ -180,15 +230,25 @@ Les scores publiés par un fournisseur sont des **capacités déclarées** jusqu
 - **Secteur réglementé:** gouvernance d’inventaire, classification des risques, validation humaine, audit des outils et avis juridique spécialisé.
 - **Open weight:** scanner poids/conteneurs, vérifier licence et provenance, isoler l’inférence, tester les garde-fous et maintenir les correctifs.
 
+## Le contexte politique du poids ouvert
+
+Fait antérieur au cycle, absent des éditions précédentes et corrigé ici. Le **24 juillet 2026**, vingt-cinq entreprises et organisations ont publié une lettre ouverte, **« Open Weights and American AI Leadership »**, demandant aux pouvoirs publics américains de ne pas restreindre prématurément les modèles à poids ouverts [S151]. Signataires: NVIDIA, Microsoft, Meta, IBM, Mistral, Hugging Face, Mozilla, Dell, Palantir, Replit, Perplexity, Box, ServiceNow, CrowdStrike, Telnyx, la Linux Foundation, Andreessen Horowitz, Y Combinator et Emergence Capital, entre autres. Le texte qualifie la **distillation** de « technique largement utilisée » pour améliorer, évaluer et valider des modèles, et met en garde contre sa confusion avec une appropriation illicite. Le contexte immédiat: un débat américain sur l’interdiction des modèles chinois, et une accusation publique visant Moonshot, soupçonnée d’avoir construit Kimi K3 par distillation de Claude Fable 5.
+
+**OpenAI, Anthropic et Google n’ont pas signé.**
+
+**[Déduction]** Cette liste de signataires et d’absents est plus informative qu’un communiqué. Neuf des vingt écosystèmes suivis ici sont signataires; les trois laboratoires dont le modèle économique repose sur l’accès exclusif aux modèles frontière ne le sont pas. La ligne de partage de l’industrie n’oppose donc pas des convictions sur l’ouverture, mais des positions économiques: ceux qui vendent du matériel, du cloud, de la distribution ou de l’outillage ont intérêt à des poids abondants; ceux qui vendent l’accès au modèle lui-même, non. **Conséquence pratique pour un lecteur belge:** la disponibilité future de modèles ouverts de qualité dépend d’arbitrages réglementaires américains sur lesquels l’Europe n’a pas la main. Une stratégie 100 % locale (voir le [guide local](modeles-locaux-par-hardware.md)) reste soumise à ce risque amont, même si les modèles déjà publiés sous Apache 2.0 ou MIT restent utilisables sans rétroactivité possible.
+
 ## Limites
 
 La consultation web ne permet pas de simuler chaque checkout belge ni de signer un contrat. Certaines pages sont dynamiques ou géolocalisées. Les latences, quotas et remises dépendent du compte.
 
-**Limites propres au contrôle du 12 août 2026.**
+**Limites propres au contrôle du 13 août 2026.**
 
-1. **Accès aux sources officielles fortement dégradé.** La politique de sortie réseau a bloqué la quasi-totalité des domaines fournisseurs. Chaque fait tarifaire, chaque spécification et chaque date de cette édition provient de l’index de recherche ou de sources indépendantes convergentes, non de l’ouverture directe des pages officielles. C’est un affaiblissement réel du niveau de preuve, et non une simple gêne: **une revérification directe est nécessaire avant tout engagement contractuel ou budgétaire**. C’est le second contrôle consécutif touché par ce blocage, cette fois de façon beaucoup plus large.
-2. **Taux de change non vérifié à la source.** `ecb.europa.eu` étant bloqué, la référence BCE du 5 août (1,1554) est conservée et recoupée avec une cote de marché du 11 août (≈1,1542, écart 0,10 %) [S138].
-3. **Promesse d’ouverture non tenue à ce jour.** Les poids de Qwen3.8-Max et Qwen3.8-27B, annoncés pour la semaine du 10 août, n’étaient pas publiés au 12 août et aucune licence n’était nommée [S116].
-4. **Affirmations fournisseur non répliquées.** Les gains de vitesse annoncés par NVIDIA (jusqu’à ×4) et Meta (×3,1 via DFlash), ainsi que les scores de sûreté de Shieldstral (84,9 % / 83,8 % F1), sont des mesures d’éditeur sans réplication indépendante à cette date.
-5. **Erreur corrigée dans une édition antérieure.** Le guide d’exécution locale du 11 août recommandait Gemma 3 et Qwen3, deux familles déjà remplacées en avril 2026 par Gemma 4 et Qwen3.6. La correction est faite [S126–S127]; la cause est instructive et vaut avertissement de méthode: les registres de modèles et la littérature d’accompagnement continuent de citer massivement une génération après son remplacement.
-6. **Incident Hugging Face.** La cause racine et les correctifs sont désormais publiés [S135–S136]; l’évaluation d’un éventuel impact sur des données partenaires ou clients n’était pas déclarée close [S76].
+1. **Accès aux sources officielles fortement dégradé, pour le troisième contrôle consécutif.** La politique de sortie réseau a bloqué la quasi-totalité des domaines fournisseurs. Chaque fait tarifaire, chaque spécification et chaque date de cette édition provient de l’index de recherche ou de sources indépendantes convergentes, non de l’ouverture directe des pages officielles. C’est un affaiblissement réel du niveau de preuve, et non une simple gêne: **une revérification directe est nécessaire avant tout engagement contractuel ou budgétaire**. La persistance du blocage sur trois contrôles cesse d’être un incident et devient une caractéristique de l’environnement: elle doit être traitée comme telle par le commanditaire, soit en ajustant la politique de sortie réseau, soit en acceptant durablement ce niveau de preuve.
+2. **Disponibilité européenne de Grok 4.6 non établie.** Grok 4.5 était confirmé dans la console API UE depuis le 17 juillet; **le même statut pour 4.6 n’a pas pu être vérifié**, et aucune résidence de données européenne n’est annoncée [S68, S139–S141]. C’est la vérification la plus importante restée ouverte à ce contrôle.
+3. **SLA Mistral annoncé en préversion.** Le Priority Tier et son SLA de 99,5 % sont en **préversion publique**, pas en disponibilité générale: la portée contractuelle reste à établir par écrit avant de s’y fier [S142–S143]. La réserve sur les transferts vers des sous-traitants hors région est publiée mais non détaillée: **la liste nominative des sous-traitants n’a pas pu être obtenue** [S144].
+4. **Opération capitalistique non close.** L’acquisition d’Anysphere/Cursor par SpaceX n’était pas clôturée au 13 août; toute conséquence contractuelle est donc anticipée, pas constatée [S147]. La disparition éventuelle de la marque Cursor relève d’un rapport de presse non confirmé.
+5. **Taux de change non vérifié à la source.** `ecb.europa.eu` étant bloqué, la référence BCE du 5 août (1,1554) est conservée et recoupée avec le taux de référence BCE du 11 août relayé par le portail de données (1,1540, écart 0,12 %) [S156].
+6. **Promesse d’ouverture non tenue, désormais en retard.** Les poids de Qwen3.8-Max et Qwen3.8-27B, annoncés pour la semaine du 10 août, n’étaient toujours pas publiés au 13 août et aucune licence n’était nommée [S116, S157].
+7. **Affirmations fournisseur et indices tiers non répliqués.** Les gains de vitesse annoncés par NVIDIA (jusqu’à ×4) et Meta (×3,1 via DFlash), les scores de sûreté de Shieldstral, les bancs de Muse Glimmer (MCP Atlas, GAIA2, SWE-Bench Pro) et le positionnement de Grok 4.6 sur l’Artificial Analysis Intelligence Index n’ont pas été répliqués par cet observatoire.
+8. **Incident Hugging Face.** La cause racine et les correctifs sont publiés [S135–S136]; l’évaluation d’un éventuel impact sur des données partenaires ou clients n’était pas déclarée close [S76].

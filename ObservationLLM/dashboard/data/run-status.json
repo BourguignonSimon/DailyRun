@@ -1,10 +1,10 @@
 {
-  "runId": "2026-08-12-opus-5-control",
+  "runId": "2026-08-13-opus-5-control",
   "status": "completed",
   "phase": "publication",
   "model": "Opus 5",
-  "startedAt": "2026-08-12T06:30:00Z",
-  "completedAt": "2026-08-12T09:15:00Z",
-  "commit": "3ad57faae24f631505fb09a5f288adacfb4bda54",
-  "message": "Dernier état vérifié publié. Le catalogue, les options de localisation et le référentiel des sources sont disponibles dans le dashboard."
+  "startedAt": "2026-08-13T06:30:00Z",
+  "message": "Contrôle du 13 août 2026 publié. Mistral ouvre le choix de région d’inférence, xAI publie Grok 4.6, et deux écosystèmes suivis sont en cours de fusion capitalistique.",
+  "completedAt": "2026-08-13T09:30:00Z",
+  "commit": "ba7e48e23ecf3ba6f004430489789c70a1473c21"
 }

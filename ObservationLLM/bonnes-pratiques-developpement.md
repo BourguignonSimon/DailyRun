@@ -1,6 +1,6 @@
 # Bonnes pratiques de développement
 
-État vérifié le **12 août 2026**. Les mentions distinguent **[Officiel]** recommandation publiée par un fournisseur, **[Consensus]** pratique convergente entre plusieurs fournisseurs et **[Déduction]** conclusion analytique de cet observatoire.
+État vérifié le **13 août 2026**. Les mentions distinguent **[Officiel]** recommandation publiée par un fournisseur, **[Consensus]** pratique convergente entre plusieurs fournisseurs et **[Déduction]** conclusion analytique de cet observatoire.
 
 > **Changement structurant du mois: la spécification MCP 2026-07-28 est finale** [S124–S125]. MCP étant devenu le connecteur commun entre agents et systèmes internes, la révision touche toutes les intégrations existantes.
 >
@@ -108,9 +108,13 @@ Tracer request ID, version modèle, version prompt, outils, temps, jetons/cache,
 
 **[Officiel, S19–S21/S122–S123]** Choisir Large généraliste, Medium 3.5 pour agents/code, Small pour coût; batch -50 %, agents/RAG/OCR disponibles. **Nouveau: Shieldstral 1.0** (3 B, Apache 2.0) pour le filtrage entrée/sortie, avec une politique de modération rédigée en langage naturel à l’inférence plutôt qu’une taxonomie figée — un seul passage avant renvoie un score calibré. **[Déduction]** Placez-le **devant et derrière** le modèle génératif, et écrivez la politique pour votre cas d’usage précis plutôt que de reprendre un exemple générique. Profiter de la proximité UE mais valider contrat et licence de chaque poids/version.
 
-### 8. xAI
+**[Officiel, S142–S144] Nouveau le 11 août: deux leviers d’exploitation à câbler dès la conception.** Les **Regional Endpoints** sont en disponibilité générale et permettent de fixer l’exécution **en Europe ou aux États-Unis**, pour **×1,1** le tarif global. Le **Priority Tier**, en préversion publique, offre des **limites de débit personnalisées par modèle** et un **SLA de disponibilité de 99,5 %** pour **×1,75**. **[Déduction]** Trois conséquences pratiques. (1) Traitez le choix de région comme une **décision d’architecture**, pas comme un réglage: il change l’URL de base, potentiellement la latence observée, et doit être cohérent avec ce que votre DPA promet — testez la latence depuis la Belgique avant de figer, un endpoint « UE » n’est pas nécessairement plus proche de vous que le global. (2) Le Priority Tier exige une **mise en place par compte avec des limites définies par modèle**: intégrez-le au dimensionnement, ce n’est pas un drapeau que l’on active en production un jour de pic. (3) Un SLA de 99,5 % tolère **~3 h 39 d’indisponibilité par mois**: il justifie un budget de repli, pas sa suppression — gardez un fournisseur de secours. **Réserve à documenter dans votre registre de traitement:** des transferts encadrés et limités vers des sous-traitants **hors région** restent possibles; « endpoint UE » ne signifie pas « aucune donnée ne quitte l’UE ». Et un SLA en **préversion publique** n’a pas la portée contractuelle d’un SLA en GA: faites-le confirmer par écrit.
 
-**[Officiel, S22/S68/S84]** Tenir compte des paliers court/long contexte, cache, coûts voix/image/vidéo et outils; utiliser `prompt_cache_key` pour stabiliser les hits de cache. Grok 4.5 est confirmé dans la console UE. **[Déduction]** Ne pas laisser un agent franchir le seuil 200 k sans alerte.
+### 8. xAI (SpaceXAI)
+
+**[Officiel, S22/S68/S84/S139–S141]** Tenir compte des paliers court/long contexte, cache, coûts voix/image/vidéo et outils. Pour le cache, utiliser `prompt_cache_key` avec la Responses API ou l’en-tête `x-grok-conv-id` avec Chat Completions, afin que les requêtes d’une même conversation atteignent le même serveur et aient une meilleure chance de toucher le cache. **Grok 4.6 remplace 4.5 depuis le 12 août**: 500 k de contexte, 2/0,50/6 USD/M sous 200 k jetons, 4/1/12 au-delà, variante rapide à ×2, **aucune remise batch**. Grok 4.5 était confirmé dans la console UE; **le statut de 4.6 reste à confirmer**.
+
+**[Déduction] Le seuil des 200 k jetons est le principal risque budgétaire de ce fournisseur, et il ne se comporte pas comme on l’attend.** La grille haute s’applique à **tous les jetons de la requête**, pas au seul dépassement: une requête de 201 k jetons coûte le double d’une requête de 199 k, pas quelques pourcents de plus. Sur un agent dont le contexte croît à chaque tour, la facture saute d’un facteur deux sans changement fonctionnel visible. Trois garde-fous: (1) une **alerte dure** au franchissement, pas un simple compteur; (2) une **compaction ou un résumé du contexte** déclenchés en dessous du seuil, typiquement vers 180 k, plutôt qu’à saturation; (3) l’absence de remise batch signifie qu’**aucun traitement asynchrone ne rattrapera le surcoût** — contrairement à OpenAI ou Anthropic, il n’y a pas de levier de rattrapage à −50 %. **Ne pas envoyer de données personnelles européennes** tant que résidence et DPA ne sont pas établis (traitement documenté en `us-east-1` et `us-west-2`), et **revérifier l’entité contractante après la clôture de l’acquisition de Cursor par SpaceX**, attendue fin août [S147].
 
 ### 9. DeepSeek
 
@@ -127,6 +131,8 @@ Tracer request ID, version modèle, version prompt, outils, temps, jetons/cache,
 ### 12. Cohere
 
 **[Officiel, S32–S34]** Command cible RAG, citations, outils et multilingue; respecter limites essai/production, employer Embed/Rerank pour retrieval. **[Déduction]** Évaluer le gain du reranker séparément et conserver les citations comme données structurées.
+
+**[Officiel, S149–S150] Correction: Cohere propose un agent de code à poids ouverts depuis le 9 juin.** **North Mini Code 1.0** — MoE 30 B / **3 B actifs**, **Apache 2.0**, 256 k de contexte et jusqu’à 64 k de sortie — est entraîné pour la génération de code, l’ingénierie logicielle agentique et les tâches de terminal. Poids en BF16, FP8 et **w4a16** sur Hugging Face; GGUF communautaires; image Ollama; également joignable via l’API Cohere, Model Vault, OpenRouter et OpenCode. Le w4a16 (~18–20 Go) **ne requiert pas de matériel FP4 natif** et fonctionne sur Hopper et Ada. **[Déduction]** C’est le cas d’usage le plus intéressant à tester en interne: un agent de code **sur un seul H100 côté serveur, ou une seule carte 24 Go côté poste de travail**, avec la même famille de modèle en local et en API — ce qui permet de développer localement et de basculer en API sans réécrire les prompts. **Réserve technique à mesurer avant de s’engager:** l’attention entrelace une fenêtre glissante de 4096 jetons avec une attention globale périodique, ce qui **alourdit le cache KV en long contexte**. Les 256 k annoncés sont une capacité du modèle, pas une garantie de tenue sur 24 Go où seuls 4–6 Go restent pour le cache. Dimensionnez sur une mesure à votre contexte réel.
 
 ### 13. IBM
 
@@ -181,7 +187,17 @@ Tracer request ID, version modèle, version prompt, outils, temps, jetons/cache,
 - [ ] **Échéances tarifaires connues au calendrier** (fins de prix de lancement, expirations de crédits promotionnels) avec un responsable désigné.
 - [ ] Garde-fou d’entrée **et** de sortie en place, testé sur des exemples FR et NL réels, pas seulement anglais.
 - [ ] Bacs à sable d’évaluation traités comme des périmètres de production: réseau isolé, accès métadonnées bloqué, identités éphémères.
+- [ ] **Seuils tarifaires non linéaires identifiés par fournisseur** et testés: vérifier si la grille majorée s’applique au seul dépassement ou à **toute la requête** (cas de Grok 4.6 à 200 k jetons). Prévoir compaction du contexte **avant** le seuil, pas à saturation.
+- [ ] **Région d’inférence explicitement choisie et tracée** lorsque le fournisseur l’offre (Mistral Regional Endpoints, régions cloud), avec vérification que le DPA et la liste des sous-traitants correspondent — et conscience que « région UE » n’exclut pas tout transfert encadré hors région.
+- [ ] **Veille sur les changements d’entité fournisseur** (fusions, acquisitions): à la clôture, revérifier entité contractante, pays de facturation, responsable de traitement, clauses de transfert et politique de confidentialité, même si le produit est inchangé.
 
-## Changements de cette révision (12 août 2026)
+## Changements de cette révision (13 août 2026)
 
-Ajouts et modifications par rapport à l’état du 6 août: spécification MCP 2026-07-28 et ses dépréciations; garde-fou ouvert Shieldstral 1.0; échéance tarifaire Sonnet 5 au 1er septembre; grille long contexte et écritures de cache GPT-5.6; nuance de résidence Microsoft Foundry; nouveautés AgentCore (Runtime Instances, Dogwood, politiques temporelles); cause racine de l’incident Hugging Face; Muse Glimmer (Meta), Nemotron 3.5 Lightning (NVIDIA), Qwen3.8-Max (Alibaba) et V4-Flash officiel (DeepSeek); sept lignes ajoutées à la checklist de production.
+Ajouts par rapport à l’état du 12 août:
+
+- **Mistral**: Regional Endpoints (×1,1) et Priority Tier (×1,75, SLA 99,5 %, préversion) traités comme décisions d’architecture, avec la réserve sur les sous-traitants hors région.
+- **xAI**: Grok 4.6 remplace 4.5; explication détaillée du **piège du seuil de 200 k jetons** (la grille haute s’applique à toute la requête) et de l’absence de remise batch; en-tête `x-grok-conv-id` ajouté aux recommandations de cache.
+- **Cohere**: North Mini Code 1.0 documenté comme agent de code à poids ouverts (Apache 2.0), avec la réserve sur le cache KV en long contexte.
+- **Checklist**: trois lignes ajoutées (seuils tarifaires non linéaires, région d’inférence explicite, changement d’entité fournisseur).
+
+Rappel des ajouts du 12 août, toujours valides: spécification MCP 2026-07-28 et ses dépréciations; garde-fou ouvert Shieldstral 1.0; échéance tarifaire Sonnet 5 au 1er septembre; grille long contexte et écritures de cache GPT-5.6; nuance de résidence Microsoft Foundry; nouveautés AgentCore (Runtime Instances, Dogwood, politiques temporelles); cause racine de l’incident Hugging Face; Muse Glimmer (Meta), Nemotron 3.5 Lightning (NVIDIA), Qwen3.8-Max (Alibaba) et V4-Flash officiel (DeepSeek).

@@ -1,6 +1,6 @@
 # Sources de référence et indices de confiance
 
-Contrôle : **12 août 2026**. Ce référentiel rassemble les URL de base à privilégier à chaque recherche quotidienne. L’indice mesure l’aptitude de la source à établir les sujets indiqués ; il ne constitue pas une note universelle de vérité.
+Contrôle : **13 août 2026**. Ce référentiel rassemble les URL de base à privilégier à chaque recherche quotidienne. L’indice mesure l’aptitude de la source à établir les sujets indiqués ; il ne constitue pas une note universelle de vérité.
 
 ## Barème
 
