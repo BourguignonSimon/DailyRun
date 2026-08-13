@@ -1,23 +1,24 @@
 {
   "schemaVersion": 1,
   "run": {
-    "checkedAt": "2026-08-13T09:00:00Z",
+    "checkedAt": "2026-08-13T12:45:00Z",
     "factsVerifiedThrough": "2026-08-13",
-    "commit": "ba7e48e23ecf3ba6f004430489789c70a1473c21",
+    "commit": "e2c6aab768500b8e78d70be136283855ecb08774",
     "model": "Opus 5",
-    "result": "Instantané complet vérifié au 13 août 2026. Trois mouvements fournisseurs (Mistral, xAI, OpenAI) et trois lacunes de couverture corrigées. Les entrées non reverifiées restent signalées explicitement."
+    "result": "Contrôle du 13 août 2026 en preuve dégradée. Quatre annonces importantes vérifiées par convergence de sources indépendantes et trente et une nouveautés d’outils établies sur les registres de distribution officiels. Les entrées non revérifiées sont signalées."
   },
   "metrics": {
     "entityCount": 20,
-    "verifiedEntityCount": 20,
+    "verifiedEntityCount": 0,
     "regionalChannelCount": 13,
     "highConfidenceSourceCount": 15,
     "eurUsdRate": 1.1554,
-    "rateDate": "2026-08-05"
+    "rateDate": "2026-08-05",
+    "verificationNote": "Aucun des vingt écosystèmes n’a été revérifié sur sa documentation officielle le 13 août 2026 ; les mouvements du jour sont portés par les annonces vérifiées."
   },
   "headline": {
-    "title": "La résidence européenne a désormais un prix et un SLA.",
-    "detail": "Mistral ouvre le choix de région d’inférence (×1,1) et un niveau de service engagé à 99,5 % (×1,75, préversion). xAI publie Grok 4.6. Deux des vingt écosystèmes suivis sont en cours de fusion capitalistique."
+    "title": "Le tarif d’introduction de Claude Sonnet 5 devient permanent.",
+    "detail": "La hausse de 50 % attendue au 1er septembre n’aura pas lieu : 2/10 USD par million de jetons devient le tarif standard. ChatGPT affiche des publicités dans neuf pays, dont aucun n’est la Belgique. Mistral héberge désormais des modèles ouverts tiers derrière ses endpoints régionaux."
   },
   "decisions": [
     {
@@ -61,121 +62,161 @@
       "name": "OpenAI",
       "category": "Plateforme",
       "flagship": "GPT-5.6 · ChatGPT · API · Codex",
-      "belgium": "Belgique : disponible selon le service"
+      "belgium": "Belgique : disponible selon le service",
+      "status": "non reverifié",
+      "last_verified_at": "2026-08-13"
     },
     {
       "name": "Anthropic",
       "category": "Plateforme",
       "flagship": "Claude Opus 5 · Fable 5 · Claude Code",
-      "belgium": "Belgique : disponible, conditions à vérifier"
+      "belgium": "Belgique : disponible, conditions à vérifier",
+      "status": "non reverifié",
+      "last_verified_at": "2026-08-13"
     },
     {
       "name": "Google",
       "category": "Plateforme",
       "flagship": "Gemini 3.6 · Gemini API · Vertex AI",
-      "belgium": "EEE : disponibilité documentée"
+      "belgium": "EEE : disponibilité documentée",
+      "status": "non reverifié",
+      "last_verified_at": "2026-08-13"
     },
     {
       "name": "Microsoft",
       "category": "Cloud",
       "flagship": "Azure AI · Foundry · M365 Copilot",
-      "belgium": "Résidence UE à vérifier par modèle"
+      "belgium": "Résidence UE à vérifier par modèle",
+      "status": "non reverifié",
+      "last_verified_at": "2026-08-13"
     },
     {
       "name": "AWS",
       "category": "Cloud",
       "flagship": "Bedrock · AgentCore · Dogwood",
-      "belgium": "Régions UE selon le service"
+      "belgium": "Régions UE selon le service",
+      "status": "non reverifié",
+      "last_verified_at": "2026-08-13"
     },
     {
       "name": "Meta",
       "category": "Open weights",
       "flagship": "Muse Glimmer 30B (Apache 2.0) · Muse Spark",
-      "belgium": "Poids ouverts, licence permissive"
+      "belgium": "Poids ouverts, licence permissive",
+      "status": "non reverifié",
+      "last_verified_at": "2026-08-13"
     },
     {
       "name": "Mistral AI",
       "category": "Plateforme",
       "flagship": "Le Chat/Vibe · API · Shieldstral 1.0",
-      "belgium": "Endpoint UE disponible (×1,1)"
+      "belgium": "Endpoint UE disponible (×1,1)",
+      "status": "non reverifié",
+      "last_verified_at": "2026-08-13"
     },
     {
       "name": "xAI (SpaceXAI)",
       "category": "Application",
       "flagship": "Grok 4.6 · API",
-      "belgium": "Console UE de 4.6 : à confirmer"
+      "belgium": "Console UE de 4.6 : à confirmer",
+      "status": "non reverifié",
+      "last_verified_at": "2026-08-13"
     },
     {
       "name": "DeepSeek",
       "category": "Open weights",
       "flagship": "V4-Flash 0731 · V4 Pro",
-      "belgium": "Commercial : à confirmer"
+      "belgium": "Commercial : à confirmer",
+      "status": "non reverifié",
+      "last_verified_at": "2026-08-13"
     },
     {
       "name": "Alibaba / Qwen",
       "category": "Open weights",
       "flagship": "Qwen3.8-Max · Qwen3.6 · Model Studio",
-      "belgium": "Poids Max annoncés, non livrés"
+      "belgium": "Poids Max annoncés, non livrés",
+      "status": "non reverifié",
+      "last_verified_at": "2026-08-13"
     },
     {
       "name": "NVIDIA",
       "category": "Open weights",
       "flagship": "Nemotron 3.5 Lightning · NIM · Switchyard",
-      "belgium": "Poids OpenMDW-1.1; infra"
+      "belgium": "Poids OpenMDW-1.1; infra",
+      "status": "non reverifié",
+      "last_verified_at": "2026-08-13"
     },
     {
       "name": "Cohere",
       "category": "Plateforme",
       "flagship": "Command A+ · North Mini Code 1.0",
-      "belgium": "B2B ; poids ouverts Apache 2.0"
+      "belgium": "B2B ; poids ouverts Apache 2.0",
+      "status": "non reverifié",
+      "last_verified_at": "2026-08-13"
     },
     {
       "name": "IBM",
       "category": "Cloud",
       "flagship": "watsonx · Granite 4.1",
-      "belgium": "Contrôles entreprise structurés"
+      "belgium": "Contrôles entreprise structurés",
+      "status": "non reverifié",
+      "last_verified_at": "2026-08-13"
     },
     {
       "name": "GitHub Copilot",
       "category": "Code",
       "flagship": "Copilot · agents et modèles multiples",
-      "belgium": "Disponible selon abonnement"
+      "belgium": "Disponible selon abonnement",
+      "status": "non reverifié",
+      "last_verified_at": "2026-08-13"
     },
     {
       "name": "Perplexity",
       "category": "Application",
       "flagship": "Recherche sourcée · Perplexity Computer",
-      "belgium": "Disponible, checkout à vérifier"
+      "belgium": "Disponible, checkout à vérifier",
+      "status": "non reverifié",
+      "last_verified_at": "2026-08-13"
     },
     {
       "name": "Cursor",
       "category": "Code",
       "flagship": "IDE agentique · Router",
-      "belgium": "Acquisition SpaceX en cours de clôture"
+      "belgium": "Acquisition SpaceX en cours de clôture",
+      "status": "non reverifié",
+      "last_verified_at": "2026-08-13"
     },
     {
       "name": "Replit",
       "category": "Code",
       "flagship": "Agent · environnement de développement",
-      "belgium": "Disponibilité web, prix à vérifier"
+      "belgium": "Disponibilité web, prix à vérifier",
+      "status": "non reverifié",
+      "last_verified_at": "2026-08-13"
     },
     {
       "name": "Hugging Face",
       "category": "Open weights",
       "flagship": "Hub · Inference · écosystème",
-      "belgium": "Disponible, vigilance sécurité"
+      "belgium": "Disponible, vigilance sécurité",
+      "status": "non reverifié",
+      "last_verified_at": "2026-08-13"
     },
     {
       "name": "Moonshot / Kimi",
       "category": "Application",
       "flagship": "Kimi K3 · Kimi Code · API",
-      "belgium": "Disponibilité commerciale à confirmer"
+      "belgium": "Disponibilité commerciale à confirmer",
+      "status": "non reverifié",
+      "last_verified_at": "2026-08-13"
     },
     {
       "name": "Z.AI / GLM",
       "category": "Open weights",
       "flagship": "GLM-5.2 · API et poids",
-      "belgium": "Disponibilité commerciale à confirmer"
+      "belgium": "Disponibilité commerciale à confirmer",
+      "status": "non reverifié",
+      "last_verified_at": "2026-08-13"
     }
   ],
   "hardware": [
@@ -189,7 +230,8 @@
         "Gemma 3 1B"
       ],
       "avoid": "Modèles de 4B ou plus et contextes longs : le swap détruit la latence.",
-      "summary": "Gemma 4 E2B (2,3 B effectifs, ~1,3 Go en Q4) accepte texte, image et audio. Contexte court indispensable."
+      "summary": "Gemma 4 E2B (2,3 B effectifs, ~1,3 Go en Q4) accepte texte, image et audio. Contexte court indispensable.",
+      "verificationStatus": "Non revérifié le 2026-08-13 — cartes modèles et mesures inaccessibles"
     },
     {
       "label": "CPU seul · 8 Go",
@@ -201,7 +243,8 @@
         "Phi-4-mini 3.8B"
       ],
       "avoid": "Les 7–8B tiennent à peine et deviennent trop lents pour un usage fluide.",
-      "summary": "Q4_K_M avec contexte modéré et au moins 10 % de RAM libre."
+      "summary": "Q4_K_M avec contexte modéré et au moins 10 % de RAM libre.",
+      "verificationStatus": "Non revérifié le 2026-08-13 — cartes modèles et mesures inaccessibles"
     },
     {
       "label": "CPU seul · 16 Go",
@@ -213,7 +256,8 @@
         "Llama 3.1 8B"
       ],
       "avoid": "Les modèles denses de 26B ou plus et les contextes de 128k.",
-      "summary": "Le meilleur palier sans GPU pour un chat local réellement capable."
+      "summary": "Le meilleur palier sans GPU pour un chat local réellement capable.",
+      "verificationStatus": "Non revérifié le 2026-08-13 — cartes modèles et mesures inaccessibles"
     },
     {
       "label": "CPU seul · 32 Go",
@@ -225,7 +269,8 @@
         "gpt-oss-20b"
       ],
       "avoid": "Les 70B denses pour une conversation interactive.",
-      "summary": "Les architectures MoE réduisent fortement le coût de calcul par jeton."
+      "summary": "Les architectures MoE réduisent fortement le coût de calcul par jeton.",
+      "verificationStatus": "Non revérifié le 2026-08-13 — cartes modèles et mesures inaccessibles"
     },
     {
       "label": "CPU seul · 64 Go",
@@ -237,7 +282,8 @@
         "Llama 3.3 70B"
       ],
       "avoid": "Un 70B dense si vous attendez une réponse interactive rapide.",
-      "summary": "Techniquement ambitieux : mesurez la bande passante mémoire et gardez une marge pour l’OS."
+      "summary": "Techniquement ambitieux : mesurez la bande passante mémoire et gardez une marge pour l’OS.",
+      "verificationStatus": "Non revérifié le 2026-08-13 — cartes modèles et mesures inaccessibles"
     },
     {
       "label": "Mini-PC / portable · 16 Go",
@@ -249,7 +295,8 @@
         "Mistral Nemo 12B"
       ],
       "avoid": "Les denses de 24B et plus.",
-      "summary": "Palier confortable pour un assistant local sans carte graphique dédiée."
+      "summary": "Palier confortable pour un assistant local sans carte graphique dédiée.",
+      "verificationStatus": "Non revérifié le 2026-08-13 — cartes modèles et mesures inaccessibles"
     },
     {
       "label": "Mini-PC / portable · 32 Go",
@@ -261,7 +308,8 @@
         "Gemma 4 31B"
       ],
       "avoid": "Les 70B denses.",
-      "summary": "Un MoE reste fluide là où un dense équivalent devient pénible."
+      "summary": "Un MoE reste fluide là où un dense équivalent devient pénible.",
+      "verificationStatus": "Non revérifié le 2026-08-13 — cartes modèles et mesures inaccessibles"
     },
     {
       "label": "Apple Silicon · 16 Go",
@@ -273,7 +321,8 @@
         "Gemma 4 E4B"
       ],
       "avoid": "Les 26B et plus : la mémoire est aussi partagée avec macOS.",
-      "summary": "MLX 4-bit ou llama.cpp/Metal offrent le chemin le plus naturel."
+      "summary": "MLX 4-bit ou llama.cpp/Metal offrent le chemin le plus naturel.",
+      "verificationStatus": "Non revérifié le 2026-08-13 — cartes modèles et mesures inaccessibles"
     },
     {
       "label": "Apple Silicon · 32 Go",
@@ -286,7 +335,8 @@
         "North Mini Code 1.0 w4a16"
       ],
       "avoid": "Les 70B denses, trop serrés et lents pour ce palier.",
-      "summary": "Bon palier pour le code local, les MoE et un agent multimodal en mémoire unifiée."
+      "summary": "Bon palier pour le code local, les MoE et un agent multimodal en mémoire unifiée.",
+      "verificationStatus": "Non revérifié le 2026-08-13 — cartes modèles et mesures inaccessibles"
     },
     {
       "label": "GPU · 8 Go",
@@ -298,7 +348,8 @@
         "Llama 3.1 8B"
       ],
       "avoid": "Les modèles denses de 14B ou plus en chargement entièrement GPU.",
-      "summary": "Conservez un contexte raisonnable afin de laisser de la place au cache KV."
+      "summary": "Conservez un contexte raisonnable afin de laisser de la place au cache KV.",
+      "verificationStatus": "Non revérifié le 2026-08-13 — cartes modèles et mesures inaccessibles"
     },
     {
       "label": "RTX 3060 · 12 Go + 64 Go",
@@ -310,7 +361,8 @@
         "Gemma 4 26B-A4B"
       ],
       "avoid": "Muse Glimmer 30B est dense : il ne tient pas en 12 Go et son offload sera lent. Préférez un MoE.",
-      "summary": "Votre profil : 12 B Q4 confortables en VRAM, MoE plus gros grâce aux 64 Go de RAM."
+      "summary": "Votre profil : 12 B Q4 confortables en VRAM, MoE plus gros grâce aux 64 Go de RAM.",
+      "verificationStatus": "Non revérifié le 2026-08-13 — cartes modèles et mesures inaccessibles"
     },
     {
       "label": "GPU · 16 Go",
@@ -322,7 +374,8 @@
         "Shieldstral 1.0 3B (garde-fou)"
       ],
       "avoid": "Les 31B denses entièrement en VRAM.",
-      "summary": "Palier idéal pour un MoE multimodal, et assez pour héberger un classificateur de sûreté."
+      "summary": "Palier idéal pour un MoE multimodal, et assez pour héberger un classificateur de sûreté.",
+      "verificationStatus": "Non revérifié le 2026-08-13 — cartes modèles et mesures inaccessibles"
     },
     {
       "label": "GPU · 24 Go",
@@ -335,7 +388,8 @@
         "Gemma 4 31B"
       ],
       "avoid": "Les 70B entièrement GPU, sauf quantification très agressive ou multi-GPU. North Mini Code à 256 k de contexte : cache KV insuffisant.",
-      "summary": "Muse Glimmer tient à ≈17 Go en K-Quant (~1,0 % de dégradation). Pour le code, North Mini Code 1.0 en w4a16 occupe ~18–20 Go et laisse 4–6 Go de cache KV."
+      "summary": "Muse Glimmer tient à ≈17 Go en K-Quant (~1,0 % de dégradation). Pour le code, North Mini Code 1.0 en w4a16 occupe ~18–20 Go et laisse 4–6 Go de cache KV.",
+      "verificationStatus": "Non revérifié le 2026-08-13 — cartes modèles et mesures inaccessibles"
     }
   ],
   "localizations": [
@@ -349,7 +403,8 @@
       "residency": "Inférence et stockage à vérifier endpoint par endpoint",
       "confidence": 95,
       "sourceId": "R01",
-      "last_verified_at": "2026-08-13"
+      "last_verified_at": "2026-08-13",
+      "verificationStatus": "Non revérifié le 2026-08-13 — documentation fournisseur inaccessible"
     },
     {
       "developer": "Anthropic",
@@ -361,7 +416,8 @@
       "residency": "Contrat et surface à vérifier",
       "confidence": 92,
       "sourceId": "R02",
-      "last_verified_at": "2026-08-13"
+      "last_verified_at": "2026-08-13",
+      "verificationStatus": "Non revérifié le 2026-08-13 — documentation fournisseur inaccessible"
     },
     {
       "developer": "Anthropic",
@@ -373,7 +429,8 @@
       "residency": "Routage cross-region et journaux à contrôler",
       "confidence": 92,
       "sourceId": "R06",
-      "last_verified_at": "2026-08-13"
+      "last_verified_at": "2026-08-13",
+      "verificationStatus": "Non revérifié le 2026-08-13 — documentation fournisseur inaccessible"
     },
     {
       "developer": "Anthropic",
@@ -385,7 +442,8 @@
       "residency": "Ne réside pas automatiquement dans la région Azure choisie",
       "confidence": 90,
       "sourceId": "R05",
-      "last_verified_at": "2026-08-13"
+      "last_verified_at": "2026-08-13",
+      "verificationStatus": "Non revérifié le 2026-08-13 — documentation fournisseur inaccessible"
     },
     {
       "developer": "Google",
@@ -397,7 +455,8 @@
       "residency": "Disponibilité EEE ne vaut pas résidence garantie",
       "confidence": 95,
       "sourceId": "R03",
-      "last_verified_at": "2026-08-13"
+      "last_verified_at": "2026-08-13",
+      "verificationStatus": "Non revérifié le 2026-08-13 — documentation fournisseur inaccessible"
     },
     {
       "developer": "Google",
@@ -409,7 +468,8 @@
       "residency": "Données et journaux gouvernés par configuration Cloud",
       "confidence": 95,
       "sourceId": "R04",
-      "last_verified_at": "2026-08-13"
+      "last_verified_at": "2026-08-13",
+      "verificationStatus": "Non revérifié le 2026-08-13 — documentation fournisseur inaccessible"
     },
     {
       "developer": "OpenAI",
@@ -421,7 +481,8 @@
       "residency": "Vérifier région de déploiement et fonctions annexes",
       "confidence": 95,
       "sourceId": "R05",
-      "last_verified_at": "2026-08-13"
+      "last_verified_at": "2026-08-13",
+      "verificationStatus": "Non revérifié le 2026-08-13 — documentation fournisseur inaccessible"
     },
     {
       "developer": "Multiples",
@@ -433,7 +494,8 @@
       "residency": "Chaque modèle, outil et routage doit être vérifié",
       "confidence": 95,
       "sourceId": "R06",
-      "last_verified_at": "2026-08-13"
+      "last_verified_at": "2026-08-13",
+      "verificationStatus": "Non revérifié le 2026-08-13 — documentation fournisseur inaccessible"
     },
     {
       "developer": "Mistral AI",
@@ -445,7 +507,8 @@
       "residency": "Inférence dans la région choisie, sous réserve de transferts encadrés vers des sous-traitants hors région. Exiger DPA et liste des sous-traitants.",
       "confidence": 92,
       "sourceId": "R07",
-      "last_verified_at": "2026-08-13"
+      "last_verified_at": "2026-08-13",
+      "verificationStatus": "Non revérifié le 2026-08-13 — documentation fournisseur inaccessible"
     },
     {
       "developer": "Hugging Face",
@@ -457,7 +520,8 @@
       "residency": "DPA Enterprise et configuration endpoint à vérifier",
       "confidence": 90,
       "sourceId": "R08",
-      "last_verified_at": "2026-08-13"
+      "last_verified_at": "2026-08-13",
+      "verificationStatus": "Non revérifié le 2026-08-13 — documentation fournisseur inaccessible"
     },
     {
       "developer": "Meta, Mistral, Qwen, NVIDIA, IBM et autres",
@@ -469,7 +533,8 @@
       "residency": "Sous contrôle de l’exploitant, y compris logs et sauvegardes",
       "confidence": 95,
       "sourceId": "R07/R08/R12/R14",
-      "last_verified_at": "2026-08-13"
+      "last_verified_at": "2026-08-13",
+      "verificationStatus": "Non revérifié le 2026-08-13 — documentation fournisseur inaccessible"
     },
     {
       "developer": "Cohere",
@@ -481,7 +546,8 @@
       "residency": "Non publiée avec assez de précision dans ce run",
       "confidence": 70,
       "sourceId": "R13",
-      "last_verified_at": "2026-08-13"
+      "last_verified_at": "2026-08-13",
+      "verificationStatus": "Non revérifié le 2026-08-13 — documentation fournisseur inaccessible"
     },
     {
       "developer": "DeepSeek, Qwen, Kimi et GLM",
@@ -493,7 +559,8 @@
       "residency": "DPA, transferts et rétention insuffisamment documentés",
       "confidence": 60,
       "sourceId": "R11 + docs fournisseurs",
-      "last_verified_at": "2026-08-13"
+      "last_verified_at": "2026-08-13",
+      "verificationStatus": "Non revérifié le 2026-08-13 — documentation fournisseur inaccessible"
     },
     {
       "developer": "xAI (SpaceXAI)",
@@ -505,7 +572,8 @@
       "residency": "À confirmer. Entité contractante susceptible de changer à la clôture de l’acquisition d’Anysphere par SpaceX.",
       "confidence": 60,
       "sourceId": "S139",
-      "last_verified_at": "2026-08-13"
+      "last_verified_at": "2026-08-13",
+      "verificationStatus": "Non revérifié le 2026-08-13 — documentation fournisseur inaccessible"
     }
   ],
   "documents": [
@@ -564,48 +632,18 @@
       "url": "outils-ecosysteme-ia.html"
     }
   ],
-  "changes": [
-    {
-      "actor": "Mistral AI",
-      "date": "2026-08-11",
-      "summary": "Regional Endpoints en GA (UE ou US, ×1,1) et Priority Tier en préversion (×1,75, SLA 99,5 %). Réserve : transferts encadrés vers des sous-traitants hors région possibles.",
-      "impact": "majeur"
-    },
-    {
-      "actor": "xAI (SpaceXAI)",
-      "date": "2026-08-12",
-      "summary": "Grok 4.6 remplace 4.5 : 500 k de contexte, 2/0,50/6 USD/M sous 200 k et 4/1/12 au-delà, grille haute appliquée à toute la requête. Aucune remise batch.",
-      "impact": "majeur"
-    },
-    {
-      "actor": "SpaceX · Anysphere/Cursor",
-      "date": "2026-08-12",
-      "summary": "Procédures réglementaires finalisées ; clôture attendue avant fin août, non actée. Les deux entrées restent distinctes dans la sélection.",
-      "impact": "structurel"
-    },
-    {
-      "actor": "OpenAI",
-      "date": "2026-08-10",
-      "summary": "GPT-5.6-Cyber à 12,50/75 USD/M, accès réservé au palier Daybreak Red sur candidature. Indisponible en libre-service.",
-      "impact": "modéré"
-    },
-    {
-      "actor": "Cohere",
-      "date": "2026-06-09",
-      "summary": "Lacune corrigée : North Mini Code 1.0, MoE 30B/3B actifs, Apache 2.0, 256 k de contexte, w4a16 ≈ 18–20 Go.",
-      "impact": "correction"
-    },
-    {
-      "actor": "Google",
-      "date": "2026-06-30",
-      "summary": "Lacune corrigée : Gemini Omni Flash (1,50 USD/M entrée, 17,50 sortie vidéo) et Robotics ER 2 preview (2/10). Arrêt de er-1.6-preview le 31 août 2026.",
-      "impact": "correction"
-    },
-    {
-      "actor": "Alibaba / Qwen",
-      "date": "2026-08-13",
-      "summary": "Poids ouverts de Qwen3.8-Max toujours non publiés et licence non nommée, après l’échéance annoncée de la semaine du 10 août.",
-      "impact": "en attente"
-    }
-  ]
+  "verificationNotice": {
+    "checkedAt": "2026-08-13",
+    "level": "warning",
+    "title": "Niveau de preuve dégradé pour le quatrième contrôle consécutif",
+    "detail": "La politique réseau sortante de l’environnement d’exécution bloque les six points d’entrée obligatoires de la veille et la quasi-totalité de la documentation fournisseur. Les prix, les régions, la disponibilité belge et les politiques de confidentialité ont été établis via l’index de recherche restituant les pages officielles et par convergence d’au moins deux sources indépendantes, et non par ouverture directe. Les versions de SDK, elles, reposent sur une preuve primaire durable : les registres de distribution officiels PyPI et npm étaient joignables. Revérifiez directement avant tout engagement contractuel ou budgétaire.",
+    "reachableSources": [
+      "pypi.org",
+      "registry.npmjs.org",
+      "blog.modelcontextprotocol.io",
+      "api.github.com",
+      "raw.githubusercontent.com"
+    ],
+    "remediation": "Décision attendue du commanditaire : ajouter les domaines de veille et de documentation à l’allowlist réseau de l’environnement, ou accepter durablement ce niveau de preuve."
+  }
 }

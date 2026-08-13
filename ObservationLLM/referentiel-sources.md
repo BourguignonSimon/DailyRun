@@ -71,6 +71,20 @@ Un flux X officiel reçoit une confiance de **78 à 82/100 comme source de déte
 
 Pour chaque annonce retenue, enregistrer l’URL exacte du post lorsqu’elle est accessible, l’auteur, l’horodatage, le statut officiel du compte, la preuve durable associée et la raison de la note. Un repost, un compte personnel ou une rumeur ne doit jamais être présenté comme une annonce confirmée.
 
+## Registres de distribution officiels — voie de preuve primaire
+
+Contrôle du 13 août 2026. Ces sources sont ajoutées au référentiel parce qu’elles sont **joignables alors que la documentation fournisseur ne l’est pas**, et parce qu’elles sont opérées comme canal de publication officiel par l’éditeur du paquet.
+
+| ID | Source | URL de base | Modèle d’URL | Nature | Sujets | Indice | Portée et limite |
+|---|---|---|---|---|---|---:|---|
+| R38 | PyPI | <https://pypi.org/> | `https://pypi.org/project/{paquet}/{version}/` | Registre de distribution | versions de SDK, dates de publication, compatibilité Python | 92/100 | Prouve durablement qu’une version existe et à quelle date. Ne documente **ni** le contenu du changement, **ni** un prix, **ni** une région, **ni** une disponibilité belge |
+| R39 | npm registry | <https://registry.npmjs.org/> | `https://www.npmjs.com/package/{paquet}/v/{version}` | Registre de distribution | versions de SDK, dates de publication | 92/100 | Même portée et mêmes limites que R38 |
+| R40 | Blog du Model Context Protocol | <https://blog.modelcontextprotocol.io/> | — | Blog officiel du projet | spécification, SDK, dépréciations | 96/100 | Publication officielle du projet responsable de la spécification |
+| R41 | NBC News — technologie | <https://www.nbcnews.com/tech/> | — | Presse généraliste | annonces produit, publicité | 80/100 | Corroboration d’annonce ; insuffisante pour un fait contractuel |
+| R42 | Digital Watch Observatory | <https://dig.watch/> | — | Observatoire de politique numérique | politique européenne, souveraineté, infrastructure | 78/100 | Utile pour le contexte européen et belge ; à corroborer |
+
+**Réserve d’interprétation.** Une version publiée sur un registre n’est pas une annonce produit. Un saut de version majeure signale une rupture de compatibilité probable, mais son contenu exact doit être lu dans les notes de version avant toute conclusion. Pour les bases vectorielles, la version publiée est celle de la **bibliothèque cliente**, jamais celle du moteur serveur.
+
 ## Règles d’utilisation quotidienne
 
 1. Rechercher d’abord dans la documentation primaire correspondant au sujet.

@@ -1,6 +1,6 @@
 # 100 outils majeurs de l’écosystème IA
 
-Contrôle initial : **12 août 2026**. Ce catalogue étend l’observatoire aux outils qui structurent l’usage, le développement, le déploiement et le contrôle des systèmes IA. Il est mis à jour par **le même run quotidien** que les modèles, les plateformes, les sources et les annonces ; aucune seconde automatisation n’est nécessaire.
+Contrôle : **13 août 2026**. Ce catalogue étend l’observatoire aux outils qui structurent l’usage, le développement, le déploiement et le contrôle des systèmes IA. Il est mis à jour par **le même run quotidien** que les modèles, les plateformes, les sources et les annonces ; aucune seconde automatisation n’est nécessaire.
 
 ## Méthode de sélection
 
@@ -24,6 +24,16 @@ Le catalogue contient exactement 100 outils répartis ainsi :
 Pour chacun des 100 outils, le run unique doit vérifier le statut du produit, l’URL officielle, la disponibilité pertinente pour la Belgique et l’existence d’une nouveauté importante. Une nouveauté publiée doit contenir au minimum : titre, date, URL exacte, note de confiance et justification, impact belge éventuel et date de contrôle.
 
 Une mise à jour mineure n’est pas transformée artificiellement en annonce principale. En l’absence de nouveauté qualifiée, l’outil conserve un statut de contrôle actualisé. Les retraits, changements d’éditeur, ruptures de compatibilité, incidents, nouveaux prix, nouvelles régions, modèles ajoutés et changements de licence sont prioritaires.
+
+## État du contrôle du 13 août 2026
+
+La politique de sortie réseau de l’environnement a rendu les sites officiels des outils inaccessibles. En revanche, les **registres de distribution officiels** `pypi.org` et `registry.npmjs.org` répondaient. Ils ont permis d’établir, sur preuve primaire durable, **31 nouveautés qualifiées** parmi les 100 outils ; les 69 autres portent le statut explicite « non revérifié — source officielle inaccessible ». Aucune nouveauté n’a été fabriquée pour combler l’écart.
+
+Trois constats sortent de ce contrôle :
+
+- **Rupture de compatibilité probable chez OpenAI.** Le SDK Python `openai` passe de 2.54.0 (11 août) à **3.0.0** (12 août). Un projet qui n’épingle pas `openai<3` peut casser à la prochaine installation. Le contenu exact des ruptures n’a pas pu être lu.
+- **Deux versions majeures discrètes.** `haystack-ai` 3.0.0 (20 juillet) et le client `pymilvus` 3.0.1 (29 juillet) ont franchi un cap majeur sans apparaître dans les annonces principales.
+- **Deux projets sans publication récente.** `autogen-agentchat` n’a rien publié depuis le 30 septembre 2025, `ragas` depuis le 13 janvier 2026. C’est un constat de **distribution**, pas un jugement sur la santé des projets : le développement peut se poursuivre sans publication de paquet. À surveiller avant d’en faire une dépendance structurante.
 
 ## Répartition des outils
 

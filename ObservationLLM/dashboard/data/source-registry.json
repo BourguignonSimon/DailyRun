@@ -1,44 +1,825 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-08-12",
+  "checkedAt": "2026-08-13",
   "scoreMeaning": "Aptitude de la source à prouver les sujets indiqués, et non vérité universelle.",
   "sources": [
-    { "id": "R01", "name": "OpenAI Platform documentation", "actor": "OpenAI", "baseUrl": "https://platform.openai.com/docs/", "primary": true, "topics": ["API", "modèles", "données", "résidence"], "confidence": 98, "rationale": "Documentation opérationnelle du fournisseur", "accessibility": "Directe ou index selon le run", "last_verified_at": "2026-08-12" },
-    { "id": "R02", "name": "Anthropic Platform documentation", "actor": "Anthropic", "baseUrl": "https://platform.claude.com/docs/", "primary": true, "topics": ["API", "prix", "cache", "résidence"], "confidence": 98, "rationale": "Documentation opérationnelle du fournisseur", "accessibility": "Index lors du dernier run", "last_verified_at": "2026-08-12" },
-    { "id": "R03", "name": "Gemini API documentation", "actor": "Google", "baseUrl": "https://ai.google.dev/gemini-api/docs/", "primary": true, "topics": ["API", "modèles", "facturation", "EEE"], "confidence": 98, "rationale": "Documentation officielle du service", "accessibility": "Index lors du dernier run", "last_verified_at": "2026-08-12" },
-    { "id": "R04", "name": "Vertex AI Generative AI", "actor": "Google Cloud", "baseUrl": "https://cloud.google.com/vertex-ai/generative-ai/docs/", "primary": true, "topics": ["régions", "déploiement", "sécurité", "modèles"], "confidence": 98, "rationale": "Documentation cloud directement responsable des régions", "accessibility": "Directe", "last_verified_at": "2026-08-12" },
-    { "id": "R05", "name": "Microsoft Learn — Azure AI Foundry", "actor": "Microsoft", "baseUrl": "https://learn.microsoft.com/azure/ai-foundry/", "primary": true, "topics": ["modèles", "régions", "déploiement", "sécurité"], "confidence": 98, "rationale": "Documentation officielle Azure", "accessibility": "Index lors du dernier run", "last_verified_at": "2026-08-12" },
-    { "id": "R06", "name": "Amazon Bedrock documentation", "actor": "AWS", "baseUrl": "https://docs.aws.amazon.com/bedrock/", "primary": true, "topics": ["modèles", "régions", "agents", "sécurité"], "confidence": 98, "rationale": "Documentation opérationnelle AWS", "accessibility": "Index lors du dernier run", "last_verified_at": "2026-08-12" },
-    { "id": "R07", "name": "Mistral AI documentation", "actor": "Mistral AI", "baseUrl": "https://docs.mistral.ai/", "primary": true, "topics": ["modèles", "API", "déploiement", "cartes modèles"], "confidence": 98, "rationale": "Documentation et cartes modèles officielles", "accessibility": "Index lors du dernier run", "last_verified_at": "2026-08-12" },
-    { "id": "R08", "name": "Hugging Face documentation", "actor": "Hugging Face", "baseUrl": "https://huggingface.co/docs/", "primary": true, "topics": ["hub", "endpoints", "régions", "inférence"], "confidence": 96, "rationale": "Documentation du distributeur et hébergeur", "accessibility": "Index lors du dernier run", "last_verified_at": "2026-08-12" },
-    { "id": "R09", "name": "GitHub documentation", "actor": "GitHub", "baseUrl": "https://docs.github.com/", "primary": true, "topics": ["Copilot", "sécurité", "facturation", "agents"], "confidence": 97, "rationale": "Documentation officielle du produit", "accessibility": "Index lors du dernier run", "last_verified_at": "2026-08-12" },
-    { "id": "R10", "name": "xAI documentation", "actor": "xAI", "baseUrl": "https://docs.x.ai/", "primary": true, "topics": ["API", "modèles", "prix", "outils"], "confidence": 96, "rationale": "Documentation officielle de l’API", "accessibility": "Index lors du dernier run", "last_verified_at": "2026-08-12" },
-    { "id": "R11", "name": "DeepSeek API documentation", "actor": "DeepSeek", "baseUrl": "https://api-docs.deepseek.com/", "primary": true, "topics": ["API", "modèles", "prix", "cache"], "confidence": 95, "rationale": "Documentation officielle de l’API", "accessibility": "Index lors du dernier run", "last_verified_at": "2026-08-12" },
-    { "id": "R12", "name": "NVIDIA AI documentation", "actor": "NVIDIA", "baseUrl": "https://docs.nvidia.com/ai-enterprise/", "primary": true, "topics": ["NIM", "NeMo", "déploiement", "modèles"], "confidence": 96, "rationale": "Documentation officielle de la plateforme", "accessibility": "Index lors du dernier run", "last_verified_at": "2026-08-12" },
-    { "id": "R13", "name": "Cohere documentation", "actor": "Cohere", "baseUrl": "https://docs.cohere.com/", "primary": true, "topics": ["API", "Command", "Embed", "Rerank"], "confidence": 96, "rationale": "Documentation officielle de l’API", "accessibility": "Index lors du dernier run", "last_verified_at": "2026-08-12" },
-    { "id": "R14", "name": "IBM watsonx documentation", "actor": "IBM", "baseUrl": "https://www.ibm.com/docs/en/watsonx/", "primary": true, "topics": ["Granite", "watsonx", "déploiement", "gouvernance"], "confidence": 96, "rationale": "Documentation officielle de la plateforme", "accessibility": "Index lors du dernier run", "last_verified_at": "2026-08-12" },
-    { "id": "R15", "name": "European Central Bank reference rates", "actor": "BCE", "baseUrl": "https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/", "primary": true, "topics": ["taux de change EUR"], "confidence": 99, "rationale": "Source institutionnelle du taux de référence", "accessibility": "Index lors du dernier run", "last_verified_at": "2026-08-12" },
-    { "id": "R16", "name": "Artificial Analysis", "actor": "Indépendant", "baseUrl": "https://artificialanalysis.ai/", "primary": false, "kind": "Source indépendante", "role": "Corroboration", "topics": ["latence", "prix", "benchmarks comparables"], "confidence": 78, "rationale": "Méthodologie indépendante utile, à corroborer avec les fournisseurs", "accessibility": "Variable", "last_verified_at": "2026-08-12" },
-    { "id": "R17", "name": "@OpenAI", "actor": "OpenAI", "baseUrl": "https://x.com/OpenAI", "primary": false, "kind": "Flux X officiel", "role": "Détection rapide", "topics": ["annonces", "modèles", "produits"], "confidence": 82, "rationale": "Compte officiel utile pour la fraîcheur ; chaque fait doit être corroboré par une page durable", "accessibility": "Public, indexation variable", "last_verified_at": "2026-08-12" },
-    { "id": "R18", "name": "@AnthropicAI", "actor": "Anthropic", "baseUrl": "https://x.com/AnthropicAI", "primary": false, "kind": "Flux X officiel", "role": "Détection rapide", "topics": ["annonces", "Claude", "recherche"], "confidence": 82, "rationale": "Compte officiel vérifié comme signal ; documentation requise pour les détails", "accessibility": "Public, indexation variable", "last_verified_at": "2026-08-12" },
-    { "id": "R19", "name": "@GoogleDeepMind", "actor": "Google DeepMind", "baseUrl": "https://x.com/GoogleDeepMind", "primary": false, "kind": "Flux X officiel", "role": "Détection rapide", "topics": ["recherche", "Gemini", "modèles"], "confidence": 82, "rationale": "Compte officiel de recherche ; recouper les disponibilités avec Google AI et Vertex AI", "accessibility": "Public, indexation variable", "last_verified_at": "2026-08-12" },
-    { "id": "R20", "name": "@AIatMeta", "actor": "Meta", "baseUrl": "https://x.com/AIatMeta", "primary": false, "kind": "Flux X officiel", "role": "Veille quotidienne prioritaire", "topics": ["recherche", "modèles ouverts", "Meta AI"], "confidence": 82, "trustedDaily": true, "promotionEvidence": [{ "announcementId": "A20260810-META-MUSE", "confidence": 96 }], "trustBasis": "Annonce officielle notée 96/100 et corroborée par une publication Meta Research durable", "rationale": "Compte officiel de l’équipe IA ; dépôt ou publication de recherche requis pour confirmer chaque fait", "accessibility": "Public, indexation variable", "last_verified_at": "2026-08-12" },
-    { "id": "R21", "name": "@MistralAI", "actor": "Mistral AI", "baseUrl": "https://x.com/MistralAI", "primary": false, "kind": "Flux X officiel", "role": "Veille quotidienne prioritaire", "topics": ["annonces", "modèles", "produits"], "confidence": 82, "trustedDaily": true, "promotionEvidence": [{ "announcementId": "A20260804-MISTRAL-SHIELDSTRAL", "confidence": 94 }], "trustBasis": "Annonce officielle notée 94/100 et corroborée par une carte modèle Mistral", "rationale": "Compte officiel ; les cartes modèles et la documentation restent les preuves de référence pour chaque fait", "accessibility": "Public, indexation variable", "last_verified_at": "2026-08-12" },
-    { "id": "R22", "name": "@nvidia", "actor": "NVIDIA", "baseUrl": "https://x.com/nvidia", "primary": false, "kind": "Flux X officiel", "role": "Veille quotidienne prioritaire", "topics": ["modèles", "infrastructure", "produits"], "confidence": 80, "trustedDaily": true, "promotionEvidence": [{ "announcementId": "A20260811-NVIDIA-NEMOTRON", "confidence": 94 }], "trustBasis": "Annonce officielle notée 94/100 et corroborée par une carte modèle NVIDIA", "rationale": "Compte corporate officiel ; isoler les annonces IA et confirmer chaque caractéristique avec les artefacts techniques", "accessibility": "Public, indexation variable", "last_verified_at": "2026-08-12" },
-    { "id": "R23", "name": "@Alibaba_Qwen", "actor": "Alibaba / Qwen", "baseUrl": "https://x.com/Alibaba_Qwen", "primary": false, "kind": "Flux X officiel", "role": "Détection rapide", "topics": ["Qwen", "modèles", "poids"], "confidence": 80, "rationale": "Compte du projet Qwen ; une annonce de poids n’est confirmée qu’après publication du dépôt et de la licence", "accessibility": "Public, indexation variable", "last_verified_at": "2026-08-12" },
-    { "id": "R24", "name": "@huggingface", "actor": "Hugging Face", "baseUrl": "https://x.com/huggingface", "primary": false, "kind": "Flux X officiel", "role": "Détection et écosystème", "topics": ["modèles", "dépôts", "communauté"], "confidence": 78, "rationale": "Excellent signal d’écosystème, mais l’identité du déposant et la carte modèle doivent être contrôlées", "accessibility": "Public, indexation variable", "last_verified_at": "2026-08-12" },
-    { "id": "R25", "name": "X API", "actor": "X", "baseUrl": "https://docs.x.com/x-api/overview", "primary": true, "kind": "Documentation technique", "role": "Collecte automatisée", "topics": ["recherche de posts", "flux filtré", "conformité"], "confidence": 96, "rationale": "Documentation officielle pour une collecte conforme et reproductible des signaux publics", "accessibility": "API payante selon les endpoints", "last_verified_at": "2026-08-12" },
-    { "id": "R26", "name": "GitHub Changelog RSS", "actor": "GitHub", "baseUrl": "https://github.blog/changelog/feed/", "primary": true, "kind": "Flux RSS officiel", "role": "Détection et preuve", "topics": ["Copilot", "agents", "modèles", "dépréciations"], "confidence": 96, "rationale": "Flux officiel daté avec liens vers les annonces détaillées", "accessibility": "Public", "last_verified_at": "2026-08-12" },
-    { "id": "R27", "name": "GitHub Changelog", "actor": "GitHub", "baseUrl": "https://github.blog/changelog/", "primary": true, "kind": "Changelog officiel", "role": "Preuve durable", "topics": ["Copilot", "agents", "tarification", "retraits"], "confidence": 97, "rationale": "Journal officiel versionné et daté des changements produit", "accessibility": "Public", "last_verified_at": "2026-08-12" },
-    { "id": "R28", "name": "Hugging Face Daily Papers", "actor": "Hugging Face", "baseUrl": "https://huggingface.co/papers", "primary": false, "kind": "Veille recherche", "role": "Découverte", "topics": ["articles", "tendances", "agents", "modèles"], "confidence": 72, "rationale": "Sélection communautaire utile pour découvrir, mais chaque article doit être lu et qualifié", "accessibility": "Public", "last_verified_at": "2026-08-12" },
-    { "id": "R29", "name": "arXiv cs.CL recent", "actor": "arXiv", "baseUrl": "https://arxiv.org/list/cs.CL/recent", "primary": false, "kind": "Prépublications", "role": "Découverte recherche", "topics": ["NLP", "LLM", "évaluations", "méthodes"], "confidence": 68, "rationale": "Texte original des auteurs, généralement sans validation par les pairs au moment de la détection", "accessibility": "Public", "last_verified_at": "2026-08-12" },
-    { "id": "R30", "name": "MCP GitHub Releases", "actor": "Model Context Protocol", "baseUrl": "https://github.com/modelcontextprotocol/modelcontextprotocol/releases", "primary": true, "kind": "GitHub Releases officiel", "role": "Preuve durable", "topics": ["spécification", "SDK", "versions", "migration"], "confidence": 97, "rationale": "Releases du dépôt officiel, à relier à la spécification et au guide de migration", "accessibility": "Public", "last_verified_at": "2026-08-12" },
-    { "id": "R31", "name": "@ghchangelog", "actor": "GitHub", "baseUrl": "https://x.com/ghchangelog", "primary": false, "kind": "Flux X officiel", "role": "Veille quotidienne prioritaire", "topics": ["Copilot", "agents", "modèles", "dépréciations"], "confidence": 86, "trustedDaily": true, "promotionEvidence": [{ "announcementId": "A20260811-GITHUB-COPILOT-JETBRAINS", "confidence": 97 }], "trustBasis": "Annonce notée 97/100 et recoupée avec le changelog GitHub officiel daté", "rationale": "Compte officiel spécialisé ; chaque post est relié au changelog durable avant publication certaine", "accessibility": "Public, indexation variable", "last_verified_at": "2026-08-12" },
-    { "id": "R32", "name": "TLDR AI", "actor": "TLDR", "baseUrl": "https://tldr.tech/ai/", "urlTemplate": "https://tldr.tech/ai/YYYY-MM-DD", "primary": false, "kind": "Newsletter de veille", "role": "Découverte et synthèse quotidienne", "topics": ["actualités IA", "recherche", "outils", "lancements"], "confidence": 76, "rationale": "Newsletter technique datée et riche en liens ; chaque information matérielle doit être vérifiée dans la source originale", "accessibility": "Public ; numéro daté les jours de publication", "last_verified_at": "2026-08-12" },
-    { "id": "R33", "name": "TechCrunch AI", "actor": "TechCrunch", "baseUrl": "https://techcrunch.com/category/artificial-intelligence/", "primary": false, "kind": "Presse technologique", "role": "Détection et contexte marché", "topics": ["entreprises", "produits", "financement", "régulation"], "confidence": 82, "rationale": "Rédaction technologique établie ; utile pour le contexte et les annonces, à recouper avec les sources primaires pour les caractéristiques", "accessibility": "Public, certains contenus ou fonctions peuvent être limités", "last_verified_at": "2026-08-12" },
-    { "id": "R34", "name": "VentureBeat AI", "actor": "VentureBeat", "baseUrl": "https://venturebeat.com/category/ai/", "primary": false, "kind": "Presse technologique", "role": "Détection, entreprise et IA appliquée", "topics": ["IA d’entreprise", "agents", "modèles", "infrastructure"], "confidence": 80, "rationale": "Couverture spécialisée de l’IA d’entreprise ; confirmer prix, performances et disponibilité dans les documents d’origine", "accessibility": "Public, accès variable selon les articles", "last_verified_at": "2026-08-12" },
-    { "id": "R35", "name": "TestingCatalog", "actor": "TestingCatalog", "baseUrl": "https://www.testingcatalog.com/", "primary": false, "kind": "Veille produit et rumeurs", "role": "Signal précoce uniquement", "topics": ["tests produits", "fonctionnalités en préparation", "lancements", "rumeurs"], "confidence": 66, "rationale": "Utile pour détecter tôt des changements visibles dans les produits ; les fuites et rumeurs ne sont jamais publiées comme faits certains sans confirmation officielle", "accessibility": "Public", "last_verified_at": "2026-08-12" },
-    { "id": "R36", "name": "AI Frontiers Newsletter", "actor": "AI Frontiers", "baseUrl": "https://newsletter.ai-frontiers.org/", "canonicalUrl": "https://ai-frontiers.org/", "primary": false, "kind": "Newsletter d’analyse", "role": "Contexte, impacts et gouvernance", "topics": ["impacts de l’IA", "sécurité", "gouvernance", "recherche"], "confidence": 74, "rationale": "Plateforme de dialogue et de commentaires experts ; les opinions sont attribuées à leurs auteurs et ne remplacent pas les données ou textes primaires", "accessibility": "Public ; redirection possible vers le site canonique", "last_verified_at": "2026-08-12" },
-    { "id": "R37", "name": "NVIDIA Research", "actor": "NVIDIA", "baseUrl": "https://research.nvidia.com/", "primary": true, "kind": "Recherche officielle fournisseur", "role": "Preuve primaire pour les travaux NVIDIA", "topics": ["publications", "modèles", "agents", "IA efficace", "robotique"], "confidence": 96, "rationale": "Portail officiel des projets, laboratoires et publications NVIDIA ; les résultats restent déclarés par le fournisseur lorsqu’ils ne sont pas reproduits indépendamment", "accessibility": "Public", "last_verified_at": "2026-08-12" }
-  ]
+    {
+      "id": "R01",
+      "name": "OpenAI Platform documentation",
+      "actor": "OpenAI",
+      "baseUrl": "https://platform.openai.com/docs/",
+      "primary": true,
+      "topics": [
+        "API",
+        "modèles",
+        "données",
+        "résidence"
+      ],
+      "confidence": 98,
+      "rationale": "Documentation opérationnelle du fournisseur",
+      "accessibility": "Inaccessible le 2026-08-13 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-13",
+      "lastAccessResult": "bloqué par la politique réseau sortante"
+    },
+    {
+      "id": "R02",
+      "name": "Anthropic Platform documentation",
+      "actor": "Anthropic",
+      "baseUrl": "https://platform.claude.com/docs/",
+      "primary": true,
+      "topics": [
+        "API",
+        "prix",
+        "cache",
+        "résidence"
+      ],
+      "confidence": 98,
+      "rationale": "Documentation opérationnelle du fournisseur",
+      "accessibility": "Inaccessible le 2026-08-13 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-13",
+      "lastAccessResult": "bloqué par la politique réseau sortante"
+    },
+    {
+      "id": "R03",
+      "name": "Gemini API documentation",
+      "actor": "Google",
+      "baseUrl": "https://ai.google.dev/gemini-api/docs/",
+      "primary": true,
+      "topics": [
+        "API",
+        "modèles",
+        "facturation",
+        "EEE"
+      ],
+      "confidence": 98,
+      "rationale": "Documentation officielle du service",
+      "accessibility": "Inaccessible le 2026-08-13 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-13",
+      "lastAccessResult": "bloqué par la politique réseau sortante"
+    },
+    {
+      "id": "R04",
+      "name": "Vertex AI Generative AI",
+      "actor": "Google Cloud",
+      "baseUrl": "https://cloud.google.com/vertex-ai/generative-ai/docs/",
+      "primary": true,
+      "topics": [
+        "régions",
+        "déploiement",
+        "sécurité",
+        "modèles"
+      ],
+      "confidence": 98,
+      "rationale": "Documentation cloud directement responsable des régions",
+      "accessibility": "Inaccessible le 2026-08-13 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-13",
+      "lastAccessResult": "bloqué par la politique réseau sortante"
+    },
+    {
+      "id": "R05",
+      "name": "Microsoft Learn — Azure AI Foundry",
+      "actor": "Microsoft",
+      "baseUrl": "https://learn.microsoft.com/azure/ai-foundry/",
+      "primary": true,
+      "topics": [
+        "modèles",
+        "régions",
+        "déploiement",
+        "sécurité"
+      ],
+      "confidence": 98,
+      "rationale": "Documentation officielle Azure",
+      "accessibility": "Inaccessible le 2026-08-13 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-13",
+      "lastAccessResult": "bloqué par la politique réseau sortante"
+    },
+    {
+      "id": "R06",
+      "name": "Amazon Bedrock documentation",
+      "actor": "AWS",
+      "baseUrl": "https://docs.aws.amazon.com/bedrock/",
+      "primary": true,
+      "topics": [
+        "modèles",
+        "régions",
+        "agents",
+        "sécurité"
+      ],
+      "confidence": 98,
+      "rationale": "Documentation opérationnelle AWS",
+      "accessibility": "Inaccessible le 2026-08-13 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-13",
+      "lastAccessResult": "bloqué par la politique réseau sortante"
+    },
+    {
+      "id": "R07",
+      "name": "Mistral AI documentation",
+      "actor": "Mistral AI",
+      "baseUrl": "https://docs.mistral.ai/",
+      "primary": true,
+      "topics": [
+        "modèles",
+        "API",
+        "déploiement",
+        "cartes modèles"
+      ],
+      "confidence": 98,
+      "rationale": "Documentation et cartes modèles officielles",
+      "accessibility": "Inaccessible le 2026-08-13 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-13",
+      "lastAccessResult": "bloqué par la politique réseau sortante"
+    },
+    {
+      "id": "R08",
+      "name": "Hugging Face documentation",
+      "actor": "Hugging Face",
+      "baseUrl": "https://huggingface.co/docs/",
+      "primary": true,
+      "topics": [
+        "hub",
+        "endpoints",
+        "régions",
+        "inférence"
+      ],
+      "confidence": 96,
+      "rationale": "Documentation du distributeur et hébergeur",
+      "accessibility": "Inaccessible le 2026-08-13 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-13",
+      "lastAccessResult": "bloqué par la politique réseau sortante"
+    },
+    {
+      "id": "R09",
+      "name": "GitHub documentation",
+      "actor": "GitHub",
+      "baseUrl": "https://docs.github.com/",
+      "primary": true,
+      "topics": [
+        "Copilot",
+        "sécurité",
+        "facturation",
+        "agents"
+      ],
+      "confidence": 97,
+      "rationale": "Documentation officielle du produit",
+      "accessibility": "Inaccessible le 2026-08-13 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-13",
+      "lastAccessResult": "bloqué par la politique réseau sortante"
+    },
+    {
+      "id": "R10",
+      "name": "xAI documentation",
+      "actor": "xAI",
+      "baseUrl": "https://docs.x.ai/",
+      "primary": true,
+      "topics": [
+        "API",
+        "modèles",
+        "prix",
+        "outils"
+      ],
+      "confidence": 96,
+      "rationale": "Documentation officielle de l’API",
+      "accessibility": "Inaccessible le 2026-08-13 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-13",
+      "lastAccessResult": "bloqué par la politique réseau sortante"
+    },
+    {
+      "id": "R11",
+      "name": "DeepSeek API documentation",
+      "actor": "DeepSeek",
+      "baseUrl": "https://api-docs.deepseek.com/",
+      "primary": true,
+      "topics": [
+        "API",
+        "modèles",
+        "prix",
+        "cache"
+      ],
+      "confidence": 95,
+      "rationale": "Documentation officielle de l’API",
+      "accessibility": "Inaccessible le 2026-08-13 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-13",
+      "lastAccessResult": "bloqué par la politique réseau sortante"
+    },
+    {
+      "id": "R12",
+      "name": "NVIDIA AI documentation",
+      "actor": "NVIDIA",
+      "baseUrl": "https://docs.nvidia.com/ai-enterprise/",
+      "primary": true,
+      "topics": [
+        "NIM",
+        "NeMo",
+        "déploiement",
+        "modèles"
+      ],
+      "confidence": 96,
+      "rationale": "Documentation officielle de la plateforme",
+      "accessibility": "Inaccessible le 2026-08-13 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-13",
+      "lastAccessResult": "bloqué par la politique réseau sortante"
+    },
+    {
+      "id": "R13",
+      "name": "Cohere documentation",
+      "actor": "Cohere",
+      "baseUrl": "https://docs.cohere.com/",
+      "primary": true,
+      "topics": [
+        "API",
+        "Command",
+        "Embed",
+        "Rerank"
+      ],
+      "confidence": 96,
+      "rationale": "Documentation officielle de l’API",
+      "accessibility": "Inaccessible le 2026-08-13 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-13",
+      "lastAccessResult": "bloqué par la politique réseau sortante"
+    },
+    {
+      "id": "R14",
+      "name": "IBM watsonx documentation",
+      "actor": "IBM",
+      "baseUrl": "https://www.ibm.com/docs/en/watsonx/",
+      "primary": true,
+      "topics": [
+        "Granite",
+        "watsonx",
+        "déploiement",
+        "gouvernance"
+      ],
+      "confidence": 96,
+      "rationale": "Documentation officielle de la plateforme",
+      "accessibility": "Inaccessible le 2026-08-13 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-13",
+      "lastAccessResult": "bloqué par la politique réseau sortante"
+    },
+    {
+      "id": "R15",
+      "name": "European Central Bank reference rates",
+      "actor": "BCE",
+      "baseUrl": "https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/",
+      "primary": true,
+      "topics": [
+        "taux de change EUR"
+      ],
+      "confidence": 99,
+      "rationale": "Source institutionnelle du taux de référence",
+      "accessibility": "Inaccessible le 2026-08-13 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-13",
+      "lastAccessResult": "bloqué par la politique réseau sortante"
+    },
+    {
+      "id": "R16",
+      "name": "Artificial Analysis",
+      "actor": "Indépendant",
+      "baseUrl": "https://artificialanalysis.ai/",
+      "primary": false,
+      "kind": "Source indépendante",
+      "role": "Corroboration",
+      "topics": [
+        "latence",
+        "prix",
+        "benchmarks comparables"
+      ],
+      "confidence": 78,
+      "rationale": "Méthodologie indépendante utile, à corroborer avec les fournisseurs",
+      "accessibility": "Inaccessible le 2026-08-13 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-13",
+      "lastAccessResult": "bloqué par la politique réseau sortante"
+    },
+    {
+      "id": "R17",
+      "name": "@OpenAI",
+      "actor": "OpenAI",
+      "baseUrl": "https://x.com/OpenAI",
+      "primary": false,
+      "kind": "Flux X officiel",
+      "role": "Détection rapide",
+      "topics": [
+        "annonces",
+        "modèles",
+        "produits"
+      ],
+      "confidence": 82,
+      "rationale": "Compte officiel utile pour la fraîcheur ; chaque fait doit être corroboré par une page durable",
+      "accessibility": "Inaccessible le 2026-08-13 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-13",
+      "lastAccessResult": "bloqué par la politique réseau sortante"
+    },
+    {
+      "id": "R18",
+      "name": "@AnthropicAI",
+      "actor": "Anthropic",
+      "baseUrl": "https://x.com/AnthropicAI",
+      "primary": false,
+      "kind": "Flux X officiel",
+      "role": "Détection rapide",
+      "topics": [
+        "annonces",
+        "Claude",
+        "recherche"
+      ],
+      "confidence": 82,
+      "rationale": "Compte officiel vérifié comme signal ; documentation requise pour les détails",
+      "accessibility": "Inaccessible le 2026-08-13 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-13",
+      "lastAccessResult": "bloqué par la politique réseau sortante"
+    },
+    {
+      "id": "R19",
+      "name": "@GoogleDeepMind",
+      "actor": "Google DeepMind",
+      "baseUrl": "https://x.com/GoogleDeepMind",
+      "primary": false,
+      "kind": "Flux X officiel",
+      "role": "Détection rapide",
+      "topics": [
+        "recherche",
+        "Gemini",
+        "modèles"
+      ],
+      "confidence": 82,
+      "rationale": "Compte officiel de recherche ; recouper les disponibilités avec Google AI et Vertex AI",
+      "accessibility": "Inaccessible le 2026-08-13 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-13",
+      "lastAccessResult": "bloqué par la politique réseau sortante"
+    },
+    {
+      "id": "R20",
+      "name": "@AIatMeta",
+      "actor": "Meta",
+      "baseUrl": "https://x.com/AIatMeta",
+      "primary": false,
+      "kind": "Flux X officiel",
+      "role": "Veille quotidienne prioritaire",
+      "topics": [
+        "recherche",
+        "modèles ouverts",
+        "Meta AI"
+      ],
+      "confidence": 82,
+      "trustedDaily": true,
+      "promotionEvidence": [
+        {
+          "announcementId": "A20260810-META-MUSE",
+          "confidence": 96
+        }
+      ],
+      "trustBasis": "Annonce officielle notée 96/100 et corroborée par une publication Meta Research durable",
+      "rationale": "Compte officiel de l’équipe IA ; dépôt ou publication de recherche requis pour confirmer chaque fait",
+      "accessibility": "Inaccessible le 2026-08-13 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-13",
+      "lastAccessResult": "bloqué par la politique réseau sortante"
+    },
+    {
+      "id": "R21",
+      "name": "@MistralAI",
+      "actor": "Mistral AI",
+      "baseUrl": "https://x.com/MistralAI",
+      "primary": false,
+      "kind": "Flux X officiel",
+      "role": "Veille quotidienne prioritaire",
+      "topics": [
+        "annonces",
+        "modèles",
+        "produits"
+      ],
+      "confidence": 82,
+      "trustedDaily": true,
+      "promotionEvidence": [
+        {
+          "announcementId": "A20260804-MISTRAL-SHIELDSTRAL",
+          "confidence": 94
+        }
+      ],
+      "trustBasis": "Annonce officielle notée 94/100 et corroborée par une carte modèle Mistral",
+      "rationale": "Compte officiel ; les cartes modèles et la documentation restent les preuves de référence pour chaque fait",
+      "accessibility": "Inaccessible le 2026-08-13 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-13",
+      "lastAccessResult": "bloqué par la politique réseau sortante"
+    },
+    {
+      "id": "R22",
+      "name": "@nvidia",
+      "actor": "NVIDIA",
+      "baseUrl": "https://x.com/nvidia",
+      "primary": false,
+      "kind": "Flux X officiel",
+      "role": "Veille quotidienne prioritaire",
+      "topics": [
+        "modèles",
+        "infrastructure",
+        "produits"
+      ],
+      "confidence": 80,
+      "trustedDaily": true,
+      "promotionEvidence": [
+        {
+          "announcementId": "A20260811-NVIDIA-NEMOTRON",
+          "confidence": 94
+        }
+      ],
+      "trustBasis": "Annonce officielle notée 94/100 et corroborée par une carte modèle NVIDIA",
+      "rationale": "Compte corporate officiel ; isoler les annonces IA et confirmer chaque caractéristique avec les artefacts techniques",
+      "accessibility": "Inaccessible le 2026-08-13 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-13",
+      "lastAccessResult": "bloqué par la politique réseau sortante"
+    },
+    {
+      "id": "R23",
+      "name": "@Alibaba_Qwen",
+      "actor": "Alibaba / Qwen",
+      "baseUrl": "https://x.com/Alibaba_Qwen",
+      "primary": false,
+      "kind": "Flux X officiel",
+      "role": "Détection rapide",
+      "topics": [
+        "Qwen",
+        "modèles",
+        "poids"
+      ],
+      "confidence": 80,
+      "rationale": "Compte du projet Qwen ; une annonce de poids n’est confirmée qu’après publication du dépôt et de la licence",
+      "accessibility": "Inaccessible le 2026-08-13 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-13",
+      "lastAccessResult": "bloqué par la politique réseau sortante"
+    },
+    {
+      "id": "R24",
+      "name": "@huggingface",
+      "actor": "Hugging Face",
+      "baseUrl": "https://x.com/huggingface",
+      "primary": false,
+      "kind": "Flux X officiel",
+      "role": "Détection et écosystème",
+      "topics": [
+        "modèles",
+        "dépôts",
+        "communauté"
+      ],
+      "confidence": 78,
+      "rationale": "Excellent signal d’écosystème, mais l’identité du déposant et la carte modèle doivent être contrôlées",
+      "accessibility": "Inaccessible le 2026-08-13 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-13",
+      "lastAccessResult": "bloqué par la politique réseau sortante"
+    },
+    {
+      "id": "R25",
+      "name": "X API",
+      "actor": "X",
+      "baseUrl": "https://docs.x.com/x-api/overview",
+      "primary": true,
+      "kind": "Documentation technique",
+      "role": "Collecte automatisée",
+      "topics": [
+        "recherche de posts",
+        "flux filtré",
+        "conformité"
+      ],
+      "confidence": 96,
+      "rationale": "Documentation officielle pour une collecte conforme et reproductible des signaux publics",
+      "accessibility": "Inaccessible le 2026-08-13 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-13",
+      "lastAccessResult": "bloqué par la politique réseau sortante"
+    },
+    {
+      "id": "R26",
+      "name": "GitHub Changelog RSS",
+      "actor": "GitHub",
+      "baseUrl": "https://github.blog/changelog/feed/",
+      "primary": true,
+      "kind": "Flux RSS officiel",
+      "role": "Détection et preuve",
+      "topics": [
+        "Copilot",
+        "agents",
+        "modèles",
+        "dépréciations"
+      ],
+      "confidence": 96,
+      "rationale": "Flux officiel daté avec liens vers les annonces détaillées",
+      "accessibility": "Inaccessible le 2026-08-13 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-13",
+      "lastAccessResult": "bloqué par la politique réseau sortante"
+    },
+    {
+      "id": "R27",
+      "name": "GitHub Changelog",
+      "actor": "GitHub",
+      "baseUrl": "https://github.blog/changelog/",
+      "primary": true,
+      "kind": "Changelog officiel",
+      "role": "Preuve durable",
+      "topics": [
+        "Copilot",
+        "agents",
+        "tarification",
+        "retraits"
+      ],
+      "confidence": 97,
+      "rationale": "Journal officiel versionné et daté des changements produit",
+      "accessibility": "Inaccessible le 2026-08-13 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-13",
+      "lastAccessResult": "bloqué par la politique réseau sortante"
+    },
+    {
+      "id": "R28",
+      "name": "Hugging Face Daily Papers",
+      "actor": "Hugging Face",
+      "baseUrl": "https://huggingface.co/papers",
+      "primary": false,
+      "kind": "Veille recherche",
+      "role": "Découverte",
+      "topics": [
+        "articles",
+        "tendances",
+        "agents",
+        "modèles"
+      ],
+      "confidence": 72,
+      "rationale": "Sélection communautaire utile pour découvrir, mais chaque article doit être lu et qualifié",
+      "accessibility": "Inaccessible le 2026-08-13 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-13",
+      "lastAccessResult": "bloqué par la politique réseau sortante"
+    },
+    {
+      "id": "R29",
+      "name": "arXiv cs.CL recent",
+      "actor": "arXiv",
+      "baseUrl": "https://arxiv.org/list/cs.CL/recent",
+      "primary": false,
+      "kind": "Prépublications",
+      "role": "Découverte recherche",
+      "topics": [
+        "NLP",
+        "LLM",
+        "évaluations",
+        "méthodes"
+      ],
+      "confidence": 68,
+      "rationale": "Texte original des auteurs, généralement sans validation par les pairs au moment de la détection",
+      "accessibility": "Inaccessible le 2026-08-13 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-13",
+      "lastAccessResult": "bloqué par la politique réseau sortante"
+    },
+    {
+      "id": "R30",
+      "name": "MCP GitHub Releases",
+      "actor": "Model Context Protocol",
+      "baseUrl": "https://github.com/modelcontextprotocol/modelcontextprotocol/releases",
+      "primary": true,
+      "kind": "GitHub Releases officiel",
+      "role": "Preuve durable",
+      "topics": [
+        "spécification",
+        "SDK",
+        "versions",
+        "migration"
+      ],
+      "confidence": 97,
+      "rationale": "Releases du dépôt officiel, à relier à la spécification et au guide de migration",
+      "accessibility": "Inaccessible le 2026-08-13 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-13",
+      "lastAccessResult": "bloqué par la politique réseau sortante"
+    },
+    {
+      "id": "R31",
+      "name": "@ghchangelog",
+      "actor": "GitHub",
+      "baseUrl": "https://x.com/ghchangelog",
+      "primary": false,
+      "kind": "Flux X officiel",
+      "role": "Veille quotidienne prioritaire",
+      "topics": [
+        "Copilot",
+        "agents",
+        "modèles",
+        "dépréciations"
+      ],
+      "confidence": 86,
+      "trustedDaily": true,
+      "promotionEvidence": [
+        {
+          "announcementId": "A20260811-GITHUB-COPILOT-JETBRAINS",
+          "confidence": 97
+        }
+      ],
+      "trustBasis": "Annonce notée 97/100 et recoupée avec le changelog GitHub officiel daté",
+      "rationale": "Compte officiel spécialisé ; chaque post est relié au changelog durable avant publication certaine",
+      "accessibility": "Inaccessible le 2026-08-13 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-13",
+      "lastAccessResult": "bloqué par la politique réseau sortante"
+    },
+    {
+      "id": "R32",
+      "name": "TLDR AI",
+      "actor": "TLDR",
+      "baseUrl": "https://tldr.tech/ai/",
+      "urlTemplate": "https://tldr.tech/ai/YYYY-MM-DD",
+      "primary": false,
+      "kind": "Newsletter de veille",
+      "role": "Découverte et synthèse quotidienne",
+      "topics": [
+        "actualités IA",
+        "recherche",
+        "outils",
+        "lancements"
+      ],
+      "confidence": 76,
+      "rationale": "Newsletter technique datée et riche en liens ; chaque information matérielle doit être vérifiée dans la source originale",
+      "accessibility": "Inaccessible le 2026-08-13 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-13",
+      "lastAccessResult": "bloqué par la politique réseau sortante"
+    },
+    {
+      "id": "R33",
+      "name": "TechCrunch AI",
+      "actor": "TechCrunch",
+      "baseUrl": "https://techcrunch.com/category/artificial-intelligence/",
+      "primary": false,
+      "kind": "Presse technologique",
+      "role": "Détection et contexte marché",
+      "topics": [
+        "entreprises",
+        "produits",
+        "financement",
+        "régulation"
+      ],
+      "confidence": 82,
+      "rationale": "Rédaction technologique établie ; utile pour le contexte et les annonces, à recouper avec les sources primaires pour les caractéristiques",
+      "accessibility": "Inaccessible le 2026-08-13 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-13",
+      "lastAccessResult": "bloqué par la politique réseau sortante"
+    },
+    {
+      "id": "R34",
+      "name": "VentureBeat AI",
+      "actor": "VentureBeat",
+      "baseUrl": "https://venturebeat.com/category/ai/",
+      "primary": false,
+      "kind": "Presse technologique",
+      "role": "Détection, entreprise et IA appliquée",
+      "topics": [
+        "IA d’entreprise",
+        "agents",
+        "modèles",
+        "infrastructure"
+      ],
+      "confidence": 80,
+      "rationale": "Couverture spécialisée de l’IA d’entreprise ; confirmer prix, performances et disponibilité dans les documents d’origine",
+      "accessibility": "Inaccessible le 2026-08-13 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-13",
+      "lastAccessResult": "bloqué par la politique réseau sortante"
+    },
+    {
+      "id": "R35",
+      "name": "TestingCatalog",
+      "actor": "TestingCatalog",
+      "baseUrl": "https://www.testingcatalog.com/",
+      "primary": false,
+      "kind": "Veille produit et rumeurs",
+      "role": "Signal précoce uniquement",
+      "topics": [
+        "tests produits",
+        "fonctionnalités en préparation",
+        "lancements",
+        "rumeurs"
+      ],
+      "confidence": 66,
+      "rationale": "Utile pour détecter tôt des changements visibles dans les produits ; les fuites et rumeurs ne sont jamais publiées comme faits certains sans confirmation officielle",
+      "accessibility": "Inaccessible le 2026-08-13 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-13",
+      "lastAccessResult": "bloqué par la politique réseau sortante"
+    },
+    {
+      "id": "R36",
+      "name": "AI Frontiers Newsletter",
+      "actor": "AI Frontiers",
+      "baseUrl": "https://newsletter.ai-frontiers.org/",
+      "canonicalUrl": "https://ai-frontiers.org/",
+      "primary": false,
+      "kind": "Newsletter d’analyse",
+      "role": "Contexte, impacts et gouvernance",
+      "topics": [
+        "impacts de l’IA",
+        "sécurité",
+        "gouvernance",
+        "recherche"
+      ],
+      "confidence": 74,
+      "rationale": "Plateforme de dialogue et de commentaires experts ; les opinions sont attribuées à leurs auteurs et ne remplacent pas les données ou textes primaires",
+      "accessibility": "Inaccessible le 2026-08-13 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-13",
+      "lastAccessResult": "bloqué par la politique réseau sortante"
+    },
+    {
+      "id": "R37",
+      "name": "NVIDIA Research",
+      "actor": "NVIDIA",
+      "baseUrl": "https://research.nvidia.com/",
+      "primary": true,
+      "kind": "Recherche officielle fournisseur",
+      "role": "Preuve primaire pour les travaux NVIDIA",
+      "topics": [
+        "publications",
+        "modèles",
+        "agents",
+        "IA efficace",
+        "robotique"
+      ],
+      "confidence": 96,
+      "rationale": "Portail officiel des projets, laboratoires et publications NVIDIA ; les résultats restent déclarés par le fournisseur lorsqu’ils ne sont pas reproduits indépendamment",
+      "accessibility": "Inaccessible le 2026-08-13 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-13",
+      "lastAccessResult": "bloqué par la politique réseau sortante"
+    },
+    {
+      "id": "R38",
+      "name": "PyPI — registre officiel Python",
+      "actor": "Python Software Foundation",
+      "baseUrl": "https://pypi.org/",
+      "urlTemplate": "https://pypi.org/project/{package}/{version}/",
+      "primary": true,
+      "kind": "Registre de distribution",
+      "topics": [
+        "versions de SDK",
+        "dates de publication",
+        "compatibilité Python"
+      ],
+      "confidence": 92,
+      "rationale": "Canal de distribution officiel opéré par l’éditeur du paquet : prouve de façon durable qu’une version a été publiée à une date donnée, mais ne documente pas le contenu du changement.",
+      "accessibility": "Accessible le 2026-08-13",
+      "last_verified_at": "2026-08-13"
+    },
+    {
+      "id": "R39",
+      "name": "npm registry — registre officiel JavaScript",
+      "actor": "npm, Inc. (GitHub)",
+      "baseUrl": "https://registry.npmjs.org/",
+      "urlTemplate": "https://www.npmjs.com/package/{package}/v/{version}",
+      "primary": true,
+      "kind": "Registre de distribution",
+      "topics": [
+        "versions de SDK",
+        "dates de publication"
+      ],
+      "confidence": 92,
+      "rationale": "Canal de distribution officiel opéré par l’éditeur du paquet ; même portée et mêmes limites que PyPI.",
+      "accessibility": "Accessible le 2026-08-13",
+      "last_verified_at": "2026-08-13"
+    },
+    {
+      "id": "R40",
+      "name": "Blog du Model Context Protocol",
+      "actor": "Model Context Protocol",
+      "baseUrl": "https://blog.modelcontextprotocol.io/",
+      "primary": true,
+      "kind": "Blog officiel du projet",
+      "topics": [
+        "spécification",
+        "SDK",
+        "dépréciations"
+      ],
+      "confidence": 96,
+      "rationale": "Publication officielle du projet, responsable direct de la spécification.",
+      "accessibility": "Accessible le 2026-08-13",
+      "last_verified_at": "2026-08-13"
+    },
+    {
+      "id": "R41",
+      "name": "NBC News — technologie",
+      "actor": "NBC News",
+      "baseUrl": "https://www.nbcnews.com/tech/",
+      "primary": false,
+      "kind": "Presse généraliste",
+      "topics": [
+        "annonces produit",
+        "publicité"
+      ],
+      "confidence": 80,
+      "rationale": "Presse établie avec responsabilité éditoriale ; utile pour corroborer une annonce, insuffisante pour un fait contractuel.",
+      "accessibility": "Inaccessible en ouverture directe le 2026-08-13 ; restituée via index",
+      "last_verified_at": "2026-08-13"
+    },
+    {
+      "id": "R42",
+      "name": "Digital Watch Observatory",
+      "actor": "DiploFoundation",
+      "baseUrl": "https://dig.watch/",
+      "primary": false,
+      "kind": "Observatoire de politique numérique",
+      "topics": [
+        "politique européenne",
+        "souveraineté",
+        "infrastructure"
+      ],
+      "confidence": 78,
+      "rationale": "Suivi documenté des politiques numériques européennes ; utile pour la corroboration et le contexte belge.",
+      "accessibility": "Inaccessible en ouverture directe le 2026-08-13 ; restituée via index",
+      "last_verified_at": "2026-08-13"
+    }
+  ],
+  "accessibilityNote": "L’accessibilité est mesurée depuis l’environnement d’exécution du run. Une source marquée inaccessible n’est pas invalidée : elle n’a simplement pas pu être consultée lors de ce contrôle."
 }

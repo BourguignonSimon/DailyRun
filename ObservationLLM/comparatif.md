@@ -1,6 +1,6 @@
 # Comparatif structuré — édition Belgique
 
-Contrôle: **13 août 2026**. Cette édition intègre les mouvements du 10 au 12 août: **Mistral Regional Endpoints et Priority Tier**, **xAI Grok 4.6**, **OpenAI GPT-5.6-Cyber**, plus trois lacunes de couverture corrigées (**Cohere North Mini Code**, **Gemini Omni Flash / Robotics ER 2**, lettre open weights du 24 juillet). Voir [Prix API](#prix-api), [Exécution locale](#exécution-locale) et [Développement](#développement). Ce fichier remplace le classeur Excel demandé initialement: le dépôt a explicitement migré vers Markdown le 16 juillet 2026. Les « feuilles » sont les sections ci-dessous. Les références Sxx renvoient à [sources.md](sources.md).
+Contrôle: **13 août 2026**. Cette édition intègre une **correction tarifaire majeure**: la hausse de Claude Sonnet 5 au 1er septembre est **annulée**, le tarif 2/10 USD/M devenant permanent. Elle intègre également les mouvements du 10 au 12 août: **Mistral Regional Endpoints, Priority Tier et hébergement de modèles ouverts tiers**, **xAI Grok 4.6**, **OpenAI GPT-5.6-Cyber**, plus trois lacunes de couverture corrigées (**Cohere North Mini Code**, **Gemini Omni Flash / Robotics ER 2**, lettre open weights du 24 juillet). Voir [Prix API](#prix-api), [Exécution locale](#exécution-locale) et [Développement](#développement). Ce fichier remplace le classeur Excel demandé initialement: le dépôt a explicitement migré vers Markdown le 16 juillet 2026. Les « feuilles » sont les sections ci-dessous. Les références Sxx renvoient à [sources.md](sources.md).
 
 > ⚠️ **Niveau de preuve de cette édition.** Les domaines fournisseurs officiels étaient bloqués par la politique de sortie réseau; les faits sont établis via l’index de recherche et par convergence de sources indépendantes. Voir la note d’accès en tête de [sources.md](sources.md). Revérification directe recommandée avant tout engagement contractuel ou budgétaire.
 
@@ -68,7 +68,7 @@ Prix par **1 million de jetons** sauf mention. HT et hors outils. Les prix EUR s
 
 | Échéance | Ce qui change | Impact | Source |
 |---|---|---|---|
-| **1er septembre 2026** | Fin du prix de lancement Claude Sonnet 5: **2/10 → 3/15 USD/M** | **+50 %** sur un modèle de volume; à budgéter maintenant (19 jours) | S125 |
+| ~~1er septembre 2026~~ | **Échéance annulée.** Le prix de lancement Claude Sonnet 5 (**2/10 USD/M**) est devenu permanent le 11 août 2026; la bascule vers 3/15 n’aura pas lieu | Aucune action budgétaire requise. ⚠️ Établi par convergence de sources, page tarifaire non ouverte | S158–S159 |
 | **Fin août 2026** | Fin des crédits promotionnels GitHub Copilot Business (+30 USD/mois) et Enterprise (+70 USD/mois) | Hausse de facture nette à périmètre constant | S137 |
 | **Fin août 2026** | Clôture attendue de l’acquisition d’Anysphere/Cursor par SpaceX (procédures réglementaires finalisées le 12/08, **non close** au 13/08) | Entité contractante, facturation, politique de confidentialité et juridiction peuvent changer | S147 |
 | **31 août 2026** | Arrêt de `gemini-robotics-er-1.6-preview` | Migration vers Robotics ER 2 preview (2/10 USD/M) | S152 |
@@ -86,7 +86,7 @@ Prix par **1 million de jetons** sauf mention. HT et hors outils. Les prix EUR s
 | Acteur / modèle représentatif | Contexte | Entrée origine | Cache origine | Sortie origine | Entrée EUR | Sortie EUR | Batch / classe | Outils / remarques | Source |
 |---|---:|---:|---:|---:|---:|---:|---|---|---|
 | OpenAI GPT-5.6 Sol | 1,05 M | 5 USD | lecture 0,50 USD; écriture 6,25 USD | 30 USD | 4,33 € | 25,96 € | Batch à vérifier par endpoint | Terra 2/12 (≈1,73/10,39 €), Luna 0,20/1,20 (≈0,17/1,04 €) depuis le 30/07; **long contexte: Sol 10/45, Terra 4/18, Luna 0,40/1,80**; écriture de cache = 1,25× l’entrée; Fast Mode Sol remplace Priority (×2,5 vitesse, ×2 prix) | S61–S62, S112, S124 |
-| Anthropic Claude Opus 5, API directe | 1 M | 5 USD | lecture 0,50 USD; écritures selon durée | 25 USD | 4,33 € | 21,64 € | Batch -50 %; Fast ×2 | Fable 5: 10/50; Haiku 4.5: 1/5; **Sonnet 5: 2/10 jusqu’au 31/08 puis 3/15 au 1er/09**; fallback de sûreté configurable | S63–S64, S125 |
+| Anthropic Claude Opus 5, API directe | 1 M | 5 USD | lecture 0,50 USD; écritures selon durée | 25 USD | 4,33 € | 21,64 € | Batch -50 %; Fast ×2 | Fable 5: 10/50; Haiku 4.5: 1/5; **Sonnet 5: 2/10, tarif rendu permanent le 11/08/2026 (hausse vers 3/15 annulée)**; fallback de sûreté configurable | S63–S64, S158–S159 |
 | Google Gemini 3.6 Flash | 1 M | 1,50 USD | Voir grille dynamique | 7,50 USD | 1,30 € | 6,49 € | Batch/Flex/Priority publiés séparément | 64 k sortie; Search/Maps/outils selon grille; Gemini 2.5 Pro/Flash/Flash-Lite arrêtés le 16/10/2026 | S65, S114 |
 | Mistral Large | À confirmer par version | 2 USD | ND | 6 USD | 1,73 € | 5,19 € | Batch -50 % | OCR, audio et autres outils séparés. **Endpoint régional UE/US ×1,1; Priority Tier ×1,75 avec SLA 99,5 % (préversion)** | S19, S142–S144 |
 | **xAI Grok 4.6 court (<200 k)** | 500 k | 2 USD | 0,50 USD | 6 USD | 1,73 € | 5,19 € | **Aucune remise batch** | Remplace Grok 4.5 le 12/08. Variante rapide ×2. Cache: `prompt_cache_key` (Responses) ou `x-grok-conv-id` (Chat Completions) | S139–S141 |

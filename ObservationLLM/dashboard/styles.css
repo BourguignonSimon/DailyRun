@@ -38,7 +38,13 @@ button, input { font: inherit; }
 .status-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--orange); box-shadow: 0 0 0 4px rgba(243,166,80,.2); }
 .run-chip.completed .status-dot { background: #2ea66d; box-shadow: 0 0 0 4px rgba(46,166,109,.16); }
 .run-chip.running .status-dot { background: var(--blue); animation: pulse 1.6s infinite; }
+.run-chip.failed .status-dot { background: #c2453d; box-shadow: 0 0 0 4px rgba(194,69,61,.18); }
 @keyframes pulse { 50% { transform: scale(1.25); opacity: .65; } }
+.run-notice { margin: 18px 0 4px; padding: 16px 18px; border-radius: 14px; border: 1px solid rgba(194,69,61,.35); background: rgba(194,69,61,.07); }
+.run-notice strong { display: block; font-size: .92rem; margin-bottom: 6px; }
+.run-notice p { margin: 0; font-size: .84rem; line-height: 1.55; color: var(--muted); }
+.run-notice .run-notice-fix { margin-top: 8px; font-weight: 600; color: inherit; }
+.run-notice.info { border-color: var(--line); background: rgba(255,255,255,.5); }
 
 .section-nav { position: sticky; top: 10px; z-index: 10; display: flex; gap: 4px; padding: 6px; border: 1px solid rgba(16,21,18,.1); border-radius: 999px; background: rgba(255,253,248,.86); box-shadow: 0 8px 30px rgba(16,21,18,.08); backdrop-filter: blur(16px); overflow-x: auto; }
 .section-nav a { flex: 1; min-width: max-content; padding: 9px 14px; border-radius: 999px; text-align: center; text-decoration: none; font-size: .8rem; font-weight: 800; }

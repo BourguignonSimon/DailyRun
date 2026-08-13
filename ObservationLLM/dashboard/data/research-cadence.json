@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "timezone": "Europe/Brussels",
-  "updatedAt": "2026-08-13T09:30:00Z",
+  "updatedAt": "2026-08-13T12:45:00Z",
   "orchestration": "single_daily_run",
   "weeklyRule": {
     "weekStartsOn": "monday",
@@ -19,51 +19,123 @@
       "label": "Temps réel",
       "cadence": "Chaque jour",
       "trigger": "Chaque run",
-      "scope": ["X", "RSS", "annonces officielles", "incidents", "sorties", "retraits"],
+      "scope": [
+        "X",
+        "RSS",
+        "annonces officielles",
+        "incidents",
+        "sorties",
+        "retraits"
+      ],
       "lastCompletedOn": "2026-08-13",
       "nextDueOn": "2026-08-14",
-      "status": "current"
+      "status": "current",
+      "lastAttemptOn": "2026-08-13",
+      "evidenceLevel": "dégradé — pages officielles non ouvertes, convergence de sources indépendantes"
     },
     {
       "id": "operational",
       "label": "Opérationnelle",
       "cadence": "Chaque semaine",
       "trigger": "Premier run réussi de la semaine ISO ou rattrapage",
-      "scope": ["prix", "API", "modèles", "outils", "disponibilité belge", "régions"],
+      "scope": [
+        "prix",
+        "API",
+        "modèles",
+        "outils",
+        "disponibilité belge",
+        "régions"
+      ],
       "lastCompletedOn": "2026-08-13",
       "nextDueOn": "2026-08-17",
-      "status": "current"
+      "status": "current",
+      "lastAttemptOn": "2026-08-13",
+      "lastAttemptStatus": "partiel — sources primaires joignables limitées aux registres de distribution officiels et au blog du Model Context Protocol"
     },
     {
       "id": "deep",
       "label": "Approfondie",
       "cadence": "Chaque semaine",
       "trigger": "Premier run réussi de la semaine ISO ou rattrapage",
-      "scope": ["sécurité", "confidentialité", "DPA", "benchmarks", "bonnes pratiques", "modèles locaux"],
+      "scope": [
+        "sécurité",
+        "confidentialité",
+        "DPA",
+        "benchmarks",
+        "bonnes pratiques",
+        "modèles locaux"
+      ],
       "lastCompletedOn": "2026-08-13",
       "nextDueOn": "2026-08-17",
-      "status": "current"
+      "status": "current",
+      "lastAttemptOn": "2026-08-13",
+      "lastAttemptStatus": "partiel — sources primaires joignables limitées aux registres de distribution officiels et au blog du Model Context Protocol"
     },
     {
       "id": "structural",
       "label": "Structurelle",
       "cadence": "Chaque semaine",
       "trigger": "Premier run réussi de la semaine ISO ou rattrapage",
-      "scope": ["sélection des écosystèmes", "classement des 100 outils", "méthodologie", "sources de confiance"],
+      "scope": [
+        "sélection des écosystèmes",
+        "classement des 100 outils",
+        "méthodologie",
+        "sources de confiance"
+      ],
       "lastCompletedOn": "2026-08-13",
       "nextDueOn": "2026-08-17",
-      "status": "current"
+      "status": "current",
+      "lastAttemptOn": "2026-08-13",
+      "lastAttemptStatus": "partiel — sources primaires joignables limitées aux registres de distribution officiels et au blog du Model Context Protocol"
     },
     {
       "id": "event",
       "label": "Événementielle",
       "cadence": "Dès détection",
       "trigger": "Annonce importante détectée pendant le run quotidien",
-      "scope": ["vérification primaire complète", "impacts transversaux", "mise à jour immédiate des vues concernées"],
+      "scope": [
+        "vérification primaire complète",
+        "impacts transversaux",
+        "mise à jour immédiate des vues concernées"
+      ],
       "lastCompletedOn": "2026-08-13",
       "nextDueOn": null,
       "nextDueLabel": "À la prochaine détection importante",
-      "status": "armed"
+      "status": "armed",
+      "lastAttemptOn": "2026-08-13",
+      "evidenceLevel": "dégradé — quatre annonces importantes traitées dans ce run (tarif Sonnet 5, publicités ChatGPT, modèles tiers Mistral, dépréciations Gemini)"
     }
-  ]
+  ],
+  "blocking": {
+    "detectedAt": "2026-08-13",
+    "kind": "egress_policy",
+    "summary": "Quatrième contrôle consécutif marqué par la politique réseau sortante de l’environnement : les six points d’entrée obligatoires et la quasi-totalité de la documentation fournisseur ne peuvent pas être ouverts directement. La veille a été menée selon la méthode dégradée établie — index de recherche restituant les pages officielles et convergence d’au moins deux sources indépendantes — complétée par les registres de distribution officiels joignables, qui fournissent eux une preuve primaire durable.",
+    "reachableHosts": [
+      "api.github.com",
+      "raw.githubusercontent.com",
+      "blog.modelcontextprotocol.io",
+      "pypi.org",
+      "registry.npmjs.org"
+    ],
+    "blockedHosts": [
+      "tldr.tech",
+      "techcrunch.com",
+      "venturebeat.com",
+      "www.testingcatalog.com",
+      "newsletter.ai-frontiers.org",
+      "ai-frontiers.org",
+      "research.nvidia.com",
+      "openai.com",
+      "platform.openai.com",
+      "status.openai.com",
+      "github.blog",
+      "docs.mistral.ai",
+      "ai.google.dev",
+      "huggingface.co",
+      "x.com",
+      "docs.anthropic.com"
+    ],
+    "remediation": "Ajouter ces domaines à l’allowlist réseau de l’environnement Claude Code utilisé par l’automatisation, puis relancer le run.",
+    "evidenceLevel": "dégradé pour les prix, régions et politiques ; primaire pour les versions de SDK"
+  }
 }
