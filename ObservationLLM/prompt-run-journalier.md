@@ -11,6 +11,17 @@ Au début du run, place explicitement toutes les commandes dans le checkout de c
 2. Distingue explicitement modèle, application, plateforme API, assistant de code, agent autonome, orchestrateur, distributeur et hébergeur afin d’éviter les comparaisons trompeuses.
 3. Adopte le point de vue belge : disponibilité en Belgique, français et néerlandais, devise de facturation lorsqu’elle est publiée et limitations géographiques. Ne recherche, n’affiche et ne commente pas le taux de TVA belge.
 
+## Cadences de recherche dans le run unique
+
+A. Conserve une seule automatisation quotidienne. Toutes les lignes de temps ci-dessous sont des phases du même run, jamais des crons, tâches ou PR séparés. Utilise le fuseau `Europe/Brussels` et une semaine ISO commençant le lundi.
+B. Ligne **Temps réel — chaque jour** : contrôle X, RSS, annonces officielles, incidents, sorties et retraits à chaque run.
+C. Ligne **Opérationnelle — chaque semaine** : contrôle prix, API, modèles, outils, disponibilité belge et régions au premier run quotidien réussi de chaque semaine ISO. Si ce run échoue ou n’a pas lieu, effectue la revue au prochain run disponible.
+D. Ligne **Approfondie — chaque semaine** : contrôle sécurité, confidentialité, DPA, benchmarks, bonnes pratiques et modèles locaux selon la même règle hebdomadaire avec rattrapage.
+E. Ligne **Structurelle — chaque semaine** : réévalue sélection des écosystèmes, classement des 100 outils, méthodologie et sources de confiance selon la même règle hebdomadaire avec rattrapage.
+F. Ligne **Événementielle — dès détection** : lorsqu’une annonce importante est détectée pendant la veille quotidienne, effectue dans ce même run une vérification complète des faits et de tous les impacts concernés, sans attendre la revue hebdomadaire et sans déclencher une seconde exécution.
+G. Une annonce est importante si elle a un impact matériel sur un lancement ou retrait, un prix, une API, une région, la sécurité, la confidentialité, une licence, une compatibilité ou un incident, avec un signal initial d’au moins 75/100 ou une preuve primaire directe. La publication certaine respecte toujours le barème de confiance général.
+H. Maintiens `dashboard/data/research-cadence.json`. Pour chaque ligne, conserve le périmètre, le déclencheur, la dernière exécution réussie, la prochaine échéance et le statut `current`, `due`, `overdue`, `running`, `failed` ou `armed`. Calcule les échéances à chaque run et rattrape toute revue échue avant publication.
+
 ## Recherche, fraîcheur et confiance
 
 4. Vérifie sur le web chaque fait susceptible de changer. Privilégie documentation, pages tarifaires, cartes modèles, dépôts, politiques, changelogs, statuts de service, publications de recherche et communiqués officiels.
@@ -50,10 +61,10 @@ Au début du run, place explicitement toutes les commandes dans le checkout de c
 
 ## Livrables, état courant et dashboard public
 
-23. Mets à jour README.md, synthese.md, comparatif.md, analyse-detaillee.md, bonnes-pratiques-developpement.md, modeles-locaux-par-hardware.md, localisation-modeles.md, referentiel-sources.md, outils-ecosysteme-ia.md, sources.md, dashboard/data/latest.json, dashboard/data/run-status.json, dashboard/data/source-registry.json, dashboard/data/announcements.json et dashboard/data/tools-catalog.json.
+23. Mets à jour README.md, synthese.md, comparatif.md, analyse-detaillee.md, bonnes-pratiques-developpement.md, modeles-locaux-par-hardware.md, localisation-modeles.md, referentiel-sources.md, outils-ecosysteme-ia.md, sources.md, dashboard/data/latest.json, dashboard/data/run-status.json, dashboard/data/research-cadence.json, dashboard/data/source-registry.json, dashboard/data/announcements.json et dashboard/data/tools-catalog.json.
 24. Les fichiers courants décrivent uniquement le dernier état vérifié. Git assure seul l’historique : ne publie aucune section narrative « changements depuis le run précédent », aucune liste d’entrées ou sorties et aucun historique dans le dashboard ou les rapports courants.
 25. Mets à jour le statut de chaque entité à chaque run, y compris « non revérifié » ou « source inaccessible ». Si aucun fait significatif n’est trouvé, renouvelle quand même les dates, statuts et preuves et indique « aucun changement significatif » uniquement dans le compte rendu du run, pas dans le contenu courant.
-26. Le dashboard public affiche le dernier run validé, les annonces avec confiance, toutes les vues de contenu, la localisation et l’hébergement régional, le référentiel des sources et les 100 outils avec recherche, filtres par catégorie et dernière nouveauté qualifiée. Il ne doit exiger aucune connexion GitHub.
+26. Le dashboard public affiche le dernier run validé, les cinq lignes de temps avec dernière exécution et prochaine échéance, les annonces avec confiance, toutes les vues de contenu, la localisation et l’hébergement régional, le référentiel des sources et les 100 outils avec recherche, filtres par catégorie et dernière nouveauté qualifiée. Il ne doit exiger aucune connexion GitHub.
 27. Lorsqu’un post d’un compte X officiel obtient une note d’annonce d’au moins 90/100 grâce à une corroboration primaire durable, marque le compte dans dashboard/data/source-registry.json avec trustedDaily=true, role="Veille quotidienne prioritaire", promotionEvidence et trustBasis. Cette promotion augmente la priorité de surveillance, jamais la véracité automatique des futurs posts. Retire-la si les critères ne sont plus remplis.
 
 ## Intégrité et validation

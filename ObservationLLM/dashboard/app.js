@@ -3,6 +3,7 @@ const state = {
   sources: [],
   announcements: [],
   tools: [],
+  cadence: null,
   filter: "Tous",
   query: "",
   hostingFilter: "Tous",
@@ -90,6 +91,27 @@ function renderActors(data) {
     card.className = "actor-card";
     const status = actor.status || "vérifié";
     card.innerHTML = `<div class="actor-top"><span class="actor-initials">${initials(actor.name)}</span><span class="tag">${actor.category}</span></div><h3>${actor.name}</h3><p>${actor.flagship}</p><span class="availability">${actor.belgium}</span><small class="verification">${status} · ${actor.last_verified_at || formatDate(data.run.checkedAt)}</small>`;
+    return card;
+  }));
+}
+
+function renderCadence(cadence) {
+  const labels = {
+    current: "À jour",
+    due: "À exécuter",
+    overdue: "En retard",
+    running: "En cours",
+    failed: "Échec",
+    armed: "En veille"
+  };
+  const lanes = cadence.lanes || [];
+  const weekly = lanes.filter((lane) => lane.cadence === "Chaque semaine").length;
+  byId("cadence-summary").innerHTML = `<strong>${lanes.length} lignes coordonnées</strong><span>1 quotidienne · ${weekly} hebdomadaires · 1 événementielle · fuseau ${cadence.timezone}</span>`;
+  byId("cadence-grid").replaceChildren(...lanes.map((lane, index) => {
+    const card = document.createElement("article");
+    card.className = `cadence-card ${lane.status}`;
+    const next = lane.nextDueOn ? formatDate(lane.nextDueOn) : lane.nextDueLabel;
+    card.innerHTML = `<div class="cadence-card-top"><span class="cadence-number">0${index + 1}</span><span class="cadence-status">${labels[lane.status] || lane.status}</span></div><span class="cadence-frequency">${lane.cadence}</span><h3>${lane.label}</h3><p>${lane.scope.join(" · ")}</p><dl><div><dt>Déclenchement</dt><dd>${lane.trigger}</dd></div><div><dt>Dernière exécution</dt><dd>${formatDate(lane.lastCompletedOn)}</dd></div><div><dt>Prochaine échéance</dt><dd>${next}</dd></div></dl>`;
     return card;
   }));
 }
@@ -242,13 +264,15 @@ async function refreshStatus() {
 
 async function init() {
   try {
-    const [data, status, registry, announcementFeed, toolCatalog] = await Promise.all([getJson("data/latest.json"), getJson("data/run-status.json"), getJson("data/source-registry.json"), getJson("data/announcements.json"), getJson("data/tools-catalog.json")]);
+    const [data, status, registry, announcementFeed, toolCatalog, cadence] = await Promise.all([getJson("data/latest.json"), getJson("data/run-status.json"), getJson("data/source-registry.json"), getJson("data/announcements.json"), getJson("data/tools-catalog.json"), getJson("data/research-cadence.json")]);
     state.data = data;
     state.sources = registry.sources || [];
     state.announcements = announcementFeed.announcements || [];
     state.tools = toolCatalog.tools || [];
+    state.cadence = cadence;
     renderHeader(data, status, state.sources, state.announcements, state.tools);
     renderDecisions(data);
+    renderCadence(cadence);
     renderAnnouncements(state.announcements);
     renderTools(state.tools);
     renderFilters(data);

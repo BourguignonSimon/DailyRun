@@ -27,6 +27,7 @@
     <nav class="section-nav" aria-label="Sections du tableau de bord">
       <a href="#overview">Vue d’ensemble</a>
       <a href="#announcements">Annonces</a>
+      <a href="#cadence">Cadences</a>
       <a href="#tools">100 outils</a>
       <a href="#actors">Catalogue</a>
       <a href="#hosting">Localisation</a>
@@ -75,6 +76,15 @@
         </div>
         <div class="announcement-grid" id="announcement-grid" aria-live="polite"></div>
         <p class="empty-state" id="announcement-empty" hidden>Aucune annonce ne correspond à ce filtre.</p>
+      </section>
+
+      <section class="cadence-section" id="cadence">
+        <div class="section-heading">
+          <div><span class="eyebrow">RYTHME DE CONTRÔLE</span><h2>Cinq lignes de temps, un seul run</h2></div>
+          <p>La veille rapide s’exécute chaque jour. Les revues opérationnelle, approfondie et structurelle sont hebdomadaires, avec rattrapage automatique. Une annonce importante déclenche immédiatement sa vérification complète.</p>
+        </div>
+        <div class="cadence-summary" id="cadence-summary" aria-live="polite"></div>
+        <div class="cadence-grid" id="cadence-grid"></div>
       </section>
 
       <section class="decision-section">
