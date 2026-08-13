@@ -1,11 +1,11 @@
 {
-  "runId": "2026-08-13-opus-5-observatoire",
+  "runId": "2026-08-13-codex-correction-observatoire",
   "status": "completed",
   "phase": "publication",
-  "model": "Opus 5",
-  "startedAt": "2026-08-13T09:55:00Z",
-  "message": "Contrôle du 13 août 2026 publié en preuve dégradée. Tarif Sonnet 5 rendu permanent, publicités ChatGPT hors Belgique, modèles ouverts tiers chez Mistral, deux échéances d’arrêt Gemini en août, SDK Python OpenAI en version majeure 3.0.0. Blocage réseau persistant sur les six points d’entrée obligatoires pour le quatrième contrôle consécutif : décision attendue du commanditaire.",
-  "evidenceLevel": "dégradé",
-  "completedAt": "2026-08-13T12:45:00Z",
-  "commit": "e2c6aab768500b8e78d70be136283855ecb08774"
+  "model": "Codex",
+  "startedAt": "2026-08-13T20:53:34Z",
+  "message": "Revérification primaire terminée. Le calendrier officiel de Sonnet 5 (2/10 USD/M jusqu’au 31 août, puis 3/15) et l’arrêt de trois endpoints Imagen 4 le 17 août ont été corrigés dans les vues courantes. L’échéance non publiée de Gemini Robotics a été retirée. Publication proposée par pull request.",
+  "evidenceLevel": "primaire ciblé",
+  "completedAt": "2026-08-13T21:01:00Z",
+  "commit": "pending-pr"
 }

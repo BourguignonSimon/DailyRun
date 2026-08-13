@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
   "run": {
-    "checkedAt": "2026-08-13T12:45:00Z",
+    "checkedAt": "2026-08-13T21:01:00Z",
     "factsVerifiedThrough": "2026-08-13",
-    "commit": "e2c6aab768500b8e78d70be136283855ecb08774",
-    "model": "Opus 5",
-    "result": "Contrôle du 13 août 2026 en preuve dégradée. Quatre annonces importantes vérifiées par convergence de sources indépendantes et trente et une nouveautés d’outils établies sur les registres de distribution officiels. Les entrées non revérifiées sont signalées."
+    "commit": "pending-pr",
+    "model": "Codex",
+    "result": "Contrôle du 13 août 2026 complété par une revérification primaire. Deux informations publiées plus tôt ont été corrigées dans toutes les vues : calendrier tarifaire Sonnet 5 et échéances Gemini. Les entrées non revérifiées intégralement restent signalées."
   },
   "metrics": {
     "entityCount": 20,
@@ -14,11 +14,11 @@
     "highConfidenceSourceCount": 15,
     "eurUsdRate": 1.1554,
     "rateDate": "2026-08-05",
-    "verificationNote": "Aucun des vingt écosystèmes n’a été revérifié sur sa documentation officielle le 13 août 2026 ; les mouvements du jour sont portés par les annonces vérifiées."
+    "verificationNote": "Aucun des vingt écosystèmes n’a été revérifié intégralement. Les faits corrigés sur Anthropic et Google ont été contrôlés directement dans leurs documentations officielles le 13 août 2026."
   },
   "headline": {
-    "title": "Le tarif d’introduction de Claude Sonnet 5 devient permanent.",
-    "detail": "La hausse de 50 % attendue au 1er septembre n’aura pas lieu : 2/10 USD par million de jetons devient le tarif standard. ChatGPT affiche des publicités dans neuf pays, dont aucun n’est la Belgique. Mistral héberge désormais des modèles ouverts tiers derrière ses endpoints régionaux."
+    "title": "Claude Sonnet 5 passe bien à 3/15 USD/M le 1er septembre.",
+    "detail": "Les pages officielles maintiennent 2/10 USD/M jusqu’au 31 août, puis 3/15 USD/M. Google confirme l’arrêt de trois endpoints Imagen 4 le 17 août; aucune échéance au 31 août n’est publiée pour `gemini-robotics-er-1.6-preview`."
   },
   "decisions": [
     {
@@ -635,15 +635,17 @@
   "verificationNotice": {
     "checkedAt": "2026-08-13",
     "level": "warning",
-    "title": "Niveau de preuve dégradé pour le quatrième contrôle consécutif",
-    "detail": "La politique réseau sortante de l’environnement d’exécution bloque les six points d’entrée obligatoires de la veille et la quasi-totalité de la documentation fournisseur. Les prix, les régions, la disponibilité belge et les politiques de confidentialité ont été établis via l’index de recherche restituant les pages officielles et par convergence d’au moins deux sources indépendantes, et non par ouverture directe. Les versions de SDK, elles, reposent sur une preuve primaire durable : les registres de distribution officiels PyPI et npm étaient joignables. Revérifiez directement avant tout engagement contractuel ou budgétaire.",
+    "title": "Preuve primaire rétablie pour les deux corrections critiques",
+    "detail": "Les documentations officielles Anthropic et Google ont été consultées le 13 août 2026 pour corriger le calendrier Sonnet 5 et les dépréciations Imagen. Les autres fiches non revérifiées intégralement conservent leur statut explicite; revérifiez toujours prix, régions et conditions avant un engagement contractuel ou budgétaire.",
     "reachableSources": [
       "pypi.org",
       "registry.npmjs.org",
       "blog.modelcontextprotocol.io",
       "api.github.com",
-      "raw.githubusercontent.com"
+      "raw.githubusercontent.com",
+      "platform.claude.com",
+      "ai.google.dev"
     ],
-    "remediation": "Décision attendue du commanditaire : ajouter les domaines de veille et de documentation à l’allowlist réseau de l’environnement, ou accepter durablement ce niveau de preuve."
+    "remediation": "Retester les autres domaines au prochain run quotidien; ne promouvoir une information qu’après preuve primaire durable ou corroboration explicitement qualifiée."
   }
 }
