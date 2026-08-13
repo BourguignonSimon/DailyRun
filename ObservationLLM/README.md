@@ -14,6 +14,8 @@ Contrôle: **13 août 2026**. Cycle court mais dense: trois mouvements en quatre
 - [Modèles locaux par matériel](modeles-locaux-par-hardware.md)
 - [Localisation, distribution et hébergement des modèles](localisation-modeles.md)
 - [Sources de référence et indices de confiance](referentiel-sources.md)
+- [100 outils majeurs de l’écosystème IA](outils-ecosysteme-ia.md)
+- [Prompt consolidé du run journalier](prompt-run-journalier.md)
 - [Registre des sources](sources.md)
 
 Le dashboard résume le dernier run validé. Son contrat de données et son fonctionnement sont documentés dans [`dashboard/README.md`](dashboard/README.md).

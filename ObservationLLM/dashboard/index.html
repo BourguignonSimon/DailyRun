@@ -26,6 +26,9 @@
 
     <nav class="section-nav" aria-label="Sections du tableau de bord">
       <a href="#overview">Vue d’ensemble</a>
+      <a href="#announcements">Annonces</a>
+      <a href="#cadence">Cadences</a>
+      <a href="#tools">100 outils</a>
       <a href="#actors">Catalogue</a>
       <a href="#hosting">Localisation</a>
       <a href="#sources">Sources</a>
@@ -58,7 +61,30 @@
         <article><span>Vérifiées ce run</span><strong id="metric-verified">—</strong><small>statut courant explicite</small></article>
         <article><span>Canaux régionaux</span><strong id="metric-regions">—</strong><small>distribution et hébergement</small></article>
         <article><span>Sources fortes</span><strong id="metric-sources">—</strong><small>confiance ≥ 85/100</small></article>
+        <article><span>Annonces principales</span><strong id="metric-announcements">—</strong><small>signaux récents qualifiés</small></article>
+        <article><span>Outils majeurs</span><strong id="metric-tools">—</strong><small>suivis dans le même run</small></article>
         <article><span>Profils locaux</span><strong id="metric-hardware">—</strong><small>du Pi 5 au GPU 24 Go</small></article>
+      </section>
+
+      <section class="announcements-section" id="announcements">
+        <div class="section-heading">
+          <div><span class="eyebrow">VEILLE RÉCENTE</span><h2>Annonces principales</h2></div>
+          <p>Les flux X accélèrent la détection. La note augmente seulement lorsqu’une annonce est corroborée par une documentation, une carte modèle, un dépôt ou une publication officielle.</p>
+        </div>
+        <div class="toolbar">
+          <div class="filters" id="announcement-filters" aria-label="Filtrer les annonces par type"></div>
+        </div>
+        <div class="announcement-grid" id="announcement-grid" aria-live="polite"></div>
+        <p class="empty-state" id="announcement-empty" hidden>Aucune annonce ne correspond à ce filtre.</p>
+      </section>
+
+      <section class="cadence-section" id="cadence">
+        <div class="section-heading">
+          <div><span class="eyebrow">RYTHME DE CONTRÔLE</span><h2>Cinq lignes de temps, un seul run</h2></div>
+          <p>La veille rapide s’exécute chaque jour. Les revues opérationnelle, approfondie et structurelle sont hebdomadaires, avec rattrapage automatique. Une annonce importante déclenche immédiatement sa vérification complète.</p>
+        </div>
+        <div class="cadence-summary" id="cadence-summary" aria-live="polite"></div>
+        <div class="cadence-grid" id="cadence-grid"></div>
       </section>
 
       <section class="decision-section">
@@ -67,6 +93,23 @@
           <p>Les choix les plus défendables avant un pilote sur vos propres tâches.</p>
         </div>
         <div class="decision-grid" id="decision-grid"></div>
+      </section>
+
+      <section class="tools-section" id="tools">
+        <div class="section-heading">
+          <div><span class="eyebrow">ÉCOSYSTÈME ÉTENDU</span><h2>100 outils IA majeurs suivis</h2></div>
+          <p>Applications, assistants de code, frameworks d’agents, interfaces, moteurs locaux, plateformes, évaluation, sécurité et données. Les nouveautés sont collectées par le même run que le reste de l’observatoire.</p>
+        </div>
+        <div class="toolbar">
+          <label class="search-field">
+            <span class="sr-only">Rechercher un outil IA</span>
+            <input id="tool-search" type="search" placeholder="Outil, éditeur ou usage…" autocomplete="off">
+          </label>
+          <div class="filters" id="tool-filters" aria-label="Filtrer les outils par catégorie"></div>
+        </div>
+        <div class="tool-grid" id="tool-grid" aria-live="polite"></div>
+        <p class="empty-state" id="tool-empty" hidden>Aucun outil ne correspond à ce filtre.</p>
+        <a class="section-link" href="outils-ecosysteme-ia.html">Consulter la méthodologie et la liste complète →</a>
       </section>
 
       <section class="actors-section" id="actors">
@@ -105,7 +148,7 @@
       <section class="sources-section" id="sources">
         <div class="section-heading">
           <div><span class="eyebrow">RÉFÉRENTIEL COMMUN</span><h2>Sources de recherche et confiance</h2></div>
-          <p>Le score qualifie l’aptitude d’une source à prouver un type de fait. Une page marketing n’est jamais une preuve universelle.</p>
+          <p>Le score qualifie l’aptitude d’une source à prouver un type de fait. Les flux X officiels servent à détecter vite, puis les faits sont confirmés ailleurs.</p>
         </div>
         <div class="toolbar">
           <label class="search-field">

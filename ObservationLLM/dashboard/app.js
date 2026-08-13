@@ -1,12 +1,18 @@
 const state = {
   data: null,
   sources: [],
+  announcements: [],
+  tools: [],
+  cadence: null,
   filter: "Tous",
   query: "",
   hostingFilter: "Tous",
   hostingQuery: "",
-  sourceFilter: "85+",
+  sourceFilter: "Toutes",
   sourceQuery: "",
+  announcementFilter: "Toutes",
+  toolFilter: "Toutes",
+  toolQuery: "",
   selectedHardware: 0
 };
 
@@ -26,7 +32,7 @@ function initials(name) {
   return name.split(/[\s/.-]+/).map((part) => part[0]).filter(Boolean).slice(0, 2).join("").toUpperCase();
 }
 
-function renderHeader(data, status, sources) {
+function renderHeader(data, status, sources, announcements, tools) {
   byId("edition-date").textContent = formatDate(data.run.checkedAt);
   const entities = data.entities || data.actors || [];
   const verified = entities.filter((entity) => entity.status !== "non reverifié" && entity.status !== "source inaccessible").length;
@@ -34,6 +40,8 @@ function renderHeader(data, status, sources) {
   byId("metric-verified").textContent = entities.length ? `${Math.round((verified / entities.length) * 100)} %` : "—";
   byId("metric-regions").textContent = (data.localizations || []).length;
   byId("metric-sources").textContent = sources.filter((source) => source.confidence >= 85).length;
+  byId("metric-announcements").textContent = announcements.length;
+  byId("metric-tools").textContent = tools.length;
   byId("metric-hardware").textContent = data.hardware.length;
   byId("headline-change").textContent = data.headline.title;
   byId("headline-detail").textContent = data.headline.detail;
@@ -87,6 +95,79 @@ function renderActors(data) {
   }));
 }
 
+function renderCadence(cadence) {
+  const labels = {
+    current: "À jour",
+    due: "À exécuter",
+    overdue: "En retard",
+    running: "En cours",
+    failed: "Échec",
+    armed: "En veille"
+  };
+  const lanes = cadence.lanes || [];
+  const weekly = lanes.filter((lane) => lane.cadence === "Chaque semaine").length;
+  byId("cadence-summary").innerHTML = `<strong>${lanes.length} lignes coordonnées</strong><span>1 quotidienne · ${weekly} hebdomadaires · 1 événementielle · fuseau ${cadence.timezone}</span>`;
+  byId("cadence-grid").replaceChildren(...lanes.map((lane, index) => {
+    const card = document.createElement("article");
+    card.className = `cadence-card ${lane.status}`;
+    const next = lane.nextDueOn ? formatDate(lane.nextDueOn) : lane.nextDueLabel;
+    card.innerHTML = `<div class="cadence-card-top"><span class="cadence-number">0${index + 1}</span><span class="cadence-status">${labels[lane.status] || lane.status}</span></div><span class="cadence-frequency">${lane.cadence}</span><h3>${lane.label}</h3><p>${lane.scope.join(" · ")}</p><dl><div><dt>Déclenchement</dt><dd>${lane.trigger}</dd></div><div><dt>Dernière exécution</dt><dd>${formatDate(lane.lastCompletedOn)}</dd></div><div><dt>Prochaine échéance</dt><dd>${next}</dd></div></dl>`;
+    return card;
+  }));
+}
+
+function renderTools(tools) {
+  const categories = ["Toutes", ...new Set(tools.map((tool) => tool.category))];
+  byId("tool-filters").replaceChildren(...categories.map((category) => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = `filter-button${state.toolFilter === category ? " active" : ""}`;
+    button.textContent = category;
+    button.setAttribute("aria-pressed", state.toolFilter === category);
+    button.addEventListener("click", () => { state.toolFilter = category; renderTools(tools); });
+    return button;
+  }));
+  const query = state.toolQuery.trim().toLocaleLowerCase("fr");
+  const filtered = tools.filter((tool) => {
+    const categoryMatch = state.toolFilter === "Toutes" || tool.category === state.toolFilter;
+    const text = `${tool.name} ${tool.vendor} ${tool.productType} ${tool.focus}`.toLocaleLowerCase("fr");
+    return categoryMatch && (!query || text.includes(query));
+  });
+  byId("tool-empty").hidden = filtered.length > 0;
+  byId("tool-grid").replaceChildren(...filtered.map((tool) => {
+    const card = document.createElement("article");
+    card.className = "tool-card";
+    const update = tool.latestAnnouncement
+      ? `<div class="tool-update"><strong>Nouveauté qualifiée</strong><span>${tool.latestAnnouncement.title}</span><small>${tool.latestAnnouncement.confidence}/100 · ${tool.latestAnnouncement.publishedAt}</small></div>`
+      : `<div class="tool-update pending"><strong>Veille unifiée</strong><span>Aucune annonce qualifiée attachée au catalogue courant.</span><small>${tool.verificationStatus}</small></div>`;
+    card.innerHTML = `<div class="tool-rank"><span>#${String(tool.rank).padStart(3, "0")}</span><span class="tag">${tool.productType}</span></div><h3><a href="${tool.officialUrl}" target="_blank" rel="noreferrer">${tool.name} ↗</a></h3><p>${tool.vendor} · ${tool.focus}</p>${update}<small class="tool-region">${tool.regionMode}</small>`;
+    return card;
+  }));
+}
+
+function renderAnnouncements(announcements) {
+  const categories = ["Toutes", ...new Set(announcements.map((item) => item.category))];
+  byId("announcement-filters").replaceChildren(...categories.map((category) => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = `filter-button${state.announcementFilter === category ? " active" : ""}`;
+    button.textContent = category;
+    button.setAttribute("aria-pressed", state.announcementFilter === category);
+    button.addEventListener("click", () => { state.announcementFilter = category; renderAnnouncements(announcements); });
+    return button;
+  }));
+  const filtered = announcements.filter((item) => state.announcementFilter === "Toutes" || item.category === state.announcementFilter);
+  byId("announcement-empty").hidden = filtered.length > 0;
+  byId("announcement-grid").replaceChildren(...filtered.map((item) => {
+    const card = document.createElement("article");
+    card.className = "announcement-card";
+    const evidence = item.evidence.map((source) => `<a href="${source.url}" target="_blank" rel="noreferrer">${source.label} ↗</a>`).join("");
+    const signals = item.signals.map((source) => `<a href="${source.url}" target="_blank" rel="noreferrer">${source.label}</a>`).join(" · ");
+    card.innerHTML = `<div class="announcement-meta"><span class="tag">${item.category}</span><time datetime="${item.publishedAt}">${formatDate(item.publishedAt)}</time></div><h3>${item.title}</h3><p>${item.summary}</p><div class="announcement-confidence"><div class="confidence-ring" style="--score:${item.confidence}"><strong>${item.confidence}</strong><span>/100</span></div><div><strong>Confiance ${item.confidenceLabel.toLocaleLowerCase("fr")}</strong><small>${item.confidenceReason}</small></div></div><div class="announcement-links">${evidence}</div><small class="signal-sources">Détection : ${signals}</small>${item.caveat ? `<p class="announcement-caveat"><strong>Réserve :</strong> ${item.caveat}</p>` : ""}`;
+    return card;
+  }));
+}
+
 function renderHosting(data) {
   const rows = data.localizations || [];
   const channels = ["Tous", ...new Set(rows.map((row) => row.channel))];
@@ -115,27 +196,31 @@ function renderHosting(data) {
 }
 
 function renderSources(sources) {
-  const levels = ["85+", "95+", "Toutes"];
+  const levels = ["Toutes", "Dignes de confiance", "95+", "85+", "Flux X"];
   byId("source-filters").replaceChildren(...levels.map((level) => {
     const button = document.createElement("button");
     button.type = "button";
     button.className = `filter-button${state.sourceFilter === level ? " active" : ""}`;
-    button.textContent = level === "Toutes" ? level : `Confiance ${level}`;
+    button.textContent = level === "Toutes" || level === "Flux X" ? level : `Confiance ${level}`;
     button.setAttribute("aria-pressed", state.sourceFilter === level);
     button.addEventListener("click", () => { state.sourceFilter = level; renderSources(sources); });
     return button;
   }));
   const minimum = state.sourceFilter === "95+" ? 95 : state.sourceFilter === "85+" ? 85 : 0;
+  const xOnly = state.sourceFilter === "Flux X";
+  const trustedOnly = state.sourceFilter === "Dignes de confiance";
   const query = state.sourceQuery.trim().toLocaleLowerCase("fr");
   const filtered = sources.filter((source) => {
     const text = `${source.name} ${source.actor} ${source.baseUrl} ${source.topics.join(" ")}`.toLocaleLowerCase("fr");
-    return source.confidence >= minimum && (!query || text.includes(query));
+    return source.confidence >= minimum && (!xOnly || source.kind === "Flux X officiel") && (!trustedOnly || source.trustedDaily) && (!query || text.includes(query));
   });
   byId("source-empty").hidden = filtered.length > 0;
   byId("source-grid").replaceChildren(...filtered.map((source) => {
     const card = document.createElement("article");
     card.className = "source-card";
-    card.innerHTML = `<div class="confidence-ring" style="--score:${source.confidence}"><strong>${source.confidence}</strong><span>/100</span></div><div><span class="tag">${source.primary ? "Primaire" : "Secondaire"}</span><h3><a href="${source.baseUrl}" target="_blank" rel="noreferrer">${source.name} ↗</a></h3><p>${source.topics.join(" · ")}</p><small>${source.rationale} · Vérifié ${source.last_verified_at}</small></div>`;
+    const kind = source.kind || (source.primary ? "Primaire" : "Secondaire");
+    const trusted = source.trustedDaily ? `<span class="trust-badge">Source quotidienne de confiance</span>` : "";
+    card.innerHTML = `<div class="confidence-ring" style="--score:${source.confidence}"><strong>${source.confidence}</strong><span>/100</span></div><div><div class="source-tags"><span class="tag">${kind}</span>${trusted}</div><h3><a href="${source.baseUrl}" target="_blank" rel="noreferrer">${source.name} ↗</a></h3><p>${source.topics.join(" · ")}</p><small>${source.rationale} · ${source.role || "Source de preuve"} · Vérifié ${source.last_verified_at}</small>${source.trustBasis ? `<small class="trust-basis">Promotion : ${source.trustBasis}</small>` : ""}</div>`;
     return card;
   }));
 }
@@ -171,7 +256,7 @@ function renderDocuments(data) {
 async function refreshStatus() {
   try {
     const status = await getJson("data/run-status.json");
-    if (state.data) renderHeader(state.data, status, state.sources);
+    if (state.data) renderHeader(state.data, status, state.sources, state.announcements, state.tools);
   } catch (error) {
     console.warn(error.message);
   }
@@ -179,11 +264,17 @@ async function refreshStatus() {
 
 async function init() {
   try {
-    const [data, status, registry] = await Promise.all([getJson("data/latest.json"), getJson("data/run-status.json"), getJson("data/source-registry.json")]);
+    const [data, status, registry, announcementFeed, toolCatalog, cadence] = await Promise.all([getJson("data/latest.json"), getJson("data/run-status.json"), getJson("data/source-registry.json"), getJson("data/announcements.json"), getJson("data/tools-catalog.json"), getJson("data/research-cadence.json")]);
     state.data = data;
     state.sources = registry.sources || [];
-    renderHeader(data, status, state.sources);
+    state.announcements = announcementFeed.announcements || [];
+    state.tools = toolCatalog.tools || [];
+    state.cadence = cadence;
+    renderHeader(data, status, state.sources, state.announcements, state.tools);
     renderDecisions(data);
+    renderCadence(cadence);
+    renderAnnouncements(state.announcements);
+    renderTools(state.tools);
     renderFilters(data);
     renderActors(data);
     renderHosting(data);
@@ -193,6 +284,7 @@ async function init() {
     byId("actor-search").addEventListener("input", (event) => { state.query = event.target.value; renderActors(data); });
     byId("hosting-search").addEventListener("input", (event) => { state.hostingQuery = event.target.value; renderHosting(data); });
     byId("source-search").addEventListener("input", (event) => { state.sourceQuery = event.target.value; renderSources(state.sources); });
+    byId("tool-search").addEventListener("input", (event) => { state.toolQuery = event.target.value; renderTools(state.tools); });
     window.setInterval(refreshStatus, 30000);
   } catch (error) {
     byId("run-chip").querySelector("span:last-child").textContent = "Données indisponibles";

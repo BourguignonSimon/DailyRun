@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "timezone": "Europe/Brussels",
+  "updatedAt": "2026-08-13T09:30:00Z",
+  "orchestration": "single_daily_run",
+  "weeklyRule": {
+    "weekStartsOn": "monday",
+    "execution": "Premier run quotidien réussi de la semaine ISO",
+    "catchUp": true
+  },
+  "eventRule": {
+    "execution": "Vérification complète dans le même run dès qu’un signal important est détecté",
+    "minimumSignalConfidence": 75,
+    "requiresMaterialImpact": true
+  },
+  "lanes": [
+    {
+      "id": "realtime",
+      "label": "Temps réel",
+      "cadence": "Chaque jour",
+      "trigger": "Chaque run",
+      "scope": ["X", "RSS", "annonces officielles", "incidents", "sorties", "retraits"],
+      "lastCompletedOn": "2026-08-13",
+      "nextDueOn": "2026-08-14",
+      "status": "current"
+    },
+    {
+      "id": "operational",
+      "label": "Opérationnelle",
+      "cadence": "Chaque semaine",
+      "trigger": "Premier run réussi de la semaine ISO ou rattrapage",
+      "scope": ["prix", "API", "modèles", "outils", "disponibilité belge", "régions"],
+      "lastCompletedOn": "2026-08-13",
+      "nextDueOn": "2026-08-17",
+      "status": "current"
+    },
+    {
+      "id": "deep",
+      "label": "Approfondie",
+      "cadence": "Chaque semaine",
+      "trigger": "Premier run réussi de la semaine ISO ou rattrapage",
+      "scope": ["sécurité", "confidentialité", "DPA", "benchmarks", "bonnes pratiques", "modèles locaux"],
+      "lastCompletedOn": "2026-08-13",
+      "nextDueOn": "2026-08-17",
+      "status": "current"
+    },
+    {
+      "id": "structural",
+      "label": "Structurelle",
+      "cadence": "Chaque semaine",
+      "trigger": "Premier run réussi de la semaine ISO ou rattrapage",
+      "scope": ["sélection des écosystèmes", "classement des 100 outils", "méthodologie", "sources de confiance"],
+      "lastCompletedOn": "2026-08-13",
+      "nextDueOn": "2026-08-17",
+      "status": "current"
+    },
+    {
+      "id": "event",
+      "label": "Événementielle",
+      "cadence": "Dès détection",
+      "trigger": "Annonce importante détectée pendant le run quotidien",
+      "scope": ["vérification primaire complète", "impacts transversaux", "mise à jour immédiate des vues concernées"],
+      "lastCompletedOn": "2026-08-13",
+      "nextDueOn": null,
+      "nextDueLabel": "À la prochaine détection importante",
+      "status": "armed"
+    }
+  ]
+}

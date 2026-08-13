@@ -36,7 +36,29 @@ jobs:
         run: |
           python -m json.tool ObservationLLM/dashboard/data/latest.json >/dev/null
           python -m json.tool ObservationLLM/dashboard/data/run-status.json >/dev/null
+          python -m json.tool ObservationLLM/dashboard/data/research-cadence.json >/dev/null
           python -m json.tool ObservationLLM/dashboard/data/source-registry.json >/dev/null
+          python -m json.tool ObservationLLM/dashboard/data/announcements.json >/dev/null
+          python -m json.tool ObservationLLM/dashboard/data/tools-catalog.json >/dev/null
+
+      - name: Vérifier les cadences et le catalogue
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          data = Path("ObservationLLM/dashboard/data")
+          cadence = json.loads((data / "research-cadence.json").read_text(encoding="utf-8"))
+          tools = json.loads((data / "tools-catalog.json").read_text(encoding="utf-8"))
+          lanes = cadence.get("lanes", [])
+          assert len(lanes) == 5, "Le planning doit contenir cinq lignes"
+          assert len({lane["id"] for lane in lanes}) == 5, "Les identifiants de cadence doivent être uniques"
+          assert sum(lane["cadence"] == "Chaque semaine" for lane in lanes) == 3, "Trois lignes hebdomadaires sont requises"
+          assert sum(lane["cadence"] == "Chaque jour" for lane in lanes) == 1, "Une ligne quotidienne est requise"
+          assert sum(lane["cadence"] == "Dès détection" for lane in lanes) == 1, "Une ligne événementielle est requise"
+          assert len(tools.get("tools", [])) == 100, "Le catalogue doit contenir exactement 100 outils"
+          PY
 
       - name: Vérifier le JavaScript
         run: node --check ObservationLLM/dashboard/app.js
@@ -55,6 +77,7 @@ jobs:
           test -f ObservationLLM/dashboard-dist/modeles-locaux-par-hardware.html
           test -f ObservationLLM/dashboard-dist/localisation-modeles.html
           test -f ObservationLLM/dashboard-dist/referentiel-sources.html
+          test -f ObservationLLM/dashboard-dist/outils-ecosysteme-ia.html
           test -f ObservationLLM/dashboard-dist/sources.html
 
   deploy:

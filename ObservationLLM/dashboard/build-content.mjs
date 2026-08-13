@@ -14,6 +14,7 @@ const documents = [
   { source: "modeles-locaux-par-hardware.md", output: "modeles-locaux-par-hardware.html", title: "Modèles locaux", label: "Matériel" },
   { source: "localisation-modeles.md", output: "localisation-modeles.html", title: "Localisation des modèles", label: "Régions" },
   { source: "referentiel-sources.md", output: "referentiel-sources.html", title: "Sources de référence", label: "Confiance" },
+  { source: "outils-ecosysteme-ia.md", output: "outils-ecosysteme-ia.html", title: "100 outils IA majeurs", label: "Écosystème" },
   { source: "sources.md", output: "sources.html", title: "Registre des sources", label: "Traçabilité" },
 ];
 
