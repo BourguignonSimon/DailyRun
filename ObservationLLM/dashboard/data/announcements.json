@@ -1,8 +1,204 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-08-12",
+  "checkedAt": "2026-08-13",
   "methodology": "Les flux X servent à détecter rapidement une annonce. La confiance finale dépend de la corroboration par une source primaire durable et directement responsable du fait.",
   "announcements": [
+    {
+      "id": "A20260811-ANTHROPIC-SONNET5-PRIX",
+      "publishedAt": "2026-08-11",
+      "actor": "Anthropic",
+      "category": "Prix",
+      "title": "Le tarif d’introduction de Claude Sonnet 5 devient permanent",
+      "summary": "Le tarif de 2 USD par million de jetons d’entrée et 10 USD en sortie, annoncé au lancement comme promotionnel jusqu’au 31 août 2026, devient le tarif standard. La hausse vers 3/15 USD prévue au 1er septembre 2026 n’aura pas lieu.",
+      "confidence": 85,
+      "confidenceLabel": "Bonne",
+      "confidenceReason": "Page officielle non ouverte directement — domaine bloqué par la politique réseau sortante. Fait établi via l’index de recherche restituant la page officielle et par convergence d’au moins deux sources indépendantes. Réserve supplémentaire : l’index contient encore des articles antérieurs au 11 août annonçant la hausse au 1er septembre ; la chronologie les rend caducs, mais la page tarifaire officielle n’a pas pu être lue.",
+      "signals": [
+        {
+          "sourceId": "R18",
+          "label": "@AnthropicAI sur X",
+          "url": "https://x.com/AnthropicAI"
+        }
+      ],
+      "evidence": [
+        {
+          "label": "Page tarifaire officielle (non ouverte, via index)",
+          "url": "https://platform.claude.com/docs/en/about-claude/pricing"
+        },
+        {
+          "label": "Annonce Claude Sonnet 5 (non ouverte, via index)",
+          "url": "https://www.anthropic.com/news/claude-sonnet-5"
+        }
+      ],
+      "caveat": "À revérifier directement sur la page tarifaire dès que le réseau le permet, avant tout engagement budgétaire.",
+      "belgiumImpact": "Effet direct sur le budget API d’un développeur belge : l’augmentation de 50 % attendue au 1er septembre est annulée. Facturation en USD, conversion EUR à la charge du client.",
+      "verificationStatus": "Vérifié le 2026-08-13 via index — convergence de sources indépendantes",
+      "lastCheckedAt": "2026-08-13"
+    },
+    {
+      "id": "A20260811-OPENAI-PUBLICITE-CHATGPT",
+      "publishedAt": "2026-08-11",
+      "actor": "OpenAI",
+      "category": "Application",
+      "title": "ChatGPT affiche des publicités et étend le test à de nouveaux marchés",
+      "summary": "Les publicités sont affichées aux utilisateurs des offres Free et Go aux États-Unis, au Canada, en Australie et en Nouvelle-Zélande, puis étendues au Royaume-Uni, au Mexique, au Brésil, au Japon et en Corée du Sud. Les offres payantes restent sans publicité. OpenAI déclare que les publicités sont visuellement séparées des réponses et n’en modifient pas le contenu.",
+      "confidence": 85,
+      "confidenceLabel": "Bonne",
+      "confidenceReason": "Page officielle non ouverte directement — domaine bloqué par la politique réseau sortante. Fait établi via l’index de recherche restituant la page officielle et par convergence d’au moins deux sources indépendantes.",
+      "signals": [
+        {
+          "sourceId": "R17",
+          "label": "@OpenAI sur X",
+          "url": "https://x.com/OpenAI"
+        }
+      ],
+      "evidence": [
+        {
+          "label": "Testing ads in ChatGPT (non ouverte, via index)",
+          "url": "https://openai.com/index/testing-ads-in-chatgpt/"
+        },
+        {
+          "label": "Approche publicitaire OpenAI (non ouverte, via index)",
+          "url": "https://openai.com/index/our-approach-to-advertising-and-expanding-access/"
+        },
+        {
+          "label": "Couverture indépendante NBC News",
+          "url": "https://www.nbcnews.com/tech/internet/openai-starts-testing-ads-chatgpt-rcna258242"
+        }
+      ],
+      "caveat": "Le ciblage, la base légale du traitement et les options de refus applicables dans l’UE n’ont pas pu être vérifiés sur une source primaire.",
+      "belgiumImpact": "La Belgique ne figure dans aucune des vagues de déploiement annoncées à ce jour : pas de publicité constatée dans ChatGPT en Belgique. À surveiller, l’extension européenne étant annoncée.",
+      "verificationStatus": "Vérifié le 2026-08-13 via index — convergence de sources indépendantes",
+      "lastCheckedAt": "2026-08-13"
+    },
+    {
+      "id": "A20260811-MISTRAL-MODELES-TIERS",
+      "publishedAt": "2026-08-11",
+      "actor": "Mistral AI",
+      "category": "Plateforme API",
+      "title": "Mistral héberge des modèles ouverts tiers et engage une coalition de calcul européenne",
+      "summary": "En complément des Regional Endpoints en disponibilité générale, Mistral commence à héberger des modèles ouverts tiers sur sa plateforme, à commencer par GLM-5.2 de Z.ai, et annonce une coalition d’entreprises européennes soutenant 200 MW d’infrastructure d’ici fin 2027 et 1 GW d’ici fin 2030.",
+      "confidence": 88,
+      "confidenceLabel": "Forte",
+      "confidenceReason": "Page officielle non ouverte directement — domaine bloqué par la politique réseau sortante. Fait établi via l’index de recherche restituant la page officielle et par convergence d’au moins deux sources indépendantes. Trois sources indépendantes concordantes, dont deux médias spécialisés.",
+      "signals": [
+        {
+          "sourceId": "R21",
+          "label": "@MistralAI sur X",
+          "url": "https://x.com/MistralAI"
+        }
+      ],
+      "evidence": [
+        {
+          "label": "Annonce officielle Mistral (non ouverte, via index)",
+          "url": "https://mistral.ai/news/regional-inference-open-models-new-compute/"
+        },
+        {
+          "label": "Couverture VentureBeat",
+          "url": "https://venturebeat.com/infrastructure/mistral-ai-wants-to-build-1-gigawatt-of-european-compute-by-2030-and-lock-in-customers-now"
+        },
+        {
+          "label": "Couverture Digital Watch Observatory",
+          "url": "https://dig.watch/updates/mistral-european-ai-models-compute"
+        }
+      ],
+      "caveat": "Héberger un modèle tiers sur une infrastructure européenne ne dit rien de sa licence ni des conditions de son éditeur : à vérifier modèle par modèle avant tout usage professionnel.",
+      "belgiumImpact": "Élargit l’offre de modèles accessibles depuis un endpoint dont la région d’inférence peut être fixée en Europe, ce qui est directement pertinent pour un utilisateur belge.",
+      "verificationStatus": "Vérifié le 2026-08-13 via index — convergence de sources indépendantes",
+      "lastCheckedAt": "2026-08-13"
+    },
+    {
+      "id": "A20260813-GOOGLE-DEPRECIATIONS-GEMINI",
+      "publishedAt": "2026-08-13",
+      "actor": "Google",
+      "category": "Dépréciation",
+      "title": "Deux échéances d’arrêt Gemini tombent en août 2026",
+      "summary": "Plusieurs modèles de génération d’images sont arrêtés le 17 août 2026 et `gemini-robotics-er-1.6-preview` est arrêté le 31 août 2026.",
+      "confidence": 78,
+      "confidenceLabel": "Moyenne",
+      "confidenceReason": "Page officielle non ouverte directement — domaine bloqué par la politique réseau sortante. Fait établi via l’index de recherche restituant la page officielle et par convergence d’au moins deux sources indépendantes. La page de dépréciations officielle n’a pas pu être ouverte ; l’échéance la plus proche est à quatre jours, ce qui justifie une publication immédiate assortie d’une réserve.",
+      "signals": [
+        {
+          "sourceId": "R19",
+          "label": "@GoogleDeepMind sur X",
+          "url": "https://x.com/GoogleDeepMind"
+        }
+      ],
+      "evidence": [
+        {
+          "label": "Journal des modifications Gemini API (non ouverte, via index)",
+          "url": "https://ai.google.dev/gemini-api/docs/changelog"
+        },
+        {
+          "label": "Notes de version Gemini Enterprise",
+          "url": "https://docs.cloud.google.com/gemini/enterprise/docs/release-notes"
+        }
+      ],
+      "caveat": "La liste exacte des modèles d’image concernés n’a pas pu être établie sur une source primaire : à vérifier avant le 17 août.",
+      "belgiumImpact": "Échéance identique en Belgique : toute intégration reposant sur ces modèles doit être migrée avant la date d’arrêt.",
+      "verificationStatus": "À confirmer sur la page de dépréciations officielle",
+      "lastCheckedAt": "2026-08-13"
+    },
+    {
+      "id": "A20260813-SIGNAUX-PRECOCES",
+      "publishedAt": "2026-08-13",
+      "actor": "Multiples",
+      "category": "Signal précoce",
+      "title": "Signaux précoces non confirmés : Cursor Origin, remplacement des Gems par des Skills",
+      "summary": "Signaux rapportés par TestingCatalog et non confirmés par leurs éditeurs : Cursor préparerait « Origin », un pipeline de revue automatisée pour dépôts GitHub ; Google remplacerait les Gems par des Skills dans l’application web Gemini d’ici le 20 octobre ; OpenAI préparerait une offre étudiante d’un an de ChatGPT Plus.",
+      "confidence": 62,
+      "confidenceLabel": "Faible",
+      "confidenceReason": "Source de signal précoce assumée comme telle. Aucune corroboration officielle trouvée. Publié explicitement comme piste de surveillance, jamais comme fait établi.",
+      "signals": [
+        {
+          "sourceId": "R35",
+          "label": "TestingCatalog",
+          "url": "https://www.testingcatalog.com/"
+        }
+      ],
+      "evidence": [
+        {
+          "label": "TestingCatalog — étiquette « leak » (non ouverte, via index)",
+          "url": "https://www.testingcatalog.com/tag/leak/"
+        }
+      ],
+      "caveat": "À confirmer. Aucune de ces fonctionnalités ne doit être intégrée à une décision d’architecture ou d’achat en l’état.",
+      "belgiumImpact": "Indéterminé tant que les éditeurs n’ont pas confirmé le périmètre géographique.",
+      "verificationStatus": "À confirmer — signal précoce non corroboré",
+      "lastCheckedAt": "2026-08-13"
+    },
+    {
+      "id": "A20260812-OPENAI-PYTHON-SDK-3",
+      "publishedAt": "2026-08-12",
+      "actor": "OpenAI",
+      "category": "SDK",
+      "title": "Le SDK Python officiel d’OpenAI passe en version majeure 3.0.0",
+      "summary": "La bibliothèque `openai` publie 3.0.0 le 12 août 2026, au lendemain de 2.54.0. Un saut de version majeure signale des ruptures de compatibilité pour le code existant. La version exige Python 3.10 ou supérieur.",
+      "confidence": 92,
+      "confidenceLabel": "Forte",
+      "confidenceReason": "Le registre officiel de distribution PyPI, opéré par l’éditeur, prouve de façon durable la publication et sa date. Le détail des ruptures n’a pas pu être lu : le changelog du dépôt était inaccessible pendant ce run.",
+      "signals": [
+        {
+          "sourceId": "R38",
+          "label": "PyPI — projet openai",
+          "url": "https://pypi.org/project/openai/"
+        }
+      ],
+      "evidence": [
+        {
+          "label": "openai 3.0.0 sur PyPI (12/08/2026)",
+          "url": "https://pypi.org/project/openai/3.0.0/"
+        },
+        {
+          "label": "openai 2.54.0 sur PyPI (11/08/2026), version précédente",
+          "url": "https://pypi.org/project/openai/2.54.0/"
+        }
+      ],
+      "caveat": "Le contenu exact des ruptures reste à confirmer sur le changelog officiel. Les projets qui n’épinglent pas `openai<3` peuvent casser à la prochaine installation.",
+      "belgiumImpact": "Aucun effet sur la disponibilité du service en Belgique : le paquet est distribué mondialement. L’impact est de nature technique, sur la compatibilité des projets.",
+      "verificationStatus": "Vérifié le 2026-08-13 — registre officiel consulté",
+      "lastCheckedAt": "2026-08-13"
+    },
     {
       "id": "A20260811-NVIDIA-NEMOTRON",
       "publishedAt": "2026-08-11",
@@ -13,9 +209,22 @@
       "confidence": 94,
       "confidenceLabel": "Forte",
       "confidenceReason": "Carte modèle officielle disponible ; performances fournisseur encore à répliquer indépendamment.",
-      "signals": [{ "sourceId": "R22", "label": "@nvidia sur X", "url": "https://x.com/nvidia" }],
-      "evidence": [{ "label": "Carte modèle NVIDIA", "url": "https://build.nvidia.com/nvidia/nemotron-3.5-lightning-30b-a3b/modelcard" }],
-      "caveat": "Le gain de débit annoncé n’est pas traité comme une mesure indépendante."
+      "signals": [
+        {
+          "sourceId": "R22",
+          "label": "@nvidia sur X",
+          "url": "https://x.com/nvidia"
+        }
+      ],
+      "evidence": [
+        {
+          "label": "Carte modèle NVIDIA",
+          "url": "https://build.nvidia.com/nvidia/nemotron-3.5-lightning-30b-a3b/modelcard"
+        }
+      ],
+      "caveat": "Le gain de débit annoncé n’est pas traité comme une mesure indépendante.",
+      "lastCheckedAt": "2026-08-13",
+      "verificationStatus": "Non revérifié le 2026-08-13 — preuve primaire inaccessible (politique réseau sortante)"
     },
     {
       "id": "A20260810-META-MUSE",
@@ -27,9 +236,22 @@
       "confidence": 96,
       "confidenceLabel": "Forte",
       "confidenceReason": "Annonce de recherche officielle et caractéristiques recoupées avec les artefacts techniques publiés.",
-      "signals": [{ "sourceId": "R20", "label": "@AIatMeta sur X", "url": "https://x.com/AIatMeta" }],
-      "evidence": [{ "label": "Annonce Meta Research", "url": "https://research.meta.ai/blog/introducing-muse-glimmer-open-agentic-model" }],
-      "caveat": "Les accélérations annoncées par le fournisseur restent à mesurer sur le matériel cible."
+      "signals": [
+        {
+          "sourceId": "R20",
+          "label": "@AIatMeta sur X",
+          "url": "https://x.com/AIatMeta"
+        }
+      ],
+      "evidence": [
+        {
+          "label": "Annonce Meta Research",
+          "url": "https://research.meta.ai/blog/introducing-muse-glimmer-open-agentic-model"
+        }
+      ],
+      "caveat": "Les accélérations annoncées par le fournisseur restent à mesurer sur le matériel cible.",
+      "lastCheckedAt": "2026-08-13",
+      "verificationStatus": "Non revérifié le 2026-08-13 — preuve primaire inaccessible (politique réseau sortante)"
     },
     {
       "id": "A20260804-MISTRAL-SHIELDSTRAL",
@@ -41,9 +263,22 @@
       "confidence": 94,
       "confidenceLabel": "Forte",
       "confidenceReason": "Carte modèle officielle disponible ; scores de sûreté déclarés par le fournisseur.",
-      "signals": [{ "sourceId": "R21", "label": "@MistralAI sur X", "url": "https://x.com/MistralAI" }],
-      "evidence": [{ "label": "Carte modèle Mistral", "url": "https://docs.mistral.ai/models/model-cards/shieldstral-1-0" }],
-      "caveat": "Les performances doivent être évaluées sur des données françaises et néerlandaises réelles."
+      "signals": [
+        {
+          "sourceId": "R21",
+          "label": "@MistralAI sur X",
+          "url": "https://x.com/MistralAI"
+        }
+      ],
+      "evidence": [
+        {
+          "label": "Carte modèle Mistral",
+          "url": "https://docs.mistral.ai/models/model-cards/shieldstral-1-0"
+        }
+      ],
+      "caveat": "Les performances doivent être évaluées sur des données françaises et néerlandaises réelles.",
+      "lastCheckedAt": "2026-08-13",
+      "verificationStatus": "Non revérifié le 2026-08-13 — preuve primaire inaccessible (politique réseau sortante)"
     },
     {
       "id": "A20260803-QWEN-MAX",
@@ -55,9 +290,22 @@
       "confidence": 78,
       "confidenceLabel": "Moyenne",
       "confidenceReason": "Signal officiel et fiche de distribution disponibles, mais preuve primaire durable incomplète pour les poids et la licence.",
-      "signals": [{ "sourceId": "R23", "label": "@Alibaba_Qwen sur X", "url": "https://x.com/Alibaba_Qwen" }],
-      "evidence": [{ "label": "Fiche de distribution", "url": "https://openrouter.ai/qwen/qwen3.8-max" }],
-      "caveat": "Les poids annoncés et leur licence restent à confirmer tant que le dépôt officiel n’existe pas."
+      "signals": [
+        {
+          "sourceId": "R23",
+          "label": "@Alibaba_Qwen sur X",
+          "url": "https://x.com/Alibaba_Qwen"
+        }
+      ],
+      "evidence": [
+        {
+          "label": "Fiche de distribution",
+          "url": "https://openrouter.ai/qwen/qwen3.8-max"
+        }
+      ],
+      "caveat": "Les poids annoncés et leur licence restent à confirmer tant que le dépôt officiel n’existe pas.",
+      "lastCheckedAt": "2026-08-13",
+      "verificationStatus": "Non revérifié le 2026-08-13 — preuve primaire inaccessible (politique réseau sortante)"
     },
     {
       "id": "A20260811-GITHUB-COPILOT-JETBRAINS",
@@ -69,9 +317,27 @@
       "confidence": 97,
       "confidenceLabel": "Très forte",
       "confidenceReason": "Changelog officiel daté, détails fonctionnels et documentation liée disponibles.",
-      "signals": [{ "sourceId": "R26", "label": "RSS GitHub Changelog", "url": "https://github.blog/changelog/feed/" }, { "sourceId": "R31", "label": "@ghchangelog sur X", "url": "https://x.com/ghchangelog" }],
-      "evidence": [{ "label": "Annonce GitHub", "url": "https://github.blog/changelog/2026-08-11-copilot-memory-and-ollama-in-github-copilot-for-jetbrains/" }],
-      "caveat": "La disponibilité dépend de la version du plugin JetBrains et des politiques administrateur."
+      "signals": [
+        {
+          "sourceId": "R26",
+          "label": "RSS GitHub Changelog",
+          "url": "https://github.blog/changelog/feed/"
+        },
+        {
+          "sourceId": "R31",
+          "label": "@ghchangelog sur X",
+          "url": "https://x.com/ghchangelog"
+        }
+      ],
+      "evidence": [
+        {
+          "label": "Annonce GitHub",
+          "url": "https://github.blog/changelog/2026-08-11-copilot-memory-and-ollama-in-github-copilot-for-jetbrains/"
+        }
+      ],
+      "caveat": "La disponibilité dépend de la version du plugin JetBrains et des politiques administrateur.",
+      "lastCheckedAt": "2026-08-13",
+      "verificationStatus": "Non revérifié le 2026-08-13 — preuve primaire inaccessible (politique réseau sortante)"
     },
     {
       "id": "A20260728-MCP-SPEC",
@@ -82,10 +348,32 @@
       "summary": "Le protocole adopte un cœur sans état, formalise les extensions et prépare plusieurs dépréciations.",
       "confidence": 97,
       "confidenceLabel": "Très forte",
-      "confidenceReason": "Publication officielle de la spécification et guide de migration disponibles.",
-      "signals": [{ "sourceId": "R30", "label": "Blog MCP", "url": "https://blog.modelcontextprotocol.io/" }],
-      "evidence": [{ "label": "Publication officielle MCP", "url": "https://blog.modelcontextprotocol.io/posts/2026-07-28/" }],
-      "caveat": "La compatibilité et le calendrier doivent être vérifiés dans chaque SDK utilisé."
+      "confidenceReason": "Publication officielle de la spécification consultée le 13/08/2026 et SDK correspondants publiés à la même date sur les registres officiels.",
+      "signals": [
+        {
+          "sourceId": "R30",
+          "label": "Blog MCP",
+          "url": "https://blog.modelcontextprotocol.io/"
+        }
+      ],
+      "evidence": [
+        {
+          "label": "Publication officielle MCP",
+          "url": "https://blog.modelcontextprotocol.io/posts/2026-07-28/"
+        },
+        {
+          "label": "SDK Python mcp 2.0.0 (publié le 28/07/2026)",
+          "url": "https://pypi.org/project/mcp/2.0.0/"
+        },
+        {
+          "label": "SDK TypeScript @modelcontextprotocol/sdk 1.30.0",
+          "url": "https://www.npmjs.com/package/@modelcontextprotocol/sdk/v/1.30.0"
+        }
+      ],
+      "caveat": "La compatibilité et le calendrier doivent être vérifiés dans chaque SDK utilisé.",
+      "lastCheckedAt": "2026-08-13",
+      "verificationStatus": "Revérifié le 2026-08-13 — publication officielle consultée"
     }
-  ]
+  ],
+  "verificationNotice": "Contrôle du 13 août 2026. Pour le quatrième contrôle consécutif, la politique réseau sortante de l’environnement d’exécution a bloqué les six points d’entrée obligatoires et la quasi-totalité des domaines fournisseurs. Deux niveaux de preuve coexistent donc dans cette vue : les faits marqués « registre officiel » ont été établis en ouvrant une source primaire durable (PyPI, npm, blog MCP) ; les faits marqués « via index » reposent sur la restitution des pages officielles par l’index de recherche et sur la convergence d’au moins deux sources indépendantes. Aucun fait n’est publié comme certain sur une source unique."
 }

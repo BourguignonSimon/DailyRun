@@ -1,10 +1,11 @@
 {
-  "runId": "2026-08-13-opus-5-control",
+  "runId": "2026-08-13-opus-5-observatoire",
   "status": "completed",
   "phase": "publication",
   "model": "Opus 5",
-  "startedAt": "2026-08-13T06:30:00Z",
-  "message": "Contrôle du 13 août 2026 publié. Mistral ouvre le choix de région d’inférence, xAI publie Grok 4.6, et deux écosystèmes suivis sont en cours de fusion capitalistique.",
-  "completedAt": "2026-08-13T09:30:00Z",
-  "commit": "ba7e48e23ecf3ba6f004430489789c70a1473c21"
+  "startedAt": "2026-08-13T09:55:00Z",
+  "message": "Contrôle du 13 août 2026 publié en preuve dégradée. Tarif Sonnet 5 rendu permanent, publicités ChatGPT hors Belgique, modèles ouverts tiers chez Mistral, deux échéances d’arrêt Gemini en août, SDK Python OpenAI en version majeure 3.0.0. Blocage réseau persistant sur les six points d’entrée obligatoires pour le quatrième contrôle consécutif : décision attendue du commanditaire.",
+  "evidenceLevel": "dégradé",
+  "completedAt": "2026-08-13T12:45:00Z",
+  "commit": null
 }

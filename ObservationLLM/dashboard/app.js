@@ -49,9 +49,28 @@ function renderHeader(data, status, sources, announcements, tools) {
 
   const chip = byId("run-chip");
   chip.className = `run-chip ${status.status}`;
-  chip.querySelector("span:last-child").textContent = status.status === "running"
-    ? `Run en cours · ${status.phase || "mise à jour"}`
-    : `Run validé · ${formatDate(status.completedAt || data.run.checkedAt)}`;
+  const chipLabels = {
+    running: () => `Run en cours · ${status.phase || "mise à jour"}`,
+    failed: () => `Run en échec · ${formatDate(status.failedAt || status.startedAt)}`,
+    completed: () => `Run validé · ${formatDate(status.completedAt || data.run.checkedAt)}`
+  };
+  chip.querySelector("span:last-child").textContent =
+    (chipLabels[status.status] || chipLabels.completed)();
+
+  renderRunNotice(data.verificationNotice);
+}
+
+function renderRunNotice(notice) {
+  const box = byId("run-notice");
+  if (!notice) {
+    box.hidden = true;
+    return;
+  }
+  box.hidden = false;
+  box.className = `run-notice ${notice.level || "info"}`;
+  byId("run-notice-title").textContent = `${notice.title} · ${formatDate(notice.checkedAt)}`;
+  byId("run-notice-detail").textContent = notice.detail;
+  byId("run-notice-fix").textContent = notice.remediation || "";
 }
 
 function renderDecisions(data) {

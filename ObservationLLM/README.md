@@ -1,8 +1,10 @@
 # Observatoire LLM et agents IA — Belgique
 
-Contrôle: **13 août 2026**. Cycle court mais dense: trois mouvements en quatre jours, dont le premier engagement européen combinant **choix de région d’inférence et SLA contractuel**. Cette édition couvre exactement 20 écosystèmes et sépare modèles, applications, plateformes API, assistants de code et agents autonomes. Guide dédié: les **modèles exécutables en local selon le matériel**, enrichi ce mois-ci d’un agent de code ouvert.
+Contrôle: **13 août 2026**. Le fait marquant est une **échéance qui disparaît**: la hausse de 50 % du prix de Claude Sonnet 5, attendue au 1er septembre et recommandée à l’arbitrage dans les éditions précédentes, est annulée — le tarif de lancement devient permanent. Par ailleurs, **ChatGPT affiche désormais des publicités dans neuf pays, dont aucun n’est la Belgique**, et Mistral commence à héberger des modèles ouverts tiers derrière ses endpoints régionaux européens. Cette édition couvre exactement 20 écosystèmes et sépare modèles, applications, plateformes API, assistants de code et agents autonomes. Guide dédié: les **modèles exécutables en local selon le matériel**, enrichi ce mois-ci d’un agent de code ouvert.
 
-> ⚠️ **Niveau de preuve.** La politique de sortie réseau de l’environnement d’exécution a de nouveau bloqué la quasi-totalité des domaines fournisseurs officiels, pour le **troisième contrôle consécutif**. Les faits sont établis via l’index de recherche et la convergence de sources indépendantes, pas par ouverture directe des pages officielles. Revérifiez avant tout engagement contractuel ou budgétaire. Détail: note d’accès dans [sources.md](sources.md).
+> ⚠️ **Niveau de preuve.** La politique de sortie réseau de l’environnement d’exécution a de nouveau bloqué la quasi-totalité des domaines fournisseurs officiels **et les six points d’entrée de veille obligatoires**, pour le **quatrième contrôle consécutif**. Les faits de prix, de région et de disponibilité sont établis via l’index de recherche et la convergence de sources indépendantes, pas par ouverture directe des pages officielles: revérifiez avant tout engagement contractuel ou budgétaire.
+>
+> ✅ **Exception, nouvelle ce contrôle:** les registres de distribution officiels (`pypi.org`, `registry.npmjs.org`) et `blog.modelcontextprotocol.io` sont joignables et fournissent une **preuve primaire durable** pour les versions de bibliothèques et la spécification MCP. Détail: note d’accès dans [sources.md](sources.md).
 
 ## Livrables
 
@@ -22,7 +24,7 @@ Le dashboard résume le dernier run validé. Son contrat de données et son fonc
 
 ## À faire ce mois-ci
 
-1. **Arbitrer Claude Sonnet 5 avant le 1er septembre — 19 jours restants**: fin du prix de lancement, **2/10 → 3/15 USD/M (+50 %)** (S125).
+1. **Claude Sonnet 5: la hausse au 1er septembre est annulée.** Le prix de lancement **2/10 USD/M devient permanent** depuis le 11 août 2026; le passage à 3/15 n’aura pas lieu (S158–S159).
 2. **Vérifier les crédits GitHub Copilot Business/Enterprise**: les crédits promotionnels (+30 et +70 USD/mois) **expirent fin août 2026** (S137).
 3. **Chiffrer l’option « région UE » chez Mistral**: endpoints régionaux GA à **1,1×**, Priority Tier à **1,75× avec SLA 99,5 %** — en exigeant la liste des sous-traitants pouvant recevoir un transfert hors région (S142–S144).
 
