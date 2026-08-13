@@ -7,5 +7,5 @@
   "message": "Contrôle du 13 août 2026 publié en preuve dégradée. Tarif Sonnet 5 rendu permanent, publicités ChatGPT hors Belgique, modèles ouverts tiers chez Mistral, deux échéances d’arrêt Gemini en août, SDK Python OpenAI en version majeure 3.0.0. Blocage réseau persistant sur les six points d’entrée obligatoires pour le quatrième contrôle consécutif : décision attendue du commanditaire.",
   "evidenceLevel": "dégradé",
   "completedAt": "2026-08-13T12:45:00Z",
-  "commit": null
+  "commit": "e2c6aab768500b8e78d70be136283855ecb08774"
 }
