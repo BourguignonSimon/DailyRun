@@ -1,6 +1,6 @@
 # Analyse détaillée
 
-Contrôle: **13 août 2026**. Cycle court (10–12 août) mais structurant: les pages officielles Anthropic confirment la hausse de Sonnet 5 au 1er septembre, OpenAI introduit la publicité dans ChatGPT hors Belgique, Mistral met un prix et un SLA sur la résidence européenne puis y héberge des modèles ouverts tiers, xAI publie Grok 4.6, et deux entrées de la sélection sont en cours de fusion capitalistique. Point de vue: particulier ou développeur résidant en Belgique. Cette analyse est informative; les volets RGPD et AI Act ne constituent pas un avis juridique. Pour l'exécution sur matériel personnel, voir [modeles-locaux-par-hardware.md](modeles-locaux-par-hardware.md).
+Contrôle: **14 août 2026**. État courant: Anthropic annule la hausse de Sonnet 5 et fige le tarif à 2/10 USD/M, GitHub programme au 1er septembre le retrait de plusieurs modèles de toutes les surfaces Copilot, OpenAI ouvre en préversion fermée un palier de service Ultrafast pour GPT-5.6 Sol et maintient la publicité dans ChatGPT hors Belgique, Mistral met un prix et un SLA sur la résidence européenne puis y héberge des modèles ouverts tiers, xAI publie Grok 4.6, et deux entrées de la sélection sont en cours de fusion capitalistique. Point de vue: particulier ou développeur résidant en Belgique. Cette analyse est informative; les volets RGPD et AI Act ne constituent pas un avis juridique. Pour l'exécution sur matériel personnel, voir [modeles-locaux-par-hardware.md](modeles-locaux-par-hardware.md).
 
 > ⚠️ **Niveau de preuve de cette édition.** Le run initial a subi un blocage réseau sur la majorité des domaines fournisseurs et les six points d’entrée de veille. La revérification corrective a pu consulter les documentations officielles Anthropic et Google et corriger deux faits critiques. Les autres faits conservent le niveau de preuve qualifié lors du run initial; aucun fait à preuve indirecte ne doit être interprété comme contractuel.
 >
@@ -45,13 +45,23 @@ Les scores publiés par un fournisseur sont des **capacités déclarées** jusqu
 
 **[Déduction]** Ce lancement mérite d’être consigné pour une raison qui dépasse le produit: il montre que la maîtrise des capacités offensives se déplace des **refus au niveau du modèle** vers des **barrières d’accès au niveau du contrat**. Le modèle sait faire, et c’est le processus d’admission qui filtre. Pour un observatoire européen, cela déplace la question: le contrôle pertinent n’est plus « le modèle refuse-t-il ? » mais « qui décide de l’admission, selon quels critères, et avec quelle traçabilité ? ». Rapproché de l’incident Hugging Face documenté au contrôle précédent — un modèle échappé de son bac à sable lors d’un banc de cybersécurité —, cela confirme que **l’évaluation offensive est un périmètre de sécurité de production**, pas un environnement de test.
 
-**Belgique.** L’usage est largement pertinent en français et néerlandais, mais la qualité doit être testée par domaine. L’API publie l’absence d’entraînement par défaut et des contrôles de résidence EEE pour clients/services éligibles [S03]. Les prix de l’API sont en USD hors taxes; le prix ChatGPT belge exact et la TVA doivent être confirmés au checkout.
+**Le palier Ultrafast, et ce qu’il n’est pas.** Le 13 août, OpenAI ouvre en préversion limitée un palier de service « Ultrafast » pour GPT-5.6 Sol, opéré sur matériel Cerebras: **jusqu’à 750 jetons de sortie par seconde**, **jusqu’à 14× la vitesse du palier Standard**, à intelligence déclarée identique [S168–S169]. La liste d’usages visés — recherche financière, réponse à incident, support client, voix, commerce, expérimentation en direct — décrit un segment où la latence est le produit.
+
+**Ce qui manque est plus instructif que ce qui est annoncé.** Aucun tarif, aucun quota, aucune liste de régions, aucun engagement minimum ni terme de niveau de service n’est publié. L’accès est réservé à un ensemble de clients sélectionnés. Les chiffres de vitesse, y compris les comparaisons face à des modèles concurrents, sont des **résultats fournisseur non reproduits indépendamment**: ils relèvent des capacités déclarées, pas de la mesure. **[Déduction]** Pour un développeur belge, la conséquence pratique est simple: ce palier n’est pas budgétable et ne doit entrer dans aucune architecture cible avant publication d’un prix et d’une région. Il mérite en revanche d’être suivi, parce qu’un palier de vitesse facturé séparément confirme une tendance déjà visible chez Anthropic (Fast mode) et Mistral (Priority Tier): **la vitesse et la disponibilité deviennent des lignes de facturation distinctes du modèle lui-même**, ce que le comparatif isole désormais dans sa table de multiplicateurs de service.
+
+**Belgique.** L’usage est largement pertinent en français et néerlandais, mais la qualité doit être testée par domaine. L’API publie l’absence d’entraînement par défaut et des contrôles de résidence EEE pour clients/services éligibles [S03]. Les prix de l’API sont en USD hors taxes; le prix ChatGPT belge exact doit être confirmé au checkout.
 
 **Développement.** SDK larges, sorties structurées, function calling, streaming, batch/classes et snapshots. Épingler le snapshot, journaliser les request IDs, maintenir des évaluations avant migration [S05]. Pour GPT-5.6, tester l’effort actuel puis un niveau inférieur; encadrer explicitement autonomie, approbations et ambiguïtés [S62].
 
 ### 2. Anthropic
 
 **Positionnement.** Opus 5 est le modèle quotidien haut de gamme à 5/25 USD/M; Fable 5 reste le plafond général à 10/50, avec garde-fous plus restrictifs; Sonnet 5 couvre le compromis coût-vitesse. Claude Code est l’agent de développement. Le catalogue atteint 1 M de contexte pour le haut de gamme [S63–S64].
+
+**Le tarif de Sonnet 5 est désormais fixé, et une échéance budgétaire disparaît.** La page tarifaire officielle, ouverte directement le 14 août 2026, porte une note explicite: le tarif de lancement de **2 USD/M en entrée et 10 USD/M en sortie devient le tarif standard**, et **la hausse vers 3/15 USD/M programmée au 1er septembre 2026 n’aura pas lieu** [S158]. Cette information corrige l’échéance publiée par cet observatoire jusqu’au contrôle du 13 août. Les tarifs d’abonnement grand public sont inchangés.
+
+**[Déduction]** L’effet décisionnel est net: tout arbitrage de migration qui n’était motivé que par le surcoût de 50 % attendu en septembre perd son objet, et Sonnet 5 se compare désormais à Haiku 4.5 (1/5) et GPT-5.6 Terra (2/12) sur les seuls critères de qualité, de latence et de fonctionnalités. La leçon de méthode est au moins aussi utile: **une échéance annoncée par un fournisseur n’est pas un fait acquis tant qu’elle n’est pas échue**. Un calendrier tarifaire se revérifie à sa source à chaque cycle, y compris — et surtout — quand il a déjà été vérifié.
+
+**Cycle de vie des modèles, vérifié à la source.** La page de dépréciations, ouverte directement le 14 août, place `claude-sonnet-5` en actif avec un retrait pas avant le 30 juin 2027, `claude-opus-5` pas avant le 24 juillet 2027, et confirme le retrait effectif d’Opus 4.1 le 5 août 2026. Anthropic s’engage à un préavis d’au moins 60 jours pour les modèles publics. Point de compatibilité à ne pas manquer: **`temperature`, `top_p` et `top_k` renvoient une erreur 400 sur Opus 4.7 et modèles ultérieurs** lorsqu’ils sont réglés hors valeur par défaut [S159].
 
 **Belgique et données.** Application et API sont pertinentes pour FR/NL, à valider sur le corpus réel. DPA, résidence et rétention varient entre API directe, AWS et Google Cloud; la résidence peut ajouter un multiplicateur. Vérifier le contrat exact.
 
@@ -63,7 +73,7 @@ Les scores publiés par un fournisseur sont des **capacités déclarées** jusqu
 
 **Lacune de couverture corrigée: une famille spécialisée absente des éditions précédentes** [S152]. **Gemini Omni Flash**, ouvert aux développeurs le 30 juin, est un modèle en préversion pour la génération et l’édition conversationnelle de vidéos de 3 à 10 secondes en 720p. La tarification de cette modalité doit être budgétée séparément de la génération de texte. Le journal officiel confirme en outre l’arrêt, le **17 août 2026**, de `imagen-4.0-generate-001`, `imagen-4.0-ultra-generate-001` et `imagen-4.0-fast-generate-001`. Aucune publication officielle consultée ne confirme l’arrêt au 31 août de `gemini-robotics-er-1.6-preview`; cette échéance est donc retirée plutôt que présentée comme certaine.
 
-**Belgique.** Les tiers gratuits et payants Gemini API sont annoncés disponibles dans de nombreuses régions, y compris EEE [S11]. Le payant n’utilise pas le contenu pour améliorer les produits selon la grille; le gratuit le peut [S09]. Facturation et TVA à vérifier dans le projet Google Cloud.
+**Belgique.** Les tiers gratuits et payants Gemini API sont annoncés disponibles dans de nombreuses régions, y compris EEE [S11]. Le payant n’utilise pas le contenu pour améliorer les produits selon la grille; le gratuit le peut [S09]. Facturation à vérifier dans le projet Google Cloud.
 
 **Développement.** Cache, batch/Flex/Priority, grounding, code execution, file search et computer use. Gemini 3.6 déprécie les réglages personnalisés `temperature`, `top_p` et `top_k`; tester la migration, les tours modèle préremplis et les paramètres acceptés avant bascule [S65, S86–S87].
 
@@ -71,7 +81,7 @@ Les scores publiés par un fournisseur sont des **capacités déclarées** jusqu
 
 **Positionnement.** Microsoft 365 Copilot est l’application de travail, Azure OpenAI/Foundry la plateforme modèles, Copilot Studio la plateforme agents, GitHub Copilot l’assistant code traité séparément.
 
-**Belgique.** Microsoft affiche des prix EUR hors TVA sur une page européenne; un plan M365 qualifiant peut être requis [S12]. Azure offre régions, identité, réseau et DPA, mais la disponibilité dépend du modèle/déploiement.
+**Belgique.** Microsoft affiche des prix en euros hors taxes sur une page européenne; un plan M365 qualifiant peut être requis [S12]. Azure offre régions, identité, réseau et DPA, mais la disponibilité dépend du modèle/déploiement.
 
 **Développement.** Choix logique pour organisations déjà sur Entra, M365 et Azure. Risque: addition de licence utilisateur, crédits agents, appels modèle, recherche et connecteurs [S13–S14]. Produire une architecture de coûts complète.
 
@@ -119,7 +129,7 @@ Les scores publiés par un fournisseur sont des **capacités déclarées** jusqu
 
 **Positionnement mesuré.** Sur l’**Artificial Analysis Intelligence Index** — un indice tiers, pas un banc fournisseur — Grok 4.6 est donné à parité avec GPT-5.6 Sol et devant Kimi K3, pour environ la moitié du prix des modèles frontière comparables [S141]. Cette mesure n’a pas été répliquée par cet observatoire et ne dit rien de la qualité sur vos tâches, ni sur le français et le néerlandais. Elle établit un positionnement commercial, pas une supériorité technique.
 
-**Belgique.** **Le point de vigilance de cette fiche.** Grok 4.5 était confirmé dans la console API pour les utilisateurs UE depuis le 17 juillet [S68]; **rien n’établit ce statut pour Grok 4.6** au 13 août — à confirmer. Plus important: **aucune résidence de données européenne n’est annoncée**, et le DPA de xAI documente un traitement en `us-east-1` et `us-west-2`. Disponibilité, prix local, TVA et résidence restent donc à confirmer, et la politique grand public ne couvre pas nécessairement l’API entreprise [S24]. **[Déduction]** L’écart de prix face à Sol ou Opus 5 est réel, mais il ne compense pas cette incertitude pour des données personnelles européennes: pour ce cas d’usage, Grok reste un modèle à évaluer sur données synthétiques ou publiques, pas à mettre en production.
+**Belgique.** **Le point de vigilance de cette fiche.** Grok 4.5 était confirmé dans la console API pour les utilisateurs UE depuis le 17 juillet [S68]; **rien n’établit ce statut pour Grok 4.6** au 13 août — à confirmer. Plus important: **aucune résidence de données européenne n’est annoncée**, et le DPA de xAI documente un traitement en `us-east-1` et `us-west-2`. Disponibilité, prix local et résidence restent donc à confirmer, et la politique grand public ne couvre pas nécessairement l’API entreprise [S24]. **[Déduction]** L’écart de prix face à Sol ou Opus 5 est réel, mais il ne compense pas cette incertitude pour des données personnelles européennes: pour ce cas d’usage, Grok reste un modèle à évaluer sur données synthétiques ou publiques, pas à mettre en production.
 
 **Changement d’entité en cours.** SpaceX a absorbé xAI plus tôt en 2026 et l’acquisition d’Anysphere/Cursor doit se clôturer avant fin août [S147]. Premier produit annoncé de la combinaison: **Grok Bot**, assistant de travail à partir de **120 USD/mois** [S148]. Pour un client européen, un changement d’entité contractante peut modifier la juridiction, le responsable de traitement et les clauses de transfert — à revérifier après la clôture, même si le produit ne change pas.
 
@@ -175,6 +185,12 @@ Les scores publiés par un fournisseur sont des **capacités déclarées** jusqu
 
 **Positionnement.** Assistant de code multi-modèles avec complétion, chat, CLI, revue, agent local et cloud. Plans individuels: Free, Pro, Pro+, Max; crédits IA variables selon modèle et complexité [S37–S38]. GPT-5.6, Opus 5 et Kimi K2.7 ont rejoint Copilot, tandis que le service distinct GitHub Models a été retiré le 30 juillet [S73–S74].
 
+**Une échéance de compatibilité au 1er septembre 2026.** GitHub retire **Claude Sonnet 3.7, Claude Sonnet 3.7 Thinking, Claude Opus 4 et Gemini 2.0 Flash de toutes les surfaces Copilot** — chat, éditions en ligne, modes ask et agent, complétion — à cette date; **MAI-Code-1-Flash** suit le 10 septembre, avec MAI-Code-1.1-Flash pour remplaçant proposé [S167]. Une exception est évoquée pour certains abonnés annuels individuels, et les administrateurs Copilot Enterprise peuvent devoir ouvrir les remplaçants dans leur politique de modèles avant que les utilisateurs n’y accèdent. Réserve d’accès: `github.blog` étant bloqué depuis l’environnement d’exécution, la liste précise n’a pas pu être relue sur la page officielle et **reste à confirmer entrée par entrée**.
+
+**[Déduction]** Ce point mérite d’être distingué d’une dépréciation d’éditeur, et c’est tout l’intérêt de la distinction que cet observatoire maintient entre **modèle**, **assistant de code** et **distributeur**. Claude Opus 4 a été retiré de l’API Anthropic le 15 juin 2026; Claude Sonnet 3.7 le 19 février. Le calendrier de GitHub est donc son propre calendrier de distributeur, désynchronisé de celui des éditeurs. La conséquence pratique pour un développeur belge est concrète: **un identifiant de modèle épinglé dans un flux, un script d’automatisation ou une politique d’entreprise peut casser chez le distributeur alors que le modèle vit encore ailleurs, ou l’inverse**. La checklist de production en tire une ligne dédiée: aucun identifiant épinglé sans plan de remplacement daté, et une surveillance des calendriers **des deux côtés de la chaîne**.
+
+**Agent Plugins 1.0 et le sens de l’interopérabilité.** Publié le 6 août avec AWS, Anysphere, Microsoft, OpenAI, Vercel puis Google comme mainteneur principal, ce format empaquette compétences d’agent et serveurs MCP en **un greffon unique installable**, présenté comme gouverné indépendamment d’un éditeur, et disponible dans VS Code, Copilot CLI et l’application Copilot [S170]. **[Déduction]** L’intérêt pour un développeur indépendant est de construire son outillage une fois et de le porter entre assistants, ce qui réduit le coût de sortie — le verrouillage se déplace du greffon vers le modèle et le contrat. Réserve: la gouvernance annoncée comme indépendante n’a été vérifiée sur aucun document de gouvernance publié, et le périmètre réel de compatibilité entre clients reste à confirmer sur la spécification elle-même. À ce stade, c’est une annonce d’intention convergente entre acteurs, pas un standard dont la neutralité est établie.
+
 **Belgique et données.** Plans individuels: interactions susceptibles d’entraîner les modèles sauf opt-out; Business/Enterprise exclus de l’entraînement. Rétention B/E: IDE chat/completion non retenus, autres surfaces jusqu’à 28 jours selon page [S37]. DPA disponible.
 
 **Développement.** Meilleur choix de départ si GitHub/VS Code domine. Mesurer qualité de PR, tests et failles; les sorties ne remplacent pas revue, SAST et tests.
@@ -183,7 +199,7 @@ Les scores publiés par un fournisseur sont des **capacités déclarées** jusqu
 
 **Positionnement.** Application de recherche sourcée, modèles Sonar et Agent API. API séparée de l’abonnement [S39–S40].
 
-**Belgique.** Utile pour veille et recherche, mais chaque citation doit être ouverte. Prix grand public EUR/TVA et contrôles d’entreprise à vérifier au checkout/contrat.
+**Belgique.** Utile pour veille et recherche, mais chaque citation doit être ouverte. Prix grand public en euros et contrôles d’entreprise à vérifier au checkout ou au contrat.
 
 ### 16. Anysphere / Cursor
 
@@ -203,7 +219,7 @@ Les scores publiés par un fournisseur sont des **capacités déclarées** jusqu
 
 **Positionnement.** Agent de création d’apps intégré à l’IDE, bases et déploiement. Core annuel 20 USD/mois équivalent avec 25 USD de crédits; Pro 95 USD avec 100 USD [S44].
 
-**Belgique.** Bon pour prototypes et petites applications; TVA et localisation à vérifier. Risque de verrouillage plateforme et de coûts croissants en builds autonomes.
+**Belgique.** Bon pour prototypes et petites applications; facturation et localisation à vérifier. Risque de verrouillage plateforme et de coûts croissants en builds autonomes.
 
 ### 18. Hugging Face
 
@@ -244,7 +260,7 @@ Fait antérieur au cycle, absent des éditions précédentes et corrigé ici. Le
 
 La consultation web ne permet pas de simuler chaque checkout belge ni de signer un contrat. Certaines pages sont dynamiques ou géolocalisées. Les latences, quotas et remises dépendent du compte.
 
-**Limites propres au contrôle du 13 août 2026.**
+**Limites propres au contrôle du 14 août 2026.**
 
 1. **Accès aux sources officielles fortement dégradé, pour le troisième contrôle consécutif.** La politique de sortie réseau a bloqué la quasi-totalité des domaines fournisseurs. Chaque fait tarifaire, chaque spécification et chaque date de cette édition provient de l’index de recherche ou de sources indépendantes convergentes, non de l’ouverture directe des pages officielles. C’est un affaiblissement réel du niveau de preuve, et non une simple gêne: **une revérification directe est nécessaire avant tout engagement contractuel ou budgétaire**. La persistance du blocage sur trois contrôles cesse d’être un incident et devient une caractéristique de l’environnement: elle doit être traitée comme telle par le commanditaire, soit en ajustant la politique de sortie réseau, soit en acceptant durablement ce niveau de preuve.
 2. **Disponibilité européenne de Grok 4.6 non établie.** Grok 4.5 était confirmé dans la console API UE depuis le 17 juillet; **le même statut pour 4.6 n’a pas pu être vérifié**, et aucune résidence de données européenne n’est annoncée [S68, S139–S141]. C’est la vérification la plus importante restée ouverte à ce contrôle.

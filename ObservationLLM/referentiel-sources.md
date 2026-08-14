@@ -1,6 +1,6 @@
 # Sources de référence et indices de confiance
 
-Contrôle : **13 août 2026**. Ce référentiel rassemble les URL de base à privilégier à chaque recherche quotidienne. L’indice mesure l’aptitude de la source à établir les sujets indiqués ; il ne constitue pas une note universelle de vérité.
+Contrôle : **14 août 2026**. Ce référentiel rassemble les URL de base à privilégier à chaque recherche quotidienne. L’indice mesure l’aptitude de la source à établir les sujets indiqués ; il ne constitue pas une note universelle de vérité.
 
 ## Barème
 
@@ -29,7 +29,7 @@ Contrôle : **13 août 2026**. Ce référentiel rassemble les URL de base à pri
 | R15 | BCE | [Taux de référence de l’euro](https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/) | Institutionnelle | Conversion monétaire | 99/100 | Index |
 | R16 | Indépendant | [Artificial Analysis](https://artificialanalysis.ai/) | Secondaire | Latence, prix, benchmarks comparables | 78/100 | Variable |
 | R17 | OpenAI | [@OpenAI](https://x.com/OpenAI) | Flux X officiel | Annonces, modèles, produits | 82/100 | Public, indexation variable |
-| R18 | Anthropic | [@AnthropicAI](https://x.com/AnthropicAI) | Flux X officiel | Annonces, Claude, recherche | 82/100 | Public, indexation variable |
+| R18 | Anthropic | [@AnthropicAI](https://x.com/AnthropicAI) | Flux X officiel — **veille quotidienne prioritaire** | Annonces, Claude, recherche, prix | 82/100 | Public, indexation variable |
 | R19 | Google DeepMind | [@GoogleDeepMind](https://x.com/GoogleDeepMind) | Flux X officiel | Recherche, Gemini, modèles | 82/100 | Public, indexation variable |
 | R20 | Meta | [@AIatMeta](https://x.com/AIatMeta) | Flux X officiel | Recherche, modèles ouverts, Meta AI | 82/100 | Public, indexation variable |
 | R21 | Mistral AI | [@MistralAI](https://x.com/MistralAI) | Flux X officiel | Annonces, modèles, produits | 82/100 | Public, indexation variable |
@@ -73,7 +73,7 @@ Pour chaque annonce retenue, enregistrer l’URL exacte du post lorsqu’elle es
 
 ## Registres de distribution officiels — voie de preuve primaire
 
-Contrôle du 13 août 2026. Ces sources sont ajoutées au référentiel parce qu’elles sont **joignables alors que la documentation fournisseur ne l’est pas**, et parce qu’elles sont opérées comme canal de publication officiel par l’éditeur du paquet.
+Contrôle du 14 août 2026. Ces sources figurent au référentiel parce qu’elles sont **joignables alors que la documentation fournisseur ne l’est pas**, et parce qu’elles sont opérées comme canal de publication officiel par l’éditeur du paquet.
 
 | ID | Source | URL de base | Modèle d’URL | Nature | Sujets | Indice | Portée et limite |
 |---|---|---|---|---|---|---:|---|
@@ -82,8 +82,22 @@ Contrôle du 13 août 2026. Ces sources sont ajoutées au référentiel parce qu
 | R40 | Blog du Model Context Protocol | <https://blog.modelcontextprotocol.io/> | — | Blog officiel du projet | spécification, SDK, dépréciations | 96/100 | Publication officielle du projet responsable de la spécification |
 | R41 | NBC News — technologie | <https://www.nbcnews.com/tech/> | — | Presse généraliste | annonces produit, publicité | 80/100 | Corroboration d’annonce ; insuffisante pour un fait contractuel |
 | R42 | Digital Watch Observatory | <https://dig.watch/> | — | Observatoire de politique numérique | politique européenne, souveraineté, infrastructure | 78/100 | Utile pour le contexte européen et belge ; à corroborer |
+| R43 | Cerebras — blog technique | <https://www.cerebras.ai/blog/> | — | Blog technique d’éditeur | accélérateurs, paliers de service, débit d’inférence | 85/100 | Primaire pour l’infrastructure Cerebras. Les débits publiés sont des **résultats fournisseur** tant qu’une mesure indépendante ne les reproduit pas |
+| R44 | Techmeme | <https://www.techmeme.com/> | `https://www.techmeme.com/{AAMMJJ}/p{n}` | Agrégateur horodaté | datation d’annonces, reprises de comptes officiels | 74/100 | Date un post et identifie le compte officiel à l’origine du signal. Insuffisant seul pour un fait contractuel |
 
 **Réserve d’interprétation.** Une version publiée sur un registre n’est pas une annonce produit. Un saut de version majeure signale une rupture de compatibilité probable, mais son contenu exact doit être lu dans les notes de version avant toute conclusion. Pour les bases vectorielles, la version publiée est celle de la **bibliothèque cliente**, jamais celle du moteur serveur.
+
+## Comptes promus en veille quotidienne prioritaire
+
+La promotion suit une règle unique : un post d’un compte officiel dont l’annonce a obtenu **au moins 90/100 grâce à une corroboration primaire durable**. Elle augmente la **priorité de surveillance** du compte ; elle ne rend vrai par avance **aucun** post futur, qui reste soumis au même barème de confiance. Elle est retirée dès que le critère n’est plus rempli.
+
+| Compte | Acteur | Preuve de promotion | Fondement |
+|---|---|---|---|
+| [@AnthropicAI](https://x.com/AnthropicAI) | Anthropic | Annonce tarifaire notée **97/100** le 14 août 2026 | Corroborée par la page tarifaire officielle Anthropic **ouverte directement** |
+| [@AIatMeta](https://x.com/AIatMeta) | Meta | Annonce Muse Glimmer notée **96/100** | Corroborée par une publication Meta Research durable |
+| [@MistralAI](https://x.com/MistralAI) | Mistral AI | Annonce d’infrastructure européenne notée **94/100** | Corroborée par l’annonce officielle et la documentation produit |
+| [@nvidia](https://x.com/nvidia) | NVIDIA | Annonce Nemotron notée **94/100** | Corroborée par la carte de modèle publiée |
+| [@ghchangelog](https://x.com/ghchangelog) | GitHub | Annonce Copilot notée **97/100** | Corroborée par le changelog officiel daté |
 
 ## Règles d’utilisation quotidienne
 

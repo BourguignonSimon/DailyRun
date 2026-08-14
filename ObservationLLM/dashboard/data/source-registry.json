@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-08-13",
+  "checkedAt": "2026-08-14",
   "scoreMeaning": "Aptitude de la source à prouver les sujets indiqués, et non vérité universelle.",
   "sources": [
     {
@@ -17,8 +17,8 @@
       ],
       "confidence": 98,
       "rationale": "Documentation opérationnelle du fournisseur",
-      "accessibility": "Inaccessible le 2026-08-13 depuis l’environnement d’exécution (politique réseau sortante)",
-      "last_verified_at": "2026-08-13",
+      "accessibility": "Inaccessible le 2026-08-14 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-14",
       "lastAccessResult": "bloqué par la politique réseau sortante"
     },
     {
@@ -34,10 +34,10 @@
         "résidence"
       ],
       "confidence": 98,
-      "rationale": "Documentation opérationnelle du fournisseur",
-      "accessibility": "Inaccessible le 2026-08-13 depuis l’environnement d’exécution (politique réseau sortante)",
-      "last_verified_at": "2026-08-13",
-      "lastAccessResult": "bloqué par la politique réseau sortante"
+      "rationale": "Documentation opérationnelle du fournisseur. Ouverte directement le 14 août 2026 : a établi l’annulation de la hausse tarifaire de Claude Sonnet 5 et le tableau complet des dépréciations de modèles.",
+      "accessibility": "Accessible le 2026-08-14 — ouverte directement",
+      "last_verified_at": "2026-08-14",
+      "lastAccessResult": "ouverte directement"
     },
     {
       "id": "R03",
@@ -53,8 +53,8 @@
       ],
       "confidence": 98,
       "rationale": "Documentation officielle du service",
-      "accessibility": "Inaccessible le 2026-08-13 depuis l’environnement d’exécution (politique réseau sortante)",
-      "last_verified_at": "2026-08-13",
+      "accessibility": "Inaccessible le 2026-08-14 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-14",
       "lastAccessResult": "bloqué par la politique réseau sortante"
     },
     {
@@ -71,9 +71,9 @@
       ],
       "confidence": 98,
       "rationale": "Documentation cloud directement responsable des régions",
-      "accessibility": "Inaccessible le 2026-08-13 depuis l’environnement d’exécution (politique réseau sortante)",
-      "last_verified_at": "2026-08-13",
-      "lastAccessResult": "bloqué par la politique réseau sortante"
+      "accessibility": "Accessible le 2026-08-14 — ouverte directement",
+      "last_verified_at": "2026-08-14",
+      "lastAccessResult": "ouverte directement"
     },
     {
       "id": "R05",
@@ -89,8 +89,8 @@
       ],
       "confidence": 98,
       "rationale": "Documentation officielle Azure",
-      "accessibility": "Inaccessible le 2026-08-13 depuis l’environnement d’exécution (politique réseau sortante)",
-      "last_verified_at": "2026-08-13",
+      "accessibility": "Inaccessible le 2026-08-14 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-14",
       "lastAccessResult": "bloqué par la politique réseau sortante"
     },
     {
@@ -107,8 +107,8 @@
       ],
       "confidence": 98,
       "rationale": "Documentation opérationnelle AWS",
-      "accessibility": "Inaccessible le 2026-08-13 depuis l’environnement d’exécution (politique réseau sortante)",
-      "last_verified_at": "2026-08-13",
+      "accessibility": "Inaccessible le 2026-08-14 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-14",
       "lastAccessResult": "bloqué par la politique réseau sortante"
     },
     {
@@ -125,8 +125,8 @@
       ],
       "confidence": 98,
       "rationale": "Documentation et cartes modèles officielles",
-      "accessibility": "Inaccessible le 2026-08-13 depuis l’environnement d’exécution (politique réseau sortante)",
-      "last_verified_at": "2026-08-13",
+      "accessibility": "Inaccessible le 2026-08-14 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-14",
       "lastAccessResult": "bloqué par la politique réseau sortante"
     },
     {
@@ -143,8 +143,8 @@
       ],
       "confidence": 96,
       "rationale": "Documentation du distributeur et hébergeur",
-      "accessibility": "Inaccessible le 2026-08-13 depuis l’environnement d’exécution (politique réseau sortante)",
-      "last_verified_at": "2026-08-13",
+      "accessibility": "Inaccessible le 2026-08-14 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-14",
       "lastAccessResult": "bloqué par la politique réseau sortante"
     },
     {
@@ -161,8 +161,8 @@
       ],
       "confidence": 97,
       "rationale": "Documentation officielle du produit",
-      "accessibility": "Inaccessible le 2026-08-13 depuis l’environnement d’exécution (politique réseau sortante)",
-      "last_verified_at": "2026-08-13",
+      "accessibility": "Inaccessible le 2026-08-14 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-14",
       "lastAccessResult": "bloqué par la politique réseau sortante"
     },
     {
@@ -179,8 +179,8 @@
       ],
       "confidence": 96,
       "rationale": "Documentation officielle de l’API",
-      "accessibility": "Inaccessible le 2026-08-13 depuis l’environnement d’exécution (politique réseau sortante)",
-      "last_verified_at": "2026-08-13",
+      "accessibility": "Inaccessible le 2026-08-14 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-14",
       "lastAccessResult": "bloqué par la politique réseau sortante"
     },
     {
@@ -197,8 +197,8 @@
       ],
       "confidence": 95,
       "rationale": "Documentation officielle de l’API",
-      "accessibility": "Inaccessible le 2026-08-13 depuis l’environnement d’exécution (politique réseau sortante)",
-      "last_verified_at": "2026-08-13",
+      "accessibility": "Inaccessible le 2026-08-14 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-14",
       "lastAccessResult": "bloqué par la politique réseau sortante"
     },
     {
@@ -215,8 +215,8 @@
       ],
       "confidence": 96,
       "rationale": "Documentation officielle de la plateforme",
-      "accessibility": "Inaccessible le 2026-08-13 depuis l’environnement d’exécution (politique réseau sortante)",
-      "last_verified_at": "2026-08-13",
+      "accessibility": "Inaccessible le 2026-08-14 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-14",
       "lastAccessResult": "bloqué par la politique réseau sortante"
     },
     {
@@ -233,8 +233,8 @@
       ],
       "confidence": 96,
       "rationale": "Documentation officielle de l’API",
-      "accessibility": "Inaccessible le 2026-08-13 depuis l’environnement d’exécution (politique réseau sortante)",
-      "last_verified_at": "2026-08-13",
+      "accessibility": "Inaccessible le 2026-08-14 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-14",
       "lastAccessResult": "bloqué par la politique réseau sortante"
     },
     {
@@ -251,8 +251,8 @@
       ],
       "confidence": 96,
       "rationale": "Documentation officielle de la plateforme",
-      "accessibility": "Inaccessible le 2026-08-13 depuis l’environnement d’exécution (politique réseau sortante)",
-      "last_verified_at": "2026-08-13",
+      "accessibility": "Inaccessible le 2026-08-14 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-14",
       "lastAccessResult": "bloqué par la politique réseau sortante"
     },
     {
@@ -266,8 +266,8 @@
       ],
       "confidence": 99,
       "rationale": "Source institutionnelle du taux de référence",
-      "accessibility": "Inaccessible le 2026-08-13 depuis l’environnement d’exécution (politique réseau sortante)",
-      "last_verified_at": "2026-08-13",
+      "accessibility": "Inaccessible le 2026-08-14 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-14",
       "lastAccessResult": "bloqué par la politique réseau sortante"
     },
     {
@@ -285,8 +285,8 @@
       ],
       "confidence": 78,
       "rationale": "Méthodologie indépendante utile, à corroborer avec les fournisseurs",
-      "accessibility": "Inaccessible le 2026-08-13 depuis l’environnement d’exécution (politique réseau sortante)",
-      "last_verified_at": "2026-08-13",
+      "accessibility": "Inaccessible le 2026-08-14 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-14",
       "lastAccessResult": "bloqué par la politique réseau sortante"
     },
     {
@@ -304,8 +304,8 @@
       ],
       "confidence": 82,
       "rationale": "Compte officiel utile pour la fraîcheur ; chaque fait doit être corroboré par une page durable",
-      "accessibility": "Inaccessible le 2026-08-13 depuis l’environnement d’exécution (politique réseau sortante)",
-      "last_verified_at": "2026-08-13",
+      "accessibility": "Inaccessible le 2026-08-14 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-14",
       "lastAccessResult": "bloqué par la politique réseau sortante"
     },
     {
@@ -315,7 +315,7 @@
       "baseUrl": "https://x.com/AnthropicAI",
       "primary": false,
       "kind": "Flux X officiel",
-      "role": "Détection rapide",
+      "role": "Veille quotidienne prioritaire",
       "topics": [
         "annonces",
         "Claude",
@@ -323,9 +323,17 @@
       ],
       "confidence": 82,
       "rationale": "Compte officiel vérifié comme signal ; documentation requise pour les détails",
-      "accessibility": "Inaccessible le 2026-08-13 depuis l’environnement d’exécution (politique réseau sortante)",
-      "last_verified_at": "2026-08-13",
-      "lastAccessResult": "bloqué par la politique réseau sortante"
+      "accessibility": "Inaccessible le 2026-08-14 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-14",
+      "lastAccessResult": "bloqué par la politique réseau sortante",
+      "trustedDaily": true,
+      "promotionEvidence": [
+        {
+          "announcementId": "A20260810-ANTHROPIC-SONNET5-PRIX-PERMANENT",
+          "confidence": 97
+        }
+      ],
+      "trustBasis": "Annonce tarifaire notée 97/100, corroborée par la page tarifaire officielle Anthropic ouverte directement le 14 août 2026. La promotion augmente la priorité de surveillance du compte ; elle ne rend vrai aucun post futur par avance."
     },
     {
       "id": "R19",
@@ -342,8 +350,8 @@
       ],
       "confidence": 82,
       "rationale": "Compte officiel de recherche ; recouper les disponibilités avec Google AI et Vertex AI",
-      "accessibility": "Inaccessible le 2026-08-13 depuis l’environnement d’exécution (politique réseau sortante)",
-      "last_verified_at": "2026-08-13",
+      "accessibility": "Inaccessible le 2026-08-14 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-14",
       "lastAccessResult": "bloqué par la politique réseau sortante"
     },
     {
@@ -369,8 +377,8 @@
       ],
       "trustBasis": "Annonce officielle notée 96/100 et corroborée par une publication Meta Research durable",
       "rationale": "Compte officiel de l’équipe IA ; dépôt ou publication de recherche requis pour confirmer chaque fait",
-      "accessibility": "Inaccessible le 2026-08-13 depuis l’environnement d’exécution (politique réseau sortante)",
-      "last_verified_at": "2026-08-13",
+      "accessibility": "Inaccessible le 2026-08-14 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-14",
       "lastAccessResult": "bloqué par la politique réseau sortante"
     },
     {
@@ -396,8 +404,8 @@
       ],
       "trustBasis": "Annonce officielle notée 94/100 et corroborée par une carte modèle Mistral",
       "rationale": "Compte officiel ; les cartes modèles et la documentation restent les preuves de référence pour chaque fait",
-      "accessibility": "Inaccessible le 2026-08-13 depuis l’environnement d’exécution (politique réseau sortante)",
-      "last_verified_at": "2026-08-13",
+      "accessibility": "Inaccessible le 2026-08-14 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-14",
       "lastAccessResult": "bloqué par la politique réseau sortante"
     },
     {
@@ -423,8 +431,8 @@
       ],
       "trustBasis": "Annonce officielle notée 94/100 et corroborée par une carte modèle NVIDIA",
       "rationale": "Compte corporate officiel ; isoler les annonces IA et confirmer chaque caractéristique avec les artefacts techniques",
-      "accessibility": "Inaccessible le 2026-08-13 depuis l’environnement d’exécution (politique réseau sortante)",
-      "last_verified_at": "2026-08-13",
+      "accessibility": "Inaccessible le 2026-08-14 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-14",
       "lastAccessResult": "bloqué par la politique réseau sortante"
     },
     {
@@ -442,8 +450,8 @@
       ],
       "confidence": 80,
       "rationale": "Compte du projet Qwen ; une annonce de poids n’est confirmée qu’après publication du dépôt et de la licence",
-      "accessibility": "Inaccessible le 2026-08-13 depuis l’environnement d’exécution (politique réseau sortante)",
-      "last_verified_at": "2026-08-13",
+      "accessibility": "Inaccessible le 2026-08-14 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-14",
       "lastAccessResult": "bloqué par la politique réseau sortante"
     },
     {
@@ -461,8 +469,8 @@
       ],
       "confidence": 78,
       "rationale": "Excellent signal d’écosystème, mais l’identité du déposant et la carte modèle doivent être contrôlées",
-      "accessibility": "Inaccessible le 2026-08-13 depuis l’environnement d’exécution (politique réseau sortante)",
-      "last_verified_at": "2026-08-13",
+      "accessibility": "Inaccessible le 2026-08-14 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-14",
       "lastAccessResult": "bloqué par la politique réseau sortante"
     },
     {
@@ -480,8 +488,8 @@
       ],
       "confidence": 96,
       "rationale": "Documentation officielle pour une collecte conforme et reproductible des signaux publics",
-      "accessibility": "Inaccessible le 2026-08-13 depuis l’environnement d’exécution (politique réseau sortante)",
-      "last_verified_at": "2026-08-13",
+      "accessibility": "Inaccessible le 2026-08-14 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-14",
       "lastAccessResult": "bloqué par la politique réseau sortante"
     },
     {
@@ -500,8 +508,8 @@
       ],
       "confidence": 96,
       "rationale": "Flux officiel daté avec liens vers les annonces détaillées",
-      "accessibility": "Inaccessible le 2026-08-13 depuis l’environnement d’exécution (politique réseau sortante)",
-      "last_verified_at": "2026-08-13",
+      "accessibility": "Inaccessible le 2026-08-14 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-14",
       "lastAccessResult": "bloqué par la politique réseau sortante"
     },
     {
@@ -520,8 +528,8 @@
       ],
       "confidence": 97,
       "rationale": "Journal officiel versionné et daté des changements produit",
-      "accessibility": "Inaccessible le 2026-08-13 depuis l’environnement d’exécution (politique réseau sortante)",
-      "last_verified_at": "2026-08-13",
+      "accessibility": "Inaccessible le 2026-08-14 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-14",
       "lastAccessResult": "bloqué par la politique réseau sortante"
     },
     {
@@ -540,8 +548,8 @@
       ],
       "confidence": 72,
       "rationale": "Sélection communautaire utile pour découvrir, mais chaque article doit être lu et qualifié",
-      "accessibility": "Inaccessible le 2026-08-13 depuis l’environnement d’exécution (politique réseau sortante)",
-      "last_verified_at": "2026-08-13",
+      "accessibility": "Inaccessible le 2026-08-14 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-14",
       "lastAccessResult": "bloqué par la politique réseau sortante"
     },
     {
@@ -560,8 +568,8 @@
       ],
       "confidence": 68,
       "rationale": "Texte original des auteurs, généralement sans validation par les pairs au moment de la détection",
-      "accessibility": "Inaccessible le 2026-08-13 depuis l’environnement d’exécution (politique réseau sortante)",
-      "last_verified_at": "2026-08-13",
+      "accessibility": "Inaccessible le 2026-08-14 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-14",
       "lastAccessResult": "bloqué par la politique réseau sortante"
     },
     {
@@ -580,8 +588,8 @@
       ],
       "confidence": 97,
       "rationale": "Releases du dépôt officiel, à relier à la spécification et au guide de migration",
-      "accessibility": "Inaccessible le 2026-08-13 depuis l’environnement d’exécution (politique réseau sortante)",
-      "last_verified_at": "2026-08-13",
+      "accessibility": "Inaccessible le 2026-08-14 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-14",
       "lastAccessResult": "bloqué par la politique réseau sortante"
     },
     {
@@ -608,8 +616,8 @@
       ],
       "trustBasis": "Annonce notée 97/100 et recoupée avec le changelog GitHub officiel daté",
       "rationale": "Compte officiel spécialisé ; chaque post est relié au changelog durable avant publication certaine",
-      "accessibility": "Inaccessible le 2026-08-13 depuis l’environnement d’exécution (politique réseau sortante)",
-      "last_verified_at": "2026-08-13",
+      "accessibility": "Inaccessible le 2026-08-14 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-14",
       "lastAccessResult": "bloqué par la politique réseau sortante"
     },
     {
@@ -629,9 +637,10 @@
       ],
       "confidence": 76,
       "rationale": "Newsletter technique datée et riche en liens ; chaque information matérielle doit être vérifiée dans la source originale",
-      "accessibility": "Inaccessible le 2026-08-13 depuis l’environnement d’exécution (politique réseau sortante)",
-      "last_verified_at": "2026-08-13",
-      "lastAccessResult": "bloqué par la politique réseau sortante"
+      "accessibility": "Inaccessible le 2026-08-14. Le numéro du jour https://tldr.tech/ai/2026-08-14 et le repli https://tldr.tech/ai/ ont tous deux été tentés et refusés par la politique réseau sortante.",
+      "last_verified_at": "2026-08-14",
+      "lastAccessResult": "consultation tentée le 2026-08-14 — connexion refusée par la politique réseau sortante (403 au CONNECT)",
+      "mandatoryDailyEntryPoint": true
     },
     {
       "id": "R33",
@@ -649,9 +658,10 @@
       ],
       "confidence": 82,
       "rationale": "Rédaction technologique établie ; utile pour le contexte et les annonces, à recouper avec les sources primaires pour les caractéristiques",
-      "accessibility": "Inaccessible le 2026-08-13 depuis l’environnement d’exécution (politique réseau sortante)",
-      "last_verified_at": "2026-08-13",
-      "lastAccessResult": "bloqué par la politique réseau sortante"
+      "accessibility": "Inaccessible le 2026-08-14 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-14",
+      "lastAccessResult": "consultation tentée le 2026-08-14 — connexion refusée par la politique réseau sortante (403 au CONNECT)",
+      "mandatoryDailyEntryPoint": true
     },
     {
       "id": "R34",
@@ -669,9 +679,10 @@
       ],
       "confidence": 80,
       "rationale": "Couverture spécialisée de l’IA d’entreprise ; confirmer prix, performances et disponibilité dans les documents d’origine",
-      "accessibility": "Inaccessible le 2026-08-13 depuis l’environnement d’exécution (politique réseau sortante)",
-      "last_verified_at": "2026-08-13",
-      "lastAccessResult": "bloqué par la politique réseau sortante"
+      "accessibility": "Inaccessible le 2026-08-14 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-14",
+      "lastAccessResult": "consultation tentée le 2026-08-14 — connexion refusée par la politique réseau sortante (403 au CONNECT)",
+      "mandatoryDailyEntryPoint": true
     },
     {
       "id": "R35",
@@ -689,9 +700,10 @@
       ],
       "confidence": 66,
       "rationale": "Utile pour détecter tôt des changements visibles dans les produits ; les fuites et rumeurs ne sont jamais publiées comme faits certains sans confirmation officielle",
-      "accessibility": "Inaccessible le 2026-08-13 depuis l’environnement d’exécution (politique réseau sortante)",
-      "last_verified_at": "2026-08-13",
-      "lastAccessResult": "bloqué par la politique réseau sortante"
+      "accessibility": "Inaccessible le 2026-08-14 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-14",
+      "lastAccessResult": "consultation tentée le 2026-08-14 — connexion refusée par la politique réseau sortante (403 au CONNECT)",
+      "mandatoryDailyEntryPoint": true
     },
     {
       "id": "R36",
@@ -710,9 +722,10 @@
       ],
       "confidence": 74,
       "rationale": "Plateforme de dialogue et de commentaires experts ; les opinions sont attribuées à leurs auteurs et ne remplacent pas les données ou textes primaires",
-      "accessibility": "Inaccessible le 2026-08-13 depuis l’environnement d’exécution (politique réseau sortante)",
-      "last_verified_at": "2026-08-13",
-      "lastAccessResult": "bloqué par la politique réseau sortante"
+      "accessibility": "Inaccessible le 2026-08-14. Le site canonique https://ai-frontiers.org/ a également été tenté et refusé.",
+      "last_verified_at": "2026-08-14",
+      "lastAccessResult": "consultation tentée le 2026-08-14 — connexion refusée par la politique réseau sortante (403 au CONNECT)",
+      "mandatoryDailyEntryPoint": true
     },
     {
       "id": "R37",
@@ -731,9 +744,10 @@
       ],
       "confidence": 96,
       "rationale": "Portail officiel des projets, laboratoires et publications NVIDIA ; les résultats restent déclarés par le fournisseur lorsqu’ils ne sont pas reproduits indépendamment",
-      "accessibility": "Inaccessible le 2026-08-13 depuis l’environnement d’exécution (politique réseau sortante)",
-      "last_verified_at": "2026-08-13",
-      "lastAccessResult": "bloqué par la politique réseau sortante"
+      "accessibility": "Inaccessible le 2026-08-14 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-14",
+      "lastAccessResult": "consultation tentée le 2026-08-14 — connexion refusée par la politique réseau sortante (403 au CONNECT)",
+      "mandatoryDailyEntryPoint": true
     },
     {
       "id": "R38",
@@ -750,8 +764,9 @@
       ],
       "confidence": 92,
       "rationale": "Canal de distribution officiel opéré par l’éditeur du paquet : prouve de façon durable qu’une version a été publiée à une date donnée, mais ne documente pas le contenu du changement.",
-      "accessibility": "Accessible le 2026-08-13",
-      "last_verified_at": "2026-08-13"
+      "accessibility": "Accessible le 2026-08-14 — ouverte directement",
+      "last_verified_at": "2026-08-14",
+      "lastAccessResult": "ouverte directement"
     },
     {
       "id": "R39",
@@ -767,8 +782,9 @@
       ],
       "confidence": 92,
       "rationale": "Canal de distribution officiel opéré par l’éditeur du paquet ; même portée et mêmes limites que PyPI.",
-      "accessibility": "Accessible le 2026-08-13",
-      "last_verified_at": "2026-08-13"
+      "accessibility": "Accessible le 2026-08-14 — ouverte directement",
+      "last_verified_at": "2026-08-14",
+      "lastAccessResult": "ouverte directement"
     },
     {
       "id": "R40",
@@ -784,8 +800,9 @@
       ],
       "confidence": 96,
       "rationale": "Publication officielle du projet, responsable direct de la spécification.",
-      "accessibility": "Accessible le 2026-08-13",
-      "last_verified_at": "2026-08-13"
+      "accessibility": "Accessible le 2026-08-14 — ouverte directement",
+      "last_verified_at": "2026-08-14",
+      "lastAccessResult": "ouverte directement"
     },
     {
       "id": "R41",
@@ -800,8 +817,9 @@
       ],
       "confidence": 80,
       "rationale": "Presse établie avec responsabilité éditoriale ; utile pour corroborer une annonce, insuffisante pour un fait contractuel.",
-      "accessibility": "Inaccessible en ouverture directe le 2026-08-13 ; restituée via index",
-      "last_verified_at": "2026-08-13"
+      "accessibility": "Inaccessible le 2026-08-14 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-14",
+      "lastAccessResult": "bloqué par la politique réseau sortante"
     },
     {
       "id": "R42",
@@ -817,9 +835,48 @@
       ],
       "confidence": 78,
       "rationale": "Suivi documenté des politiques numériques européennes ; utile pour la corroboration et le contexte belge.",
-      "accessibility": "Inaccessible en ouverture directe le 2026-08-13 ; restituée via index",
-      "last_verified_at": "2026-08-13"
+      "accessibility": "Inaccessible le 2026-08-14 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-14",
+      "lastAccessResult": "bloqué par la politique réseau sortante"
+    },
+    {
+      "id": "R43",
+      "name": "Cerebras — blog technique",
+      "actor": "Cerebras",
+      "baseUrl": "https://www.cerebras.ai/blog/",
+      "primary": true,
+      "kind": "Blog technique d’éditeur",
+      "role": "Preuve de premier rang pour l’infrastructure Cerebras",
+      "topics": [
+        "accélérateurs",
+        "paliers de service",
+        "débit d’inférence"
+      ],
+      "confidence": 85,
+      "rationale": "Publication de l’éditeur responsable du matériel. Les chiffres de débit qu’elle publie sont des résultats fournisseur : ils restent non reproduits tant qu’une mesure indépendante ne les confirme pas.",
+      "accessibility": "Inaccessible le 2026-08-14 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-14",
+      "lastAccessResult": "bloqué par la politique réseau sortante"
+    },
+    {
+      "id": "R44",
+      "name": "Techmeme",
+      "actor": "Techmeme",
+      "baseUrl": "https://www.techmeme.com/",
+      "primary": false,
+      "kind": "Agrégateur d’actualité technologique",
+      "role": "Datation et repérage d’un post officiel",
+      "topics": [
+        "annonces",
+        "reprises de comptes officiels",
+        "chronologie"
+      ],
+      "confidence": 74,
+      "rationale": "Agrégateur qui horodate une annonce et identifie le compte officiel à l’origine du signal. Utile pour dater un post, insuffisant seul pour établir un fait contractuel.",
+      "accessibility": "Inaccessible le 2026-08-14 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-14",
+      "lastAccessResult": "bloqué par la politique réseau sortante"
     }
   ],
-  "accessibilityNote": "L’accessibilité est mesurée depuis l’environnement d’exécution du run. Une source marquée inaccessible n’est pas invalidée : elle n’a simplement pas pu être consultée lors de ce contrôle."
+  "accessibilityNote": "L’accessibilité est mesurée depuis l’environnement d’exécution du run et ne dit rien de la qualité de la source. Au 14 août 2026, cinq sources primaires durables sont joignables directement : la documentation Anthropic, la documentation Vertex AI, le blog du Model Context Protocol et les registres PyPI et npm. Les six points d’entrée de veille quotidienne obligatoires sont tous refusés au niveau du proxy sortant ; leur consultation a été tentée et le refus consigné. La recherche web indexée reste disponible et sert alors à établir les faits par convergence de sources indépendantes, sans jamais dépasser 89/100."
 }

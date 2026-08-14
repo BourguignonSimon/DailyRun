@@ -1,12 +1,12 @@
-# Synthèse décisionnelle — contrôle du 13 août 2026
+# Synthèse décisionnelle — contrôle du 14 août 2026
 
-> **Une échéance budgétaire est confirmée par les pages officielles.** Le prix promotionnel de Claude Sonnet 5 reste à **2/10 USD/M jusqu’au 31 août 2026**, puis passe à **3/15 USD/M le 1er septembre**. Dans le même temps, **ChatGPT affiche des publicités** aux offres Free et Go dans neuf pays — les offres payantes en sont exemptes et **la Belgique n’est dans aucune vague annoncée**. Mistral, enfin, commence à **héberger des modèles ouverts tiers** (GLM-5.2 de Z.ai) derrière ses endpoints régionaux européens, et engage une coalition industrielle sur 200 MW d’ici fin 2027. Guide dédié: [modèles locaux par matériel](modeles-locaux-par-hardware.md).
+> **Une échéance budgétaire disparaît, une échéance de compatibilité arrive.** Le tarif de Claude Sonnet 5 est de **2/10 USD/M et c’est désormais le tarif standard**: la hausse vers 3/15 USD/M programmée au 1er septembre 2026 **est annulée**, ce qu’établit la page tarifaire officielle ouverte directement. En sens inverse, **GitHub retire plusieurs modèles Anthropic, OpenAI et Google de toutes les surfaces Copilot au 1er septembre**. **ChatGPT affiche des publicités** aux offres Free et Go dans neuf pays — les offres payantes en sont exemptes et **la Belgique n’est dans aucune vague annoncée**. Mistral chiffre la résidence européenne de l’inférence à **+10 %** et héberge des modèles ouverts tiers (GLM-5.2 de Z.ai). Guide dédié: [modèles locaux par matériel](modeles-locaux-par-hardware.md).
 >
-> ⚠️ **Niveau de preuve.** Le run initial du 13 août a subi un blocage réseau étendu. La revérification corrective a toutefois consulté les documentations officielles Anthropic et Google : les corrections Sonnet 5 et Imagen reposent donc sur des preuves primaires. Les autres faits conservent leur niveau de preuve précédent, indiqué dans les fiches et le registre. Revérifiez avant tout engagement contractuel. Détail: [sources.md](sources.md).
+> ⚠️ **Niveau de preuve.** La politique réseau sortante bloque la majorité des sites éditeurs et **la totalité des six points d’entrée de veille quotidienne**. Les faits Anthropic, MCP et versions de SDK reposent sur des sources primaires ouvertes directement; tout le reste est établi par convergence de sources indépendantes et **plafonné à 89/100**. Revérifiez avant tout engagement contractuel. Détail: [sources.md](sources.md).
 
 ## Les trois choses à faire ce mois-ci
 
-1. **Budgéter la hausse Claude Sonnet 5.** Les pages officielles Anthropic consultées le 13 août 2026 confirment le tarif promotionnel **2/10 USD/M jusqu’au 31 août**, puis le tarif standard **3/15 USD/M à partir du 1er septembre**. Une migration motivée uniquement par le coût reste donc à arbitrer [S158–S159].
+1. **Inventorier les modèles épinglés dans les flux GitHub Copilot.** Claude Sonnet 3.7, Sonnet 3.7 Thinking, Claude Opus 4 et Gemini 2.0 Flash quittent toutes les surfaces Copilot le **1er septembre 2026**, MAI-Code-1-Flash le 10 septembre. Tout script, politique d’entreprise ou flux qui épingle un de ces identifiants casse à cette date [S167]. Côté budget en revanche, **la hausse de Claude Sonnet 5 est annulée**: 2/10 USD/M devient le tarif standard, la migration qui n’était motivée que par ce surcoût n’a plus d’objet [S158–S159].
 2. **Vérifier les crédits GitHub Copilot Business/Enterprise**: les crédits promotionnels (+30 USD/mois en Business, +70 en Enterprise) **expirent fin août 2026**. À périmètre d’usage constant, la facture de septembre monte [S137].
 3. **Chiffrer l’option « région UE » chez Mistral**: les endpoints régionaux sont GA à **1,1× le tarif global** et le Priority Tier à **1,75× avec un SLA de disponibilité de 99,5 %**. Si la résidence des données bloquait un projet, le surcoût est désormais connu et modeste — mais lisez la réserve sur les sous-traitants hors région avant de l’inscrire dans un registre de traitement [S142–S144].
 
@@ -18,12 +18,12 @@ Il n’existe pas un « meilleur LLM » unique. Pour un résident belge, le choi
 
 | Profil belge | Premier choix | Alternative | Pourquoi | Vigilance |
 |---|---|---|---|---|
-| Particulier polyvalent FR/NL | ChatGPT ou Gemini | Mistral Vibe | Multimodal, recherche, mémoire, écosystème | Prix au checkout, TVA, entraînement des données grand public |
+| Particulier polyvalent FR/NL | ChatGPT ou Gemini | Mistral Vibe | Multimodal, recherche, mémoire, écosystème | Prix au checkout, taxes locales, entraînement des données grand public |
 | Recherche web sourcée | Perplexity | Gemini / ChatGPT recherche | Citations et recherche intégrées | Vérifier les sources primaires, éviter l’automatisation aveugle |
 | Développeur indépendant | OpenAI ou Anthropic API | Gemini / Mistral | SDK matures, outils, sorties structurées | Budgets, snapshots, rétention, clés côté serveur |
 | Développement quotidien | GitHub Copilot | Cursor | IDE, agent, revue et choix de modèles | Crédits variables, confidentialité du dépôt |
 | Agent de code autonome | Claude Code / Codex | Cursor / Kimi Code | Boucles longues, terminal, outils | Exécuter en sandbox, revue humaine, plafond de coût; **clôture SpaceX↔Cursor attendue fin août** |
-| PME Microsoft 365 | Microsoft 365 Copilot + Azure | GitHub Copilot | Identité, Office, gouvernance et agents | Licences imbriquées, TVA hors prix B2B |
+| PME Microsoft 365 | Microsoft 365 Copilot + Azure | GitHub Copilot | Identité, Office, gouvernance et agents | Licences imbriquées, prix B2B affichés hors taxes |
 | Production UE sensible | **Mistral endpoint UE (×1,1)** ou cloud avec région UE | IBM / AWS / Azure / Google Cloud | DPA, région, contrôles et déploiement privé; SLA 99,5 % disponible en Priority Tier (×1,75, préversion) | Transferts encadrés vers sous-traitants **possibles hors région**: exiger la liste |
 | Open weight / sur site | **Muse Glimmer**, Mistral, **Nemotron 3.5 Lightning** | Qwen3.6, Gemma 4, Granite 4.1, **North Mini Code**, Kimi, GLM, DeepSeek | Contrôle et portabilité; licences majoritairement Apache 2.0 désormais | Licence exacte, sécurité, capacité GPU, évaluation locale |
 | Exécution 100 % locale | **Gemma 4, Qwen3.6** (selon RAM/VRAM) | gpt-oss, Gemma 4 26B-A4B, Qwen3.6-35B-A3B (MoE) | Données privées, hors ligne, coût nul par jeton | Mémoire disponible, vitesse, FR/NL à tester — voir [guide local](modeles-locaux-par-hardware.md) |
@@ -121,7 +121,7 @@ Taux de référence conservé: **1 EUR = 1,1554 USD** (BCE, 5 août 2026) [S79].
 
 **Repère grand public pour la Belgique.** Les abonnements de référence restent affichés autour de 20 USD/mois (ChatGPT Plus, Claude Pro, Google AI Pro ≈ 19,99 USD, Mistral Vibe Pro 14,99 USD). Ces montants sont des ordres de grandeur: **seul le checkout belge fait foi**, et il n’a pas pu être simulé lors de ce contrôle.
 
-Les offres explicitement disponibles dans l’EEE incluent notamment Gemini API; OpenAI publie des contrôles de résidence européenne pour certains clients/services [S03, S11]. Pour DeepSeek, Qwen, Kimi et GLM, **la disponibilité commerciale en Belgique, la facturation EUR, la TVA et la localisation des données restent à confirmer** avant usage de données personnelles ou confidentielles.
+Les offres explicitement disponibles dans l’EEE incluent notamment Gemini API; OpenAI publie des contrôles de résidence européenne pour certains clients/services [S03, S11]. Pour DeepSeek, Qwen, Kimi et GLM, **la disponibilité commerciale en Belgique, la facturation en euros et la localisation des données restent à confirmer** avant usage de données personnelles ou confidentielles.
 
 ## Capacités: ne pas confondre les produits
 
@@ -143,7 +143,7 @@ Pour les offres grand public, vérifier le réglage d’entraînement. OpenAI AP
 
 ## Décisions à prendre
 
-1. **Arbitrer Sonnet 5 avant septembre.** Le passage officiel de 2/10 à 3/15 USD/M au 1er septembre représente +50 %; la fin des crédits promotionnels Copilot reste également à vérifier fin août.
+1. **Traiter l’échéance Copilot du 1er septembre.** Recenser les modèles épinglés dans les flux et politiques, et ouvrir les remplaçants avant la date. La fin des crédits promotionnels Copilot reste également à vérifier fin août. L’arbitrage tarifaire Sonnet 5 est en revanche clos: le tarif de 2/10 USD/M est définitif.
 2. **Si la résidence des données bloque un projet**, chiffrer l’endpoint UE Mistral (+10 %) et, pour une charge critique, le Priority Tier (×1,75, SLA 99,5 % en préversion) — en exigeant du fournisseur la liste des sous-traitants susceptibles de recevoir un transfert hors région.
 3. **Si vous suivez Cursor**, surveiller la clôture de l’acquisition par SpaceX attendue fin août: contrat, entité facturante, politique de confidentialité et juridiction peuvent changer sans que le produit change.
 4. Choisir deux fournisseurs maximum pour un pilote de quatre semaines.

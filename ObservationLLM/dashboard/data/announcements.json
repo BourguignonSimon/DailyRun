@@ -1,39 +1,203 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-08-13",
-  "methodology": "Les flux X servent à détecter rapidement une annonce. La confiance finale dépend de la corroboration par une source primaire durable et directement responsable du fait.",
+  "checkedAt": "2026-08-14",
+  "methodology": "Les flux X et la presse spécialisée servent à détecter rapidement une annonce. La confiance finale dépend de la corroboration par une source primaire durable et directement responsable du fait. Lorsque le domaine officiel est injoignable depuis l’environnement d’exécution, la mention en est faite dans confidenceReason.",
   "announcements": [
     {
-      "id": "A20260630-ANTHROPIC-SONNET5-PRIX",
-      "publishedAt": "2026-06-30",
+      "id": "A20260810-ANTHROPIC-SONNET5-PRIX-PERMANENT",
+      "publishedAt": "2026-08-10",
       "actor": "Anthropic",
       "category": "Prix",
-      "title": "La hausse de Claude Sonnet 5 reste prévue au 1er septembre",
-      "summary": "Le tarif promotionnel reste fixé à 2 USD par million de jetons d’entrée et 10 USD en sortie jusqu’au 31 août 2026. Le tarif standard de 3/15 USD s’applique à partir du 1er septembre 2026.",
-      "confidence": 99,
+      "title": "Le tarif de Claude Sonnet 5 devient définitif à 2/10 USD/M : la hausse du 1er septembre est annulée",
+      "summary": "Le tarif de lancement de 2 USD par million de jetons d’entrée et 10 USD en sortie devient le tarif standard de Claude Sonnet 5. La hausse vers 3/15 USD/M qui était programmée au 1er septembre 2026 n’aura pas lieu. Les tarifs des abonnements grand public restent inchangés.",
+      "confidence": 97,
       "confidenceLabel": "Très forte",
-      "confidenceReason": "Les deux pages officielles Anthropic consultées directement le 13 août 2026 donnent le même calendrier et les mêmes montants.",
+      "confidenceReason": "Page tarifaire officielle Anthropic ouverte directement le 14 août 2026 : une note nommée « claude-sonnet-5-introductory-pricing » indique explicitement que la hausse programmée au 1er septembre n’aura pas lieu. Corroboré par la reprise Techmeme du 10 août 2026 citant le compte officiel @claudeai et par plusieurs sources indépendantes.",
       "signals": [
         {
           "sourceId": "R18",
-          "label": "@AnthropicAI sur X",
-          "url": "https://x.com/AnthropicAI"
+          "label": "@AnthropicAI / @claudeai sur X (via Techmeme)",
+          "url": "https://www.techmeme.com/260810/p42"
         }
       ],
       "evidence": [
         {
-          "label": "Page tarifaire officielle",
+          "label": "Page tarifaire officielle (note claude-sonnet-5-introductory-pricing)",
           "url": "https://platform.claude.com/docs/en/about-claude/pricing"
         },
         {
-          "label": "What's new in Claude Sonnet 5",
-          "url": "https://platform.claude.com/docs/en/about-claude/models/whats-new-sonnet-5"
+          "label": "Techmeme — 10 août 2026, reprise du compte officiel",
+          "url": "https://www.techmeme.com/260810/p42"
         }
       ],
-      "caveat": "Tarification susceptible d’évoluer; revérifier au moment d’un engagement important.",
-      "belgiumImpact": "Effet direct sur le budget API d’un développeur belge : +50 % sur l’entrée et la sortie à partir du 1er septembre. Facturation en USD, conversion EUR à la charge du client.",
-      "verificationStatus": "Vérifié directement le 2026-08-13 — deux sources officielles concordantes",
-      "lastCheckedAt": "2026-08-13"
+      "caveat": "Cette annulation remplace l’échéance du 1er septembre publiée jusqu’au contrôle du 13 août 2026. Un tarif reste modifiable : revérifier la page officielle avant tout engagement pluriannuel.",
+      "belgiumImpact": "Le budget API d’un développeur belge évite la hausse de 50 % qui était anticipée sur l’entrée et la sortie. Un arbitrage de migration motivé uniquement par ce surcoût n’a plus d’objet. Facturation en USD, conversion EUR à la charge du client.",
+      "verificationStatus": "Vérifié directement le 2026-08-14 — source primaire durable ouverte + corroboration officielle",
+      "lastCheckedAt": "2026-08-14"
+    },
+    {
+      "id": "A20260813-OPENAI-ULTRAFAST-CEREBRAS",
+      "publishedAt": "2026-08-13",
+      "actor": "OpenAI / Cerebras",
+      "category": "API",
+      "title": "OpenAI ouvre en préversion limitée « Ultrafast », un palier de service pour GPT-5.6 Sol",
+      "summary": "Ultrafast est un nouveau palier de service de l’API OpenAI pour GPT-5.6 Sol, opéré avec le matériel Cerebras. Le fournisseur annonce jusqu’à 750 jetons de sortie par seconde et jusqu’à 14 fois la vitesse du palier Standard, à intelligence déclarée identique. L’accès est une préversion limitée à un ensemble de clients sélectionnés.",
+      "confidence": 88,
+      "confidenceLabel": "Bonne",
+      "confidenceReason": "Deux publications d’éditeur concordantes (page d’annonce OpenAI et blog technique Cerebras) plus un communiqué GlobeNewswire daté du 13 août 2026 et une reprise TechCrunch. Les domaines openai.com et cerebras.ai sont bloqués par la politique réseau sortante de l’environnement : le contenu est établi par l’index de recherche et la convergence des sources, sans ouverture directe.",
+      "signals": [
+        {
+          "sourceId": "R17",
+          "label": "@OpenAI sur X",
+          "url": "https://x.com/OpenAI"
+        }
+      ],
+      "evidence": [
+        {
+          "label": "Annonce OpenAI « Previewing Ultrafast mode »",
+          "url": "https://openai.com/index/previewing-ultrafast/"
+        },
+        {
+          "label": "Blog technique Cerebras",
+          "url": "https://www.cerebras.ai/blog/accelerating-gpt-5-6-sol-ultrafast-with-openai"
+        },
+        {
+          "label": "Communiqué Cerebras (GlobeNewswire, 13 août 2026)",
+          "url": "https://www.globenewswire.com/news-release/2026/08/13/3344804/0/en/cerebras-powers-ultrafast-mode-for-openai-s-gpt-5-6-sol.html"
+        },
+        {
+          "label": "Reprise TechCrunch",
+          "url": "https://techcrunch.com/2026/08/13/openai-introduces-ultrafast-a-new-mode-that-makes-gpt-5-6-sol-work-at-14x-the-speed/"
+        }
+      ],
+      "caveat": "Les chiffres de vitesse — 750 jetons/s, ×14 face au palier Standard, comparaisons face à des modèles concurrents — sont des résultats fournisseur non reproduits indépendamment. Aucun tarif Ultrafast, quota, liste de régions, engagement minimum ni terme de niveau de service n’est publié à ce jour.",
+      "belgiumImpact": "Sans effet immédiat depuis la Belgique : la préversion est fermée et aucune région ni tarif n’est publié. À surveiller pour les usages sensibles à la latence ; ne pas budgéter tant que le prix du palier n’est pas publié.",
+      "verificationStatus": "Vérifié le 2026-08-14 par convergence — domaines éditeurs inaccessibles depuis l’environnement",
+      "lastCheckedAt": "2026-08-14"
+    },
+    {
+      "id": "A20260811-MISTRAL-MODELES-TIERS",
+      "publishedAt": "2026-08-11",
+      "actor": "Mistral AI",
+      "category": "Plateforme API",
+      "title": "Mistral ouvre des endpoints régionaux facturés, un Priority Tier et l’hébergement de modèles ouverts tiers",
+      "summary": "Mistral publie des endpoints régionaux permettant d’épingler l’inférence en Europe (api.eu.mistral.ai) ou aux États-Unis (api.us.mistral.ai), facturés 1,1 fois le tarif standard. Un Priority Tier en préversion publique ajoute des limites de débit personnalisées et un engagement de disponibilité de 99,5 %, à 1,75 fois le tarif standard. La plateforme commence par ailleurs à héberger des modèles ouverts tiers, à commencer par GLM-5.2 de Z.ai en préversion publique, et annonce une coalition d’entreprises européennes engageant 200 MW de capacité d’ici fin 2027 et 1 GW d’ici fin 2030.",
+      "confidence": 88,
+      "confidenceLabel": "Bonne",
+      "confidenceReason": "Annonce officielle Mistral référencée par son URL exacte et relayée par le compte officiel @MistralAI, corroborée par au moins quatre sources indépendantes concordantes sur les multiplicateurs 1,1× et 1,75×, le SLA de 99,5 % et les deux noms d’hôtes. Le domaine mistral.ai est bloqué par la politique réseau sortante : la page n’a pas été ouverte directement.",
+      "signals": [
+        {
+          "sourceId": "R21",
+          "label": "@MistralAI sur X",
+          "url": "https://x.com/MistralAI"
+        }
+      ],
+      "evidence": [
+        {
+          "label": "Annonce officielle Mistral (non ouverte, via index)",
+          "url": "https://mistral.ai/news/regional-inference-open-models-new-compute/"
+        },
+        {
+          "label": "Couverture VentureBeat",
+          "url": "https://venturebeat.com/infrastructure/mistral-ai-wants-to-build-1-gigawatt-of-european-compute-by-2030-and-lock-in-customers-now"
+        },
+        {
+          "label": "Couverture Digital Watch Observatory",
+          "url": "https://dig.watch/updates/mistral-european-ai-models-compute"
+        }
+      ],
+      "caveat": "Le Priority Tier est en préversion publique : le SLA annoncé n’équivaut pas encore à un engagement contractuel signé. Épingler l’inférence dans la région UE ne garantit pas que toutes les fonctions associées y restent : la liste des sous-traitants doit être lue avant toute inscription dans un registre de traitement.",
+      "belgiumImpact": "Directement exploitable depuis la Belgique : le surcoût de la résidence européenne de l’inférence est désormais chiffré à 10 % du tarif standard, ce qui rend l’option budgétable pour un projet bloqué par une exigence de localisation. Facturation en USD ou EUR selon le contrat, à vérifier au moment de la souscription.",
+      "verificationStatus": "Revérifié le 2026-08-14 par convergence — domaine éditeur inaccessible depuis l’environnement",
+      "lastCheckedAt": "2026-08-14"
+    },
+    {
+      "id": "A20260731-GITHUB-COPILOT-DEPRECIATIONS",
+      "publishedAt": "2026-07-31",
+      "actor": "GitHub",
+      "category": "Compatibilité",
+      "title": "GitHub Copilot retire plusieurs modèles Anthropic, OpenAI et Google le 1er septembre 2026",
+      "summary": "GitHub retire une série de modèles de toutes les surfaces Copilot — chat, éditions en ligne, modes ask et agent, complétion — au 1er septembre 2026. Les modèles cités sont Claude Sonnet 3.7, Claude Sonnet 3.7 Thinking, Claude Opus 4 et Gemini 2.0 Flash. MAI-Code-1-Flash est retiré séparément au 10 septembre 2026, avec MAI-Code-1.1-Flash comme remplaçant proposé.",
+      "confidence": 84,
+      "confidenceLabel": "Bonne",
+      "confidenceReason": "Entrée de changelog officielle GitHub identifiée avec sa date et son URL exacte, plus une discussion communautaire GitHub et une reprise presse spécialisée concordantes. Le domaine github.blog est bloqué par la politique réseau sortante : la liste précise des modèles n’a pas pu être relue sur la page officielle et reste à confirmer entrée par entrée.",
+      "signals": [
+        {
+          "sourceId": "R31",
+          "label": "@ghchangelog sur X",
+          "url": "https://x.com/ghchangelog"
+        }
+      ],
+      "evidence": [
+        {
+          "label": "GitHub Changelog — dépréciations d’août 2026",
+          "url": "https://github.blog/changelog/2026-07-31-upcoming-august-2026-model-deprecations-in-github-copilot/"
+        },
+        {
+          "label": "Discussion communautaire GitHub #177743",
+          "url": "https://github.com/orgs/community/discussions/177743"
+        }
+      ],
+      "caveat": "La liste exacte des modèles retirés n’a pas pu être relue sur la page officielle depuis cet environnement. Une exception est évoquée pour certains abonnés annuels individuels ; les administrateurs Copilot Enterprise peuvent devoir ajuster les politiques de modèles pour ouvrir les remplaçants.",
+      "belgiumImpact": "Échéance de compatibilité à trois semaines pour tout développeur belge dont un flux, un script ou une politique d’entreprise épingle un de ces identifiants de modèle. Vérifier les politiques de modèles avant le 1er septembre.",
+      "verificationStatus": "Vérifié le 2026-08-14 par convergence — page de changelog inaccessible depuis l’environnement",
+      "lastCheckedAt": "2026-08-14"
+    },
+    {
+      "id": "A20260813-GOOGLE-DEPRECIATIONS-IMAGEN",
+      "publishedAt": "2026-08-13",
+      "actor": "Google",
+      "category": "Dépréciation",
+      "title": "Trois endpoints Imagen 4 s’arrêtent le 17 août 2026",
+      "summary": "Google confirme l’arrêt de `imagen-4.0-generate-001`, `imagen-4.0-ultra-generate-001` et `imagen-4.0-fast-generate-001` le 17 août 2026. Aucune échéance au 31 août n’est publiée dans le journal officiel pour `gemini-robotics-er-1.6-preview`.",
+      "confidence": 99,
+      "confidenceLabel": "Très forte",
+      "confidenceReason": "Le journal officiel Gemini API consulté directement le 13 août 2026 donne la liste exacte et la date d’arrêt.",
+      "signals": [
+        {
+          "sourceId": "R19",
+          "label": "@GoogleDeepMind sur X",
+          "url": "https://x.com/GoogleDeepMind"
+        }
+      ],
+      "evidence": [
+        {
+          "label": "Journal des modifications Gemini API",
+          "url": "https://ai.google.dev/gemini-api/docs/changelog"
+        }
+      ],
+      "caveat": "Échéance dans trois jours au 14 août 2026. Le journal officiel ai.google.dev n’a pas pu être rouvert dans ce contrôle : l’arrêt reste établi au niveau de preuve du 13 août 2026, date à laquelle la source officielle avait été consultée directement.",
+      "belgiumImpact": "Échéance identique en Belgique : toute intégration reposant sur ces trois endpoints Imagen 4 doit être migrée avant le 17 août.",
+      "verificationStatus": "Non revérifié le 2026-08-14 — domaine officiel bloqué par la politique réseau sortante ; fait conservé au niveau de preuve du contrôle précédent",
+      "lastCheckedAt": "2026-08-14"
+    },
+    {
+      "id": "A20260806-GITHUB-AGENT-PLUGINS",
+      "publishedAt": "2026-08-06",
+      "actor": "GitHub et partenaires",
+      "category": "Écosystème",
+      "title": "Agent Plugins 1.0 : un format commun d’extension d’agents publié avec AWS, Microsoft, OpenAI, Vercel, Anysphere et Google",
+      "summary": "Agent Plugins 1.0 est présenté comme un standard ouvert empaquetant des compétences d’agent et des serveurs MCP dans un greffon unique installable, gouverné indépendamment d’un éditeur unique. L’objectif affiché est de construire un greffon une fois et de l’utiliser dans tous les clients d’agents compatibles. La disponibilité couvre VS Code, Copilot CLI et l’application Copilot.",
+      "confidence": 86,
+      "confidenceLabel": "Bonne",
+      "confidenceReason": "Entrée de changelog officielle GitHub datée et référencée par son URL exacte, cohérente avec plusieurs reprises indépendantes. Domaine github.blog bloqué par la politique réseau sortante : contenu établi par index et convergence.",
+      "signals": [
+        {
+          "sourceId": "R31",
+          "label": "@ghchangelog sur X",
+          "url": "https://x.com/ghchangelog"
+        }
+      ],
+      "evidence": [
+        {
+          "label": "GitHub Changelog — Agent Plugins 1.0",
+          "url": "https://github.blog/changelog/2026-08-12-agent-plugins-1-0-in-vs-code-copilot-cli-and-the-copilot-app/"
+        }
+      ],
+      "caveat": "La gouvernance annoncée comme indépendante d’un éditeur unique n’a pas été vérifiée sur un document de gouvernance publié. Le périmètre exact de compatibilité entre clients d’agents reste à confirmer sur la spécification elle-même.",
+      "belgiumImpact": "Réduit le verrouillage pour un développeur belge qui outille plusieurs assistants : une compétence ou un serveur MCP empaqueté une fois devient réutilisable. Aucune restriction géographique annoncée.",
+      "verificationStatus": "Vérifié le 2026-08-14 par convergence — page de changelog inaccessible depuis l’environnement",
+      "lastCheckedAt": "2026-08-14"
     },
     {
       "id": "A20260811-OPENAI-PUBLICITE-CHATGPT",
@@ -68,100 +232,8 @@
       ],
       "caveat": "Le ciblage, la base légale du traitement et les options de refus applicables dans l’UE n’ont pas pu être vérifiés sur une source primaire.",
       "belgiumImpact": "La Belgique ne figure dans aucune des vagues de déploiement annoncées à ce jour : pas de publicité constatée dans ChatGPT en Belgique. À surveiller, l’extension européenne étant annoncée.",
-      "verificationStatus": "Vérifié le 2026-08-13 via index — convergence de sources indépendantes",
-      "lastCheckedAt": "2026-08-13"
-    },
-    {
-      "id": "A20260811-MISTRAL-MODELES-TIERS",
-      "publishedAt": "2026-08-11",
-      "actor": "Mistral AI",
-      "category": "Plateforme API",
-      "title": "Mistral héberge des modèles ouverts tiers et engage une coalition de calcul européenne",
-      "summary": "En complément des Regional Endpoints en disponibilité générale, Mistral commence à héberger des modèles ouverts tiers sur sa plateforme, à commencer par GLM-5.2 de Z.ai, et annonce une coalition d’entreprises européennes soutenant 200 MW d’infrastructure d’ici fin 2027 et 1 GW d’ici fin 2030.",
-      "confidence": 88,
-      "confidenceLabel": "Forte",
-      "confidenceReason": "Page officielle non ouverte directement — domaine bloqué par la politique réseau sortante. Fait établi via l’index de recherche restituant la page officielle et par convergence d’au moins deux sources indépendantes. Trois sources indépendantes concordantes, dont deux médias spécialisés.",
-      "signals": [
-        {
-          "sourceId": "R21",
-          "label": "@MistralAI sur X",
-          "url": "https://x.com/MistralAI"
-        }
-      ],
-      "evidence": [
-        {
-          "label": "Annonce officielle Mistral (non ouverte, via index)",
-          "url": "https://mistral.ai/news/regional-inference-open-models-new-compute/"
-        },
-        {
-          "label": "Couverture VentureBeat",
-          "url": "https://venturebeat.com/infrastructure/mistral-ai-wants-to-build-1-gigawatt-of-european-compute-by-2030-and-lock-in-customers-now"
-        },
-        {
-          "label": "Couverture Digital Watch Observatory",
-          "url": "https://dig.watch/updates/mistral-european-ai-models-compute"
-        }
-      ],
-      "caveat": "Héberger un modèle tiers sur une infrastructure européenne ne dit rien de sa licence ni des conditions de son éditeur : à vérifier modèle par modèle avant tout usage professionnel.",
-      "belgiumImpact": "Élargit l’offre de modèles accessibles depuis un endpoint dont la région d’inférence peut être fixée en Europe, ce qui est directement pertinent pour un utilisateur belge.",
-      "verificationStatus": "Vérifié le 2026-08-13 via index — convergence de sources indépendantes",
-      "lastCheckedAt": "2026-08-13"
-    },
-    {
-      "id": "A20260813-GOOGLE-DEPRECIATIONS-IMAGEN",
-      "publishedAt": "2026-08-13",
-      "actor": "Google",
-      "category": "Dépréciation",
-      "title": "Trois endpoints Imagen 4 s’arrêtent le 17 août 2026",
-      "summary": "Google confirme l’arrêt de `imagen-4.0-generate-001`, `imagen-4.0-ultra-generate-001` et `imagen-4.0-fast-generate-001` le 17 août 2026. Aucune échéance au 31 août n’est publiée dans le journal officiel pour `gemini-robotics-er-1.6-preview`.",
-      "confidence": 99,
-      "confidenceLabel": "Très forte",
-      "confidenceReason": "Le journal officiel Gemini API consulté directement le 13 août 2026 donne la liste exacte et la date d’arrêt.",
-      "signals": [
-        {
-          "sourceId": "R19",
-          "label": "@GoogleDeepMind sur X",
-          "url": "https://x.com/GoogleDeepMind"
-        }
-      ],
-      "evidence": [
-        {
-          "label": "Journal des modifications Gemini API",
-          "url": "https://ai.google.dev/gemini-api/docs/changelog"
-        }
-      ],
-      "caveat": "L’absence d’une échéance Robotics dans cette page ne prouve pas qu’elle ne sera jamais annoncée; elle ne doit simplement pas être présentée comme certaine aujourd’hui.",
-      "belgiumImpact": "Échéance identique en Belgique : toute intégration reposant sur ces trois endpoints Imagen 4 doit être migrée avant le 17 août.",
-      "verificationStatus": "Vérifié directement le 2026-08-13 — source officielle",
-      "lastCheckedAt": "2026-08-13"
-    },
-    {
-      "id": "A20260813-SIGNAUX-PRECOCES",
-      "publishedAt": "2026-08-13",
-      "actor": "Multiples",
-      "category": "Signal précoce",
-      "title": "Signaux précoces non confirmés : Cursor Origin, remplacement des Gems par des Skills",
-      "summary": "Signaux rapportés par TestingCatalog et non confirmés par leurs éditeurs : Cursor préparerait « Origin », un pipeline de revue automatisée pour dépôts GitHub ; Google remplacerait les Gems par des Skills dans l’application web Gemini d’ici le 20 octobre ; OpenAI préparerait une offre étudiante d’un an de ChatGPT Plus.",
-      "confidence": 62,
-      "confidenceLabel": "Faible",
-      "confidenceReason": "Source de signal précoce assumée comme telle. Aucune corroboration officielle trouvée. Publié explicitement comme piste de surveillance, jamais comme fait établi.",
-      "signals": [
-        {
-          "sourceId": "R35",
-          "label": "TestingCatalog",
-          "url": "https://www.testingcatalog.com/"
-        }
-      ],
-      "evidence": [
-        {
-          "label": "TestingCatalog — étiquette « leak » (non ouverte, via index)",
-          "url": "https://www.testingcatalog.com/tag/leak/"
-        }
-      ],
-      "caveat": "À confirmer. Aucune de ces fonctionnalités ne doit être intégrée à une décision d’architecture ou d’achat en l’état.",
-      "belgiumImpact": "Indéterminé tant que les éditeurs n’ont pas confirmé le périmètre géographique.",
-      "verificationStatus": "À confirmer — signal précoce non corroboré",
-      "lastCheckedAt": "2026-08-13"
+      "verificationStatus": "Non revérifié le 2026-08-14 — domaine officiel bloqué par la politique réseau sortante ; fait conservé au niveau de preuve du contrôle précédent",
+      "lastCheckedAt": "2026-08-14"
     },
     {
       "id": "A20260812-OPENAI-PYTHON-SDK-3",
@@ -170,9 +242,9 @@
       "category": "SDK",
       "title": "Le SDK Python officiel d’OpenAI passe en version majeure 3.0.0",
       "summary": "La bibliothèque `openai` publie 3.0.0 le 12 août 2026, au lendemain de 2.54.0. Un saut de version majeure signale des ruptures de compatibilité pour le code existant. La version exige Python 3.10 ou supérieur.",
-      "confidence": 92,
-      "confidenceLabel": "Forte",
-      "confidenceReason": "Le registre officiel de distribution PyPI, opéré par l’éditeur, prouve de façon durable la publication et sa date. Le détail des ruptures n’a pas pu être lu : le changelog du dépôt était inaccessible pendant ce run.",
+      "confidence": 95,
+      "confidenceLabel": "Très forte",
+      "confidenceReason": "Version confirmée directement le 14 août 2026 sur le registre officiel PyPI : openai 3.0.0, publiée le 12 août 2026 à 01:55 UTC. Un registre de distribution prouve l’existence et la date de la version, pas le détail du contenu des notes de version.",
       "signals": [
         {
           "sourceId": "R38",
@@ -192,8 +264,8 @@
       ],
       "caveat": "Le contenu exact des ruptures reste à confirmer sur le changelog officiel. Les projets qui n’épinglent pas `openai<3` peuvent casser à la prochaine installation.",
       "belgiumImpact": "Aucun effet sur la disponibilité du service en Belgique : le paquet est distribué mondialement. L’impact est de nature technique, sur la compatibilité des projets.",
-      "verificationStatus": "Vérifié le 2026-08-13 — registre officiel consulté",
-      "lastCheckedAt": "2026-08-13"
+      "verificationStatus": "Revérifié directement le 2026-08-14 sur pypi.org — preuve primaire durable",
+      "lastCheckedAt": "2026-08-14"
     },
     {
       "id": "A20260811-NVIDIA-NEMOTRON",
@@ -219,8 +291,9 @@
         }
       ],
       "caveat": "Le gain de débit annoncé n’est pas traité comme une mesure indépendante.",
-      "lastCheckedAt": "2026-08-13",
-      "verificationStatus": "Non revérifié le 2026-08-13 — preuve primaire inaccessible (politique réseau sortante)"
+      "lastCheckedAt": "2026-08-14",
+      "verificationStatus": "Non revérifié le 2026-08-14 — domaine officiel bloqué par la politique réseau sortante ; fait conservé au niveau de preuve du contrôle précédent",
+      "belgiumImpact": "Poids ouverts téléchargeables depuis la Belgique sans restriction géographique annoncée : exécutable sur matériel personnel, la question de la résidence des données ne se pose alors plus. Vérifier la licence avant tout usage commercial."
     },
     {
       "id": "A20260810-META-MUSE",
@@ -246,8 +319,9 @@
         }
       ],
       "caveat": "Les accélérations annoncées par le fournisseur restent à mesurer sur le matériel cible.",
-      "lastCheckedAt": "2026-08-13",
-      "verificationStatus": "Non revérifié le 2026-08-13 — preuve primaire inaccessible (politique réseau sortante)"
+      "lastCheckedAt": "2026-08-14",
+      "verificationStatus": "Non revérifié le 2026-08-14 — domaine officiel bloqué par la politique réseau sortante ; fait conservé au niveau de preuve du contrôle précédent",
+      "belgiumImpact": "Poids ouverts sous Apache 2.0, téléchargeables et exécutables localement depuis la Belgique. Candidat pour un agent généraliste local sur une carte 24 Go ; voir le guide des modèles locaux par matériel."
     },
     {
       "id": "A20260804-MISTRAL-SHIELDSTRAL",
@@ -273,35 +347,9 @@
         }
       ],
       "caveat": "Les performances doivent être évaluées sur des données françaises et néerlandaises réelles.",
-      "lastCheckedAt": "2026-08-13",
-      "verificationStatus": "Non revérifié le 2026-08-13 — preuve primaire inaccessible (politique réseau sortante)"
-    },
-    {
-      "id": "A20260803-QWEN-MAX",
-      "publishedAt": "2026-08-03",
-      "actor": "Alibaba / Qwen",
-      "category": "Modèle API",
-      "title": "Qwen3.8-Max est annoncé",
-      "summary": "Modèle MoE multimodal avec contexte annoncé de 1 M ; l’ouverture ultérieure des poids est présentée comme une intention.",
-      "confidence": 78,
-      "confidenceLabel": "Moyenne",
-      "confidenceReason": "Signal officiel et fiche de distribution disponibles, mais preuve primaire durable incomplète pour les poids et la licence.",
-      "signals": [
-        {
-          "sourceId": "R23",
-          "label": "@Alibaba_Qwen sur X",
-          "url": "https://x.com/Alibaba_Qwen"
-        }
-      ],
-      "evidence": [
-        {
-          "label": "Fiche de distribution",
-          "url": "https://openrouter.ai/qwen/qwen3.8-max"
-        }
-      ],
-      "caveat": "Les poids annoncés et leur licence restent à confirmer tant que le dépôt officiel n’existe pas.",
-      "lastCheckedAt": "2026-08-13",
-      "verificationStatus": "Non revérifié le 2026-08-13 — preuve primaire inaccessible (politique réseau sortante)"
+      "lastCheckedAt": "2026-08-14",
+      "verificationStatus": "Non revérifié le 2026-08-14 — domaine officiel bloqué par la politique réseau sortante ; fait conservé au niveau de preuve du contrôle précédent",
+      "belgiumImpact": "Garde-fou ouvert publié par un éditeur européen soumis au RGPD : directement pertinent pour un développeur belge qui doit filtrer entrées et sorties sans envoyer de contenu à un service tiers hors UE."
     },
     {
       "id": "A20260811-GITHUB-COPILOT-JETBRAINS",
@@ -332,8 +380,37 @@
         }
       ],
       "caveat": "La disponibilité dépend de la version du plugin JetBrains et des politiques administrateur.",
-      "lastCheckedAt": "2026-08-13",
-      "verificationStatus": "Non revérifié le 2026-08-13 — preuve primaire inaccessible (politique réseau sortante)"
+      "lastCheckedAt": "2026-08-14",
+      "verificationStatus": "Non revérifié le 2026-08-14 — domaine officiel bloqué par la politique réseau sortante ; fait conservé au niveau de preuve du contrôle précédent",
+      "belgiumImpact": "Disponible depuis la Belgique selon l’offre souscrite. L’accès à Ollama depuis l’IDE permet de router certaines tâches vers un modèle local, donc de garder le code hors du cloud du fournisseur."
+    },
+    {
+      "id": "A20260803-QWEN-MAX",
+      "publishedAt": "2026-08-03",
+      "actor": "Alibaba / Qwen",
+      "category": "Modèle API",
+      "title": "Qwen3.8-Max est annoncé",
+      "summary": "Modèle MoE multimodal avec contexte annoncé de 1 M ; l’ouverture ultérieure des poids est présentée comme une intention.",
+      "confidence": 78,
+      "confidenceLabel": "Moyenne",
+      "confidenceReason": "Signal officiel et fiche de distribution disponibles, mais preuve primaire durable incomplète pour les poids et la licence.",
+      "signals": [
+        {
+          "sourceId": "R23",
+          "label": "@Alibaba_Qwen sur X",
+          "url": "https://x.com/Alibaba_Qwen"
+        }
+      ],
+      "evidence": [
+        {
+          "label": "Fiche de distribution",
+          "url": "https://openrouter.ai/qwen/qwen3.8-max"
+        }
+      ],
+      "caveat": "Les poids annoncés et leur licence restent à confirmer tant que le dépôt officiel n’existe pas.",
+      "lastCheckedAt": "2026-08-14",
+      "verificationStatus": "Non revérifié le 2026-08-14 — domaine officiel bloqué par la politique réseau sortante ; fait conservé au niveau de preuve du contrôle précédent",
+      "belgiumImpact": "Sans effet exploitable : les poids annoncés ne sont pas publiés et aucune licence n’est nommée. La disponibilité commerciale en Belgique et la localisation des données restent à confirmer pour ce fournisseur."
     },
     {
       "id": "A20260728-MCP-SPEC",
@@ -344,7 +421,7 @@
       "summary": "Le protocole adopte un cœur sans état, formalise les extensions et prépare plusieurs dépréciations.",
       "confidence": 97,
       "confidenceLabel": "Très forte",
-      "confidenceReason": "Publication officielle de la spécification consultée le 13/08/2026 et SDK correspondants publiés à la même date sur les registres officiels.",
+      "confidenceReason": "Blog officiel du Model Context Protocol ouvert directement le 14 août 2026 : la spécification 2026-07-28 reste la publication la plus récente, aucune révision d’août n’est parue.",
       "signals": [
         {
           "sourceId": "R30",
@@ -367,9 +444,61 @@
         }
       ],
       "caveat": "La compatibilité et le calendrier doivent être vérifiés dans chaque SDK utilisé.",
-      "lastCheckedAt": "2026-08-13",
-      "verificationStatus": "Revérifié le 2026-08-13 — publication officielle consultée"
+      "lastCheckedAt": "2026-08-14",
+      "verificationStatus": "Revérifié directement le 2026-08-14 sur blog.modelcontextprotocol.io — toujours la version courante",
+      "belgiumImpact": "Norme d’interopérabilité sans restriction géographique. Impact belge indirect mais réel : les dépréciations de DCR, Roots, Sampling et Logging imposent un inventaire des intégrations MCP existantes avant migration."
+    },
+    {
+      "id": "A20260814-SIGNAUX-PRECOCES",
+      "publishedAt": "2026-08-14",
+      "actor": "Multiples",
+      "category": "Signal précoce",
+      "title": "Signaux précoces non confirmés : rapprochement Anthropic–Decart, série d’incidents ChatGPT",
+      "summary": "Deux pistes détectées pendant la veille quotidienne et publiées comme signaux, non comme faits. Un, des articles de presse rapportent des discussions d’acquisition entre Anthropic et la société israélienne Decart, spécialisée en vidéo générative temps réel et en optimisation GPU, pour un montant évoqué d’environ 6 milliards USD ; aucune communication officielle d’une des deux parties n’a été trouvée. Deux, plusieurs médias décrivent une série d’interruptions de ChatGPT, du Codex et du navigateur intégré durant la semaine du 10 août, présentée comme la cinquième en une semaine ; la page d’état officielle n’a pas pu être ouverte pour la confirmer.",
+      "confidence": 62,
+      "confidenceLabel": "Faible — à confirmer",
+      "confidenceReason": "Aucune preuve primaire durable. Pour le rapprochement Anthropic–Decart, uniquement des reprises de presse sans communiqué des parties. Pour les incidents, aucune consultation possible de status.openai.com, bloqué par la politique réseau sortante ; les agrégateurs d’état consultés indiquent un service opérationnel au 14 août.",
+      "signals": [
+        {
+          "sourceId": "R17",
+          "label": "@OpenAI sur X",
+          "url": "https://x.com/OpenAI"
+        },
+        {
+          "sourceId": "R18",
+          "label": "@AnthropicAI sur X",
+          "url": "https://x.com/AnthropicAI"
+        }
+      ],
+      "evidence": [
+        {
+          "label": "Page d’état officielle OpenAI (non ouverte — domaine bloqué)",
+          "url": "https://status.openai.com/"
+        },
+        {
+          "label": "Page d’état officielle Anthropic (non ouverte — domaine bloqué)",
+          "url": "https://status.claude.com/"
+        }
+      ],
+      "caveat": "À confirmer. Ne pas utiliser ces deux éléments comme base d’une décision d’architecture, de contrat ou de budget.",
+      "belgiumImpact": "Aucun impact belge établi. Si la série d’incidents se confirmait, elle renforcerait l’intérêt d’un basculement de secours entre fournisseurs pour tout service exposé à des utilisateurs.",
+      "verificationStatus": "Non confirmé le 2026-08-14 — pages d’état officielles inaccessibles",
+      "lastCheckedAt": "2026-08-14"
     }
   ],
-  "verificationNotice": "Contrôle du 13 août 2026. Le run initial a subi un blocage réseau étendu. La revérification corrective a consulté les documentations officielles Anthropic et Google pour les corrections Sonnet 5 et Imagen. Les autres annonces conservent leur statut explicite : registre officiel, via index ou signal précoce. Aucun signal non corroboré n’est publié comme fait certain."
+  "verificationNotice": {
+    "checkedAt": "2026-08-14",
+    "level": "warning",
+    "title": "Une annonce publiée la veille est corrigée par sa source primaire",
+    "detail": "La hausse de Claude Sonnet 5 au 1er septembre 2026, publiée jusqu’au contrôle du 13 août, est annulée par Anthropic : le tarif de 2/10 USD/M devient le tarif standard. La page tarifaire officielle a été ouverte directement le 14 août 2026. La politique réseau sortante de l’environnement bloque encore la plupart des domaines éditeurs ; les faits qui en dépendent sont marqués comme non revérifiés plutôt que promus.",
+    "reachableSources": [
+      "platform.claude.com",
+      "cloud.google.com",
+      "blog.modelcontextprotocol.io",
+      "pypi.org",
+      "registry.npmjs.org",
+      "api.github.com"
+    ],
+    "remediation": "Retester les domaines bloqués au prochain run quotidien ; ne promouvoir aucun fait au-delà de 89/100 sans ouverture directe d’une source primaire durable."
+  }
 }
