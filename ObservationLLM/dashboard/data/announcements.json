@@ -1,8 +1,68 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-08-13",
+  "checkedAt": "2026-08-14",
   "methodology": "Les flux X servent à détecter rapidement une annonce. La confiance finale dépend de la corroboration par une source primaire durable et directement responsable du fait.",
   "announcements": [
+    {
+      "id": "A20260814-ANTHROPIC-WORKBENCH-LEGACY",
+      "publishedAt": null,
+      "actor": "Anthropic",
+      "category": "Retrait",
+      "title": "Workbench (legacy) sera retiré le 17 août 2026",
+      "summary": "Anthropic demande d’exporter avant le 17 août les prompts, versions, complétions, fichiers et évaluations à conserver. Après le retrait, ces données ne seront plus accessibles. Le Workbench actualisé est sans état et n’accepte pas l’import de l’export legacy.",
+      "confidence": 99,
+      "confidenceLabel": "Très forte",
+      "confidenceReason": "Le centre d’aide Anthropic a été consulté directement le 14 août 2026 et décrit explicitement la date, les données concernées et la procédure d’export.",
+      "signals": [
+        {
+          "sourceId": "R43",
+          "label": "Centre d’aide Anthropic",
+          "url": "https://support.claude.com/en/articles/8606378-how-do-i-use-the-workbench"
+        }
+      ],
+      "evidence": [
+        {
+          "label": "How do I use the Workbench?",
+          "url": "https://support.claude.com/en/articles/8606378-how-do-i-use-the-workbench"
+        }
+      ],
+      "caveat": "La page indique seulement « Updated over a month ago » : sa date exacte de publication ou de mise à jour n’est pas publiée.",
+      "belgiumImpact": "L’échéance concerne aussi les développeurs belges utilisant Claude Console. L’export doit être demandé avant le 17 août ; le lien de téléchargement est envoyé par e-mail.",
+      "verificationStatus": "Vérifié directement le 2026-08-14 — source officielle primaire",
+      "lastCheckedAt": "2026-08-14"
+    },
+    {
+      "id": "A20260723-OPENAI-CHATGPT-HEALTH",
+      "publishedAt": "2026-07-23",
+      "actor": "OpenAI",
+      "category": "Disponibilité",
+      "title": "Health in ChatGPT reste indisponible en Belgique",
+      "summary": "Le centre d’aide OpenAI réserve Health aux utilisateurs éligibles de 18 ans ou plus, connectés aux États-Unis, sur Web et iOS. Les données médicales et Apple Health connectées, ainsi que les conversations qui les utilisent, ne servent pas à entraîner les modèles de fondation ni à cibler les publicités.",
+      "confidence": 99,
+      "confidenceLabel": "Très forte",
+      "confidenceReason": "La page d’aide officielle OpenAI, consultée directement le 14 août 2026, précise l’éligibilité américaine, les plateformes et les contrôles de données.",
+      "signals": [
+        {
+          "sourceId": "R33",
+          "label": "TechCrunch AI",
+          "url": "https://techcrunch.com/category/artificial-intelligence/"
+        }
+      ],
+      "evidence": [
+        {
+          "label": "Health in ChatGPT — OpenAI Help Center",
+          "url": "https://help.openai.com/en/articles/20001036-health-in-chatgpt"
+        },
+        {
+          "label": "Annonce OpenAI du 23 juillet 2026",
+          "url": "https://openai.com/index/health-in-chatgpt/"
+        }
+      ],
+      "caveat": "Le déploiement reste progressif même pour les utilisateurs américains éligibles. Aucune date belge ou européenne n’est publiée.",
+      "belgiumImpact": "Non disponible en Belgique au 14 août 2026. Les garanties décrites concernent la fonctionnalité Health et ne remplacent pas une analyse médicale ou juridique.",
+      "verificationStatus": "Vérifié directement le 2026-08-14 — source officielle primaire",
+      "lastCheckedAt": "2026-08-14"
+    },
     {
       "id": "A20260630-ANTHROPIC-SONNET5-PRIX",
       "publishedAt": "2026-06-30",

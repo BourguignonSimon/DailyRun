@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "timezone": "Europe/Brussels",
-  "updatedAt": "2026-08-13T21:01:00Z",
+  "updatedAt": "2026-08-14T08:01:08Z",
   "orchestration": "single_daily_run",
   "weeklyRule": {
     "weekStartsOn": "monday",
@@ -27,11 +27,11 @@
         "sorties",
         "retraits"
       ],
-      "lastCompletedOn": "2026-08-13",
-      "nextDueOn": "2026-08-14",
+      "lastCompletedOn": "2026-08-14",
+      "nextDueOn": "2026-08-15",
       "status": "current",
-      "lastAttemptOn": "2026-08-13",
-      "evidenceLevel": "dégradé — pages officielles non ouvertes, convergence de sources indépendantes"
+      "lastAttemptOn": "2026-08-14",
+      "evidenceLevel": "primaire ciblé — centres d’aide Anthropic et OpenAI consultés ; six points d’entrée de veille contrôlés avec accessibilité variable"
     },
     {
       "id": "operational",
@@ -98,18 +98,18 @@
         "impacts transversaux",
         "mise à jour immédiate des vues concernées"
       ],
-      "lastCompletedOn": "2026-08-13",
+      "lastCompletedOn": "2026-08-14",
       "nextDueOn": null,
       "nextDueLabel": "À la prochaine détection importante",
       "status": "armed",
-      "lastAttemptOn": "2026-08-13",
-      "evidenceLevel": "primaire ciblé — calendrier Sonnet 5 et dépréciations Imagen revérifiés directement dans les documentations officielles"
+      "lastAttemptOn": "2026-08-14",
+      "evidenceLevel": "primaire complet sur l’événement — retrait Workbench (legacy) et procédure d’export vérifiés dans le centre d’aide Anthropic"
     }
   ],
   "blocking": {
-    "detectedAt": "2026-08-13",
-    "kind": "egress_policy_partially_resolved",
-    "summary": "Le run Opus 5 du matin signalait un blocage sortant généralisé. La revérification corrective a pu consulter le contenu des documentations officielles Anthropic et Google et corriger deux informations. Les autres domaines de veille n’ont pas tous été retestés directement dans ce run ciblé.",
+    "detectedAt": "2026-08-14",
+    "kind": "partial_source_access",
+    "summary": "Les centres d’aide Anthropic et OpenAI ainsi que les index TechCrunch et NVIDIA Research ont été exploitables. TLDR daté, AI Frontiers et plusieurs flux X n’ont pas fourni de contenu quotidien vérifiable ; aucune information issue de ces canaux n’a été promue comme certaine.",
     "reachableHosts": [
       "api.github.com",
       "raw.githubusercontent.com",
@@ -117,17 +117,16 @@
       "pypi.org",
       "registry.npmjs.org",
       "platform.claude.com",
-      "ai.google.dev"
+      "ai.google.dev",
+      "support.claude.com",
+      "help.openai.com",
+      "techcrunch.com",
+      "research.nvidia.com"
     ],
     "blockedHosts": [
-      "tldr.tech",
-      "techcrunch.com",
-      "venturebeat.com",
-      "www.testingcatalog.com",
+      "tldr.tech/ai/2026-08-14",
       "newsletter.ai-frontiers.org",
       "ai-frontiers.org",
-      "research.nvidia.com",
-      "openai.com",
       "platform.openai.com",
       "status.openai.com",
       "github.blog",
@@ -136,7 +135,7 @@
       "x.com",
       "docs.anthropic.com"
     ],
-    "remediation": "Retester les domaines encore listés lors du prochain run quotidien et conserver la mention « non revérifié » en l’absence de preuve primaire accessible.",
-    "evidenceLevel": "primaire ciblé pour Anthropic et Google ; inchangé pour les autres sujets non retestés"
+    "remediation": "Retester les points d’entrée incomplets au prochain run quotidien et conserver la mention « non revérifié » en l’absence de preuve primaire accessible.",
+    "evidenceLevel": "primaire ciblé pour Anthropic et OpenAI ; accès par index qualifié pour les sources de découverte"
   }
 }

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-08-13",
+  "checkedAt": "2026-08-14",
   "scoreMeaning": "Aptitude de la source à prouver les sujets indiqués, et non vérité universelle.",
   "sources": [
     {
@@ -629,9 +629,9 @@
       ],
       "confidence": 76,
       "rationale": "Newsletter technique datée et riche en liens ; chaque information matérielle doit être vérifiée dans la source originale",
-      "accessibility": "Inaccessible le 2026-08-13 depuis l’environnement d’exécution (politique réseau sortante)",
-      "last_verified_at": "2026-08-13",
-      "lastAccessResult": "bloqué par la politique réseau sortante"
+      "accessibility": "Page d’accueil restituée par l’index le 2026-08-14 ; l’édition datée du 14 août n’a pas été trouvée",
+      "last_verified_at": "2026-08-14",
+      "lastAccessResult": "accès partiel via index ; numéro quotidien à confirmer"
     },
     {
       "id": "R33",
@@ -649,9 +649,9 @@
       ],
       "confidence": 82,
       "rationale": "Rédaction technologique établie ; utile pour le contexte et les annonces, à recouper avec les sources primaires pour les caractéristiques",
-      "accessibility": "Inaccessible le 2026-08-13 depuis l’environnement d’exécution (politique réseau sortante)",
-      "last_verified_at": "2026-08-13",
-      "lastAccessResult": "bloqué par la politique réseau sortante"
+      "accessibility": "Catégorie AI restituée avec des articles du jour le 2026-08-14",
+      "last_verified_at": "2026-08-14",
+      "lastAccessResult": "accessible via index ; utilisé pour la détection, puis recoupé sur sources primaires"
     },
     {
       "id": "R34",
@@ -669,9 +669,9 @@
       ],
       "confidence": 80,
       "rationale": "Couverture spécialisée de l’IA d’entreprise ; confirmer prix, performances et disponibilité dans les documents d’origine",
-      "accessibility": "Inaccessible le 2026-08-13 depuis l’environnement d’exécution (politique réseau sortante)",
-      "last_verified_at": "2026-08-13",
-      "lastAccessResult": "bloqué par la politique réseau sortante"
+      "accessibility": "Catégorie AI restituée par l’index le 2026-08-14, mais fraîcheur quotidienne non établie",
+      "last_verified_at": "2026-08-14",
+      "lastAccessResult": "accès partiel via index ; aucune nouveauté retenue"
     },
     {
       "id": "R35",
@@ -689,9 +689,9 @@
       ],
       "confidence": 66,
       "rationale": "Utile pour détecter tôt des changements visibles dans les produits ; les fuites et rumeurs ne sont jamais publiées comme faits certains sans confirmation officielle",
-      "accessibility": "Inaccessible le 2026-08-13 depuis l’environnement d’exécution (politique réseau sortante)",
-      "last_verified_at": "2026-08-13",
-      "lastAccessResult": "bloqué par la politique réseau sortante"
+      "accessibility": "Résultats restitués par l’index le 2026-08-14 ; aucun signal récent corroboré retenu",
+      "last_verified_at": "2026-08-14",
+      "lastAccessResult": "accès partiel via index ; aucun fait publié"
     },
     {
       "id": "R36",
@@ -710,9 +710,9 @@
       ],
       "confidence": 74,
       "rationale": "Plateforme de dialogue et de commentaires experts ; les opinions sont attribuées à leurs auteurs et ne remplacent pas les données ou textes primaires",
-      "accessibility": "Inaccessible le 2026-08-13 depuis l’environnement d’exécution (politique réseau sortante)",
-      "last_verified_at": "2026-08-13",
-      "lastAccessResult": "bloqué par la politique réseau sortante"
+      "accessibility": "Aucun contenu daté du 14 août n’a été restitué par l’index le 2026-08-14",
+      "last_verified_at": "2026-08-14",
+      "lastAccessResult": "source non exploitable pour ce run"
     },
     {
       "id": "R37",
@@ -731,9 +731,9 @@
       ],
       "confidence": 96,
       "rationale": "Portail officiel des projets, laboratoires et publications NVIDIA ; les résultats restent déclarés par le fournisseur lorsqu’ils ne sont pas reproduits indépendamment",
-      "accessibility": "Inaccessible le 2026-08-13 depuis l’environnement d’exécution (politique réseau sortante)",
-      "last_verified_at": "2026-08-13",
-      "lastAccessResult": "bloqué par la politique réseau sortante"
+      "accessibility": "Portail et rapports officiels restitués par l’index le 2026-08-14 ; aucune nouvelle publication du jour détectée",
+      "last_verified_at": "2026-08-14",
+      "lastAccessResult": "accessible via index ; aucun fait nouveau publié"
     },
     {
       "id": "R38",
@@ -819,6 +819,44 @@
       "rationale": "Suivi documenté des politiques numériques européennes ; utile pour la corroboration et le contexte belge.",
       "accessibility": "Inaccessible en ouverture directe le 2026-08-13 ; restituée via index",
       "last_verified_at": "2026-08-13"
+    },
+    {
+      "id": "R43",
+      "name": "Claude Help Center — Workbench",
+      "actor": "Anthropic",
+      "baseUrl": "https://support.claude.com/",
+      "primary": true,
+      "kind": "Centre d’aide officiel",
+      "topics": [
+        "Claude Console",
+        "Workbench",
+        "retraits",
+        "export de données"
+      ],
+      "confidence": 99,
+      "rationale": "Source officielle directement responsable du produit et de son calendrier de retrait.",
+      "accessibility": "Article complet consulté le 2026-08-14",
+      "last_verified_at": "2026-08-14",
+      "lastAccessResult": "accessible ; date exacte de mise à jour non publiée"
+    },
+    {
+      "id": "R44",
+      "name": "OpenAI Help Center — Health in ChatGPT",
+      "actor": "OpenAI",
+      "baseUrl": "https://help.openai.com/",
+      "primary": true,
+      "kind": "Centre d’aide officiel",
+      "topics": [
+        "ChatGPT Health",
+        "disponibilité géographique",
+        "confidentialité",
+        "données de santé"
+      ],
+      "confidence": 99,
+      "rationale": "Source officielle directement responsable de l’éligibilité, des contrôles de données et des limites du service.",
+      "accessibility": "Article complet consulté le 2026-08-14",
+      "last_verified_at": "2026-08-14",
+      "lastAccessResult": "accessible ; déploiement américain progressif confirmé"
     }
   ],
   "accessibilityNote": "L’accessibilité est mesurée depuis l’environnement d’exécution du run. Une source marquée inaccessible n’est pas invalidée : elle n’a simplement pas pu être consultée lors de ce contrôle."

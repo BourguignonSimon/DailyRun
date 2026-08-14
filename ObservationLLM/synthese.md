@@ -1,14 +1,16 @@
-# Synthèse décisionnelle — contrôle du 13 août 2026
+# Synthèse décisionnelle — contrôle du 14 août 2026
 
-> **Une échéance budgétaire est confirmée par les pages officielles.** Le prix promotionnel de Claude Sonnet 5 reste à **2/10 USD/M jusqu’au 31 août 2026**, puis passe à **3/15 USD/M le 1er septembre**. Dans le même temps, **ChatGPT affiche des publicités** aux offres Free et Go dans neuf pays — les offres payantes en sont exemptes et **la Belgique n’est dans aucune vague annoncée**. Mistral, enfin, commence à **héberger des modèles ouverts tiers** (GLM-5.2 de Z.ai) derrière ses endpoints régionaux européens, et engage une coalition industrielle sur 200 MW d’ici fin 2027. Guide dédié: [modèles locaux par matériel](modeles-locaux-par-hardware.md).
+> **Une échéance opérationnelle exige une action immédiate.** Anthropic retire **Workbench (legacy) le 17 août 2026** ; les données à conserver doivent être exportées avant cette date. OpenAI confirme en parallèle que **Health in ChatGPT n’est pas disponible en Belgique** et reste limité aux utilisateurs éligibles aux États-Unis. Guide dédié : [modèles locaux par matériel](modeles-locaux-par-hardware.md).
 >
-> ⚠️ **Niveau de preuve.** Le run initial du 13 août a subi un blocage réseau étendu. La revérification corrective a toutefois consulté les documentations officielles Anthropic et Google : les corrections Sonnet 5 et Imagen reposent donc sur des preuves primaires. Les autres faits conservent leur niveau de preuve précédent, indiqué dans les fiches et le registre. Revérifiez avant tout engagement contractuel. Détail: [sources.md](sources.md).
+> ⚠️ **Niveau de preuve.** Les centres d’aide officiels Anthropic et OpenAI ont été consultés directement le 14 août. Les six points d’entrée de veille ont été interrogés, mais TLDR daté et AI Frontiers n’ont pas fourni de contenu quotidien exploitable. Les autres faits conservent le niveau de preuve indiqué dans leurs fiches. Revérifiez toujours prix, régions et conditions avant un engagement contractuel. Détail : [sources.md](sources.md).
 
-## Les trois choses à faire ce mois-ci
+## Les cinq choses à faire ce mois-ci
 
-1. **Budgéter la hausse Claude Sonnet 5.** Les pages officielles Anthropic consultées le 13 août 2026 confirment le tarif promotionnel **2/10 USD/M jusqu’au 31 août**, puis le tarif standard **3/15 USD/M à partir du 1er septembre**. Une migration motivée uniquement par le coût reste donc à arbitrer [S158–S159].
-2. **Vérifier les crédits GitHub Copilot Business/Enterprise**: les crédits promotionnels (+30 USD/mois en Business, +70 en Enterprise) **expirent fin août 2026**. À périmètre d’usage constant, la facture de septembre monte [S137].
-3. **Chiffrer l’option « région UE » chez Mistral**: les endpoints régionaux sont GA à **1,1× le tarif global** et le Priority Tier à **1,75× avec un SLA de disponibilité de 99,5 %**. Si la résidence des données bloquait un projet, le surcoût est désormais connu et modeste — mais lisez la réserve sur les sous-traitants hors région avant de l’inscrire dans un registre de traitement [S142–S144].
+1. **Exporter Workbench (legacy) avant le 17 août.** Anthropic indique qu’après cette date les prompts, versions, complétions, fichiers et évaluations sauvegardés ne seront plus accessibles. Le nouvel outil est sans état et n’importe pas l’export legacy [S167].
+2. **Ne pas planifier ChatGPT Health en Belgique.** La fonctionnalité reste limitée aux utilisateurs éligibles aux États-Unis, sur Web et iOS. Aucune date belge ou européenne n’est publiée [S168–S169].
+3. **Budgéter la hausse Claude Sonnet 5.** Les pages officielles Anthropic confirment le tarif promotionnel **2/10 USD/M jusqu’au 31 août**, puis le tarif standard **3/15 USD/M à partir du 1er septembre** [S158–S159].
+4. **Vérifier les crédits GitHub Copilot Business/Enterprise**: les crédits promotionnels (+30 USD/mois en Business, +70 en Enterprise) **expirent fin août 2026**. À périmètre d’usage constant, la facture de septembre monte [S137].
+5. **Chiffrer l’option « région UE » chez Mistral**: les endpoints régionaux sont GA à **1,1× le tarif global** et le Priority Tier à **1,75× avec un SLA de disponibilité de 99,5 %**. Si la résidence des données bloquait un projet, le surcoût est désormais connu et modeste — mais lisez la réserve sur les sous-traitants hors région avant de l’inscrire dans un registre de traitement [S142–S144].
 
 ## Verdict en une minute
 

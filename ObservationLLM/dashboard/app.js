@@ -25,7 +25,9 @@ async function getJson(path) {
 }
 
 function formatDate(value) {
-  return new Intl.DateTimeFormat("fr-BE", { day: "numeric", month: "long", year: "numeric" }).format(new Date(value));
+  const date = new Date(value);
+  if (!value || Number.isNaN(date.getTime())) return "date non publiée";
+  return new Intl.DateTimeFormat("fr-BE", { day: "numeric", month: "long", year: "numeric" }).format(date);
 }
 
 function initials(name) {

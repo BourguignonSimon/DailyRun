@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
   "run": {
-    "checkedAt": "2026-08-13T21:01:00Z",
-    "factsVerifiedThrough": "2026-08-13",
-    "commit": "4a0a82744a49e7da774f9263a1226ccdeb6fecef",
+    "checkedAt": "2026-08-14T08:01:08Z",
+    "factsVerifiedThrough": "2026-08-14",
+    "commit": "pending",
     "model": "Codex",
-    "result": "Contrôle du 13 août 2026 complété par une revérification primaire. Deux informations publiées plus tôt ont été corrigées dans toutes les vues : calendrier tarifaire Sonnet 5 et échéances Gemini. Les entrées non revérifiées intégralement restent signalées."
+    "result": "Veille du 14 août 2026 complétée. Anthropic confirme le retrait de Workbench (legacy) le 17 août et la perte d’accès aux prompts, versions et évaluations non exportés. OpenAI confirme que Health in ChatGPT reste limité aux États-Unis. Les entrées non revérifiées intégralement restent signalées."
   },
   "metrics": {
     "entityCount": 20,
@@ -14,11 +14,11 @@
     "highConfidenceSourceCount": 15,
     "eurUsdRate": 1.1554,
     "rateDate": "2026-08-05",
-    "verificationNote": "Aucun des vingt écosystèmes n’a été revérifié intégralement. Les faits corrigés sur Anthropic et Google ont été contrôlés directement dans leurs documentations officielles le 13 août 2026."
+    "verificationNote": "Aucun écosystème n’a été revérifié intégralement dans la veille temps réel du jour. Les échéances Workbench et la disponibilité géographique de Health in ChatGPT ont été contrôlées dans les centres d’aide officiels le 14 août 2026."
   },
   "headline": {
-    "title": "Claude Sonnet 5 passe bien à 3/15 USD/M le 1er septembre.",
-    "detail": "Les pages officielles maintiennent 2/10 USD/M jusqu’au 31 août, puis 3/15 USD/M. Google confirme l’arrêt de trois endpoints Imagen 4 le 17 août; aucune échéance au 31 août n’est publiée pour `gemini-robotics-er-1.6-preview`."
+    "title": "Exportez Workbench (legacy) avant le 17 août.",
+    "detail": "Anthropic indique que les prompts, versions, complétions et évaluations sauvegardés ne seront plus accessibles après le retrait. Le nouveau Workbench est sans état et ne permet pas de réimporter ces données."
   },
   "decisions": [
     {
@@ -633,10 +633,10 @@
     }
   ],
   "verificationNotice": {
-    "checkedAt": "2026-08-13",
+    "checkedAt": "2026-08-14",
     "level": "warning",
-    "title": "Preuve primaire rétablie pour les deux corrections critiques",
-    "detail": "Les documentations officielles Anthropic et Google ont été consultées le 13 août 2026 pour corriger le calendrier Sonnet 5 et les dépréciations Imagen. Les autres fiches non revérifiées intégralement conservent leur statut explicite; revérifiez toujours prix, régions et conditions avant un engagement contractuel ou budgétaire.",
+    "title": "Deux contrôles primaires ciblés, couverture globale inchangée",
+    "detail": "Les centres d’aide officiels Anthropic et OpenAI ont été consultés le 14 août 2026. Workbench (legacy) sera retiré le 17 août et Health in ChatGPT demeure réservé aux utilisateurs éligibles aux États-Unis. Les autres fiches non revérifiées intégralement conservent leur statut explicite.",
     "reachableSources": [
       "pypi.org",
       "registry.npmjs.org",
@@ -644,8 +644,12 @@
       "api.github.com",
       "raw.githubusercontent.com",
       "platform.claude.com",
-      "ai.google.dev"
+      "ai.google.dev",
+      "support.claude.com",
+      "help.openai.com",
+      "techcrunch.com",
+      "research.nvidia.com"
     ],
-    "remediation": "Retester les autres domaines au prochain run quotidien; ne promouvoir une information qu’après preuve primaire durable ou corroboration explicitement qualifiée."
+    "remediation": "Exporter immédiatement les données Workbench (legacy) utiles; retester les autres domaines au prochain run et ne promouvoir une information qu’après preuve primaire durable ou corroboration explicitement qualifiée."
   }
 }
