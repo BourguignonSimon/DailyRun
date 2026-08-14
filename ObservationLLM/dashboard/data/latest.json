@@ -3,7 +3,7 @@
   "run": {
     "checkedAt": "2026-08-14T08:01:08Z",
     "factsVerifiedThrough": "2026-08-14",
-    "commit": "pending",
+    "commit": "c4e027f2a3b18b9a5ab34195aee86b4fb927be72",
     "model": "Codex",
     "result": "Veille du 14 août 2026 complétée. Anthropic confirme le retrait de Workbench (legacy) le 17 août et la perte d’accès aux prompts, versions et évaluations non exportés. OpenAI confirme que Health in ChatGPT reste limité aux États-Unis. Les entrées non revérifiées intégralement restent signalées."
   },
