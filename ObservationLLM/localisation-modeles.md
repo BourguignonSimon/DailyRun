@@ -1,6 +1,6 @@
 # Localisation, distribution et hébergement des modèles
 
-Contrôle : **13 août 2026**. Cette vue indique où un modèle peut être obtenu ou exécuté. Elle distingue le développeur du modèle, son distributeur et l’hébergeur effectif. Une disponibilité commerciale depuis la Belgique ne garantit ni l’exécution ni le stockage dans l’Union européenne.
+Contrôle : **14 août 2026**. Cette vue indique où un modèle peut être obtenu ou exécuté. Elle distingue le développeur du modèle, son distributeur et l’hébergeur effectif. Une disponibilité commerciale depuis la Belgique ne garantit ni l’exécution ni le stockage dans l’Union européenne.
 
 ## Lecture rapide
 
@@ -14,7 +14,7 @@ Contrôle : **13 août 2026**. Cette vue indique où un modèle peut être obten
 | Développeur | Offre ou modèle | Distributeur / hébergeur | Canal | Région possible | Belgique | Point de vigilance | Confiance | Source |
 |---|---|---|---|---|---|---|---:|---|
 | OpenAI | Familles GPT via API directe | OpenAI | API managée | EEE pour services et clients éligibles | Selon le service | Vérifier inférence et stockage endpoint par endpoint | 95/100 | [R01](https://platform.openai.com/docs/) |
-| Anthropic | Familles Claude via API directe | Anthropic | API managée | Option de résidence selon l’offre | Sous conditions | Vérifier le contrat et la surface utilisée | 92/100 | [R02](https://platform.claude.com/docs/) |
+| Anthropic | Familles Claude via API directe | Anthropic | API managée | Global par défaut ; inférence US épinglable via `inference_geo` (×1,1). **Aucune résidence UE publiée pour l’API directe** | Sous conditions | Pour une exigence de résidence UE, passer par Bedrock ou Google Cloud en région UE | 95/100 | [R02](https://platform.claude.com/docs/) |
 | Anthropic | Claude via Amazon Bedrock | AWS | Cloud partenaire | Régions AWS UE selon le modèle | Accessible | Contrôler routage interrégional et journaux | 92/100 | [R06](https://docs.aws.amazon.com/bedrock/) |
 | Anthropic | Claude via Microsoft Foundry | Microsoft / infrastructure Anthropic | Cloud partenaire | Ne suit pas automatiquement la région Azure choisie | Selon le catalogue | Confirmer le lieu réel d’exécution | 90/100 | [R05](https://learn.microsoft.com/azure/ai-foundry/) |
 | Google | Gemini API | Google AI Studio | API managée | Service disponible dans l’EEE | Disponible | Disponibilité EEE ≠ résidence garantie | 95/100 | [R03](https://ai.google.dev/gemini-api/docs/) |
@@ -29,9 +29,13 @@ Contrôle : **13 août 2026**. Cette vue indique où un modèle peut être obten
 | Cohere | Command, Embed et Rerank | Cohere et clouds partenaires | API / cloud partenaire | À confirmer par offre et contrat | B2B à vérifier | Résidence insuffisamment précise | 70/100 | [R13](https://docs.cohere.com/) |
 | DeepSeek, Qwen, Kimi et GLM | API directes | Fournisseurs directs | API managée | Région UE non confirmée | À confirmer | DPA, transferts et rétention à documenter | 60/100 | Documentation de chaque fournisseur |
 
-## État de vérification au 13 août 2026
+## État de vérification au 14 août 2026
 
-Aucune ligne de cette matrice n’a pu être revérifiée sur la documentation fournisseur : les domaines concernés étaient bloqués par la politique de sortie réseau de l’environnement. Les lignes conservent la confiance obtenue lors de leur dernière vérification effective et portent, dans `dashboard/data/latest.json`, un statut explicite « non revérifié ». La seule ligne ajoutée ce contrôle (modèles ouverts tiers chez Mistral) l’est par convergence de sources indépendantes, à 85/100.
+**Une ligne a été revérifiée sur documentation primaire ouverte directement.** Pour l’API directe Anthropic, la documentation officielle établit que le routage est **global par défaut** et qu’une **inférence limitée aux États-Unis** est disponible via le paramètre `inference_geo`, facturée avec un multiplicateur de 1,1×. Aucune option de résidence **européenne** n’est publiée pour l’API directe : une exigence de résidence UE sur Claude passe donc par AWS Bedrock ou Google Cloud en région UE, et non par l’API de premier rang. Point de vigilance déjà documenté et inchangé : dans Microsoft Foundry, les modèles Anthropic s’exécutent sur l’infrastructure d’Anthropic et **non dans la région Azure sélectionnée**.
+
+Pour **Mistral**, la résidence européenne de l’inférence est désormais un produit facturé : `api.eu.mistral.ai` épingle l’exécution en Europe pour **1,1× le tarif standard**, établi par convergence de sources indépendantes à 88/100. Réserve inchangée : un endpoint UE ne signifie pas qu’aucune donnée ne quitte l’UE — la liste des sous-traitants doit être lue avant toute inscription dans un registre de traitement.
+
+Toutes les autres lignes n’ont pas pu être revérifiées : les domaines fournisseurs concernés restent bloqués par la politique de sortie réseau. Elles conservent la confiance obtenue lors de leur dernière vérification effective et portent, dans `dashboard/data/latest.json`, un statut explicite « non revérifié ».
 
 ## Règle de décision
 

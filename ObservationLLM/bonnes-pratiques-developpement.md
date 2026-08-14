@@ -1,6 +1,6 @@
 # Bonnes pratiques de développement
 
-État vérifié le **13 août 2026**. Les mentions distinguent **[Officiel]** recommandation publiée par un fournisseur, **[Consensus]** pratique convergente entre plusieurs fournisseurs et **[Déduction]** conclusion analytique de cet observatoire.
+État vérifié le **14 août 2026**. Les mentions distinguent **[Officiel]** recommandation publiée par un fournisseur, **[Consensus]** pratique convergente entre plusieurs fournisseurs et **[Déduction]** conclusion analytique de cet observatoire.
 
 > **Changement structurant du mois: la spécification MCP 2026-07-28 est finale** [S124–S125]. MCP étant devenu le connecteur commun entre agents et systèmes internes, la révision touche toutes les intégrations existantes.
 >
@@ -86,7 +86,7 @@ Tracer request ID, version modèle, version prompt, outils, temps, jetons/cache,
 
 ### 2. Anthropic
 
-**[Officiel, S63–S64/S85/S125/S158–S159]** Exploiter prompt caching, batch -50 %, modèles datés et effort approprié. Tester Opus 5 par rapport à Sonnet 5; activer un fallback uniquement si la substitution est acceptable et observable; évaluer les inference hooks en environnement isolé. Le prix promotionnel de **Sonnet 5 (2/10 USD/M)** prend fin le 31 août 2026; le tarif standard **3/15 USD/M** s’applique le 1er septembre. **[Déduction]** Comparer Sonnet 5 à Haiku 4.5 (1/5) ou GPT-5.6 Terra (2/12) reste pertinent sur les critères de qualité, latence et budget. Réserver Fable 5 aux tâches où son plafond compense prix et faux positifs potentiels des garde-fous.
+**[Officiel, S63–S64/S85/S125/S158–S159]** Exploiter prompt caching, batch -50 %, modèles datés et effort approprié. Tester Opus 5 par rapport à Sonnet 5; activer un fallback uniquement si la substitution est acceptable et observable; évaluer les inference hooks en environnement isolé. Le tarif de **Sonnet 5 est de 2/10 USD/M et il est désormais standard**: la hausse vers 3/15 USD/M annoncée pour le 1er septembre 2026 est annulée. **[Déduction]** Comparer Sonnet 5 à Haiku 4.5 (1/5) ou GPT-5.6 Terra (2/12) reste pertinent sur les critères de qualité, latence et budget. Réserver Fable 5 aux tâches où son plafond compense prix et faux positifs potentiels des garde-fous.
 
 ### 3. Google
 
@@ -170,7 +170,7 @@ Tracer request ID, version modèle, version prompt, outils, temps, jetons/cache,
 
 - [ ] Cas d’usage, propriétaire, risque et métrique de réussite documentés.
 - [ ] Fournisseur, modèle, snapshot, région et fallback choisis.
-- [ ] Prix origine, cache, batch, outils, TVA et plafond mensuel vérifiés.
+- [ ] Prix origine, cache, batch, outils, taxes applicables et plafond mensuel vérifiés.
 - [ ] DPA, sous-traitants, rétention, entraînement, chiffrement et suppression validés.
 - [ ] Secrets côté serveur; RBAC minimal; environnements séparés.
 - [ ] Prompts et schémas versionnés; sorties validées.
@@ -184,14 +184,15 @@ Tracer request ID, version modèle, version prompt, outils, temps, jetons/cache,
 - [ ] **Résidence des données vérifiée modèle par modèle**, pas seulement au niveau de la région de la plateforme.
 - [ ] **Intégrations MCP auditées** face à la spécification 2026-07-28: aucun nouveau développement sur DCR, Roots, Sampling ou Logging; état implicite de session rendu explicite.
 - [ ] **Seuil de long contexte instrumenté et alerté** lorsque le fournisseur applique une grille tarifaire majorée au-delà d’un seuil.
-- [ ] **Échéances tarifaires connues au calendrier** (fins de prix de lancement, expirations de crédits promotionnels) avec un responsable désigné.
+- [ ] **Échéances tarifaires et de compatibilité au calendrier** (fins de prix de lancement, expirations de crédits, **retraits de modèles chez les distributeurs d’assistants**) avec un responsable désigné.
+- [ ] **Aucun identifiant de modèle épinglé sans plan de remplacement daté**: un distributeur peut retirer un modèle bien avant que son éditeur ne le retire.
 - [ ] Garde-fou d’entrée **et** de sortie en place, testé sur des exemples FR et NL réels, pas seulement anglais.
 - [ ] Bacs à sable d’évaluation traités comme des périmètres de production: réseau isolé, accès métadonnées bloqué, identités éphémères.
 - [ ] **Seuils tarifaires non linéaires identifiés par fournisseur** et testés: vérifier si la grille majorée s’applique au seul dépassement ou à **toute la requête** (cas de Grok 4.6 à 200 k jetons). Prévoir compaction du contexte **avant** le seuil, pas à saturation.
 - [ ] **Région d’inférence explicitement choisie et tracée** lorsque le fournisseur l’offre (Mistral Regional Endpoints, régions cloud), avec vérification que le DPA et la liste des sous-traitants correspondent — et conscience que « région UE » n’exclut pas tout transfert encadré hors région.
 - [ ] **Veille sur les changements d’entité fournisseur** (fusions, acquisitions): à la clôture, revérifier entité contractante, pays de facturation, responsable de traitement, clauses de transfert et politique de confidentialité, même si le produit est inchangé.
 
-## Changements de cette révision (13 août 2026)
+## Points d’attention en vigueur (état au 14 août 2026)
 
 Ajouts par rapport à l’état du 12 août:
 
@@ -200,4 +201,4 @@ Ajouts par rapport à l’état du 12 août:
 - **Cohere**: North Mini Code 1.0 documenté comme agent de code à poids ouverts (Apache 2.0), avec la réserve sur le cache KV en long contexte.
 - **Checklist**: trois lignes ajoutées (seuils tarifaires non linéaires, région d’inférence explicite, changement d’entité fournisseur).
 
-Rappel des ajouts du 12 août, toujours valides: spécification MCP 2026-07-28 et ses dépréciations; garde-fou ouvert Shieldstral 1.0; échéance tarifaire Sonnet 5 au 1er septembre; grille long contexte et écritures de cache GPT-5.6; nuance de résidence Microsoft Foundry; nouveautés AgentCore (Runtime Instances, Dogwood, politiques temporelles); cause racine de l’incident Hugging Face; Muse Glimmer (Meta), Nemotron 3.5 Lightning (NVIDIA), Qwen3.8-Max (Alibaba) et V4-Flash officiel (DeepSeek).
+Éléments d’état courant à garder en vue: spécification MCP 2026-07-28 et ses dépréciations, confirmée comme version la plus récente au 14 août 2026; garde-fou ouvert Shieldstral 1.0; **échéance de compatibilité Copilot au 1er septembre 2026**; grille long contexte et écritures de cache GPT-5.6; nuance de résidence Microsoft Foundry; nouveautés AgentCore (Runtime Instances, Dogwood, politiques temporelles); Muse Glimmer (Meta), Nemotron 3.5 Lightning (NVIDIA), Qwen3.8-Max (Alibaba) et V4-Flash officiel (DeepSeek).

@@ -1,6 +1,6 @@
 # Comparatif structuré — édition Belgique
 
-Contrôle: **13 août 2026**. Cette édition intègre une **correction tarifaire majeure** issue des pages officielles : Claude Sonnet 5 reste à 2/10 USD/M jusqu’au 31 août, puis passe à 3/15 USD/M le 1er septembre. Elle intègre également les mouvements du 10 au 12 août: **Mistral Regional Endpoints, Priority Tier et hébergement de modèles ouverts tiers**, **xAI Grok 4.6**, **OpenAI GPT-5.6-Cyber**, plus des lacunes de couverture corrigées (**Cohere North Mini Code**, **Gemini Omni Flash**, lettre open weights du 24 juillet). Voir [Prix API](#prix-api), [Exécution locale](#exécution-locale) et [Développement](#développement). Ce fichier remplace le classeur Excel demandé initialement: le dépôt a explicitement migré vers Markdown le 16 juillet 2026. Les « feuilles » sont les sections ci-dessous. Les références Sxx renvoient à [sources.md](sources.md).
+Contrôle: **14 août 2026**. L’état tarifaire courant retient que **Claude Sonnet 5 est à 2/10 USD/M en tarif standard**, la hausse vers 3/15 USD/M au 1er septembre étant annulée par Anthropic. Le comparatif couvre également **Mistral Regional Endpoints, Priority Tier et hébergement de modèles ouverts tiers**, **xAI Grok 4.6**, **OpenAI GPT-5.6-Cyber** et le palier **Ultrafast** pour GPT-5.6 Sol, ainsi que **Cohere North Mini Code** et **Gemini Omni Flash**. Voir [Prix API](#prix-api), [Exécution locale](#exécution-locale) et [Développement](#développement). Ce fichier remplace le classeur Excel demandé initialement: le dépôt a explicitement migré vers Markdown le 16 juillet 2026. Les « feuilles » sont les sections ci-dessous. Les références Sxx renvoient à [sources.md](sources.md).
 
 > ⚠️ **Niveau de preuve de cette édition.** Le run initial a subi un blocage réseau étendu. La correction Sonnet 5 et les dépréciations Imagen ont ensuite été revérifiées directement dans les documentations officielles Anthropic et Google; les autres données conservent leur niveau de preuve antérieur. Voir [sources.md](sources.md). Revérification recommandée avant tout engagement contractuel ou budgétaire.
 
@@ -64,11 +64,11 @@ Prix par **1 million de jetons** sauf mention. HT et hors outils. Les prix EUR s
 
 **Taux de conversion.** Référence conservée: **1 EUR = 1,1554 USD** (BCE, 5 août 2026, S79). Taux de référence BCE du 11 août 2026: **1,1540** (S156), soit un écart de ~0,12 % — sous le seuil de matérialité, le taux de référence est donc conservé pour éviter un recalcul en cascade sans valeur décisionnelle. Le domaine `ecb.europa.eu` restait bloqué lors de ce contrôle: la valeur est relayée par le portail de données, non ouverte directement.
 
-**Quatre échéances tarifaires à surveiller.**
+**Échéances à surveiller.**
 
 | Échéance | Ce qui change | Impact | Source |
 |---|---|---|---|
-| **1er septembre 2026** | Fin du prix promotionnel Claude Sonnet 5 (**2/10 USD/M**) et passage au tarif standard **3/15 USD/M** (+50 %) | Arbitrer modèle, cache et batch avant septembre | S158–S159 |
+| **1er septembre 2026** | Retrait de Claude Sonnet 3.7, Sonnet 3.7 Thinking, Claude Opus 4 et Gemini 2.0 Flash de **toutes les surfaces GitHub Copilot**; MAI-Code-1-Flash suit le 10 septembre | Rupture de compatibilité pour tout flux ou politique épinglant ces identifiants | S167 |
 | **Fin août 2026** | Fin des crédits promotionnels GitHub Copilot Business (+30 USD/mois) et Enterprise (+70 USD/mois) | Hausse de facture nette à périmètre constant | S137 |
 | **Fin août 2026** | Clôture attendue de l’acquisition d’Anysphere/Cursor par SpaceX (procédures réglementaires finalisées le 12/08, **non close** au 13/08) | Entité contractante, facturation, politique de confidentialité et juridiction peuvent changer | S147 |
 
@@ -85,7 +85,7 @@ Prix par **1 million de jetons** sauf mention. HT et hors outils. Les prix EUR s
 | Acteur / modèle représentatif | Contexte | Entrée origine | Cache origine | Sortie origine | Entrée EUR | Sortie EUR | Batch / classe | Outils / remarques | Source |
 |---|---:|---:|---:|---:|---:|---:|---|---|---|
 | OpenAI GPT-5.6 Sol | 1,05 M | 5 USD | lecture 0,50 USD; écriture 6,25 USD | 30 USD | 4,33 € | 25,96 € | Batch à vérifier par endpoint | Terra 2/12 (≈1,73/10,39 €), Luna 0,20/1,20 (≈0,17/1,04 €) depuis le 30/07; **long contexte: Sol 10/45, Terra 4/18, Luna 0,40/1,80**; écriture de cache = 1,25× l’entrée; Fast Mode Sol remplace Priority (×2,5 vitesse, ×2 prix) | S61–S62, S112, S124 |
-| Anthropic Claude Opus 5, API directe | 1 M | 5 USD | lecture 0,50 USD; écritures selon durée | 25 USD | 4,33 € | 21,64 € | Batch -50 %; Fast ×2 | Fable 5: 10/50; Haiku 4.5: 1/5; **Sonnet 5: 2/10 jusqu’au 31/08/2026, puis 3/15 à partir du 01/09/2026**; fallback de sûreté configurable | S63–S64, S158–S159 |
+| Anthropic Claude Opus 5, API directe | 1 M | 5 USD | lecture 0,50 USD; écritures selon durée | 25 USD | 4,33 € | 21,64 € | Batch -50 %; Fast ×2 | Fable 5: 10/50; Haiku 4.5: 1/5; **Sonnet 5: 2/10 en tarif standard, hausse du 01/09/2026 annulée**; résidence US optionnelle via `inference_geo` (×1,1); fallback de sûreté configurable | S63–S64, S158–S159 |
 | Google Gemini 3.6 Flash | 1 M | 1,50 USD | Voir grille dynamique | 7,50 USD | 1,30 € | 6,49 € | Batch/Flex/Priority publiés séparément | 64 k sortie; Search/Maps/outils selon grille; Gemini 2.5 Pro/Flash/Flash-Lite arrêtés le 16/10/2026 | S65, S114 |
 | Mistral Large | À confirmer par version | 2 USD | ND | 6 USD | 1,73 € | 5,19 € | Batch -50 % | OCR, audio et autres outils séparés. **Endpoint régional UE/US ×1,1; Priority Tier ×1,75 avec SLA 99,5 % (préversion)** | S19, S142–S144 |
 | **xAI Grok 4.6 court (<200 k)** | 500 k | 2 USD | 0,50 USD | 6 USD | 1,73 € | 5,19 € | **Aucune remise batch** | Remplace Grok 4.5 le 12/08. Variante rapide ×2. Cache: `prompt_cache_key` (Responses) ou `x-grok-conv-id` (Chat Completions) | S139–S141 |
@@ -206,7 +206,7 @@ Repères mémoire (octets/param GGUF): Q4_K_M ≈ 0,57; Q5_K_M ≈ 0,68; Q8_0 �
 
 La sélection combine cinq signaux qualitatifs: adoption/présence marché 30 %, qualité/portée des modèles 25 %, maturité API/outils/agents 20 %, écosystème développeur 15 %, disponibilité et pertinence Europe/Belgique 10 %. La liste est plafonnée à exactement 20. Les sorties de la prochaine édition exigeront un signal durable supérieur à l’acteur remplacé; une nouveauté seule ne suffit pas.
 
-Les benchmarks fournisseur restent dans [analyse-detaillee.md](analyse-detaillee.md) avec protocole et avertissements. Aucun score de sources hétérogènes n’est moyenné. Les prix sont des snapshots catalogue au 13 août 2026; remises, contrats et taxes varient. Entrées: aucune; sorties: aucune.
+Les benchmarks fournisseur restent dans [analyse-detaillee.md](analyse-detaillee.md) avec protocole et avertissements. Aucun score de sources hétérogènes n’est moyenné. Les prix sont des snapshots catalogue au 14 août 2026; remises, contrats et taxes varient.
 
 **Point de méthode sur la consolidation en cours.** L’acquisition d’Anysphere (Cursor) par SpaceX/xAI a vu ses procédures réglementaires finalisées le 12 août, mais **la clôture n’était pas actée** au 13 août [S147]. La règle appliquée est de refléter l’état juridique vérifié, pas l’état annoncé: xAI (rang 8) et Anysphere/Cursor (rang 16) restent donc **deux entrées distinctes**. À la clôture, elles fusionneront en une seule entrée, ce qui libérera une place. Les candidats à surveiller pour cette place, par ordre de signal actuel: **Zhipu/Z.AI hors GLM**, **Together/Fireworks** (inférence à poids ouverts) et **Baidu ERNIE**. Aucun n’est retenu à ce contrôle.
 

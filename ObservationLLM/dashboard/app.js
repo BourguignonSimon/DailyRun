@@ -45,7 +45,8 @@ function renderHeader(data, status, sources, announcements, tools) {
   byId("metric-hardware").textContent = data.hardware.length;
   byId("headline-change").textContent = data.headline.title;
   byId("headline-detail").textContent = data.headline.detail;
-  byId("footer-run").textContent = `Dernière publication : ${formatDate(data.run.checkedAt)} · ${data.run.commit.slice(0, 7)}`;
+  const commitLabel = data.run.commit ? ` · ${data.run.commit.slice(0, 7)}` : "";
+  byId("footer-run").textContent = `Dernière publication : ${formatDate(data.run.checkedAt)}${commitLabel}`;
 
   const chip = byId("run-chip");
   chip.className = `run-chip ${status.status}`;

@@ -1,6 +1,6 @@
 # 100 outils majeurs de l’écosystème IA
 
-Contrôle : **13 août 2026**. Ce catalogue étend l’observatoire aux outils qui structurent l’usage, le développement, le déploiement et le contrôle des systèmes IA. Il est mis à jour par **le même run quotidien** que les modèles, les plateformes, les sources et les annonces ; aucune seconde automatisation n’est nécessaire.
+Contrôle : **14 août 2026**. Ce catalogue étend l’observatoire aux outils qui structurent l’usage, le développement, le déploiement et le contrôle des systèmes IA. Il est mis à jour par **le même run quotidien** que les modèles, les plateformes, les sources et les annonces ; aucune seconde automatisation n’est nécessaire.
 
 ## Méthode de sélection
 
@@ -25,12 +25,14 @@ Pour chacun des 100 outils, le run unique doit vérifier le statut du produit, l
 
 Une mise à jour mineure n’est pas transformée artificiellement en annonce principale. En l’absence de nouveauté qualifiée, l’outil conserve un statut de contrôle actualisé. Les retraits, changements d’éditeur, ruptures de compatibilité, incidents, nouveaux prix, nouvelles régions, modèles ajoutés et changements de licence sont prioritaires.
 
-## État du contrôle du 13 août 2026
+## État du contrôle du 14 août 2026
 
-La politique de sortie réseau de l’environnement a rendu les sites officiels des outils inaccessibles. En revanche, les **registres de distribution officiels** `pypi.org` et `registry.npmjs.org` répondaient. Ils ont permis d’établir, sur preuve primaire durable, **31 nouveautés qualifiées** parmi les 100 outils ; les 69 autres portent le statut explicite « non revérifié — source officielle inaccessible ». Aucune nouveauté n’a été fabriquée pour combler l’écart.
+La politique de sortie réseau de l’environnement rend la majorité des sites officiels des outils inaccessibles. Les **registres de distribution officiels** `pypi.org` et `registry.npmjs.org` et la **documentation Anthropic** `platform.claude.com` répondent et fournissent une preuve primaire durable. Le catalogue porte **32 nouveautés qualifiées** parmi les 100 outils ; les 68 autres portent le statut explicite « non revérifié — source officielle inaccessible ». Aucune nouveauté n’a été fabriquée pour combler l’écart.
 
-Trois constats sortent de ce contrôle :
+Constats de ce contrôle :
 
+- **Le tarif de l’API Anthropic est fixé.** La page tarifaire officielle, ouverte directement, établit que Claude Sonnet 5 reste à **2/10 USD/M en tarif standard** et que la hausse programmée au 1er septembre est annulée. C’est la seule nouveauté du catalogue notée au-delà de 89/100.
+- **Rupture de compatibilité programmée chez GitHub Copilot.** Quatre modèles Anthropic, OpenAI et Google quittent toutes les surfaces Copilot le **1er septembre 2026**, MAI-Code-1-Flash le 10 septembre. Un identifiant de modèle épinglé côté distributeur peut donc cesser de fonctionner alors que le modèle reste servi par son éditeur ailleurs.
 - **Rupture de compatibilité probable chez OpenAI.** Le SDK Python `openai` passe de 2.54.0 (11 août) à **3.0.0** (12 août). Un projet qui n’épingle pas `openai<3` peut casser à la prochaine installation. Le contenu exact des ruptures n’a pas pu être lu.
 - **Deux versions majeures discrètes.** `haystack-ai` 3.0.0 (20 juillet) et le client `pymilvus` 3.0.1 (29 juillet) ont franchi un cap majeur sans apparaître dans les annonces principales.
 - **Deux projets sans publication récente.** `autogen-agentchat` n’a rien publié depuis le 30 septembre 2025, `ragas` depuis le 13 janvier 2026. C’est un constat de **distribution**, pas un jugement sur la santé des projets : le développement peut se poursuivre sans publication de paquet. À surveiller avant d’en faire une dépendance structurante.
