@@ -3,7 +3,7 @@
   "run": {
     "checkedAt": "2026-08-14T07:20:00Z",
     "factsVerifiedThrough": "2026-08-14",
-    "commit": null,
+    "commit": "435c4aa6d1c3d5aa02bc12439e5e636e3c51d0c0",
     "model": "Opus 5",
     "result": "Contrôle du 14 août 2026. Ligne Temps réel exécutée. Une correction majeure : Anthropic annule la hausse de Claude Sonnet 5 prévue au 1er septembre, le tarif de 2/10 USD/M devient standard — vérifié directement sur la page tarifaire officielle. Quatre annonces entrent dans la vue courante : le palier Ultrafast d’OpenAI et Cerebras, les dépréciations de modèles Copilot au 1er septembre, Agent Plugins 1.0, et les conditions tarifaires des endpoints régionaux Mistral. La politique réseau sortante bloque encore la majorité des domaines éditeurs ; les faits concernés restent marqués non revérifiés."
   },
