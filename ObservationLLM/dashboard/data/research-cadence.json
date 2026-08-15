@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "timezone": "Europe/Brussels",
-  "updatedAt": "2026-08-14T07:20:00Z",
+  "updatedAt": "2026-08-15T06:55:00Z",
   "orchestration": "single_daily_run",
   "weeklyRule": {
     "weekStartsOn": "monday",
@@ -27,11 +27,11 @@
         "sorties",
         "retraits"
       ],
-      "lastCompletedOn": "2026-08-14",
-      "nextDueOn": "2026-08-15",
+      "lastCompletedOn": "2026-08-15",
+      "nextDueOn": "2026-08-16",
       "status": "current",
-      "lastAttemptOn": "2026-08-14",
-      "evidenceLevel": "mixte — page tarifaire et page de dépréciations Anthropic, blog MCP et registre PyPI ouverts directement ; les six points d’entrée obligatoires et les autres domaines éditeurs restent bloqués, couverts par convergence de sources indépendantes"
+      "lastAttemptOn": "2026-08-15",
+      "evidenceLevel": "mixte — page tarifaire, vue d’ensemble des modèles et notes de version de l’API Anthropic ouvertes directement, blog MCP et registres PyPI et npm interrogés ; les six points d’entrée obligatoires et les autres domaines éditeurs restent bloqués, couverts par convergence de sources indépendantes"
     },
     {
       "id": "operational",
@@ -49,8 +49,8 @@
       "lastCompletedOn": "2026-08-13",
       "nextDueOn": "2026-08-17",
       "status": "current",
-      "lastAttemptOn": "2026-08-14",
-      "lastAttemptStatus": "Revue hebdomadaire déjà effectuée le 2026-08-13 dans la semaine ISO 2026-W33 ; prochaine échéance au lundi 2026-08-17. Le volet prix a toutefois été renforcé ce jour par la ligne événementielle : tarifs Claude revérifiés sur la page officielle, conditions des endpoints régionaux Mistral chiffrées, échéance de dépréciation Copilot au 1er septembre inscrite au calendrier."
+      "lastAttemptOn": "2026-08-15",
+      "lastAttemptStatus": "Revue hebdomadaire déjà effectuée le 2026-08-13 dans la semaine ISO 2026-W33 ; aucun rattrapage dû. Prochaine échéance au lundi 2026-08-17, premier run de la semaine ISO 2026-W34. Le volet prix a été renforcé hors cycle par la ligne événementielle : tarif de Gemini 3.7 Flash et sa fin de promotion au 31 décembre 2026 inscrits au calendrier, tarifs DeepSeek V4 Pro 0813 relevés, tarif de Claude Sonnet 5 reconfirmé en primaire direct."
     },
     {
       "id": "deep",
@@ -68,8 +68,8 @@
       "lastCompletedOn": "2026-08-13",
       "nextDueOn": "2026-08-17",
       "status": "current",
-      "lastAttemptOn": "2026-08-14",
-      "lastAttemptStatus": "Revue hebdomadaire déjà effectuée le 2026-08-13 dans la semaine ISO 2026-W33 ; prochaine échéance au lundi 2026-08-17. Aucun rattrapage dû. Les faits touchés par la correction tarifaire Anthropic du 14 août ont été repris hors cycle au titre de la ligne événementielle."
+      "lastAttemptOn": "2026-08-15",
+      "lastAttemptStatus": "Revue hebdomadaire déjà effectuée le 2026-08-13 dans la semaine ISO 2026-W33 ; aucun rattrapage dû. Prochaine échéance au lundi 2026-08-17, premier run de la semaine ISO 2026-W34. La ligne événementielle a toutefois repris hors cycle deux éléments de son périmètre : l’incident Anthropic du 14 au 15 août et la rétention des poids de GLM-5.3 au motif d’une évaluation de sûreté."
     },
     {
       "id": "structural",
@@ -85,8 +85,8 @@
       "lastCompletedOn": "2026-08-13",
       "nextDueOn": "2026-08-17",
       "status": "current",
-      "lastAttemptOn": "2026-08-14",
-      "lastAttemptStatus": "Revue hebdomadaire déjà effectuée le 2026-08-13 dans la semaine ISO 2026-W33 ; prochaine échéance au lundi 2026-08-17. Aucun rattrapage dû. Les faits touchés par la correction tarifaire Anthropic du 14 août ont été repris hors cycle au titre de la ligne événementielle."
+      "lastAttemptOn": "2026-08-15",
+      "lastAttemptStatus": "Revue hebdomadaire déjà effectuée le 2026-08-13 dans la semaine ISO 2026-W33 ; aucun rattrapage dû. Prochaine échéance au lundi 2026-08-17, premier run de la semaine ISO 2026-W34. La sélection des écosystèmes a été complétée hors cycle par la ligne événementielle : Claude Mythos 5 et le programme Project Glasswing, établis en source primaire, entrent dans la vue courante."
     },
     {
       "id": "event",
@@ -98,25 +98,24 @@
         "impacts transversaux",
         "mise à jour immédiate des vues concernées"
       ],
-      "lastCompletedOn": "2026-08-14",
+      "lastCompletedOn": "2026-08-15",
       "nextDueOn": null,
       "nextDueLabel": "À la prochaine détection importante",
       "status": "armed",
-      "lastAttemptOn": "2026-08-14",
-      "evidenceLevel": "primaire ciblé — déclenchée le 14 août par l’annulation de la hausse de Claude Sonnet 5 : fait établi sur la page tarifaire officielle ouverte directement, puis propagé à toutes les vues courantes, au calendrier des échéances et au comparatif des prix API"
+      "lastAttemptOn": "2026-08-15",
+      "evidenceLevel": "primaire ciblé et convergence — déclenchée le 15 août par quatre détections à impact matériel : la sortie de Gemini 3.7 Flash et sa grille promotionnelle, la sortie de GLM-5.3 avec rétention des poids ouverts, le passage en disponibilité générale de DeepSeek V4 Pro 0813 sous licence MIT, et l’interruption des services Claude du 14 au 15 août. Vérification complète menée dans le même run ; deux faits Anthropic supplémentaires — Claude Mythos 5 et les capacités Managed Agents — ont été établis en source primaire durable à cette occasion."
     }
   ],
   "blocking": {
-    "detectedAt": "2026-08-14",
+    "detectedAt": "2026-08-15",
     "kind": "egress_policy_restrictive",
-    "summary": "La politique réseau sortante de l’environnement d’exécution refuse la connexion à la majorité des domaines éditeurs et à la totalité des six points d’entrée de veille quotidienne. La recherche web indexée reste disponible et a permis d’établir les faits par convergence ; quatre sources primaires durables ont pu être ouvertes directement.",
+    "summary": "La politique réseau sortante de l’environnement d’exécution refuse la connexion à la totalité des six points d’entrée de veille quotidienne et à la majorité des domaines éditeurs. Le refus est confirmé au niveau du tunnel CONNECT du mandataire, en accès direct comme via l’outil de récupération de pages. La recherche web indexée reste disponible et a permis d’établir les faits par convergence ; cinq sources primaires durables ont pu être ouvertes directement.",
     "reachableHosts": [
       "platform.claude.com",
-      "cloud.google.com",
       "blog.modelcontextprotocol.io",
       "pypi.org",
       "registry.npmjs.org",
-      "api.github.com"
+      "api.github.com (dépôts en périmètre)"
     ],
     "blockedHosts": [
       "tldr.tech",
@@ -130,6 +129,10 @@
       "status.openai.com",
       "github.blog",
       "ai.google.dev",
+      "deepmind.google",
+      "blog.google",
+      "developers.googleblog.com",
+      "cloud.google.com",
       "mistral.ai",
       "docs.mistral.ai",
       "huggingface.co",
@@ -137,15 +140,17 @@
       "www.anthropic.com",
       "status.claude.com",
       "aws.amazon.com",
-      "blog.google",
-      "deepmind.google",
       "ai.meta.com",
       "ollama.com",
-      "lmstudio.ai"
+      "lmstudio.ai",
+      "z.ai",
+      "docs.z.ai",
+      "www.ecb.europa.eu",
+      "data-api.ecb.europa.eu"
     ],
-    "remediation": "Retester ces domaines à chaque run. Tant qu’ils restent bloqués, aucun fait qui en dépend ne peut dépasser 89/100 et la mention « source inaccessible » ou « non revérifié » est conservée dans les livrables.",
-    "evidenceLevel": "primaire direct pour Anthropic, MCP et les registres de distribution ; convergence de sources indépendantes ailleurs"
+    "remediation": "Retester ces domaines à chaque run. Tant qu’ils restent bloqués, aucun fait qui en dépend ne peut dépasser 89/100 et la mention « source inaccessible » ou « non revérifié » est conservée dans les livrables. Un domaine ouvrable au run du 14 août ne l’est plus au 15 août : cloud.google.com, dont la racine répond mais dont les chemins de documentation Vertex AI échouent. api.github.com est joignable : le refus 403 observé sur les dépôts tiers provient de la restriction de périmètre de dépôt de la session, et non de la politique réseau. L’API GitHub constitue donc une voie de preuve primaire pour les dépôts en périmètre.",
+    "evidenceLevel": "primaire direct pour Anthropic, le Model Context Protocol et les registres de distribution ; convergence de sources indépendantes ailleurs"
   },
   "isoWeek": "2026-W33",
-  "computedFor": "2026-08-14"
+  "computedFor": "2026-08-15"
 }

@@ -1,6 +1,6 @@
 # 100 outils majeurs de l’écosystème IA
 
-Contrôle : **14 août 2026**. Ce catalogue étend l’observatoire aux outils qui structurent l’usage, le développement, le déploiement et le contrôle des systèmes IA. Il est mis à jour par **le même run quotidien** que les modèles, les plateformes, les sources et les annonces ; aucune seconde automatisation n’est nécessaire.
+Contrôle : **15 août 2026**. Ce catalogue étend l’observatoire aux outils qui structurent l’usage, le développement, le déploiement et le contrôle des systèmes IA. Il est mis à jour par **le même run quotidien** que les modèles, les plateformes, les sources et les annonces ; aucune seconde automatisation n’est nécessaire.
 
 ## Méthode de sélection
 
@@ -25,17 +25,20 @@ Pour chacun des 100 outils, le run unique doit vérifier le statut du produit, l
 
 Une mise à jour mineure n’est pas transformée artificiellement en annonce principale. En l’absence de nouveauté qualifiée, l’outil conserve un statut de contrôle actualisé. Les retraits, changements d’éditeur, ruptures de compatibilité, incidents, nouveaux prix, nouvelles régions, modèles ajoutés et changements de licence sont prioritaires.
 
-## État du contrôle du 14 août 2026
+## État du contrôle du 15 août 2026
 
-La politique de sortie réseau de l’environnement rend la majorité des sites officiels des outils inaccessibles. Les **registres de distribution officiels** `pypi.org` et `registry.npmjs.org` et la **documentation Anthropic** `platform.claude.com` répondent et fournissent une preuve primaire durable. Le catalogue porte **32 nouveautés qualifiées** parmi les 100 outils ; les 68 autres portent le statut explicite « non revérifié — source officielle inaccessible ». Aucune nouveauté n’a été fabriquée pour combler l’écart.
+La politique de sortie réseau de l’environnement rend la majorité des sites officiels des outils inaccessibles. Les **registres de distribution officiels** `pypi.org` et `registry.npmjs.org` et la **documentation Anthropic** `platform.claude.com` répondent et fournissent une preuve primaire durable. Le catalogue porte **36 nouveautés qualifiées** parmi les 100 outils ; les 64 autres portent le statut explicite « non revérifié — source officielle inaccessible ». Aucune nouveauté n’a été fabriquée pour combler l’écart : en l’absence de fait vérifié, seul le statut de contrôle est actualisé.
 
 Constats de ce contrôle :
 
-- **Le tarif de l’API Anthropic est fixé.** La page tarifaire officielle, ouverte directement, établit que Claude Sonnet 5 reste à **2/10 USD/M en tarif standard** et que la hausse programmée au 1er septembre est annulée. C’est la seule nouveauté du catalogue notée au-delà de 89/100.
+- **Le tarif de l’API Anthropic est fixé, sur double preuve primaire.** La page tarifaire officielle et les notes de version de l’API, toutes deux ouvertes directement, établissent que Claude Sonnet 5 reste à **2/10 USD/M en tarif standard** et que la hausse programmée au 1er septembre est annulée.
+- **La plateforme d’agents managés Claude gagne des garde-fous exploitables.** Budget de session avec arrêt `budget_reached`, conseiller consultable en cours de tour, paramètre `inference_geo` et découverte automatique des compétences d’un dépôt GitHub monté. Établi en source primaire, donc noté au-delà de 89/100.
 - **Rupture de compatibilité programmée chez GitHub Copilot.** Quatre modèles Anthropic, OpenAI et Google quittent toutes les surfaces Copilot le **1er septembre 2026**, MAI-Code-1-Flash le 10 septembre. Un identifiant de modèle épinglé côté distributeur peut donc cesser de fonctionner alors que le modèle reste servi par son éditeur ailleurs.
-- **Rupture de compatibilité probable chez OpenAI.** Le SDK Python `openai` passe de 2.54.0 (11 août) à **3.0.0** (12 août). Un projet qui n’épingle pas `openai<3` peut casser à la prochaine installation. Le contenu exact des ruptures n’a pas pu être lu.
+- **Rupture de compatibilité probable chez OpenAI.** Le SDK Python `openai` est passé de 2.54.0 (11 août) à **3.0.0** (12 août), puis **3.1.0** (14 août). Un projet qui n’épingle pas `openai<3` peut casser à la prochaine installation. Le contenu exact des ruptures n’a pas pu être lu : un registre date une version, il ne documente pas son contenu.
 - **Deux versions majeures discrètes.** `haystack-ai` 3.0.0 (20 juillet) et le client `pymilvus` 3.0.1 (29 juillet) ont franchi un cap majeur sans apparaître dans les annonces principales.
 - **Deux projets sans publication récente.** `autogen-agentchat` n’a rien publié depuis le 30 septembre 2025, `ragas` depuis le 13 janvier 2026. C’est un constat de **distribution**, pas un jugement sur la santé des projets : le développement peut se poursuivre sans publication de paquet. À surveiller avant d’en faire une dépendance structurante.
+
+**Réserve de sélection portée à la revue structurelle du 17 août 2026.** Z.ai n’a aucune entrée dans ce catalogue alors que son offre de code par abonnement — GLM Coding Plan et ZCode — est devenue le seul canal d’accès à GLM-5.3 et pèse désormais dans l’écosystème des assistants de code. La sélection n’est pas modifiée hors cycle : la revue des 100 outils relève de la ligne structurelle hebdomadaire.
 
 ## Répartition des outils
 

@@ -1,6 +1,6 @@
 # Bonnes pratiques de développement
 
-État vérifié le **14 août 2026**. Les mentions distinguent **[Officiel]** recommandation publiée par un fournisseur, **[Consensus]** pratique convergente entre plusieurs fournisseurs et **[Déduction]** conclusion analytique de cet observatoire.
+État vérifié le **15 août 2026**. Les mentions distinguent **[Officiel]** recommandation publiée par un fournisseur, **[Consensus]** pratique convergente entre plusieurs fournisseurs et **[Déduction]** conclusion analytique de cet observatoire.
 
 > **Changement structurant du mois: la spécification MCP 2026-07-28 est finale** [S124–S125]. MCP étant devenu le connecteur commun entre agents et systèmes internes, la révision touche toutes les intégrations existantes.
 >
@@ -192,13 +192,19 @@ Tracer request ID, version modèle, version prompt, outils, temps, jetons/cache,
 - [ ] **Région d’inférence explicitement choisie et tracée** lorsque le fournisseur l’offre (Mistral Regional Endpoints, régions cloud), avec vérification que le DPA et la liste des sous-traitants correspondent — et conscience que « région UE » n’exclut pas tout transfert encadré hors région.
 - [ ] **Veille sur les changements d’entité fournisseur** (fusions, acquisitions): à la clôture, revérifier entité contractante, pays de facturation, responsable de traitement, clauses de transfert et politique de confidentialité, même si le produit est inchangé.
 
-## Points d’attention en vigueur (état au 14 août 2026)
+## Points d’attention en vigueur (état au 15 août 2026)
 
-Ajouts par rapport à l’état du 12 août:
+Ces points sont l’état courant à retenir, sans historique de run.
 
-- **Mistral**: Regional Endpoints (×1,1) et Priority Tier (×1,75, SLA 99,5 %, préversion) traités comme décisions d’architecture, avec la réserve sur les sous-traitants hors région.
-- **xAI**: Grok 4.6 remplace 4.5; explication détaillée du **piège du seuil de 200 k jetons** (la grille haute s’applique à toute la requête) et de l’absence de remise batch; en-tête `x-grok-conv-id` ajouté aux recommandations de cache.
-- **Cohere**: North Mini Code 1.0 documenté comme agent de code à poids ouverts (Apache 2.0), avec la réserve sur le cache KV en long contexte.
-- **Checklist**: trois lignes ajoutées (seuils tarifaires non linéaires, région d’inférence explicite, changement d’entité fournisseur).
+- **Résilience** : une interruption a touché l’API Claude, Claude Code et Cowork du **14 août 20:00 au 15 août 00:11 UTC**, soit quatre heures, en soirée et nuit belges. **[Déduction]** Un créneau nocturne est peu visible en usage interactif mais traverse les fenêtres de traitement par lots planifiées. C’est l’argument concret, et daté, de la règle déjà portée par ce document : tout service exposé à des utilisateurs prévoit un **basculement vers un second fournisseur** ou une **dégradation contrôlée**, et les traitements par lots nocturnes prévoient une reprise.
+- **Plafonner la dépense d’un agent** : les sessions d’agents managés Claude acceptent un **budget** au tarif public ; la session qui l’atteint se met en pause avec le motif d’arrêt `budget_reached` au lieu de lancer de nouvelles requêtes. **[Officiel]** **[Déduction]** C’est le garde-fou qui manquait à un agent laissé sans surveillance — mais il **borne une dépense, il ne garantit pas un coût** : le plafond s’applique aux tarifs de liste, pas à votre facture négociée.
+- **Région d’inférence explicite** : le paramètre `inference_geo` commande la géographie d’exécution, à la création de l’agent ou par session, avec multiplicateur tarifaire. **[Officiel]** **Aucune géographie UE n’est documentée pour l’API directe Anthropic** : une exigence de résidence européenne passe par AWS Bedrock ou Google Cloud en région UE.
+- **Tarifs promotionnels datés** : Gemini 3.7 Flash est à **0,75/3,75 USD/M jusqu’au 31 décembre 2026**, puis **1,50/7,50** au 1er janvier 2027. **[Déduction]** Un prix dont la date d’expiration est publiée n’est pas une baisse de prix. Si un volume bascule sur ce modèle, l’échéance de réévaluation s’inscrit au calendrier au moment de la bascule, pas au moment de la facture.
+- **Poids « ouverts » annoncés mais non publiés** : GLM-5.3 est présenté comme un modèle à poids ouverts, mais ses poids sont retenus environ deux semaines après le lancement. **[Déduction]** Ne fondez aucun plan d’auto-hébergement sur des poids annoncés : tant qu’un fichier n’est pas téléchargeable sous une licence nommée, l’ouverture est une intention. Le corollaire vaut pour Qwen3.8-Max, annoncé ouvert et toujours non publié.
+- **Licence ouverte ≠ exécutable chez vous** : DeepSeek V4 Pro 0813 publie ~893 Go de poids sous MIT. **[Déduction]** Une licence permissive ne rend pas un modèle accessible : vérifiez l’empreinte mémoire avant de compter un modèle « ouvert » parmi vos options d’auto-hébergement.
+- **Mistral** : Regional Endpoints (×1,1) et Priority Tier (×1,75, SLA 99,5 %, préversion) traités comme décisions d’architecture, avec la réserve sur les sous-traitants hors région.
+- **xAI** : le **piège du seuil de 200 k jetons** — la grille haute s’applique à **toute la requête**, pas au seul dépassement — et l’absence de remise batch ; en-tête `x-grok-conv-id` pour le cache.
+- **Cohere** : North Mini Code 1.0 comme agent de code à poids ouverts (Apache 2.0), avec la réserve sur le cache KV en long contexte.
+- **Épinglage des versions** : quatre chaînes SDK et CLI majeures ont publié en trois jours. **[Déduction]** Épinglez les versions dans vos fichiers de dépendances ; `openai` a franchi une version majeure le 12 août, un projet qui n’épingle pas `openai<3` casse à la prochaine installation.
 
-Éléments d’état courant à garder en vue: spécification MCP 2026-07-28 et ses dépréciations, confirmée comme version la plus récente au 14 août 2026; garde-fou ouvert Shieldstral 1.0; **échéance de compatibilité Copilot au 1er septembre 2026**; grille long contexte et écritures de cache GPT-5.6; nuance de résidence Microsoft Foundry; nouveautés AgentCore (Runtime Instances, Dogwood, politiques temporelles); Muse Glimmer (Meta), Nemotron 3.5 Lightning (NVIDIA), Qwen3.8-Max (Alibaba) et V4-Flash officiel (DeepSeek).
+Éléments d’état courant à garder en vue : spécification MCP 2026-07-28 et ses dépréciations, confirmée comme version courante au 15 août 2026 ; garde-fou ouvert Shieldstral 1.0 ; **échéance de compatibilité Copilot au 1er septembre 2026** ; grille long contexte et écritures de cache GPT-5.6 ; nuance de résidence Microsoft Foundry ; AgentCore (Runtime Instances, Dogwood, politiques temporelles) ; Muse Glimmer (Meta), Nemotron 3.5 Lightning (NVIDIA), Qwen3.8-Max (Alibaba) et V4-Flash officiel (DeepSeek).
