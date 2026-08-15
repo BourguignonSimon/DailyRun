@@ -642,12 +642,13 @@
     "checkedAt": "2026-08-15",
     "level": "warning",
     "title": "Quatre sources primaires ouvertes sur cinquante-deux référencées",
-    "detail": "Les quarante-quatre sources historiques du référentiel ont été retestées une à une le 15 août 2026 : quatre répondent — la documentation Anthropic, le blog du Model Context Protocol et les registres PyPI et npm — et quarante sont refusées au tunnel CONNECT du mandataire, dont la totalité des six points d’entrée obligatoires de la veille quotidienne. Deux domaines ouvrables au run du 14 août ne le sont plus : cloud.google.com et api.github.com. Tout fait qui dépend d’une source bloquée est plafonné à 89/100 et porte la mention « non revérifié » ou « source inaccessible ».",
+    "detail": "Les quarante-quatre sources historiques du référentiel ont été retestées une à une le 15 août 2026 : quatre répondent — la documentation Anthropic, le blog du Model Context Protocol et les registres PyPI et npm — et quarante sont refusées au tunnel CONNECT du mandataire, dont la totalité des six points d’entrée obligatoires de la veille quotidienne. Un domaine ouvrable au run du 14 août ne l’est plus : cloud.google.com, dont la racine répond mais dont les chemins de documentation Vertex AI échouent. api.github.com est joignable : le refus 403 observé sur les dépôts tiers provient de la restriction de périmètre de dépôt de la session, et non de la politique réseau. L’API GitHub constitue donc une voie de preuve primaire pour les dépôts en périmètre. Tout fait qui dépend d’une source bloquée est plafonné à 89/100 et porte la mention « non revérifié » ou « source inaccessible ».",
     "reachableSources": [
       "platform.claude.com",
       "blog.modelcontextprotocol.io",
       "pypi.org",
-      "registry.npmjs.org"
+      "registry.npmjs.org",
+      "api.github.com (dépôts en périmètre)"
     ],
     "remediation": "Retester les domaines bloqués au prochain run quotidien. Ne promouvoir aucun fait au-delà de 89/100 sans ouverture directe d’une source primaire durable ; conserver la mention « non revérifié » partout ailleurs."
   }

@@ -109,12 +109,13 @@
   "blocking": {
     "detectedAt": "2026-08-15",
     "kind": "egress_policy_restrictive",
-    "summary": "La politique réseau sortante de l’environnement d’exécution refuse la connexion à la totalité des six points d’entrée de veille quotidienne et à la majorité des domaines éditeurs. Le refus est confirmé au niveau du tunnel CONNECT du mandataire, en accès direct comme via l’outil de récupération de pages. La recherche web indexée reste disponible et a permis d’établir les faits par convergence ; quatre sources primaires durables ont pu être ouvertes directement.",
+    "summary": "La politique réseau sortante de l’environnement d’exécution refuse la connexion à la totalité des six points d’entrée de veille quotidienne et à la majorité des domaines éditeurs. Le refus est confirmé au niveau du tunnel CONNECT du mandataire, en accès direct comme via l’outil de récupération de pages. La recherche web indexée reste disponible et a permis d’établir les faits par convergence ; cinq sources primaires durables ont pu être ouvertes directement.",
     "reachableHosts": [
       "platform.claude.com",
       "blog.modelcontextprotocol.io",
       "pypi.org",
-      "registry.npmjs.org"
+      "registry.npmjs.org",
+      "api.github.com (dépôts en périmètre)"
     ],
     "blockedHosts": [
       "tldr.tech",
@@ -144,11 +145,10 @@
       "lmstudio.ai",
       "z.ai",
       "docs.z.ai",
-      "api.github.com",
       "www.ecb.europa.eu",
       "data-api.ecb.europa.eu"
     ],
-    "remediation": "Retester ces domaines à chaque run. Tant qu’ils restent bloqués, aucun fait qui en dépend ne peut dépasser 89/100 et la mention « source inaccessible » ou « non revérifié » est conservée dans les livrables. Deux domaines ouvrables au run du 14 août ne le sont plus au 15 août : cloud.google.com et api.github.com.",
+    "remediation": "Retester ces domaines à chaque run. Tant qu’ils restent bloqués, aucun fait qui en dépend ne peut dépasser 89/100 et la mention « source inaccessible » ou « non revérifié » est conservée dans les livrables. Un domaine ouvrable au run du 14 août ne l’est plus au 15 août : cloud.google.com, dont la racine répond mais dont les chemins de documentation Vertex AI échouent. api.github.com est joignable : le refus 403 observé sur les dépôts tiers provient de la restriction de périmètre de dépôt de la session, et non de la politique réseau. L’API GitHub constitue donc une voie de preuve primaire pour les dépôts en périmètre.",
     "evidenceLevel": "primaire direct pour Anthropic, le Model Context Protocol et les registres de distribution ; convergence de sources indépendantes ailleurs"
   },
   "isoWeek": "2026-W33",

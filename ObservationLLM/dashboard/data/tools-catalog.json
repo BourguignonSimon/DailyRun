@@ -1718,8 +1718,9 @@
       "https://platform.claude.com/docs/",
       "https://blog.modelcontextprotocol.io/",
       "https://pypi.org/",
-      "https://registry.npmjs.org/"
+      "https://registry.npmjs.org/",
+      "https://api.github.com/ (dépôts en périmètre)"
     ],
-    "limitation": "Un registre de distribution prouve qu’une version existe et à quelle date ; il ne documente pas le contenu du changement. Lorsque le site éditeur est bloqué, la nouveauté est établie par convergence de sources indépendantes et plafonnée à 89/100. Deux points d’entrée ouvrables au run du 14 août ne le sont plus au 15 août : cloud.google.com et api.github.com."
+    "limitation": "Un registre de distribution prouve qu’une version existe et à quelle date ; il ne documente pas le contenu du changement. Lorsque le site éditeur est bloqué, la nouveauté est établie par convergence de sources indépendantes et plafonnée à 89/100. Un point d’entrée ouvrable au run du 14 août ne l’est plus au 15 août : cloud.google.com. api.github.com est joignable : le refus 403 observé sur les dépôts tiers provient de la restriction de périmètre de dépôt de la session, et non de la politique réseau. L’API GitHub constitue donc une voie de preuve primaire pour les dépôts en périmètre."
   }
 }
