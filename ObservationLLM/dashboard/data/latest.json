@@ -3,7 +3,7 @@
   "run": {
     "checkedAt": "2026-08-15T06:55:00Z",
     "factsVerifiedThrough": "2026-08-15",
-    "commit": null,
+    "commit": "c54b84830bc71ef7ee1a1ffbf352828a4ecc5374",
     "model": "Opus 5",
     "result": "Contrôle du 15 août 2026. Ligne Temps réel exécutée et ligne Événementielle déclenchée sur quatre détections à impact matériel : la sortie de Gemini 3.7 Flash à moitié prix jusqu’au 31 décembre 2026, la sortie de GLM-5.3 dont les poids ouverts sont retenus environ deux semaines, le passage en disponibilité générale de DeepSeek V4 Pro 0813 sous licence MIT, et une interruption des services Claude du 14 août 20:00 au 15 août 00:11 UTC, résolue. La documentation Anthropic, ouverte directement, a par ailleurs établi deux faits en preuve primaire : l’existence de Claude Mythos 5 en disponibilité limitée sur invitation, et les nouvelles capacités des agents managés. Les lignes hebdomadaires Opérationnelle, Approfondie et Structurelle restent à jour pour la semaine ISO 2026-W33, prochaine échéance le 17 août. Réserve : la politique réseau sortante bloque les six points d’entrée obligatoires et quarante des quarante-quatre sources historiques du référentiel."
   },
