@@ -1,14 +1,15 @@
-# Synthèse décisionnelle — contrôle du 14 août 2026
+# Synthèse décisionnelle — contrôle du 15 août 2026
 
-> **Une échéance budgétaire disparaît, une échéance de compatibilité arrive.** Le tarif de Claude Sonnet 5 est de **2/10 USD/M et c’est désormais le tarif standard**: la hausse vers 3/15 USD/M programmée au 1er septembre 2026 **est annulée**, ce qu’établit la page tarifaire officielle ouverte directement. En sens inverse, **GitHub retire plusieurs modèles Anthropic, OpenAI et Google de toutes les surfaces Copilot au 1er septembre**. **ChatGPT affiche des publicités** aux offres Free et Go dans neuf pays — les offres payantes en sont exemptes et **la Belgique n’est dans aucune vague annoncée**. Mistral chiffre la résidence européenne de l’inférence à **+10 %** et héberge des modèles ouverts tiers (GLM-5.2 de Z.ai). Guide dédié: [modèles locaux par matériel](modeles-locaux-par-hardware.md).
+> **Un prix d’appel qui expire, des poids ouverts qui n’arrivent pas.** **Gemini 3.7 Flash** sort à **0,75/3,75 USD/M** — environ 0,65/3,25 EUR — mais ce tarif est **promotionnel jusqu’au 31 décembre 2026** et **double au 1er janvier 2027**: l’économie est réelle cette année, elle ne l’est pas au-delà. **GLM-5.3** est annoncé comme le meilleur modèle de code à poids ouverts de son éditeur, mais **ses poids ne sont pas publiés** — attendus sous deux semaines après évaluation de sûreté; à l’inverse, **DeepSeek V4 Pro 0813** passe en disponibilité générale **avec** des poids MIT. Le tarif de **Claude Sonnet 5 reste à 2/10 USD/M à titre définitif**. **GitHub retire plusieurs modèles Anthropic, OpenAI et Google de toutes les surfaces Copilot au 1er septembre**. **ChatGPT affiche des publicités** aux offres Free et Go dans six marchés — les offres payantes en sont exemptes et **la Belgique n’est dans aucune vague annoncée**. Mistral chiffre la résidence européenne de l’inférence à **+10 %**. Guide dédié: [modèles locaux par matériel](modeles-locaux-par-hardware.md).
 >
-> ⚠️ **Niveau de preuve.** La politique réseau sortante bloque la majorité des sites éditeurs et **la totalité des six points d’entrée de veille quotidienne**. Les faits Anthropic, MCP et versions de SDK reposent sur des sources primaires ouvertes directement; tout le reste est établi par convergence de sources indépendantes et **plafonné à 89/100**. Revérifiez avant tout engagement contractuel. Détail: [sources.md](sources.md).
+> ⚠️ **Niveau de preuve.** La politique réseau sortante bloque la majorité des sites éditeurs et **la totalité des six points d’entrée de veille quotidienne**: sur les 44 sources historiques du référentiel, **4 répondent et 40 sont refusées**. Les faits Anthropic, MCP et versions de SDK reposent sur des sources primaires ouvertes directement; tout le reste est établi par convergence de sources indépendantes et **plafonné à 89/100**. Revérifiez avant tout engagement contractuel. Détail: [sources.md](sources.md).
 
-## Les trois choses à faire ce mois-ci
+## Les quatre choses à faire ce mois-ci
 
 1. **Inventorier les modèles épinglés dans les flux GitHub Copilot.** Claude Sonnet 3.7, Sonnet 3.7 Thinking, Claude Opus 4 et Gemini 2.0 Flash quittent toutes les surfaces Copilot le **1er septembre 2026**, MAI-Code-1-Flash le 10 septembre. Tout script, politique d’entreprise ou flux qui épingle un de ces identifiants casse à cette date [S167]. Côté budget en revanche, **la hausse de Claude Sonnet 5 est annulée**: 2/10 USD/M devient le tarif standard, la migration qui n’était motivée que par ce surcoût n’a plus d’objet [S158–S159].
-2. **Vérifier les crédits GitHub Copilot Business/Enterprise**: les crédits promotionnels (+30 USD/mois en Business, +70 en Enterprise) **expirent fin août 2026**. À périmètre d’usage constant, la facture de septembre monte [S137].
-3. **Chiffrer l’option « région UE » chez Mistral**: les endpoints régionaux sont GA à **1,1× le tarif global** et le Priority Tier à **1,75× avec un SLA de disponibilité de 99,5 %**. Si la résidence des données bloquait un projet, le surcoût est désormais connu et modeste — mais lisez la réserve sur les sous-traitants hors région avant de l’inscrire dans un registre de traitement [S142–S144].
+2. **Inscrire au calendrier la fin de promotion de Gemini 3.7 Flash.** Le tarif de **0,75/3,75 USD/M** vaut **jusqu’au 31 décembre 2026**, puis passe à **1,50/7,50** — un doublement, pas une révision marginale. Si vous basculez un volume significatif sur ce modèle pour l’économie affichée, posez dès maintenant l’échéance de réévaluation au **1er décembre 2026**, avant que la grille ne change [S176–S178].
+3. **Vérifier les crédits GitHub Copilot Business/Enterprise**: les crédits promotionnels (+30 USD/mois en Business, +70 en Enterprise) **expirent fin août 2026**. À périmètre d’usage constant, la facture de septembre monte [S137].
+4. **Chiffrer l’option « région UE » chez Mistral**: les endpoints régionaux sont GA à **1,1× le tarif global** et le Priority Tier à **1,75× avec un SLA de disponibilité de 99,5 %**. Si la résidence des données bloquait un projet, le surcoût est désormais connu et modeste — mais lisez la réserve sur les sous-traitants hors région avant de l’inscrire dans un registre de traitement [S142–S144].
 
 ## Verdict en une minute
 
@@ -31,93 +32,71 @@ Il n’existe pas un « meilleur LLM » unique. Pour un résident belge, le choi
 | Agent de **code** en local | **North Mini Code 1.0** 30B-A3B (w4a16, ~18–20 Go) | Muse Glimmer 30B, Qwen3.6-35B-A3B | Apache 2.0, 256 k de contexte, 3 B actifs seulement, image Ollama disponible | Cache KV lourd en long contexte (attention glissante 4096 + globale périodique): tester à contexte réel |
 | Modération / garde-fou local | **Shieldstral 1.0 3B** | Granite 4.1 Guardian | Politique en langage naturel à l’inférence; un GPU 16 Go suffit | Scores annoncés par le fournisseur; tester sur FR et NL réels |
 
-## Ce qui a changé depuis le contrôle du 12 août
+## État vérifié par écosystème
 
-La sélection reste inchangée: **aucune entrée, aucune sortie**. Mais une consolidation est en cours entre deux entrées de la liste, et c’est le fait structurel du cycle.
+État courant au 15 août 2026. Cette section décrit ce qui est vrai à la date du contrôle, sans historique : l’historique est tenu par Git.
 
-### 1. Mistral vend la souveraineté comme un produit, avec un prix et un SLA (11 août)
+### Modèles et tarifs de la semaine
 
-C’est la nouveauté la plus directement actionnable pour un résident belge. Trois briques [S142–S144]:
+- **Google — Gemini 3.7 Flash** (13 août). Modèle de travail pour le code et les agents, raffinement de 3.6 Flash sur le cœur de raisonnement et non nouveau préentraînement. **1 M de contexte**, **64 k de sortie**, coupure de connaissances **mars 2026**. Tarif **0,75/3,75 USD/M** — environ **0,65/3,25 EUR** — **jusqu’au 31 décembre 2026**, puis **1,50/7,50 USD/M**. **[Déduction]** Un prix d’appel qui double à date connue n’est pas une baisse de prix : c’est une remise à durée déterminée. Elle mérite d’être prise, avec l’échéance inscrite au calendrier. Résidence UE non confirmée pour cette version [S176–S178].
+- **Z.ai — GLM-5.3** (14 août). Même base MoE **743 B** que GLM-5.2, gains obtenus par post-entraînement seul. Annoncé par son éditeur comme le meilleur modèle de code à poids ouverts qu’il ait mesuré, sur un banc **interne** : mesure fournisseur, non reproduite indépendamment, non comparable aux scores d’autres éditeurs. **Les poids ne sont pas publiés**, annoncés sous environ deux semaines après évaluation de sûreté. Accès par abonnement **GLM Coding Plan** et ZCode. **[Déduction]** Retenir les poids en invoquant une évaluation de sûreté, après les avoir publiés immédiatement à la version précédente, est un changement de politique d’accès et pas un détail de calendrier : tant qu’ils ne sont pas parus, GLM-5.3 n’est pas une option d’auto-hébergement, et GLM-5.2 sous MIT reste le repli [S179–S181].
+- **DeepSeek — V4 Pro 0813** (13 août). Disponibilité générale, poids **MIT** publiés (~893 Go). MoE **1,6 T / 49 B actifs**, contexte **1 M**, sortie max **384 k**. Tarifs relevés **0,435 USD/M** en entrée hors cache, **0,003625** sur succès de cache, **0,87 USD/M** en sortie. Aucune région UE annoncée pour l’API directe [S182–S183].
+- **Anthropic — Claude Sonnet 5 à 2/10 USD/M, à titre définitif.** La hausse vers 3/15 qui était programmée au 1er septembre 2026 n’aura pas lieu. Établi sur double source primaire ouverte directement : page tarifaire et notes de version de l’API [S158–S159].
+- **Anthropic — Claude Mythos 5.** `claude-mythos-5` existe en **disponibilité limitée sur invitation**, au sein de **Project Glasswing**, pour la cybersécurité défensive, aux caractéristiques et au tarif de Fable 5 (**10/50 USD/M**), **sans inscription en libre-service**. **[Déduction]** Un modèle listé dans une grille tarifaire publique n’est pas pour autant commandable : il ne compte pas parmi les options réellement disponibles depuis la Belgique [S174].
 
-- **Regional Endpoints, en disponibilité générale**: le client choisit si son inférence s’exécute **en Europe ou aux États-Unis**, pour aligner l’exécution sur ses exigences de résidence, de conformité et de latence. Tarif: **1,1× le tarif global**, soit **+10 %**.
-- **Priority Tier, en préversion publique**: niveaux de service engagés pour charges critiques, limites de débit personnalisées, et **SLA de disponibilité de 99,5 %** — soit environ **3 h 39 d’indisponibilité tolérée par mois**. Tarif: **1,75× le tarif catalogue**.
-- **Infrastructure européenne**: une coalition d’entreprises européennes s’engage sur du calcul pluriannuel, qui doit financer **200 MW en Europe fin 2027** et **1 GW fin 2030**.
+### Disponibilité et incidents
 
-**La réserve, qui est essentielle.** L’inférence et son traitement ont lieu dans la région choisie, **sous réserve de transferts encadrés et limités vers des sous-traitants pouvant se situer hors de cette région** [S144]. « Région UE » ne signifie donc pas « aucune donnée ne quitte l’UE ». Pour un registre de traitement ou une analyse d’impact, c’est la liste des sous-traitants et le DPA qui font foi, pas le nom de l’endpoint. Le Priority Tier est par ailleurs en **préversion publique**: un SLA annoncé en préversion n’a pas la même valeur qu’un SLA en GA — à confirmer contractuellement.
+- **Interruption des services Claude** du **14 août 20:00 au 15 août 00:11 UTC**, soit 22:00 → 02:11 heure de Bruxelles, **résolue**. API Claude, Claude Code et Cowork touchés, erreurs élevées constatées notamment sur Fable 5. Aucune analyse post-incident publique trouvée [S184–S185]. **[Déduction]** Le créneau est nocturne côté belge, donc peu visible en usage interactif, mais il traverse les fenêtres de traitement par lots planifiées. C’est l’argument concret du basculement multi-fournisseurs pour tout service exposé à des utilisateurs.
 
-**[Déduction]** Mistral est, à cette date, le seul laboratoire européen à proposer *à la fois* le choix de région et un niveau de service engagé. Pour un projet belge bloqué sur la résidence, +10 % est un surcoût faible comparé au coût d’un déploiement auto-hébergé.
+### Souveraineté et résidence
 
-### 2. xAI: Grok 4.6 et la parité annoncée à moitié prix (12 août)
+- **Mistral vend la souveraineté comme un produit.** **Regional Endpoints en disponibilité générale** : inférence au choix **en Europe ou aux États-Unis**, à **1,1× le tarif global**. **Priority Tier en préversion publique** : limites de débit personnalisées et **SLA de disponibilité 99,5 %** — environ **3 h 39 d’indisponibilité tolérée par mois** — à **1,75× le catalogue**. Coalition européenne finançant **200 MW fin 2027** et **1 GW fin 2030** [S142–S144].
+  **La réserve est essentielle.** L’inférence a lieu dans la région choisie, **sous réserve de transferts encadrés vers des sous-traitants pouvant se situer hors de cette région** [S144]. « Région UE » ne signifie pas « aucune donnée ne quitte l’UE » : pour un registre de traitement, ce sont la liste des sous-traitants et le DPA qui font foi, pas le nom de l’endpoint. Le SLA est annoncé **en préversion** — à confirmer contractuellement.
+  **[Déduction]** Mistral est à cette date le seul laboratoire européen à proposer *à la fois* le choix de région et un niveau de service engagé. Pour un projet belge bloqué sur la résidence, +10 % reste faible devant le coût d’un auto-hébergement.
+- **Agents managés Claude.** Le paramètre **`inference_geo`** commande la géographie d’inférence, à la création de l’agent ou par session ; **aucune géographie UE n’est documentée pour l’API directe**. S’y ajoutent un **budget de session** avec arrêt `budget_reached`, un **conseiller** consultable en cours de tour, et la découverte automatique des compétences d’un dépôt GitHub monté. L’API de conformité couvre depuis le 11 août les transcriptions des sessions locales Cowork et Claude Code, en bêta Enterprise [S175]. Le budget borne la dépense aux tarifs publics : il ne garantit pas un coût.
+- **Résidence dans les clouds partenaires.** Dans Microsoft Foundry, les modèles Anthropic s’exécutent sur l’infrastructure d’Anthropic, **pas dans la région Azure sélectionnée** ; sur AWS Bedrock et Vertex AI ils tournent en région UE du cloud. À vérifier **modèle par modèle** [S131].
 
-**Grok 4.6** remplace Grok 4.5 comme modèle phare [S139–S141]:
+### Modèles frontière et positionnement
 
-- **500 k de contexte**, comme 4.5.
-- **En dessous de 200 k jetons**: 2 USD/M en entrée, **0,50** en entrée mise en cache, 6 USD/M en sortie.
-- **À partir de 200 k jetons**: 4 / 1 / 12 USD/M — et la grille haute s’applique à **tous les jetons de la requête**, pas seulement aux jetons au-delà du seuil. Un dépassement de seuil double donc la facture de la requête entière.
-- Variante rapide à **2× les tarifs standard**. **Aucune remise batch** publiée.
-- Cache: xAI recommande `prompt_cache_key` avec la Responses API, ou l’en-tête `x-grok-conv-id` avec Chat Completions, pour que les requêtes liées atteignent le même serveur.
+- **xAI — Grok 4.6.** 500 k de contexte. **Sous 200 k jetons** : 2 USD/M en entrée, 0,50 en cache, 6 en sortie. **À partir de 200 k** : 4 / 1 / 12 — et la grille haute s’applique à **tous les jetons de la requête**, pas seulement au dépassement, ce qui double la facture d’une requête qui franchit le seuil. Variante rapide à 2×, **aucune remise batch**. Cache via `prompt_cache_key` (Responses API) ou l’en-tête `x-grok-conv-id` (Chat Completions). Donné à parité avec GPT-5.6 Sol sur l’Artificial Analysis Intelligence Index, **mesure tierce** à traiter comme un indice de positionnement et non comme une preuve sur vos tâches [S139–S141].
+  **Belgique : à confirmer.** Grok 4.5 était confirmé dans la console API UE depuis le 17 juillet [S68] ; **rien n’établit ce statut pour 4.6**. Aucune résidence UE n’est annoncée, le DPA documentant un traitement en `us-east-1` et `us-west-2`.
+- **OpenAI — GPT-5.6-Cyber.** Dérivé de Sol entraîné pour la recherche de vulnérabilités, **12,50/75 USD/M** (cache 1,25). **Accès sur dossier uniquement**, via le palier **Daybreak Red** : à considérer comme **indisponible** pour un particulier ou un développeur indépendant belge. Documenté parce qu’il fixe le prix de référence d’une classe de modèles à refus réduits, et confirme que ce segment se structure derrière des barrières d’accès plutôt que derrière des refus techniques [S145–S146].
+- **OpenAI — palier Ultrafast** pour GPT-5.6 Sol, opéré sur matériel Cerebras : jusqu’à **750 jetons/s** et **jusqu’à 14×** la vitesse du palier Standard, à intelligence déclarée identique. **Préversion limitée**, **aucun tarif, quota, région ni SLA publiés**. Chiffres fournisseur non reproduits : ne rien budgéter dessus [S168–S169].
+- **Alibaba — Qwen3.8-Max.** 2,4 T de paramètres MoE dont 95 B actifs, 1 M de contexte, entrée texte/image/vidéo, **2/6 USD/M**. Les poids ouverts annoncés pour la semaine du 10 août **ne sont toujours pas publiés et aucune licence n’est nommée** : à traiter comme une promesse, pas comme un fait [S115–S116, S157].
+- **OpenAI — grille GPT-5.6.** Sol 5/30, Terra 2/12, Luna 0,20/1,20 USD/M, tous à 1,05 M de contexte ; cache lu à −90 %, écritures explicites à **1,25×**. La grille **long contexte** (Sol 10/45, Terra 4/18, Luna 0,40/1,80) fait presque doubler le coût réel sur les requêtes longues — ce que le prix de tête masque [S61–S62, S112, S124].
+- **Anthropic — Opus 5** à 5/25 USD/M, effort configurable, mode Fast à 2× ; **Fable 5** reste le plafond général à 10/50 USD/M [S63–S64].
+- **Google — Gemini 3.6 Flash** en GA à 1,50/7,50 USD/M, 1 M de contexte, 64 k de sortie et outils natifs ; **3.5 Flash-Lite** vise le volume à 0,30/2,50 [S65]. **Gemini Omni Flash** est en préversion publique depuis le 30 juin.
 
-Sur l’**Artificial Analysis Intelligence Index** — mesure tierce, pas un banc fournisseur — Grok 4.6 est donné à parité avec GPT-5.6 Sol et dépasse Kimi K3, pour environ la moitié du prix des modèles frontière comparables [S141]. À traiter comme un indice de positionnement, pas comme une preuve de qualité sur *vos* tâches.
+### Poids ouverts
 
-**Belgique: à confirmer.** Grok 4.5 était confirmé dans la console API UE depuis le 17 juillet [S68]; **rien n’établit encore le même statut pour 4.6**. Surtout, aucune résidence UE n’est annoncée: le DPA de xAI documente un traitement en `us-east-1` et `us-west-2`. Pour des données personnelles européennes, l’écart de prix ne compense pas cette incertitude tant qu’elle n’est pas levée.
+- **Meta — Muse Glimmer**, ~30 B dense sous **Apache 2.0**, conçu pour l’**agent local sur matériel grand public** : 131 k de contexte texte+image, plus de 100 langues, appels d’outils avec reprise sur échec, ≈19,3 Go en 4 bits. Une version ouverte de **Muse Spark 1.2** est annoncée sans date ferme [S117–S119].
+- **NVIDIA — Nemotron 3.5 Lightning**, 30 B MoE / 3 B actifs, 1 M de contexte, licence permissive **OpenMDW-1.1**, avec le routeur **NeMo Switchyard** [S120–S121].
+- **Cohere — North Mini Code 1.0**, 30 B dont **3 B actifs** (MoE), **Apache 2.0**, **256 k de contexte** et jusqu’à 64 k de sortie, poids BF16, FP8 et **w4a16**, GGUF communautaires et image Ollama. Candidat sérieux pour un **agent de code sur une seule carte 24 Go** [S149–S150].
+- **Mistral — Shieldstral 1.0**, classificateur de sûreté 3 B texte et image, **Apache 2.0**, tenant sur un GPU 16 Go, dont la politique de modération s’écrit **en langage naturel au moment de l’inférence** [S122–S123].
+- **IBM — Granite 4.1**, famille de dix modèles (3B/8B/30B, variantes FP8, modèle de sûreté, VLM documentaire, ASR multilingue) [S129].
+- **DeepSeek — V4-Flash 0731**, 284 B, **0,14 USD/M en entrée**, Responses API native, adapté à Codex [S128].
+- **Lettre « Open Weights and American AI Leadership »** (24 juillet, 25 signataires dont NVIDIA, Microsoft, Meta, IBM, Mistral, Hugging Face, Mozilla, la Linux Foundation). **OpenAI, Anthropic et Google ne l’ont pas signée** [S151]. **[Déduction]** La ligne de fracture n’oppose plus « ouvert » à « fermé » par idéologie : elle sépare ceux dont le modèle économique tolère les poids ouverts de ceux dont il repose sur l’accès exclusif.
 
-### 3. Consolidation xAI + Cursor: deux entrées de la liste convergent
+### Outillage, agents et plateformes
 
-L’acquisition d’**Anysphere (Cursor) par SpaceX** pour 60 milliards USD en actions, annoncée le 16 juin, a vu ses **procédures réglementaires finalisées le 12 août**; la clôture est attendue **avant la fin août 2026** et n’était **pas actée** à la date de ce contrôle [S147]. SpaceX avait fusionné plus tôt en 2026 avec xAI; l’entité communique désormais sous le nom **SpaceXAI**. Premier produit annoncé de la combinaison: **Grok Bot**, assistant de travail à partir de **120 USD/mois** [S148].
+- **Spécification MCP 2026-07-28**, version courante et finale. Le cœur du protocole devient **sans état** ; **DCR** cède la place à **CIMD** ; **Roots**, **Sampling** et **Logging** sont dépréciés avec au moins douze mois de fonctionnement garanti [S153].
+- **Agent Plugins 1.0** empaquette compétences d’agent et serveurs MCP dans un greffon installable, publié avec AWS, Anysphere, Microsoft, OpenAI, Vercel et Google, disponible dans VS Code, Copilot CLI et l’application Copilot [S170].
+- **GitHub Copilot** retire Claude Sonnet 3.7, Sonnet 3.7 Thinking, Claude Opus 4 et Gemini 2.0 Flash de **toutes** ses surfaces le **1er septembre 2026**, MAI-Code-1-Flash le 10 septembre [S167]. Les crédits promotionnels Business et Enterprise **expirent fin août 2026** [S137].
+- **SDK et CLI officiels**, versions prouvées sur les registres ouverts directement : `openai` **3.1.0**, `anthropic` **0.122.0**, `mistralai` **2.9.3**, `google-genai` **2.18.1** ; `@anthropic-ai/claude-code` **2.1.233**, `@google/genai` **2.17.1**, `@openai/codex` **0.147.0**, `@modelcontextprotocol/sdk` **1.30.0**. Un registre prouve la version et sa date, **pas le contenu du changement** [S188–S189]. **[Déduction]** À ce rythme de publication, épinglez les versions plutôt que de suivre la dernière en date.
+- **AWS** densifie AgentCore : Runtime Instances dédiées, recherche web sur Bedrock, et **Dogwood**, langage de gouvernance d’agents open-sourcé dont les politiques peuvent dépendre de l’historique des actions de la session [S130]. Bedrock Agents Classic est fermé aux nouveaux clients depuis le 30 juillet [S88–S89].
+- **Perplexity** : Terra et Luna dans Computer, **Terra par défaut pour tous les sous-agents** [S154], au-dessus d’une couche d’orchestration multi-agents [S132].
+- **Cursor** : Router arbitrant coût, équilibre et intelligence ; Privacy Mode interdit l’entraînement et s’appuie sur des accords de rétention zéro, sous réserve d’enquêtes d’abus [S42, S75]. L’acquisition d’**Anysphere par SpaceX** (60 Md USD) a vu ses procédures réglementaires finalisées le 12 août ; la clôture est attendue **avant fin août** et **n’est pas actée** à la date de ce contrôle [S147]. xAI et Anysphere restent **deux entrées distinctes** tant que la clôture n’est pas actée. Premier produit annoncé de la combinaison : **Grok Bot**, à partir de 120 USD/mois [S148].
+- **Publicité dans ChatGPT** : annonces textuelles contextuelles en bas de réponse, signalées comme sponsorisées, aux offres Free et Go, dans **six marchés** — États-Unis, Royaume-Uni, Mexique, Brésil, Japon, Corée du Sud. **La Belgique n’est dans aucune vague annoncée.** Les annonceurs n’ont accès ni aux conversations, ni à l’historique, ni à la mémoire ; la **sélection** s’appuie en revanche sur le sujet de la conversation, les conversations passées et les interactions publicitaires antérieures. Plus, Pro, Business, Enterprise et Edu restent sans publicité.
+- **Hugging Face** a publié une intrusion agentique et recommande la rotation préventive des jetons ; sa reconstruction technique confirme l’importance de l’isolation, des identités courtes et du blocage de l’accès aux métadonnées d’instance [S76–S77].
+- **Calendrier de dépréciation** : trois endpoints **Imagen 4** s’arrêtent le **17 août 2026** ; **Gemini 2.5** Pro, Flash et Flash-Lite le **16 octobre 2026** [S114, S152]. **GitHub Models** est retiré depuis le 30 juillet [S73–S74]. **Claude Opus 4.1** est retiré de l’API Claude.
 
-**Conséquence pour cet observatoire.** xAI (rang 8) et Anysphere/Cursor (rang 16) restent **deux entrées distinctes** tant que la clôture n’est pas actée — c’est le fait vérifié, et il serait prématuré de fusionner sur une clôture annoncée. Mais il faut anticiper: à la prochaine édition, une fusion des deux entrées est probable, ce qui **libérera une place** dans la sélection de 20. Un rapport de presse évoque une possible disparition de la marque Cursor; **non confirmé**, à ne pas répercuter [S147].
+### Piste suivie, non publiée comme fait
 
-### 4. OpenAI: GPT-5.6-Cyber, puissant mais fermé (10 août)
-
-Modèle spécialisé en cybersécurité, dérivé de GPT-5.6 Sol, entraîné pour la recherche de vulnérabilités et le développement de chaînes d’exploitation — des catégories que les modèles généralistes refusent souvent. Tarif publié: **12,50 USD/M en entrée, 75 en sortie, 1,25 en entrée mise en cache** [S145–S146].
-
-**Ce n’est pas une offre en libre-service.** L’accès passe par un nouveau palier du programme Daybreak d’OpenAI, **Daybreak Red**, avec candidature, approbation et provisionnement séparés. Pour un particulier ou un développeur indépendant belge, considérez-le comme **indisponible**. Il est documenté ici pour une seule raison: il fixe le prix de référence d’une classe de modèles à refus réduits, et il confirme que ce segment se structure derrière des barrières d’accès plutôt que derrière des refus techniques.
-
-### 5. Lacunes de couverture corrigées
-
-Trois faits antérieurs au cycle, absents des éditions précédentes, sont intégrés:
-
-- **Cohere North Mini Code 1.0** (9 juin): 30 B au total dont **3 B actifs** (MoE), **Apache 2.0**, **256 k de contexte et jusqu’à 64 k de sortie**, poids sur Hugging Face en BF16, FP8 et **w4a16**, plus des GGUF communautaires et une image Ollama [S149–S150]. Cohere était jusqu’ici décrit comme « peu d’offre ouverte »: c’est faux depuis juin, et le modèle est un **candidat sérieux pour un agent de code tournant sur une seule carte 24 Go**. Ajouté au [guide local](modeles-locaux-par-hardware.md).
-- **Lettre « Open Weights and American AI Leadership »** (24 juillet, 25 signataires): NVIDIA, Microsoft, Meta, IBM, Mistral, Hugging Face, Mozilla, Dell, Palantir, Replit, Perplexity, la Linux Foundation, a16z et Y Combinator. **OpenAI, Anthropic et Google ne l’ont pas signée** [S151]. Le texte demande aux décideurs de ne pas confondre la distillation, « technique largement utilisée », avec une appropriation illicite. **[Déduction]** La ligne de fracture de l’industrie n’oppose plus « ouvert » à « fermé » par idéologie: elle sépare ceux dont le modèle économique tolère les poids ouverts de ceux dont il repose sur l’accès exclusif.
-- **Google**: **Gemini Omni Flash** est en préversion publique depuis le 30 juin. Le journal officiel confirme l’arrêt au **17 août 2026** de trois endpoints Imagen 4 (`generate`, `ultra` et `fast`). L’arrêt au 31 août de `gemini-robotics-er-1.6-preview`, précédemment indiqué, n’est pas publié dans cette source et est retiré du calendrier [S152].
-- **Perplexity**: Terra et Luna sont disponibles dans Computer, Terra devenant le **modèle par défaut de tous les sous-agents** [S154].
-
-### Rappels du cycle précédent (28 juillet – 11 août)
-
-Toujours valides et non contredits par ce contrôle. La *justification* de deux acteurs avait changé de nature:
-
-- **Meta** figurait dans la liste au titre de Llama, famille en fin de cycle après la réception médiocre de Llama 4. L’acteur y reste désormais au titre de **Muse**: **Muse Glimmer**, ~30 B dense sous **Apache 2.0**, est son premier modèle à poids ouverts depuis plus d’un an, explicitement conçu pour l’**agent local sur matériel grand public** (131 k de contexte texte+image, plus de 100 langues, appels d’outils avec reprise sur échec, ≈19,3 Go en 4 bits). Une version ouverte de **Muse Spark 1.2** est annoncée, sans date ferme [S117–S119].
-- **NVIDIA** cesse d’être seulement un fournisseur d’infrastructure: **Nemotron 3.5 Lightning** (30 B MoE, 3 B actifs, 1 M de contexte, licence permissive OpenMDW-1.1) et le routeur **NeMo Switchyard** en font un acteur de premier plan du poids ouvert occidental [S120–S121].
-
-Les autres faits marquants du cycle du 28 juillet au 11 août:
-
-- **Alibaba aligne son prix sur la frontière.** **Qwen3.8-Max** (3 août): 2,4 T de paramètres MoE dont 95 B actifs, 1 M de contexte, entrée texte/image/vidéo, à **2/6 USD/M** — la parité en entrée avec GPT-5.6 Terra. Les poids ouverts (Max et un Qwen3.8-27B) étaient annoncés pour la semaine du 10 août mais **n’étaient toujours pas publiés au 13 août, et aucune licence n’est nommée** — la semaine promise est désormais dépassée de plusieurs jours. Qwen3.5 et Qwen3.6 étaient sortis sous Apache 2.0, mais rien ne le confirme pour 3.8-Max. À traiter comme une promesse, pas comme un fait [S115–S116, S157].
-- **Mistral publie un garde-fou ouvert.** **Shieldstral 1.0** (4 août): classificateur de sûreté 3 B, texte et image, **Apache 2.0**, tenant sur un seul GPU 16 Go. Sa particularité: la politique de modération s’écrit **en langage naturel au moment de l’inférence** au lieu d’être figée à l’entraînement. C’est la brique qui manquait pour encadrer un déploiement local ou souverain [S122–S123].
-- **DeepSeek officialise V4-Flash** (31 juillet, build 0731): 284 B, **0,14 USD/M en entrée**, support natif de la Responses API, adapté à Codex — et il dépasse le V4-Pro-Preview de son propre éditeur sur neuf bancs agentiques. La GA de V4 Pro glisse [S128].
-- **IBM publie Granite 4.1**, famille de dix modèles (3B/8B/30B, variantes FP8, modèle de sûreté, VLM documentaire, ASR multilingue) [S129].
-- **AWS densifie AgentCore**: Runtime Instances dédiées, recherche web sur Bedrock, et **Dogwood**, un langage de gouvernance d’agents open-sourcé dont les politiques peuvent dépendre de l’historique des actions dans la session [S130].
-- **Perplexity Computer** ajoute une couche d’orchestration multi-agents routant vers plusieurs modèles frontière [S132]. **xAI** route `grok-voice-latest` vers grok-voice-think-fast-2.0 depuis le 5 août [S133].
-- **Nouveau détail tarifaire OpenAI**: la grille **long contexte** de GPT-5.6 est documentée (Sol 10/45, Terra 4/18, Luna 0,40/1,80 USD/M) ainsi que l’**écriture de cache à 1,25×** l’entrée [S124]. À contexte long, le coût réel double presque — un point que le prix affiché en tête de gamme masque.
-- **Nouveau (contrôle du 11 août):** OpenAI a baissé les prix API de GPT-5.6 le 30 juillet: **Terra passe de 2,50/15 à 2/12 USD/M (−20 %)** et **Luna de 1/6 à 0,20/1,20 USD/M (−80 %)**; Sol reste à 5/30. Un « Fast Mode » pour Sol remplace Priority Processing (jusqu’à ×2,5 de vitesse, ×2 le prix, intelligence inchangée) [S112–S113].
-- **Nouveau (contrôle du 11 août):** Google a programmé l’arrêt de Gemini 2.5 Pro, Flash et Flash-Lite au **16 octobre 2026**; migrer vers la famille 3.x [S114].
-
-**Une correction à signaler.** Le guide d’exécution locale publié le 11 août recommandait Gemma 3 et Qwen3 comme familles de référence. Ces deux familles avaient déjà été remplacées en avril 2026 par **Gemma 4** (désormais Apache 2.0, multimodale, 128 k–256 k) et **Qwen3.6**. Le guide est corrigé [S126–S127]. La leçon vaut pour vos propres installations: **un tag de registre populaire continue souvent de pointer vers une génération précédente**; vérifiez la date de la carte de modèle, pas le nom de la famille.
-- OpenAI a généralisé la famille GPT-5.6: Sol (5/30 USD/M), Terra (2/12 depuis le 30/07) et Luna (0,20/1,20 depuis le 30/07), tous à 1,05 M de contexte; cache lu à -90 %, écritures explicites à 1,25× [S61–S62, S112].
-- Anthropic a lancé Opus 5 le 24 juillet à 5/25 USD/M, avec effort configurable et mode Fast à 2×; Fable 5 reste le plafond général à 10/50 USD/M avec garde-fous et fallback possibles [S63–S64].
-- Google a mis Gemini 3.6 Flash en GA à 1,50/7,50 USD/M, 1 M de contexte, 64 k de sortie et outils natifs; Gemini 3.5 Flash-Lite vise le volume à 0,30/2,50 [S65].
-- AWS a fermé Bedrock Agents Classic aux nouveaux clients le 30 juillet et recommande AgentCore; le changement de namespace Agent Registry impose de revoir endpoints, IAM, SDK et données de registre [S88–S89].
-- xAI proposait Grok 4.5 à 500 k de contexte, 2/6 USD par million de jetons en contexte court et 4/12 USD en long contexte [S22]; **remplacé par Grok 4.6 le 12 août à grille identique** [S140].
-- xAI confirme Grok 4.5 dans la console API pour les utilisateurs UE depuis le 17 juillet [S68]; **le même statut pour 4.6 reste à confirmer**.
-- DeepSeek V4 Pro/Flash remplace les alias historiques retirés le 24 juillet: contexte 1 M, cache, outils et API OpenAI/Anthropic compatibles [S66–S67].
-- GitHub Models a été totalement retiré le 30 juillet; Copilot demeure et propose notamment GPT-5.6, Opus 5 et Kimi K2.7 [S73–S74].
-- Cursor Router route les requêtes selon coût, équilibre ou intelligence; les plans belges restent à confirmer au checkout [S75].
-- Cursor a mis à jour sa politique le 15 juillet 2026: Privacy Mode interdit l’entraînement et s’appuie sur des accords de rétention zéro, sous réserve d’enquêtes d’abus [S42].
-- Kimi K3 est disponible en API à 1 M de contexte; les poids complets ont été annoncés pour le 27 juillet et la politique de confidentialité a été mise à jour le 28 juillet [S70–S72].
-- Hugging Face a publié une intrusion agentique et recommande la rotation préventive des jetons; sa reconstruction technique du 27 juillet confirme l’importance de l’isolation, des identités courtes et du blocage de l’accès metadata [S76–S77].
+- **Anthropic–Decart** : Bloomberg rapporte le 13 août des **discussions** en vue d’une acquisition d’environ 6 milliards USD, reprises par Fortune et Yahoo Finance. Toutes les sources décrivent un stade précoce ; **aucune communication officielle des parties**. Des discussions rapportées ne sont pas une acquisition : à ne fonder ni architecture, ni contrat, ni budget dessus [S190].
 
 ## Prix et Belgique
 
-Taux de référence conservé: **1 EUR = 1,1554 USD** (BCE, 5 août 2026) [S79]. Le taux de référence BCE du **11 août est 1,1540** [S156], soit **0,12 % d’écart** — sous le seuil de matérialité, donc pas de recalcul en cascade. Le domaine `ecb.europa.eu` restait bloqué: la valeur est relayée par le portail de données, non ouverte directement. Donc 20 USD ≈ 17,31 EUR. Le checkout et la facture priment toujours.
+Taux de référence conservé: **1 EUR = 1,1554 USD** (BCE, 5 août 2026) [S79]. Une cotation de marché relevée à **1,1536 le 14 août** s’en écarte de **0,16 %** — sous le seuil de matérialité, donc pas de recalcul en cascade — et **n’a pas pu être confirmée comme taux de référence BCE**, le domaine `ecb.europa.eu` étant bloqué. Donc 20 USD ≈ 17,31 EUR. Le checkout et la facture priment toujours.
 
 **Repère grand public pour la Belgique.** Les abonnements de référence restent affichés autour de 20 USD/mois (ChatGPT Plus, Claude Pro, Google AI Pro ≈ 19,99 USD, Mistral Vibe Pro 14,99 USD). Ces montants sont des ordres de grandeur: **seul le checkout belge fait foi**, et il n’a pas pu être simulé lors de ce contrôle.
 
@@ -125,7 +104,7 @@ Les offres explicitement disponibles dans l’EEE incluent notamment Gemini API;
 
 ## Capacités: ne pas confondre les produits
 
-- **Modèle**: moteur probabiliste, par exemple GPT-5.6 Sol, Claude Opus 5 ou Gemini 3.6 Flash.
+- **Modèle**: moteur probabiliste, par exemple GPT-5.6 Sol, Claude Opus 5 ou Gemini 3.7 Flash.
 - **Application**: ChatGPT, Claude, Gemini, Grok, Vibe, Perplexity; elle ajoute recherche, fichiers, mémoire et interface.
 - **Plateforme API**: endpoints, SDK, quotas, cache, batch, observabilité et outils.
 - **Assistant de code**: Copilot ou Cursor, intégré à l’IDE et au dépôt.
@@ -144,13 +123,14 @@ Pour les offres grand public, vérifier le réglage d’entraînement. OpenAI AP
 ## Décisions à prendre
 
 1. **Traiter l’échéance Copilot du 1er septembre.** Recenser les modèles épinglés dans les flux et politiques, et ouvrir les remplaçants avant la date. La fin des crédits promotionnels Copilot reste également à vérifier fin août. L’arbitrage tarifaire Sonnet 5 est en revanche clos: le tarif de 2/10 USD/M est définitif.
-2. **Si la résidence des données bloque un projet**, chiffrer l’endpoint UE Mistral (+10 %) et, pour une charge critique, le Priority Tier (×1,75, SLA 99,5 % en préversion) — en exigeant du fournisseur la liste des sous-traitants susceptibles de recevoir un transfert hors région.
-3. **Si vous suivez Cursor**, surveiller la clôture de l’acquisition par SpaceX attendue fin août: contrat, entité facturante, politique de confidentialité et juridiction peuvent changer sans que le produit change.
-4. Choisir deux fournisseurs maximum pour un pilote de quatre semaines.
-5. Définir trois tâches réelles, une enveloppe de coût et un jeu d’évaluation reproductible.
-6. Interdire les secrets et données personnelles tant que DPA, région et rétention ne sont pas validés — **et vérifier la résidence modèle par modèle**, pas seulement la région de la plateforme.
-7. Épingler les versions de modèles en production et mettre en place un fournisseur de secours.
-8. **Auditer les intégrations MCP** face à la spécification 2026-07-28: sessions au niveau protocole, DCR, Roots, Sampling et Logging sont sur la trajectoire de retrait.
-9. Mesurer coût par tâche réussie, latence p95, taux d’intervention humaine et incidents, pas seulement prix par jeton — et pour les contextes longs, budgéter la **grille long contexte**, pas le prix d’entrée de gamme.
+2. **Poser une échéance au 1er décembre 2026 si vous adoptez Gemini 3.7 Flash.** Le tarif de 0,75/3,75 USD/M **double au 1er janvier 2027**. Une remise à durée déterminée se prend, mais avec la date de fin inscrite au calendrier de réévaluation, pas oubliée dans un budget annuel.
+3. **Si la résidence des données bloque un projet**, chiffrer l’endpoint UE Mistral (+10 %) et, pour une charge critique, le Priority Tier (×1,75, SLA 99,5 % en préversion) — en exigeant du fournisseur la liste des sous-traitants susceptibles de recevoir un transfert hors région.
+4. **Si vous suivez Cursor**, surveiller la clôture de l’acquisition par SpaceX attendue fin août: contrat, entité facturante, politique de confidentialité et juridiction peuvent changer sans que le produit change.
+5. Choisir deux fournisseurs maximum pour un pilote de quatre semaines.
+6. Définir trois tâches réelles, une enveloppe de coût et un jeu d’évaluation reproductible.
+7. Interdire les secrets et données personnelles tant que DPA, région et rétention ne sont pas validés — **et vérifier la résidence modèle par modèle**, pas seulement la région de la plateforme.
+8. Épingler les versions de modèles en production et mettre en place un fournisseur de secours.
+9. **Auditer les intégrations MCP** face à la spécification 2026-07-28: sessions au niveau protocole, DCR, Roots, Sampling et Logging sont sur la trajectoire de retrait.
+10. Mesurer coût par tâche réussie, latence p95, taux d’intervention humaine et incidents, pas seulement prix par jeton — et pour les contextes longs, budgéter la **grille long contexte**, pas le prix d’entrée de gamme.
 
 Détails et sources: [comparatif](comparatif.md), [analyse](analyse-detaillee.md), [bonnes pratiques](bonnes-pratiques-developpement.md), [modèles locaux](modeles-locaux-par-hardware.md), [sources](sources.md).

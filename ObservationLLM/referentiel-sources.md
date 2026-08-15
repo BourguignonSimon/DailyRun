@@ -1,6 +1,6 @@
 # Sources de référence et indices de confiance
 
-Contrôle : **14 août 2026**. Ce référentiel rassemble les URL de base à privilégier à chaque recherche quotidienne. L’indice mesure l’aptitude de la source à établir les sujets indiqués ; il ne constitue pas une note universelle de vérité.
+Contrôle : **15 août 2026**. Ce référentiel rassemble les URL de base à privilégier à chaque recherche quotidienne. L’indice mesure l’aptitude de la source à établir les sujets indiqués ; il ne constitue pas une note universelle de vérité.
 
 ## Barème
 
@@ -52,6 +52,21 @@ Contrôle : **14 août 2026**. Ce référentiel rassemble les URL de base à pri
 
 Pour TLDR AI, le run construit l’URL du numéro avec le modèle `https://tldr.tech/ai/YYYY-MM-DD` et la date du jour. TechCrunch, VentureBeat, TLDR AI et AI Frontiers servent à découvrir ou contextualiser des sujets avant retour à la source originale. TestingCatalog est explicitement un signal précoce : toute fuite, fonctionnalité en préparation ou rumeur reste **à confirmer**. NVIDIA Research est primaire pour les travaux de NVIDIA, sans transformer un résultat fournisseur non reproduit en mesure indépendante.
 
+| R45 | Decrypt | [Decrypt — rubrique IA](https://decrypt.co/) | Secondaire | annonces, modèles, écosystème chinois | 72/100 | Index |
+| R46 | MarkTechPost | [MarkTechPost](https://www.marktechpost.com/) | Secondaire | modèles, caractéristiques techniques, publications de recherche | 70/100 | Index |
+| R47 | Unite.AI | [Unite.AI](https://www.unite.ai/) | Secondaire | modèles, analyse sectorielle | 70/100 | Index |
+| R48 | Simon Willison | [Simon Willison — blog et notes datées](https://simonwillison.net/) | Secondaire | modèles, poids ouverts, outillage développeur | 78/100 | Index |
+| R49 | Google | [Google DeepMind — cartes modèles](https://deepmind.google/models/model-cards/) | Primaire | modèles, capacités déclarées, coupure de connaissances | 97/100 | Index |
+| R50 | Multiples | [Agrégateurs d’état de service (StatusGator, IncidentHub)](https://incidenthub.cloud/) | Secondaire | incidents, disponibilité | 74/100 | Index |
+| R51 | Future of Life Institute | [Suivi de l’AI Act européen](https://artificialintelligenceact.eu/) | Secondaire | AI Act, obligations GPAI, calendrier réglementaire | 76/100 | Index |
+| R52 | Bloomberg | [Bloomberg](https://www.bloomberg.com/) | Secondaire | opérations financières, acquisitions | 80/100 | Index |
+
+### Accessibilité mesurée au 15 août 2026
+
+Les **44 sources historiques** de ce référentiel ont été retestées une à une depuis l’environnement d’exécution : **4 répondent** — `platform.claude.com` (R02), `pypi.org` (R38), `registry.npmjs.org` (R39) et `blog.modelcontextprotocol.io` (R40) — et **40 sont refusées au tunnel CONNECT du mandataire**, dont la totalité des six points d’entrée de veille quotidienne obligatoires (R32 à R37). Deux domaines ouvrables au contrôle précédent ne le sont plus : `cloud.google.com` (R04) et l’API GitHub. La colonne « Accès au dernier contrôle » reflète le dernier résultat connu et non ce test ; le résultat par source, daté, est tenu dans `dashboard/data/source-registry.json`.
+
+Les **huit sources ajoutées à ce contrôle** (R45 à R52) ont été atteintes **via la recherche web indexée** et non en accès direct. Elles servent à corroborer, jamais à établir seules un fait contractuel : R49, seule source primaire du lot, est la carte modèle officielle Google DeepMind, identifiée mais non ouverte.
+
 ## Sources X dignes de confiance pour la veille quotidienne
 
 Une source X entre dans cette liste lorsqu’au moins une de ses annonces obtient **90/100 ou plus** après corroboration par une preuve primaire durable. Cette promotion augmente sa priorité de surveillance, pas la confiance automatique accordée à ses futurs posts.
@@ -73,7 +88,7 @@ Pour chaque annonce retenue, enregistrer l’URL exacte du post lorsqu’elle es
 
 ## Registres de distribution officiels — voie de preuve primaire
 
-Contrôle du 14 août 2026. Ces sources figurent au référentiel parce qu’elles sont **joignables alors que la documentation fournisseur ne l’est pas**, et parce qu’elles sont opérées comme canal de publication officiel par l’éditeur du paquet.
+Contrôle du 15 août 2026. Ces sources figurent au référentiel parce qu’elles sont **joignables alors que la documentation fournisseur ne l’est pas**, et parce qu’elles sont opérées comme canal de publication officiel par l’éditeur du paquet.
 
 | ID | Source | URL de base | Modèle d’URL | Nature | Sujets | Indice | Portée et limite |
 |---|---|---|---|---|---|---:|---|
@@ -93,7 +108,7 @@ La promotion suit une règle unique : un post d’un compte officiel dont l’an
 
 | Compte | Acteur | Preuve de promotion | Fondement |
 |---|---|---|---|
-| [@AnthropicAI](https://x.com/AnthropicAI) | Anthropic | Annonce tarifaire notée **97/100** le 14 août 2026 | Corroborée par la page tarifaire officielle Anthropic **ouverte directement** |
+| [@AnthropicAI](https://x.com/AnthropicAI) | Anthropic | Annonce tarifaire notée **98/100** le 15 août 2026 | Corroborée par la page tarifaire officielle **et** les notes de version de l’API, toutes deux **ouvertes directement** |
 | [@AIatMeta](https://x.com/AIatMeta) | Meta | Annonce Muse Glimmer notée **96/100** | Corroborée par une publication Meta Research durable |
 | [@MistralAI](https://x.com/MistralAI) | Mistral AI | Annonce d’infrastructure européenne notée **94/100** | Corroborée par l’annonce officielle et la documentation produit |
 | [@nvidia](https://x.com/nvidia) | NVIDIA | Annonce Nemotron notée **94/100** | Corroborée par la carte de modèle publiée |

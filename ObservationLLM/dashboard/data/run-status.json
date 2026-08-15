@@ -1,11 +1,11 @@
 {
-  "runId": "2026-08-14-observatoire",
+  "runId": "2026-08-15-observatoire",
   "status": "completed",
   "phase": "publication",
   "model": "Opus 5",
-  "startedAt": "2026-08-14T06:52:34Z",
-  "message": "Contrôle du 14 août 2026 terminé. Ligne Temps réel exécutée et ligne Événementielle déclenchée : la hausse de Claude Sonnet 5 au 1er septembre est annulée, fait établi sur la page tarifaire officielle ouverte directement, et propagé à toutes les vues courantes. Quatre annonces entrent dans la vue courante. Les lignes hebdomadaires Opérationnelle, Approfondie et Structurelle restent à jour pour la semaine ISO 2026-W33, prochaine échéance le 17 août. Réserve : la politique réseau sortante bloque les six points d’entrée obligatoires et la majorité des domaines éditeurs ; les faits concernés sont marqués non revérifiés et plafonnés à 89/100.",
-  "evidenceLevel": "primaire direct pour Anthropic, MCP et les registres de distribution ; convergence de sources indépendantes ailleurs",
-  "completedAt": "2026-08-14T07:55:00Z",
-  "commit": "435c4aa6d1c3d5aa02bc12439e5e636e3c51d0c0"
+  "startedAt": "2026-08-15T06:20:00Z",
+  "message": "Contrôle du 15 août 2026 terminé. Ligne Temps réel exécutée et ligne Événementielle déclenchée sur quatre détections à impact matériel : Gemini 3.7 Flash à tarif promotionnel expirant le 31 décembre 2026, GLM-5.3 publié sans ses poids ouverts, DeepSeek V4 Pro 0813 en disponibilité générale sous licence MIT, et une interruption des services Claude du 14 août 20:00 au 15 août 00:11 UTC, résolue. La documentation Anthropic, ouverte directement, a établi deux faits supplémentaires en preuve primaire : Claude Mythos 5 en disponibilité limitée sur invitation, et les nouvelles capacités des agents managés. Vingt-deux annonces composent la vue courante. Les lignes hebdomadaires Opérationnelle, Approfondie et Structurelle restent à jour pour la semaine ISO 2026-W33, prochaine échéance le 17 août. Réserve : sur les 44 sources historiques retestées une à une, 4 répondent et 40 sont refusées, dont la totalité des six points d’entrée obligatoires ; les faits concernés sont marqués non revérifiés et plafonnés à 89/100.",
+  "evidenceLevel": "primaire direct pour Anthropic, le Model Context Protocol et les registres de distribution ; convergence de sources indépendantes ailleurs",
+  "completedAt": "2026-08-15T07:05:00Z",
+  "commit": null
 }
