@@ -3,7 +3,7 @@
   "run": {
     "checkedAt": "2026-08-16T07:05:00Z",
     "factsVerifiedThrough": "2026-08-16",
-    "commit": "c54b84830bc71ef7ee1a1ffbf352828a4ecc5374",
+    "commit": "80b64df44d4f99f044663f582cdbac781e9670e0",
     "model": "Opus 5",
     "result": "Contrôle du 16 août 2026. Ligne Temps réel exécutée et ligne Événementielle déclenchée sur six détections à impact matériel, dont quatre établies en source primaire durable. Deux canaux de preuve primaire ont été ouverts pour la première fois depuis cet environnement d’exécution — la documentation et le journal de version de Claude Code sur code.claude.com, et le contenu brut des dépôts publics sur raw.githubusercontent.com — ce qui a permis de lire les journaux de version officiels de trois chaînes SDK sur quatre et d’établir le contenu des changements, et non plus seulement leur date. Trente-deux annonces composent la vue courante. Les lignes hebdomadaires Opérationnelle, Approfondie et Structurelle restent à jour pour la semaine ISO 2026-W33, que le 16 août clôt ; prochaine échéance le lundi 17 août. Réserve : sur les cinquante-deux sources du référentiel retestées une à une, quatre répondent et quarante-huit sont refusées, dont la totalité des six points d’entrée obligatoires ; les faits concernés sont marqués non revérifiés et plafonnés à 89/100."
   },
