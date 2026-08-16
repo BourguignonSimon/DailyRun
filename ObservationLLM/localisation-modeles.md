@@ -1,6 +1,10 @@
 # Localisation, distribution et hébergement des modèles
 
-Contrôle : **15 août 2026**. Cette vue indique où un modèle peut être obtenu ou exécuté. Elle distingue le développeur du modèle, son distributeur et l’hébergeur effectif. Une disponibilité commerciale depuis la Belgique ne garantit ni l’exécution ni le stockage dans l’Union européenne.
+Contrôle : **16 août 2026**. Cette vue indique où un modèle peut être obtenu ou exécuté. Elle distingue le développeur du modèle, son distributeur et l’hébergeur effectif. Une disponibilité commerciale depuis la Belgique ne garantit ni l’exécution ni le stockage dans l’Union européenne.
+
+> 🆕 **Nouveauté d’hébergement au contrôle du 16 août 2026 : les environnements auto-hébergés de Claude Code.** En bêta publique sur les formules Team et Enterprise, ils font s’exécuter les sessions infonuagiques de Claude Code sur une infrastructure opérée par l’organisation : une session lancée depuis le web, le mobile, le bureau, le terminal ou une routine planifiée tourne dans le réseau de l’organisation, avec les dépôts, artefacts de compilation, secrets et fichiers créés sur des machines qu’elle provisionne. **La distinction qui compte pour cette vue : l’auto-hébergement porte sur l’exécution de la session, pas sur l’inférence.** Le modèle continue d’être appelé chez Anthropic ou chez le cloud partenaire configuré, et c’est cette inférence qui détermine la résidence du traitement. Présenter cette option comme une souveraineté de bout en bout serait faux. Fait établi en source primaire durable [S192–S193].
+>
+> 🔒 **Confidentialité — la Compliance API couvre désormais les transcriptions de sessions.** Les points de terminaison de sessions renvoient un enregistrement consolidé — invites, réponses, activité d’outils — pour les sessions **locales** Cowork et Claude Code exécutées sur les machines des utilisateurs connectés avec un compte **Claude Enterprise**, et pour les sessions Cowork **distantes** exécutées dans des environnements gérés par Anthropic. Autrement dit, **le lieu d’exécution d’une session locale ne détermine pas à lui seul qui peut en relire le contenu** : la transcription est retenue côté serveur et récupérable par l’organisation avec une Compliance Access Key. Sans effet sur les formules individuelles Pro et Max. Fait établi en source primaire durable [S194].
 
 ## Lecture rapide
 

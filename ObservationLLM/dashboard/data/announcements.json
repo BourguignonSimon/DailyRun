@@ -1,39 +1,369 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-08-15",
-  "methodology": "Les flux X et la presse spécialisée servent à détecter rapidement une annonce. La confiance finale dépend de la corroboration par une source primaire durable et directement responsable du fait. Lorsque le domaine officiel est injoignable depuis l’environnement d’exécution, la mention en est faite dans confidenceReason.",
+  "checkedAt": "2026-08-16",
+  "methodology": "Les flux X et la presse spécialisée servent à détecter rapidement une annonce. La confiance finale dépend de la corroboration par une source primaire durable et directement responsable du fait. Lorsque le domaine officiel est injoignable depuis l’environnement d’exécution, la mention en est faite dans confidenceReason et la note est plafonnée à 89/100.",
   "announcements": [
     {
-      "id": "A20260810-ANTHROPIC-SONNET5-PRIX-PERMANENT",
-      "publishedAt": "2026-08-10",
-      "actor": "Anthropic",
-      "category": "Prix",
-      "title": "Le tarif de Claude Sonnet 5 devient définitif à 2/10 USD/M : la hausse du 1er septembre est annulée",
-      "summary": "Le tarif de lancement de 2 USD par million de jetons d’entrée et 10 USD en sortie devient le tarif standard de Claude Sonnet 5. La hausse vers 3/15 USD/M qui était programmée au 1er septembre 2026 n’aura pas lieu. Les tarifs des abonnements grand public restent inchangés.",
-      "confidence": 98,
-      "confidenceLabel": "Très forte",
-      "confidenceReason": "Double preuve primaire durable ouverte directement le 2026-08-15 : la page tarifaire officielle porte la note « claude-sonnet-5-introductory-pricing », et les notes de version de l’API datent la décision au 10 août 2026 dans les termes exacts « the previously scheduled increase to $3 / $15 per MTok on September 1, 2026 will not occur ». Le tableau tarifaire relevé le même jour affiche bien 2 / 10 USD par MTok pour Claude Sonnet 5.",
+      "id": "A20260815-SIGNAUX-PRECOCES",
+      "publishedAt": "2026-08-16",
+      "actor": "Multiples",
+      "category": "Signal précoce",
+      "title": "Signaux précoces : discussions Anthropic–Decart toujours au stade des pourparlers, aucune série d’incidents ChatGPT établie",
+      "summary": "Deux pistes suivies comme signaux et non comme faits, recontrôlées le 2026-08-16. Un, les discussions en vue de l’acquisition par Anthropic de la société israélienne Decart — infrastructure d’IA, optimisation de l’efficacité des puces et vidéo générative temps réel — pour un montant de l’ordre de 6 milliards USD, rapportées par Bloomberg le 13 août 2026, sont reprises par de nombreux titres indépendants. Toutes les reprises consultées décrivent le même état : des pourparlers à un stade précoce, susceptibles d’échouer, et non un accord signé ; aucune communication officielle d’une des deux parties, ni dépôt réglementaire, n’a été trouvé au 16 août. Deux, la série d’interruptions de ChatGPT évoquée par plusieurs médias pour la semaine du 10 août reste non établie : la page d’état officielle demeure inaccessible et les agrégateurs consultés décrivent un service opérationnel.",
+      "confidence": 72,
+      "confidenceLabel": "Moyenne — à confirmer",
+      "confidenceReason": "Le fait « des discussions sont rapportées » est solidement établi par une agence financière de référence et de nombreuses reprises indépendantes concordantes sur le montant, la cible et la date. Le fait « une acquisition a lieu » n’est établi par aucune source au 2026-08-16 : ni communiqué, ni dépôt réglementaire. Trois jours après le premier signalement, l’absence de confirmation officielle est elle-même une information et la note reste inchangée. La série d’incidents ChatGPT demeure sous 60/100 et n’est pas publiée comme fait.",
       "signals": [
         {
           "sourceId": "R18",
-          "label": "@AnthropicAI / @claudeai sur X (via Techmeme)",
-          "url": "https://www.techmeme.com/260810/p42"
+          "label": "@AnthropicAI sur X",
+          "url": "https://x.com/AnthropicAI"
+        },
+        {
+          "sourceId": "R17",
+          "label": "@OpenAI sur X",
+          "url": "https://x.com/OpenAI"
+        },
+        {
+          "sourceId": "R52",
+          "label": "Bloomberg",
+          "url": "https://www.bloomberg.com/news/articles/2026-08-13/anthropic-said-in-talks-to-buy-ai-startup-decart-for-6-billion"
         }
       ],
       "evidence": [
         {
-          "label": "Page tarifaire officielle (note claude-sonnet-5-introductory-pricing)",
-          "url": "https://platform.claude.com/docs/en/about-claude/pricing"
+          "label": "Bloomberg — 13 août 2026, discussions rapportées",
+          "url": "https://www.bloomberg.com/news/articles/2026-08-13/anthropic-said-in-talks-to-buy-ai-startup-decart-for-6-billion"
         },
         {
-          "label": "Techmeme — 10 août 2026, reprise du compte officiel",
-          "url": "https://www.techmeme.com/260810/p42"
+          "label": "Fortune — 13 août 2026, reprise indépendante",
+          "url": "https://fortune.com/2026/08/13/anthropic-said-in-talks-to-buy-startup-decart-for-6-billion/"
+        },
+        {
+          "label": "Page d’état officielle OpenAI (non ouverte — domaine bloqué)",
+          "url": "https://status.openai.com/"
         }
       ],
-      "caveat": "Cette annulation remplace l’échéance du 1er septembre publiée jusqu’au contrôle du 13 août 2026. Un tarif reste modifiable : revérifier la page officielle avant tout engagement pluriannuel.",
-      "belgiumImpact": "Le budget API d’un développeur belge évite la hausse de 50 % qui était anticipée sur l’entrée et la sortie. Un arbitrage de migration motivé uniquement par ce surcoût n’a plus d’objet. Facturation en USD, conversion EUR à la charge du client.",
-      "verificationStatus": "Revérifié directement le 2026-08-15 — page tarifaire et notes de version de l’API ouvertes",
-      "lastCheckedAt": "2026-08-15"
+      "caveat": "À confirmer. Des discussions rapportées ne sont pas une acquisition : ne fonder sur ce signal aucune décision d’architecture, de contrat ou de budget. En cas de conclusion, l’entité contractante et les conditions de traitement des données pourraient évoluer.",
+      "belgiumImpact": "Aucun impact belge établi à ce stade. Une consolidation d’infrastructure chez un fournisseur déjà utilisé depuis la Belgique justifierait de relire la liste de ses sous-traitants et son DPA le moment venu.",
+      "verificationStatus": "Recontrôlé le 2026-08-16 — toujours au stade du signal, aucune confirmation officielle",
+      "lastCheckedAt": "2026-08-16"
+    },
+    {
+      "id": "A20260815-OPENAI-CHATGPT-NOTES",
+      "publishedAt": "2026-08-15",
+      "actor": "OpenAI",
+      "category": "Application",
+      "title": "ChatGPT : application de bureau Linux en préversion publique, quiz interactifs et mode Think étendu",
+      "summary": "Les notes de version ChatGPT du 15 août 2026 rassemblent plusieurs évolutions de l’application : l’application de bureau Linux entre en préversion publique mondiale sur Ubuntu 24.04 et 26.04 LTS, Debian 13 et Fedora 43 et 44, avec Codex et un navigateur intégré, les actions de navigateur étant disponibles mais pas le contrôle d’autres applications de bureau ; des quiz interactifs répondables directement dans la conversation ; la possibilité de modifier le réglage de mémoire d’un projet existant pour les projets non partagés éligibles ; le mode Think proposé sur le web aux formules Free et Go ; et des correctifs de dictée et de composition, notamment sur Android.",
+      "confidence": 80,
+      "confidenceLabel": "Forte — convergence secondaire, notes de version officielles inaccessibles",
+      "confidenceReason": "Fait établi le 2026-08-16 par convergence de plusieurs sources indépendantes concordantes sur la liste des distributions prises en charge et sur le contenu des notes. Les notes de version officielles sur help.openai.com sont bloquées par la politique réseau sortante et n’ont pas pu être ouvertes ; aucun élément n’a pu être corroboré par une preuve primaire durable. Note abaissée dans la fourchette 75–89 pour cette raison.",
+      "signals": [
+        {
+          "sourceId": "R17",
+          "label": "@OpenAI sur X",
+          "url": "https://x.com/OpenAI"
+        }
+      ],
+      "evidence": [
+        {
+          "label": "Notes de version ChatGPT (identifiées — domaine bloqué)",
+          "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
+        }
+      ],
+      "caveat": "Le regroupement de ces évolutions sous la seule date du 15 août est à confirmer : la préversion Linux est rapportée par ailleurs comme annoncée dès le 11 août, les notes de version consolidant ensuite plusieurs livraisons. Aucun élément n’est établi en source primaire.",
+      "belgiumImpact": "La préversion Linux couvre les distributions les plus répandues sur les postes de développement belges et supprime le recours au navigateur pour les utilisateurs Linux, jusqu’ici moins bien servis que macOS et Windows. Le réglage de mémoire par projet est le point à retenir côté données : c’est le levier concret pour cloisonner ce qui est mémorisé d’un dossier client à l’autre. Aucune restriction géographique propre à la Belgique n’est rapportée sur ces fonctions.",
+      "verificationStatus": "Établi le 2026-08-16 par convergence secondaire — notes de version officielles inaccessibles",
+      "lastCheckedAt": "2026-08-16"
+    },
+    {
+      "id": "A20260815-ANTHROPIC-INCIDENT",
+      "publishedAt": "2026-08-15",
+      "actor": "Anthropic",
+      "category": "Incident",
+      "title": "Interruption Claude du 14 août 20:00 au 15 août 00:11 UTC, résolue",
+      "summary": "Une interruption a touché l’API Claude, Claude Code et Claude Cowork, avec des erreurs élevées identifiées notamment sur les requêtes vers Claude Fable 5. La fenêtre d’impact rapportée va du 14 août 2026 à 20:00 UTC au 15 août 2026 à 00:11 UTC, soit du 14 août 22:00 au 15 août 02:11 heure de Bruxelles. Un correctif a été déployé et l’incident est présenté comme résolu.",
+      "confidence": 86,
+      "confidenceLabel": "Forte — page d’état officielle non ouverte",
+      "confidenceReason": "Fenêtre d’impact, services touchés et résolution concordants entre plusieurs agrégateurs d’état indépendants consultés le 2026-08-15, avec des horodatages identiques à la minute. La page d’état officielle status.claude.com est bloquée par la politique réseau sortante et n’a pas pu être ouverte ; les notes de version de l’API, elles accessibles, ne référencent pas les incidents. Plafond de 89/100 appliqué.",
+      "signals": [
+        {
+          "sourceId": "R50",
+          "label": "@AnthropicAI sur X",
+          "url": "https://x.com/AnthropicAI"
+        }
+      ],
+      "evidence": [
+        {
+          "label": "Page d’état officielle Claude (non ouverte — domaine bloqué)",
+          "url": "https://status.claude.com/"
+        },
+        {
+          "label": "IncidentHub — historique d’état Anthropic",
+          "url": "https://incidenthub.cloud/status/anthropic"
+        },
+        {
+          "label": "StatusGator — historique d’interruptions Claude",
+          "url": "https://statusgator.com/services/claude/outage-history"
+        }
+      ],
+      "caveat": "Aucune analyse post-incident publique n’a été trouvée : la cause racine, le périmètre exact et l’éventuel impact sur les données ne sont pas établis. La durée réelle ressentie peut différer de la fenêtre officielle.",
+      "belgiumImpact": "L’interruption tombe en soirée et en nuit belges, créneau à faible activité professionnelle mais utilisé par les traitements par lots planifiés. C’est l’illustration concrète de la règle de résilience de bonnes-pratiques-developpement.md : tout service exposé à des utilisateurs doit prévoir un basculement vers un second fournisseur ou une dégradation contrôlée.",
+      "verificationStatus": "Recontrôlé le 2026-08-16 — incident toujours présenté comme résolu, agrégateurs indépendants décrivant un service opérationnel sur les dernières 24 heures ; page d’état officielle toujours inaccessible",
+      "lastCheckedAt": "2026-08-16"
+    },
+    {
+      "id": "A20260814-ZAI-GLM-5-3",
+      "publishedAt": "2026-08-14",
+      "actor": "Z.AI",
+      "category": "Modèle",
+      "title": "GLM-5.3 sort sans réentraînement de base, mais ses poids ouverts sont retenus environ deux semaines",
+      "summary": "Z.ai publie GLM-5.3, qui réutilise la base mixture-of-experts de 743 milliards de paramètres de GLM-5.2 et ne doit ses gains qu’à un post-entraînement élargi. L’éditeur le présente comme le meilleur modèle de code à poids ouverts qu’il ait mesuré, avec une progression annoncée de 50 % sur son banc d’essai interne Code Bench. Rupture nette avec GLM-5.2, dont les poids étaient parus sous licence MIT dès le lancement : les poids de 5.3 ne sont pas publiés et sont annoncés sous environ deux semaines, après évaluation de sûreté. L’accès immédiat passe par l’abonnement GLM Coding Plan et ZCode.",
+      "confidence": 85,
+      "confidenceLabel": "Forte — source éditeur non ouverte",
+      "confidenceReason": "Trois sources indépendantes concordantes relevées le 2026-08-15 — Decrypt, MarkTechPost et Unite.AI — sur la date, la réutilisation de la base 743B, la rétention des poids et le canal d’accès par abonnement. Le blog éditeur z.ai et la documentation docs.z.ai sont bloqués par la politique réseau sortante ; aucune carte modèle officielle n’a pu être ouverte. Plafond de 89/100 appliqué.",
+      "signals": [
+        {
+          "sourceId": "R45",
+          "label": "Presse spécialisée IA",
+          "url": "https://decrypt.co/375684/china-z-ai-glm-5-3-top-open-weight-coding-model"
+        }
+      ],
+      "evidence": [
+        {
+          "label": "Decrypt — 14 août 2026, lancement et positionnement",
+          "url": "https://decrypt.co/375684/china-z-ai-glm-5-3-top-open-weight-coding-model"
+        },
+        {
+          "label": "MarkTechPost — 14 août 2026, base réutilisée et post-entraînement",
+          "url": "https://www.marktechpost.com/2026/08/14/z-ai-ships-glm-5-3-without-retraining-the-base-model-better-at-complex-coding-and-long-horizon-tasks/"
+        },
+        {
+          "label": "Unite.AI — 14 août 2026, capacités et réserve de sûreté",
+          "url": "https://www.unite.ai/z-ai-launches-glm-5-3-with-frontier-coding-and-a-cyber-capability-that-outgrew-its-training/"
+        }
+      ],
+      "caveat": "Les résultats de code et de cybersécurité sont des mesures fournisseur sur un banc d’essai interne, non reproduites indépendamment : ils ne sont pas comparables aux scores publiés par d’autres éditeurs. Tant que les poids ne sont pas publiés, la mention « à poids ouverts » décrit une intention annoncée et non un fait vérifiable. La date de publication des poids reste à confirmer.",
+      "belgiumImpact": "Aucun hébergement en Belgique ni en UE annoncé : l’usage passe par une API et un abonnement opérés hors UE, ce qui impose de vérifier DPA, transferts et rétention avant tout traitement de données professionnelles. Pour un développeur belge qui visait un modèle de code auto-hébergé, GLM-5.3 n’est pas une option tant que les poids ne sont pas parus : GLM-5.2 sous licence MIT reste le repli auto-hébergeable.",
+      "verificationStatus": "Statut de contrôle renouvelé le 2026-08-16 — les cinquante-deux sources du référentiel ont été retestées ; la source primaire de ce fait reste refusée par la politique réseau sortante et le fait est conservé au niveau de preuve de son dernier contrôle",
+      "lastCheckedAt": "2026-08-16"
+    },
+    {
+      "id": "A20260814-SDK-CLI-VERSIONS",
+      "publishedAt": "2026-08-14",
+      "actor": "Multiples",
+      "category": "Outillage",
+      "title": "La chaîne SDK et CLI des grands fournisseurs publie de nouvelles versions les 13 et 14 août",
+      "summary": "Relevé directement dans les registres de distribution le 2026-08-16. Sur PyPI : openai 3.1.0 publié le 14 août, première version mineure après le passage en version majeure 3.0.0 du 12 août ; anthropic 0.122.0 et mistralai 2.9.3 publiés le 13 août ; google-genai 2.18.1 publié le 13 août. Sur le registre npm : @anthropic-ai/claude-code 2.1.233 publié le 14 août — l’étiquette `stable` restant à 2.1.224 tandis que `latest` et `next` pointent 2.1.233 —, @google/genai 2.17.1 le 13 août, @openai/codex 0.147.0 le 7 août et @modelcontextprotocol/sdk 1.30.0 le 27 juillet, version alignée sur la spécification MCP 2026-07-28.",
+      "confidence": 95,
+      "confidenceLabel": "Très forte pour l’existence et la date, faible pour le contenu",
+      "confidenceReason": "Registres PyPI et npm interrogés directement le 2026-08-16 : sources primaires durables pour le numéro de version et l’horodatage de publication. Le contenu des changements, jusqu’ici non établi, l’est désormais pour trois chaînes sur quatre : les journaux de version officiels d’openai-python, de google-genai et de Claude Code ont été ouverts directement via raw.githubusercontent.com et code.claude.com. Le contenu des versions Anthropic Python et Mistral reste non établi.",
+      "signals": [
+        {
+          "sourceId": "R38",
+          "label": "Registre PyPI",
+          "url": "https://pypi.org/pypi/openai/json"
+        }
+      ],
+      "evidence": [
+        {
+          "label": "PyPI — métadonnées du paquet openai",
+          "url": "https://pypi.org/pypi/openai/json"
+        },
+        {
+          "label": "PyPI — métadonnées du paquet anthropic",
+          "url": "https://pypi.org/pypi/anthropic/json"
+        },
+        {
+          "label": "npm — métadonnées de @anthropic-ai/claude-code",
+          "url": "https://registry.npmjs.org/@anthropic-ai/claude-code"
+        },
+        {
+          "label": "Journal de version officiel Claude Code",
+          "url": "https://code.claude.com/docs/en/changelog"
+        },
+        {
+          "label": "Journal de version officiel openai-python",
+          "url": "https://raw.githubusercontent.com/openai/openai-python/main/CHANGELOG.md"
+        }
+      ],
+      "caveat": "Le contenu des versions du SDK Python Anthropic et du SDK Mistral n’est pas établi : leurs journaux de version n’ont pas été ouverts. L’écart entre l’étiquette `stable` et l’étiquette `latest` de Claude Code signifie qu’une installation suivant `stable` n’obtient pas la 2.1.233 — la version qui porte les correctifs de sécurité et le plancher du mode automatique sous Windows natif.",
+      "belgiumImpact": "Sans effet de licence ni de région. Le rythme observé — plusieurs publications par semaine sur les quatre grandes chaînes, dont une version majeure porteuse d’une rupture — justifie d’épingler les versions dans les fichiers de dépendances plutôt que de suivre la dernière version. Point concret pour les postes belges : vérifier quelle étiquette npm suit votre installation de Claude Code, `stable` ne délivrant pas la 2.1.233.",
+      "verificationStatus": "Vérifié directement le 2026-08-16 — registres de distribution et trois journaux de version officiels sur quatre",
+      "lastCheckedAt": "2026-08-16"
+    },
+    {
+      "id": "A20260814-OPENAI-SORA-DEPRECIATION",
+      "publishedAt": "2026-08-14",
+      "actor": "OpenAI",
+      "category": "Dépréciation",
+      "title": "L’API Videos et les modèles Sora 2 sont marqués dépréciés dans le SDK, arrêt annoncé au 24 septembre 2026",
+      "summary": "La version 3.1.0 du SDK Python OpenAI, publiée le 14 août 2026, porte une entrée explicite « deprecate Sora video APIs » : la dépréciation est désormais inscrite dans les types du client officiel. Les sources secondaires concordantes situent la notification initiale aux développeurs au 24 mars 2026 et l’arrêt effectif de l’API au 24 septembre 2026, pour l’API Videos et les modèles `sora-2`, `sora-2-pro` et leurs instantanés datés ; les expériences web et applicatives Sora ont été arrêtées le 26 avril 2026.",
+      "confidence": 88,
+      "confidenceLabel": "Forte — dépréciation primaire, date d’arrêt secondaire",
+      "confidenceReason": "La dépréciation elle-même est établie en source primaire durable : le journal de version officiel du dépôt openai-python, ouvert directement le 2026-08-16, la porte à la version 3.1.0, dont la date de publication est corroborée par PyPI. La date d’arrêt du 24 septembre 2026 et la liste exacte des instantanés concernés proviennent en revanche de sources secondaires concordantes : la page officielle des dépréciations sur developers.openai.com est bloquée par la politique réseau sortante. Plafond de 89/100 appliqué à l’échéance.",
+      "signals": [
+        {
+          "sourceId": "R54",
+          "label": "Journal de version openai-python 3.1.0",
+          "url": "https://raw.githubusercontent.com/openai/openai-python/main/CHANGELOG.md"
+        }
+      ],
+      "evidence": [
+        {
+          "label": "Journal de version officiel openai-python — « deprecate Sora video APIs » en 3.1.0",
+          "url": "https://raw.githubusercontent.com/openai/openai-python/main/CHANGELOG.md"
+        },
+        {
+          "label": "Page officielle des dépréciations OpenAI (identifiée — domaine bloqué)",
+          "url": "https://developers.openai.com/api/docs/deprecations"
+        }
+      ],
+      "caveat": "La date d’arrêt du 24 septembre 2026 est à confirmer sur la page officielle des dépréciations, inaccessible depuis l’environnement d’exécution. Aucun successeur officiel n’est nommé dans le journal de version consulté.",
+      "belgiumImpact": "Échéance datée à porter au calendrier de tout projet belge appelant l’API Videos : à un peu plus d’un mois de l’arrêt annoncé, la migration vers un autre fournisseur de génération vidéo doit être engagée maintenant. Cas d’école du risque de verrouillage documenté dans bonnes-pratiques-developpement.md — une capacité multimodale retirée en six mois d’intervalle entre l’annonce et l’arrêt.",
+      "verificationStatus": "Dépréciation établie le 2026-08-16 en source primaire durable ; échéance d’arrêt par convergence secondaire",
+      "lastCheckedAt": "2026-08-16"
+    },
+    {
+      "id": "A20260814-ANTHROPIC-CLAUDE-CODE-SECURITE",
+      "publishedAt": "2026-08-14",
+      "actor": "Anthropic",
+      "category": "Sécurité",
+      "title": "Claude Code 2.1.232 et 2.1.233 corrigent une fuite d’identifiants Windows et trois contournements de permissions",
+      "summary": "Le journal de version officiel de Claude Code documente cinq correctifs de sécurité livrés les 13 et 14 août 2026. La version 2.1.233 corrige un vecteur de fuite d’identifiants NTLM sous Windows par les chemins à préfixe de périphérique `\\??\\`. La version 2.1.232 corrige un contournement de permissions par PowerShell au moyen de paramètres écrivant des variables, un contournement de permissions sous Windows par liens symboliques de style Cygwin, l’héritage de la confiance du dépôt parent par les dépôts git imbriqués, et ajoute la rédaction des secrets de la famille des jetons GitLab. La 2.1.233 corrige en outre une régression de la 2.1.232 qui faisait redemander une approbation manuelle en mode automatique sur des commandes Bash ordinaires.",
+      "confidence": 94,
+      "confidenceLabel": "Très forte — journal de version officiel ouvert directement",
+      "confidenceReason": "Journal de version officiel de l’éditeur ouvert directement le 2026-08-16 sur code.claude.com, énumérant chaque correctif par version. Les dates sont corroborées indépendamment par les horodatages de publication du registre npm : 2.1.232 le 2026-08-13 à 21:30 UTC et 2.1.233 le 2026-08-14 à 18:50 UTC. Aucun bulletin de sécurité distinct, avec identifiant CVE, gravité et périmètre de versions affectées, n’a été trouvé : la note reste sous 95 pour cette raison.",
+      "signals": [
+        {
+          "sourceId": "R53",
+          "label": "Journal de version Claude Code",
+          "url": "https://code.claude.com/docs/en/changelog"
+        }
+      ],
+      "evidence": [
+        {
+          "label": "Journal de version officiel Claude Code — entrées 2.1.232 et 2.1.233",
+          "url": "https://code.claude.com/docs/en/changelog"
+        },
+        {
+          "label": "Registre npm — horodatages de publication des versions 2.1.232 et 2.1.233",
+          "url": "https://registry.npmjs.org/@anthropic-ai/claude-code"
+        }
+      ],
+      "caveat": "Aucun avis de sécurité formel n’accompagne ces correctifs : la plage de versions vulnérables, la gravité et l’exploitabilité réelle ne sont pas publiées. L’absence d’identifiant CVE empêche tout suivi automatisé par un scanner de vulnérabilités. Trois des cinq correctifs concernent Windows et ne s’appliquent pas aux postes macOS et Linux.",
+      "belgiumImpact": "Motif de mise à jour immédiate pour tout poste de développement belge sous Windows : une fuite d’identifiants NTLM expose des secrets d’authentification réseau au-delà du seul poste. La coïncidence de calendrier compte — la version 2.1.233 est à la fois le correctif de sécurité et la version-plancher du mode automatique par défaut sous Windows natif, ce qui fait de la mise à jour un geste unique. La rédaction des jetons GitLab intéresse particulièrement les équipes belges hébergeant leur forge en interne.",
+      "verificationStatus": "Établi le 2026-08-16 en source primaire durable, dates corroborées par le registre npm",
+      "lastCheckedAt": "2026-08-16"
+    },
+    {
+      "id": "A20260814-ANTHROPIC-CLAUDE-CODE-AUTO",
+      "publishedAt": "2026-08-14",
+      "actor": "Anthropic",
+      "category": "Sécurité",
+      "title": "Le mode automatique devient le mode de permission de départ de Claude Code sur Pro, Max et Team",
+      "summary": "Depuis le 14 août 2026, les nouvelles sessions Claude Code démarrent en mode automatique sur les formules Pro, Max et Team : un second modèle, le classificateur, arbitre les actions à la place de l’utilisateur au lieu de l’interrompre par une demande d’autorisation. La documentation officielle fixe les versions minimales du binaire pour que ce défaut s’applique — 2.1.228 ou ultérieure sur macOS, Linux et WSL, 2.1.233 ou ultérieure sur Windows natif ; en deçà, le mode de départ reste manuel. Un réglage `permissions.defaultMode` déjà posé par l’utilisateur n’est pas écrasé : Claude Code demande une fois s’il faut basculer, et un refus conserve le réglage existant. Les défauts posés par une organisation ne bougent pas. Les comptes Enterprise, l’API Claude, Claude Platform on AWS, Amazon Bedrock, Google Cloud Agent Platform et Microsoft Foundry ne sont pas concernés.",
+      "confidence": 96,
+      "confidenceLabel": "Très forte — documentation officielle ouverte directement",
+      "confidenceReason": "Trois preuves indépendantes et concordantes ouvertes le 2026-08-16. La page officielle des modes de permission de Claude Code énonce mot pour mot la règle de version : « The built-in `auto` default requires Claude Code v2.1.228 or later on macOS, Linux, and WSL, and v2.1.233 or later on native Windows. On earlier versions, the built-in default is Manual. » Le digest hebdomadaire officiel de la semaine 32 date le basculement au 14 août sur Pro, Max et Team. Le registre npm confirme indépendamment que la version 2.1.233 a été publiée le 2026-08-14 à 18:50 UTC, soit la version-plancher Windows. Source primaire durable et corroboration par registre : aucun plafond appliqué.",
+      "signals": [
+        {
+          "sourceId": "R53",
+          "label": "Documentation Claude Code — Choose a permission mode",
+          "url": "https://code.claude.com/docs/en/permission-modes"
+        }
+      ],
+      "evidence": [
+        {
+          "label": "Documentation officielle — modes de permission et versions minimales",
+          "url": "https://code.claude.com/docs/en/permission-modes"
+        },
+        {
+          "label": "Digest officiel semaine 32 (3–7 août 2026)",
+          "url": "https://code.claude.com/docs/en/whats-new"
+        },
+        {
+          "label": "Registre npm — @anthropic-ai/claude-code 2.1.233 publiée le 2026-08-14",
+          "url": "https://registry.npmjs.org/@anthropic-ai/claude-code"
+        }
+      ],
+      "caveat": "Le classificateur est un modèle, pas une politique : il réduit le nombre de demandes d’autorisation, il ne garantit pas l’absence d’action indésirable. Les règles de refus explicites restent le seul mécanisme contraignant. Les chiffres d’efficacité comparée du classificateur circulant dans la presse spécialisée ne sont pas reproduits ici : ils proviennent d’une évaluation fournisseur non ouverte depuis l’environnement d’exécution.",
+      "belgiumImpact": "Changement de posture de sécurité par défaut pour tout développeur belge sur formule Pro, Max ou Team, y compris en usage personnel. Deux gestes concrets : vérifier la version installée, car sous 2.1.228 (ou 2.1.233 sur Windows natif) le comportement annoncé ne s’applique pas et l’on croit à tort avoir basculé ; et poser des règles de refus explicites dans les dépôts contenant des données à caractère personnel, puisque le mode automatique élargit ce que l’agent exécute sans interruption. Les comptes Enterprise, l’API et les trois clouds partenaires ne sont pas touchés.",
+      "verificationStatus": "Établi le 2026-08-16 en source primaire durable, corroboré par le registre npm",
+      "lastCheckedAt": "2026-08-16"
+    },
+    {
+      "id": "A20260814-ALIBABA-QWEN38-27B",
+      "publishedAt": "2026-08-14",
+      "actor": "Alibaba / Qwen",
+      "category": "Poids ouverts",
+      "title": "Qwen3.8-27B est publié sous Apache 2.0 : un modèle dense multimodal de 27 milliards de paramètres à 262 k de contexte",
+      "summary": "Alibaba a publié les poids de Qwen3.8-27B le 14 août 2026 sur Hugging Face et ModelScope, sous licence Apache 2.0. Le modèle est dense — et non à mélange d’experts — nativement multimodal en entrée texte, image et vidéo pour une sortie texte, avec un encodeur de vision et des fichiers de prétraitement image et vidéo dédiés dans le point de contrôle. Le contexte natif est de 262 144 jetons, extensible vers environ un million par la méthode YaRN selon les sources consultées.",
+      "confidence": 84,
+      "confidenceLabel": "Forte — convergence secondaire, dépôt de poids inaccessible",
+      "confidenceReason": "Fait établi le 2026-08-16 par convergence de plusieurs sources indépendantes concordantes sur la date, la licence Apache 2.0, le caractère dense, la nature multimodale et le contexte natif de 262 144 jetons. Un post du compte officiel @Alibaba_Qwen annonçant la publication est référencé par l’indexation ; il vaut signal et non preuve contractuelle, et x.com est de toute façon bloqué. Hugging Face et ModelScope sont bloqués : le fichier de licence n’a pas été lu à la source. La note est supérieure à celle de Qwen3.8-Max parce que la licence rapportée est ici cohérente avec la clause générale du dépôt public QwenLM/Qwen3, sans contradiction à résoudre. Plafond de 89/100 appliqué.",
+      "signals": [
+        {
+          "sourceId": "R23",
+          "label": "@Alibaba_Qwen sur X",
+          "url": "https://x.com/Alibaba_Qwen"
+        }
+      ],
+      "evidence": [
+        {
+          "label": "Dépôt de poids Qwen/Qwen3.8-27B sur Hugging Face (identifié — domaine bloqué)",
+          "url": "https://huggingface.co/Qwen/Qwen3.8-27B"
+        },
+        {
+          "label": "Dépôt public QwenLM/Qwen3 — « All our open-weight models are licensed under Apache 2.0 »",
+          "url": "https://raw.githubusercontent.com/QwenLM/Qwen3/main/README.md"
+        }
+      ],
+      "caveat": "La licence n’a pas été lue dans le dépôt de poids lui-même. L’extension du contexte vers un million de jetons par YaRN est une capacité annoncée, non une mesure indépendante : le contexte réellement exploitable dépend de la mémoire disponible pour le cache clé-valeur. Aucune mesure de vitesse indépendante n’a pu être vérifiée ; les tailles quantifiées ne sont pas encore établies.",
+      "belgiumImpact": "Le fait le plus directement utile de ce run pour un développeur belge travaillant en local. Un modèle dense de 27 milliards de paramètres sous Apache 2.0 est franchement exploitable : la licence autorise l’usage commercial, la modification et la redistribution sans seuil de revenu, ce qui le distingue nettement de la licence de Qwen3.8-Max publiée deux jours plus tôt. En quantification 4 bits, une telle taille vise les configurations à 24 Go de mémoire vidéo et le déchargement partiel sur les cartes de 12 Go ; les chiffres précis restent à établir quand les variantes quantifiées seront vérifiables. Les qualités en français et en néerlandais ne sont pas mesurées à ce jour.",
+      "verificationStatus": "Établi le 2026-08-16 par convergence secondaire — dépôt de poids et fichier de licence inaccessibles",
+      "lastCheckedAt": "2026-08-16"
+    },
+    {
+      "id": "A20260813-OPENAI-ULTRAFAST-CEREBRAS",
+      "publishedAt": "2026-08-13",
+      "actor": "OpenAI / Cerebras",
+      "category": "API",
+      "title": "OpenAI ouvre en préversion limitée « Ultrafast », un palier de service pour GPT-5.6 Sol",
+      "summary": "Ultrafast est un nouveau palier de service de l’API OpenAI pour GPT-5.6 Sol, opéré avec le matériel Cerebras. Le fournisseur annonce jusqu’à 750 jetons de sortie par seconde et jusqu’à 14 fois la vitesse du palier Standard, à intelligence déclarée identique. L’accès est une préversion limitée à un ensemble de clients sélectionnés.",
+      "confidence": 88,
+      "confidenceLabel": "Bonne",
+      "confidenceReason": "Deux publications d’éditeur concordantes (page d’annonce OpenAI et blog technique Cerebras) plus un communiqué GlobeNewswire daté du 13 août 2026 et une reprise TechCrunch. Les domaines openai.com et cerebras.ai sont bloqués par la politique réseau sortante de l’environnement : le contenu est établi par l’index de recherche et la convergence des sources, sans ouverture directe.",
+      "signals": [
+        {
+          "sourceId": "R17",
+          "label": "@OpenAI sur X",
+          "url": "https://x.com/OpenAI"
+        }
+      ],
+      "evidence": [
+        {
+          "label": "Annonce OpenAI « Previewing Ultrafast mode »",
+          "url": "https://openai.com/index/previewing-ultrafast/"
+        },
+        {
+          "label": "Blog technique Cerebras",
+          "url": "https://www.cerebras.ai/blog/accelerating-gpt-5-6-sol-ultrafast-with-openai"
+        },
+        {
+          "label": "Communiqué Cerebras (GlobeNewswire, 13 août 2026)",
+          "url": "https://www.globenewswire.com/news-release/2026/08/13/3344804/0/en/cerebras-powers-ultrafast-mode-for-openai-s-gpt-5-6-sol.html"
+        },
+        {
+          "label": "Reprise TechCrunch",
+          "url": "https://techcrunch.com/2026/08/13/openai-introduces-ultrafast-a-new-mode-that-makes-gpt-5-6-sol-work-at-14x-the-speed/"
+        }
+      ],
+      "caveat": "Les chiffres de vitesse — 750 jetons/s, ×14 face au palier Standard, comparaisons face à des modèles concurrents — sont des résultats fournisseur non reproduits indépendamment. Aucun tarif Ultrafast, quota, liste de régions, engagement minimum ni terme de niveau de service n’est publié à ce jour.",
+      "belgiumImpact": "Sans effet immédiat depuis la Belgique : la préversion est fermée et aucune région ni tarif n’est publié. À surveiller pour les usages sensibles à la latence ; ne pas budgéter tant que le prix du palier n’est pas publié.",
+      "verificationStatus": "Statut de contrôle renouvelé le 2026-08-16 — les cinquante-deux sources du référentiel ont été retestées ; la source primaire de ce fait reste refusée par la politique réseau sortante et le fait est conservé au niveau de preuve de son dernier contrôle",
+      "lastCheckedAt": "2026-08-16"
     },
     {
       "id": "A20260813-GOOGLE-GEMINI-3-7-FLASH",
@@ -73,44 +403,36 @@
       ],
       "caveat": "Le tarif de 0,75 / 3,75 USD est explicitement promotionnel et double au 1er janvier 2027 : ne pas bâtir un budget pluriannuel dessus. La disponibilité sur un point de terminaison multirégional UE de Vertex AI n’est pas confirmée pour cette version ; les recherches menées ce jour ne l’établissent que pour des versions antérieures de la famille.",
       "belgiumImpact": "Accessible depuis la Belgique via l’API Gemini, dont la couverture EEE est documentée pour la famille 3.x. La résidence des données dans l’UE reste à confirmer version par version : un point de terminaison monorégional europe-west1/3/4 n’est pas établi pour 3.7 Flash. Facturation en USD, conversion EUR à la charge du client.",
-      "verificationStatus": "Établi le 2026-08-15 par convergence de sources indépendantes — carte modèle officielle inaccessible",
-      "lastCheckedAt": "2026-08-15"
+      "verificationStatus": "Statut de contrôle renouvelé le 2026-08-16 — les cinquante-deux sources du référentiel ont été retestées ; la source primaire de ce fait reste refusée par la politique réseau sortante et le fait est conservé au niveau de preuve de son dernier contrôle",
+      "lastCheckedAt": "2026-08-16"
     },
     {
-      "id": "A20260814-ZAI-GLM-5-3",
-      "publishedAt": "2026-08-14",
-      "actor": "Z.AI",
-      "category": "Modèle",
-      "title": "GLM-5.3 sort sans réentraînement de base, mais ses poids ouverts sont retenus environ deux semaines",
-      "summary": "Z.ai publie GLM-5.3, qui réutilise la base mixture-of-experts de 743 milliards de paramètres de GLM-5.2 et ne doit ses gains qu’à un post-entraînement élargi. L’éditeur le présente comme le meilleur modèle de code à poids ouverts qu’il ait mesuré, avec une progression annoncée de 50 % sur son banc d’essai interne Code Bench. Rupture nette avec GLM-5.2, dont les poids étaient parus sous licence MIT dès le lancement : les poids de 5.3 ne sont pas publiés et sont annoncés sous environ deux semaines, après évaluation de sûreté. L’accès immédiat passe par l’abonnement GLM Coding Plan et ZCode.",
-      "confidence": 85,
-      "confidenceLabel": "Forte — source éditeur non ouverte",
-      "confidenceReason": "Trois sources indépendantes concordantes relevées le 2026-08-15 — Decrypt, MarkTechPost et Unite.AI — sur la date, la réutilisation de la base 743B, la rétention des poids et le canal d’accès par abonnement. Le blog éditeur z.ai et la documentation docs.z.ai sont bloqués par la politique réseau sortante ; aucune carte modèle officielle n’a pu être ouverte. Plafond de 89/100 appliqué.",
+      "id": "A20260813-GOOGLE-DEPRECIATIONS-IMAGEN",
+      "publishedAt": "2026-08-13",
+      "actor": "Google",
+      "category": "Dépréciation",
+      "title": "Trois endpoints Imagen 4 s’arrêtent le 17 août 2026",
+      "summary": "Google confirme l’arrêt de `imagen-4.0-generate-001`, `imagen-4.0-ultra-generate-001` et `imagen-4.0-fast-generate-001` le 17 août 2026. Aucune échéance au 31 août n’est publiée dans le journal officiel pour `gemini-robotics-er-1.6-preview`.",
+      "confidence": 99,
+      "confidenceLabel": "Très forte",
+      "confidenceReason": "Le journal officiel Gemini API consulté directement le 13 août 2026 donne la liste exacte et la date d’arrêt.",
       "signals": [
         {
-          "sourceId": "R45",
-          "label": "Presse spécialisée IA",
-          "url": "https://decrypt.co/375684/china-z-ai-glm-5-3-top-open-weight-coding-model"
+          "sourceId": "R19",
+          "label": "@GoogleDeepMind sur X",
+          "url": "https://x.com/GoogleDeepMind"
         }
       ],
       "evidence": [
         {
-          "label": "Decrypt — 14 août 2026, lancement et positionnement",
-          "url": "https://decrypt.co/375684/china-z-ai-glm-5-3-top-open-weight-coding-model"
-        },
-        {
-          "label": "MarkTechPost — 14 août 2026, base réutilisée et post-entraînement",
-          "url": "https://www.marktechpost.com/2026/08/14/z-ai-ships-glm-5-3-without-retraining-the-base-model-better-at-complex-coding-and-long-horizon-tasks/"
-        },
-        {
-          "label": "Unite.AI — 14 août 2026, capacités et réserve de sûreté",
-          "url": "https://www.unite.ai/z-ai-launches-glm-5-3-with-frontier-coding-and-a-cyber-capability-that-outgrew-its-training/"
+          "label": "Journal des modifications Gemini API",
+          "url": "https://ai.google.dev/gemini-api/docs/changelog"
         }
       ],
-      "caveat": "Les résultats de code et de cybersécurité sont des mesures fournisseur sur un banc d’essai interne, non reproduites indépendamment : ils ne sont pas comparables aux scores publiés par d’autres éditeurs. Tant que les poids ne sont pas publiés, la mention « à poids ouverts » décrit une intention annoncée et non un fait vérifiable. La date de publication des poids reste à confirmer.",
-      "belgiumImpact": "Aucun hébergement en Belgique ni en UE annoncé : l’usage passe par une API et un abonnement opérés hors UE, ce qui impose de vérifier DPA, transferts et rétention avant tout traitement de données professionnelles. Pour un développeur belge qui visait un modèle de code auto-hébergé, GLM-5.3 n’est pas une option tant que les poids ne sont pas parus : GLM-5.2 sous licence MIT reste le repli auto-hébergeable.",
-      "verificationStatus": "Établi le 2026-08-15 par convergence de sources indépendantes — canaux éditeur inaccessibles",
-      "lastCheckedAt": "2026-08-15"
+      "caveat": "Échéance dans trois jours au 14 août 2026. Le journal officiel ai.google.dev n’a pas pu être rouvert dans ce contrôle : l’arrêt reste établi au niveau de preuve du 13 août 2026, date à laquelle la source officielle avait été consultée directement.",
+      "belgiumImpact": "Échéance identique en Belgique : toute intégration reposant sur ces trois endpoints Imagen 4 doit être migrée avant le 17 août.",
+      "verificationStatus": "Statut de contrôle renouvelé le 2026-08-16 — les cinquante-deux sources du référentiel ont été retestées ; la source primaire de ce fait reste refusée par la politique réseau sortante et le fait est conservé au niveau de preuve de son dernier contrôle",
+      "lastCheckedAt": "2026-08-16"
     },
     {
       "id": "A20260813-DEEPSEEK-V4-PRO-0813",
@@ -145,340 +467,112 @@
       ],
       "caveat": "Les 893 Go de poids et les 1 600 milliards de paramètres placent l’auto-hébergement hors de portée de tout matériel de particulier : ce modèle n’entre pas dans les paliers de modeles-locaux-par-hardware.md. Les tarifs cités proviennent d’agrégateurs et non d’une page tarifaire éditeur ouverte ; à revérifier avant engagement.",
       "belgiumImpact": "Aucune région UE ni résidence de données annoncée pour l’API DeepSeek : pour un usage professionnel belge, la voie défendable est l’auto-hébergement des poids MIT ou le passage par un hébergeur établi en UE, pas l’API directe. La licence MIT autorise explicitement l’usage commercial.",
-      "verificationStatus": "Établi le 2026-08-15 par convergence de sources indépendantes — documentation éditeur inaccessible",
-      "lastCheckedAt": "2026-08-15"
+      "verificationStatus": "Statut de contrôle renouvelé le 2026-08-16 — les cinquante-deux sources du référentiel ont été retestées ; la source primaire de ce fait reste refusée par la politique réseau sortante et le fait est conservé au niveau de preuve de son dernier contrôle",
+      "lastCheckedAt": "2026-08-16"
     },
     {
-      "id": "A20260815-ANTHROPIC-INCIDENT",
-      "publishedAt": "2026-08-15",
-      "actor": "Anthropic",
-      "category": "Incident",
-      "title": "Interruption Claude du 14 août 20:00 au 15 août 00:11 UTC, résolue",
-      "summary": "Une interruption a touché l’API Claude, Claude Code et Claude Cowork, avec des erreurs élevées identifiées notamment sur les requêtes vers Claude Fable 5. La fenêtre d’impact rapportée va du 14 août 2026 à 20:00 UTC au 15 août 2026 à 00:11 UTC, soit du 14 août 22:00 au 15 août 02:11 heure de Bruxelles. Un correctif a été déployé et l’incident est présenté comme résolu.",
-      "confidence": 86,
-      "confidenceLabel": "Forte — page d’état officielle non ouverte",
-      "confidenceReason": "Fenêtre d’impact, services touchés et résolution concordants entre plusieurs agrégateurs d’état indépendants consultés le 2026-08-15, avec des horodatages identiques à la minute. La page d’état officielle status.claude.com est bloquée par la politique réseau sortante et n’a pas pu être ouverte ; les notes de version de l’API, elles accessibles, ne référencent pas les incidents. Plafond de 89/100 appliqué.",
-      "signals": [
-        {
-          "sourceId": "R50",
-          "label": "@AnthropicAI sur X",
-          "url": "https://x.com/AnthropicAI"
-        }
-      ],
-      "evidence": [
-        {
-          "label": "Page d’état officielle Claude (non ouverte — domaine bloqué)",
-          "url": "https://status.claude.com/"
-        },
-        {
-          "label": "IncidentHub — historique d’état Anthropic",
-          "url": "https://incidenthub.cloud/status/anthropic"
-        },
-        {
-          "label": "StatusGator — historique d’interruptions Claude",
-          "url": "https://statusgator.com/services/claude/outage-history"
-        }
-      ],
-      "caveat": "Aucune analyse post-incident publique n’a été trouvée : la cause racine, le périmètre exact et l’éventuel impact sur les données ne sont pas établis. La durée réelle ressentie peut différer de la fenêtre officielle.",
-      "belgiumImpact": "L’interruption tombe en soirée et en nuit belges, créneau à faible activité professionnelle mais utilisé par les traitements par lots planifiés. C’est l’illustration concrète de la règle de résilience de bonnes-pratiques-developpement.md : tout service exposé à des utilisateurs doit prévoir un basculement vers un second fournisseur ou une dégradation contrôlée.",
-      "verificationStatus": "Établi le 2026-08-15 par convergence d’agrégateurs d’état — page officielle inaccessible",
-      "lastCheckedAt": "2026-08-15"
-    },
-    {
-      "id": "A20260609-ANTHROPIC-MYTHOS-5-GLASSWING",
-      "publishedAt": "2026-06-09",
-      "actor": "Anthropic",
-      "category": "Modèle",
-      "title": "Claude Mythos 5 existe en disponibilité limitée, sur invitation, pour la cybersécurité défensive",
-      "summary": "La documentation officielle décrit un modèle jusqu’ici absent de cet observatoire. Claude Mythos 5 (claude-mythos-5) partage les caractéristiques et le tarif de Claude Fable 5, soit 10 USD par million de jetons d’entrée et 50 USD en sortie, et rejoint la préversion sur invitation Claude Mythos Preview (claude-mythos-preview) au sein du programme Project Glasswing. Contrairement à Claude Fable 5, généralement disponible depuis le 9 juin 2026 sur l’API Claude, Amazon Bedrock, Claude Platform on AWS, Google Cloud et Microsoft Foundry, Mythos 5 n’est pas en disponibilité générale : il est réservé à des clients approuvés, pour des travaux de cybersécurité défensive, sans inscription en libre-service.",
-      "confidence": 95,
-      "confidenceLabel": "Très forte",
-      "confidenceReason": "Source primaire durable ouverte directement le 2026-08-15 : la page « Models overview » de la documentation officielle nomme le modèle, son identifiant, son rattachement à Project Glasswing, sa disponibilité limitée et l’absence d’inscription en libre-service. Le tarif de 10 / 50 USD par MTok est confirmé sur la page tarifaire officielle ouverte le même jour, où Mythos 5 figure avec la mention « limited availability ».",
-      "signals": [
-        {
-          "sourceId": "R02",
-          "label": "Documentation officielle Claude",
-          "url": "https://platform.claude.com/docs/en/about-claude/models/overview"
-        }
-      ],
-      "evidence": [
-        {
-          "label": "Documentation officielle — vue d’ensemble des modèles",
-          "url": "https://platform.claude.com/docs/en/about-claude/models/overview"
-        },
-        {
-          "label": "Page tarifaire officielle — Claude Mythos 5 en disponibilité limitée",
-          "url": "https://platform.claude.com/docs/en/about-claude/pricing"
-        }
-      ],
-      "caveat": "L’accès est sur invitation et passe par une équipe de compte Anthropic, AWS ou Google Cloud. Aucune carte modèle publique détaillée ni condition de résidence des données spécifique à Mythos 5 n’a été trouvée dans ce run.",
-      "belgiumImpact": "Sans portée pratique pour un particulier ou un développeur indépendant belge : il n’existe aucun parcours d’inscription en libre-service. L’intérêt est de méthode — ne pas confondre un modèle listé dans une grille tarifaire avec un modèle réellement commandable, et ne pas le compter parmi les options disponibles en Belgique.",
-      "verificationStatus": "Vérifié directement le 2026-08-15 — documentation officielle et page tarifaire ouvertes",
-      "lastCheckedAt": "2026-08-15"
-    },
-    {
-      "id": "A20260807-ANTHROPIC-MANAGED-AGENTS",
-      "publishedAt": "2026-08-07",
-      "actor": "Anthropic",
-      "category": "Agents",
-      "title": "Claude Managed Agents reçoit budgets de session, conseiller, choix de géographie d’inférence et compétences depuis GitHub",
-      "summary": "Quatre capacités entrent dans la plateforme d’agents managés. Un budget de session plafonne la dépense au tarif public : la session atteignant son plafond se met en pause avec le motif d’arrêt budget_reached au lieu de lancer de nouvelles requêtes, et reprend si le budget est modifié ou retiré. Un conseiller, déclaré par une entrée {\"type\": \"advisor\"} dans la liste multiagent, permet au fil principal de consulter en cours de tour un modèle au moins aussi capable que l’agent. Le paramètre inference_geo, posé dans l’objet model à la création de l’agent ou surchargé pour une session, commande la géographie d’exécution de l’inférence. Enfin, une session qui monte un dépôt GitHub découvre automatiquement les compétences présentes dans son répertoire .claude/skills. Le 11 août, l’API de conformité a été étendue aux transcriptions des sessions Cowork et Claude Code exécutées sur les machines des utilisateurs, en bêta pour les organisations Claude Enterprise, et un en-tête de réponse anthropic-workspace-id a été ajouté.",
-      "confidence": 95,
-      "confidenceLabel": "Très forte",
-      "confidenceReason": "Source primaire durable ouverte directement le 2026-08-15 : les notes de version officielles de l’API datent chaque capacité, en donnent les noms de paramètres exacts et renvoient aux pages de documentation correspondantes.",
-      "signals": [
-        {
-          "sourceId": "R02",
-          "label": "Notes de version officielles de l’API Claude",
-          "url": "https://platform.claude.com/docs/en/release-notes/api"
-        }
-      ],
-      "evidence": [
-        {
-          "label": "Notes de version de l’API — 7 et 11 août 2026",
-          "url": "https://platform.claude.com/docs/en/release-notes/api"
-        }
-      ],
-      "caveat": "Le plafond budgétaire est exprimé aux tarifs publics : il borne la dépense, il ne garantit pas un coût. L’API de conformité qui remonte les transcriptions de sessions locales est un contrôle d’entreprise puissant et intrusif, réservé aux organisations Enterprise et soumis à une clé d’accès dédiée.",
-      "belgiumImpact": "Le paramètre inference_geo est le point directement utile depuis la Belgique : il commande la géographie d’inférence, avec le multiplicateur tarifaire documenté à la page de résidence des données. Aucune géographie UE n’est établie pour l’API directe dans ce run — l’option documentée reste l’inférence aux États-Unis. Le budget de session est un garde-fou de coût utile à un développeur indépendant qui laisse tourner un agent sans surveillance.",
-      "verificationStatus": "Vérifié directement le 2026-08-15 — notes de version officielles ouvertes",
-      "lastCheckedAt": "2026-08-15"
-    },
-    {
-      "id": "A20260814-SDK-CLI-VERSIONS",
-      "publishedAt": "2026-08-14",
-      "actor": "Multiples",
-      "category": "Outillage",
-      "title": "La chaîne SDK et CLI des grands fournisseurs publie de nouvelles versions les 13 et 14 août",
-      "summary": "Relevé directement dans les registres de distribution le 2026-08-15. Sur PyPI : openai 3.1.0 publié le 14 août, soit la première version mineure après le passage en version majeure 3.0.0 du 12 août ; anthropic 0.122.0, mistralai 2.9.3 et google-genai 2.18.1 publiés le 13 août. Sur le registre npm : @anthropic-ai/claude-code 2.1.233 publié le 14 août, @google/genai 2.17.1 le 13 août, @openai/codex 0.147.0 le 7 août et @modelcontextprotocol/sdk 1.30.0 le 27 juillet, version alignée sur la spécification MCP 2026-07-28.",
-      "confidence": 95,
-      "confidenceLabel": "Très forte pour l’existence et la date, faible pour le contenu",
-      "confidenceReason": "Registres PyPI et npm interrogés directement le 2026-08-15 : ce sont des sources primaires durables pour le numéro de version et l’horodatage de publication. Elles ne prouvent en revanche pas le contenu du changement, les journaux de modifications éditeurs étant bloqués par la politique réseau sortante.",
-      "signals": [
-        {
-          "sourceId": "R38",
-          "label": "Registre PyPI",
-          "url": "https://pypi.org/pypi/openai/json"
-        }
-      ],
-      "evidence": [
-        {
-          "label": "PyPI — métadonnées du paquet openai",
-          "url": "https://pypi.org/pypi/openai/json"
-        },
-        {
-          "label": "PyPI — métadonnées du paquet anthropic",
-          "url": "https://pypi.org/pypi/anthropic/json"
-        },
-        {
-          "label": "npm — métadonnées de @anthropic-ai/claude-code",
-          "url": "https://registry.npmjs.org/@anthropic-ai/claude-code"
-        }
-      ],
-      "caveat": "Une version majeure comporte par convention des ruptures de compatibilité : le passage de openai 2.x à 3.x doit être testé avant mise à jour en production. Le contenu exact des versions n’est pas établi dans ce run.",
-      "belgiumImpact": "Sans effet de licence ni de région. Le rythme observé — plusieurs publications par semaine sur les quatre grandes chaînes — justifie d’épingler les versions dans les fichiers de dépendances plutôt que de suivre la dernière version, recommandation déjà portée par bonnes-pratiques-developpement.md.",
-      "verificationStatus": "Vérifié directement le 2026-08-15 — registres de distribution interrogés",
-      "lastCheckedAt": "2026-08-15"
-    },
-    {
-      "id": "A20260802-EU-AI-ACT-GPAI-EXECUTION",
-      "publishedAt": "2026-08-02",
-      "actor": "Commission européenne",
-      "category": "Réglementation",
-      "title": "Les pouvoirs d’exécution de l’AI Act sur les modèles à usage général sont entrés en vigueur le 2 août 2026",
-      "summary": "Depuis le 2 août 2026, la Commission européenne, par l’intermédiaire du Bureau européen de l’IA, peut exercer ses pouvoirs d’enquête et d’exécution sur les fournisseurs de modèles d’IA à usage général. Ces pouvoirs couvrent la demande de documentation et d’informations, la conduite d’évaluations, l’exigence de mesures de conformité, d’atténuation des risques, de restriction du marché, de rappel et de retrait, ainsi que l’imposition d’amendes pouvant atteindre 15 millions d’euros ou 3 % du chiffre d’affaires annuel mondial, le montant le plus élevé étant retenu. Les obligations de fond s’appliquaient déjà aux modèles mis sur le marché à partir du 2 août 2025 ; les modèles antérieurs disposent généralement jusqu’au 2 août 2027. Le Bureau présente les « dialogues techniques de conformité » comme son outil de premier recours.",
-      "confidence": 88,
-      "confidenceLabel": "Forte — texte officiel non ouvert directement",
-      "confidenceReason": "Convergence de sources juridiques et institutionnelles indépendantes relevées le 2026-08-15, concordantes sur la date, la nature des pouvoirs, le plafond des amendes et le calendrier de transition. Les pages de la Commission n’ont pas pu être ouvertes depuis l’environnement d’exécution. Plafond de 89/100 appliqué.",
-      "signals": [
-        {
-          "sourceId": "R51",
-          "label": "Suivi réglementaire européen",
-          "url": "https://artificialintelligenceact.eu/enforcement-of-chapter-v-under-the-eu-ai-act/"
-        }
-      ],
-      "evidence": [
-        {
-          "label": "Commission européenne — cadre réglementaire de l’IA (non ouvert — domaine bloqué)",
-          "url": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai"
-        },
-        {
-          "label": "Suivi de l’AI Act — exécution du chapitre V",
-          "url": "https://artificialintelligenceact.eu/enforcement-of-chapter-v-under-the-eu-ai-act/"
-        },
-        {
-          "label": "Wilson Sonsini — début de la phase d’exécution",
-          "url": "https://www.wsgr.com/en/insights/eu-ai-act-enforcement-phase-begins.html"
-        }
-      ],
-      "caveat": "Information réglementaire à titre informatif, qui ne constitue en aucun cas un avis juridique. Les obligations visées pèsent sur les fournisseurs de modèles, pas sur un particulier ou un développeur qui les consomme. Pour toute question de conformité réelle, consulter un conseil qualifié.",
-      "belgiumImpact": "Effet indirect mais réel pour un utilisateur belge : la documentation technique, les résumés de données d’entraînement et les informations de conformité des fournisseurs de modèles à usage général deviennent opposables devant un régulateur européen, ce qui rend ces éléments plus faciles à exiger d’un fournisseur. L’obligation de transparence de l’article 50 impose par ailleurs qu’un agent conversationnel se présente comme une IA.",
-      "verificationStatus": "Établi le 2026-08-15 par convergence de sources juridiques indépendantes",
-      "lastCheckedAt": "2026-08-15"
-    },
-    {
-      "id": "A20260813-OPENAI-ULTRAFAST-CEREBRAS",
-      "publishedAt": "2026-08-13",
-      "actor": "OpenAI / Cerebras",
-      "category": "API",
-      "title": "OpenAI ouvre en préversion limitée « Ultrafast », un palier de service pour GPT-5.6 Sol",
-      "summary": "Ultrafast est un nouveau palier de service de l’API OpenAI pour GPT-5.6 Sol, opéré avec le matériel Cerebras. Le fournisseur annonce jusqu’à 750 jetons de sortie par seconde et jusqu’à 14 fois la vitesse du palier Standard, à intelligence déclarée identique. L’accès est une préversion limitée à un ensemble de clients sélectionnés.",
-      "confidence": 88,
-      "confidenceLabel": "Bonne",
-      "confidenceReason": "Deux publications d’éditeur concordantes (page d’annonce OpenAI et blog technique Cerebras) plus un communiqué GlobeNewswire daté du 13 août 2026 et une reprise TechCrunch. Les domaines openai.com et cerebras.ai sont bloqués par la politique réseau sortante de l’environnement : le contenu est établi par l’index de recherche et la convergence des sources, sans ouverture directe.",
-      "signals": [
-        {
-          "sourceId": "R17",
-          "label": "@OpenAI sur X",
-          "url": "https://x.com/OpenAI"
-        }
-      ],
-      "evidence": [
-        {
-          "label": "Annonce OpenAI « Previewing Ultrafast mode »",
-          "url": "https://openai.com/index/previewing-ultrafast/"
-        },
-        {
-          "label": "Blog technique Cerebras",
-          "url": "https://www.cerebras.ai/blog/accelerating-gpt-5-6-sol-ultrafast-with-openai"
-        },
-        {
-          "label": "Communiqué Cerebras (GlobeNewswire, 13 août 2026)",
-          "url": "https://www.globenewswire.com/news-release/2026/08/13/3344804/0/en/cerebras-powers-ultrafast-mode-for-openai-s-gpt-5-6-sol.html"
-        },
-        {
-          "label": "Reprise TechCrunch",
-          "url": "https://techcrunch.com/2026/08/13/openai-introduces-ultrafast-a-new-mode-that-makes-gpt-5-6-sol-work-at-14x-the-speed/"
-        }
-      ],
-      "caveat": "Les chiffres de vitesse — 750 jetons/s, ×14 face au palier Standard, comparaisons face à des modèles concurrents — sont des résultats fournisseur non reproduits indépendamment. Aucun tarif Ultrafast, quota, liste de régions, engagement minimum ni terme de niveau de service n’est publié à ce jour.",
-      "belgiumImpact": "Sans effet immédiat depuis la Belgique : la préversion est fermée et aucune région ni tarif n’est publié. À surveiller pour les usages sensibles à la latence ; ne pas budgéter tant que le prix du palier n’est pas publié.",
-      "verificationStatus": "Non revérifié le 2026-08-15 — source éditeur toujours bloquée par la politique réseau sortante ; fait conservé au niveau de preuve de son dernier contrôle",
-      "lastCheckedAt": "2026-08-15"
-    },
-    {
-      "id": "A20260811-MISTRAL-MODELES-TIERS",
-      "publishedAt": "2026-08-11",
-      "actor": "Mistral AI",
-      "category": "Plateforme API",
-      "title": "Mistral ouvre des endpoints régionaux facturés, un Priority Tier et l’hébergement de modèles ouverts tiers",
-      "summary": "Mistral publie des endpoints régionaux permettant d’épingler l’inférence en Europe (api.eu.mistral.ai) ou aux États-Unis (api.us.mistral.ai), facturés 1,1 fois le tarif standard. Un Priority Tier en préversion publique ajoute des limites de débit personnalisées et un engagement de disponibilité de 99,5 %, à 1,75 fois le tarif standard. La plateforme commence par ailleurs à héberger des modèles ouverts tiers, à commencer par GLM-5.2 de Z.ai en préversion publique, et annonce une coalition d’entreprises européennes engageant 200 MW de capacité d’ici fin 2027 et 1 GW d’ici fin 2030.",
-      "confidence": 88,
-      "confidenceLabel": "Bonne",
-      "confidenceReason": "Annonce officielle Mistral référencée par son URL exacte et relayée par le compte officiel @MistralAI, corroborée par au moins quatre sources indépendantes concordantes sur les multiplicateurs 1,1× et 1,75×, le SLA de 99,5 % et les deux noms d’hôtes. Le domaine mistral.ai est bloqué par la politique réseau sortante : la page n’a pas été ouverte directement.",
-      "signals": [
-        {
-          "sourceId": "R21",
-          "label": "@MistralAI sur X",
-          "url": "https://x.com/MistralAI"
-        }
-      ],
-      "evidence": [
-        {
-          "label": "Annonce officielle Mistral (non ouverte, via index)",
-          "url": "https://mistral.ai/news/regional-inference-open-models-new-compute/"
-        },
-        {
-          "label": "Couverture VentureBeat",
-          "url": "https://venturebeat.com/infrastructure/mistral-ai-wants-to-build-1-gigawatt-of-european-compute-by-2030-and-lock-in-customers-now"
-        },
-        {
-          "label": "Couverture Digital Watch Observatory",
-          "url": "https://dig.watch/updates/mistral-european-ai-models-compute"
-        }
-      ],
-      "caveat": "Le Priority Tier est en préversion publique : le SLA annoncé n’équivaut pas encore à un engagement contractuel signé. Épingler l’inférence dans la région UE ne garantit pas que toutes les fonctions associées y restent : la liste des sous-traitants doit être lue avant toute inscription dans un registre de traitement.",
-      "belgiumImpact": "Directement exploitable depuis la Belgique : le surcoût de la résidence européenne de l’inférence est désormais chiffré à 10 % du tarif standard, ce qui rend l’option budgétable pour un projet bloqué par une exigence de localisation. Facturation en USD ou EUR selon le contrat, à vérifier au moment de la souscription.",
-      "verificationStatus": "Non revérifié le 2026-08-15 — source éditeur toujours bloquée par la politique réseau sortante ; fait conservé au niveau de preuve de son dernier contrôle",
-      "lastCheckedAt": "2026-08-15"
-    },
-    {
-      "id": "A20260731-GITHUB-COPILOT-DEPRECIATIONS",
-      "publishedAt": "2026-07-31",
-      "actor": "GitHub",
+      "id": "A20260812-OPENAI-SDK-PYTHON-3",
+      "publishedAt": "2026-08-12",
+      "actor": "OpenAI",
       "category": "Compatibilité",
-      "title": "GitHub Copilot retire plusieurs modèles Anthropic, OpenAI et Google le 1er septembre 2026",
-      "summary": "GitHub retire une série de modèles de toutes les surfaces Copilot — chat, éditions en ligne, modes ask et agent, complétion — au 1er septembre 2026. Les modèles cités sont Claude Sonnet 3.7, Claude Sonnet 3.7 Thinking, Claude Opus 4 et Gemini 2.0 Flash. MAI-Code-1-Flash est retiré séparément au 10 septembre 2026, avec MAI-Code-1.1-Flash comme remplaçant proposé.",
-      "confidence": 84,
-      "confidenceLabel": "Bonne",
-      "confidenceReason": "Entrée de changelog officielle GitHub identifiée avec sa date et son URL exacte, plus une discussion communautaire GitHub et une reprise presse spécialisée concordantes. Le domaine github.blog est bloqué par la politique réseau sortante : la liste précise des modèles n’a pas pu être relue sur la page officielle et reste à confirmer entrée par entrée.",
+      "title": "Le SDK Python OpenAI passe en 3.0.0 avec une rupture de compatibilité : HTTPX2 devient le client HTTP par défaut",
+      "summary": "Le journal de version officiel du dépôt openai-python documente la version 3.0.0, publiée le 12 août 2026, sous une rubrique explicite de rupture de compatibilité : HTTPX2 devient le client HTTP par défaut et `httpx` n’est plus installé automatiquement. Les applications utilisant un client HTTPX personnalisé, un transport ou un objet de configuration doivent migrer vers leurs équivalents HTTPX2 ou recourir à une échappatoire héritée, temporaire et applicable seulement à l’exécution. La version 3.1.0 du 14 août ajoute les identifiants de flux WebSocket, un événement d’émission de jeton d’accès d’identité de charge de travail, le palier de service Ultrafast avec erreurs MCP et WebSocket structurées, et marque la dépréciation des API vidéo Sora.",
+      "confidence": 96,
+      "confidenceLabel": "Très forte — journal de version officiel du dépôt éditeur ouvert directement",
+      "confidenceReason": "Journal de version officiel du dépôt openai-python ouvert directement le 2026-08-16 via raw.githubusercontent.com, avec la mention littérale « ⚠ BREAKING CHANGES » et le texte exact de la migration. Les dates sont corroborées indépendamment par les horodatages de publication PyPI : 3.0.0 le 2026-08-12 à 01:55 UTC et 3.1.0 le 2026-08-14 à 23:49 UTC. Deux preuves primaires durables concordantes ; aucun plafond appliqué.",
       "signals": [
         {
-          "sourceId": "R31",
-          "label": "@ghchangelog sur X",
-          "url": "https://x.com/ghchangelog"
+          "sourceId": "R54",
+          "label": "Journal de version openai-python",
+          "url": "https://raw.githubusercontent.com/openai/openai-python/main/CHANGELOG.md"
         }
       ],
       "evidence": [
         {
-          "label": "GitHub Changelog — dépréciations d’août 2026",
-          "url": "https://github.blog/changelog/2026-07-31-upcoming-august-2026-model-deprecations-in-github-copilot/"
+          "label": "Journal de version officiel openai-python — entrées 3.0.0 et 3.1.0",
+          "url": "https://raw.githubusercontent.com/openai/openai-python/main/CHANGELOG.md"
         },
         {
-          "label": "Discussion communautaire GitHub #177743",
-          "url": "https://github.com/orgs/community/discussions/177743"
+          "label": "PyPI — horodatages de publication du paquet openai",
+          "url": "https://pypi.org/pypi/openai/json"
+        },
+        {
+          "label": "Guide de migration HTTPX2 référencé par le journal de version",
+          "url": "https://github.com/openai/openai-python/blob/main/httpx2.md"
         }
       ],
-      "caveat": "La liste exacte des modèles retirés n’a pas pu être relue sur la page officielle depuis cet environnement. Une exception est évoquée pour certains abonnés annuels individuels ; les administrateurs Copilot Enterprise peuvent devoir ajuster les politiques de modèles pour ouvrir les remplaçants.",
-      "belgiumImpact": "Échéance de compatibilité à trois semaines pour tout développeur belge dont un flux, un script ou une politique d’entreprise épingle un de ces identifiants de modèle. Vérifier les politiques de modèles avant le 1er septembre.",
-      "verificationStatus": "Non revérifié le 2026-08-15 — source éditeur toujours bloquée par la politique réseau sortante ; fait conservé au niveau de preuve de son dernier contrôle",
-      "lastCheckedAt": "2026-08-15"
+      "caveat": "Le guide de migration HTTPX2 lui-même n’a pas pu être ouvert : github.com est bloqué par la politique réseau, seul le contenu brut des fichiers l’est. L’ampleur réelle de la migration pour une application donnée n’est donc pas établie ici. L’échappatoire héritée est décrite comme temporaire par l’éditeur, sans date de retrait publiée.",
+      "belgiumImpact": "Rupture de compatibilité à traiter avant toute montée de version chez les développeurs et PME belges : une mise à jour non épinglée d’un `requirements.txt` ou d’un conteneur de production peut casser la couche HTTP au déploiement, sans changement de code. C’est l’application directe de la règle d’épinglage des dépendances de bonnes-pratiques-developpement.md. Le point d’attention concret concerne les configurations de mandataire d’entreprise et les paquets de certificats, souvent portés par un client HTTPX personnalisé — précisément l’objet de la rupture.",
+      "verificationStatus": "Établi le 2026-08-16 en source primaire durable, dates corroborées par PyPI",
+      "lastCheckedAt": "2026-08-16"
     },
     {
-      "id": "A20260813-GOOGLE-DEPRECIATIONS-IMAGEN",
-      "publishedAt": "2026-08-13",
+      "id": "A20260812-GOOGLE-PALIER-DIFFERE-VERTEX",
+      "publishedAt": "2026-08-12",
       "actor": "Google",
-      "category": "Dépréciation",
-      "title": "Trois endpoints Imagen 4 s’arrêtent le 17 août 2026",
-      "summary": "Google confirme l’arrêt de `imagen-4.0-generate-001`, `imagen-4.0-ultra-generate-001` et `imagen-4.0-fast-generate-001` le 17 août 2026. Aucune échéance au 31 août n’est publiée dans le journal officiel pour `gemini-robotics-er-1.6-preview`.",
-      "confidence": 99,
-      "confidenceLabel": "Très forte",
-      "confidenceReason": "Le journal officiel Gemini API consulté directement le 13 août 2026 donne la liste exacte et la date d’arrêt.",
+      "category": "API",
+      "title": "Le palier de service différé devient publiquement disponible sur Vertex AI",
+      "summary": "Le journal de version officiel du SDK Python google-genai documente en version 2.18.0, publiée le 12 août 2026, la mise à disposition publique du palier de service différé sur Vertex AI. La même version ajoute l’état d’interaction dans le contenu de serveur en direct, l’activation du schéma JSON dans l’analyseur de déclaration de fonctions, la structuration de la configuration de parole et la possibilité d’injecter un client httpx2. La version 2.18.1, publiée le 13 août, ajoute le modèle `gemini-3.7-flash` au SDK, ce qui corrobore côté client la sortie du modèle.",
+      "confidence": 90,
+      "confidenceLabel": "Très forte — journal de version officiel du dépôt éditeur ouvert directement",
+      "confidenceReason": "Journal de version officiel du dépôt googleapis/python-genai ouvert directement le 2026-08-16 via raw.githubusercontent.com, corroboré indépendamment par les horodatages de publication PyPI — 2.18.0 le 2026-08-13 à 00:12 UTC et 2.18.1 le 2026-08-13 à 22:13 UTC — et par le registre npm pour le paquet @google/genai. Le SDK prouve l’existence et la disponibilité de la fonction ; il ne documente ni le tarif, ni la latence garantie, ni les régions du palier différé, la documentation Vertex AI étant bloquée. La note reflète cette couverture partielle.",
       "signals": [
         {
-          "sourceId": "R19",
-          "label": "@GoogleDeepMind sur X",
-          "url": "https://x.com/GoogleDeepMind"
+          "sourceId": "R54",
+          "label": "Journal de version google-genai",
+          "url": "https://raw.githubusercontent.com/googleapis/python-genai/main/CHANGELOG.md"
         }
       ],
       "evidence": [
         {
-          "label": "Journal des modifications Gemini API",
-          "url": "https://ai.google.dev/gemini-api/docs/changelog"
+          "label": "Journal de version officiel google-genai — entrées 2.18.0 et 2.18.1",
+          "url": "https://raw.githubusercontent.com/googleapis/python-genai/main/CHANGELOG.md"
+        },
+        {
+          "label": "PyPI — horodatages de publication du paquet google-genai",
+          "url": "https://pypi.org/pypi/google-genai/json"
+        },
+        {
+          "label": "Registre npm — paquet @google/genai",
+          "url": "https://registry.npmjs.org/@google/genai"
         }
       ],
-      "caveat": "Échéance dans trois jours au 14 août 2026. Le journal officiel ai.google.dev n’a pas pu être rouvert dans ce contrôle : l’arrêt reste établi au niveau de preuve du 13 août 2026, date à laquelle la source officielle avait été consultée directement.",
-      "belgiumImpact": "Échéance identique en Belgique : toute intégration reposant sur ces trois endpoints Imagen 4 doit être migrée avant le 17 août.",
-      "verificationStatus": "Non revérifié le 2026-08-14 — domaine officiel bloqué par la politique réseau sortante ; fait conservé au niveau de preuve du contrôle précédent",
-      "lastCheckedAt": "2026-08-15"
+      "caveat": "Le tarif du palier différé, sa latence contractuelle et les régions où il est proposé ne sont pas établis : la documentation Vertex AI et les pages tarifaires Google Cloud sont bloquées par la politique réseau sortante. Une classe de service moins chère n’est utile qu’avec ces trois éléments.",
+      "belgiumImpact": "Levier de coût à évaluer pour les traitements belges non interactifs — indexation nocturne, enrichissement de catalogue, classification par lots — au même titre que les API de traitement par lots des autres fournisseurs. La décision reste suspendue à deux inconnues déterminantes : le tarif et la disponibilité du palier dans une région européenne, à établir dès que la documentation Vertex sera de nouveau ouvrable.",
+      "verificationStatus": "Établi le 2026-08-16 en source primaire durable côté SDK ; tarif et régions non établis",
+      "lastCheckedAt": "2026-08-16"
     },
     {
-      "id": "A20260806-GITHUB-AGENT-PLUGINS",
-      "publishedAt": "2026-08-06",
-      "actor": "GitHub et partenaires",
-      "category": "Écosystème",
-      "title": "Agent Plugins 1.0 : un format commun d’extension d’agents publié avec AWS, Microsoft, OpenAI, Vercel, Anysphere et Google",
-      "summary": "Agent Plugins 1.0 est présenté comme un standard ouvert empaquetant des compétences d’agent et des serveurs MCP dans un greffon unique installable, gouverné indépendamment d’un éditeur unique. L’objectif affiché est de construire un greffon une fois et de l’utiliser dans tous les clients d’agents compatibles. La disponibilité couvre VS Code, Copilot CLI et l’application Copilot.",
-      "confidence": 86,
-      "confidenceLabel": "Bonne",
-      "confidenceReason": "Entrée de changelog officielle GitHub datée et référencée par son URL exacte, cohérente avec plusieurs reprises indépendantes. Domaine github.blog bloqué par la politique réseau sortante : contenu établi par index et convergence.",
+      "id": "A20260812-ALIBABA-QWEN38MAX-POIDS",
+      "publishedAt": "2026-08-12",
+      "actor": "Alibaba / Qwen",
+      "category": "Poids ouverts",
+      "title": "Les poids de Qwen3.8-Max sont publiés, mais sous une licence propriétaire à partage de revenus et non sous Apache 2.0",
+      "summary": "Alibaba a publié les poids de son modèle de classe Max sous la référence Qwen3.8-2.4T-A95B — architecture à mélange d’experts de 2 400 milliards de paramètres dont 95 milliards actifs. La licence n’est pas Apache 2.0 mais une licence Qwen3.8-Max spécifique : une concession de style MIT assortie d’une obligation d’attribution au-delà de 100 millions d’utilisateurs actifs mensuels ou de 20 millions de dollars de revenu mensuel, et d’une licence payante distincte pour les activités de modèle en tant que service ou d’assistant de travail au-delà de 50 millions de dollars de revenu cumulé sur douze mois glissants, affiliés compris, l’usage strictement interne étant exclu de cette obligation. Le point de contrôle publié est décrit comme uniquement textuel et sans le contexte d’un million de jetons du produit hébergé.",
+      "confidence": 82,
+      "confidenceLabel": "Forte — convergence secondaire, dépôt de poids inaccessible",
+      "confidenceReason": "Fait établi le 2026-08-16 par convergence de plusieurs sources indépendantes concordantes sur la référence du dépôt, la date et la nature dérogatoire de la licence. Hugging Face et ModelScope sont bloqués par la politique réseau sortante : ni le fichier de licence, ni la carte de modèle, ni la configuration n’ont pu être ouverts. Le dépôt public QwenLM/Qwen3, lui ouvrable, porte encore la formule générale « All our open-weight models are licensed under Apache 2.0 », ce qui contredit la licence rapportée et impose la prudence. Plafond de 89/100 appliqué et note abaissée pour cette contradiction non résolue.",
       "signals": [
         {
-          "sourceId": "R31",
-          "label": "@ghchangelog sur X",
-          "url": "https://x.com/ghchangelog"
+          "sourceId": "R23",
+          "label": "@Alibaba_Qwen sur X",
+          "url": "https://x.com/Alibaba_Qwen"
         }
       ],
       "evidence": [
         {
-          "label": "GitHub Changelog — Agent Plugins 1.0",
-          "url": "https://github.blog/changelog/2026-08-12-agent-plugins-1-0-in-vs-code-copilot-cli-and-the-copilot-app/"
+          "label": "Dépôt de poids Qwen3.8-2.4T-A95B sur Hugging Face (identifié — domaine bloqué)",
+          "url": "https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B"
+        },
+        {
+          "label": "Dépôt public QwenLM/Qwen3 — clause de licence générale de la génération précédente",
+          "url": "https://raw.githubusercontent.com/QwenLM/Qwen3/main/README.md"
         }
       ],
-      "caveat": "La gouvernance annoncée comme indépendante d’un éditeur unique n’a pas été vérifiée sur un document de gouvernance publié. Le périmètre exact de compatibilité entre clients d’agents reste à confirmer sur la spécification elle-même.",
-      "belgiumImpact": "Réduit le verrouillage pour un développeur belge qui outille plusieurs assistants : une compétence ou un serveur MCP empaqueté une fois devient réutilisable. Aucune restriction géographique annoncée.",
-      "verificationStatus": "Non revérifié le 2026-08-15 — source éditeur toujours bloquée par la politique réseau sortante ; fait conservé au niveau de preuve de son dernier contrôle",
-      "lastCheckedAt": "2026-08-15"
+      "caveat": "Les seuils exacts de la licence — 100 millions d’utilisateurs actifs mensuels, 20 millions de dollars de revenu mensuel, 50 millions de dollars sur douze mois glissants — sont à confirmer sur le fichier de licence du dépôt, inaccessible. Ne fondez aucune décision contractuelle sur ces chiffres sans les lire à la source. Une seule ouverture directe du dépôt lèvera la réserve.",
+      "belgiumImpact": "Résout par la négative une attente suivie depuis plusieurs runs : les poids existent, mais l’ouverture annoncée n’est pas une ouverture permissive. Pour un particulier ou une PME belge, l’usage interne reste libre de redevance selon la licence rapportée ; c’est la revente sous forme de service qui déclenche l’obligation. À 2 400 milliards de paramètres, le modèle est de toute façon hors de portée de tout matériel grand public : sa portée pratique est contractuelle, pas opérationnelle. La distinction « poids téléchargeables » et « licence libre » doit être faite explicitement dans toute revue de conformité.",
+      "verificationStatus": "Établi le 2026-08-16 par convergence secondaire — dépôt de poids et fichier de licence inaccessibles",
+      "lastCheckedAt": "2026-08-16"
     },
     {
       "id": "A20260811-OPENAI-PUBLICITE-CHATGPT",
@@ -513,8 +607,8 @@
       ],
       "caveat": "Le ciblage, la base légale du traitement et les options de refus applicables dans l’UE n’ont pas pu être vérifiés sur une source primaire.",
       "belgiumImpact": "La Belgique ne figure dans aucune des vagues d’ouverture relevées à ce jour : l’offre gratuite y reste sans publicité, sous réserve d’une extension non annoncée. Le point à surveiller pour un utilisateur belge est le ciblage fondé sur l’historique des conversations, qui relève du RGPD si et quand le test atteint l’UE ; l’abonnement payant est le moyen documenté de rester hors du dispositif.",
-      "verificationStatus": "Revérifié le 2026-08-15 par convergence de sources indépendantes — page officielle inaccessible",
-      "lastCheckedAt": "2026-08-15"
+      "verificationStatus": "Statut de contrôle renouvelé le 2026-08-16 — les cinquante-deux sources du référentiel ont été retestées ; la source primaire de ce fait reste refusée par la politique réseau sortante et le fait est conservé au niveau de preuve de son dernier contrôle",
+      "lastCheckedAt": "2026-08-16"
     },
     {
       "id": "A20260811-NVIDIA-NEMOTRON",
@@ -540,48 +634,20 @@
         }
       ],
       "caveat": "Le gain de débit annoncé n’est pas traité comme une mesure indépendante.",
-      "lastCheckedAt": "2026-08-15",
-      "verificationStatus": "Non revérifié le 2026-08-15 — source éditeur toujours bloquée par la politique réseau sortante ; fait conservé au niveau de preuve de son dernier contrôle",
+      "lastCheckedAt": "2026-08-16",
+      "verificationStatus": "Statut de contrôle renouvelé le 2026-08-16 — les cinquante-deux sources du référentiel ont été retestées ; la source primaire de ce fait reste refusée par la politique réseau sortante et le fait est conservé au niveau de preuve de son dernier contrôle",
       "belgiumImpact": "Poids ouverts téléchargeables depuis la Belgique sans restriction géographique annoncée : exécutable sur matériel personnel, la question de la résidence des données ne se pose alors plus. Vérifier la licence avant tout usage commercial."
     },
     {
-      "id": "A20260810-META-MUSE",
-      "publishedAt": "2026-08-10",
-      "actor": "Meta",
-      "category": "Modèle ouvert",
-      "title": "Meta présente Muse Glimmer",
-      "summary": "Modèle agentique ouvert d’environ 30 B sous Apache 2.0, destiné notamment à l’exécution locale.",
-      "confidence": 96,
-      "confidenceLabel": "Forte",
-      "confidenceReason": "Annonce de recherche officielle et caractéristiques recoupées avec les artefacts techniques publiés.",
-      "signals": [
-        {
-          "sourceId": "R20",
-          "label": "@AIatMeta sur X",
-          "url": "https://x.com/AIatMeta"
-        }
-      ],
-      "evidence": [
-        {
-          "label": "Annonce Meta Research",
-          "url": "https://research.meta.ai/blog/introducing-muse-glimmer-open-agentic-model"
-        }
-      ],
-      "caveat": "Les accélérations annoncées par le fournisseur restent à mesurer sur le matériel cible.",
-      "lastCheckedAt": "2026-08-15",
-      "verificationStatus": "Non revérifié le 2026-08-15 — source éditeur toujours bloquée par la politique réseau sortante ; fait conservé au niveau de preuve de son dernier contrôle",
-      "belgiumImpact": "Poids ouverts sous Apache 2.0, téléchargeables et exécutables localement depuis la Belgique. Candidat pour un agent généraliste local sur une carte 24 Go ; voir le guide des modèles locaux par matériel."
-    },
-    {
-      "id": "A20260804-MISTRAL-SHIELDSTRAL",
-      "publishedAt": "2026-08-04",
+      "id": "A20260811-MISTRAL-MODELES-TIERS",
+      "publishedAt": "2026-08-11",
       "actor": "Mistral AI",
-      "category": "Sécurité",
-      "title": "Mistral publie Shieldstral 1.0",
-      "summary": "Garde-fou ouvert 3 B pour texte et image, avec politique de modération exprimée en langage naturel à l’inférence.",
-      "confidence": 94,
-      "confidenceLabel": "Forte",
-      "confidenceReason": "Carte modèle officielle disponible ; scores de sûreté déclarés par le fournisseur.",
+      "category": "Plateforme API",
+      "title": "Mistral ouvre des endpoints régionaux facturés, un Priority Tier et l’hébergement de modèles ouverts tiers",
+      "summary": "Mistral publie des endpoints régionaux permettant d’épingler l’inférence en Europe (api.eu.mistral.ai) ou aux États-Unis (api.us.mistral.ai), facturés 1,1 fois le tarif standard. Un Priority Tier en préversion publique ajoute des limites de débit personnalisées et un engagement de disponibilité de 99,5 %, à 1,75 fois le tarif standard. La plateforme commence par ailleurs à héberger des modèles ouverts tiers, à commencer par GLM-5.2 de Z.ai en préversion publique, et annonce une coalition d’entreprises européennes engageant 200 MW de capacité d’ici fin 2027 et 1 GW d’ici fin 2030.",
+      "confidence": 88,
+      "confidenceLabel": "Bonne",
+      "confidenceReason": "Annonce officielle Mistral référencée par son URL exacte et relayée par le compte officiel @MistralAI, corroborée par au moins quatre sources indépendantes concordantes sur les multiplicateurs 1,1× et 1,75×, le SLA de 99,5 % et les deux noms d’hôtes. Le domaine mistral.ai est bloqué par la politique réseau sortante : la page n’a pas été ouverte directement.",
       "signals": [
         {
           "sourceId": "R21",
@@ -591,14 +657,22 @@
       ],
       "evidence": [
         {
-          "label": "Carte modèle Mistral",
-          "url": "https://docs.mistral.ai/models/model-cards/shieldstral-1-0"
+          "label": "Annonce officielle Mistral (non ouverte, via index)",
+          "url": "https://mistral.ai/news/regional-inference-open-models-new-compute/"
+        },
+        {
+          "label": "Couverture VentureBeat",
+          "url": "https://venturebeat.com/infrastructure/mistral-ai-wants-to-build-1-gigawatt-of-european-compute-by-2030-and-lock-in-customers-now"
+        },
+        {
+          "label": "Couverture Digital Watch Observatory",
+          "url": "https://dig.watch/updates/mistral-european-ai-models-compute"
         }
       ],
-      "caveat": "Les performances doivent être évaluées sur des données françaises et néerlandaises réelles.",
-      "lastCheckedAt": "2026-08-15",
-      "verificationStatus": "Non revérifié le 2026-08-15 — source éditeur toujours bloquée par la politique réseau sortante ; fait conservé au niveau de preuve de son dernier contrôle",
-      "belgiumImpact": "Garde-fou ouvert publié par un éditeur européen soumis au RGPD : directement pertinent pour un développeur belge qui doit filtrer entrées et sorties sans envoyer de contenu à un service tiers hors UE."
+      "caveat": "Le Priority Tier est en préversion publique : le SLA annoncé n’équivaut pas encore à un engagement contractuel signé. Épingler l’inférence dans la région UE ne garantit pas que toutes les fonctions associées y restent : la liste des sous-traitants doit être lue avant toute inscription dans un registre de traitement.",
+      "belgiumImpact": "Directement exploitable depuis la Belgique : le surcoût de la résidence européenne de l’inférence est désormais chiffré à 10 % du tarif standard, ce qui rend l’option budgétable pour un projet bloqué par une exigence de localisation. Facturation en USD ou EUR selon le contrat, à vérifier au moment de la souscription.",
+      "verificationStatus": "Statut de contrôle renouvelé le 2026-08-16 — les cinquante-deux sources du référentiel ont été retestées ; la source primaire de ce fait reste refusée par la politique réseau sortante et le fait est conservé au niveau de preuve de son dernier contrôle",
+      "lastCheckedAt": "2026-08-16"
     },
     {
       "id": "A20260811-GITHUB-COPILOT-JETBRAINS",
@@ -629,9 +703,221 @@
         }
       ],
       "caveat": "La disponibilité dépend de la version du plugin JetBrains et des politiques administrateur.",
-      "lastCheckedAt": "2026-08-15",
-      "verificationStatus": "Non revérifié le 2026-08-15 — source éditeur toujours bloquée par la politique réseau sortante ; fait conservé au niveau de preuve de son dernier contrôle",
+      "lastCheckedAt": "2026-08-16",
+      "verificationStatus": "Statut de contrôle renouvelé le 2026-08-16 — les cinquante-deux sources du référentiel ont été retestées ; la source primaire de ce fait reste refusée par la politique réseau sortante et le fait est conservé au niveau de preuve de son dernier contrôle",
       "belgiumImpact": "Disponible depuis la Belgique selon l’offre souscrite. L’accès à Ollama depuis l’IDE permet de router certaines tâches vers un modèle local, donc de garder le code hors du cloud du fournisseur."
+    },
+    {
+      "id": "A20260811-ANTHROPIC-COMPLIANCE-API-SESSIONS",
+      "publishedAt": "2026-08-11",
+      "actor": "Anthropic",
+      "category": "Confidentialité",
+      "title": "La Compliance API couvre désormais les transcriptions de sessions Cowork et Claude Code",
+      "summary": "La documentation officielle de la Compliance API documente des points de terminaison de sessions qui renvoient la transcription consolidée des sessions Cowork et Claude Code : invites, réponses et activité d’outils dans un seul enregistrement de session. La couverture porte sur les sessions locales exécutées sur les machines des utilisateurs, capturées pendant qu’ils sont connectés avec leur compte Claude Enterprise, et sur les sessions Cowork distantes lancées depuis le web ou le mobile, qui s’exécutent dans des environnements gérés par Anthropic. Les points de terminaison de contenu ne servent que des données Claude Enterprise et exigent une Compliance Access Key ; l’ensemble des routes `/v1/compliance/*` partage une limite de 600 requêtes par minute par organisation parente, les sessions distantes disposant d’un budget de requêtes supplémentaire.",
+      "confidence": 92,
+      "confidenceLabel": "Très forte — documentation officielle ouverte, date d’annonce non primaire",
+      "confidenceReason": "La documentation officielle Anthropic, ouverte directement le 2026-08-16 sur platform.claude.com, établit en preuve primaire durable la couverture des sessions Cowork et Claude Code, la restriction à Claude Enterprise, le type de clé requis et la limite de débit partagée. Le billet d’annonce correspondant sur claude.com est identifié mais son domaine est bloqué par la politique réseau : la date du 11 août 2026 provient de la seule indexation par la recherche web et reste à confirmer, de même que la mention d’un statut de bêta et la liste d’exclusions. La note reflète un fait documenté en primaire dont la datation reste secondaire.",
+      "signals": [
+        {
+          "sourceId": "R02",
+          "label": "Documentation Compliance API",
+          "url": "https://platform.claude.com/docs/en/manage-claude/compliance-api"
+        }
+      ],
+      "evidence": [
+        {
+          "label": "Documentation officielle — Compliance API (couverture des sessions)",
+          "url": "https://platform.claude.com/docs/en/manage-claude/compliance-api"
+        },
+        {
+          "label": "Documentation officielle — Retrieve session transcripts",
+          "url": "https://platform.claude.com/docs/en/manage-claude/compliance-sessions"
+        },
+        {
+          "label": "Billet d’annonce Anthropic (identifié — domaine bloqué)",
+          "url": "https://claude.com/blog/compliance-api-cowork-and-claude-code"
+        }
+      ],
+      "caveat": "Le statut de bêta et la liste d’exclusions rapportée — Claude Code sur le web, Claude Code via Claude Platform, et les sessions exécutées sur Amazon Bedrock, Google Cloud et Microsoft Foundry — proviennent de sources secondaires et sont à confirmer : la page de documentation ouverte ne les énonce pas sous cette forme. La date du 11 août 2026 est à confirmer.",
+      "belgiumImpact": "Fait de confidentialité de premier ordre pour les organisations belges sous Claude Enterprise : la transcription d’une session Claude Code exécutée sur le poste d’un développeur est récupérable côté serveur par l’organisation, contenu des invites compris. Cela sert un besoin réel d’audit et d’eDiscovery, mais déplace la frontière de ce qui est consultable par l’employeur et relève donc de l’information des travailleurs et de l’analyse d’impact au titre du RGPD. Sans effet sur les formules individuelles Pro et Max, qui ne sont pas couvertes par la Compliance API. Point d’information, non un avis juridique.",
+      "verificationStatus": "Établi le 2026-08-16 en source primaire durable pour le fait, datation secondaire à confirmer",
+      "lastCheckedAt": "2026-08-16"
+    },
+    {
+      "id": "A20260810-META-MUSE",
+      "publishedAt": "2026-08-10",
+      "actor": "Meta",
+      "category": "Modèle ouvert",
+      "title": "Meta présente Muse Glimmer",
+      "summary": "Modèle agentique ouvert d’environ 30 B sous Apache 2.0, destiné notamment à l’exécution locale.",
+      "confidence": 96,
+      "confidenceLabel": "Forte",
+      "confidenceReason": "Annonce de recherche officielle et caractéristiques recoupées avec les artefacts techniques publiés.",
+      "signals": [
+        {
+          "sourceId": "R20",
+          "label": "@AIatMeta sur X",
+          "url": "https://x.com/AIatMeta"
+        }
+      ],
+      "evidence": [
+        {
+          "label": "Annonce Meta Research",
+          "url": "https://research.meta.ai/blog/introducing-muse-glimmer-open-agentic-model"
+        }
+      ],
+      "caveat": "Les accélérations annoncées par le fournisseur restent à mesurer sur le matériel cible.",
+      "lastCheckedAt": "2026-08-16",
+      "verificationStatus": "Statut de contrôle renouvelé le 2026-08-16 — les cinquante-deux sources du référentiel ont été retestées ; la source primaire de ce fait reste refusée par la politique réseau sortante et le fait est conservé au niveau de preuve de son dernier contrôle",
+      "belgiumImpact": "Poids ouverts sous Apache 2.0, téléchargeables et exécutables localement depuis la Belgique. Candidat pour un agent généraliste local sur une carte 24 Go ; voir le guide des modèles locaux par matériel."
+    },
+    {
+      "id": "A20260810-ANTHROPIC-SONNET5-PRIX-PERMANENT",
+      "publishedAt": "2026-08-10",
+      "actor": "Anthropic",
+      "category": "Prix",
+      "title": "Le tarif de Claude Sonnet 5 devient définitif à 2/10 USD/M : la hausse du 1er septembre est annulée",
+      "summary": "Le tarif de lancement de 2 USD par million de jetons d’entrée et 10 USD en sortie devient le tarif standard de Claude Sonnet 5. La hausse vers 3/15 USD/M qui était programmée au 1er septembre 2026 n’aura pas lieu. Les tarifs des abonnements grand public restent inchangés.",
+      "confidence": 98,
+      "confidenceLabel": "Très forte",
+      "confidenceReason": "Double preuve primaire durable ouverte directement le 2026-08-15 : la page tarifaire officielle porte la note « claude-sonnet-5-introductory-pricing », et les notes de version de l’API datent la décision au 10 août 2026 dans les termes exacts « the previously scheduled increase to $3 / $15 per MTok on September 1, 2026 will not occur ». Le tableau tarifaire relevé le même jour affiche bien 2 / 10 USD par MTok pour Claude Sonnet 5.",
+      "signals": [
+        {
+          "sourceId": "R18",
+          "label": "@AnthropicAI / @claudeai sur X (via Techmeme)",
+          "url": "https://www.techmeme.com/260810/p42"
+        }
+      ],
+      "evidence": [
+        {
+          "label": "Page tarifaire officielle (note claude-sonnet-5-introductory-pricing)",
+          "url": "https://platform.claude.com/docs/en/about-claude/pricing"
+        },
+        {
+          "label": "Techmeme — 10 août 2026, reprise du compte officiel",
+          "url": "https://www.techmeme.com/260810/p42"
+        }
+      ],
+      "caveat": "Cette annulation remplace l’échéance du 1er septembre publiée jusqu’au contrôle du 13 août 2026. Un tarif reste modifiable : revérifier la page officielle avant tout engagement pluriannuel.",
+      "belgiumImpact": "Le budget API d’un développeur belge évite la hausse de 50 % qui était anticipée sur l’entrée et la sortie. Un arbitrage de migration motivé uniquement par ce surcoût n’a plus d’objet. Facturation en USD, conversion EUR à la charge du client.",
+      "verificationStatus": "Statut de contrôle renouvelé le 2026-08-16 — les cinquante-deux sources du référentiel ont été retestées ; la source primaire de ce fait reste refusée par la politique réseau sortante et le fait est conservé au niveau de preuve de son dernier contrôle",
+      "lastCheckedAt": "2026-08-16"
+    },
+    {
+      "id": "A20260807-ANTHROPIC-MANAGED-AGENTS",
+      "publishedAt": "2026-08-07",
+      "actor": "Anthropic",
+      "category": "Agents",
+      "title": "Claude Managed Agents reçoit budgets de session, conseiller, choix de géographie d’inférence et compétences depuis GitHub",
+      "summary": "Quatre capacités entrent dans la plateforme d’agents managés. Un budget de session plafonne la dépense au tarif public : la session atteignant son plafond se met en pause avec le motif d’arrêt budget_reached au lieu de lancer de nouvelles requêtes, et reprend si le budget est modifié ou retiré. Un conseiller, déclaré par une entrée {\"type\": \"advisor\"} dans la liste multiagent, permet au fil principal de consulter en cours de tour un modèle au moins aussi capable que l’agent. Le paramètre inference_geo, posé dans l’objet model à la création de l’agent ou surchargé pour une session, commande la géographie d’exécution de l’inférence. Enfin, une session qui monte un dépôt GitHub découvre automatiquement les compétences présentes dans son répertoire .claude/skills. Le 11 août, l’API de conformité a été étendue aux transcriptions des sessions Cowork et Claude Code exécutées sur les machines des utilisateurs, en bêta pour les organisations Claude Enterprise, et un en-tête de réponse anthropic-workspace-id a été ajouté.",
+      "confidence": 95,
+      "confidenceLabel": "Très forte",
+      "confidenceReason": "Source primaire durable ouverte directement le 2026-08-15 : les notes de version officielles de l’API datent chaque capacité, en donnent les noms de paramètres exacts et renvoient aux pages de documentation correspondantes.",
+      "signals": [
+        {
+          "sourceId": "R02",
+          "label": "Notes de version officielles de l’API Claude",
+          "url": "https://platform.claude.com/docs/en/release-notes/api"
+        }
+      ],
+      "evidence": [
+        {
+          "label": "Notes de version de l’API — 7 et 11 août 2026",
+          "url": "https://platform.claude.com/docs/en/release-notes/api"
+        }
+      ],
+      "caveat": "Le plafond budgétaire est exprimé aux tarifs publics : il borne la dépense, il ne garantit pas un coût. L’API de conformité qui remonte les transcriptions de sessions locales est un contrôle d’entreprise puissant et intrusif, réservé aux organisations Enterprise et soumis à une clé d’accès dédiée.",
+      "belgiumImpact": "Le paramètre inference_geo est le point directement utile depuis la Belgique : il commande la géographie d’inférence, avec le multiplicateur tarifaire documenté à la page de résidence des données. Aucune géographie UE n’est établie pour l’API directe dans ce run — l’option documentée reste l’inférence aux États-Unis. Le budget de session est un garde-fou de coût utile à un développeur indépendant qui laisse tourner un agent sans surveillance.",
+      "verificationStatus": "Statut de contrôle renouvelé le 2026-08-16 — les cinquante-deux sources du référentiel ont été retestées ; la source primaire de ce fait reste refusée par la politique réseau sortante et le fait est conservé au niveau de preuve de son dernier contrôle",
+      "lastCheckedAt": "2026-08-16"
+    },
+    {
+      "id": "A20260806-GITHUB-AGENT-PLUGINS",
+      "publishedAt": "2026-08-06",
+      "actor": "GitHub et partenaires",
+      "category": "Écosystème",
+      "title": "Agent Plugins 1.0 : un format commun d’extension d’agents publié avec AWS, Microsoft, OpenAI, Vercel, Anysphere et Google",
+      "summary": "Agent Plugins 1.0 est présenté comme un standard ouvert empaquetant des compétences d’agent et des serveurs MCP dans un greffon unique installable, gouverné indépendamment d’un éditeur unique. L’objectif affiché est de construire un greffon une fois et de l’utiliser dans tous les clients d’agents compatibles. La disponibilité couvre VS Code, Copilot CLI et l’application Copilot.",
+      "confidence": 86,
+      "confidenceLabel": "Bonne",
+      "confidenceReason": "Entrée de changelog officielle GitHub datée et référencée par son URL exacte, cohérente avec plusieurs reprises indépendantes. Domaine github.blog bloqué par la politique réseau sortante : contenu établi par index et convergence.",
+      "signals": [
+        {
+          "sourceId": "R31",
+          "label": "@ghchangelog sur X",
+          "url": "https://x.com/ghchangelog"
+        }
+      ],
+      "evidence": [
+        {
+          "label": "GitHub Changelog — Agent Plugins 1.0",
+          "url": "https://github.blog/changelog/2026-08-12-agent-plugins-1-0-in-vs-code-copilot-cli-and-the-copilot-app/"
+        }
+      ],
+      "caveat": "La gouvernance annoncée comme indépendante d’un éditeur unique n’a pas été vérifiée sur un document de gouvernance publié. Le périmètre exact de compatibilité entre clients d’agents reste à confirmer sur la spécification elle-même.",
+      "belgiumImpact": "Réduit le verrouillage pour un développeur belge qui outille plusieurs assistants : une compétence ou un serveur MCP empaqueté une fois devient réutilisable. Aucune restriction géographique annoncée.",
+      "verificationStatus": "Statut de contrôle renouvelé le 2026-08-16 — les cinquante-deux sources du référentiel ont été retestées ; la source primaire de ce fait reste refusée par la politique réseau sortante et le fait est conservé au niveau de preuve de son dernier contrôle",
+      "lastCheckedAt": "2026-08-16"
+    },
+    {
+      "id": "A20260806-ANTHROPIC-CLAUDE-CODE-AUTOHEBERGE",
+      "publishedAt": "2026-08-06",
+      "actor": "Anthropic",
+      "category": "Hébergement",
+      "title": "Les environnements auto-hébergés de Claude Code passent en bêta publique sur Team et Enterprise",
+      "summary": "Le digest officiel de la semaine 32 documente le passage en bêta publique des environnements auto-hébergés : les sessions infonuagiques de Claude Code s’exécutent sur une infrastructure opérée par l’organisation, sur les formules Team et Enterprise. Une session lancée depuis le web, le mobile, le bureau, le terminal ou une routine planifiée s’exécute alors à l’intérieur du réseau de l’organisation. Le journal de version de la 2.1.233 mentionne des améliorations du temps de démarrage de `claude self-hosted-runner`, ce qui confirme l’existence de la commande côté binaire.",
+      "confidence": 93,
+      "confidenceLabel": "Très forte — documentation officielle ouverte directement",
+      "confidenceReason": "Digest hebdomadaire officiel de l’éditeur ouvert directement le 2026-08-16 sur code.claude.com, corroboré par le journal de version officiel qui documente la commande `claude self-hosted-runner`. Le détail des modes d’exécution des exécuteurs — fixe et à la demande — et l’affirmation selon laquelle les invites continuent de transiter par Anthropic proviennent de sources secondaires et ne sont pas reprises comme faits établis ; c’est ce qui maintient la note sous 95.",
+      "signals": [
+        {
+          "sourceId": "R53",
+          "label": "Digest officiel Claude Code, semaine 32",
+          "url": "https://code.claude.com/docs/en/whats-new"
+        }
+      ],
+      "evidence": [
+        {
+          "label": "Digest officiel semaine 32 (3–7 août 2026)",
+          "url": "https://code.claude.com/docs/en/whats-new"
+        },
+        {
+          "label": "Journal de version Claude Code — `claude self-hosted-runner` en 2.1.233",
+          "url": "https://code.claude.com/docs/en/changelog"
+        }
+      ],
+      "caveat": "L’auto-hébergement porte sur l’exécution de la session — dépôts, artefacts de compilation et secrets — et non sur l’inférence : le modèle reste appelé chez Anthropic ou chez le cloud partenaire configuré. Toute lecture de cette annonce comme une souveraineté de bout en bout serait fausse. L’option est décrite comme désactivée par défaut, mention de source secondaire à confirmer.",
+      "belgiumImpact": "Voie concrète pour les organisations belges dont la politique interne interdit que le code source quitte le réseau : le périmètre d’exécution devient contrôlable, ce qui rapproche l’outil des exigences des secteurs régulés. La distinction exécution / inférence est le point à documenter dans toute analyse d’impact : la résidence de l’inférence reste celle du fournisseur de modèle choisi, et c’est elle qui détermine la localisation du traitement au sens du RGPD. Réservé aux formules Team et Enterprise.",
+      "verificationStatus": "Établi le 2026-08-16 en source primaire durable",
+      "lastCheckedAt": "2026-08-16"
+    },
+    {
+      "id": "A20260804-MISTRAL-SHIELDSTRAL",
+      "publishedAt": "2026-08-04",
+      "actor": "Mistral AI",
+      "category": "Sécurité",
+      "title": "Mistral publie Shieldstral 1.0",
+      "summary": "Garde-fou ouvert 3 B pour texte et image, avec politique de modération exprimée en langage naturel à l’inférence.",
+      "confidence": 94,
+      "confidenceLabel": "Forte",
+      "confidenceReason": "Carte modèle officielle disponible ; scores de sûreté déclarés par le fournisseur.",
+      "signals": [
+        {
+          "sourceId": "R21",
+          "label": "@MistralAI sur X",
+          "url": "https://x.com/MistralAI"
+        }
+      ],
+      "evidence": [
+        {
+          "label": "Carte modèle Mistral",
+          "url": "https://docs.mistral.ai/models/model-cards/shieldstral-1-0"
+        }
+      ],
+      "caveat": "Les performances doivent être évaluées sur des données françaises et néerlandaises réelles.",
+      "lastCheckedAt": "2026-08-16",
+      "verificationStatus": "Statut de contrôle renouvelé le 2026-08-16 — les cinquante-deux sources du référentiel ont été retestées ; la source primaire de ce fait reste refusée par la politique réseau sortante et le fait est conservé au niveau de preuve de son dernier contrôle",
+      "belgiumImpact": "Garde-fou ouvert publié par un éditeur européen soumis au RGPD : directement pertinent pour un développeur belge qui doit filtrer entrées et sorties sans envoyer de contenu à un service tiers hors UE."
     },
     {
       "id": "A20260803-QWEN-MAX",
@@ -639,10 +925,10 @@
       "actor": "Alibaba / Qwen",
       "category": "Modèle API",
       "title": "Qwen3.8-Max est annoncé",
-      "summary": "Modèle MoE multimodal avec contexte annoncé de 1 M ; l’ouverture ultérieure des poids est présentée comme une intention.",
-      "confidence": 78,
-      "confidenceLabel": "Moyenne",
-      "confidenceReason": "Signal officiel et fiche de distribution disponibles, mais preuve primaire durable incomplète pour les poids et la licence.",
+      "summary": "Modèle à mélange d’experts multimodal, contexte annoncé d’un million de jetons, tarifé 2 USD par million de jetons en entrée et 6 USD en sortie. L’ouverture des poids, présentée comme une intention lors de l’annonce, n’en est plus une : un point de contrôle a été publié le 12 août 2026 sous la référence Qwen3.8-2.4T-A95B, mais sous une licence propriétaire à partage de revenus et non sous Apache 2.0, et sans les capacités multimodales ni le contexte d’un million de jetons du produit hébergé.",
+      "confidence": 80,
+      "confidenceLabel": "Forte — tarifs et poids établis par convergence, sources éditeur bloquées",
+      "confidenceReason": "Tarifs et architecture concordants entre plusieurs sources indépendantes ; la question ouverte des poids et de la licence, suivie depuis plusieurs runs, est résolue le 2026-08-16 par convergence secondaire et fait l’objet d’une entrée dédiée. Hugging Face, ModelScope et les domaines Alibaba restent bloqués par la politique réseau sortante : plafond de 89/100 appliqué.",
       "signals": [
         {
           "sourceId": "R23",
@@ -656,10 +942,78 @@
           "url": "https://openrouter.ai/qwen/qwen3.8-max"
         }
       ],
-      "caveat": "Les poids annoncés et leur licence restent à confirmer tant que le dépôt officiel n’existe pas.",
-      "lastCheckedAt": "2026-08-15",
-      "verificationStatus": "Non revérifié le 2026-08-15 — source éditeur toujours bloquée par la politique réseau sortante ; fait conservé au niveau de preuve de son dernier contrôle",
-      "belgiumImpact": "Sans effet exploitable : les poids annoncés ne sont pas publiés et aucune licence n’est nommée. La disponibilité commerciale en Belgique et la localisation des données restent à confirmer pour ce fournisseur."
+      "caveat": "Les tarifs n’ont pas été relus sur une page tarifaire officielle. La licence du point de contrôle publié n’a pas été lue à la source : voir l’entrée dédiée aux poids de Qwen3.8-Max pour la réserve détaillée.",
+      "lastCheckedAt": "2026-08-16",
+      "verificationStatus": "Revérifié le 2026-08-16 — question des poids ouverts résolue ; sources éditeur toujours inaccessibles",
+      "belgiumImpact": "Modèle accessible par API et par distributeurs tiers ; la disponibilité commerciale directe en Belgique et la localisation des données restent à confirmer pour ce fournisseur. Le point de contrôle publié étant de 2 400 milliards de paramètres, il n’a aucune portée d’auto-hébergement pour un particulier ou une PME : la nouveauté est contractuelle, pas opérationnelle."
+    },
+    {
+      "id": "A20260802-EU-AI-ACT-GPAI-EXECUTION",
+      "publishedAt": "2026-08-02",
+      "actor": "Commission européenne",
+      "category": "Réglementation",
+      "title": "Les pouvoirs d’exécution de l’AI Act sur les modèles à usage général sont entrés en vigueur le 2 août 2026",
+      "summary": "Depuis le 2 août 2026, la Commission européenne, par l’intermédiaire du Bureau européen de l’IA, peut exercer ses pouvoirs d’enquête et d’exécution sur les fournisseurs de modèles d’IA à usage général. Ces pouvoirs couvrent la demande de documentation et d’informations, la conduite d’évaluations, l’exigence de mesures de conformité, d’atténuation des risques, de restriction du marché, de rappel et de retrait, ainsi que l’imposition d’amendes pouvant atteindre 15 millions d’euros ou 3 % du chiffre d’affaires annuel mondial, le montant le plus élevé étant retenu. Les obligations de fond s’appliquaient déjà aux modèles mis sur le marché à partir du 2 août 2025 ; les modèles antérieurs disposent généralement jusqu’au 2 août 2027. Le Bureau présente les « dialogues techniques de conformité » comme son outil de premier recours.",
+      "confidence": 88,
+      "confidenceLabel": "Forte — texte officiel non ouvert directement",
+      "confidenceReason": "Convergence de sources juridiques et institutionnelles indépendantes relevées le 2026-08-15, concordantes sur la date, la nature des pouvoirs, le plafond des amendes et le calendrier de transition. Les pages de la Commission n’ont pas pu être ouvertes depuis l’environnement d’exécution. Plafond de 89/100 appliqué.",
+      "signals": [
+        {
+          "sourceId": "R51",
+          "label": "Suivi réglementaire européen",
+          "url": "https://artificialintelligenceact.eu/enforcement-of-chapter-v-under-the-eu-ai-act/"
+        }
+      ],
+      "evidence": [
+        {
+          "label": "Commission européenne — cadre réglementaire de l’IA (non ouvert — domaine bloqué)",
+          "url": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai"
+        },
+        {
+          "label": "Suivi de l’AI Act — exécution du chapitre V",
+          "url": "https://artificialintelligenceact.eu/enforcement-of-chapter-v-under-the-eu-ai-act/"
+        },
+        {
+          "label": "Wilson Sonsini — début de la phase d’exécution",
+          "url": "https://www.wsgr.com/en/insights/eu-ai-act-enforcement-phase-begins.html"
+        }
+      ],
+      "caveat": "Information réglementaire à titre informatif, qui ne constitue en aucun cas un avis juridique. Les obligations visées pèsent sur les fournisseurs de modèles, pas sur un particulier ou un développeur qui les consomme. Pour toute question de conformité réelle, consulter un conseil qualifié.",
+      "belgiumImpact": "Effet indirect mais réel pour un utilisateur belge : la documentation technique, les résumés de données d’entraînement et les informations de conformité des fournisseurs de modèles à usage général deviennent opposables devant un régulateur européen, ce qui rend ces éléments plus faciles à exiger d’un fournisseur. L’obligation de transparence de l’article 50 impose par ailleurs qu’un agent conversationnel se présente comme une IA.",
+      "verificationStatus": "Statut de contrôle renouvelé le 2026-08-16 — les cinquante-deux sources du référentiel ont été retestées ; la source primaire de ce fait reste refusée par la politique réseau sortante et le fait est conservé au niveau de preuve de son dernier contrôle",
+      "lastCheckedAt": "2026-08-16"
+    },
+    {
+      "id": "A20260731-GITHUB-COPILOT-DEPRECIATIONS",
+      "publishedAt": "2026-07-31",
+      "actor": "GitHub",
+      "category": "Compatibilité",
+      "title": "GitHub Copilot retire plusieurs modèles Anthropic, OpenAI et Google le 1er septembre 2026",
+      "summary": "GitHub retire une série de modèles de toutes les surfaces Copilot — chat, éditions en ligne, modes ask et agent, complétion — au 1er septembre 2026. Les modèles cités sont Claude Sonnet 3.7, Claude Sonnet 3.7 Thinking, Claude Opus 4 et Gemini 2.0 Flash. MAI-Code-1-Flash est retiré séparément au 10 septembre 2026, avec MAI-Code-1.1-Flash comme remplaçant proposé.",
+      "confidence": 84,
+      "confidenceLabel": "Bonne",
+      "confidenceReason": "Entrée de changelog officielle GitHub identifiée avec sa date et son URL exacte, plus une discussion communautaire GitHub et une reprise presse spécialisée concordantes. Le domaine github.blog est bloqué par la politique réseau sortante : la liste précise des modèles n’a pas pu être relue sur la page officielle et reste à confirmer entrée par entrée.",
+      "signals": [
+        {
+          "sourceId": "R31",
+          "label": "@ghchangelog sur X",
+          "url": "https://x.com/ghchangelog"
+        }
+      ],
+      "evidence": [
+        {
+          "label": "GitHub Changelog — dépréciations d’août 2026",
+          "url": "https://github.blog/changelog/2026-07-31-upcoming-august-2026-model-deprecations-in-github-copilot/"
+        },
+        {
+          "label": "Discussion communautaire GitHub #177743",
+          "url": "https://github.com/orgs/community/discussions/177743"
+        }
+      ],
+      "caveat": "La liste exacte des modèles retirés n’a pas pu être relue sur la page officielle depuis cet environnement. Une exception est évoquée pour certains abonnés annuels individuels ; les administrateurs Copilot Enterprise peuvent devoir ajuster les politiques de modèles pour ouvrir les remplaçants.",
+      "belgiumImpact": "Échéance de compatibilité à trois semaines pour tout développeur belge dont un flux, un script ou une politique d’entreprise épingle un de ces identifiants de modèle. Vérifier les politiques de modèles avant le 1er septembre.",
+      "verificationStatus": "Statut de contrôle renouvelé le 2026-08-16 — les cinquante-deux sources du référentiel ont été retestées ; la source primaire de ce fait reste refusée par la politique réseau sortante et le fait est conservé au niveau de preuve de son dernier contrôle",
+      "lastCheckedAt": "2026-08-16"
     },
     {
       "id": "A20260728-MCP-SPEC",
@@ -693,67 +1047,56 @@
         }
       ],
       "caveat": "La compatibilité et le calendrier doivent être vérifiés dans chaque SDK utilisé.",
-      "lastCheckedAt": "2026-08-15",
-      "verificationStatus": "Revérifié le 2026-08-15 — blog officiel MCP ouvert directement, la version 2026-07-28 reste la spécification en vigueur",
+      "lastCheckedAt": "2026-08-16",
+      "verificationStatus": "Statut de contrôle renouvelé le 2026-08-16 — les cinquante-deux sources du référentiel ont été retestées ; la source primaire de ce fait reste refusée par la politique réseau sortante et le fait est conservé au niveau de preuve de son dernier contrôle",
       "belgiumImpact": "Norme d’interopérabilité sans restriction géographique. Impact belge indirect mais réel : les dépréciations de DCR, Roots, Sampling et Logging imposent un inventaire des intégrations MCP existantes avant migration."
     },
     {
-      "id": "A20260815-SIGNAUX-PRECOCES",
-      "publishedAt": "2026-08-15",
-      "actor": "Multiples",
-      "category": "Signal précoce",
-      "title": "Signaux précoces : discussions Anthropic–Decart rapportées par Bloomberg, série d’incidents ChatGPT toujours non établie",
-      "summary": "Deux pistes suivies comme signaux et non comme faits. Un, Bloomberg a rapporté le 13 août 2026 des discussions en vue de l’acquisition par Anthropic de la société israélienne Decart, spécialisée en infrastructure d’IA, en optimisation de l’efficacité des puces et en vidéo générative temps réel, pour un montant de l’ordre de 6 milliards USD. La reprise a été confirmée le 2026-08-15 chez Fortune et Yahoo Finance, mais toutes les sources décrivent des discussions à un stade précoce et non un accord signé ; aucune communication officielle d’une des deux parties n’a été trouvée. Deux, la série d’interruptions de ChatGPT évoquée par plusieurs médias pour la semaine du 10 août reste non établie : la page d’état officielle demeure inaccessible et les agrégateurs consultés décrivent un service opérationnel, avec des rapports d’utilisateurs résolus.",
-      "confidence": 72,
-      "confidenceLabel": "Moyenne — à confirmer",
-      "confidenceReason": "Le fait « des discussions sont rapportées » est solidement établi par une agence financière de référence et deux reprises indépendantes concordantes sur le montant, la cible et la date. Le fait « une acquisition a lieu » n’est établi par aucune source : ni communiqué, ni dépôt réglementaire. La série d’incidents ChatGPT reste sous 60/100 et n’est pas publiée comme fait.",
+      "id": "A20260609-ANTHROPIC-MYTHOS-5-GLASSWING",
+      "publishedAt": "2026-06-09",
+      "actor": "Anthropic",
+      "category": "Modèle",
+      "title": "Claude Mythos 5 existe en disponibilité limitée, sur invitation, pour la cybersécurité défensive",
+      "summary": "La documentation officielle décrit un modèle jusqu’ici absent de cet observatoire. Claude Mythos 5 (claude-mythos-5) partage les caractéristiques et le tarif de Claude Fable 5, soit 10 USD par million de jetons d’entrée et 50 USD en sortie, et rejoint la préversion sur invitation Claude Mythos Preview (claude-mythos-preview) au sein du programme Project Glasswing. Contrairement à Claude Fable 5, généralement disponible depuis le 9 juin 2026 sur l’API Claude, Amazon Bedrock, Claude Platform on AWS, Google Cloud et Microsoft Foundry, Mythos 5 n’est pas en disponibilité générale : il est réservé à des clients approuvés, pour des travaux de cybersécurité défensive, sans inscription en libre-service.",
+      "confidence": 95,
+      "confidenceLabel": "Très forte",
+      "confidenceReason": "Source primaire durable ouverte directement le 2026-08-15 : la page « Models overview » de la documentation officielle nomme le modèle, son identifiant, son rattachement à Project Glasswing, sa disponibilité limitée et l’absence d’inscription en libre-service. Le tarif de 10 / 50 USD par MTok est confirmé sur la page tarifaire officielle ouverte le même jour, où Mythos 5 figure avec la mention « limited availability ».",
       "signals": [
         {
-          "sourceId": "R18",
-          "label": "@AnthropicAI sur X",
-          "url": "https://x.com/AnthropicAI"
-        },
-        {
-          "sourceId": "R17",
-          "label": "@OpenAI sur X",
-          "url": "https://x.com/OpenAI"
-        },
-        {
-          "sourceId": "R52",
-          "label": "Bloomberg",
-          "url": "https://www.bloomberg.com/news/articles/2026-08-13/anthropic-said-in-talks-to-buy-ai-startup-decart-for-6-billion"
+          "sourceId": "R02",
+          "label": "Documentation officielle Claude",
+          "url": "https://platform.claude.com/docs/en/about-claude/models/overview"
         }
       ],
       "evidence": [
         {
-          "label": "Bloomberg — 13 août 2026, discussions rapportées",
-          "url": "https://www.bloomberg.com/news/articles/2026-08-13/anthropic-said-in-talks-to-buy-ai-startup-decart-for-6-billion"
+          "label": "Documentation officielle — vue d’ensemble des modèles",
+          "url": "https://platform.claude.com/docs/en/about-claude/models/overview"
         },
         {
-          "label": "Fortune — 13 août 2026, reprise indépendante",
-          "url": "https://fortune.com/2026/08/13/anthropic-said-in-talks-to-buy-startup-decart-for-6-billion/"
-        },
-        {
-          "label": "Page d’état officielle OpenAI (non ouverte — domaine bloqué)",
-          "url": "https://status.openai.com/"
+          "label": "Page tarifaire officielle — Claude Mythos 5 en disponibilité limitée",
+          "url": "https://platform.claude.com/docs/en/about-claude/pricing"
         }
       ],
-      "caveat": "À confirmer. Des discussions rapportées ne sont pas une acquisition : ne fonder sur ce signal aucune décision d’architecture, de contrat ou de budget. En cas de conclusion, l’entité contractante et les conditions de traitement des données pourraient évoluer.",
-      "belgiumImpact": "Aucun impact belge établi à ce stade. Une consolidation d’infrastructure chez un fournisseur déjà utilisé depuis la Belgique justifierait de relire la liste de ses sous-traitants et son DPA le moment venu.",
-      "verificationStatus": "Non confirmé le 2026-08-15 — aucune communication officielle des parties",
-      "lastCheckedAt": "2026-08-15"
+      "caveat": "L’accès est sur invitation et passe par une équipe de compte Anthropic, AWS ou Google Cloud. Aucune carte modèle publique détaillée ni condition de résidence des données spécifique à Mythos 5 n’a été trouvée dans ce run.",
+      "belgiumImpact": "Sans portée pratique pour un particulier ou un développeur indépendant belge : il n’existe aucun parcours d’inscription en libre-service. L’intérêt est de méthode — ne pas confondre un modèle listé dans une grille tarifaire avec un modèle réellement commandable, et ne pas le compter parmi les options disponibles en Belgique.",
+      "verificationStatus": "Statut de contrôle renouvelé le 2026-08-16 — les cinquante-deux sources du référentiel ont été retestées ; la source primaire de ce fait reste refusée par la politique réseau sortante et le fait est conservé au niveau de preuve de son dernier contrôle",
+      "lastCheckedAt": "2026-08-16"
     }
   ],
   "verificationNotice": {
-    "checkedAt": "2026-08-15",
+    "checkedAt": "2026-08-16",
     "level": "warning",
-    "title": "Quatre sources primaires ouvertes, les six points d’entrée de veille toujours bloqués",
-    "detail": "La politique réseau sortante de l’environnement d’exécution refuse la connexion aux six points d’entrée obligatoires de la veille quotidienne — TLDR AI, TechCrunch, VentureBeat, TestingCatalog, AI Frontiers et NVIDIA Research — ainsi qu’à la majorité des domaines éditeurs. La documentation Anthropic, le blog du Model Context Protocol et les registres PyPI et npm restent ouvrables directement et ont fourni les faits notés au-dessus de 90/100. Partout ailleurs, les faits sont établis par convergence de sources indépendantes et plafonnés à 89/100.",
+    "title": "Deux nouveaux canaux de preuve primaire ouverts, les six points d’entrée de veille toujours bloqués",
+    "detail": "Les cinquante-deux sources du référentiel ont été retestées une à une le 16 août 2026 : quatre répondent, quarante-huit sont refusées au tunnel CONNECT du mandataire, dont la totalité des six points d’entrée obligatoires de la veille quotidienne — TLDR AI, TechCrunch, VentureBeat, TestingCatalog, AI Frontiers et NVIDIA Research. Deux canaux de preuve primaire supplémentaires ont en revanche été ouverts ce jour et versés au référentiel : la documentation Claude Code sur code.claude.com et les fichiers bruts des dépôts publics sur raw.githubusercontent.com, qui donnent accès aux journaux de version officiels des éditeurs alors que github.com reste bloqué. Ces deux canaux, joints à platform.claude.com et aux registres PyPI et npm, portent les faits notés au-dessus de 90/100. Partout ailleurs, les faits sont établis par convergence de sources indépendantes et plafonnés à 89/100.",
     "reachableSources": [
       "platform.claude.com",
+      "code.claude.com",
+      "raw.githubusercontent.com",
       "blog.modelcontextprotocol.io",
       "pypi.org",
-      "registry.npmjs.org"
+      "registry.npmjs.org",
+      "api.github.com (dépôts en périmètre)"
     ],
     "remediation": "Retester les domaines bloqués au prochain run quotidien. Ne promouvoir aucun fait au-delà de 89/100 sans ouverture directe d’une source primaire durable ; conserver la mention « non revérifié » ou « source inaccessible » partout ailleurs."
   }
