@@ -1,6 +1,6 @@
 # 100 outils majeurs de l’écosystème IA
 
-Contrôle : **16 août 2026**. Ce catalogue étend l’observatoire aux outils qui structurent l’usage, le développement, le déploiement et le contrôle des systèmes IA. Il est mis à jour par **le même run quotidien** que les modèles, les plateformes, les sources et les annonces ; aucune seconde automatisation n’est nécessaire.
+Contrôle : **17 août 2026**. Ce catalogue étend l’observatoire aux outils qui structurent l’usage, le développement, le déploiement et le contrôle des systèmes IA. Il est mis à jour par **le même run quotidien** que les modèles, les plateformes, les sources et les annonces ; aucune seconde automatisation n’est nécessaire.
 
 ## Méthode de sélection
 
@@ -11,13 +11,17 @@ Le catalogue contient exactement 100 outils répartis ainsi :
 | Catégorie | Nombre | Périmètre |
 |---|---:|---|
 | Applications | 10 | Assistants généralistes, recherche et productivité |
-| Code | 16 | Assistants, IDE et agents de développement |
+| Code | 17 | Assistants, IDE et agents de développement |
 | Agents & orchestration | 14 | SDK, frameworks, RAG et multi-agents |
 | Workflows & interfaces | 10 | Automatisation, interfaces et intégration d’outils |
 | Inférence locale | 10 | Runtimes, applications et bibliothèques locales |
 | Plateformes & déploiement | 20 | API, clouds, routeurs et serving |
-| Évaluation & sécurité | 15 | Traces, évaluations, red teaming et garde-fous |
+| Évaluation & sécurité | 14 | Traces, évaluations, red teaming et garde-fous |
 | Données vectorielles | 5 | Recherche vectorielle et stockage RAG |
+
+> **Revue structurelle hebdomadaire — semaine ISO 2026-W34, exécutée le 17 août 2026.** Un mouvement retenu et motivé. **Patronus AI sort du catalogue**: son SDK Python n’a pas été publié depuis le **9 janvier 2026**, quand tous les autres outils d’évaluation du catalogue ont publié dans les six dernières semaines — Guardrails AI et TruLens le 14 août, Weaviate le 13 août, DeepEval le 12 août. **Z.ai — GLM Coding Plan entre au rang 95**, dans la catégorie Code, au titre de la présence de marché de son offre de code par abonnement et de l’activité de sa ligne de modèles, attestée en source primaire par le dépôt public officiel GLM. Cette entrée tranche la réserve de sélection ouverte à la revue précédente. **Réserve publiée avec l’entrée**: le SDK Python de Z.ai n’a lui-même pas été publié depuis le 16 juin 2026, et les domaines `z.ai` et `docs.z.ai` sont refusés, de sorte que les conditions de l’abonnement, ses tarifs et sa disponibilité belge **ne sont pas établis**. L’admission repose sur l’adoption et la portée fonctionnelle, non sur la cadence de publication.
+>
+> **Ce que « statut renouvelé » signifie.** Les sites éditeurs de la grande majorité des cent outils sont refusés par la politique réseau sortante. Leur statut de contrôle est renouvelé à la date du jour avec la mention **« non revérifié »**, qui signifie *non relu à la source* et **non pas** *inchangé*. Cinq outils portent une nouveauté qualifiée ce contrôle: la plateforme Claude, l’API OpenAI, l’API Gemini, DeepSeek et Z.ai.
 
 ## Contrat de mise à jour quotidienne
 

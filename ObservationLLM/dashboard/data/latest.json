@@ -1,24 +1,24 @@
 {
   "schemaVersion": 1,
   "run": {
-    "checkedAt": "2026-08-16T07:05:00Z",
-    "factsVerifiedThrough": "2026-08-16",
+    "checkedAt": "2026-08-17",
+    "factsVerifiedThrough": "2026-08-17",
     "commit": "80b64df44d4f99f044663f582cdbac781e9670e0",
     "model": "Opus 5",
-    "result": "Contrôle du 16 août 2026. Ligne Temps réel exécutée et ligne Événementielle déclenchée sur six détections à impact matériel, dont quatre établies en source primaire durable. Deux canaux de preuve primaire ont été ouverts pour la première fois depuis cet environnement d’exécution — la documentation et le journal de version de Claude Code sur code.claude.com, et le contenu brut des dépôts publics sur raw.githubusercontent.com — ce qui a permis de lire les journaux de version officiels de trois chaînes SDK sur quatre et d’établir le contenu des changements, et non plus seulement leur date. Trente-deux annonces composent la vue courante. Les lignes hebdomadaires Opérationnelle, Approfondie et Structurelle restent à jour pour la semaine ISO 2026-W33, que le 16 août clôt ; prochaine échéance le lundi 17 août. Réserve : sur les cinquante-deux sources du référentiel retestées une à une, quatre répondent et quarante-huit sont refusées, dont la totalité des six points d’entrée obligatoires ; les faits concernés sont marqués non revérifiés et plafonnés à 89/100."
+    "result": "Contrôle du 17 août 2026 terminé. Ligne Temps réel exécutée ; les trois lignes hebdomadaires Opérationnelle, Approfondie et Structurelle sont échues et exécutées ce jour, premier run de la semaine ISO 2026-W34. Ligne Événementielle déclenchée sur quatre détections à impact matériel."
   },
   "metrics": {
     "entityCount": 20,
     "verifiedEntityCount": 5,
     "regionalChannelCount": 13,
-    "highConfidenceSourceCount": 29,
+    "highConfidenceSourceCount": 7,
     "eurUsdRate": 1.1554,
     "rateDate": "2026-08-05",
-    "verificationNote": "Cinq écosystèmes ont été rattachés à une source primaire durable ouverte directement le 16 août 2026. Anthropic par la documentation de la plateforme et, pour la première fois, par la documentation et le journal de version de Claude Code sur code.claude.com. OpenAI et Google par les journaux de version officiels de leurs dépôts publics, ouverts via raw.githubusercontent.com et corroborés par les horodatages PyPI et npm. Le Model Context Protocol par son blog et le registre npm. Mistral au seul niveau des dates de publication de son SDK, sans accès au contenu des changements. Les quinze autres écosystèmes reposent sur une convergence de sources indépendantes et sont plafonnés à 89/100. Le taux de change EUR/USD est celui du 5 août 2026 : le domaine de la Banque centrale européenne est refusé par la politique réseau sortante et le taux n’a pas pu être rafraîchi."
+    "verificationNote": "Les 55 sources du référentiel ont été retestées une à une le 17 août 2026 : 7 répondent et 48 sont refusées, dont la totalité des six points d’entrée de veille obligatoires. Septième contrôle consécutif au même profil. Les faits établis sur les sept canaux primaires ouverts — plateforme Claude, Claude Code, contenu brut des dépôts publics, blog MCP, PyPI, npm et API GitHub — portent une note supérieure à 90/100 ; tous les autres sont plafonnés à 89/100 et portent leur réserve."
   },
   "headline": {
-    "title": "Claude Code démarre désormais en mode automatique sur Pro, Max et Team, et sa version 2.1.233 corrige une fuite d’identifiants Windows.",
-    "detail": "Depuis le 14 août 2026, les nouvelles sessions Claude Code s’ouvrent en mode automatique sur les formules Pro, Max et Team : un classificateur arbitre les actions à la place de l’utilisateur. La documentation officielle fixe le plancher de version pour que ce défaut s’applique — 2.1.228 sur macOS, Linux et WSL, 2.1.233 sur Windows natif — et en deçà le mode de départ reste manuel. La même version 2.1.233 corrige un vecteur de fuite d’identifiants NTLM sous Windows, et la 2.1.232 trois contournements de permissions. Mise à jour et règles de refus explicites sont donc un seul et même geste. Fait établi en source primaire durable, corroboré par le registre npm : 96/100."
+    "title": "Deux ruptures prennent effet aujourd’hui, et une hausse de prix se présente comme une remise",
+    "detail": "Anthropic retire le Workbench hérité et les trois API expérimentales d’outillage de prompts au 17 août ; Google arrête le même jour trois endpoints Imagen 4 sur l’API Gemini, avec une réécriture d’appel à la clé. DeepSeek est passé le 16 août à 16:00 UTC à une grille heures pleines / heures creuses dont le tarif creux dépasse l’ancien tarif unique dans les six postes ; en heure de Bruxelles, la matinée de travail 08:00–12:00 est intégralement au tarif fort. Enfin, la page tarifaire d’Anthropic établit que les modèles Claude 4.7 et suivants produisent environ 30 % de jetons en plus pour le même texte, ce qui rompt la comparabilité des grilles entre générations."
   },
   "decisions": [
     {
@@ -64,8 +64,8 @@
       "flagship": "GPT-5.6 · ChatGPT · API · Codex",
       "belgium": "Belgique : disponible selon le service",
       "status": "revérifié",
-      "last_verified_at": "2026-08-16",
-      "verificationStatus": "Revérifié le 2026-08-16 en source primaire durable — journal de version officiel du dépôt openai-python ouvert directement, établissant la rupture de compatibilité HTTPX2 de la version 3.0.0 du 12 août et la dépréciation des API vidéo Sora en 3.1.0 du 14 août, avec dates corroborées par PyPI. Les domaines openai.com, developers.openai.com et help.openai.com restent refusés."
+      "last_verified_at": "2026-08-17",
+      "verificationStatus": "Vérifié en source primaire le 2026-08-17 — journal de version du dépôt éditeur et registre PyPI : SDK Python 3.1.0 du 14 août, prise en charge du palier Ultrafast, erreurs MCP et WebSocket structurées"
     },
     {
       "name": "Anthropic",
@@ -73,8 +73,8 @@
       "flagship": "Claude Opus 5 · Sonnet 5 (2/10 USD/M) · Fable 5 · Mythos 5 (Glasswing) · Claude Code",
       "belgium": "Belgique : disponible, conditions à vérifier",
       "status": "revérifié",
-      "last_verified_at": "2026-08-16",
-      "verificationStatus": "Revérifié le 2026-08-16 en source primaire durable — vue d’ensemble des modèles et documentation Compliance API sur platform.claude.com, plus documentation, digest hebdomadaire et journal de version de Claude Code sur code.claude.com, ouverts directement pour la première fois. Gamme confirmée : Fable 5 à 10/50, Opus 5 à 5/25, Sonnet 5 à 2/10 et Haiku 4.5 à 1/5 USD par million de jetons ; Mythos 5 en disponibilité limitée sur invitation dans Project Glasswing."
+      "last_verified_at": "2026-08-17",
+      "verificationStatus": "Vérifié en source primaire le 2026-08-17 — page tarifaire, notes de version et page des dépréciations ouvertes directement : retrait du Workbench et des API expérimentales, tokeniseur produisant environ 30 % de jetons en plus, dépréciation de Claude Mythos Preview, planchers de retrait des modèles actifs"
     },
     {
       "name": "Google",
@@ -82,8 +82,8 @@
       "flagship": "Gemini 3.7 Flash · Gemini 3.6 · Gemini API · Vertex AI",
       "belgium": "EEE : disponibilité documentée",
       "status": "revérifié",
-      "last_verified_at": "2026-08-16",
-      "verificationStatus": "Revérifié le 2026-08-16 en source primaire durable — journal de version officiel du dépôt googleapis/python-genai ouvert directement, établissant la disponibilité publique du palier de service différé sur Vertex AI au 12 août et l’ajout de gemini-3.7-flash au SDK le 13 août. Les domaines ai.google.dev, cloud.google.com et blog.google restent refusés : tarifs et régions du palier différé non établis."
+      "last_verified_at": "2026-08-17",
+      "verificationStatus": "Vérifié par convergence le 2026-08-17 — arrêt de trois endpoints Imagen 4 sur l’API Gemini à cette date ; domaines de documentation Google refusés, note plafonnée à 89/100"
     },
     {
       "name": "Microsoft",
@@ -91,8 +91,8 @@
       "flagship": "Azure AI · Foundry · M365 Copilot",
       "belgium": "Résidence UE à vérifier par modèle",
       "status": "non revérifié",
-      "last_verified_at": "2026-08-16",
-      "verificationStatus": "Non revérifié le 2026-08-16 — domaine éditeur refusé par la politique réseau sortante ; statut de contrôle renouvelé, fait conservé au niveau de preuve de son dernier contrôle"
+      "last_verified_at": "2026-08-17",
+      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucun fait nouveau trouvé"
     },
     {
       "name": "AWS",
@@ -100,8 +100,8 @@
       "flagship": "Bedrock · AgentCore · Dogwood",
       "belgium": "Régions UE selon le service",
       "status": "non revérifié",
-      "last_verified_at": "2026-08-16",
-      "verificationStatus": "Non revérifié le 2026-08-16 — domaine éditeur refusé par la politique réseau sortante ; statut de contrôle renouvelé, fait conservé au niveau de preuve de son dernier contrôle"
+      "last_verified_at": "2026-08-17",
+      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucun fait nouveau trouvé"
     },
     {
       "name": "Meta",
@@ -109,8 +109,8 @@
       "flagship": "Muse Glimmer 30B (Apache 2.0) · Muse Spark",
       "belgium": "Poids ouverts, licence permissive",
       "status": "non revérifié",
-      "last_verified_at": "2026-08-16",
-      "verificationStatus": "Non revérifié le 2026-08-16 — domaine éditeur refusé par la politique réseau sortante ; statut de contrôle renouvelé, fait conservé au niveau de preuve de son dernier contrôle"
+      "last_verified_at": "2026-08-17",
+      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucun fait nouveau trouvé"
     },
     {
       "name": "Mistral AI",
@@ -118,8 +118,8 @@
       "flagship": "Le Chat/Vibe · API · Shieldstral 1.0",
       "belgium": "Endpoint UE disponible (×1,1)",
       "status": "revérifié",
-      "last_verified_at": "2026-08-16",
-      "verificationStatus": "Revérifié le 2026-08-16 au seul niveau des versions — SDK mistralai 2.9.3 publié le 13 août relevé directement sur PyPI. Le contenu des changements n’est pas établi : docs.mistral.ai et mistral.ai restent refusés."
+      "last_verified_at": "2026-08-17",
+      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucun fait nouveau trouvé"
     },
     {
       "name": "xAI (SpaceXAI)",
@@ -127,8 +127,8 @@
       "flagship": "Grok 4.6 · API",
       "belgium": "Console UE de 4.6 : à confirmer",
       "status": "non revérifié",
-      "last_verified_at": "2026-08-16",
-      "verificationStatus": "Non revérifié le 2026-08-16 — domaine éditeur refusé par la politique réseau sortante ; statut de contrôle renouvelé, fait conservé au niveau de preuve de son dernier contrôle"
+      "last_verified_at": "2026-08-17",
+      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucun fait nouveau trouvé"
     },
     {
       "name": "DeepSeek",
@@ -136,8 +136,8 @@
       "flagship": "V4 Pro 0813 (MIT) · V4-Flash 0731",
       "belgium": "Poids MIT auto-hébergeables ; API sans région UE",
       "status": "non revérifié",
-      "last_verified_at": "2026-08-16",
-      "verificationStatus": "Non revérifié le 2026-08-16 — api-docs.deepseek.com et Hugging Face refusés ; l’état du 15 août est conservé, V4 Pro 0813 en disponibilité générale sous licence MIT"
+      "last_verified_at": "2026-08-17",
+      "verificationStatus": "Vérifié par convergence le 2026-08-17 — grille heures pleines / heures creuses en vigueur depuis le 16 août 16:00 UTC ; domaines de l’éditeur refusés, note plafonnée à 89/100"
     },
     {
       "name": "Alibaba / Qwen",
@@ -145,8 +145,8 @@
       "flagship": "Qwen3.8-Max · Qwen3.8-27B (Apache 2.0) · Qwen3.6 · Model Studio",
       "belgium": "Poids Max annoncés, non livrés",
       "status": "revérifié",
-      "last_verified_at": "2026-08-16",
-      "verificationStatus": "Revérifié le 2026-08-16 par convergence secondaire — la question ouverte des poids, suivie depuis plusieurs runs, est résolue : Qwen3.8-2.4T-A95B publié le 12 août sous licence propriétaire à partage de revenus, Qwen3.8-27B publié le 14 août sous Apache 2.0. Hugging Face et ModelScope sont refusés : aucun fichier de licence n’a été lu à la source, plafond de 89/100 appliqué."
+      "last_verified_at": "2026-08-17",
+      "verificationStatus": "Vérifié en source primaire le 2026-08-17 pour les dates et identifiants — le dépôt public Qwen3.8 ne reprend pas la clause générale Apache 2.0 et renvoie au fichier de licence de chaque jeu de poids ; le texte des licences reste illisible, dépôts de poids refusés"
     },
     {
       "name": "NVIDIA",
@@ -154,8 +154,8 @@
       "flagship": "Nemotron 3.5 Lightning · NIM · Switchyard",
       "belgium": "Poids OpenMDW-1.1; infra",
       "status": "non revérifié",
-      "last_verified_at": "2026-08-16",
-      "verificationStatus": "Non revérifié le 2026-08-16 — domaine éditeur refusé par la politique réseau sortante ; statut de contrôle renouvelé, fait conservé au niveau de preuve de son dernier contrôle"
+      "last_verified_at": "2026-08-17",
+      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucun fait nouveau trouvé"
     },
     {
       "name": "Cohere",
@@ -163,8 +163,8 @@
       "flagship": "Command A+ · North Mini Code 1.0",
       "belgium": "B2B ; poids ouverts Apache 2.0",
       "status": "non revérifié",
-      "last_verified_at": "2026-08-16",
-      "verificationStatus": "Non revérifié le 2026-08-16 — domaine éditeur refusé par la politique réseau sortante ; statut de contrôle renouvelé, fait conservé au niveau de preuve de son dernier contrôle"
+      "last_verified_at": "2026-08-17",
+      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucun fait nouveau trouvé"
     },
     {
       "name": "IBM",
@@ -172,8 +172,8 @@
       "flagship": "watsonx · Granite 4.1",
       "belgium": "Contrôles entreprise structurés",
       "status": "non revérifié",
-      "last_verified_at": "2026-08-16",
-      "verificationStatus": "Non revérifié le 2026-08-16 — domaine éditeur refusé par la politique réseau sortante ; statut de contrôle renouvelé, fait conservé au niveau de preuve de son dernier contrôle"
+      "last_verified_at": "2026-08-17",
+      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucun fait nouveau trouvé"
     },
     {
       "name": "GitHub Copilot",
@@ -181,8 +181,8 @@
       "flagship": "Copilot · agents et modèles multiples",
       "belgium": "Disponible selon abonnement",
       "status": "non revérifié",
-      "last_verified_at": "2026-08-16",
-      "verificationStatus": "Non revérifié le 2026-08-16 — domaine éditeur refusé par la politique réseau sortante ; statut de contrôle renouvelé, fait conservé au niveau de preuve de son dernier contrôle"
+      "last_verified_at": "2026-08-17",
+      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucun fait nouveau trouvé"
     },
     {
       "name": "Perplexity",
@@ -190,8 +190,8 @@
       "flagship": "Recherche sourcée · Perplexity Computer",
       "belgium": "Disponible, checkout à vérifier",
       "status": "non revérifié",
-      "last_verified_at": "2026-08-16",
-      "verificationStatus": "Non revérifié le 2026-08-16 — domaine éditeur refusé par la politique réseau sortante ; statut de contrôle renouvelé, fait conservé au niveau de preuve de son dernier contrôle"
+      "last_verified_at": "2026-08-17",
+      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucun fait nouveau trouvé"
     },
     {
       "name": "Cursor",
@@ -199,8 +199,8 @@
       "flagship": "IDE agentique · Router",
       "belgium": "Acquisition SpaceX en cours de clôture",
       "status": "non revérifié",
-      "last_verified_at": "2026-08-16",
-      "verificationStatus": "Non revérifié le 2026-08-16 — domaine éditeur refusé par la politique réseau sortante ; statut de contrôle renouvelé, fait conservé au niveau de preuve de son dernier contrôle"
+      "last_verified_at": "2026-08-17",
+      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucun fait nouveau trouvé"
     },
     {
       "name": "Replit",
@@ -208,8 +208,8 @@
       "flagship": "Agent · environnement de développement",
       "belgium": "Disponibilité web, prix à vérifier",
       "status": "non revérifié",
-      "last_verified_at": "2026-08-16",
-      "verificationStatus": "Non revérifié le 2026-08-16 — domaine éditeur refusé par la politique réseau sortante ; statut de contrôle renouvelé, fait conservé au niveau de preuve de son dernier contrôle"
+      "last_verified_at": "2026-08-17",
+      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucun fait nouveau trouvé"
     },
     {
       "name": "Hugging Face",
@@ -217,8 +217,8 @@
       "flagship": "Hub · Inference · écosystème",
       "belgium": "Disponible, vigilance sécurité",
       "status": "non revérifié",
-      "last_verified_at": "2026-08-16",
-      "verificationStatus": "Non revérifié le 2026-08-16 — domaine éditeur refusé par la politique réseau sortante ; statut de contrôle renouvelé, fait conservé au niveau de preuve de son dernier contrôle"
+      "last_verified_at": "2026-08-17",
+      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucun fait nouveau trouvé"
     },
     {
       "name": "Moonshot / Kimi",
@@ -226,8 +226,8 @@
       "flagship": "Kimi K3 · Kimi Code · API",
       "belgium": "Disponibilité commerciale à confirmer",
       "status": "non revérifié",
-      "last_verified_at": "2026-08-16",
-      "verificationStatus": "Non revérifié le 2026-08-16 — domaine éditeur refusé par la politique réseau sortante ; statut de contrôle renouvelé, fait conservé au niveau de preuve de son dernier contrôle"
+      "last_verified_at": "2026-08-17",
+      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucun fait nouveau trouvé"
     },
     {
       "name": "Z.AI / GLM",
@@ -235,8 +235,8 @@
       "flagship": "GLM-5.3 (poids retenus) · GLM-5.2 (MIT)",
       "belgium": "Abonnement hors UE ; poids 5.3 non publiés",
       "status": "non revérifié",
-      "last_verified_at": "2026-08-16",
-      "verificationStatus": "Non revérifié le 2026-08-16 — z.ai et docs.z.ai refusés ; l’état du 15 août est conservé, poids de GLM-5.3 retenus au motif d’une évaluation de sûreté"
+      "last_verified_at": "2026-08-17",
+      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucun fait nouveau trouvé"
     }
   ],
   "hardware": [
@@ -251,7 +251,7 @@
       ],
       "avoid": "Modèles de 4B ou plus et contextes longs : le swap détruit la latence.",
       "summary": "Gemma 4 E2B (2,3 B effectifs, ~1,3 Go en Q4) accepte texte, image et audio. Contexte court indispensable.",
-      "verificationStatus": "Non revérifié le 2026-08-16 — cartes modèles et mesures de vitesse inaccessibles depuis l’environnement d’exécution ; recommandation conservée au niveau de preuve de son dernier contrôle"
+      "verificationStatus": "Non revérifié le 2026-08-17 — dépôts de poids et sites des moteurs refusés ; aucune publication de poids ouverts nouvelle entre le 15 et le 17 août, aucun tableau modifié sur source secondaire"
     },
     {
       "label": "CPU seul · 8 Go",
@@ -264,7 +264,7 @@
       ],
       "avoid": "Les 7–8B tiennent à peine et deviennent trop lents pour un usage fluide.",
       "summary": "Q4_K_M avec contexte modéré et au moins 10 % de RAM libre.",
-      "verificationStatus": "Non revérifié le 2026-08-16 — cartes modèles et mesures de vitesse inaccessibles depuis l’environnement d’exécution ; recommandation conservée au niveau de preuve de son dernier contrôle"
+      "verificationStatus": "Non revérifié le 2026-08-17 — dépôts de poids et sites des moteurs refusés ; aucune publication de poids ouverts nouvelle entre le 15 et le 17 août, aucun tableau modifié sur source secondaire"
     },
     {
       "label": "CPU seul · 16 Go",
@@ -277,7 +277,7 @@
       ],
       "avoid": "Les modèles denses de 26B ou plus et les contextes de 128k.",
       "summary": "Le meilleur palier sans GPU pour un chat local réellement capable.",
-      "verificationStatus": "Non revérifié le 2026-08-16 — cartes modèles et mesures de vitesse inaccessibles depuis l’environnement d’exécution ; recommandation conservée au niveau de preuve de son dernier contrôle"
+      "verificationStatus": "Non revérifié le 2026-08-17 — dépôts de poids et sites des moteurs refusés ; aucune publication de poids ouverts nouvelle entre le 15 et le 17 août, aucun tableau modifié sur source secondaire"
     },
     {
       "label": "CPU seul · 32 Go",
@@ -290,7 +290,7 @@
       ],
       "avoid": "Les 70B denses pour une conversation interactive.",
       "summary": "Les architectures MoE réduisent fortement le coût de calcul par jeton.",
-      "verificationStatus": "Non revérifié le 2026-08-16 — cartes modèles et mesures de vitesse inaccessibles depuis l’environnement d’exécution ; recommandation conservée au niveau de preuve de son dernier contrôle"
+      "verificationStatus": "Non revérifié le 2026-08-17 — dépôts de poids et sites des moteurs refusés ; aucune publication de poids ouverts nouvelle entre le 15 et le 17 août, aucun tableau modifié sur source secondaire"
     },
     {
       "label": "CPU seul · 64 Go",
@@ -303,7 +303,7 @@
       ],
       "avoid": "Un 70B dense si vous attendez une réponse interactive rapide.",
       "summary": "Techniquement ambitieux : mesurez la bande passante mémoire et gardez une marge pour l’OS.",
-      "verificationStatus": "Non revérifié le 2026-08-16 — cartes modèles et mesures de vitesse inaccessibles depuis l’environnement d’exécution ; recommandation conservée au niveau de preuve de son dernier contrôle"
+      "verificationStatus": "Non revérifié le 2026-08-17 — dépôts de poids et sites des moteurs refusés ; aucune publication de poids ouverts nouvelle entre le 15 et le 17 août, aucun tableau modifié sur source secondaire"
     },
     {
       "label": "Mini-PC / portable · 16 Go",
@@ -316,7 +316,7 @@
       ],
       "avoid": "Les denses de 24B et plus.",
       "summary": "Palier confortable pour un assistant local sans carte graphique dédiée.",
-      "verificationStatus": "Non revérifié le 2026-08-16 — cartes modèles et mesures de vitesse inaccessibles depuis l’environnement d’exécution ; recommandation conservée au niveau de preuve de son dernier contrôle"
+      "verificationStatus": "Non revérifié le 2026-08-17 — dépôts de poids et sites des moteurs refusés ; aucune publication de poids ouverts nouvelle entre le 15 et le 17 août, aucun tableau modifié sur source secondaire"
     },
     {
       "label": "Mini-PC / portable · 32 Go",
@@ -329,7 +329,7 @@
       ],
       "avoid": "Les 70B denses.",
       "summary": "Un MoE reste fluide là où un dense équivalent devient pénible.",
-      "verificationStatus": "Non revérifié le 2026-08-16 — cartes modèles et mesures de vitesse inaccessibles depuis l’environnement d’exécution ; recommandation conservée au niveau de preuve de son dernier contrôle"
+      "verificationStatus": "Non revérifié le 2026-08-17 — dépôts de poids et sites des moteurs refusés ; aucune publication de poids ouverts nouvelle entre le 15 et le 17 août, aucun tableau modifié sur source secondaire"
     },
     {
       "label": "Apple Silicon · 16 Go",
@@ -342,7 +342,7 @@
       ],
       "avoid": "Les 26B et plus : la mémoire est aussi partagée avec macOS.",
       "summary": "MLX 4-bit ou llama.cpp/Metal offrent le chemin le plus naturel.",
-      "verificationStatus": "Non revérifié le 2026-08-16 — cartes modèles et mesures de vitesse inaccessibles depuis l’environnement d’exécution ; recommandation conservée au niveau de preuve de son dernier contrôle"
+      "verificationStatus": "Non revérifié le 2026-08-17 — dépôts de poids et sites des moteurs refusés ; aucune publication de poids ouverts nouvelle entre le 15 et le 17 août, aucun tableau modifié sur source secondaire"
     },
     {
       "label": "Apple Silicon · 32 Go",
@@ -356,7 +356,7 @@
       ],
       "avoid": "Les 70B denses, trop serrés et lents pour ce palier.",
       "summary": "Bon palier pour le code local, les MoE et un agent multimodal en mémoire unifiée.",
-      "verificationStatus": "Non revérifié le 2026-08-16 — cartes modèles inaccessibles. Candidat à évaluer à la prochaine revue Approfondie du 17 août : Qwen3.8-27B, dense et sous Apache 2.0, publié le 14 août. Taille quantifiée, empreinte réelle et vitesse restent à établir : la recommandation en vigueur n’est pas modifiée."
+      "verificationStatus": "Non revérifié le 2026-08-17 — dépôts de poids et sites des moteurs refusés ; aucune publication de poids ouverts nouvelle entre le 15 et le 17 août, aucun tableau modifié sur source secondaire"
     },
     {
       "label": "GPU · 8 Go",
@@ -369,7 +369,7 @@
       ],
       "avoid": "Les modèles denses de 14B ou plus en chargement entièrement GPU.",
       "summary": "Conservez un contexte raisonnable afin de laisser de la place au cache KV.",
-      "verificationStatus": "Non revérifié le 2026-08-16 — cartes modèles et mesures de vitesse inaccessibles depuis l’environnement d’exécution ; recommandation conservée au niveau de preuve de son dernier contrôle"
+      "verificationStatus": "Non revérifié le 2026-08-17 — dépôts de poids et sites des moteurs refusés ; aucune publication de poids ouverts nouvelle entre le 15 et le 17 août, aucun tableau modifié sur source secondaire"
     },
     {
       "label": "RTX 3060 · 12 Go + 64 Go",
@@ -382,7 +382,7 @@
       ],
       "avoid": "Muse Glimmer 30B est dense : il ne tient pas en 12 Go et son offload sera lent. Préférez un MoE.",
       "summary": "Votre profil : 12 B Q4 confortables en VRAM, MoE plus gros grâce aux 64 Go de RAM.",
-      "verificationStatus": "Non revérifié le 2026-08-16 — cartes modèles inaccessibles. Candidat à évaluer à la prochaine revue Approfondie du 17 août : Qwen3.8-27B, dense et sous Apache 2.0, publié le 14 août. Taille quantifiée, empreinte réelle et vitesse restent à établir : la recommandation en vigueur n’est pas modifiée."
+      "verificationStatus": "Non revérifié le 2026-08-17 — dépôts de poids et sites des moteurs refusés ; aucune publication de poids ouverts nouvelle entre le 15 et le 17 août, aucun tableau modifié sur source secondaire"
     },
     {
       "label": "GPU · 16 Go",
@@ -395,7 +395,7 @@
       ],
       "avoid": "Les 31B denses entièrement en VRAM.",
       "summary": "Palier idéal pour un MoE multimodal, et assez pour héberger un classificateur de sûreté.",
-      "verificationStatus": "Non revérifié le 2026-08-16 — cartes modèles et mesures de vitesse inaccessibles depuis l’environnement d’exécution ; recommandation conservée au niveau de preuve de son dernier contrôle"
+      "verificationStatus": "Non revérifié le 2026-08-17 — dépôts de poids et sites des moteurs refusés ; aucune publication de poids ouverts nouvelle entre le 15 et le 17 août, aucun tableau modifié sur source secondaire"
     },
     {
       "label": "GPU · 24 Go",
@@ -409,7 +409,7 @@
       ],
       "avoid": "Les 70B entièrement GPU, sauf quantification très agressive ou multi-GPU. North Mini Code à 256 k de contexte : cache KV insuffisant.",
       "summary": "Muse Glimmer tient à ≈17 Go en K-Quant (~1,0 % de dégradation). Pour le code, North Mini Code 1.0 en w4a16 occupe ~18–20 Go et laisse 4–6 Go de cache KV.",
-      "verificationStatus": "Non revérifié le 2026-08-16 — cartes modèles inaccessibles. Candidat à évaluer à la prochaine revue Approfondie du 17 août : Qwen3.8-27B, dense et sous Apache 2.0, publié le 14 août. Taille quantifiée, empreinte réelle et vitesse restent à établir : la recommandation en vigueur n’est pas modifiée."
+      "verificationStatus": "Non revérifié le 2026-08-17 — dépôts de poids et sites des moteurs refusés ; aucune publication de poids ouverts nouvelle entre le 15 et le 17 août, aucun tableau modifié sur source secondaire"
     }
   ],
   "localizations": [
@@ -423,8 +423,8 @@
       "residency": "Inférence et stockage à vérifier endpoint par endpoint",
       "confidence": 95,
       "sourceId": "R01",
-      "last_verified_at": "2026-08-16",
-      "verificationStatus": "Non revérifié le 2026-08-16 — documentation fournisseur refusée par la politique réseau sortante ; constat conservé au niveau de preuve de son dernier contrôle"
+      "last_verified_at": "2026-08-17",
+      "verificationStatus": "Non revérifié le 2026-08-17 — page de résidence de l’éditeur refusée ; niveau de preuve du dernier contrôle effectif conservé"
     },
     {
       "developer": "Anthropic",
@@ -436,7 +436,7 @@
       "residency": "Global par défaut ; option d’inférence US via inference_geo (×1,1). Résidence UE non publiée pour l’API directe",
       "confidence": 92,
       "sourceId": "R02",
-      "last_verified_at": "2026-08-16",
+      "last_verified_at": "2026-08-17",
       "verificationStatus": "Revérifié le 2026-08-16 — la documentation Anthropic, ouverte directement, confirme la mise à disposition via API Claude, Amazon Bedrock, Claude Platform on AWS, Google Cloud et Microsoft Foundry, ainsi que l’existence de points de terminaison mondiaux, multirégionaux et régionaux. La résidence effective reste à vérifier point de terminaison par point de terminaison. Nouveauté d’hébergement : les environnements auto-hébergés de Claude Code, en bêta publique sur Team et Enterprise, déplacent l’exécution de la session dans le réseau de l’organisation mais pas l’inférence, qui reste chez le fournisseur de modèle."
     },
     {
@@ -449,8 +449,8 @@
       "residency": "Routage cross-region et journaux à contrôler",
       "confidence": 92,
       "sourceId": "R06",
-      "last_verified_at": "2026-08-16",
-      "verificationStatus": "Non revérifié le 2026-08-16 — documentation fournisseur refusée par la politique réseau sortante ; constat conservé au niveau de preuve de son dernier contrôle"
+      "last_verified_at": "2026-08-17",
+      "verificationStatus": "Non revérifié le 2026-08-17 — page de résidence de l’éditeur refusée ; niveau de preuve du dernier contrôle effectif conservé"
     },
     {
       "developer": "Anthropic",
@@ -462,8 +462,8 @@
       "residency": "Ne réside pas automatiquement dans la région Azure choisie",
       "confidence": 90,
       "sourceId": "R05",
-      "last_verified_at": "2026-08-16",
-      "verificationStatus": "Non revérifié le 2026-08-16 — documentation fournisseur refusée par la politique réseau sortante ; constat conservé au niveau de preuve de son dernier contrôle"
+      "last_verified_at": "2026-08-17",
+      "verificationStatus": "Non revérifié le 2026-08-17 — page de résidence de l’éditeur refusée ; niveau de preuve du dernier contrôle effectif conservé"
     },
     {
       "developer": "Google",
@@ -475,8 +475,8 @@
       "residency": "Disponibilité EEE ne vaut pas résidence garantie. Pour Gemini 3.7 Flash, aucun point de terminaison monorégional ni multirégional UE n’est confirmé dans ce run",
       "confidence": 88,
       "sourceId": "R03",
-      "last_verified_at": "2026-08-16",
-      "verificationStatus": "Non revérifié le 2026-08-16 — documentation fournisseur refusée par la politique réseau sortante ; constat conservé au niveau de preuve de son dernier contrôle"
+      "last_verified_at": "2026-08-17",
+      "verificationStatus": "Non revérifié le 2026-08-17 — page de résidence de l’éditeur refusée ; niveau de preuve du dernier contrôle effectif conservé"
     },
     {
       "developer": "Google",
@@ -488,8 +488,8 @@
       "residency": "Données et journaux gouvernés par configuration Cloud",
       "confidence": 95,
       "sourceId": "R04",
-      "last_verified_at": "2026-08-16",
-      "verificationStatus": "Non revérifié le 2026-08-16 — documentation fournisseur refusée par la politique réseau sortante ; constat conservé au niveau de preuve de son dernier contrôle"
+      "last_verified_at": "2026-08-17",
+      "verificationStatus": "Non revérifié le 2026-08-17 — page de résidence de l’éditeur refusée ; niveau de preuve du dernier contrôle effectif conservé"
     },
     {
       "developer": "OpenAI",
@@ -501,8 +501,8 @@
       "residency": "Vérifier région de déploiement et fonctions annexes",
       "confidence": 95,
       "sourceId": "R05",
-      "last_verified_at": "2026-08-16",
-      "verificationStatus": "Non revérifié le 2026-08-16 — documentation fournisseur refusée par la politique réseau sortante ; constat conservé au niveau de preuve de son dernier contrôle"
+      "last_verified_at": "2026-08-17",
+      "verificationStatus": "Non revérifié le 2026-08-17 — page de résidence de l’éditeur refusée ; niveau de preuve du dernier contrôle effectif conservé"
     },
     {
       "developer": "Multiples",
@@ -514,8 +514,8 @@
       "residency": "Chaque modèle, outil et routage doit être vérifié",
       "confidence": 95,
       "sourceId": "R06",
-      "last_verified_at": "2026-08-16",
-      "verificationStatus": "Non revérifié le 2026-08-16 — documentation fournisseur refusée par la politique réseau sortante ; constat conservé au niveau de preuve de son dernier contrôle"
+      "last_verified_at": "2026-08-17",
+      "verificationStatus": "Non revérifié le 2026-08-17 — page de résidence de l’éditeur refusée ; niveau de preuve du dernier contrôle effectif conservé"
     },
     {
       "developer": "Mistral AI",
@@ -527,8 +527,8 @@
       "residency": "Inférence dans la région choisie, sous réserve de transferts encadrés vers des sous-traitants hors région. Exiger DPA et liste des sous-traitants.",
       "confidence": 92,
       "sourceId": "R07",
-      "last_verified_at": "2026-08-16",
-      "verificationStatus": "Non revérifié le 2026-08-16 — documentation fournisseur refusée par la politique réseau sortante ; constat conservé au niveau de preuve de son dernier contrôle"
+      "last_verified_at": "2026-08-17",
+      "verificationStatus": "Non revérifié le 2026-08-17 — page de résidence de l’éditeur refusée ; niveau de preuve du dernier contrôle effectif conservé"
     },
     {
       "developer": "Hugging Face",
@@ -540,8 +540,8 @@
       "residency": "DPA Enterprise et configuration endpoint à vérifier",
       "confidence": 90,
       "sourceId": "R08",
-      "last_verified_at": "2026-08-16",
-      "verificationStatus": "Non revérifié le 2026-08-16 — documentation fournisseur refusée par la politique réseau sortante ; constat conservé au niveau de preuve de son dernier contrôle"
+      "last_verified_at": "2026-08-17",
+      "verificationStatus": "Non revérifié le 2026-08-17 — page de résidence de l’éditeur refusée ; niveau de preuve du dernier contrôle effectif conservé"
     },
     {
       "developer": "Meta, Mistral, Qwen, NVIDIA, IBM et autres",
@@ -553,8 +553,8 @@
       "residency": "Sous contrôle de l’exploitant, y compris logs et sauvegardes",
       "confidence": 95,
       "sourceId": "R07/R08/R12/R14",
-      "last_verified_at": "2026-08-16",
-      "verificationStatus": "Non revérifié le 2026-08-16 — documentation fournisseur refusée par la politique réseau sortante ; constat conservé au niveau de preuve de son dernier contrôle"
+      "last_verified_at": "2026-08-17",
+      "verificationStatus": "Non revérifié le 2026-08-17 — page de résidence de l’éditeur refusée ; niveau de preuve du dernier contrôle effectif conservé"
     },
     {
       "developer": "Cohere",
@@ -566,8 +566,8 @@
       "residency": "Non publiée avec assez de précision dans ce run",
       "confidence": 70,
       "sourceId": "R13",
-      "last_verified_at": "2026-08-16",
-      "verificationStatus": "Non revérifié le 2026-08-16 — documentation fournisseur refusée par la politique réseau sortante ; constat conservé au niveau de preuve de son dernier contrôle"
+      "last_verified_at": "2026-08-17",
+      "verificationStatus": "Non revérifié le 2026-08-17 — page de résidence de l’éditeur refusée ; niveau de preuve du dernier contrôle effectif conservé"
     },
     {
       "developer": "DeepSeek, Qwen, Kimi et GLM",
@@ -579,8 +579,8 @@
       "residency": "DPA, transferts et rétention insuffisamment documentés. Pour DeepSeek, la voie défendable depuis la Belgique est l’auto-hébergement des poids MIT plutôt que l’API directe",
       "confidence": 60,
       "sourceId": "R11 + docs fournisseurs",
-      "last_verified_at": "2026-08-16",
-      "verificationStatus": "Non revérifié le 2026-08-16 — documentation fournisseur refusée par la politique réseau sortante ; constat conservé au niveau de preuve de son dernier contrôle"
+      "last_verified_at": "2026-08-17",
+      "verificationStatus": "Non revérifié le 2026-08-17 — page de résidence de l’éditeur refusée ; niveau de preuve du dernier contrôle effectif conservé"
     },
     {
       "developer": "xAI (SpaceXAI)",
@@ -592,8 +592,8 @@
       "residency": "À confirmer. Entité contractante susceptible de changer à la clôture de l’acquisition d’Anysphere par SpaceX.",
       "confidence": 60,
       "sourceId": "S139",
-      "last_verified_at": "2026-08-16",
-      "verificationStatus": "Non revérifié le 2026-08-16 — documentation fournisseur refusée par la politique réseau sortante ; constat conservé au niveau de preuve de son dernier contrôle"
+      "last_verified_at": "2026-08-17",
+      "verificationStatus": "Non revérifié le 2026-08-17 — page de résidence de l’éditeur refusée ; niveau de preuve du dernier contrôle effectif conservé"
     }
   ],
   "documents": [
@@ -653,19 +653,19 @@
     }
   ],
   "verificationNotice": {
-    "checkedAt": "2026-08-16",
+    "checkedAt": "2026-08-17",
     "level": "warning",
-    "title": "Quatre sources primaires ouvertes sur cinquante-cinq référencées, deux canaux de preuve gagnés",
-    "detail": "Les cinquante-deux sources historiques du référentiel ont été retestées une à une le 16 août 2026 : quatre répondent — la documentation Anthropic, PyPI, le registre npm et le blog du Model Context Protocol — et quarante-huit sont refusées au tunnel CONNECT du mandataire, dont la totalité des six points d’entrée obligatoires de la veille quotidienne. Deux canaux de preuve primaire durable ont en revanche été ouverts pour la première fois et versés au référentiel sous R53 et R54 : la documentation et le journal de version de Claude Code sur code.claude.com, et le contenu brut des dépôts publics sur raw.githubusercontent.com, qui donne accès aux journaux de version et fichiers de licence des éditeurs alors que l’interface github.com reste refusée. L’API GitHub, joignable pour les dépôts en périmètre de session, est ajoutée sous R55. Deux angles morts persistent et commandent les réserves qui subsistent : huggingface.co, sans lequel aucune licence de poids ouverts ne peut être lue à la source, et les pages tarifaires de Google Cloud et d’OpenAI.",
+    "title": "Sept canaux de preuve primaire ouverts, les six points d’entrée de veille toujours bloqués",
+    "detail": "Les 55 sources du référentiel ont été retestées une à une le 17 août 2026 : 7 répondent et 48 sont refusées au tunnel CONNECT du mandataire, dont la totalité des six points d’entrée obligatoires — TLDR AI, TechCrunch, VentureBeat, TestingCatalog, AI Frontiers et NVIDIA Research. Aucun signal précoce TestingCatalog n’a pu être collecté. Deux angles morts commandent les réserves restantes : les dépôts de poids ouverts, où aucun fichier de licence n’est lisible, et les pages tarifaires de Google Cloud, d’OpenAI et de DeepSeek.",
     "reachableSources": [
-      "platform.claude.com",
-      "code.claude.com",
-      "raw.githubusercontent.com",
-      "blog.modelcontextprotocol.io",
-      "pypi.org",
-      "registry.npmjs.org",
-      "api.github.com (dépôts en périmètre)"
+      "https://platform.claude.com/docs/",
+      "https://code.claude.com/docs/",
+      "https://raw.githubusercontent.com/",
+      "https://blog.modelcontextprotocol.io/",
+      "https://pypi.org/",
+      "https://registry.npmjs.org/",
+      "https://api.github.com/ (dépôts en périmètre)"
     ],
-    "remediation": "Retester les domaines bloqués au prochain run quotidien. Privilégier les deux voies de contournement documentées avant tout repli sur la convergence secondaire : raw.githubusercontent.com pour les journaux de version, licences et cartes de modèle des dépôts publics, et code.claude.com pour tout fait relatif à Claude Code. Ne promouvoir aucun fait au-delà de 89/100 sans ouverture directe d’une source primaire durable ; conserver la mention « non revérifié » ou « source inaccessible » partout ailleurs."
+    "remediation": "Retester ces domaines à chaque run. Tant qu’ils restent bloqués, aucun fait qui en dépend ne dépasse 89/100 et conserve la mention « source inaccessible » ou « non revérifié ». Une décision humaine sur la politique de sortie réseau est nécessaire pour lever ce plafond."
   }
 }
