@@ -1,6 +1,12 @@
 # Sources de référence et indices de confiance
 
-Contrôle : **15 août 2026**. Ce référentiel rassemble les URL de base à privilégier à chaque recherche quotidienne. L’indice mesure l’aptitude de la source à établir les sujets indiqués ; il ne constitue pas une note universelle de vérité.
+Contrôle : **16 août 2026**. Ce référentiel rassemble les URL de base à privilégier à chaque recherche quotidienne. L’indice mesure l’aptitude de la source à établir les sujets indiqués ; il ne constitue pas une note universelle de vérité.
+
+> **Deux canaux de preuve primaire ajoutés au contrôle du 16 août 2026.** `code.claude.com` (R53) et `raw.githubusercontent.com` (R54) ont répondu en accès direct pour la première fois depuis cet environnement d’exécution. Ils comblent partiellement deux blocages persistants: R53 sert de voie de preuve pour Claude Code alors que `www.anthropic.com` et `claude.com` restent refusés; R54 sert de voie de contournement à R30, dont l’interface `github.com` est refusée, en donnant accès au **contenu brut des fichiers versionnés** — journaux de version, cartes de modèle, fichiers de licence. Limite de R54: elle ne donne accès ni aux publications de version, ni aux tickets, ni aux discussions, qui vivent hors des fichiers du dépôt.
+>
+> **Accessibilité mesurée le 16 août 2026.** Les 52 sources historiques ont été retestées une à une: **quatre répondent** — R02, R38, R39 et R40 — et **quarante-huit sont refusées** au tunnel CONNECT du mandataire, dont la totalité des six points d’entrée obligatoires R32 à R37. La colonne « Accès » décrit la voie **habituelle** d’une source, non son état à cette date: reportez-vous à `dashboard/data/source-registry.json`, dont les champs `accessibility` et `lastAccessResult` portent le résultat daté de la dernière campagne de test.
+>
+> **Promotions `trustedDaily` — revue du 16 août 2026.** Aucune promotion ni rétrogradation ce contrôle. Les faits notés au-dessus de 90/100 proviennent tous de documentation ou de journaux de version officiels ouverts directement, et non de posts sociaux corroborés: la règle de promotion, qui exige qu’un post de compte officiel atteigne 90/100 grâce à une corroboration primaire durable, n’a donc été déclenchée par aucun compte. Les promotions existantes (R18, R20, R21, R22, R31) sont maintenues.
 
 ## Barème
 
@@ -99,6 +105,9 @@ Contrôle du 15 août 2026. Ces sources figurent au référentiel parce qu’ell
 | R42 | Digital Watch Observatory | <https://dig.watch/> | — | Observatoire de politique numérique | politique européenne, souveraineté, infrastructure | 78/100 | Utile pour le contexte européen et belge ; à corroborer |
 | R43 | Cerebras — blog technique | <https://www.cerebras.ai/blog/> | — | Blog technique d’éditeur | accélérateurs, paliers de service, débit d’inférence | 85/100 | Primaire pour l’infrastructure Cerebras. Les débits publiés sont des **résultats fournisseur** tant qu’une mesure indépendante ne les reproduit pas |
 | R44 | Techmeme | <https://www.techmeme.com/> | `https://www.techmeme.com/{AAMMJJ}/p{n}` | Agrégateur horodaté | datation d’annonces, reprises de comptes officiels | 74/100 | Date un post et identifie le compte officiel à l’origine du signal. Insuffisant seul pour un fait contractuel |
+| R53 | Anthropic | [Documentation et journal de version Claude Code](https://code.claude.com/docs/) | Primaire | Assistant de code, permissions, sécurité, versions, agents, auto-hébergement | 98/100 | **Direct (ouvert le 16 août)** |
+| R54 | Multiples | [Contenu brut des dépôts publics GitHub](https://raw.githubusercontent.com/) | Primaire | Journaux de version, SDK, licences, poids ouverts, ruptures de compatibilité | 95/100 | **Direct (ouvert le 16 août)** |
+| R55 | GitHub | [API GitHub](https://api.github.com/) | Primaire | Publications de version, étiquettes, commits, dépôts | 92/100 | Direct, dépôts en périmètre de session |
 
 **Réserve d’interprétation.** Une version publiée sur un registre n’est pas une annonce produit. Un saut de version majeure signale une rupture de compatibilité probable, mais son contenu exact doit être lu dans les notes de version avant toute conclusion. Pour les bases vectorielles, la version publiée est celle de la **bibliothèque cliente**, jamais celle du moteur serveur.
 

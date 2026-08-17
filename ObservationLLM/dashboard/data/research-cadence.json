@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "timezone": "Europe/Brussels",
-  "updatedAt": "2026-08-15T06:55:00Z",
+  "updatedAt": "2026-08-16T07:05:00Z",
   "orchestration": "single_daily_run",
   "weeklyRule": {
     "weekStartsOn": "monday",
@@ -27,11 +27,11 @@
         "sorties",
         "retraits"
       ],
-      "lastCompletedOn": "2026-08-15",
-      "nextDueOn": "2026-08-16",
+      "lastCompletedOn": "2026-08-16",
+      "nextDueOn": "2026-08-17",
       "status": "current",
-      "lastAttemptOn": "2026-08-15",
-      "evidenceLevel": "mixte — page tarifaire, vue d’ensemble des modèles et notes de version de l’API Anthropic ouvertes directement, blog MCP et registres PyPI et npm interrogés ; les six points d’entrée obligatoires et les autres domaines éditeurs restent bloqués, couverts par convergence de sources indépendantes"
+      "lastAttemptOn": "2026-08-16",
+      "evidenceLevel": "mixte, en amélioration nette — deux canaux de preuve primaire ouverts pour la première fois ce jour : la documentation et le journal de version de Claude Code sur code.claude.com, et le contenu brut des dépôts publics sur raw.githubusercontent.com, qui donne accès aux journaux de version officiels des éditeurs alors que github.com reste refusé. Joints à la documentation Anthropic et aux registres PyPI et npm, ils ont porté six faits au-dessus de 90/100. Les six points d’entrée obligatoires et les autres domaines éditeurs restent bloqués et sont couverts par convergence de sources indépendantes."
     },
     {
       "id": "operational",
@@ -49,8 +49,8 @@
       "lastCompletedOn": "2026-08-13",
       "nextDueOn": "2026-08-17",
       "status": "current",
-      "lastAttemptOn": "2026-08-15",
-      "lastAttemptStatus": "Revue hebdomadaire déjà effectuée le 2026-08-13 dans la semaine ISO 2026-W33 ; aucun rattrapage dû. Prochaine échéance au lundi 2026-08-17, premier run de la semaine ISO 2026-W34. Le volet prix a été renforcé hors cycle par la ligne événementielle : tarif de Gemini 3.7 Flash et sa fin de promotion au 31 décembre 2026 inscrits au calendrier, tarifs DeepSeek V4 Pro 0813 relevés, tarif de Claude Sonnet 5 reconfirmé en primaire direct."
+      "lastAttemptOn": "2026-08-16",
+      "lastAttemptStatus": "Revue hebdomadaire déjà effectuée le 2026-08-13 dans la semaine ISO 2026-W33 ; aucun rattrapage dû. Le 16 août est un dimanche et clôt cette même semaine ISO. Prochaine échéance au lundi 2026-08-17, premier run de la semaine ISO 2026-W34. Le volet outils a été renforcé hors cycle par la ligne événementielle : la chaîne SDK a été relevée dans les registres et trois journaux de version officiels sur quatre ont été ouverts, ce qui établit pour la première fois le contenu des changements et non seulement leur date. Le palier de service différé de Vertex AI entre dans le périmètre des classes de service ; son tarif et ses régions restent à établir et sont portés à la revue du 17 août."
     },
     {
       "id": "deep",
@@ -68,8 +68,8 @@
       "lastCompletedOn": "2026-08-13",
       "nextDueOn": "2026-08-17",
       "status": "current",
-      "lastAttemptOn": "2026-08-15",
-      "lastAttemptStatus": "Revue hebdomadaire déjà effectuée le 2026-08-13 dans la semaine ISO 2026-W33 ; aucun rattrapage dû. Prochaine échéance au lundi 2026-08-17, premier run de la semaine ISO 2026-W34. La ligne événementielle a toutefois repris hors cycle deux éléments de son périmètre : l’incident Anthropic du 14 au 15 août et la rétention des poids de GLM-5.3 au motif d’une évaluation de sûreté."
+      "lastAttemptOn": "2026-08-16",
+      "lastAttemptStatus": "Revue hebdomadaire déjà effectuée le 2026-08-13 dans la semaine ISO 2026-W33 ; aucun rattrapage dû. Le 16 août est un dimanche et clôt cette même semaine ISO. Prochaine échéance au lundi 2026-08-17, premier run de la semaine ISO 2026-W34. La ligne événementielle a toutefois repris hors cycle deux éléments de son périmètre : cinq correctifs de sécurité de Claude Code établis en source primaire, dont une fuite d’identifiants NTLM sous Windows, et l’extension de la Compliance API aux transcriptions de sessions Cowork et Claude Code, qui relève de la confidentialité et du contrôle d’entreprise."
     },
     {
       "id": "structural",
@@ -85,8 +85,8 @@
       "lastCompletedOn": "2026-08-13",
       "nextDueOn": "2026-08-17",
       "status": "current",
-      "lastAttemptOn": "2026-08-15",
-      "lastAttemptStatus": "Revue hebdomadaire déjà effectuée le 2026-08-13 dans la semaine ISO 2026-W33 ; aucun rattrapage dû. Prochaine échéance au lundi 2026-08-17, premier run de la semaine ISO 2026-W34. La sélection des écosystèmes a été complétée hors cycle par la ligne événementielle : Claude Mythos 5 et le programme Project Glasswing, établis en source primaire, entrent dans la vue courante."
+      "lastAttemptOn": "2026-08-16",
+      "lastAttemptStatus": "Revue hebdomadaire déjà effectuée le 2026-08-13 dans la semaine ISO 2026-W33 ; aucun rattrapage dû. Le 16 août est un dimanche et clôt cette même semaine ISO. Prochaine échéance au lundi 2026-08-17, premier run de la semaine ISO 2026-W34. La sélection a été complétée hors cycle par la ligne événementielle : deux canaux de preuve primaire, code.claude.com et raw.githubusercontent.com, entrent au référentiel des sources sous R53 et R54, et l’API GitHub sous R55. La question ouverte des poids de Qwen3.8-Max, suivie depuis plusieurs runs, est résolue et retirée des attentes en cours."
     },
     {
       "id": "event",
@@ -98,20 +98,22 @@
         "impacts transversaux",
         "mise à jour immédiate des vues concernées"
       ],
-      "lastCompletedOn": "2026-08-15",
+      "lastCompletedOn": "2026-08-16",
       "nextDueOn": null,
       "nextDueLabel": "À la prochaine détection importante",
       "status": "armed",
-      "lastAttemptOn": "2026-08-15",
-      "evidenceLevel": "primaire ciblé et convergence — déclenchée le 15 août par quatre détections à impact matériel : la sortie de Gemini 3.7 Flash et sa grille promotionnelle, la sortie de GLM-5.3 avec rétention des poids ouverts, le passage en disponibilité générale de DeepSeek V4 Pro 0813 sous licence MIT, et l’interruption des services Claude du 14 au 15 août. Vérification complète menée dans le même run ; deux faits Anthropic supplémentaires — Claude Mythos 5 et les capacités Managed Agents — ont été établis en source primaire durable à cette occasion."
+      "lastAttemptOn": "2026-08-16",
+      "evidenceLevel": "primaire direct et convergence — déclenchée le 16 août par six détections à impact matériel, dont quatre établies en source primaire durable : le basculement du mode automatique en mode de permission de départ de Claude Code au 14 août, cinq correctifs de sécurité livrés en 2.1.232 et 2.1.233, la rupture de compatibilité HTTPX2 du SDK Python OpenAI 3.0.0 et l’extension de la Compliance API aux sessions Cowork et Claude Code. Deux détections restent en convergence secondaire, dépôts de poids bloqués : la publication des poids de Qwen3.8-Max sous licence propriétaire à partage de revenus et celle de Qwen3.8-27B sous Apache 2.0. Vérification complète menée dans le même run."
     }
   ],
   "blocking": {
-    "detectedAt": "2026-08-15",
+    "detectedAt": "2026-08-16",
     "kind": "egress_policy_restrictive",
-    "summary": "La politique réseau sortante de l’environnement d’exécution refuse la connexion à la totalité des six points d’entrée de veille quotidienne et à la majorité des domaines éditeurs. Le refus est confirmé au niveau du tunnel CONNECT du mandataire, en accès direct comme via l’outil de récupération de pages. La recherche web indexée reste disponible et a permis d’établir les faits par convergence ; cinq sources primaires durables ont pu être ouvertes directement.",
+    "summary": "La politique réseau sortante de l’environnement d’exécution refuse la connexion à la totalité des six points d’entrée de veille quotidienne et à la majorité des domaines éditeurs. Le refus est confirmé au niveau du tunnel CONNECT du mandataire, en accès direct comme via l’outil de récupération de pages. La recherche web indexée reste disponible et permet d’établir des faits par convergence. La situation s’est améliorée ce jour : deux canaux de preuve primaire durable ont été ouverts pour la première fois, code.claude.com et raw.githubusercontent.com, ce dernier donnant accès aux journaux de version et fichiers de licence des dépôts publics alors que l’interface github.com reste refusée.",
     "reachableHosts": [
       "platform.claude.com",
+      "code.claude.com",
+      "raw.githubusercontent.com",
       "blog.modelcontextprotocol.io",
       "pypi.org",
       "registry.npmjs.org",
@@ -126,7 +128,10 @@
       "ai-frontiers.org",
       "research.nvidia.com",
       "openai.com",
+      "developers.openai.com",
+      "help.openai.com",
       "status.openai.com",
+      "github.com",
       "github.blog",
       "ai.google.dev",
       "deepmind.google",
@@ -136,21 +141,25 @@
       "mistral.ai",
       "docs.mistral.ai",
       "huggingface.co",
+      "modelscope.cn",
       "x.com",
       "www.anthropic.com",
+      "claude.com",
+      "support.claude.com",
       "status.claude.com",
       "aws.amazon.com",
       "ai.meta.com",
       "ollama.com",
       "lmstudio.ai",
+      "openrouter.ai",
       "z.ai",
       "docs.z.ai",
       "www.ecb.europa.eu",
       "data-api.ecb.europa.eu"
     ],
-    "remediation": "Retester ces domaines à chaque run. Tant qu’ils restent bloqués, aucun fait qui en dépend ne peut dépasser 89/100 et la mention « source inaccessible » ou « non revérifié » est conservée dans les livrables. Un domaine ouvrable au run du 14 août ne l’est plus au 15 août : cloud.google.com, dont la racine répond mais dont les chemins de documentation Vertex AI échouent. api.github.com est joignable : le refus 403 observé sur les dépôts tiers provient de la restriction de périmètre de dépôt de la session, et non de la politique réseau. L’API GitHub constitue donc une voie de preuve primaire pour les dépôts en périmètre.",
-    "evidenceLevel": "primaire direct pour Anthropic, le Model Context Protocol et les registres de distribution ; convergence de sources indépendantes ailleurs"
+    "remediation": "Retester ces domaines à chaque run. Tant qu’ils restent bloqués, aucun fait qui en dépend ne peut dépasser 89/100 et la mention « source inaccessible » ou « non revérifié » est conservée dans les livrables. Deux voies de contournement sont désormais documentées et doivent être privilégiées avant tout repli sur la convergence secondaire : raw.githubusercontent.com pour les journaux de version, licences et cartes de modèle des dépôts publics dont l’interface github.com est refusée, et code.claude.com pour tout fait relatif à Claude Code, dont les domaines www.anthropic.com et claude.com sont refusés. Deux angles morts persistent et sont à rouvrir en priorité : huggingface.co, sans lequel aucune licence de poids ouverts ne peut être lue à la source, et les pages tarifaires de Google Cloud et d’OpenAI.",
+    "evidenceLevel": "primaire direct pour Anthropic, Claude Code, les journaux de version des dépôts publics, le Model Context Protocol et les registres de distribution ; convergence de sources indépendantes ailleurs"
   },
   "isoWeek": "2026-W33",
-  "computedFor": "2026-08-15"
+  "computedFor": "2026-08-16"
 }

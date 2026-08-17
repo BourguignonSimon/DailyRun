@@ -35,7 +35,9 @@ function initials(name) {
 function renderHeader(data, status, sources, announcements, tools) {
   byId("edition-date").textContent = formatDate(data.run.checkedAt);
   const entities = data.entities || data.actors || [];
-  const verified = entities.filter((entity) => entity.status !== "non reverifié" && entity.status !== "source inaccessible").length;
+  const verified = Number.isFinite(data.metrics?.verifiedEntityCount)
+    ? data.metrics.verifiedEntityCount
+    : entities.filter((entity) => entity.status === "revérifié").length;
   byId("metric-entities").textContent = entities.length;
   byId("metric-verified").textContent = entities.length ? `${Math.round((verified / entities.length) * 100)} %` : "—";
   byId("metric-regions").textContent = (data.localizations || []).length;
