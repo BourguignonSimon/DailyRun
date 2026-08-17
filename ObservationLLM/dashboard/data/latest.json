@@ -3,7 +3,7 @@
   "run": {
     "checkedAt": "2026-08-17",
     "factsVerifiedThrough": "2026-08-17",
-    "commit": "80b64df44d4f99f044663f582cdbac781e9670e0",
+    "commit": "e261c0a",
     "model": "Opus 5",
     "result": "Contrôle du 17 août 2026 terminé. Ligne Temps réel exécutée ; les trois lignes hebdomadaires Opérationnelle, Approfondie et Structurelle sont échues et exécutées ce jour, premier run de la semaine ISO 2026-W34. Ligne Événementielle déclenchée sur quatre détections à impact matériel."
   },
