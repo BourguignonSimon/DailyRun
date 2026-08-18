@@ -1,9 +1,9 @@
 .article-page { background: #f3f0e8; }
 .back-dashboard { padding: 10px 14px; border: 1px solid var(--line); border-radius: 999px; text-decoration: none; font-size: .78rem; font-weight: 850; }
 .back-dashboard:hover { background: var(--ink); color: white; }
-.document-nav { position: sticky; top: 0; z-index: 10; display: flex; gap: 5px; width: min(1180px, calc(100% - 40px)); margin: 0 auto; padding: 7px; overflow-x: auto; border: 1px solid var(--line); border-radius: 999px; background: rgba(255,253,248,.9); backdrop-filter: blur(16px); box-shadow: 0 8px 30px rgba(16,21,18,.07); }
-.document-nav a { min-width: max-content; padding: 8px 12px; border-radius: 999px; color: var(--muted); text-decoration: none; font-size: .72rem; font-weight: 850; }
-.document-nav a:hover, .document-nav a[aria-current="page"] { background: var(--ink); color: white; }
+.document-nav { position: sticky; top: 0; z-index: 10; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 5px; width: min(1180px, calc(100% - 40px)); margin: 0 auto; padding: 7px; border: 1px solid var(--line); border-radius: 18px; background: rgba(255,253,248,.94); backdrop-filter: blur(16px); box-shadow: 0 8px 30px rgba(16,21,18,.07); }
+.document-nav a { min-width: 0; padding: 10px 8px; border-radius: 11px; color: var(--muted); text-align: center; text-decoration: none; font-size: .72rem; font-weight: 850; line-height: 1.15; overflow-wrap: anywhere; }
+.document-nav a:hover, .document-nav a:focus-visible, .document-nav a[aria-current="page"] { background: var(--ink); color: white; outline: none; }
 .article-shell { display: grid; grid-template-columns: 250px minmax(0, 1fr); gap: 70px; padding-top: 65px; }
 .article-rail { position: sticky; top: 85px; align-self: start; padding: 22px; border: 1px solid var(--line); border-radius: 18px; background: #e7eadf; }
 .article-rail span { display: block; color: #61705e; font-size: .67rem; font-weight: 900; letter-spacing: .13em; text-transform: uppercase; }
@@ -38,7 +38,8 @@
 }
 
 @media (max-width: 620px) {
-  .document-nav { width: calc(100% - 24px); }
+  .document-nav { position: static; grid-template-columns: repeat(2, minmax(0, 1fr)); width: calc(100% - 24px); border-radius: 16px; }
+  .document-nav a { padding: 11px 7px; font-size: .7rem; }
   .markdown-body > h1:first-child { font-size: 2.7rem; }
   .markdown-body p, .markdown-body li { font-size: .9rem; }
 }
