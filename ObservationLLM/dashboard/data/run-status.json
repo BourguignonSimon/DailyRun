@@ -1,11 +1,9 @@
 {
-  "runId": "2026-08-17-observatoire",
-  "status": "completed",
-  "phase": "publication",
+  "runId": "2026-08-18-observatoire",
+  "status": "running",
+  "phase": "collecte",
   "model": "Opus 5",
-  "startedAt": "2026-08-17T06:50:00Z",
-  "message": "Contrôle du 17 août 2026 terminé. Lundi, premier run de la semaine ISO 2026-W34 : les trois lignes hebdomadaires Opérationnelle, Approfondie et Structurelle étaient échues et ont été exécutées dans ce run, en plus de la ligne Temps réel. La ligne Événementielle a été déclenchée sur quatre détections à impact matériel. Deux échéances de rupture tombent le jour même : le retrait par Anthropic du Workbench hérité et des trois API expérimentales d’outillage de prompts, établi en source primaire durable, et l’arrêt de trois endpoints Imagen 4 sur l’API Gemini, établi par convergence — aucune des deux n’ouvre de période de grâce. Deux faits de prix complètent le contrôle : DeepSeek a remplacé son tarif unique par une grille heures pleines / heures creuses le 16 août à 16:00 UTC, dont le tarif creux dépasse l’ancien tarif unique dans les six postes, la matinée de travail belge 08:00–12:00 tombant intégralement en heures pleines ; et la page tarifaire d’Anthropic établit que les modèles Claude 4.7 et suivants produisent environ 30 % de jetons en plus pour le même texte, ce qui rompt la comparabilité des grilles entre générations. Claude Mythos Preview passe en état déprécié et le tableau des planchers de retrait est relevé. La revue structurelle a procédé à un mouvement au catalogue : Patronus AI sort, Z.ai — GLM Coding Plan entre au rang 95, tranchant la réserve de sélection ouverte à la revue précédente. La contradiction de licence sur Qwen3.8-Max est levée dans son principe : le dépôt public officiel Qwen3.8 ne reprend pas la clause générale Apache 2.0 du dépôt Qwen3 et renvoie au fichier de licence de chaque jeu de poids. Trente-six annonces composent la vue courante. Réserve : sur les 55 sources du référentiel retestées une à une, 7 répondent et 48 sont refusées, dont la totalité des six points d’entrée obligatoires ; les faits concernés sont marqués non revérifiés et plafonnés à 89/100.",
-  "evidenceLevel": "primaire direct pour la plateforme Claude, Claude Code, les journaux de version des dépôts publics OpenAI, Google et Qwen, le Model Context Protocol et les registres de distribution ; convergence de sources indépendantes ailleurs",
-  "completedAt": "2026-08-17T07:55:00Z",
-  "commit": "e261c0a"
+  "startedAt": "2026-08-18T06:20:00Z",
+  "message": "Contrôle du 18 août 2026 en cours. Ligne Temps réel exécutée ; lignes hebdomadaires Opérationnelle, Approfondie et Structurelle courantes depuis le run du 17 août (semaine ISO 2026-W34), prochaine échéance le 24 août.",
+  "evidenceLevel": "en cours d’établissement"
 }
