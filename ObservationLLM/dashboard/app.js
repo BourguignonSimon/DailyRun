@@ -212,7 +212,7 @@ function renderHosting(data) {
   byId("hosting-grid").replaceChildren(...filtered.map((row) => {
     const card = document.createElement("article");
     card.className = "hosting-card";
-    card.innerHTML = `<div class="card-kicker"><span>${row.channel}</span><strong>${row.confidence}/100</strong></div><h3>${row.model}</h3><p class="provider-line">${row.developer} → ${row.distributor}</p><dl><div><dt>Région technique</dt><dd>${row.region}</dd></div><div><dt>Depuis la Belgique</dt><dd>${row.belgium}</dd></div><div><dt>Résidence</dt><dd>${row.residency}</dd></div></dl><small>Vérifié ${row.last_verified_at} · ${row.sourceId}</small>`;
+    card.innerHTML = `<div class="card-kicker"><span>${row.channel}</span><strong>${row.confidence}/100</strong></div><h3>${row.model}</h3><p class="provider-line">${row.developer} → ${row.distributor}</p><dl><div><dt>Région technique</dt><dd>${row.region}</dd></div><div><dt>Accès européen · repère belge</dt><dd>${row.belgium}</dd></div><div><dt>Résidence</dt><dd>${row.residency}</dd></div></dl><small>Vérifié ${row.last_verified_at} · ${row.sourceId}</small>`;
     return card;
   }));
 }

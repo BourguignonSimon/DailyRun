@@ -145,7 +145,7 @@ function pageTemplate(document, content) {
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="${document.title} — Observatoire LLM et agents IA pour la Belgique.">
+  <meta name="description" content="${document.title} — Observatoire LLM et agents IA avec une perspective européenne.">
   <meta name="theme-color" content="#101512">
   <title>${document.title} — Observatoire LLM</title>
   <link rel="stylesheet" href="styles.css">
@@ -154,7 +154,7 @@ function pageTemplate(document, content) {
 <body class="article-page">
   <a class="skip-link" href="#article-content">Aller au contenu</a>
   <header class="site-header">
-    <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">OL</span><span><strong>Observatoire LLM</strong><small>Perspective belge</small></span></a>
+    <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">OL</span><span><strong>Observatoire LLM</strong><small>Perspective européenne · repère belge</small></span></a>
     <a class="back-dashboard" href="index.html">← Dashboard</a>
   </header>
   <nav class="document-nav" aria-label="Documents de l’observatoire">${navigation}</nav>

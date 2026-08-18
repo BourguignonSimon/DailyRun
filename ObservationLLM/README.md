@@ -1,4 +1,6 @@
-# Observatoire LLM et agents IA — Belgique
+# Observatoire LLM et agents IA — Europe
+
+Perspective **européenne**. La Belgique sert de repère local pour les exemples de disponibilité, de facturation et de résidence ; elle ne limite pas le périmètre géographique de l’observatoire.
 
 Contrôle: **18 août 2026**. **Un même modèle porte deux prix officiels au 1er septembre.** Anthropic a annulé la hausse de **Claude Sonnet 5** vers 3/15 USD par million de jetons et sa page tarifaire, relue ce jour, énonce que la hausse « n’aura pas lieu ». La **grille des modèles partenaires de Google Cloud**, redevenue lisible ce 18 août, affiche pourtant toujours deux lignes successives: un tarif promotionnel jusqu’au **31 août 2026** à **2,00/10,00 USD/M**, puis un tarif standard à compter du **1er septembre 2026** à **3,00/15,00 USD/M** — et **2,20/11,00 puis 3,30/16,50 USD/M** sur les endpoints non globaux, ceux qu’utilise une architecture européenne. Aucune des deux pages ne mentionne l’autre. La même grille chiffre poste par poste la **prime de 10 % des endpoints non globaux**, jusqu’aux unités de débit réservé. Côté outillage, **Claude Code 2.1.234** livre cinq correctifs de sécurité, dont le rejet des chemins de l’espace de noms NT de Windows sur des accès fichiers qui étaient **pré-approuvés**, et le **SDK Python OpenAI 3.2.0** ajoute un endpoint **AWS Bedrock Runtime**. Cette édition suit 20 écosystèmes et sépare modèles, applications, plateformes API, assistants de code et agents autonomes. Guide dédié: les **modèles exécutables en local selon le matériel**.
 
