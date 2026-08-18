@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "timezone": "Europe/Brussels",
-  "updatedAt": "2026-08-17T07:35:00Z",
+  "updatedAt": "2026-08-18T07:05:00Z",
   "orchestration": "single_daily_run",
   "weeklyRule": {
     "weekStartsOn": "monday",
@@ -27,11 +27,11 @@
         "sorties",
         "retraits"
       ],
-      "lastCompletedOn": "2026-08-17",
-      "nextDueOn": "2026-08-18",
+      "lastCompletedOn": "2026-08-18",
+      "nextDueOn": "2026-08-19",
       "status": "current",
-      "lastAttemptOn": "2026-08-17",
-      "evidenceLevel": "mixte — sept canaux primaires ouverts directement : page tarifaire, notes de version et page des dépréciations de la plateforme Claude, journal de version de Claude Code, contenu brut des dépôts publics GitHub, blog du Model Context Protocol, PyPI, registre npm et API GitHub pour les dépôts en périmètre. Les six points d’entrée obligatoires et la majorité des domaines éditeurs restent refusés ; les faits qui en dépendent sont couverts par convergence et plafonnés à 89/100."
+      "lastAttemptOn": "2026-08-18",
+      "evidenceLevel": "mixte — huit canaux ouverts et interrogés directement le 18 août : page tarifaire, notes de version et page des dépréciations de la plateforme Claude, documentation et journal de version de Claude Code, contenu brut des dépôts publics GitHub, PyPI, API du registre npm, blog du Model Context Protocol, API GitHub pour les dépôts en périmètre, et — c’est le mouvement du jour — la page tarifaire de l’IA générative de Google Cloud, de nouveau accessible sur cloud.google.com. Les six points d’entrée obligatoires et la majorité des domaines éditeurs restent refusés ; les faits qui en dépendent sont couverts par convergence et plafonnés à 89/100."
     },
     {
       "id": "operational",
@@ -50,7 +50,7 @@
       "nextDueOn": "2026-08-24",
       "status": "current",
       "lastAttemptOn": "2026-08-17",
-      "lastAttemptStatus": "Revue hebdomadaire exécutée le 2026-08-17, premier run de la semaine ISO 2026-W34, conformément à la règle du premier run réussi de la semaine ; aucun rattrapage n’était dû. Volet prix : grille complète des modèles Claude relue en source primaire, tarif de Claude Sonnet 5 reconfirmé à 2/10 USD/M en tarif standard avec annulation confirmée de la hausse du 1er septembre ; nouvelle grille heures pleines / heures creuses de DeepSeek relevée avec ses six montants par modèle ; tarif, latence contractuelle et régions du palier de service différé de Vertex AI recherchés et toujours non publiés. Volet API : SDK Python OpenAI 3.1.0 et prise en charge du palier Ultrafast relevées au journal de version officiel. Volet modèles : tableau officiel des états et des planchers de retrait relevé. Volet outils : les cent entrées du catalogue ont vu leur statut renouvelé. Volet disponibilité belge et régions : aucune région ni option de résidence nouvelle n’est publiée ; l’API Claude de premier rang reste globale par défaut avec une option d’inférence limitée aux États-Unis facturée ×1,1, et les endpoints régionaux ou multirégionaux des clouds partenaires conservent une prime de 10 %. Un fait nouveau relève la facturation effective : le tokeniseur des modèles Claude 4.7 et suivants produit environ 30 % de jetons en plus pour le même texte."
+      "lastAttemptStatus": "Revue hebdomadaire exécutée le 2026-08-17, premier run réussi de la semaine ISO 2026-W34 ; prochaine échéance le 2026-08-24, aucun rattrapage dû. Le contrôle quotidien du 2026-08-18 a néanmoins relevé, par la ligne Événementielle, trois faits de portée tarifaire et d’interface qui relèvent de ce périmètre et qui sont publiés sans attendre la revue hebdomadaire : la divergence entre la grille de premier rang d’Anthropic, où la hausse du 1er septembre est annulée, et la grille des modèles partenaires de Google Cloud, qui affiche toujours Claude Sonnet 5 à 3/15 USD/M à compter du 1er septembre 2026 ; la prime de 10 % des endpoints non globaux de Google Cloud, désormais établie en source primaire et chiffrée poste par poste, y compris sur les unités de débit réservé ; et la publication du SDK Python OpenAI 3.2.0, qui ajoute la prise en charge d’un endpoint AWS Bedrock Runtime."
     },
     {
       "id": "deep",
@@ -69,7 +69,7 @@
       "nextDueOn": "2026-08-24",
       "status": "current",
       "lastAttemptOn": "2026-08-17",
-      "lastAttemptStatus": "Revue hebdomadaire exécutée le 2026-08-17, premier run de la semaine ISO 2026-W34. Sécurité : aucun avis nouveau ; le journal de version de Claude Code, relu en primaire, ne publie aucune version postérieure à 2.1.233 du 14 août, ce que confirme le registre npm — les cinq correctifs de 2.1.232 et 2.1.233 restent l’état courant. Confidentialité et DPA : aucune modification de politique n’a pu être lue, les pages de politiques des éditeurs étant refusées, à l’exception de la documentation Anthropic qui ne publie aucun changement. Cycle de vie : Claude Mythos Preview passe en état déprécié. Benchmarks : aucune mesure indépendante nouvelle n’a été trouvée ; les chiffres du palier Ultrafast d’OpenAI restent des résultats fournisseur non reproduits. Modèles locaux : versions des moteurs relevées aux registres officiels — vLLM 0.27.1 le 11 août, transformers 5.15.0 le 10 août ; aucune publication de poids ouverts nouvelle entre le 15 et le 17 août. Angle mort persistant et assumé : huggingface.co et modelscope.cn restent refusés, aucun fichier de licence de poids ouverts ne peut être lu à la source."
+      "lastAttemptStatus": "Revue hebdomadaire exécutée le 2026-08-17, premier run réussi de la semaine ISO 2026-W34 ; prochaine échéance le 2026-08-24, aucun rattrapage dû. Le contrôle quotidien du 2026-08-18 relève au titre de la sécurité une version nouvelle de Claude Code, 2.1.234, publiée le 17 août à 18:19 UTC et lue en source primaire : elle referme le vecteur de fuite d’identifiants NTLM sur les derniers accès fichiers pré-approuvés en rejetant les chemins de l’espace de noms NT de Windows, cesse d’imprimer les secrets résolus dans les diagnostics MCP, et corrige le masquage des identifiants sur les aperçus de permission relayés. Aucune modification de politique de confidentialité ou de DPA n’a pu être lue, les pages de politiques des éditeurs restant refusées. Modèles locaux : llama-cpp-python 0.3.35 publié le 17 août ; vLLM 0.27.1 et transformers 5.15.0 inchangés. Angle mort persistant et assumé : huggingface.co et modelscope.cn restent refusés, aucun fichier de licence de poids ouverts ne peut être lu à la source."
     },
     {
       "id": "structural",
@@ -86,7 +86,7 @@
       "nextDueOn": "2026-08-24",
       "status": "current",
       "lastAttemptOn": "2026-08-17",
-      "lastAttemptStatus": "Revue hebdomadaire exécutée le 2026-08-17, premier run de la semaine ISO 2026-W34. Sélection des écosystèmes : périmètre reconduit, aucun acteur nouveau ne franchit le seuil de matérialité. Classement des cent outils : un mouvement retenu et motivé — Patronus AI sort, Z.ai — GLM Coding Plan entre au rang 95, la réserve de sélection ouverte à la revue précédente étant ainsi tranchée. Le motif est l’adoption et la portée fonctionnelle de l’offre de code par abonnement, non la cadence de publication, et la réserve contraire est publiée dans l’entrée entrante. Méthodologie : barème de confiance et règle de plafonnement à 89/100 hors source primaire reconduits sans changement. Sources de confiance : les cinquante-cinq sources ont été retestées une à une, sept répondent et quarante-huit sont refusées ; aucun compte ne remplit les conditions d’une promotion ou d’un retrait de promotion en veille quotidienne prioritaire ce jour."
+      "lastAttemptStatus": "Revue hebdomadaire exécutée le 2026-08-17, premier run réussi de la semaine ISO 2026-W34 ; prochaine échéance le 2026-08-24, aucun rattrapage dû. Le contrôle quotidien du 2026-08-18 apporte un mouvement au référentiel des sources sans attendre la revue : Google Cloud (R04) repasse en accessibilité partielle, l’hôte cloud.google.com répondant de nouveau pour la page tarifaire alors que docs.cloud.google.com reste refusé, et npm (R39) est requalifié en accessibilité partielle, l’interface web renvoyant 403 quand l’API du registre s’ouvre. Le décompte du jour est donc de six sources pleinement ouvertes, deux partielles et quarante-sept refusées. Sélection des écosystèmes, classement des cent outils et méthodologie sont reconduits sans changement jusqu’à la revue du 2026-08-24."
     },
     {
       "id": "event",
@@ -98,25 +98,26 @@
         "impacts transversaux",
         "mise à jour immédiate des vues concernées"
       ],
-      "lastCompletedOn": "2026-08-17",
+      "lastCompletedOn": "2026-08-18",
       "nextDueOn": null,
       "nextDueLabel": "À la prochaine détection importante",
       "status": "armed",
-      "lastAttemptOn": "2026-08-17",
-      "evidenceLevel": "primaire direct et convergence — déclenchée le 17 août par quatre détections à impact matériel. Deux échéances de rupture tombent le jour même : le retrait du Workbench hérité et des trois API expérimentales d’outillage de prompts d’Anthropic, établi en source primaire durable, et l’arrêt de trois endpoints Imagen 4 sur l’API Gemini, établi par convergence. Deux faits de prix complètent la détection : la grille heures pleines / heures creuses de DeepSeek entrée en vigueur le 16 août à 16:00 UTC, qui est une hausse assortie d’une remise horaire, et l’avertissement officiel sur le tokeniseur des modèles Claude 4.7 et suivants, qui produit environ 30 % de jetons en plus pour le même texte. Vérification complète menée dans le même run."
+      "lastAttemptOn": "2026-08-18",
+      "evidenceLevel": "primaire direct — déclenchée le 18 août par trois détections à impact matériel, toutes vérifiées dans le même run. Une divergence tarifaire entre deux grilles officielles lues le même jour : Anthropic annule la hausse de Claude Sonnet 5 au 1er septembre sur son API de premier rang, tandis que la grille des modèles partenaires de Google Cloud affiche toujours un tarif standard de 3/15 USD/M à compter du 1er septembre 2026, et de 3,30/16,50 USD/M sur les endpoints non globaux. Une version nouvelle de Claude Code, 2.1.234, à contenu de sécurité. Et le SDK Python OpenAI 3.2.0, qui ajoute un endpoint AWS Bedrock Runtime."
     }
   ],
   "blocking": {
-    "detectedAt": "2026-08-17",
+    "detectedAt": "2026-08-18",
     "kind": "egress_policy_restrictive",
-    "summary": "La politique réseau sortante de l’environnement d’exécution refuse la connexion à la totalité des six points d’entrée de veille quotidienne et à la majorité des domaines éditeurs. Le refus est confirmé au tunnel CONNECT du mandataire, en accès direct comme via l’outil de récupération de pages. Sept contrôles consécutifs présentent le même profil : il s’agit d’une caractéristique stable de l’environnement, et non d’un incident. La recherche web indexée reste disponible et permet d’établir des faits par convergence ; sept canaux de preuve primaire durable sont ouverts et portent les faits les mieux établis du run.",
+    "summary": "La politique réseau sortante de l’environnement d’exécution refuse la connexion à la totalité des six points d’entrée de veille quotidienne et à la majorité des domaines éditeurs. Le refus est confirmé au tunnel CONNECT du mandataire, qui répond 403 à la requête CONNECT, en accès direct comme via l’outil de récupération de pages. Huit contrôles consécutifs présentent le même profil : il s’agit d’une caractéristique stable de l’environnement, et non d’un incident. Le 18 août, cloud.google.com répond de nouveau et rouvre la grille tarifaire de l’IA générative de Google Cloud, ce qui porte à huit le nombre de canaux exploitables et fournit les faits les mieux établis du run. La recherche web indexée reste disponible et permet d’établir des faits par convergence.",
     "reachableHosts": [
       "platform.claude.com",
       "code.claude.com",
+      "cloud.google.com (pages tarifaires ; docs.cloud.google.com reste refusé)",
       "raw.githubusercontent.com (chemins de fichiers)",
       "blog.modelcontextprotocol.io",
       "pypi.org",
-      "registry.npmjs.org",
+      "registry.npmjs.org (API du registre ; www.npmjs.com refusé)",
       "api.github.com (dépôts en périmètre)"
     ],
     "blockedHosts": [
@@ -127,7 +128,6 @@
       "aws.amazon.com",
       "blog.google",
       "claude.com",
-      "cloud.google.com",
       "data-api.ecb.europa.eu",
       "data.sec.gov",
       "deepmind.google",
@@ -159,14 +159,15 @@
       "venturebeat.com",
       "www.anthropic.com",
       "www.ecb.europa.eu",
+      "www.npmjs.com",
       "www.sec.gov",
       "www.testingcatalog.com",
       "x.com",
       "z.ai"
     ],
-    "remediation": "Retester ces domaines à chaque run. Tant qu’ils restent bloqués, aucun fait qui en dépend ne peut dépasser 89/100 et la mention « source inaccessible » ou « non revérifié » est conservée dans les livrables. Deux angles morts commandent les réserves qui subsistent : les dépôts de poids ouverts, où aucun fichier de licence ne peut être lu, et les pages tarifaires de Google Cloud, d’OpenAI et de DeepSeek. Les publications de version du Model Context Protocol renvoient 403 et ne sont pas rattrapables par le contenu brut des dépôts, ces publications vivant hors des fichiers versionnés. Une décision humaine sur la politique de sortie réseau est nécessaire pour lever ce plafond.",
-    "evidenceLevel": "primaire direct pour la plateforme Claude, Claude Code, les journaux de version des dépôts publics et les registres de distribution ; convergence de sources indépendantes ailleurs"
+    "remediation": "Retester ces domaines à chaque run : l’accessibilité de cloud.google.com varie d’un run à l’autre et sa réouverture du 18 août est ce qui a rendu possible la principale constatation du jour. Tant que les autres domaines restent bloqués, aucun fait qui en dépend ne peut dépasser 89/100 et la mention « source inaccessible » ou « non revérifié » est conservée dans les livrables. Deux angles morts commandent les réserves qui subsistent : les dépôts de poids ouverts, où aucun fichier de licence ne peut être lu, et les pages tarifaires d’OpenAI et de DeepSeek. Les publications de version du Model Context Protocol renvoient 403 et ne sont pas rattrapables par le contenu brut des dépôts, ces publications vivant hors des fichiers versionnés. Une décision humaine sur la politique de sortie réseau reste nécessaire pour lever ce plafond.",
+    "evidenceLevel": "primaire direct pour la plateforme Claude, Claude Code, la grille tarifaire de Google Cloud, les journaux de version des dépôts publics et les registres de distribution ; convergence de sources indépendantes ailleurs"
   },
   "isoWeek": "2026-W34",
-  "computedFor": "2026-08-17"
+  "computedFor": "2026-08-18"
 }

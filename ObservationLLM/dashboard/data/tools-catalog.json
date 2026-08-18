@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-08-17",
-  "coverageStatus": "Contrôle du 2026-08-17. Les cent outils ont vu leur statut de contrôle renouvelé. Cinq portent une nouveauté qualifiée à l’issue de ce run, dont trois établies en source primaire durable : la plateforme Claude, l’API OpenAI et Z.ai par son dépôt de modèles. La revue structurelle hebdomadaire de la semaine ISO 2026-W34 a procédé à un mouvement : Patronus AI sort, Z.ai — GLM Coding Plan entre au rang 95. Le catalogue compte exactement cent outils.",
+  "checkedAt": "2026-08-18",
+  "coverageStatus": "Contrôle du 2026-08-18. Les cent outils ont vu leur statut de contrôle renouvelé. Quatre portent une nouveauté qualifiée à l’issue de ce run, toutes établies en source primaire durable : Claude Code par son journal de version et le registre npm, Google Cloud Agent Platform par sa page tarifaire de nouveau accessible, l’API OpenAI par le journal de version de son SDK et PyPI, et llama.cpp par PyPI. La sélection des cent outils est inchangée : la revue structurelle hebdomadaire a eu lieu le 2026-08-17 pour la semaine ISO 2026-W34 et la prochaine est due le 2026-08-24. Pour les autres entrées, la source éditeur reste refusée par la politique réseau sortante de l’environnement d’exécution ; leur statut est renouvelé sans récit fabriqué.",
   "selectionMethod": "Importance combinée selon adoption, influence développeur, maturité, portée fonctionnelle, intégrations et pertinence européenne. Le rang sert à stabiliser un périmètre de veille, pas à déclarer un classement de qualité.",
   "requiredUpdateFields": [
     "title",
@@ -23,7 +23,7 @@
       "focus": "chat, multimodal, recherche et agents",
       "officialUrl": "https://chatgpt.com/",
       "regionMode": "Service cloud ; disponibilité belge à vérifier par offre",
-      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
+      "verificationStatus": "Non revérifié le 2026-08-18 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
       "latestAnnouncement": {
         "title": "L’application de bureau Linux entre en préversion publique, avec quiz interactifs et mode Think étendu aux formules Free et Go",
         "publishedAt": "2026-08-15",
@@ -32,7 +32,7 @@
         "confidenceReason": "Convergence de plusieurs sources indépendantes concordantes sur la liste des distributions prises en charge — Ubuntu 24.04 et 26.04 LTS, Debian 13, Fedora 43 et 44 — et sur le contenu des notes. Les notes de version officielles sont bloquées par la politique réseau sortante ; aucun élément n’est établi en source primaire. Plafond de 89/100 appliqué.",
         "belgiumImpact": "La préversion Linux couvre les distributions les plus répandues sur les postes de développement belges. Le réglage de mémoire par projet est le levier concret pour cloisonner ce qui est mémorisé d’un dossier client à l’autre. Aucune restriction géographique propre à la Belgique n’est rapportée.",
         "announcementId": "A20260815-OPENAI-CHATGPT-NOTES",
-        "lastCheckedAt": "2026-08-17"
+        "lastCheckedAt": "2026-08-18"
       },
       "lastCheckedAt": "2026-08-17"
     },
@@ -46,7 +46,7 @@
       "focus": "raisonnement, documents et agents",
       "officialUrl": "https://claude.ai/",
       "regionMode": "Service cloud ; conditions belges à vérifier",
-      "verificationStatus": "Vérifié en source primaire le 2026-08-17 — page tarifaire, notes de version et page des dépréciations ouvertes directement",
+      "verificationStatus": "Statut de contrôle renouvelé le 2026-08-18 — aucune nouveauté qualifiée trouvée depuis la dernière vérification en source primaire",
       "latestAnnouncement": {
         "title": "Le tokeniseur des modèles 4.7 et suivants produit environ 30 % de jetons en plus, et Claude Mythos Preview est déprécié",
         "publishedAt": "2026-08-17",
@@ -54,7 +54,7 @@
         "confidence": 96,
         "confidenceReason": "Page tarifaire et page des dépréciations de modèles ouvertes directement le 17 août 2026, l’avertissement sur le tokeniseur étant répété dans les notes de version. Trois emplacements primaires du même éditeur, lus à la source.",
         "belgiumImpact": "Un arbitrage de coût fondé sur les seuls tarifs affichés est faussé entre générations de modèles : à partir de Claude 4.7, un même texte consomme environ 30 % de jetons de plus. Les planchers de retrait publiés donnent par ailleurs un horizon de planification — aucun modèle actif ne peut être retiré avant le 29 septembre 2026.",
-        "lastCheckedAt": "2026-08-17"
+        "lastCheckedAt": "2026-08-18"
       },
       "lastCheckedAt": "2026-08-17"
     },
@@ -68,7 +68,7 @@
       "focus": "multimodal et écosystème Google",
       "officialUrl": "https://gemini.google.com/",
       "regionMode": "Service cloud disponible selon pays et compte",
-      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
+      "verificationStatus": "Non revérifié le 2026-08-18 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
       "latestAnnouncement": null,
       "lastCheckedAt": "2026-08-17"
     },
@@ -82,7 +82,7 @@
       "focus": "web, Windows et Microsoft 365",
       "officialUrl": "https://copilot.microsoft.com/",
       "regionMode": "Cloud Microsoft ; produit et région à vérifier",
-      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
+      "verificationStatus": "Non revérifié le 2026-08-18 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
       "latestAnnouncement": null,
       "lastCheckedAt": "2026-08-17"
     },
@@ -96,7 +96,7 @@
       "focus": "chat, recherche et contexte européen",
       "officialUrl": "https://chat.mistral.ai/",
       "regionMode": "Service européen ; conditions par plan",
-      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
+      "verificationStatus": "Non revérifié le 2026-08-18 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
       "latestAnnouncement": null,
       "lastCheckedAt": "2026-08-17"
     },
@@ -110,7 +110,7 @@
       "focus": "réponses sourcées et recherche web",
       "officialUrl": "https://www.perplexity.ai/",
       "regionMode": "Service cloud accessible depuis la Belgique",
-      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
+      "verificationStatus": "Non revérifié le 2026-08-18 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
       "latestAnnouncement": null,
       "lastCheckedAt": "2026-08-17"
     },
@@ -124,7 +124,7 @@
       "focus": "chat, recherche X et outils",
       "officialUrl": "https://grok.com/",
       "regionMode": "Cloud ; disponibilité et traitement UE à vérifier",
-      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
+      "verificationStatus": "Non revérifié le 2026-08-18 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
       "latestAnnouncement": null,
       "lastCheckedAt": "2026-08-17"
     },
@@ -138,7 +138,7 @@
       "focus": "long contexte, recherche et code",
       "officialUrl": "https://www.kimi.com/",
       "regionMode": "Cloud ; disponibilité commerciale belge à confirmer",
-      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
+      "verificationStatus": "Non revérifié le 2026-08-18 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
       "latestAnnouncement": null,
       "lastCheckedAt": "2026-08-17"
     },
@@ -152,7 +152,7 @@
       "focus": "raisonnement et code",
       "officialUrl": "https://chat.deepseek.com/",
       "regionMode": "Cloud ; transferts et disponibilité à confirmer",
-      "verificationStatus": "Vérifié par convergence le 2026-08-17 ; domaines de l’éditeur refusés",
+      "verificationStatus": "Non revérifié le 2026-08-18 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
       "latestAnnouncement": {
         "title": "Une grille heures pleines / heures creuses remplace le tarif unique de l’API depuis le 16 août 16:00 UTC",
         "publishedAt": "2026-08-16",
@@ -160,7 +160,7 @@
         "confidence": 86,
         "confidenceReason": "Quatre reprises indépendantes concordent sur la date et l’heure d’effet, les fenêtres horaires et les six montants par modèle. Les domaines deepseek.com et api-docs.deepseek.com sont refusés : plafond de 89/100 appliqué.",
         "belgiumImpact": "En heure d’été de Bruxelles, les fenêtres pleines couvrent 03:00–06:00 et 08:00–12:00 : la matinée de travail belge est intégralement au tarif le plus élevé. Le tarif creux lui-même reste supérieur à l’ancien tarif unique dans toutes les catégories.",
-        "lastCheckedAt": "2026-08-17"
+        "lastCheckedAt": "2026-08-18"
       },
       "lastCheckedAt": "2026-08-17"
     },
@@ -174,7 +174,7 @@
       "focus": "assistant intégré aux produits Meta",
       "officialUrl": "https://www.meta.ai/",
       "regionMode": "Disponibilité variable dans l’UE",
-      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
+      "verificationStatus": "Non revérifié le 2026-08-18 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
       "latestAnnouncement": null,
       "lastCheckedAt": "2026-08-17"
     },
@@ -188,7 +188,7 @@
       "focus": "IDE, CLI, revue et agents",
       "officialUrl": "https://github.com/features/copilot",
       "regionMode": "Cloud GitHub ; paramètres entreprise disponibles",
-      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
+      "verificationStatus": "Non revérifié le 2026-08-18 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
       "latestAnnouncement": {
         "title": "Retrait de plusieurs modèles Anthropic, OpenAI et Google de toutes les surfaces Copilot au 1er septembre 2026",
         "publishedAt": "2026-07-31",
@@ -197,7 +197,7 @@
         "confidenceReason": "Entrée de changelog officielle datée et référencée, discussion communautaire GitHub et reprise presse concordantes. Domaine github.blog bloqué : la liste exacte des modèles n’a pas pu être relue sur la page officielle.",
         "belgiumImpact": "Échéance de compatibilité à trois semaines pour tout développeur belge dont un flux ou une politique d’entreprise épingle un de ces identifiants de modèle.",
         "announcementId": "A20260731-GITHUB-COPILOT-DEPRECIATIONS",
-        "lastCheckedAt": "2026-08-17"
+        "lastCheckedAt": "2026-08-18"
       },
       "lastCheckedAt": "2026-08-17"
     },
@@ -211,7 +211,7 @@
       "focus": "édition, agents et compréhension de dépôt",
       "officialUrl": "https://www.cursor.com/",
       "regionMode": "Cloud ; options de confidentialité par plan",
-      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
+      "verificationStatus": "Non revérifié le 2026-08-18 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
       "latestAnnouncement": null,
       "lastCheckedAt": "2026-08-17"
     },
@@ -225,16 +225,15 @@
       "focus": "terminal, dépôt et outils",
       "officialUrl": "https://www.anthropic.com/claude-code",
       "regionMode": "Client local avec service cloud Anthropic",
-      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
+      "verificationStatus": "Vérifié en source primaire le 2026-08-18 — journal de version officiel, contenu brut du dépôt public et API du registre npm concordants",
       "latestAnnouncement": {
-        "title": "Le mode automatique devient le mode de permission de départ sur Pro, Max et Team, et les versions 2.1.232 et 2.1.233 corrigent cinq failles",
-        "publishedAt": "2026-08-14",
-        "sourceUrl": "https://code.claude.com/docs/en/permission-modes",
-        "confidence": 96,
-        "confidenceReason": "Documentation officielle des modes de permission et journal de version de l’éditeur ouverts directement le 2026-08-16 sur code.claude.com, premier accès réussi à ce domaine. Dates corroborées indépendamment par les horodatages du registre npm : 2.1.232 le 13 août à 21:30 UTC, 2.1.233 le 14 août à 18:50 UTC.",
-        "belgiumImpact": "Deux gestes pour un développeur belge : mettre à jour, car la 2.1.233 porte le correctif d’une fuite d’identifiants NTLM sous Windows et constitue le plancher du nouveau défaut sur Windows natif ; et poser des règles de refus explicites sur les dépôts contenant des données à caractère personnel, le mode automatique élargissant ce que l’agent exécute sans interruption.",
-        "announcementId": "A20260814-ANTHROPIC-CLAUDE-CODE-AUTO",
-        "lastCheckedAt": "2026-08-17"
+        "title": "Claude Code 2.1.234 apporte cinq correctifs de sécurité, dont le rejet des chemins de l’espace de noms NT de Windows sur les accès fichiers pré-approuvés",
+        "publishedAt": "2026-08-17",
+        "sourceUrl": "https://code.claude.com/docs/en/changelog",
+        "confidence": 97,
+        "confidenceReason": "Triple corroboration primaire le 2026-08-18 : journal de version publié sur la documentation officielle, CHANGELOG.md du dépôt public anthropics/claude-code lu en contenu brut, et API du registre npm datant la publication au 2026-08-17T18:19:13Z. Aucun identifiant CVE ni notation de gravité n’est publié.",
+        "belgiumImpact": "À appliquer sans délai sur tout poste de développement, en particulier sous Windows, le durcissement portant sur des accès fichiers qui étaient pré-approuvés. L’étiquette « stable » du registre npm reste à 2.1.226, huit versions en retrait de « latest » : une organisation qui épingle « stable » n’a pas ces correctifs.",
+        "lastCheckedAt": "2026-08-18"
       },
       "lastCheckedAt": "2026-08-17"
     },
@@ -248,7 +247,7 @@
       "focus": "tâches logicielles locales et cloud",
       "officialUrl": "https://openai.com/codex/",
       "regionMode": "Client et cloud ; plan et résidence à vérifier",
-      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
+      "verificationStatus": "Non revérifié le 2026-08-18 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
       "latestAnnouncement": {
         "title": "OpenAI Codex publie la version 0.147.0 de son interface en ligne de commande",
         "publishedAt": "2026-08-07",
@@ -257,7 +256,7 @@
         "confidenceReason": "Registre npm interrogé directement le 2026-08-15 : preuve primaire durable de la version et de son horodatage, sans preuve du contenu du changement.",
         "belgiumImpact": "Sans effet de licence ni de région.",
         "announcementId": "A20260814-SDK-CLI-VERSIONS",
-        "lastCheckedAt": "2026-08-17"
+        "lastCheckedAt": "2026-08-18"
       },
       "lastCheckedAt": "2026-08-17"
     },
@@ -271,7 +270,7 @@
       "focus": "IDE, entreprise et Google Cloud",
       "officialUrl": "https://codeassist.google/",
       "regionMode": "Cloud Google ; disponibilité par édition",
-      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
+      "verificationStatus": "Non revérifié le 2026-08-18 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
       "latestAnnouncement": null,
       "lastCheckedAt": "2026-08-17"
     },
@@ -285,7 +284,7 @@
       "focus": "édition et workflows agentiques",
       "officialUrl": "https://windsurf.com/",
       "regionMode": "Cloud ; conditions et résidence à vérifier",
-      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
+      "verificationStatus": "Non revérifié le 2026-08-18 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
       "latestAnnouncement": null,
       "lastCheckedAt": "2026-08-17"
     },
@@ -299,7 +298,7 @@
       "focus": "IDE JetBrains et modèles multiples",
       "officialUrl": "https://www.jetbrains.com/ai/",
       "regionMode": "Cloud et fournisseurs configurables selon produit",
-      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
+      "verificationStatus": "Non revérifié le 2026-08-18 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
       "latestAnnouncement": null,
       "lastCheckedAt": "2026-08-17"
     },
@@ -313,7 +312,7 @@
       "focus": "IDE, CLI et services AWS",
       "officialUrl": "https://aws.amazon.com/q/developer/",
       "regionMode": "AWS ; disponibilité et région par fonction",
-      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
+      "verificationStatus": "Non revérifié le 2026-08-18 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
       "latestAnnouncement": null,
       "lastCheckedAt": "2026-08-17"
     },
@@ -327,7 +326,7 @@
       "focus": "création et déploiement d’applications",
       "officialUrl": "https://replit.com/ai",
       "regionMode": "Cloud Replit ; traitement à vérifier",
-      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
+      "verificationStatus": "Non revérifié le 2026-08-18 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
       "latestAnnouncement": null,
       "lastCheckedAt": "2026-08-17"
     },
@@ -341,7 +340,7 @@
       "focus": "extension IDE et fournisseurs multiples",
       "officialUrl": "https://cline.bot/",
       "regionMode": "Client local ; données selon fournisseur choisi",
-      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
+      "verificationStatus": "Non revérifié le 2026-08-18 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
       "latestAnnouncement": null,
       "lastCheckedAt": "2026-08-17"
     },
@@ -355,7 +354,7 @@
       "focus": "extension IDE et orchestration",
       "officialUrl": "https://roocode.com/",
       "regionMode": "Client local ; données selon fournisseur choisi",
-      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
+      "verificationStatus": "Non revérifié le 2026-08-18 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
       "latestAnnouncement": null,
       "lastCheckedAt": "2026-08-17"
     },
@@ -369,7 +368,7 @@
       "focus": "IDE, modèles locaux et cloud",
       "officialUrl": "https://www.continue.dev/",
       "regionMode": "Local ou cloud selon configuration",
-      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
+      "verificationStatus": "Non revérifié le 2026-08-18 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
       "latestAnnouncement": null,
       "lastCheckedAt": "2026-08-17"
     },
@@ -383,7 +382,7 @@
       "focus": "terminal et édition Git",
       "officialUrl": "https://aider.chat/",
       "regionMode": "Client local ; API selon fournisseur",
-      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
+      "verificationStatus": "Non revérifié le 2026-08-18 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
       "latestAnnouncement": null,
       "lastCheckedAt": "2026-08-17"
     },
@@ -397,7 +396,7 @@
       "focus": "édition rapide et modèles multiples",
       "officialUrl": "https://zed.dev/ai",
       "regionMode": "Client local avec services configurables",
-      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
+      "verificationStatus": "Non revérifié le 2026-08-18 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
       "latestAnnouncement": null,
       "lastCheckedAt": "2026-08-17"
     },
@@ -411,7 +410,7 @@
       "focus": "recherche et contexte de code",
       "officialUrl": "https://sourcegraph.com/cody",
       "regionMode": "Cloud ou entreprise selon offre",
-      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
+      "verificationStatus": "Non revérifié le 2026-08-18 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
       "latestAnnouncement": null,
       "lastCheckedAt": "2026-08-17"
     },
@@ -425,7 +424,7 @@
       "focus": "tâches logicielles autonomes",
       "officialUrl": "https://devin.ai/",
       "regionMode": "Cloud ; disponibilité et résidence à vérifier",
-      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
+      "verificationStatus": "Non revérifié le 2026-08-18 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
       "latestAnnouncement": null,
       "lastCheckedAt": "2026-08-17"
     },
@@ -439,7 +438,7 @@
       "focus": "outils, handoffs, traces et garde-fous",
       "officialUrl": "https://openai.github.io/openai-agents-python/",
       "regionMode": "SDK local ; exécution selon fournisseur",
-      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
+      "verificationStatus": "Non revérifié le 2026-08-18 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
       "latestAnnouncement": {
         "title": "openai-agents 0.20.0 publié sur PyPI",
         "publishedAt": "2026-08-11",
@@ -447,7 +446,7 @@
         "confidence": 92,
         "confidenceReason": "Registre de distribution officiel de l’éditeur, consulté le 13/08/2026 : la version et sa date de publication sont prouvées de façon durable. Le contenu du changement n’a pas pu être lu, la documentation et les notes de version étant inaccessibles pendant ce run.",
         "belgiumImpact": "Aucun effet sur la disponibilité en Belgique : artefact distribué mondialement par un registre public. L’impact éventuel est technique.",
-        "lastCheckedAt": "2026-08-17"
+        "lastCheckedAt": "2026-08-18"
       },
       "lastCheckedAt": "2026-08-17"
     },
@@ -461,7 +460,7 @@
       "focus": "agents outillés fondés sur Claude Code",
       "officialUrl": "https://docs.anthropic.com/en/docs/claude-code/sdk/sdk-overview",
       "regionMode": "SDK local avec service Anthropic",
-      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
+      "verificationStatus": "Non revérifié le 2026-08-18 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
       "latestAnnouncement": {
         "title": "Les sessions d’agents managés acceptent un budget, un conseiller et des compétences chargées depuis GitHub",
         "publishedAt": "2026-08-07",
@@ -470,7 +469,7 @@
         "confidenceReason": "Source primaire durable ouverte directement le 2026-08-15, avec les noms de paramètres exacts budget_reached, advisor et inference_geo.",
         "belgiumImpact": "Le plafond de dépense par session et la découverte automatique des compétences d’un dépôt sont directement exploitables par un développeur indépendant belge ; la géographie d’inférence documentée reste hors UE.",
         "announcementId": "A20260807-ANTHROPIC-MANAGED-AGENTS",
-        "lastCheckedAt": "2026-08-17"
+        "lastCheckedAt": "2026-08-18"
       },
       "lastCheckedAt": "2026-08-17"
     },
@@ -484,7 +483,7 @@
       "focus": "agents, outils et déploiement",
       "officialUrl": "https://google.github.io/adk-docs/",
       "regionMode": "SDK local ; cloud optionnel",
-      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
+      "verificationStatus": "Non revérifié le 2026-08-18 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
       "latestAnnouncement": {
         "title": "google-adk 2.6.3 publié sur PyPI",
         "publishedAt": "2026-08-07",
@@ -492,7 +491,7 @@
         "confidence": 92,
         "confidenceReason": "Registre de distribution officiel de l’éditeur, consulté le 13/08/2026 : la version et sa date de publication sont prouvées de façon durable. Le contenu du changement n’a pas pu être lu, la documentation et les notes de version étant inaccessibles pendant ce run.",
         "belgiumImpact": "Aucun effet sur la disponibilité en Belgique : artefact distribué mondialement par un registre public. L’impact éventuel est technique.",
-        "lastCheckedAt": "2026-08-17"
+        "lastCheckedAt": "2026-08-18"
       },
       "lastCheckedAt": "2026-08-17"
     },
@@ -506,7 +505,7 @@
       "focus": "agents conversationnels et orchestration",
       "officialUrl": "https://microsoft.github.io/autogen/",
       "regionMode": "Open source ; déploiement choisi",
-      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
+      "verificationStatus": "Non revérifié le 2026-08-18 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
       "latestAnnouncement": {
         "title": "Aucune publication PyPI depuis le 30/09/2025 (autogen-agentchat 0.7.5)",
         "publishedAt": "2025-09-30",
@@ -514,7 +513,7 @@
         "confidence": 88,
         "confidenceReason": "Absence de publication récente constatée sur le registre officiel le 13/08/2026. C’est un constat de distribution, pas un jugement sur l’état du projet : le développement peut se poursuivre sans publication de paquet.",
         "belgiumImpact": "Aucun effet de disponibilité. Signal de rythme de publication à surveiller avant tout choix d’architecture.",
-        "lastCheckedAt": "2026-08-17"
+        "lastCheckedAt": "2026-08-18"
       },
       "lastCheckedAt": "2026-08-17"
     },
@@ -528,7 +527,7 @@
       "focus": "plugins, mémoire et agents",
       "officialUrl": "https://learn.microsoft.com/semantic-kernel/",
       "regionMode": "SDK local ; fournisseurs configurables",
-      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
+      "verificationStatus": "Non revérifié le 2026-08-18 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
       "latestAnnouncement": {
         "title": "semantic-kernel 1.44.1 publié sur PyPI",
         "publishedAt": "2026-08-06",
@@ -536,7 +535,7 @@
         "confidence": 92,
         "confidenceReason": "Registre de distribution officiel de l’éditeur, consulté le 13/08/2026 : la version et sa date de publication sont prouvées de façon durable. Le contenu du changement n’a pas pu être lu, la documentation et les notes de version étant inaccessibles pendant ce run.",
         "belgiumImpact": "Aucun effet sur la disponibilité en Belgique : artefact distribué mondialement par un registre public. L’impact éventuel est technique.",
-        "lastCheckedAt": "2026-08-17"
+        "lastCheckedAt": "2026-08-18"
       },
       "lastCheckedAt": "2026-08-17"
     },
@@ -550,7 +549,7 @@
       "focus": "intégrations, RAG et agents",
       "officialUrl": "https://www.langchain.com/",
       "regionMode": "Open source et cloud optionnel",
-      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
+      "verificationStatus": "Non revérifié le 2026-08-18 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
       "latestAnnouncement": {
         "title": "langchain 1.5.7 publié sur npm",
         "publishedAt": "2026-08-13",
@@ -558,7 +557,7 @@
         "confidence": 92,
         "confidenceReason": "Registre de distribution officiel de l’éditeur, consulté le 13/08/2026 : la version et sa date de publication sont prouvées de façon durable. Le contenu du changement n’a pas pu être lu, la documentation et les notes de version étant inaccessibles pendant ce run.",
         "belgiumImpact": "Aucun effet sur la disponibilité en Belgique : artefact distribué mondialement par un registre public. L’impact éventuel est technique.",
-        "lastCheckedAt": "2026-08-17"
+        "lastCheckedAt": "2026-08-18"
       },
       "lastCheckedAt": "2026-08-17"
     },
@@ -572,7 +571,7 @@
       "focus": "graphes, état et workflows durables",
       "officialUrl": "https://www.langchain.com/langgraph",
       "regionMode": "Local ou cloud selon déploiement",
-      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
+      "verificationStatus": "Non revérifié le 2026-08-18 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
       "latestAnnouncement": {
         "title": "langgraph 1.2.11 publié sur PyPI",
         "publishedAt": "2026-08-11",
@@ -580,7 +579,7 @@
         "confidence": 92,
         "confidenceReason": "Registre de distribution officiel de l’éditeur, consulté le 13/08/2026 : la version et sa date de publication sont prouvées de façon durable. Le contenu du changement n’a pas pu être lu, la documentation et les notes de version étant inaccessibles pendant ce run.",
         "belgiumImpact": "Aucun effet sur la disponibilité en Belgique : artefact distribué mondialement par un registre public. L’impact éventuel est technique.",
-        "lastCheckedAt": "2026-08-17"
+        "lastCheckedAt": "2026-08-18"
       },
       "lastCheckedAt": "2026-08-17"
     },
@@ -594,7 +593,7 @@
       "focus": "RAG, agents et connecteurs",
       "officialUrl": "https://www.llamaindex.ai/",
       "regionMode": "Open source et services cloud",
-      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
+      "verificationStatus": "Non revérifié le 2026-08-18 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
       "latestAnnouncement": {
         "title": "llama-index 0.14.23 publié sur PyPI",
         "publishedAt": "2026-06-24",
@@ -602,7 +601,7 @@
         "confidence": 92,
         "confidenceReason": "Registre de distribution officiel de l’éditeur, consulté le 13/08/2026 : la version et sa date de publication sont prouvées de façon durable. Le contenu du changement n’a pas pu être lu, la documentation et les notes de version étant inaccessibles pendant ce run.",
         "belgiumImpact": "Aucun effet sur la disponibilité en Belgique : artefact distribué mondialement par un registre public. L’impact éventuel est technique.",
-        "lastCheckedAt": "2026-08-17"
+        "lastCheckedAt": "2026-08-18"
       },
       "lastCheckedAt": "2026-08-17"
     },
@@ -616,7 +615,7 @@
       "focus": "équipes d’agents et automatisation",
       "officialUrl": "https://www.crewai.com/",
       "regionMode": "Open source et offre cloud",
-      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
+      "verificationStatus": "Non revérifié le 2026-08-18 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
       "latestAnnouncement": {
         "title": "crewai 1.15.15 publié sur PyPI",
         "publishedAt": "2026-08-12",
@@ -624,7 +623,7 @@
         "confidence": 92,
         "confidenceReason": "Registre de distribution officiel de l’éditeur, consulté le 13/08/2026 : la version et sa date de publication sont prouvées de façon durable. Le contenu du changement n’a pas pu être lu, la documentation et les notes de version étant inaccessibles pendant ce run.",
         "belgiumImpact": "Aucun effet sur la disponibilité en Belgique : artefact distribué mondialement par un registre public. L’impact éventuel est technique.",
-        "lastCheckedAt": "2026-08-17"
+        "lastCheckedAt": "2026-08-18"
       },
       "lastCheckedAt": "2026-08-17"
     },
@@ -638,7 +637,7 @@
       "focus": "agents typés et validation structurée",
       "officialUrl": "https://ai.pydantic.dev/",
       "regionMode": "Open source ; fournisseurs configurables",
-      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
+      "verificationStatus": "Non revérifié le 2026-08-18 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
       "latestAnnouncement": {
         "title": "pydantic-ai 2.29.0 publié sur PyPI",
         "publishedAt": "2026-08-13",
@@ -646,7 +645,7 @@
         "confidence": 92,
         "confidenceReason": "Registre de distribution officiel de l’éditeur, consulté le 13/08/2026 : la version et sa date de publication sont prouvées de façon durable. Le contenu du changement n’a pas pu être lu, la documentation et les notes de version étant inaccessibles pendant ce run.",
         "belgiumImpact": "Aucun effet sur la disponibilité en Belgique : artefact distribué mondialement par un registre public. L’impact éventuel est technique.",
-        "lastCheckedAt": "2026-08-17"
+        "lastCheckedAt": "2026-08-18"
       },
       "lastCheckedAt": "2026-08-17"
     },
@@ -660,7 +659,7 @@
       "focus": "agents légers et code",
       "officialUrl": "https://huggingface.co/docs/smolagents/",
       "regionMode": "Open source ; local ou cloud",
-      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
+      "verificationStatus": "Non revérifié le 2026-08-18 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
       "latestAnnouncement": {
         "title": "smolagents 1.26.0 publié sur PyPI",
         "publishedAt": "2026-05-29",
@@ -668,7 +667,7 @@
         "confidence": 92,
         "confidenceReason": "Registre de distribution officiel de l’éditeur, consulté le 13/08/2026 : la version et sa date de publication sont prouvées de façon durable. Le contenu du changement n’a pas pu être lu, la documentation et les notes de version étant inaccessibles pendant ce run.",
         "belgiumImpact": "Aucun effet sur la disponibilité en Belgique : artefact distribué mondialement par un registre public. L’impact éventuel est technique.",
-        "lastCheckedAt": "2026-08-17"
+        "lastCheckedAt": "2026-08-18"
       },
       "lastCheckedAt": "2026-08-17"
     },
@@ -682,7 +681,7 @@
       "focus": "programmation et optimisation de systèmes LLM",
       "officialUrl": "https://dspy.ai/",
       "regionMode": "Open source ; exécution choisie",
-      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
+      "verificationStatus": "Non revérifié le 2026-08-18 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
       "latestAnnouncement": {
         "title": "dspy 3.3.0 publié sur PyPI",
         "publishedAt": "2026-08-03",
@@ -690,7 +689,7 @@
         "confidence": 92,
         "confidenceReason": "Registre de distribution officiel de l’éditeur, consulté le 13/08/2026 : la version et sa date de publication sont prouvées de façon durable. Le contenu du changement n’a pas pu être lu, la documentation et les notes de version étant inaccessibles pendant ce run.",
         "belgiumImpact": "Aucun effet sur la disponibilité en Belgique : artefact distribué mondialement par un registre public. L’impact éventuel est technique.",
-        "lastCheckedAt": "2026-08-17"
+        "lastCheckedAt": "2026-08-18"
       },
       "lastCheckedAt": "2026-08-17"
     },
@@ -704,7 +703,7 @@
       "focus": "recherche, pipelines et agents",
       "officialUrl": "https://haystack.deepset.ai/",
       "regionMode": "Open source et cloud optionnel",
-      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
+      "verificationStatus": "Non revérifié le 2026-08-18 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
       "latestAnnouncement": {
         "title": "haystack-ai 3.0.0 publié sur PyPI — version majeure",
         "publishedAt": "2026-07-20",
@@ -712,7 +711,7 @@
         "confidence": 92,
         "confidenceReason": "Registre de distribution officiel de l’éditeur, consulté le 13/08/2026 : la version et sa date de publication sont prouvées de façon durable. Le contenu du changement n’a pas pu être lu, la documentation et les notes de version étant inaccessibles pendant ce run.",
         "belgiumImpact": "Aucun effet sur la disponibilité en Belgique. Impact de compatibilité pour les projets belges qui épinglent une version majeure antérieure.",
-        "lastCheckedAt": "2026-08-17"
+        "lastCheckedAt": "2026-08-18"
       },
       "lastCheckedAt": "2026-08-17"
     },
@@ -726,7 +725,7 @@
       "focus": "agents TypeScript, workflows et évaluations",
       "officialUrl": "https://mastra.ai/",
       "regionMode": "Open source et hébergement choisi",
-      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
+      "verificationStatus": "Non revérifié le 2026-08-18 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
       "latestAnnouncement": null,
       "lastCheckedAt": "2026-08-17"
     },
@@ -740,7 +739,7 @@
       "focus": "workflows, agents et connecteurs",
       "officialUrl": "https://n8n.io/",
       "regionMode": "Cloud ou auto-hébergé",
-      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
+      "verificationStatus": "Non revérifié le 2026-08-18 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
       "latestAnnouncement": null,
       "lastCheckedAt": "2026-08-17"
     },
@@ -754,7 +753,7 @@
       "focus": "workflows visuels et intégrations",
       "officialUrl": "https://www.make.com/",
       "regionMode": "Cloud ; région et DPA à vérifier",
-      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
+      "verificationStatus": "Non revérifié le 2026-08-18 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
       "latestAnnouncement": null,
       "lastCheckedAt": "2026-08-17"
     },
@@ -768,7 +767,7 @@
       "focus": "intégrations, agents et actions",
       "officialUrl": "https://zapier.com/",
       "regionMode": "Cloud ; traitement selon connecteurs",
-      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
+      "verificationStatus": "Non revérifié le 2026-08-18 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
       "latestAnnouncement": null,
       "lastCheckedAt": "2026-08-17"
     },
@@ -782,7 +781,7 @@
       "focus": "applications, RAG, agents et workflows",
       "officialUrl": "https://dify.ai/",
       "regionMode": "Cloud ou auto-hébergé",
-      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
+      "verificationStatus": "Non revérifié le 2026-08-18 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
       "latestAnnouncement": null,
       "lastCheckedAt": "2026-08-17"
     },
@@ -796,7 +795,7 @@
       "focus": "agents et chaînes LLM",
       "officialUrl": "https://flowiseai.com/",
       "regionMode": "Cloud ou auto-hébergé",
-      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
+      "verificationStatus": "Non revérifié le 2026-08-18 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
       "latestAnnouncement": null,
       "lastCheckedAt": "2026-08-17"
     },
@@ -810,7 +809,7 @@
       "focus": "prototypage de flux et agents",
       "officialUrl": "https://www.langflow.org/",
       "regionMode": "Open source ou cloud",
-      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
+      "verificationStatus": "Non revérifié le 2026-08-18 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
       "latestAnnouncement": null,
       "lastCheckedAt": "2026-08-17"
     },
@@ -824,7 +823,7 @@
       "focus": "chat local, RAG et outils",
       "officialUrl": "https://openwebui.com/",
       "regionMode": "Auto-hébergé",
-      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
+      "verificationStatus": "Non revérifié le 2026-08-18 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
       "latestAnnouncement": null,
       "lastCheckedAt": "2026-08-17"
     },
@@ -838,7 +837,7 @@
       "focus": "documents, agents et modèles locaux",
       "officialUrl": "https://anythingllm.com/",
       "regionMode": "Desktop, auto-hébergé ou cloud",
-      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
+      "verificationStatus": "Non revérifié le 2026-08-18 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
       "latestAnnouncement": null,
       "lastCheckedAt": "2026-08-17"
     },
@@ -852,7 +851,7 @@
       "focus": "chat, agents et fournisseurs multiples",
       "officialUrl": "https://www.librechat.ai/",
       "regionMode": "Auto-hébergé",
-      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
+      "verificationStatus": "Non revérifié le 2026-08-18 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
       "latestAnnouncement": null,
       "lastCheckedAt": "2026-08-17"
     },
@@ -866,7 +865,7 @@
       "focus": "actions, authentification et agents",
       "officialUrl": "https://composio.dev/",
       "regionMode": "Cloud et SDK ; données selon intégrations",
-      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
+      "verificationStatus": "Non revérifié le 2026-08-18 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
       "latestAnnouncement": null,
       "lastCheckedAt": "2026-08-17"
     },
@@ -880,7 +879,7 @@
       "focus": "modèles locaux et serveur compatible API",
       "officialUrl": "https://lmstudio.ai/",
       "regionMode": "Local sur la machine",
-      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
+      "verificationStatus": "Non revérifié le 2026-08-18 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
       "latestAnnouncement": null,
       "lastCheckedAt": "2026-08-17"
     },
@@ -894,7 +893,7 @@
       "focus": "exécution et distribution de modèles locaux",
       "officialUrl": "https://ollama.com/",
       "regionMode": "Local ; intégrations cloud optionnelles",
-      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
+      "verificationStatus": "Non revérifié le 2026-08-18 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
       "latestAnnouncement": {
         "title": "Qwen3.8-27B, dense et sous Apache 2.0, élargit le catalogue exécutable en local",
         "publishedAt": "2026-08-14",
@@ -903,7 +902,7 @@
         "confidenceReason": "Publication des poids établie le 2026-08-16 par convergence de sources indépendantes concordantes sur la date, la licence Apache 2.0, le caractère dense et le contexte natif de 262 144 jetons. Hugging Face, ModelScope et ollama.com sont bloqués : ni le fichier de licence, ni la disponibilité effective d’une étiquette dans la bibliothèque Ollama n’ont été vérifiées. Plafond de 89/100 appliqué.",
         "belgiumImpact": "Un dense de 27 milliards de paramètres sous Apache 2.0 vise les configurations à 24 Go de mémoire vidéo et le déchargement partiel sur les cartes de 12 Go. Les tailles quantifiées, les vitesses mesurées et la disponibilité d’une étiquette Ollama restent à établir : ne planifiez pas de déploiement local sur cette base avant vérification.",
         "announcementId": "A20260814-ALIBABA-QWEN38-27B",
-        "lastCheckedAt": "2026-08-17"
+        "lastCheckedAt": "2026-08-18"
       },
       "lastCheckedAt": "2026-08-17"
     },
@@ -917,8 +916,16 @@
       "focus": "GGUF, CPU, GPU et quantification",
       "officialUrl": "https://github.com/ggml-org/llama.cpp",
       "regionMode": "Local ou auto-hébergé",
-      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
-      "latestAnnouncement": null,
+      "verificationStatus": "Vérifié en source primaire le 2026-08-18 — API PyPI du binding officiel",
+      "latestAnnouncement": {
+        "title": "llama-cpp-python 0.3.35 est publié",
+        "publishedAt": "2026-08-17",
+        "sourceUrl": "https://pypi.org/pypi/llama-cpp-python/json",
+        "confidence": 90,
+        "confidenceReason": "Publication et horodatage établis à l’API PyPI, ouverte en accès direct le 2026-08-18 : 2026-08-17T09:41:34Z. Un registre de distribution prouve qu’une version existe et à quelle date, mais ne documente pas le contenu du changement ; github.com étant refusé, les notes de version n’ont pas pu être lues et le contenu fonctionnel reste « non publié » à ce contrôle.",
+        "belgiumImpact": "Concerne l’exécution locale sur les paliers matériels suivis par l’observatoire. Aucun changement de recommandation : le contenu de la version n’a pas pu être établi.",
+        "lastCheckedAt": "2026-08-18"
+      },
       "lastCheckedAt": "2026-08-17"
     },
     {
@@ -931,7 +938,7 @@
       "focus": "débit élevé et API compatible",
       "officialUrl": "https://vllm.ai/",
       "regionMode": "Auto-hébergé",
-      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
+      "verificationStatus": "Non revérifié le 2026-08-18 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
       "latestAnnouncement": {
         "title": "vllm 0.27.1 publié sur PyPI",
         "publishedAt": "2026-08-11",
@@ -939,7 +946,7 @@
         "confidence": 92,
         "confidenceReason": "Registre de distribution officiel de l’éditeur, consulté le 13/08/2026 : la version et sa date de publication sont prouvées de façon durable. Le contenu du changement n’a pas pu être lu, la documentation et les notes de version étant inaccessibles pendant ce run.",
         "belgiumImpact": "Aucun effet sur la disponibilité en Belgique : artefact distribué mondialement par un registre public. L’impact éventuel est technique.",
-        "lastCheckedAt": "2026-08-17"
+        "lastCheckedAt": "2026-08-18"
       },
       "lastCheckedAt": "2026-08-17"
     },
@@ -953,7 +960,7 @@
       "focus": "inférence optimisée NVIDIA",
       "officialUrl": "https://github.com/NVIDIA/TensorRT-LLM",
       "regionMode": "Auto-hébergé sur GPU NVIDIA",
-      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
+      "verificationStatus": "Non revérifié le 2026-08-18 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
       "latestAnnouncement": null,
       "lastCheckedAt": "2026-08-17"
     },
@@ -967,7 +974,7 @@
       "focus": "Apple Silicon et mémoire unifiée",
       "officialUrl": "https://github.com/ml-explore/mlx",
       "regionMode": "Local sur Apple Silicon",
-      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
+      "verificationStatus": "Non revérifié le 2026-08-18 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
       "latestAnnouncement": null,
       "lastCheckedAt": "2026-08-17"
     },
@@ -981,7 +988,7 @@
       "focus": "API compatible et modèles multiples",
       "officialUrl": "https://localai.io/",
       "regionMode": "Auto-hébergé",
-      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
+      "verificationStatus": "Non revérifié le 2026-08-18 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
       "latestAnnouncement": null,
       "lastCheckedAt": "2026-08-17"
     },
@@ -995,7 +1002,7 @@
       "focus": "assistant open source et modèles locaux",
       "officialUrl": "https://jan.ai/",
       "regionMode": "Local ; fournisseurs cloud optionnels",
-      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
+      "verificationStatus": "Non revérifié le 2026-08-18 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
       "latestAnnouncement": null,
       "lastCheckedAt": "2026-08-17"
     },
@@ -1009,7 +1016,7 @@
       "focus": "chargement, quantification et extensions",
       "officialUrl": "https://github.com/oobabooga/text-generation-webui",
       "regionMode": "Local ou auto-hébergé",
-      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
+      "verificationStatus": "Non revérifié le 2026-08-18 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
       "latestAnnouncement": null,
       "lastCheckedAt": "2026-08-17"
     },
@@ -1023,7 +1030,7 @@
       "focus": "chargement, entraînement et inférence",
       "officialUrl": "https://huggingface.co/docs/transformers/",
       "regionMode": "Local, auto-hébergé ou cloud",
-      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
+      "verificationStatus": "Non revérifié le 2026-08-18 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
       "latestAnnouncement": {
         "title": "transformers 5.15.0 publié sur PyPI",
         "publishedAt": "2026-08-10",
@@ -1031,7 +1038,7 @@
         "confidence": 92,
         "confidenceReason": "Registre de distribution officiel de l’éditeur, consulté le 13/08/2026 : la version et sa date de publication sont prouvées de façon durable. Le contenu du changement n’a pas pu être lu, la documentation et les notes de version étant inaccessibles pendant ce run.",
         "belgiumImpact": "Aucun effet sur la disponibilité en Belgique : artefact distribué mondialement par un registre public. L’impact éventuel est technique.",
-        "lastCheckedAt": "2026-08-17"
+        "lastCheckedAt": "2026-08-18"
       },
       "lastCheckedAt": "2026-08-17"
     },
@@ -1045,15 +1052,15 @@
       "focus": "modèles, outils, temps réel et agents",
       "officialUrl": "https://platform.openai.com/docs/",
       "regionMode": "Cloud OpenAI ; résidence selon offre",
-      "verificationStatus": "Vérifié en source primaire le 2026-08-17 — journal de version du dépôt éditeur et registre PyPI ouverts directement",
+      "verificationStatus": "Vérifié en source primaire le 2026-08-18 — journal de version du SDK officiel et API PyPI ; la documentation de la plateforme reste refusée",
       "latestAnnouncement": {
-        "title": "Le SDK Python 3.1.0 ajoute la prise en charge du palier Ultrafast, les identifiants de flux WebSocket et des erreurs MCP structurées",
-        "publishedAt": "2026-08-14",
+        "title": "Le SDK Python 3.2.0 ajoute la prise en charge d’un endpoint AWS Bedrock Runtime et des événements de diffusion pour les appels de shell",
+        "publishedAt": "2026-08-17",
         "sourceUrl": "https://raw.githubusercontent.com/openai/openai-python/main/CHANGELOG.md",
         "confidence": 95,
-        "confidenceReason": "Journal de version officiel du dépôt de l’éditeur et date de publication du paquet sur PyPI, tous deux ouverts directement le 17 août 2026. La version 3.1.0 est datée du 14 août 2026 à 23:49 UTC au registre.",
-        "belgiumImpact": "Le palier Ultrafast est désormais exprimé dans le SDK, mais son accès reste en préversion sur liste d’attente et aucun tarif, quota, région ni engagement de service n’est publié : il n’est pas budgétable depuis la Belgique. La montée en 3.x reste dominée par la rupture HTTPX2 introduite en 3.0.0.",
-        "lastCheckedAt": "2026-08-17"
+        "confidenceReason": "Double corroboration primaire le 2026-08-18 : CHANGELOG.md du dépôt public openai/openai-python en contenu brut et API PyPI datant la publication au 2026-08-17T19:14:16Z. Plafonné à 95 : la documentation de la plateforme OpenAI, seule à préciser modèles et régions, reste refusée.",
+        "belgiumImpact": "Permet d’envisager une consommation depuis une région AWS européenne sans réécrire la couche d’appel écrite pour le SDK OpenAI. La prise en charge d’un endpoint ne dit rien de la disponibilité des modèles ni de la résidence des données : à vérifier côté AWS avant toute décision.",
+        "lastCheckedAt": "2026-08-18"
       },
       "lastCheckedAt": "2026-08-17"
     },
@@ -1067,7 +1074,7 @@
       "focus": "Claude, outils, cache et batch",
       "officialUrl": "https://platform.claude.com/docs/",
       "regionMode": "Cloud Anthropic ; résidence selon offre",
-      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
+      "verificationStatus": "Non revérifié le 2026-08-18 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
       "latestAnnouncement": {
         "title": "Claude Mythos 5 documenté en disponibilité limitée et budgets de session pour les agents managés",
         "publishedAt": "2026-08-07",
@@ -1076,7 +1083,7 @@
         "confidenceReason": "Notes de version officielles et vue d’ensemble des modèles ouvertes directement le 2026-08-15 : noms de paramètres, identifiants de modèles et dates y figurent explicitement.",
         "belgiumImpact": "Le paramètre inference_geo commande la géographie d’inférence, avec multiplicateur tarifaire ; aucune géographie UE n’est établie pour l’API directe dans ce run. Le budget de session borne la dépense d’un agent laissé sans surveillance.",
         "announcementId": "A20260807-ANTHROPIC-MANAGED-AGENTS",
-        "lastCheckedAt": "2026-08-17"
+        "lastCheckedAt": "2026-08-18"
       },
       "lastCheckedAt": "2026-08-17"
     },
@@ -1090,7 +1097,7 @@
       "focus": "Gemini, multimodal et outils",
       "officialUrl": "https://ai.google.dev/gemini-api/docs/",
       "regionMode": "Cloud Google ; disponibilité EEE",
-      "verificationStatus": "Échéance atteinte le 2026-08-17 ; domaines Google refusés, effectivité de l’arrêt non observée directement",
+      "verificationStatus": "Non revérifié le 2026-08-18 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
       "latestAnnouncement": {
         "title": "Trois endpoints Imagen 4 s’arrêtent le 17 août 2026 et la génération d’images passe par generate_content()",
         "publishedAt": "2026-08-17",
@@ -1098,7 +1105,7 @@
         "confidence": 88,
         "confidenceReason": "Date d’arrêt et identifiants concordants sur plusieurs sources indépendantes, cohérents avec le journal de version du SDK google-genai lu en primaire. Les domaines de documentation Google sont refusés par la politique réseau sortante : plafond de 89/100 appliqué à la lecture du jour.",
         "belgiumImpact": "Rupture effective aujourd’hui pour toute application belge appelant imagen-4.0-generate-001, imagen-4.0-fast-generate-001 ou imagen-4.0-ultra-generate-001. Le portage vers gemini-3.1-flash-image exige une réécriture du code d’appel, la méthode generate_images() disparaissant.",
-        "lastCheckedAt": "2026-08-17"
+        "lastCheckedAt": "2026-08-18"
       },
       "lastCheckedAt": "2026-08-17"
     },
@@ -1112,7 +1119,7 @@
       "focus": "catalogue, agents, évaluations et gouvernance",
       "officialUrl": "https://learn.microsoft.com/azure/ai-foundry/",
       "regionMode": "Régions Azure ; vérifier chaque modèle",
-      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
+      "verificationStatus": "Non revérifié le 2026-08-18 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
       "latestAnnouncement": null,
       "lastCheckedAt": "2026-08-17"
     },
@@ -1126,30 +1133,29 @@
       "focus": "catalogue, agents, garde-fous et RAG",
       "officialUrl": "https://aws.amazon.com/bedrock/",
       "regionMode": "Régions AWS ; modèle par modèle",
-      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
+      "verificationStatus": "Non revérifié le 2026-08-18 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
       "latestAnnouncement": null,
       "lastCheckedAt": "2026-08-17"
     },
     {
       "id": "T066",
       "rank": 66,
-      "name": "Vertex AI",
+      "name": "Google Cloud Agent Platform (ex-Vertex AI)",
       "vendor": "Google Cloud",
       "category": "Plateformes & déploiement",
       "productType": "Plateforme cloud",
       "focus": "modèles, agents, MLOps et gouvernance",
       "officialUrl": "https://cloud.google.com/vertex-ai/generative-ai/docs/",
       "regionMode": "Régions et multirégions Google Cloud",
-      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
+      "verificationStatus": "Vérifié en source primaire le 2026-08-18 — page tarifaire de l’IA générative ouverte directement sur cloud.google.com",
       "latestAnnouncement": {
-        "title": "Le palier de service différé devient publiquement disponible sur Vertex AI",
-        "publishedAt": "2026-08-12",
-        "sourceUrl": "https://raw.githubusercontent.com/googleapis/python-genai/main/CHANGELOG.md",
-        "confidence": 90,
-        "confidenceReason": "Journal de version officiel du dépôt googleapis/python-genai ouvert directement le 2026-08-16, corroboré par les horodatages PyPI et npm. Le SDK prouve la disponibilité de la fonction mais ne documente ni tarif, ni latence contractuelle, ni régions : la documentation Vertex AI reste bloquée.",
-        "belgiumImpact": "Levier de coût potentiel pour les traitements belges non interactifs, suspendu à deux inconnues déterminantes : le tarif et la disponibilité du palier dans une région européenne.",
-        "announcementId": "A20260812-GOOGLE-PALIER-DIFFERE-VERTEX",
-        "lastCheckedAt": "2026-08-17"
+        "title": "La grille tarifaire chiffre une prime de 10 % exactement sur les endpoints non globaux, et affiche toujours la hausse de Claude Sonnet 5 au 1er septembre qu’Anthropic a annulée",
+        "publishedAt": "2026-08-18",
+        "sourceUrl": "https://cloud.google.com/gemini-enterprise-agent-platform/generative-ai/pricing",
+        "confidence": 96,
+        "confidenceReason": "Page tarifaire officielle du fournisseur responsable de la facturation, ouverte en accès direct le 2026-08-18 et récupérée deux fois avec un contenu identique sur les segments cités. L’adresse historique de la documentation générative de Vertex AI redirige en 301 vers le chemin « gemini-enterprise-agent-platform », la page étant intitulée « Agent Platform Pricing ». Le sous-domaine docs.cloud.google.com reste refusé, la documentation détaillée n’a donc pas pu être relue.",
+        "belgiumImpact": "Deux conséquences chiffrées pour un lecteur belge qui déploie sur une région européenne. D’abord la prime de 10 % des endpoints non globaux, désormais établie poste par poste : Gemini 3.5 Flash à 1,65 au lieu de 1,50 USD/M en entrée, et jusqu’aux unités de débit réservé, à 7,854 au lieu de 7,14 USD par GSU et par heure sur un engagement d’une semaine. Ensuite la ligne Claude Sonnet 5, qui passerait de 2,20/11,00 à 3,30/16,50 USD/M sur un endpoint non global au 1er septembre selon cette grille, alors que l’API de premier rang d’Anthropic reste à 2/10 USD/M.",
+        "lastCheckedAt": "2026-08-18"
       },
       "lastCheckedAt": "2026-08-17"
     },
@@ -1163,7 +1169,7 @@
       "focus": "modèles Mistral, agents et fine-tuning",
       "officialUrl": "https://console.mistral.ai/",
       "regionMode": "Options européennes selon offre",
-      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
+      "verificationStatus": "Non revérifié le 2026-08-18 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
       "latestAnnouncement": {
         "title": "Endpoints régionaux facturés 1,1×, Priority Tier à 1,75 × avec SLA 99,5 %, et hébergement de GLM-5.2",
         "publishedAt": "2026-08-11",
@@ -1172,7 +1178,7 @@
         "confidenceReason": "Annonce officielle référencée par son URL exacte, relayée par le compte officiel @MistralAI et corroborée par au moins quatre sources indépendantes concordantes sur les multiplicateurs, le SLA et les deux noms d’hôtes régionaux. Domaine bloqué : pas d’ouverture directe.",
         "belgiumImpact": "Le surcoût de la résidence européenne de l’inférence est chiffré à 10 % du tarif standard : l’option devient budgétable pour un projet belge bloqué par une exigence de localisation.",
         "announcementId": "A20260811-MISTRAL-MODELES-TIERS",
-        "lastCheckedAt": "2026-08-17"
+        "lastCheckedAt": "2026-08-18"
       },
       "lastCheckedAt": "2026-08-17"
     },
@@ -1186,7 +1192,7 @@
       "focus": "génération, embeddings et reranking",
       "officialUrl": "https://docs.cohere.com/",
       "regionMode": "Cloud et clouds partenaires ; contrat à vérifier",
-      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
+      "verificationStatus": "Non revérifié le 2026-08-18 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
       "latestAnnouncement": null,
       "lastCheckedAt": "2026-08-17"
     },
@@ -1200,7 +1206,7 @@
       "focus": "déploiement optimisé de modèles",
       "officialUrl": "https://build.nvidia.com/",
       "regionMode": "Cloud NVIDIA ou infrastructure choisie",
-      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
+      "verificationStatus": "Non revérifié le 2026-08-18 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
       "latestAnnouncement": null,
       "lastCheckedAt": "2026-08-17"
     },
@@ -1214,7 +1220,7 @@
       "focus": "modèles, studio et gouvernance",
       "officialUrl": "https://www.ibm.com/products/watsonx-ai",
       "regionMode": "Cloud IBM ; régions selon service",
-      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
+      "verificationStatus": "Non revérifié le 2026-08-18 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
       "latestAnnouncement": null,
       "lastCheckedAt": "2026-08-17"
     },
@@ -1228,7 +1234,7 @@
       "focus": "faible latence sur LPU",
       "officialUrl": "https://console.groq.com/docs/",
       "regionMode": "Cloud ; région et résidence à vérifier",
-      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
+      "verificationStatus": "Non revérifié le 2026-08-18 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
       "latestAnnouncement": null,
       "lastCheckedAt": "2026-08-17"
     },
@@ -1242,7 +1248,7 @@
       "focus": "inférence, entraînement et modèles ouverts",
       "officialUrl": "https://www.together.ai/",
       "regionMode": "Cloud ; région et DPA à vérifier",
-      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
+      "verificationStatus": "Non revérifié le 2026-08-18 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
       "latestAnnouncement": null,
       "lastCheckedAt": "2026-08-17"
     },
@@ -1256,7 +1262,7 @@
       "focus": "modèles ouverts, fine-tuning et agents",
       "officialUrl": "https://fireworks.ai/",
       "regionMode": "Cloud ; régions selon offre",
-      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
+      "verificationStatus": "Non revérifié le 2026-08-18 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
       "latestAnnouncement": null,
       "lastCheckedAt": "2026-08-17"
     },
@@ -1270,7 +1276,7 @@
       "focus": "catalogue multi-fournisseurs et routage",
       "officialUrl": "https://openrouter.ai/",
       "regionMode": "Intermédiaire cloud ; traitement selon fournisseur",
-      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
+      "verificationStatus": "Non revérifié le 2026-08-18 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
       "latestAnnouncement": null,
       "lastCheckedAt": "2026-08-17"
     },
@@ -1284,7 +1290,7 @@
       "focus": "déploiement et catalogue de modèles",
       "officialUrl": "https://replicate.com/",
       "regionMode": "Cloud ; région et sous-traitants à vérifier",
-      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
+      "verificationStatus": "Non revérifié le 2026-08-18 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
       "latestAnnouncement": null,
       "lastCheckedAt": "2026-08-17"
     },
@@ -1298,7 +1304,7 @@
       "focus": "inférence, agents et réseau Cloudflare",
       "officialUrl": "https://developers.cloudflare.com/workers-ai/",
       "regionMode": "Réseau distribué ; contrôles de localisation à vérifier",
-      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
+      "verificationStatus": "Non revérifié le 2026-08-18 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
       "latestAnnouncement": null,
       "lastCheckedAt": "2026-08-17"
     },
@@ -1312,7 +1318,7 @@
       "focus": "haut débit sur modèles ouverts",
       "officialUrl": "https://inference-docs.cerebras.ai/",
       "regionMode": "Cloud ; disponibilité européenne à vérifier",
-      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
+      "verificationStatus": "Non revérifié le 2026-08-18 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
       "latestAnnouncement": null,
       "lastCheckedAt": "2026-08-17"
     },
@@ -1326,7 +1332,7 @@
       "focus": "inférence dédiée et autoscaling",
       "officialUrl": "https://www.baseten.co/",
       "regionMode": "Cloud ; régions selon offre",
-      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
+      "verificationStatus": "Non revérifié le 2026-08-18 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
       "latestAnnouncement": null,
       "lastCheckedAt": "2026-08-17"
     },
@@ -1340,7 +1346,7 @@
       "focus": "GPU, jobs et déploiement Python",
       "officialUrl": "https://modal.com/",
       "regionMode": "Cloud ; région selon infrastructure",
-      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
+      "verificationStatus": "Non revérifié le 2026-08-18 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
       "latestAnnouncement": null,
       "lastCheckedAt": "2026-08-17"
     },
@@ -1354,7 +1360,7 @@
       "focus": "packaging, déploiement et cloud",
       "officialUrl": "https://www.bentoml.com/",
       "regionMode": "Auto-hébergé ou cloud",
-      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
+      "verificationStatus": "Non revérifié le 2026-08-18 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
       "latestAnnouncement": {
         "title": "bentoml 1.4.39 publié sur PyPI",
         "publishedAt": "2026-05-07",
@@ -1362,7 +1368,7 @@
         "confidence": 92,
         "confidenceReason": "Registre de distribution officiel de l’éditeur, consulté le 13/08/2026 : la version et sa date de publication sont prouvées de façon durable. Le contenu du changement n’a pas pu être lu, la documentation et les notes de version étant inaccessibles pendant ce run.",
         "belgiumImpact": "Aucun effet sur la disponibilité en Belgique : artefact distribué mondialement par un registre public. L’impact éventuel est technique.",
-        "lastCheckedAt": "2026-08-17"
+        "lastCheckedAt": "2026-08-18"
       },
       "lastCheckedAt": "2026-08-17"
     },
@@ -1376,7 +1382,7 @@
       "focus": "traces, évaluations et datasets",
       "officialUrl": "https://weave-docs.wandb.ai/",
       "regionMode": "Cloud ou options entreprise",
-      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
+      "verificationStatus": "Non revérifié le 2026-08-18 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
       "latestAnnouncement": null,
       "lastCheckedAt": "2026-08-17"
     },
@@ -1390,7 +1396,7 @@
       "focus": "traces, évaluations et déploiements",
       "officialUrl": "https://www.langchain.com/langsmith",
       "regionMode": "Cloud ou offre entreprise",
-      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
+      "verificationStatus": "Non revérifié le 2026-08-18 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
       "latestAnnouncement": null,
       "lastCheckedAt": "2026-08-17"
     },
@@ -1404,7 +1410,7 @@
       "focus": "traces, prompts, coûts et évaluations",
       "officialUrl": "https://langfuse.com/",
       "regionMode": "Cloud UE ou auto-hébergé selon offre",
-      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
+      "verificationStatus": "Non revérifié le 2026-08-18 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
       "latestAnnouncement": {
         "title": "langfuse 4.14.4 publié sur PyPI",
         "publishedAt": "2026-08-11",
@@ -1412,7 +1418,7 @@
         "confidence": 92,
         "confidenceReason": "Registre de distribution officiel de l’éditeur, consulté le 13/08/2026 : la version et sa date de publication sont prouvées de façon durable. Le contenu du changement n’a pas pu être lu, la documentation et les notes de version étant inaccessibles pendant ce run.",
         "belgiumImpact": "Aucun effet sur la disponibilité en Belgique : artefact distribué mondialement par un registre public. L’impact éventuel est technique.",
-        "lastCheckedAt": "2026-08-17"
+        "lastCheckedAt": "2026-08-18"
       },
       "lastCheckedAt": "2026-08-17"
     },
@@ -1426,7 +1432,7 @@
       "focus": "traces, RAG et évaluations",
       "officialUrl": "https://phoenix.arize.com/",
       "regionMode": "Open source ou cloud",
-      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
+      "verificationStatus": "Non revérifié le 2026-08-18 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
       "latestAnnouncement": {
         "title": "arize-phoenix 20.1.0 publié sur PyPI",
         "publishedAt": "2026-08-12",
@@ -1434,7 +1440,7 @@
         "confidence": 92,
         "confidenceReason": "Registre de distribution officiel de l’éditeur, consulté le 13/08/2026 : la version et sa date de publication sont prouvées de façon durable. Le contenu du changement n’a pas pu être lu, la documentation et les notes de version étant inaccessibles pendant ce run.",
         "belgiumImpact": "Aucun effet sur la disponibilité en Belgique : artefact distribué mondialement par un registre public. L’impact éventuel est technique.",
-        "lastCheckedAt": "2026-08-17"
+        "lastCheckedAt": "2026-08-18"
       },
       "lastCheckedAt": "2026-08-17"
     },
@@ -1448,7 +1454,7 @@
       "focus": "proxy, coûts, traces et cache",
       "officialUrl": "https://www.helicone.ai/",
       "regionMode": "Cloud ou auto-hébergé",
-      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
+      "verificationStatus": "Non revérifié le 2026-08-18 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
       "latestAnnouncement": null,
       "lastCheckedAt": "2026-08-17"
     },
@@ -1462,7 +1468,7 @@
       "focus": "datasets, expériences et observabilité",
       "officialUrl": "https://www.braintrust.dev/",
       "regionMode": "Cloud ; options entreprise à vérifier",
-      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
+      "verificationStatus": "Non revérifié le 2026-08-18 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
       "latestAnnouncement": null,
       "lastCheckedAt": "2026-08-17"
     },
@@ -1476,7 +1482,7 @@
       "focus": "tests, red teaming et CI",
       "officialUrl": "https://www.promptfoo.dev/",
       "regionMode": "Local, CI ou cloud optionnel",
-      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
+      "verificationStatus": "Non revérifié le 2026-08-18 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
       "latestAnnouncement": null,
       "lastCheckedAt": "2026-08-17"
     },
@@ -1490,7 +1496,7 @@
       "focus": "métriques et expériences RAG",
       "officialUrl": "https://docs.ragas.io/",
       "regionMode": "Open source ; exécution choisie",
-      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
+      "verificationStatus": "Non revérifié le 2026-08-18 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
       "latestAnnouncement": {
         "title": "Aucune publication PyPI depuis le 13/01/2026 (ragas 0.4.3)",
         "publishedAt": "2026-01-13",
@@ -1498,7 +1504,7 @@
         "confidence": 88,
         "confidenceReason": "Absence de publication récente constatée sur le registre officiel le 13/08/2026. C’est un constat de distribution, pas un jugement sur l’état du projet : le développement peut se poursuivre sans publication de paquet.",
         "belgiumImpact": "Aucun effet de disponibilité. Signal de rythme de publication à surveiller.",
-        "lastCheckedAt": "2026-08-17"
+        "lastCheckedAt": "2026-08-18"
       },
       "lastCheckedAt": "2026-08-17"
     },
@@ -1512,7 +1518,7 @@
       "focus": "tests unitaires et métriques LLM",
       "officialUrl": "https://deepeval.com/",
       "regionMode": "Local ou cloud optionnel",
-      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
+      "verificationStatus": "Non revérifié le 2026-08-18 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
       "latestAnnouncement": {
         "title": "deepeval 4.1.8 publié sur PyPI",
         "publishedAt": "2026-08-12",
@@ -1520,7 +1526,7 @@
         "confidence": 92,
         "confidenceReason": "Registre de distribution officiel de l’éditeur, consulté le 13/08/2026 : la version et sa date de publication sont prouvées de façon durable. Le contenu du changement n’a pas pu être lu, la documentation et les notes de version étant inaccessibles pendant ce run.",
         "belgiumImpact": "Aucun effet sur la disponibilité en Belgique : artefact distribué mondialement par un registre public. L’impact éventuel est technique.",
-        "lastCheckedAt": "2026-08-17"
+        "lastCheckedAt": "2026-08-18"
       },
       "lastCheckedAt": "2026-08-17"
     },
@@ -1534,7 +1540,7 @@
       "focus": "RAG, traces et feedback",
       "officialUrl": "https://www.trulens.org/",
       "regionMode": "Open source ou plateforme",
-      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
+      "verificationStatus": "Non revérifié le 2026-08-18 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
       "latestAnnouncement": {
         "title": "trulens 2.12.0 publié sur PyPI",
         "publishedAt": "2026-08-06",
@@ -1542,7 +1548,7 @@
         "confidence": 92,
         "confidenceReason": "Registre de distribution officiel de l’éditeur, consulté le 13/08/2026 : la version et sa date de publication sont prouvées de façon durable. Le contenu du changement n’a pas pu être lu, la documentation et les notes de version étant inaccessibles pendant ce run.",
         "belgiumImpact": "Aucun effet sur la disponibilité en Belgique : artefact distribué mondialement par un registre public. L’impact éventuel est technique.",
-        "lastCheckedAt": "2026-08-17"
+        "lastCheckedAt": "2026-08-18"
       },
       "lastCheckedAt": "2026-08-17"
     },
@@ -1556,7 +1562,7 @@
       "focus": "validation, sorties structurées et contrôles",
       "officialUrl": "https://www.guardrailsai.com/",
       "regionMode": "Open source ou cloud",
-      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
+      "verificationStatus": "Non revérifié le 2026-08-18 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
       "latestAnnouncement": {
         "title": "guardrails-ai 0.10.2 publié sur PyPI",
         "publishedAt": "2026-06-04",
@@ -1564,7 +1570,7 @@
         "confidence": 92,
         "confidenceReason": "Registre de distribution officiel de l’éditeur, consulté le 13/08/2026 : la version et sa date de publication sont prouvées de façon durable. Le contenu du changement n’a pas pu être lu, la documentation et les notes de version étant inaccessibles pendant ce run.",
         "belgiumImpact": "Aucun effet sur la disponibilité en Belgique : artefact distribué mondialement par un registre public. L’impact éventuel est technique.",
-        "lastCheckedAt": "2026-08-17"
+        "lastCheckedAt": "2026-08-18"
       },
       "lastCheckedAt": "2026-08-17"
     },
@@ -1578,7 +1584,7 @@
       "focus": "politiques conversationnelles et sécurité",
       "officialUrl": "https://github.com/NVIDIA-NeMo/Guardrails",
       "regionMode": "Auto-hébergé ou services NVIDIA",
-      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
+      "verificationStatus": "Non revérifié le 2026-08-18 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
       "latestAnnouncement": {
         "title": "nemoguardrails 0.23.0 publié sur PyPI",
         "publishedAt": "2026-07-01",
@@ -1586,7 +1592,7 @@
         "confidence": 92,
         "confidenceReason": "Registre de distribution officiel de l’éditeur, consulté le 13/08/2026 : la version et sa date de publication sont prouvées de façon durable. Le contenu du changement n’a pas pu être lu, la documentation et les notes de version étant inaccessibles pendant ce run.",
         "belgiumImpact": "Aucun effet sur la disponibilité en Belgique : artefact distribué mondialement par un registre public. L’impact éventuel est technique.",
-        "lastCheckedAt": "2026-08-17"
+        "lastCheckedAt": "2026-08-18"
       },
       "lastCheckedAt": "2026-08-17"
     },
@@ -1600,7 +1606,7 @@
       "focus": "injections, contenu et menaces LLM",
       "officialUrl": "https://www.lakera.ai/lakera-guard",
       "regionMode": "Service cloud ; DPA et région à vérifier",
-      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
+      "verificationStatus": "Non revérifié le 2026-08-18 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
       "latestAnnouncement": null,
       "lastCheckedAt": "2026-08-17"
     },
@@ -1614,7 +1620,7 @@
       "focus": "qualité, garde-fous et monitoring",
       "officialUrl": "https://www.rungalileo.io/",
       "regionMode": "Cloud ou entreprise",
-      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
+      "verificationStatus": "Non revérifié le 2026-08-18 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
       "latestAnnouncement": null,
       "lastCheckedAt": "2026-08-17"
     },
@@ -1628,7 +1634,7 @@
       "focus": "assistance au code par abonnement et API GLM",
       "officialUrl": "https://z.ai/",
       "regionMode": "Service cloud opéré depuis la Chine ; disponibilité belge à vérifier offre par offre",
-      "verificationStatus": "Entrée au catalogue à la revue structurelle du 2026-08-17. Le dépôt public officiel des modèles GLM, ouvert directement, atteste une ligne de modèles active jusqu’à GLM-5.2 ; z.ai et docs.z.ai sont refusés par la politique réseau sortante, de sorte que les conditions de l’abonnement, ses tarifs et sa disponibilité belge ne sont pas établis",
+      "verificationStatus": "Non revérifié le 2026-08-18 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
       "selectionNote": "Admise à la revue structurelle du 2026-08-17 au titre de la présence de marché de son offre de code par abonnement et de l’activité de sa ligne de modèles, absentes du catalogue alors qu’elles pèsent dans l’écosystème des assistants de code. Elle remplace Patronus AI, dont le SDK Python n’a pas été publié depuis le 9 janvier 2026 quand tous les autres outils d’évaluation du catalogue ont publié dans les six dernières semaines. Réserve honnête : le SDK Python de Z.ai n’a lui-même pas été publié depuis le 16 juin 2026. L’admission repose sur l’adoption et la portée fonctionnelle, non sur la cadence de publication.",
       "latestAnnouncement": {
         "title": "GLM-5.3 sort sans réentraînement de base, ses poids ouverts étant retenus au motif d’une évaluation de sûreté",
@@ -1637,7 +1643,7 @@
         "confidence": 85,
         "confidenceReason": "Le dépôt public officiel de la famille GLM, ouvert directement le 17 août 2026, documente GLM-5, GLM-5.1 et GLM-5.2 et atteste une ligne de modèles active ; il n’expose pas GLM-5.3, ce qui est cohérent avec la rétention de ses poids. Les termes de cette rétention restent établis par convergence secondaire, les domaines de l’éditeur étant refusés. Plafond de 89/100 appliqué.",
         "belgiumImpact": "Aucune facturation en euros ni aucune garantie de résidence européenne n’est documentée pour cette offre. Un développeur belge soumis à une exigence de résidence des données doit la tenir hors périmètre tant que les conditions ne sont pas lisibles.",
-        "lastCheckedAt": "2026-08-17"
+        "lastCheckedAt": "2026-08-18"
       },
       "lastCheckedAt": "2026-08-17"
     },
@@ -1651,7 +1657,7 @@
       "focus": "recherche vectorielle et hybride",
       "officialUrl": "https://qdrant.tech/",
       "regionMode": "Cloud européen ou auto-hébergé selon offre",
-      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
+      "verificationStatus": "Non revérifié le 2026-08-18 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
       "latestAnnouncement": {
         "title": "Client officiel qdrant-client 1.19.0 publié sur PyPI",
         "publishedAt": "2026-08-04",
@@ -1659,7 +1665,7 @@
         "confidence": 92,
         "confidenceReason": "Registre de distribution officiel de l’éditeur, consulté le 13/08/2026 : la version et sa date de publication sont prouvées de façon durable. Le contenu du changement n’a pas pu être lu, la documentation et les notes de version étant inaccessibles pendant ce run. Il s’agit de la bibliothèque cliente officielle, pas de la version du moteur serveur.",
         "belgiumImpact": "Aucun effet sur la disponibilité en Belgique : artefact distribué mondialement par un registre public. L’impact éventuel est technique.",
-        "lastCheckedAt": "2026-08-17"
+        "lastCheckedAt": "2026-08-18"
       },
       "lastCheckedAt": "2026-08-17"
     },
@@ -1673,7 +1679,7 @@
       "focus": "recherche managée et RAG",
       "officialUrl": "https://www.pinecone.io/",
       "regionMode": "Cloud ; régions selon offre",
-      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
+      "verificationStatus": "Non revérifié le 2026-08-18 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
       "latestAnnouncement": null,
       "lastCheckedAt": "2026-08-17"
     },
@@ -1687,7 +1693,7 @@
       "focus": "recherche hybride, RAG et agents",
       "officialUrl": "https://weaviate.io/",
       "regionMode": "Cloud ou auto-hébergé",
-      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
+      "verificationStatus": "Non revérifié le 2026-08-18 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
       "latestAnnouncement": {
         "title": "Client officiel weaviate-client 4.22.0 publié sur PyPI",
         "publishedAt": "2026-06-18",
@@ -1695,7 +1701,7 @@
         "confidence": 92,
         "confidenceReason": "Registre de distribution officiel de l’éditeur, consulté le 13/08/2026 : la version et sa date de publication sont prouvées de façon durable. Le contenu du changement n’a pas pu être lu, la documentation et les notes de version étant inaccessibles pendant ce run. Il s’agit de la bibliothèque cliente officielle, pas de la version du moteur serveur.",
         "belgiumImpact": "Aucun effet sur la disponibilité en Belgique : artefact distribué mondialement par un registre public. L’impact éventuel est technique.",
-        "lastCheckedAt": "2026-08-17"
+        "lastCheckedAt": "2026-08-18"
       },
       "lastCheckedAt": "2026-08-17"
     },
@@ -1709,7 +1715,7 @@
       "focus": "recherche vectorielle à grande échelle",
       "officialUrl": "https://milvus.io/",
       "regionMode": "Auto-hébergé ou cloud Zilliz",
-      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
+      "verificationStatus": "Non revérifié le 2026-08-18 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
       "latestAnnouncement": {
         "title": "Client officiel pymilvus 3.0.1 publié sur PyPI — version majeure",
         "publishedAt": "2026-07-29",
@@ -1717,7 +1723,7 @@
         "confidence": 92,
         "confidenceReason": "Registre de distribution officiel de l’éditeur, consulté le 13/08/2026 : la version et sa date de publication sont prouvées de façon durable. Le contenu du changement n’a pas pu être lu, la documentation et les notes de version étant inaccessibles pendant ce run. Il s’agit de la bibliothèque cliente officielle, pas de la version du moteur serveur.",
         "belgiumImpact": "Aucun effet sur la disponibilité en Belgique. Impact de compatibilité pour les projets belges qui épinglent une version majeure antérieure.",
-        "lastCheckedAt": "2026-08-17"
+        "lastCheckedAt": "2026-08-18"
       },
       "lastCheckedAt": "2026-08-17"
     },
@@ -1731,7 +1737,7 @@
       "focus": "prototypage RAG et embeddings",
       "officialUrl": "https://www.trychroma.com/",
       "regionMode": "Local, auto-hébergé ou cloud",
-      "verificationStatus": "Non revérifié le 2026-08-17 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
+      "verificationStatus": "Non revérifié le 2026-08-18 — source éditeur refusée par la politique réseau sortante ; statut de contrôle renouvelé, aucune nouveauté qualifiée trouvée",
       "latestAnnouncement": {
         "title": "Client officiel chromadb 1.5.9 publié sur PyPI",
         "publishedAt": "2026-05-05",
@@ -1739,23 +1745,23 @@
         "confidence": 92,
         "confidenceReason": "Registre de distribution officiel de l’éditeur, consulté le 13/08/2026 : la version et sa date de publication sont prouvées de façon durable. Le contenu du changement n’a pas pu être lu, la documentation et les notes de version étant inaccessibles pendant ce run. Il s’agit de la bibliothèque cliente officielle, pas de la version du moteur serveur.",
         "belgiumImpact": "Aucun effet sur la disponibilité en Belgique : artefact distribué mondialement par un registre public. L’impact éventuel est technique.",
-        "lastCheckedAt": "2026-08-17"
+        "lastCheckedAt": "2026-08-18"
       },
       "lastCheckedAt": "2026-08-17"
     }
   ],
   "verificationMethodThisRun": {
-    "checkedAt": "2026-08-17",
+    "checkedAt": "2026-08-18",
     "reachableSources": [
       "https://platform.claude.com/docs/",
       "https://code.claude.com/docs/",
+      "https://cloud.google.com/ (pages tarifaires ; docs.cloud.google.com refusé)",
       "https://raw.githubusercontent.com/",
       "https://blog.modelcontextprotocol.io/",
       "https://pypi.org/",
-      "https://registry.npmjs.org/",
+      "https://registry.npmjs.org/ (API du registre ; www.npmjs.com refusé)",
       "https://api.github.com/ (dépôts en périmètre)"
     ],
-    "limitation": "Un registre de distribution prouve qu’une version existe et à quelle date ; il ne documente pas le contenu d’un changement. Cette limite est levée pour les chaînes SDK dont le journal de version est lisible dans le dépôt public, et demeure pour les autres. Les sites éditeurs de la grande majorité des cent outils sont refusés par la politique réseau sortante : leur statut est renouvelé sans nouveauté, ce qui signifie « non revérifié à la source » et non « inchangé ».",
-    "structuralReview": "Revue structurelle de la semaine ISO 2026-W34, exécutée le 2026-08-17. Critères appliqués : adoption, influence développeur, maturité, portée fonctionnelle, intégrations et pertinence européenne. Un mouvement retenu, motivé et documenté dans l’entrée entrante."
+    "limitation": "Un registre de distribution prouve qu’une version existe et à quelle date ; il ne documente pas le contenu d’un changement. Cette limite est levée pour les chaînes SDK dont le journal de version est versionné dans un dépôt public lisible en contenu brut, et elle subsiste ailleurs, notamment pour llama-cpp-python dont les notes de version vivent sur github.com, refusé. Pour les outils dont le domaine éditeur est refusé, l’absence de nouveauté publiée signifie qu’aucune n’a pu être établie, non qu’aucune n’existe."
   }
 }
