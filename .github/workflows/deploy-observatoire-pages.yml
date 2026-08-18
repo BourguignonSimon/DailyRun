@@ -40,6 +40,7 @@ jobs:
           python -m json.tool ObservationLLM/dashboard/data/source-registry.json >/dev/null
           python -m json.tool ObservationLLM/dashboard/data/announcements.json >/dev/null
           python -m json.tool ObservationLLM/dashboard/data/tools-catalog.json >/dev/null
+          python -m json.tool ObservationLLM/dashboard/data/formations.json >/dev/null
 
       - name: Vérifier les cadences et le catalogue
         shell: bash
@@ -78,6 +79,7 @@ jobs:
           test -f ObservationLLM/dashboard-dist/localisation-modeles.html
           test -f ObservationLLM/dashboard-dist/referentiel-sources.html
           test -f ObservationLLM/dashboard-dist/outils-ecosysteme-ia.html
+          test -f ObservationLLM/dashboard-dist/formations-ia-gratuites.html
           test -f ObservationLLM/dashboard-dist/sources.html
 
   deploy:
