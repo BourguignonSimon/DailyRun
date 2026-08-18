@@ -46,9 +46,17 @@ button, input { font: inherit; }
 .run-notice .run-notice-fix { margin-top: 8px; font-weight: 600; color: inherit; }
 .run-notice.info { border-color: var(--line); background: rgba(255,255,255,.5); }
 
-.section-nav { position: sticky; top: 10px; z-index: 10; display: flex; gap: 4px; padding: 6px; border: 1px solid rgba(16,21,18,.1); border-radius: 999px; background: rgba(255,253,248,.86); box-shadow: 0 8px 30px rgba(16,21,18,.08); backdrop-filter: blur(16px); overflow-x: auto; }
-.section-nav a { flex: 1; min-width: max-content; padding: 9px 14px; border-radius: 999px; text-align: center; text-decoration: none; font-size: .8rem; font-weight: 800; }
+.section-nav { position: sticky; top: 10px; z-index: 10; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 4px; padding: 6px; border: 1px solid rgba(16,21,18,.1); border-radius: 18px; background: rgba(255,253,248,.92); box-shadow: 0 8px 30px rgba(16,21,18,.08); backdrop-filter: blur(16px); }
+.section-nav a { min-width: 0; padding: 10px 8px; border-radius: 11px; text-align: center; text-decoration: none; font-size: .76rem; font-weight: 800; line-height: 1.15; }
 .section-nav a:hover, .section-nav a:focus-visible { background: var(--ink); color: white; outline: none; }
+
+.site-map-section { padding: 76px 0 20px; }
+.site-map-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; }
+.site-map-card { min-height: 150px; display: flex; flex-direction: column; justify-content: space-between; padding: 18px; border: 1px solid var(--line); border-radius: 16px; background: var(--panel); text-decoration: none; transition: transform .18s, border-color .18s, box-shadow .18s; }
+.site-map-card:hover, .site-map-card:focus-visible { transform: translateY(-2px); border-color: var(--ink); box-shadow: 0 10px 24px rgba(16,21,18,.08); outline: none; }
+.site-map-card span { color: var(--muted); font-size: .65rem; font-weight: 900; letter-spacing: .05em; text-transform: uppercase; }
+.site-map-card strong { margin: 14px 0 5px; font-family: Georgia, serif; font-size: 1.18rem; font-weight: 500; line-height: 1.05; }
+.site-map-card small { color: var(--muted); font-size: .7rem; line-height: 1.35; }
 
 section { scroll-margin-top: 90px; }
 .hero { padding: 84px 0 44px; }
@@ -225,7 +233,7 @@ noscript { display: block; padding: 1rem; text-align: center; background: #ffdda
 @media (max-width: 920px) {
   .hero-grid, .hardware-layout { grid-template-columns: 1fr; }
   .signal-card { transform: none; max-width: 520px; }
-  .metrics, .decision-grid, .cadence-grid, .actor-grid, .hosting-grid, .announcement-grid, .tool-grid { grid-template-columns: repeat(2, 1fr); }
+  .metrics, .decision-grid, .cadence-grid, .actor-grid, .hosting-grid, .announcement-grid, .tool-grid, .site-map-grid { grid-template-columns: repeat(2, 1fr); }
   .metrics article:nth-child(2) { border-right: 0; }
   .metrics article:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
   .section-heading { align-items: start; flex-direction: column; }
@@ -235,10 +243,12 @@ noscript { display: block; padding: 1rem; text-align: center; background: #ffdda
 @media (max-width: 620px) {
   .site-header, .section-nav, main, footer { width: min(100% - 24px, 1180px); }
   .site-header { align-items: flex-start; }
+  .section-nav { position: static; grid-template-columns: repeat(2, minmax(0, 1fr)); border-radius: 16px; }
+  .section-nav a { padding: 11px 7px; font-size: .73rem; }
   .run-chip { max-width: 150px; }
   .hero { padding-top: 55px; }
   h1 { font-size: clamp(2.8rem, 15vw, 4.5rem); }
-  .metrics, .decision-grid, .cadence-grid, .actor-grid, .hosting-grid, .source-grid, .announcement-grid, .tool-grid, .document-grid, .model-choice, .hardware-picker { grid-template-columns: 1fr; }
+  .metrics, .decision-grid, .cadence-grid, .actor-grid, .hosting-grid, .source-grid, .announcement-grid, .tool-grid, .document-grid, .model-choice, .hardware-picker, .site-map-grid { grid-template-columns: 1fr; }
   .cadence-summary { align-items: flex-start; flex-direction: column; }
   .cadence-summary span { text-align: left; }
   .metrics article { border-right: 0; border-bottom: 1px solid var(--line); }

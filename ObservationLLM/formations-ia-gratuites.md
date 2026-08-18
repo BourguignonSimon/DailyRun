@@ -1,6 +1,6 @@
 # Formations IA gratuites et nouveautés des grands acteurs
 
-**Contrôle : 18 août 2026 — résident belge.** Cette page recense des formations dont le contenu est annoncé gratuit ou accessible sans paiement. « Gratuit » décrit l’accès au contenu : un compte, des crédits cloud, des labs, un badge ou un certificat peuvent rester soumis à des conditions. Les prix et la TVA ne sont volontairement pas traités ici.
+**Contrôle : 18 août 2026 — perspective européenne, avec repère belge.** Cette page recense des formations dont le contenu est annoncé gratuit ou accessible sans paiement. « Gratuit » décrit l’accès au contenu : un compte, des crédits cloud, des labs, un badge ou un certificat peuvent rester soumis à des conditions. Les prix et la TVA ne sont volontairement pas traités ici.
 
 ## Sélection contrôlée
 
