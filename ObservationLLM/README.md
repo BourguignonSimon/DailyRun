@@ -17,6 +17,7 @@ Contrôle: **18 août 2026**. **Un même modèle porte deux prix officiels au 1e
 - [Localisation, distribution et hébergement des modèles](localisation-modeles.md)
 - [Sources de référence et indices de confiance](referentiel-sources.md)
 - [100 outils majeurs de l’écosystème IA](outils-ecosysteme-ia.md)
+- [Formations IA gratuites et nouveautés des grands acteurs](formations-ia-gratuites.md)
 - [Prompt consolidé du run journalier](prompt-run-journalier.md)
 - [Registre des sources](sources.md)
 

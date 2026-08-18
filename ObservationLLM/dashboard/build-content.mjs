@@ -15,6 +15,7 @@ const documents = [
   { source: "localisation-modeles.md", output: "localisation-modeles.html", title: "Localisation des modèles", label: "Régions" },
   { source: "referentiel-sources.md", output: "referentiel-sources.html", title: "Sources de référence", label: "Confiance" },
   { source: "outils-ecosysteme-ia.md", output: "outils-ecosysteme-ia.html", title: "100 outils IA majeurs", label: "Écosystème" },
+  { source: "formations-ia-gratuites.md", output: "formations-ia-gratuites.html", title: "Formations IA gratuites", label: "Formation" },
   { source: "sources.md", output: "sources.html", title: "Registre des sources", label: "Traçabilité" },
 ];
 

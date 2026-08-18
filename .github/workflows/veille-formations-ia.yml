@@ -1,0 +1,50 @@
+name: Veille formations IA
+
+on:
+  schedule:
+    - cron: "15 6 * * 1"
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - "ObservationLLM/formations-ia-gratuites.md"
+      - "ObservationLLM/dashboard/data/formations.json"
+      - "ObservationLLM/dashboard/build-content.mjs"
+      - ".github/workflows/veille-formations-ia.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  validate-formations:
+    name: Valider le catalogue formations
+    runs-on: ubuntu-latest
+    steps:
+      - name: Récupérer le dépôt
+        uses: actions/checkout@v4
+      - name: Installer Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Vérifier les données du catalogue
+        shell: bash
+        run: |
+          python -m json.tool ObservationLLM/dashboard/data/formations.json >/dev/null
+          python - <<'PY'
+          import json
+          from datetime import date
+          from pathlib import Path
+          data = json.loads(Path('ObservationLLM/dashboard/data/formations.json').read_text(encoding='utf-8'))
+          courses = data.get('courses', [])
+          assert len(courses) >= 8, 'Le catalogue doit conserver au moins huit entrées'
+          assert len({c['id'] for c in courses}) == len(courses), 'Identifiants de cours dupliqués'
+          assert all(c['url'].startswith('https://') for c in courses), 'URL de cours non HTTPS'
+          assert all(0 <= c['confidence'] <= 100 for c in courses), 'Indice hors limites'
+          assert data['checkedAt'] <= date.today().isoformat(), 'Date de contrôle future'
+          assert data.get('marketUpdates'), 'Les nouveautés des grands acteurs sont requises'
+          PY
+      - name: Générer et vérifier la page
+        shell: bash
+        run: |
+          node ObservationLLM/dashboard/build-content.mjs "$RUNNER_TEMP/observation-llm-site"
+          test -f "$RUNNER_TEMP/observation-llm-site/formations-ia-gratuites.html"
+          test -f "$RUNNER_TEMP/observation-llm-site/data/formations.json"
