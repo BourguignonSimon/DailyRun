@@ -184,7 +184,9 @@ function renderAnnouncements(announcements) {
     const card = document.createElement("article");
     card.className = "announcement-card";
     const evidence = item.evidence.map((source) => `<a href="${source.url}" target="_blank" rel="noreferrer">${source.label} ↗</a>`).join("");
-    const signals = item.signals.map((source) => `<a href="${source.url}" target="_blank" rel="noreferrer">${source.label}</a>`).join(" · ");
+    const signals = item.signals.map((source) => (typeof source === "string"
+      ? source
+      : `<a href="${source.url}" target="_blank" rel="noreferrer">${source.label}</a>`)).join(" · ");
     card.innerHTML = `<div class="announcement-meta"><span class="tag">${item.category}</span><time datetime="${item.publishedAt}">${formatDate(item.publishedAt)}</time></div><h3>${item.title}</h3><p>${item.summary}</p><div class="announcement-confidence"><div class="confidence-ring" style="--score:${item.confidence}"><strong>${item.confidence}</strong><span>/100</span></div><div><strong>Confiance ${item.confidenceLabel.toLocaleLowerCase("fr")}</strong><small>${item.confidenceReason}</small></div></div><div class="announcement-links">${evidence}</div><small class="signal-sources">Détection : ${signals}</small>${item.caveat ? `<p class="announcement-caveat"><strong>Réserve :</strong> ${item.caveat}</p>` : ""}`;
     return card;
   }));
