@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-08-19",
+  "checkedAt": "2026-08-20",
   "scoreMeaning": "Aptitude de la source à prouver les sujets indiqués, et non vérité universelle.",
   "sources": [
     {
@@ -17,27 +17,33 @@
       ],
       "confidence": 98,
       "rationale": "Documentation opérationnelle du fournisseur",
-      "accessibility": "Inaccessible le 2026-08-19 depuis l’environnement d’exécution (politique réseau sortante)",
-      "last_verified_at": "2026-08-19",
+      "accessibility": "Inaccessible le 2026-08-20 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-20",
       "lastAccessResult": "bloqué par la politique réseau sortante (refus au tunnel CONNECT du mandataire, réponse 403 de la passerelle)"
     },
     {
       "id": "R02",
-      "name": "Anthropic Platform documentation",
+      "name": "Documentation et notes de version de la plateforme Claude",
       "actor": "Anthropic",
       "baseUrl": "https://platform.claude.com/docs/",
       "primary": true,
       "topics": [
         "API",
-        "prix",
+        "Files API",
+        "Skills API",
         "cache",
-        "résidence"
+        "dépréciations",
+        "notes de version",
+        "prix",
+        "résidence",
+        "tarifs"
       ],
       "confidence": 98,
-      "rationale": "Documentation opérationnelle du fournisseur. Ouverte directement le 14 août 2026 : a établi l’annulation de la hausse tarifaire de Claude Sonnet 5 et le tableau complet des dépréciations de modèles.",
-      "accessibility": "Accessible le 2026-08-19 depuis l’environnement d’exécution",
-      "last_verified_at": "2026-08-19",
-      "lastAccessResult": "ouvert directement"
+      "rationale": "Documentation opérationnelle du fournisseur, incluant les notes de version datées de la plateforme, la documentation de fonctionnalité, la page tarifaire et la page des dépréciations. Canal ayant porté le fait dominant du contrôle du 2026-08-20 : l’entrée du 19 août 2026 établissant la disponibilité générale des API Files et Skills, la restriction de domaines des outils web des agents gérés et la disponibilité générale de la gestion des utilisateurs de l’Admin API.",
+      "accessibility": "Accessible le 2026-08-20 depuis l’environnement d’exécution (réponse HTTP 200 en accès direct)",
+      "last_verified_at": "2026-08-20",
+      "lastAccessResult": "réponse HTTP 200",
+      "urlTemplate": "https://docs.claude.com/en/release-notes/api"
     },
     {
       "id": "R03",
@@ -53,8 +59,8 @@
       ],
       "confidence": 98,
       "rationale": "Documentation officielle du service",
-      "accessibility": "Inaccessible le 2026-08-19 depuis l’environnement d’exécution (politique réseau sortante)",
-      "last_verified_at": "2026-08-19",
+      "accessibility": "Inaccessible le 2026-08-20 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-20",
       "lastAccessResult": "bloqué par la politique réseau sortante (refus au tunnel CONNECT du mandataire, réponse 403 de la passerelle)"
     },
     {
@@ -72,9 +78,9 @@
       ],
       "confidence": 98,
       "rationale": "Documentation cloud directement responsable des régions",
-      "accessibility": "Partiellement accessible le 2026-08-19 : l’hôte cloud.google.com répond et la page tarifaire de l’IA générative s’ouvre directement — elle porte la principale constatation du run —, mais le chemin de documentation redirige vers docs.cloud.google.com, qui reste refusé.",
-      "last_verified_at": "2026-08-19",
-      "lastAccessResult": "ouvert directement sur cloud.google.com pour la page tarifaire, récupérée deux fois avec un contenu identique ; chemin /docs/ redirigé vers docs.cloud.google.com, refusé",
+      "accessibility": "Partiellement accessible le 2026-08-20 : les pages tarifaires de cloud.google.com répondent en accès direct et portent la grille des modèles partenaires ; le chemin de documentation /vertex-ai/generative-ai/docs/ et le sous-domaine docs.cloud.google.com restent refusés",
+      "last_verified_at": "2026-08-20",
+      "lastAccessResult": "réponse partielle : certains chemins répondent, d’autres sont refusés",
       "accessibilityNote": "Accessibilité variable d’un run à l’autre : ouverte le 2026-08-14, refusée du 2026-08-15 au 2026-08-17, de nouveau ouverte les 2026-08-18 et 2026-08-19 sur cloud.google.com. À retester à chaque run. Le sous-domaine docs.cloud.google.com reste refusé.",
       "urlPattern": "https://cloud.google.com/gemini-enterprise-agent-platform/generative-ai/pricing — page tarifaire ouverte directement ; https://cloud.google.com/vertex-ai/generative-ai/pricing redirige (301) vers cette adresse"
     },
@@ -92,8 +98,8 @@
       ],
       "confidence": 98,
       "rationale": "Documentation officielle Azure",
-      "accessibility": "Inaccessible le 2026-08-19 depuis l’environnement d’exécution (politique réseau sortante)",
-      "last_verified_at": "2026-08-19",
+      "accessibility": "Inaccessible le 2026-08-20 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-20",
       "lastAccessResult": "bloqué par la politique réseau sortante (refus au tunnel CONNECT du mandataire, réponse 403 de la passerelle)"
     },
     {
@@ -110,8 +116,8 @@
       ],
       "confidence": 98,
       "rationale": "Documentation opérationnelle AWS",
-      "accessibility": "Inaccessible le 2026-08-19 depuis l’environnement d’exécution (politique réseau sortante)",
-      "last_verified_at": "2026-08-19",
+      "accessibility": "Inaccessible le 2026-08-20 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-20",
       "lastAccessResult": "bloqué par la politique réseau sortante (refus au tunnel CONNECT du mandataire, réponse 403 de la passerelle)"
     },
     {
@@ -128,8 +134,8 @@
       ],
       "confidence": 98,
       "rationale": "Documentation et cartes modèles officielles",
-      "accessibility": "Inaccessible le 2026-08-19 depuis l’environnement d’exécution (politique réseau sortante)",
-      "last_verified_at": "2026-08-19",
+      "accessibility": "Inaccessible le 2026-08-20 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-20",
       "lastAccessResult": "bloqué par la politique réseau sortante (refus au tunnel CONNECT du mandataire, réponse 403 de la passerelle)"
     },
     {
@@ -146,8 +152,8 @@
       ],
       "confidence": 96,
       "rationale": "Documentation du distributeur et hébergeur",
-      "accessibility": "Inaccessible le 2026-08-19 depuis l’environnement d’exécution (politique réseau sortante)",
-      "last_verified_at": "2026-08-19",
+      "accessibility": "Inaccessible le 2026-08-20 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-20",
       "lastAccessResult": "bloqué par la politique réseau sortante (refus au tunnel CONNECT du mandataire, réponse 403 de la passerelle)"
     },
     {
@@ -164,8 +170,8 @@
       ],
       "confidence": 97,
       "rationale": "Documentation officielle du produit",
-      "accessibility": "Inaccessible le 2026-08-19 depuis l’environnement d’exécution (politique réseau sortante)",
-      "last_verified_at": "2026-08-19",
+      "accessibility": "Inaccessible le 2026-08-20 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-20",
       "lastAccessResult": "bloqué par la politique réseau sortante (refus au tunnel CONNECT du mandataire, réponse 403 de la passerelle)"
     },
     {
@@ -182,8 +188,8 @@
       ],
       "confidence": 96,
       "rationale": "Documentation officielle de l’API",
-      "accessibility": "Inaccessible le 2026-08-19 depuis l’environnement d’exécution (politique réseau sortante)",
-      "last_verified_at": "2026-08-19",
+      "accessibility": "Inaccessible le 2026-08-20 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-20",
       "lastAccessResult": "bloqué par la politique réseau sortante (refus au tunnel CONNECT du mandataire, réponse 403 de la passerelle)"
     },
     {
@@ -200,8 +206,8 @@
       ],
       "confidence": 95,
       "rationale": "Documentation officielle de l’API",
-      "accessibility": "Inaccessible le 2026-08-19 depuis l’environnement d’exécution (politique réseau sortante)",
-      "last_verified_at": "2026-08-19",
+      "accessibility": "Inaccessible le 2026-08-20 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-20",
       "lastAccessResult": "bloqué par la politique réseau sortante (refus au tunnel CONNECT du mandataire, réponse 403 de la passerelle)"
     },
     {
@@ -218,8 +224,8 @@
       ],
       "confidence": 96,
       "rationale": "Documentation officielle de la plateforme",
-      "accessibility": "Inaccessible le 2026-08-19 depuis l’environnement d’exécution (politique réseau sortante)",
-      "last_verified_at": "2026-08-19",
+      "accessibility": "Inaccessible le 2026-08-20 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-20",
       "lastAccessResult": "bloqué par la politique réseau sortante (refus au tunnel CONNECT du mandataire, réponse 403 de la passerelle)"
     },
     {
@@ -236,8 +242,8 @@
       ],
       "confidence": 96,
       "rationale": "Documentation officielle de l’API",
-      "accessibility": "Inaccessible le 2026-08-19 depuis l’environnement d’exécution (politique réseau sortante)",
-      "last_verified_at": "2026-08-19",
+      "accessibility": "Inaccessible le 2026-08-20 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-20",
       "lastAccessResult": "bloqué par la politique réseau sortante (refus au tunnel CONNECT du mandataire, réponse 403 de la passerelle)"
     },
     {
@@ -254,8 +260,8 @@
       ],
       "confidence": 96,
       "rationale": "Documentation officielle de la plateforme",
-      "accessibility": "Inaccessible le 2026-08-19 depuis l’environnement d’exécution (politique réseau sortante)",
-      "last_verified_at": "2026-08-19",
+      "accessibility": "Inaccessible le 2026-08-20 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-20",
       "lastAccessResult": "bloqué par la politique réseau sortante (refus au tunnel CONNECT du mandataire, réponse 403 de la passerelle)"
     },
     {
@@ -269,8 +275,8 @@
       ],
       "confidence": 99,
       "rationale": "Source institutionnelle du taux de référence",
-      "accessibility": "Inaccessible le 2026-08-19 depuis l’environnement d’exécution (politique réseau sortante)",
-      "last_verified_at": "2026-08-19",
+      "accessibility": "Inaccessible le 2026-08-20 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-20",
       "lastAccessResult": "bloqué par la politique réseau sortante (refus au tunnel CONNECT du mandataire, réponse 403 de la passerelle)"
     },
     {
@@ -288,8 +294,8 @@
       ],
       "confidence": 78,
       "rationale": "Méthodologie indépendante utile, à corroborer avec les fournisseurs",
-      "accessibility": "Inaccessible le 2026-08-19 depuis l’environnement d’exécution (politique réseau sortante)",
-      "last_verified_at": "2026-08-19",
+      "accessibility": "Inaccessible le 2026-08-20 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-20",
       "lastAccessResult": "bloqué par la politique réseau sortante (refus au tunnel CONNECT du mandataire, réponse 403 de la passerelle)"
     },
     {
@@ -307,8 +313,8 @@
       ],
       "confidence": 82,
       "rationale": "Compte officiel utile pour la fraîcheur ; chaque fait doit être corroboré par une page durable",
-      "accessibility": "Inaccessible le 2026-08-19 depuis l’environnement d’exécution (politique réseau sortante)",
-      "last_verified_at": "2026-08-19",
+      "accessibility": "Inaccessible le 2026-08-20 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-20",
       "lastAccessResult": "bloqué par la politique réseau sortante (refus au tunnel CONNECT du mandataire, réponse 403 de la passerelle)"
     },
     {
@@ -326,12 +332,12 @@
       ],
       "confidence": 82,
       "rationale": "Compte officiel vérifié comme signal ; documentation requise pour les détails",
-      "accessibility": "Inaccessible le 2026-08-19 depuis l’environnement d’exécution (politique réseau sortante)",
-      "last_verified_at": "2026-08-19",
+      "accessibility": "Inaccessible le 2026-08-20 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-20",
       "lastAccessResult": "bloqué par la politique réseau sortante (refus au tunnel CONNECT du mandataire, réponse 403 de la passerelle)",
       "trustedDaily": true,
       "promotionEvidence": "https://platform.claude.com/docs/en/about-claude/pricing",
-      "trustBasis": "Promu parce qu’un post de ce compte officiel a conduit à une annonce notée 98/100 grâce à une corroboration primaire durable. La promotion augmente la priorité de surveillance ; elle ne confère aucune véracité automatique aux futurs posts, qui restent des signaux à corroborer. Critères revus le 2026-08-15.",
+      "trustBasis": "Promu parce qu’un post de ce compte officiel a conduit à une annonce notée 98/100 grâce à une corroboration primaire durable. La promotion augmente la priorité de surveillance ; elle ne confère aucune véracité automatique aux futurs posts, qui restent des signaux à corroborer. Critères revus le 2026-08-15. Réexaminé le 2026-08-20 : la promotion repose sur une corroboration primaire durable acquise antérieurement, qui n’est pas remise en cause. Aucun post n’a pu être relu ce jour, x.com étant refusé ; la promotion augmente la priorité de surveillance et jamais la véracité automatique d’un post futur.",
       "promotionReviewedAt": "2026-08-19"
     },
     {
@@ -349,8 +355,8 @@
       ],
       "confidence": 82,
       "rationale": "Compte officiel de recherche ; recouper les disponibilités avec Google AI et Vertex AI",
-      "accessibility": "Inaccessible le 2026-08-19 depuis l’environnement d’exécution (politique réseau sortante)",
-      "last_verified_at": "2026-08-19",
+      "accessibility": "Inaccessible le 2026-08-20 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-20",
       "lastAccessResult": "bloqué par la politique réseau sortante (refus au tunnel CONNECT du mandataire, réponse 403 de la passerelle)"
     },
     {
@@ -369,10 +375,10 @@
       "confidence": 82,
       "trustedDaily": true,
       "promotionEvidence": "https://research.meta.ai/blog/introducing-muse-glimmer-open-agentic-model",
-      "trustBasis": "Promu parce qu’un post de ce compte officiel a conduit à une annonce notée 96/100 grâce à une corroboration primaire durable. La promotion augmente la priorité de surveillance ; elle ne confère aucune véracité automatique aux futurs posts, qui restent des signaux à corroborer. Critères revus le 2026-08-15.",
+      "trustBasis": "Promu parce qu’un post de ce compte officiel a conduit à une annonce notée 96/100 grâce à une corroboration primaire durable. La promotion augmente la priorité de surveillance ; elle ne confère aucune véracité automatique aux futurs posts, qui restent des signaux à corroborer. Critères revus le 2026-08-15. Réexaminé le 2026-08-20 : la promotion repose sur une corroboration primaire durable acquise antérieurement, qui n’est pas remise en cause. Aucun post n’a pu être relu ce jour, x.com étant refusé ; la promotion augmente la priorité de surveillance et jamais la véracité automatique d’un post futur.",
       "rationale": "Compte officiel de l’équipe IA ; dépôt ou publication de recherche requis pour confirmer chaque fait",
-      "accessibility": "Inaccessible le 2026-08-19 depuis l’environnement d’exécution (politique réseau sortante)",
-      "last_verified_at": "2026-08-19",
+      "accessibility": "Inaccessible le 2026-08-20 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-20",
       "lastAccessResult": "bloqué par la politique réseau sortante (refus au tunnel CONNECT du mandataire, réponse 403 de la passerelle)",
       "promotionReviewedAt": "2026-08-19"
     },
@@ -392,10 +398,10 @@
       "confidence": 82,
       "trustedDaily": true,
       "promotionEvidence": "https://docs.mistral.ai/models/model-cards/shieldstral-1-0",
-      "trustBasis": "Promu parce qu’un post de ce compte officiel a conduit à une annonce notée 94/100 grâce à une corroboration primaire durable. La promotion augmente la priorité de surveillance ; elle ne confère aucune véracité automatique aux futurs posts, qui restent des signaux à corroborer. Critères revus le 2026-08-15.",
+      "trustBasis": "Promu parce qu’un post de ce compte officiel a conduit à une annonce notée 94/100 grâce à une corroboration primaire durable. La promotion augmente la priorité de surveillance ; elle ne confère aucune véracité automatique aux futurs posts, qui restent des signaux à corroborer. Critères revus le 2026-08-15. Réexaminé le 2026-08-20 : la promotion repose sur une corroboration primaire durable acquise antérieurement, qui n’est pas remise en cause. Aucun post n’a pu être relu ce jour, x.com étant refusé ; la promotion augmente la priorité de surveillance et jamais la véracité automatique d’un post futur.",
       "rationale": "Compte officiel ; les cartes modèles et la documentation restent les preuves de référence pour chaque fait",
-      "accessibility": "Inaccessible le 2026-08-19 depuis l’environnement d’exécution (politique réseau sortante)",
-      "last_verified_at": "2026-08-19",
+      "accessibility": "Inaccessible le 2026-08-20 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-20",
       "lastAccessResult": "bloqué par la politique réseau sortante (refus au tunnel CONNECT du mandataire, réponse 403 de la passerelle)",
       "promotionReviewedAt": "2026-08-19"
     },
@@ -415,10 +421,10 @@
       "confidence": 80,
       "trustedDaily": true,
       "promotionEvidence": "https://build.nvidia.com/nvidia/nemotron-3.5-lightning-30b-a3b/modelcard",
-      "trustBasis": "Promu parce qu’un post de ce compte officiel a conduit à une annonce notée 94/100 grâce à une corroboration primaire durable. La promotion augmente la priorité de surveillance ; elle ne confère aucune véracité automatique aux futurs posts, qui restent des signaux à corroborer. Critères revus le 2026-08-15.",
+      "trustBasis": "Promu parce qu’un post de ce compte officiel a conduit à une annonce notée 94/100 grâce à une corroboration primaire durable. La promotion augmente la priorité de surveillance ; elle ne confère aucune véracité automatique aux futurs posts, qui restent des signaux à corroborer. Critères revus le 2026-08-15. Réexaminé le 2026-08-20 : la promotion repose sur une corroboration primaire durable acquise antérieurement, qui n’est pas remise en cause. Aucun post n’a pu être relu ce jour, x.com étant refusé ; la promotion augmente la priorité de surveillance et jamais la véracité automatique d’un post futur.",
       "rationale": "Compte corporate officiel ; isoler les annonces IA et confirmer chaque caractéristique avec les artefacts techniques",
-      "accessibility": "Inaccessible le 2026-08-19 depuis l’environnement d’exécution (politique réseau sortante)",
-      "last_verified_at": "2026-08-19",
+      "accessibility": "Inaccessible le 2026-08-20 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-20",
       "lastAccessResult": "bloqué par la politique réseau sortante (refus au tunnel CONNECT du mandataire, réponse 403 de la passerelle)",
       "promotionReviewedAt": "2026-08-19"
     },
@@ -437,8 +443,8 @@
       ],
       "confidence": 80,
       "rationale": "Compte du projet Qwen ; une annonce de poids n’est confirmée qu’après publication du dépôt et de la licence",
-      "accessibility": "Inaccessible le 2026-08-19 depuis l’environnement d’exécution (politique réseau sortante)",
-      "last_verified_at": "2026-08-19",
+      "accessibility": "Inaccessible le 2026-08-20 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-20",
       "lastAccessResult": "bloqué par la politique réseau sortante (refus au tunnel CONNECT du mandataire, réponse 403 de la passerelle)"
     },
     {
@@ -456,8 +462,8 @@
       ],
       "confidence": 78,
       "rationale": "Excellent signal d’écosystème, mais l’identité du déposant et la carte modèle doivent être contrôlées",
-      "accessibility": "Inaccessible le 2026-08-19 depuis l’environnement d’exécution (politique réseau sortante)",
-      "last_verified_at": "2026-08-19",
+      "accessibility": "Inaccessible le 2026-08-20 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-20",
       "lastAccessResult": "bloqué par la politique réseau sortante (refus au tunnel CONNECT du mandataire, réponse 403 de la passerelle)"
     },
     {
@@ -475,8 +481,8 @@
       ],
       "confidence": 96,
       "rationale": "Documentation officielle pour une collecte conforme et reproductible des signaux publics",
-      "accessibility": "Inaccessible le 2026-08-19 depuis l’environnement d’exécution (politique réseau sortante)",
-      "last_verified_at": "2026-08-19",
+      "accessibility": "Inaccessible le 2026-08-20 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-20",
       "lastAccessResult": "bloqué par la politique réseau sortante (refus au tunnel CONNECT du mandataire, réponse 403 de la passerelle)"
     },
     {
@@ -495,8 +501,8 @@
       ],
       "confidence": 96,
       "rationale": "Flux officiel daté avec liens vers les annonces détaillées",
-      "accessibility": "Inaccessible le 2026-08-19 depuis l’environnement d’exécution (politique réseau sortante)",
-      "last_verified_at": "2026-08-19",
+      "accessibility": "Inaccessible le 2026-08-20 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-20",
       "lastAccessResult": "bloqué par la politique réseau sortante (refus au tunnel CONNECT du mandataire, réponse 403 de la passerelle)"
     },
     {
@@ -515,8 +521,8 @@
       ],
       "confidence": 97,
       "rationale": "Journal officiel versionné et daté des changements produit",
-      "accessibility": "Inaccessible le 2026-08-19 depuis l’environnement d’exécution (politique réseau sortante)",
-      "last_verified_at": "2026-08-19",
+      "accessibility": "Inaccessible le 2026-08-20 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-20",
       "lastAccessResult": "bloqué par la politique réseau sortante (refus au tunnel CONNECT du mandataire, réponse 403 de la passerelle)"
     },
     {
@@ -535,8 +541,8 @@
       ],
       "confidence": 72,
       "rationale": "Sélection communautaire utile pour découvrir, mais chaque article doit être lu et qualifié",
-      "accessibility": "Inaccessible le 2026-08-19 depuis l’environnement d’exécution (politique réseau sortante)",
-      "last_verified_at": "2026-08-19",
+      "accessibility": "Inaccessible le 2026-08-20 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-20",
       "lastAccessResult": "bloqué par la politique réseau sortante (refus au tunnel CONNECT du mandataire, réponse 403 de la passerelle)"
     },
     {
@@ -555,8 +561,8 @@
       ],
       "confidence": 68,
       "rationale": "Texte original des auteurs, généralement sans validation par les pairs au moment de la détection",
-      "accessibility": "Inaccessible le 2026-08-19 depuis l’environnement d’exécution (politique réseau sortante)",
-      "last_verified_at": "2026-08-19",
+      "accessibility": "Inaccessible le 2026-08-20 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-20",
       "lastAccessResult": "bloqué par la politique réseau sortante (refus au tunnel CONNECT du mandataire, réponse 403 de la passerelle)"
     },
     {
@@ -575,9 +581,9 @@
       ],
       "confidence": 97,
       "rationale": "Releases du dépôt officiel, à relier à la spécification et au guide de migration",
-      "accessibility": "Inaccessible le 2026-08-19 depuis l’environnement d’exécution (politique réseau sortante)",
-      "last_verified_at": "2026-08-19",
-      "lastAccessResult": "hôte github.com refusé : réponse 403 sur la page des publications de version",
+      "accessibility": "Inaccessible le 2026-08-20 : github.com est refusé par la politique réseau sortante (403 au tunnel CONNECT)",
+      "last_verified_at": "2026-08-20",
+      "lastAccessResult": "bloqué par la politique réseau sortante (refus au tunnel CONNECT, 403 de la passerelle)",
       "accessibilityNote": "Refus distinct des autres : le mandataire répond 403 au lieu d’un échec de tunnel."
     },
     {
@@ -597,10 +603,10 @@
       "confidence": 86,
       "trustedDaily": true,
       "promotionEvidence": "https://github.blog/changelog/2026-08-11-copilot-memory-and-ollama-in-github-copilot-for-jetbrains/",
-      "trustBasis": "Promu parce qu’un post de ce compte officiel a conduit à une annonce notée 97/100 grâce à une corroboration primaire durable. La promotion augmente la priorité de surveillance ; elle ne confère aucune véracité automatique aux futurs posts, qui restent des signaux à corroborer. Critères revus le 2026-08-15.",
+      "trustBasis": "Promu parce qu’un post de ce compte officiel a conduit à une annonce notée 97/100 grâce à une corroboration primaire durable. La promotion augmente la priorité de surveillance ; elle ne confère aucune véracité automatique aux futurs posts, qui restent des signaux à corroborer. Critères revus le 2026-08-15. Réexaminé le 2026-08-20 : la promotion repose sur une corroboration primaire durable acquise antérieurement, qui n’est pas remise en cause. Aucun post n’a pu être relu ce jour, x.com étant refusé ; la promotion augmente la priorité de surveillance et jamais la véracité automatique d’un post futur.",
       "rationale": "Compte officiel spécialisé ; chaque post est relié au changelog durable avant publication certaine",
-      "accessibility": "Inaccessible le 2026-08-19 depuis l’environnement d’exécution (politique réseau sortante)",
-      "last_verified_at": "2026-08-19",
+      "accessibility": "Inaccessible le 2026-08-20 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-20",
       "lastAccessResult": "bloqué par la politique réseau sortante (refus au tunnel CONNECT du mandataire, réponse 403 de la passerelle)",
       "promotionReviewedAt": "2026-08-19"
     },
@@ -621,8 +627,8 @@
       ],
       "confidence": 76,
       "rationale": "Newsletter technique datée et riche en liens ; chaque information matérielle doit être vérifiée dans la source originale",
-      "accessibility": "Inaccessible le 2026-08-19 depuis l’environnement d’exécution (politique réseau sortante)",
-      "last_verified_at": "2026-08-19",
+      "accessibility": "Inaccessible le 2026-08-20 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-20",
       "lastAccessResult": "bloqué par la politique réseau sortante (refus au tunnel CONNECT du mandataire, réponse 403 de la passerelle)",
       "mandatoryDailyEntryPoint": true,
       "accessibilityNote": "Le numéro du jour https://tldr.tech/ai/2026-08-15 et la page de repli https://tldr.tech/ai/ ont été testés séparément le 2026-08-15 : les deux sont refusés au tunnel CONNECT."
@@ -643,8 +649,8 @@
       ],
       "confidence": 82,
       "rationale": "Rédaction technologique établie ; utile pour le contexte et les annonces, à recouper avec les sources primaires pour les caractéristiques",
-      "accessibility": "Inaccessible le 2026-08-19 depuis l’environnement d’exécution (politique réseau sortante)",
-      "last_verified_at": "2026-08-19",
+      "accessibility": "Inaccessible le 2026-08-20 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-20",
       "lastAccessResult": "bloqué par la politique réseau sortante (refus au tunnel CONNECT du mandataire, réponse 403 de la passerelle)",
       "mandatoryDailyEntryPoint": true
     },
@@ -664,8 +670,8 @@
       ],
       "confidence": 80,
       "rationale": "Couverture spécialisée de l’IA d’entreprise ; confirmer prix, performances et disponibilité dans les documents d’origine",
-      "accessibility": "Inaccessible le 2026-08-19 depuis l’environnement d’exécution (politique réseau sortante)",
-      "last_verified_at": "2026-08-19",
+      "accessibility": "Inaccessible le 2026-08-20 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-20",
       "lastAccessResult": "bloqué par la politique réseau sortante (refus au tunnel CONNECT du mandataire, réponse 403 de la passerelle)",
       "mandatoryDailyEntryPoint": true
     },
@@ -685,8 +691,8 @@
       ],
       "confidence": 66,
       "rationale": "Utile pour détecter tôt des changements visibles dans les produits ; les fuites et rumeurs ne sont jamais publiées comme faits certains sans confirmation officielle",
-      "accessibility": "Inaccessible le 2026-08-19 depuis l’environnement d’exécution (politique réseau sortante)",
-      "last_verified_at": "2026-08-19",
+      "accessibility": "Inaccessible le 2026-08-20 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-20",
       "lastAccessResult": "bloqué par la politique réseau sortante (refus au tunnel CONNECT du mandataire, réponse 403 de la passerelle)",
       "mandatoryDailyEntryPoint": true
     },
@@ -707,8 +713,8 @@
       ],
       "confidence": 74,
       "rationale": "Plateforme de dialogue et de commentaires experts ; les opinions sont attribuées à leurs auteurs et ne remplacent pas les données ou textes primaires",
-      "accessibility": "Inaccessible le 2026-08-19 depuis l’environnement d’exécution (politique réseau sortante)",
-      "last_verified_at": "2026-08-19",
+      "accessibility": "Inaccessible le 2026-08-20 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-20",
       "lastAccessResult": "bloqué par la politique réseau sortante (refus au tunnel CONNECT du mandataire, réponse 403 de la passerelle)",
       "mandatoryDailyEntryPoint": true,
       "accessibilityNote": "Le site canonique https://ai-frontiers.org/ a été testé en plus de la lettre : les deux sont refusés."
@@ -730,8 +736,8 @@
       ],
       "confidence": 96,
       "rationale": "Portail officiel des projets, laboratoires et publications NVIDIA ; les résultats restent déclarés par le fournisseur lorsqu’ils ne sont pas reproduits indépendamment",
-      "accessibility": "Inaccessible le 2026-08-19 depuis l’environnement d’exécution (politique réseau sortante)",
-      "last_verified_at": "2026-08-19",
+      "accessibility": "Inaccessible le 2026-08-20 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-20",
       "lastAccessResult": "bloqué par la politique réseau sortante (refus au tunnel CONNECT du mandataire, réponse 403 de la passerelle)",
       "mandatoryDailyEntryPoint": true
     },
@@ -750,9 +756,9 @@
       ],
       "confidence": 92,
       "rationale": "Canal de distribution officiel opéré par l’éditeur du paquet : prouve de façon durable qu’une version a été publiée à une date donnée, mais ne documente pas le contenu du changement.",
-      "accessibility": "Accessible le 2026-08-19 depuis l’environnement d’exécution",
-      "last_verified_at": "2026-08-19",
-      "lastAccessResult": "ouvert directement"
+      "accessibility": "Accessible le 2026-08-20 depuis l’environnement d’exécution (réponse HTTP 200 en accès direct)",
+      "last_verified_at": "2026-08-20",
+      "lastAccessResult": "réponse HTTP 200"
     },
     {
       "id": "R39",
@@ -768,9 +774,9 @@
       ],
       "confidence": 92,
       "rationale": "Canal de distribution officiel opéré par l’éditeur du paquet ; même portée et mêmes limites que PyPI.",
-      "accessibility": "Partiellement accessible le 2026-08-19 : l’interface web www.npmjs.com renvoie 403, l’API du registre registry.npmjs.org s’ouvre directement et porte la preuve de version et d’horodatage.",
-      "last_verified_at": "2026-08-19",
-      "lastAccessResult": "interface web refusée (403) ; API du registre ouverte directement",
+      "accessibility": "Accessible le 2026-08-20 depuis l’environnement d’exécution (réponse HTTP 200 en accès direct)",
+      "last_verified_at": "2026-08-20",
+      "lastAccessResult": "réponse HTTP 200",
       "urlPattern": "https://registry.npmjs.org/{paquet} — API du registre, ouverte ; https://www.npmjs.com/package/{paquet}/v/{version} — interface web, refusée (403)"
     },
     {
@@ -787,9 +793,9 @@
       ],
       "confidence": 96,
       "rationale": "Publication officielle du projet, responsable direct de la spécification.",
-      "accessibility": "Accessible le 2026-08-19 depuis l’environnement d’exécution",
-      "last_verified_at": "2026-08-19",
-      "lastAccessResult": "ouvert directement"
+      "accessibility": "Accessible le 2026-08-20 depuis l’environnement d’exécution (réponse HTTP 200 en accès direct)",
+      "last_verified_at": "2026-08-20",
+      "lastAccessResult": "réponse HTTP 200"
     },
     {
       "id": "R41",
@@ -804,8 +810,8 @@
       ],
       "confidence": 80,
       "rationale": "Presse établie avec responsabilité éditoriale ; utile pour corroborer une annonce, insuffisante pour un fait contractuel.",
-      "accessibility": "Inaccessible le 2026-08-19 depuis l’environnement d’exécution (politique réseau sortante)",
-      "last_verified_at": "2026-08-19",
+      "accessibility": "Inaccessible le 2026-08-20 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-20",
       "lastAccessResult": "bloqué par la politique réseau sortante (refus au tunnel CONNECT du mandataire, réponse 403 de la passerelle)"
     },
     {
@@ -822,8 +828,8 @@
       ],
       "confidence": 78,
       "rationale": "Suivi documenté des politiques numériques européennes ; utile pour la corroboration et le contexte belge.",
-      "accessibility": "Inaccessible le 2026-08-19 depuis l’environnement d’exécution (politique réseau sortante)",
-      "last_verified_at": "2026-08-19",
+      "accessibility": "Inaccessible le 2026-08-20 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-20",
       "lastAccessResult": "bloqué par la politique réseau sortante (refus au tunnel CONNECT du mandataire, réponse 403 de la passerelle)"
     },
     {
@@ -841,8 +847,8 @@
       ],
       "confidence": 85,
       "rationale": "Publication de l’éditeur responsable du matériel. Les chiffres de débit qu’elle publie sont des résultats fournisseur : ils restent non reproduits tant qu’une mesure indépendante ne les confirme pas.",
-      "accessibility": "Inaccessible le 2026-08-19 depuis l’environnement d’exécution (politique réseau sortante)",
-      "last_verified_at": "2026-08-19",
+      "accessibility": "Inaccessible le 2026-08-20 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-20",
       "lastAccessResult": "bloqué par la politique réseau sortante (refus au tunnel CONNECT du mandataire, réponse 403 de la passerelle)"
     },
     {
@@ -860,8 +866,8 @@
       ],
       "confidence": 74,
       "rationale": "Agrégateur qui horodate une annonce et identifie le compte officiel à l’origine du signal. Utile pour dater un post, insuffisant seul pour établir un fait contractuel.",
-      "accessibility": "Inaccessible le 2026-08-19 depuis l’environnement d’exécution (politique réseau sortante)",
-      "last_verified_at": "2026-08-19",
+      "accessibility": "Inaccessible le 2026-08-20 depuis l’environnement d’exécution (politique réseau sortante)",
+      "last_verified_at": "2026-08-20",
       "lastAccessResult": "bloqué par la politique réseau sortante (refus au tunnel CONNECT du mandataire, réponse 403 de la passerelle)"
     },
     {
@@ -877,9 +883,9 @@
       ],
       "confidence": 72,
       "rationale": "Presse technologique généraliste, utile en découverte et en corroboration ; ne remplace jamais une carte modèle ni une page tarifaire éditeur",
-      "accessibility": "Inaccessible le 2026-08-19 depuis l’environnement d’exécution (politique réseau sortante)",
+      "accessibility": "Inaccessible le 2026-08-20 depuis l’environnement d’exécution (politique réseau sortante)",
       "lastAccessResult": "bloqué par la politique réseau sortante (refus au tunnel CONNECT du mandataire, réponse 403 de la passerelle)",
-      "last_verified_at": "2026-08-19"
+      "last_verified_at": "2026-08-20"
     },
     {
       "id": "R46",
@@ -894,9 +900,9 @@
       ],
       "confidence": 70,
       "rationale": "Reprise technique rapide et détaillée des sorties de modèles ; qualité de relecture inégale, à corroborer systématiquement",
-      "accessibility": "Inaccessible le 2026-08-19 depuis l’environnement d’exécution (politique réseau sortante)",
+      "accessibility": "Inaccessible le 2026-08-20 depuis l’environnement d’exécution (politique réseau sortante)",
       "lastAccessResult": "bloqué par la politique réseau sortante (refus au tunnel CONNECT du mandataire, réponse 403 de la passerelle)",
-      "last_verified_at": "2026-08-19"
+      "last_verified_at": "2026-08-20"
     },
     {
       "id": "R47",
@@ -910,9 +916,9 @@
       ],
       "confidence": 70,
       "rationale": "Source secondaire de contexte et de corroboration",
-      "accessibility": "Inaccessible le 2026-08-19 depuis l’environnement d’exécution (politique réseau sortante)",
+      "accessibility": "Inaccessible le 2026-08-20 depuis l’environnement d’exécution (politique réseau sortante)",
       "lastAccessResult": "bloqué par la politique réseau sortante (refus au tunnel CONNECT du mandataire, réponse 403 de la passerelle)",
-      "last_verified_at": "2026-08-19"
+      "last_verified_at": "2026-08-20"
     },
     {
       "id": "R48",
@@ -927,9 +933,9 @@
       ],
       "confidence": 78,
       "rationale": "Analyste indépendant identifié, notes horodatées et vérifiables, souvent accompagnées de tests de première main ; relève du barème 60–74 relevé à 78 pour la constance des corrections publiques",
-      "accessibility": "Inaccessible le 2026-08-19 depuis l’environnement d’exécution (politique réseau sortante)",
+      "accessibility": "Inaccessible le 2026-08-20 depuis l’environnement d’exécution (politique réseau sortante)",
       "lastAccessResult": "bloqué par la politique réseau sortante (refus au tunnel CONNECT du mandataire, réponse 403 de la passerelle)",
-      "last_verified_at": "2026-08-19"
+      "last_verified_at": "2026-08-20"
     },
     {
       "id": "R49",
@@ -945,9 +951,9 @@
       ],
       "confidence": 97,
       "rationale": "Carte modèle officielle : preuve primaire durable des caractéristiques déclarées par l’éditeur, à distinguer des mesures indépendantes",
-      "accessibility": "Inaccessible le 2026-08-19 depuis l’environnement d’exécution (politique réseau sortante)",
+      "accessibility": "Inaccessible le 2026-08-20 depuis l’environnement d’exécution (politique réseau sortante)",
       "lastAccessResult": "bloqué par la politique réseau sortante (refus au tunnel CONNECT du mandataire, réponse 403 de la passerelle)",
-      "last_verified_at": "2026-08-19"
+      "last_verified_at": "2026-08-20"
     },
     {
       "id": "R50",
@@ -961,9 +967,9 @@
       ],
       "confidence": 74,
       "rationale": "Relèvent et historisent les pages d’état officielles ; utiles quand la page d’état elle-même est inaccessible, mais restent une reprise et non la source d’origine",
-      "accessibility": "Inaccessible le 2026-08-19 depuis l’environnement d’exécution (politique réseau sortante)",
+      "accessibility": "Inaccessible le 2026-08-20 depuis l’environnement d’exécution (politique réseau sortante)",
       "lastAccessResult": "bloqué par la politique réseau sortante (refus au tunnel CONNECT du mandataire, réponse 403 de la passerelle)",
-      "last_verified_at": "2026-08-19"
+      "last_verified_at": "2026-08-20"
     },
     {
       "id": "R51",
@@ -978,9 +984,9 @@
       ],
       "confidence": 76,
       "rationale": "Suivi structuré et daté du texte et de son calendrier ; informatif, ne constitue pas un avis juridique et ne remplace pas le Journal officiel de l’Union européenne",
-      "accessibility": "Inaccessible le 2026-08-19 depuis l’environnement d’exécution (politique réseau sortante)",
+      "accessibility": "Inaccessible le 2026-08-20 depuis l’environnement d’exécution (politique réseau sortante)",
       "lastAccessResult": "bloqué par la politique réseau sortante (refus au tunnel CONNECT du mandataire, réponse 403 de la passerelle)",
-      "last_verified_at": "2026-08-19"
+      "last_verified_at": "2026-08-20"
     },
     {
       "id": "R52",
@@ -994,9 +1000,9 @@
       ],
       "confidence": 80,
       "rationale": "Agence financière de référence sur les opérations de marché. Une information « en discussions » reste un signal : elle prouve que des discussions sont rapportées, pas qu’une opération a lieu",
-      "accessibility": "Inaccessible le 2026-08-19 depuis l’environnement d’exécution (politique réseau sortante)",
+      "accessibility": "Inaccessible le 2026-08-20 depuis l’environnement d’exécution (politique réseau sortante)",
       "lastAccessResult": "bloqué par la politique réseau sortante (refus au tunnel CONNECT du mandataire, réponse 403 de la passerelle)",
-      "last_verified_at": "2026-08-19"
+      "last_verified_at": "2026-08-20"
     },
     {
       "id": "R53",
@@ -1016,9 +1022,9 @@
       ],
       "confidence": 98,
       "rationale": "Documentation opérationnelle de l’éditeur, avec un journal de version daté par numéro de version et un digest hebdomadaire officiel. Ouvre en accès direct depuis l’environnement d’exécution alors que www.anthropic.com et claude.com sont bloqués : c’est la voie de preuve primaire pour tout fait relatif à Claude Code.",
-      "accessibility": "Accessible le 2026-08-19 depuis l’environnement d’exécution",
-      "last_verified_at": "2026-08-19",
-      "lastAccessResult": "ouvert directement",
+      "accessibility": "Accessible le 2026-08-20 depuis l’environnement d’exécution (réponse HTTP 200 en accès direct)",
+      "last_verified_at": "2026-08-20",
+      "lastAccessResult": "réponse HTTP 200",
       "urlPattern": "https://code.claude.com/docs/en/{page} — pages utiles : changelog, whats-new, permission-modes"
     },
     {
@@ -1038,9 +1044,9 @@
       ],
       "confidence": 95,
       "rationale": "Sert le contenu brut des fichiers versionnés des dépôts publics. Le fichier récupéré est celui que l’éditeur maintient dans son dépôt : c’est une preuve primaire durable pour un journal de version ou un fichier de licence. Ouvre en accès direct alors que l’interface github.com est refusée par le mandataire, ce qui en fait la voie de contournement documentée pour R30. Limite : ne donne accès ni aux publications de version, ni aux tickets, ni aux discussions, qui vivent hors des fichiers du dépôt.",
-      "accessibility": "Accessible le 2026-08-19 depuis l’environnement d’exécution",
-      "last_verified_at": "2026-08-19",
-      "lastAccessResult": "ouvert directement sur les chemins de fichiers ; la racine de l’hôte renvoie 400, ce qui est son comportement normal",
+      "accessibility": "Accessible le 2026-08-20 pour son usage réel : la lecture de fichiers en contenu brut répond (journaux de version des dépôts Anthropic et OpenAI lus ce jour) ; la racine du domaine renvoie 400, ce qui est son comportement normal",
+      "last_verified_at": "2026-08-20",
+      "lastAccessResult": "lecture de fichiers fonctionnelle ; racine non servie",
       "urlTemplate": "https://raw.githubusercontent.com/{propriétaire}/{dépôt}/{branche}/{chemin}"
     },
     {
@@ -1059,10 +1065,10 @@
       ],
       "confidence": 92,
       "rationale": "Répond depuis l’environnement d’exécution. Le refus 403 observé sur les dépôts tiers provient de la restriction de périmètre de dépôt de la session et non de la politique réseau : la portée de preuve est donc limitée aux dépôts en périmètre. Pour les dépôts hors périmètre, R54 reste la voie de preuve primaire.",
-      "accessibility": "Accessible le 2026-08-19 depuis l’environnement d’exécution",
-      "last_verified_at": "2026-08-19",
-      "lastAccessResult": "ouvert directement"
+      "accessibility": "Partiellement accessible le 2026-08-20 : la racine de l’API et /rate_limit répondent, mais les endpoints de dépôt (publications de version) sont refusés par la politique réseau sortante",
+      "last_verified_at": "2026-08-20",
+      "lastAccessResult": "réponse partielle : certains chemins répondent, d’autres sont refusés"
     }
   ],
-  "accessibilityNote": "L’accessibilité est mesurée depuis l’environnement d’exécution du run et ne dit rien de la qualité de la source ni de sa disponibilité pour un lecteur belge. Les cinquante-cinq sources du référentiel ont été retestées une à une le 2026-08-19 : six répondent pleinement (documentation de la plateforme Claude, documentation de Claude Code, PyPI, API du registre npm, contenu brut des dépôts publics, API GitHub), deux partiellement (Google Cloud, npm) et quarante-sept sont refusées au tunnel CONNECT du mandataire. Neuvième contrôle consécutif au même profil : caractéristique stable de l’environnement, non incident. Une source refusée conserve sa note de confiance, qui mesure son aptitude à prouver un sujet et non sa joignabilité du jour."
+  "accessibilityNote": "L’accessibilité est mesurée depuis l’environnement d’exécution du run et ne dit rien de la qualité de la source ni de sa disponibilité pour un lecteur belge. Les 55 sources ont été retestées une à une le 2026-08-20, chacune par une requête directe : 6 répondent pleinement, 2 partiellement et 47 sont refusées au tunnel CONNECT du mandataire de sortie, qui répond 403. Le profil est identique à celui de la veille pour le dixième contrôle consécutif : c’est une caractéristique stable de l’environnement, non un incident. La totalité des six points d’entrée de veille obligatoires — TLDR AI, TechCrunch, VentureBeat, TestingCatalog, AI Frontiers et NVIDIA Research — reste refusée, de sorte qu’aucun sujet n’a été retenu depuis une source secondaire ce jour et qu’aucun signal précoce TestingCatalog n’a pu être collecté. Tout fait qui dépendrait d’un domaine refusé est plafonné à 89/100 et porte sa réserve."
 }
