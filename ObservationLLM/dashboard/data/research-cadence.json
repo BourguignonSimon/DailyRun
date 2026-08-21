@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "timezone": "Europe/Brussels",
-  "updatedAt": "2026-08-20T07:10:00Z",
+  "updatedAt": "2026-08-21T07:20:00Z",
   "orchestration": "single_daily_run",
   "weeklyRule": {
     "weekStartsOn": "monday",
@@ -27,11 +27,11 @@
         "sorties",
         "retraits"
       ],
-      "lastCompletedOn": "2026-08-20",
-      "nextDueOn": "2026-08-21",
+      "lastCompletedOn": "2026-08-21",
+      "nextDueOn": "2026-08-22",
       "status": "current",
-      "lastAttemptOn": "2026-08-20",
-      "evidenceLevel": "primaire direct — huit canaux ouverts et interrogés un à un le 20 août 2026 : notes de version de la plateforme Claude, qui portent le fait dominant du jour ; documentation de l’API Files ; page tarifaire et page des dépréciations de modèles de la plateforme Claude ; journal de version de Claude Code ; contenu brut des dépôts publics GitHub, d’où sont lus les journaux des deux SDK Anthropic et du SDK Python d’OpenAI ; grille tarifaire de l’IA générative de Google Cloud, ouverte pour le troisième run consécutif ; API de PyPI et API du registre npm, interrogées sur cinquante-trois paquets ; et le blog du Model Context Protocol, sans publication nouvelle depuis le 28 juillet. Les six points d’entrée obligatoires restent refusés, de sorte qu’aucun sujet n’a été retenu depuis une source secondaire et qu’aucun signal précoce TestingCatalog n’a pu être collecté."
+      "lastAttemptOn": "2026-08-21",
+      "evidenceLevel": "primaire direct — canaux ouverts et interrogés un à un le 21 août 2026 : notes de version de la plateforme Claude (platform.claude.com/docs), qui portent trois faits du jour — disponibilité générale de l’outil computer use, lancement de l’outil browser use, et le renommage du Workbench en Playground ; journal de version de Claude Code en contenu brut (2.1.238) ; API de PyPI, qui date la version majeure 1.0.0 du SDK Python d’Anthropic ; API du registre npm ; grille tarifaire de l’IA générative de Google Cloud, dont la relecture positionnelle corrige la lecture régionale du run précédent (les modèles Claude ont bien une prime régionale de +10 %) ; blog du Model Context Protocol ; api.github.com pour les métadonnées. Les six points d’entrée obligatoires restent refusés, de sorte qu’aucun sujet n’a été retenu depuis une source secondaire."
     },
     {
       "id": "operational",
@@ -50,7 +50,7 @@
       "nextDueOn": "2026-08-24",
       "status": "current",
       "lastAttemptOn": "2026-08-17",
-      "lastAttemptStatus": "Revue hebdomadaire exécutée le 2026-08-17, premier run réussi de la semaine ISO 2026-W34 ; prochaine échéance le 2026-08-24, aucun rattrapage dû au 2026-08-20. Le contrôle quotidien du 20 août relève par la ligne Événementielle deux faits de portée tarifaire et d’API traités sans attendre la revue. Le premier corrige la lecture de la grille des modèles partenaires de Google Cloud : le tableau Anthropic n’a pas de colonne régionale mais deux colonnes de volume de contexte, « =< 200K input tokens » et « > 200K input tokens », identiques ; Claude Sonnet 5 y est à 2,00/10,00 USD par million de jetons dans les sept régions publiées, europe-west1 et EU Multi-Region comprises, et la prime de 10 % des endpoints non globaux ne concerne, sur cette page, que les modèles Gemini et les unités de débit réservé. Le second est la sortie de bêta des API Files et Skills sur l’API Claude, avec quotas publiés — 1 To par organisation, 500 requêtes par minute. Les endpoints de gestion des utilisateurs de l’Admin API pour Claude Enterprise passent également en disponibilité générale."
+      "lastAttemptStatus": "Revue hebdomadaire exécutée le 2026-08-17, premier run réussi de la semaine ISO 2026-W34 ; prochaine échéance le 2026-08-24, aucun rattrapage dû au 2026-08-21. Le contrôle quotidien du 21 août relève par la ligne Événementielle un fait tarifaire majeur, traité sans attendre la revue : la grille des modèles partenaires de Google Cloud, relue par délimitation positionnelle, contient deux tables des modèles Claude — une table Global (Claude Sonnet 5 à 2,00/10,00 USD/M) et une table régionale non globale (2,20/11,00, soit +10 %) couvrant EU Multi-Region et europe-west1. Cette lecture corrige celle du run du 20 août, qui avait conclu à tort à l’absence de prime régionale pour Claude. Servir Claude en résidence UE sur Vertex coûte donc +10 %, comme les Regional Endpoints de l’API directe (inference_geo ×1,1)."
     },
     {
       "id": "deep",
@@ -69,7 +69,7 @@
       "nextDueOn": "2026-08-24",
       "status": "current",
       "lastAttemptOn": "2026-08-17",
-      "lastAttemptStatus": "Revue hebdomadaire exécutée le 2026-08-17, premier run réussi de la semaine ISO 2026-W34 ; prochaine échéance le 2026-08-24, aucun rattrapage dû au 2026-08-20. Le contrôle quotidien du 20 août relève par la ligne Événementielle deux faits de sécurité et de confidentialité établis en source primaire. Claude Managed Agents peut désormais borner les domaines que ses outils web_search et web_fetch ont le droit d’atteindre, par allowed_domains et blocked_domains posés sur l’entrée de l’outil dans le tableau configs de agent_toolset_20260401, avec max_content_tokens pour plafonner le volume rapatrié et user_location pour la recherche : c’est le premier garde-fou publié contre l’exfiltration par un agent lecteur détourné. Claude Code 2.1.236 corrige par ailleurs la précédence des règles de refus de lecture à motif générique dans le bac à sable macOS — une règle du type **/.env l’emporte à l’intérieur d’une région autorisée, couvre le contenu des répertoires visés et ne peut plus être contournée par un renommage ; la protection n’était donc pas complète avant cette version. Réserve ouverte : les sessions d’agents en bac à sable auto-hébergé peuvent attacher des magasins de mémoire, mais la résidence du magasin lui-même n’est pas publiée et ne doit pas être présumée alignée sur celle du bac à sable."
+      "lastAttemptStatus": "Revue hebdomadaire exécutée le 2026-08-17, premier run réussi de la semaine ISO 2026-W34 ; prochaine échéance le 2026-08-24, aucun rattrapage dû au 2026-08-21. Le contrôle du 21 août ajoute deux éléments de sécurité et d’outillage établis en source primaire. Le SDK Python officiel d’Anthropic franchit la version majeure 1.0.0 (guide de migration v1, ruptures d’API) : toute dépendance de production doit relire le guide avant de monter, le verrouillage de version restant non négociable. Claude Code 2.1.238 corrige une fuite mémoire en session longue et ajoute --proxy-authorization-command pour les mandataires d’entreprise. Le durcissement du bac à sable macOS de 2.1.236 reste la protection de confidentialité la plus concrète de la fenêtre."
     },
     {
       "id": "structural",
@@ -86,7 +86,7 @@
       "nextDueOn": "2026-08-24",
       "status": "current",
       "lastAttemptOn": "2026-08-17",
-      "lastAttemptStatus": "Revue hebdomadaire exécutée le 2026-08-17, premier run réussi de la semaine ISO 2026-W34 ; prochaine échéance le 2026-08-24, aucun rattrapage dû au 2026-08-20. La sélection des écosystèmes suivis et le classement des cent outils sont inchangés depuis cette revue. Le contrôle du 20 août verse deux éléments à instruire à la prochaine revue structurelle. D’abord une méthode de vérification nouvelle, appliquée ce jour à la grille de Google Cloud : plutôt que de lire un tableau à l’œil, les bornes de la section d’un fournisseur sont délimitées dans le document aplati et les occurrences d’un terme sont localisées par position, ce qui permet d’établir une absence et non seulement une présence — c’est ainsi qu’a été corrigée la lecture régionale de la veille, et la méthode mérite d’être généralisée aux pages tarifaires. Ensuite une lacune de couverture : la CLI Gemini, dont l’observatoire suit désormais les publications, ne figure pas au catalogue des cent outils, où Gemini Code Assist occupe une place voisine mais distincte ; l’arbitrage relève de la revue structurelle et n’a pas été fait ce jour."
+      "lastAttemptStatus": "Revue hebdomadaire exécutée le 2026-08-17, premier run réussi de la semaine ISO 2026-W34 ; prochaine échéance le 2026-08-24, aucun rattrapage dû au 2026-08-21. La sélection des écosystèmes et le classement des cent outils sont inchangés. Le contrôle du 21 août verse un enseignement de méthode à instruire à la prochaine revue structurelle : la relecture positionnelle de la grille de Google Cloud a corrigé une conclusion erronée du run précédent — le run du 20 août avait cherché le libellé littéral « non-global » dans la section Anthropic, ne l’avait pas trouvé, et en avait déduit à tort l’absence de tarif régional, alors que la nature régionale de la seconde table est portée par l’intitulé de section « Models with regional pricing » et par la structure Global-puis-régional. Leçon : une absence de mot-clé ne prouve pas une absence de fait ; il faut lire la structure des tables, pas seulement chercher un libellé. Reste ouverte la lacune de couverture de la CLI Gemini, non arbitrée au catalogue des cent outils."
     },
     {
       "id": "event",
@@ -98,15 +98,15 @@
         "impacts transversaux",
         "mise à jour immédiate des vues concernées"
       ],
-      "lastCompletedOn": "2026-08-20",
+      "lastCompletedOn": "2026-08-21",
       "nextDueOn": null,
       "nextDueLabel": "À la prochaine détection importante",
       "status": "armed",
-      "lastAttemptOn": "2026-08-20",
-      "evidenceLevel": "primaire direct pour la totalité des détections — déclenchée le 20 août et traitée intégralement dans le même run, sans seconde exécution. Sept détections à impact matériel, toutes établies sur des canaux primaires lisibles. Une, la disponibilité générale des API Files et Skills sur l’API Claude, avec disparition des en-têtes bêta, format GA ouvrant la pagination par page et le filtre ids[], et quotas publiés : triple corroboration par les notes de version, la documentation de l’API Files et les journaux de version des deux SDK officiels. Deux, la restriction de domaines des outils web_search et web_fetch des agents gérés. Trois, la disponibilité générale des endpoints de gestion des utilisateurs de l’Admin API pour Claude Enterprise. Quatre, la mémoire attachable aux sessions d’agents en bac à sable auto-hébergé. Cinq, Claude Code 2.1.236 et 2.1.237, dont le durcissement des règles de refus de lecture du bac à sable macOS. Six, le SDK Python d’OpenAI en 3.3.1, montée de dépendances motivée par des correctifs de sécurité publiés. Sept, la correction de la lecture régionale de la grille des modèles partenaires de Google Cloud, établie par délimitation positionnelle de la section Anthropic sur deux récupérations indépendantes. Le dossier Stripe–OpenRouter n’a pas progressé : aucune de ses sources n’a pu être rouverte, il reste publié sous la mention « à confirmer »."
+      "lastAttemptOn": "2026-08-21",
+      "evidenceLevel": "primaire direct pour la totalité des détections — déclenchée le 21 août et traitée intégralement dans le même run, sans seconde exécution. Cinq détections à impact matériel. Une, la correction de la lecture régionale de la grille de Google Cloud : les modèles Claude ont bien une prime régionale de +10 % (Sonnet 5 à 2,20/11,00 hors endpoint Global), établie par double récupération et délimitation positionnelle. Deux, la version majeure 1.0.0 du SDK Python d’Anthropic, datée par l’API de PyPI, avec guide de migration v1. Trois, la disponibilité générale de l’outil computer use et le lancement de l’outil browser use sur l’API Claude. Quatre, le renommage du Workbench en Playground dans la console. Cinq, Claude Code 2.1.238."
     }
   ],
-  "blocking": "Aucun blocage de cadence au 2026-08-20 : la ligne Temps réel est exécutée, les trois lignes hebdomadaires sont courantes depuis le run du 17 août — premier run réussi de la semaine ISO 2026-W34 — et échoient le 24 août, aucun rattrapage n’est dû. La limite du run n’est pas de cadence mais de couverture : 47 des 55 sources du référentiel sont refusées par la politique réseau sortante, dont la totalité des six points d’entrée de veille obligatoires, pour le dixième contrôle consécutif. Tout fait qui en dépendrait serait plafonné à 89/100 ; aucun n’a été retenu ce jour, l’ensemble des faits publiés provenant de canaux primaires directs. Le taux de change EUR/USD de référence reste celui du 5 août 2026 : cinq points d’accès distincts ont été essayés ce jour et tous sont refusés.",
+  "blocking": "Aucun blocage de cadence au 2026-08-21 : la ligne Temps réel est exécutée, les trois lignes hebdomadaires sont courantes depuis le run du 17 août — premier run réussi de la semaine ISO 2026-W34 — et échoient le 24 août, aucun rattrapage n’est dû. La limite du run reste de couverture : 48 des 55 sources du référentiel sont refusées par la politique réseau sortante, dont la totalité des six points d’entrée de veille obligatoires, pour le onzième contrôle consécutif. Tout fait qui en dépendrait serait plafonné à 89/100 ; aucun n’a été retenu ce jour, l’ensemble des faits publiés provenant de canaux primaires directs. Le taux de change EUR/USD de référence reste celui du 5 août 2026 : les points d’accès de change essayés ce jour sont refusés.",
   "isoWeek": "2026-W34",
-  "computedFor": "2026-08-20"
+  "computedFor": "2026-08-21"
 }
