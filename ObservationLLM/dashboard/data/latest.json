@@ -3,7 +3,7 @@
   "run": {
     "checkedAt": "2026-08-21",
     "factsVerifiedThrough": "2026-08-21",
-    "commit": "671e063",
+    "commit": "0f9ebb8",
     "model": "Opus 5",
     "result": "Contrôle du 21 août 2026 terminé. Ligne Temps réel exécutée sur les canaux primaires ouverts. Les trois lignes hebdomadaires Opérationnelle, Approfondie et Structurelle restent courantes depuis le run du 17 août, premier run réussi de la semaine ISO 2026-W34, et échoient le 24 août ; aucun rattrapage n’était dû. Ligne Événementielle déclenchée sur cinq détections à impact matériel, toutes établies en source primaire et traitées dans ce même run — dont une correction importante de la lecture régionale de la grille tarifaire de Google Cloud pour les modèles Claude."
   },
