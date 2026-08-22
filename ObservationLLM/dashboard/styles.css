@@ -269,13 +269,26 @@ noscript { display: block; padding: 1rem; text-align: center; background: #ffdda
 .simple-page .site-header { padding-bottom: 12px; }
 .compact-hero { padding-top: 58px; }
 .compact-hero h1, .page-intro h1 { font-size: clamp(2.9rem, 6vw, 5.6rem); }
+.compact-hero .hero-grid { grid-template-columns: minmax(0, 1.45fr) minmax(300px, .72fr); align-items: center; }
+.compact-hero .hero-copy { max-width: 760px; font-size: 1.12rem; line-height: 1.65; }
+.trust-list { display: flex; gap: 8px 18px; flex-wrap: wrap; margin: 22px 0 0; padding: 0; list-style: none; color: var(--muted); font-size: .73rem; font-weight: 750; }
+.trust-list li { position: relative; padding-left: 16px; }
+.trust-list li::before { content: "✓"; position: absolute; left: 0; color: #286f4b; font-weight: 950; }
 .compact-signal { transform: none; }
 .compact-signal .signal-label { margin-bottom: 26px; }
 .compact-signal details { margin-top: 14px; }
 .compact-signal summary { cursor: pointer; font-size: .78rem; font-weight: 850; }
-.task-section, .proof-section, .recommendation-browser { padding: 84px 0 20px; }
-.task-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
-.task-card { min-height: 210px; display: flex; flex-direction: column; padding: 22px; border: 1px solid var(--line); border-radius: 18px; background: var(--panel); text-decoration: none; transition: transform .18s, box-shadow .18s; }
+.coverage-strip { display: grid; grid-template-columns: minmax(230px, .7fr) minmax(0, 1.8fr); gap: 34px; align-items: center; margin-top: 34px; padding: 28px; border: 1px solid var(--line); border-radius: 20px; background: var(--panel); box-shadow: 0 12px 36px rgba(16,21,18,.05); }
+.coverage-strip h2 { margin: 6px 0 0; font-family: Georgia, serif; font-size: clamp(1.55rem, 3vw, 2.35rem); font-weight: 500; letter-spacing: -.035em; line-height: 1.03; }
+.coverage-strip ul { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin: 0; padding: 0; list-style: none; }
+.coverage-strip li { min-height: 90px; padding: 12px 16px; border-left: 1px solid var(--line); }
+.coverage-strip li:nth-child(n+4) { border-top: 1px solid var(--line); }
+.coverage-strip strong, .coverage-strip span { display: block; }
+.coverage-strip strong { font-size: .8rem; }
+.coverage-strip span { margin-top: 5px; color: var(--muted); font-size: .69rem; line-height: 1.4; }
+.task-section, .proof-section, .recommendation-browser { padding: 76px 0 20px; }
+.task-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.task-card { min-height: 200px; display: flex; flex-direction: column; padding: 22px; border: 1px solid var(--line); border-radius: 18px; background: var(--panel); text-decoration: none; transition: transform .18s, box-shadow .18s; }
 .task-card:hover, .task-card:focus-visible { transform: translateY(-3px); box-shadow: var(--shadow); outline: 2px solid var(--ink); outline-offset: 2px; }
 .task-card.featured { background: var(--lime); }
 .task-card > span { color: var(--muted); font-size: .68rem; font-weight: 900; }
@@ -335,14 +348,23 @@ noscript { display: block; padding: 1rem; text-align: center; background: #ffdda
 
 @media (max-width: 920px) {
   .primary-nav { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .compact-hero .hero-grid, .coverage-strip { grid-template-columns: 1fr; }
+  .coverage-strip ul { grid-template-columns: repeat(2, 1fr); }
+  .coverage-strip li:nth-child(n+3) { border-top: 1px solid var(--line); }
   .task-grid, .recommendation-preview { grid-template-columns: repeat(2, 1fr); }
   .model-recommendation-grid { grid-template-columns: 1fr; }
   .model-recommendation { min-height: 0; }
 }
 
 @media (max-width: 620px) {
-  .primary-nav { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .task-grid, .recommendation-preview { grid-template-columns: 1fr; }
+  .section-nav.primary-nav { position: sticky; top: 6px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); padding: 5px; }
+  .section-nav.primary-nav a { padding: 9px 4px; font-size: .67rem; }
+  .compact-hero { padding-top: 42px; }
+  .coverage-strip { padding: 22px 18px; }
+  .coverage-strip ul, .task-grid, .recommendation-preview { grid-template-columns: 1fr; }
+  .coverage-strip li { min-height: 0; padding: 13px 4px; border-left: 0; border-top: 1px solid var(--line); }
+  .coverage-strip li:first-child { border-top: 0; }
+  .trust-list { flex-direction: column; gap: 7px; }
   .task-card { min-height: 170px; }
   .page-intro { padding-top: 48px; }
   .recommendation-toolbar { align-items: stretch; }
