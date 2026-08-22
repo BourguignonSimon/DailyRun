@@ -7,6 +7,7 @@ const observationDir = path.resolve(dashboardDir, "..");
 const outputDir = path.resolve(process.argv[2] || path.join(observationDir, "dashboard-dist"));
 
 const documents = [
+  { source: "recommandations-modeles-par-usage.md", output: "recommandations-modeles-par-usage.html", title: "Modèles par usage", label: "Choix" },
   { source: "synthese.md", output: "synthese.html", title: "Synthèse décisionnelle", label: "Décision" },
   { source: "comparatif.md", output: "comparatif.html", title: "Comparatif structuré", label: "Comparaison" },
   { source: "analyse-detaillee.md", output: "analyse-detaillee.html", title: "Analyse détaillée", label: "Méthodologie" },
@@ -17,6 +18,16 @@ const documents = [
   { source: "outils-ecosysteme-ia.md", output: "outils-ecosysteme-ia.html", title: "100 outils IA majeurs", label: "Écosystème" },
   { source: "formations-ia-gratuites.md", output: "formations-ia-gratuites.html", title: "Formations IA gratuites", label: "Formation" },
   { source: "sources.md", output: "sources.html", title: "Registre des sources", label: "Traçabilité" },
+];
+
+const staticPages = [
+  "home.html",
+  "actualites.html",
+  "choisir-un-modele.html",
+  "outils.html",
+  "localisation.html",
+  "modeles-locaux.html",
+  "sources-confiance.html"
 ];
 
 const escapeHtml = (value) => value
@@ -139,13 +150,22 @@ function renderMarkdown(markdown) {
 }
 
 function pageTemplate(document, content) {
-  const navigation = documents.map((item) => `<a href="${item.output}"${item.output === document.output ? ' aria-current="page"' : ""}>${item.title}</a>`).join("");
+  const navigation = [
+    ["index.html", "Accueil"],
+    ["choisir-un-modele.html", "Choisir"],
+    ["actualites.html", "Actualités"],
+    ["outils.html", "Outils"],
+    ["modeles-locaux.html", "LLM locaux"],
+    ["localisation.html", "Localisation"],
+    ["explorer.html", "Mode expert"]
+  ].map(([href, label]) => `<a href="${href}">${label}</a>`).join("");
   return `<!doctype html>
-<html lang="fr">
+<html lang="fr-BE">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="${document.title} — Observatoire LLM et agents IA avec une perspective européenne.">
+  <link rel="canonical" href="https://bourguignonsimon.github.io/DailyRun/${document.output}">
   <meta name="theme-color" content="#101512">
   <title>${document.title} — Observatoire LLM</title>
   <link rel="stylesheet" href="styles.css">
@@ -155,22 +175,24 @@ function pageTemplate(document, content) {
   <a class="skip-link" href="#article-content">Aller au contenu</a>
   <header class="site-header">
     <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">OL</span><span><strong>Observatoire LLM</strong><small>Perspective européenne · repère belge</small></span></a>
-    <a class="back-dashboard" href="index.html">← Dashboard</a>
+    <a class="back-dashboard" href="index.html">← Accueil</a>
   </header>
-  <nav class="document-nav" aria-label="Documents de l’observatoire"><a href="index.html#site-map">Plan du site</a>${navigation}</nav>
+  <nav class="document-nav" aria-label="Navigation de l’observatoire">${navigation}</nav>
   <main class="article-shell">
     <aside class="article-rail"><span>${document.label}</span><strong>${document.title}</strong><p>Contenu issu du dernier run validé et publié automatiquement.</p><a href="#article-content">Commencer la lecture ↓</a></aside>
     <article class="markdown-body" id="article-content">${content}</article>
   </main>
-  <footer><p>Analyse informative — ni conseil juridique ni benchmark universel.</p><a href="index.html">Retour au dashboard</a></footer>
+  <footer><p>Analyse informative — ni conseil juridique ni benchmark universel.</p><a href="index.html">Retour à l’accueil</a></footer>
 </body>
 </html>`;
 }
 
 fs.mkdirSync(outputDir, { recursive: true });
-for (const file of ["index.html", "styles.css", "app.js", "article.css"]) {
+for (const file of ["styles.css", "app.js", "article.css", ...staticPages]) {
   fs.copyFileSync(path.join(dashboardDir, file), path.join(outputDir, file));
 }
+fs.copyFileSync(path.join(dashboardDir, "home.html"), path.join(outputDir, "index.html"));
+fs.copyFileSync(path.join(dashboardDir, "index.html"), path.join(outputDir, "explorer.html"));
 fs.cpSync(path.join(dashboardDir, "data"), path.join(outputDir, "data"), { recursive: true });
 
 for (const document of documents) {
@@ -181,7 +203,7 @@ for (const document of documents) {
 
 const manifest = {
   generatedAt: new Date().toISOString(),
-  pages: ["index.html", ...documents.map((document) => document.output)]
+  pages: ["index.html", "explorer.html", ...staticPages.filter((page) => page !== "home.html"), ...documents.map((document) => document.output)]
 };
 fs.writeFileSync(path.join(outputDir, "manifest.json"), `${JSON.stringify(manifest, null, 2)}\n`, "utf8");
 console.log(`Dashboard généré : ${manifest.pages.length} pages dans ${outputDir}`);
