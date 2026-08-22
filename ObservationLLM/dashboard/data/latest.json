@@ -1,24 +1,24 @@
 {
   "schemaVersion": 1,
   "run": {
-    "checkedAt": "2026-08-21",
-    "factsVerifiedThrough": "2026-08-21",
-    "commit": "0f9ebb8",
+    "checkedAt": "2026-08-22",
+    "factsVerifiedThrough": "2026-08-22",
+    "commit": "",
     "model": "Opus 5",
-    "result": "Contrôle du 21 août 2026 terminé. Ligne Temps réel exécutée sur les canaux primaires ouverts. Les trois lignes hebdomadaires Opérationnelle, Approfondie et Structurelle restent courantes depuis le run du 17 août, premier run réussi de la semaine ISO 2026-W34, et échoient le 24 août ; aucun rattrapage n’était dû. Ligne Événementielle déclenchée sur cinq détections à impact matériel, toutes établies en source primaire et traitées dans ce même run — dont une correction importante de la lecture régionale de la grille tarifaire de Google Cloud pour les modèles Claude."
+    "result": "Contrôle du 22 août 2026 terminé. Ligne Temps réel exécutée sur les canaux primaires restés ouverts. Les trois lignes hebdomadaires Opérationnelle, Approfondie et Structurelle restent courantes depuis le run du 17 août, premier run réussi de la semaine ISO 2026-W34, et échoient le 24 août ; aucun rattrapage n’était dû. Ligne Événementielle déclenchée sur trois détections à impact matériel, toutes établies sur deux canaux primaires indépendants et traitées dans ce même run."
   },
   "metrics": {
     "entityCount": 20,
     "verifiedEntityCount": 6,
     "regionalChannelCount": 13,
-    "highConfidenceSourceCount": 5,
+    "highConfidenceSourceCount": 6,
     "eurUsdRate": 1.1554,
     "rateDate": "2026-08-05",
-    "verificationNote": "Les 55 sources du référentiel ont été retestées une à une le 21 août 2026 : 5 répondent pleinement (platform.claude.com/docs, PyPI, registre npm, blog.modelcontextprotocol.io, api.github.com), 2 partiellement (raw.githubusercontent.com par chemin de fichier ; cloud.google.com sur ses pages tarifaires) et 48 sont refusées, dont la totalité des six points d’entrée de veille obligatoires. Onzième contrôle consécutif au même profil : c’est une caractéristique stable de l’environnement d’exécution, non un incident. Tous les faits publiés proviennent de canaux primaires directs : notes de version de la plateforme Claude, journal de version de Claude Code, API de PyPI et du registre npm, grille tarifaire de Google Cloud récupérée deux fois. Le taux EUR/USD de référence date du 5 août 2026 et n’a pas pu être rafraîchi, les points d’accès de change étant refusés."
+    "verificationNote": "Les 55 sources du référentiel ont été retestées une à une le 22 août 2026 : 6 répondent pleinement (platform.claude.com/docs, code.claude.com/docs, PyPI, registre npm, blog.modelcontextprotocol.io, api.github.com), 2 partiellement (raw.githubusercontent.com par chemin de fichier complet ; github.com refusé en HTTP mais atteignable par l’API GitHub) et 47 sont refusées au niveau du tunnel de sortie, dont la totalité des six points d’entrée de veille obligatoires. Douzième contrôle consécutif au même profil : c’est une caractéristique stable de l’environnement d’exécution, non un incident. Tous les faits publiés proviennent de canaux primaires directs, chacun établi sur deux canaux indépendants : notes de version et documentation de la plateforme Claude, journal de version brut de Claude Code, API de PyPI, registre npm, et grille tarifaire de Google Cloud récupérée trois fois. Le taux EUR/USD de référence date du 5 août 2026 et n’a pas pu être rafraîchi, les points d’accès de change étant refusés."
   },
   "headline": {
-    "title": "Sur Google Cloud, servir Claude en région européenne coûte +10 % — et le SDK Python d’Anthropic atteint la version 1.0.0",
-    "detail": "La grille tarifaire de l’IA générative de Google Cloud, relue en accès direct le 21 août 2026 et récupérée deux fois, publie la section « Anthropic’s Claude models » sous l’intitulé « Models with regional pricing ». Elle contient une table Global, où Claude Sonnet 5 est à 2,00/10,00 USD par million de jetons et Claude Opus 5 à 5,00/25,00, puis une table régionale non globale — couvrant EU Multi-Region et europe-west1 — à +10 % : Claude Sonnet 5 à 2,20/11,00 et Claude Opus 5 à 5,50/27,50. Garder l’inférence Claude dans l’Espace économique européen sur Google Cloud coûte donc 10 % de plus que l’endpoint Global, comme les Regional Endpoints de l’API directe (inference_geo ×1,1). L’API de PyPI date aussi la version majeure 1.0.0 du SDK Python officiel d’Anthropic, téléversée le 20 août à 19:58 UTC : la fiche exige Python 3.10+ et renvoie à un guide de migration v1 ; le SDK TypeScript reste en 0.120.0. Les notes de version de la plateforme Claude indiquent par ailleurs la disponibilité générale de computer use (computer_toolset_20260801), le lancement de browser use (browser_toolset_20260801) et le renommage du Workbench en Playground. Claude Code est en version 2.1.238."
+    "title": "Sur Google Cloud, la génération 5 de Claude n’est pas servie depuis la région belge — et l’inférence européenne se paie +10 %",
+    "detail": "La grille des modèles partenaires de Google Cloud, récupérée trois fois le 22 août 2026 et lue par le balisage de ses onglets plutôt que par son texte aplati, découpe la section Claude en sept volets de région. Le volet Global place Claude Sonnet 5 à 2,00/10,00 USD par million de jetons et Claude Opus 5 à 5,00/25,00. Les volets US Multi-Region et EU Multi-Region appliquent exactement +10 % : Sonnet 5 à 2,20/11,00, Opus 5 à 5,50/27,50. Mais les quatre volets monorégionaux — dont europe-west1, la région belge de Saint-Ghislain — ne proposent aucun modèle de génération 5 : ils s’arrêtent à Opus 4.6, Sonnet 4.6 et Haiku 4.5, eux aussi à +10 %. Un développeur belge qui veut à la fois un modèle de génération 5 et une inférence tenue dans l’Espace économique européen doit donc viser EU Multi-Region, non la région belge, et accepter la prime de 10 %. Sur l’API directe d’Anthropic, l’arbitrage ne se pose même pas : le paramètre inference_geo n’accepte que « global » et « us », et aucune inférence européenne n’y est offerte — le multiplicateur 1,1× que Claude Code 2.1.239 fait désormais apparaître dans /cost est une prime d’inférence américaine, non un coût de conformité européenne."
   },
   "decisions": [
     {
@@ -64,17 +64,17 @@
       "flagship": "GPT-5.6 · ChatGPT · API · Codex",
       "belgium": "Belgique : disponible selon le service",
       "status": "revérifié",
-      "last_verified_at": "2026-08-21",
-      "verificationStatus": "Vérifié en source primaire le 2026-08-21 — journal de version du dépôt éditeur et API de PyPI : SDK Python en 3.3.1 du 19 août, montée de dépendances portant des correctifs de sécurité publiés, après les endpoints de résidence de données nommés de 3.3.0 ; SDK d’agents en 0.22.0 du 19 août ; canal stable de Codex en 0.148.0, canal alpha en 0.149.0-alpha.3 du 20 août. La documentation de la plateforme reste refusée."
+      "last_verified_at": "2026-08-22",
+      "verificationStatus": "Partiellement revérifié en source primaire le 2026-08-22 — API de PyPI : SDK Python openai en 3.3.1, téléversé le 2026-08-19T16:31:32Z. La version du paquet de distribution est établie ; la documentation et les pages produit de l’éditeur restent refusées par la politique de sortie réseau, de sorte que disponibilité, prix et régions ne sont pas réévalués et conservent le niveau de preuve du dernier contrôle effectif."
     },
     {
       "name": "Anthropic",
       "category": "Plateforme",
       "flagship": "Claude Opus 5 · Sonnet 5 (2/10 USD/M) · Fable 5 · Mythos 5 (Glasswing) · Claude Code",
       "belgium": "Belgique : disponible, conditions à vérifier",
-      "status": "revérifié",
-      "last_verified_at": "2026-08-21",
-      "verificationStatus": "Vérifié en source primaire le 2026-08-21 sur quatre canaux — notes de version de la plateforme Claude du 19 août : API Files et API Skills en disponibilité générale, gestion des utilisateurs de l’Admin API en disponibilité générale, restriction de domaines des outils web des agents gérés, mémoire attachable en bac à sable auto-hébergé, visionneuse de sessions redessinée ; documentation de l’API Files ; journal de version de Claude Code en 2.1.237 ; SDK Python en 0.125.0 et SDK TypeScript en 0.120.0. Page des dépréciations relue, sans changement."
+      "status": "Claude Opus 5, Sonnet 5 et Fable 5 en service sur l’API directe et les trois clouds partenaires. Résidence d’inférence limitée à « global » et « us » sur l’API directe ; l’inférence européenne n’est offerte que par les clouds partenaires, sur Google Cloud au volet EU Multi-Region et à +10 %. SDK Python en 1.0, SDK TypeScript en 0.120.0, Claude Code en 2.1.239",
+      "last_verified_at": "2026-08-22",
+      "verificationStatus": "Vérifié en source primaire le 2026-08-22 sur deux canaux indépendants"
     },
     {
       "name": "Google",
@@ -82,8 +82,8 @@
       "flagship": "Gemini 3.7 Flash · Gemini 3.6 · Gemini API · Vertex AI",
       "belgium": "EEE : disponibilité documentée",
       "status": "revérifié",
-      "last_verified_at": "2026-08-21",
-      "verificationStatus": "Vérifié en source primaire le 2026-08-21 — grille tarifaire de l’IA générative de Google Cloud récupérée deux fois : Claude Sonnet 5 à 2,00/10,00 USD par million de jetons sur l’endpoint Global et 2,20/11,00 sur les endpoints régionaux non globaux (dont EU Multi-Region et europe-west1), soit +10 % ; Gemini 3.7 Flash à 0,75/3,75 USD/M jusqu’au 31 décembre 2026 puis 1,50/7,50 USD/M au 1er janvier 2027, avec prime de 10 % sur endpoint non global. Registres de distribution : google-genai en 2.19.0 et CLI Gemini en 0.56.0, l’une et l’autre du 19 août. Les domaines ai.google.dev et blog.google restent refusés."
+      "last_verified_at": "2026-08-22",
+      "verificationStatus": "Partiellement revérifié en source primaire le 2026-08-22 — API de PyPI : SDK Python google-genai en 2.19.0, téléversé le 2026-08-19T23:05:41Z. La version du paquet de distribution est établie ; la documentation et les pages produit de l’éditeur restent refusées par la politique de sortie réseau, de sorte que disponibilité, prix et régions ne sont pas réévalués et conservent le niveau de preuve du dernier contrôle effectif."
     },
     {
       "name": "Microsoft",
@@ -91,8 +91,8 @@
       "flagship": "Azure AI · Foundry · M365 Copilot",
       "belgium": "Résidence UE à vérifier par modèle",
       "status": "non revérifié",
-      "last_verified_at": "2026-08-21",
-      "verificationStatus": "Non revérifié le 2026-08-21 — domaine éditeur refusé par la politique réseau sortante ; aucun canal primaire lisible pour cet acteur ce jour, statut de contrôle renouvelé et aucun élément contraire trouvé"
+      "last_verified_at": "2026-08-22",
+      "verificationStatus": "Non revérifié au contrôle du 2026-08-22 — canal officiel de l’éditeur refusé par la politique de sortie réseau depuis l’environnement du run ; niveau de preuve du dernier contrôle effectif conservé sans réévaluation"
     },
     {
       "name": "AWS",
@@ -100,8 +100,8 @@
       "flagship": "Bedrock · AgentCore · Dogwood",
       "belgium": "Régions UE selon le service",
       "status": "non revérifié",
-      "last_verified_at": "2026-08-21",
-      "verificationStatus": "Non revérifié le 2026-08-21 — domaine éditeur refusé par la politique réseau sortante ; aucun canal primaire lisible pour cet acteur ce jour, statut de contrôle renouvelé et aucun élément contraire trouvé"
+      "last_verified_at": "2026-08-22",
+      "verificationStatus": "Non revérifié au contrôle du 2026-08-22 — canal officiel de l’éditeur refusé par la politique de sortie réseau depuis l’environnement du run ; niveau de preuve du dernier contrôle effectif conservé sans réévaluation"
     },
     {
       "name": "Meta",
@@ -109,8 +109,8 @@
       "flagship": "Muse Glimmer 30B (Apache 2.0) · Muse Spark",
       "belgium": "Poids ouverts, licence permissive",
       "status": "non revérifié",
-      "last_verified_at": "2026-08-21",
-      "verificationStatus": "Non revérifié le 2026-08-21 — domaine éditeur refusé par la politique réseau sortante ; aucun canal primaire lisible pour cet acteur ce jour, statut de contrôle renouvelé et aucun élément contraire trouvé"
+      "last_verified_at": "2026-08-22",
+      "verificationStatus": "Non revérifié au contrôle du 2026-08-22 — canal officiel de l’éditeur refusé par la politique de sortie réseau depuis l’environnement du run ; niveau de preuve du dernier contrôle effectif conservé sans réévaluation"
     },
     {
       "name": "Mistral AI",
@@ -118,8 +118,8 @@
       "flagship": "Le Chat/Vibe · API · Shieldstral 1.0",
       "belgium": "Endpoint UE disponible (×1,1)",
       "status": "non revérifié",
-      "last_verified_at": "2026-08-21",
-      "verificationStatus": "Non revérifié le 2026-08-21 — domaine éditeur refusé par la politique réseau sortante ; aucun canal primaire lisible pour cet acteur ce jour, statut de contrôle renouvelé et aucun élément contraire trouvé"
+      "last_verified_at": "2026-08-22",
+      "verificationStatus": "Partiellement revérifié en source primaire le 2026-08-22 — API de PyPI : SDK Python mistralai en 2.9.4, téléversé le 2026-08-21T18:06:00Z. La version du paquet de distribution est établie ; la documentation et les pages produit de l’éditeur restent refusées par la politique de sortie réseau, de sorte que disponibilité, prix et régions ne sont pas réévalués et conservent le niveau de preuve du dernier contrôle effectif."
     },
     {
       "name": "xAI (SpaceXAI)",
@@ -127,8 +127,8 @@
       "flagship": "Grok 4.6 · API",
       "belgium": "Console UE de 4.6 : à confirmer",
       "status": "non revérifié",
-      "last_verified_at": "2026-08-21",
-      "verificationStatus": "Non revérifié le 2026-08-21 — domaine éditeur refusé par la politique réseau sortante ; aucun canal primaire lisible pour cet acteur ce jour, statut de contrôle renouvelé et aucun élément contraire trouvé"
+      "last_verified_at": "2026-08-22",
+      "verificationStatus": "Non revérifié au contrôle du 2026-08-22 — canal officiel de l’éditeur refusé par la politique de sortie réseau depuis l’environnement du run ; niveau de preuve du dernier contrôle effectif conservé sans réévaluation"
     },
     {
       "name": "DeepSeek",
@@ -136,8 +136,8 @@
       "flagship": "V4 Pro 0813 (MIT) · V4-Flash 0731",
       "belgium": "Poids MIT auto-hébergeables ; API sans région UE",
       "status": "non revérifié",
-      "last_verified_at": "2026-08-21",
-      "verificationStatus": "Non revérifié le 2026-08-21 — domaine éditeur refusé par la politique réseau sortante ; aucun canal primaire lisible pour cet acteur ce jour, statut de contrôle renouvelé et aucun élément contraire trouvé"
+      "last_verified_at": "2026-08-22",
+      "verificationStatus": "Non revérifié au contrôle du 2026-08-22 — canal officiel de l’éditeur refusé par la politique de sortie réseau depuis l’environnement du run ; niveau de preuve du dernier contrôle effectif conservé sans réévaluation"
     },
     {
       "name": "Alibaba / Qwen",
@@ -145,8 +145,8 @@
       "flagship": "Qwen3.8-Max · Qwen3.8-27B (Apache 2.0) · Qwen3.6 · Model Studio",
       "belgium": "Poids Max annoncés, non livrés",
       "status": "non revérifié",
-      "last_verified_at": "2026-08-21",
-      "verificationStatus": "Non revérifié le 2026-08-21 — domaine éditeur refusé par la politique réseau sortante ; aucun canal primaire lisible pour cet acteur ce jour, statut de contrôle renouvelé et aucun élément contraire trouvé"
+      "last_verified_at": "2026-08-22",
+      "verificationStatus": "Non revérifié au contrôle du 2026-08-22 — canal officiel de l’éditeur refusé par la politique de sortie réseau depuis l’environnement du run ; niveau de preuve du dernier contrôle effectif conservé sans réévaluation"
     },
     {
       "name": "NVIDIA",
@@ -154,8 +154,8 @@
       "flagship": "Nemotron 3.5 Lightning · NIM · Switchyard",
       "belgium": "Poids OpenMDW-1.1; infra",
       "status": "non revérifié",
-      "last_verified_at": "2026-08-21",
-      "verificationStatus": "Non revérifié le 2026-08-21 — domaine éditeur refusé par la politique réseau sortante ; aucun canal primaire lisible pour cet acteur ce jour, statut de contrôle renouvelé et aucun élément contraire trouvé"
+      "last_verified_at": "2026-08-22",
+      "verificationStatus": "Non revérifié au contrôle du 2026-08-22 — canal officiel de l’éditeur refusé par la politique de sortie réseau depuis l’environnement du run ; niveau de preuve du dernier contrôle effectif conservé sans réévaluation"
     },
     {
       "name": "Cohere",
@@ -163,8 +163,8 @@
       "flagship": "Command A+ · North Mini Code 1.0",
       "belgium": "B2B ; poids ouverts Apache 2.0",
       "status": "non revérifié",
-      "last_verified_at": "2026-08-21",
-      "verificationStatus": "Non revérifié le 2026-08-21 — domaine éditeur refusé par la politique réseau sortante ; aucun canal primaire lisible pour cet acteur ce jour, statut de contrôle renouvelé et aucun élément contraire trouvé"
+      "last_verified_at": "2026-08-22",
+      "verificationStatus": "Partiellement revérifié en source primaire le 2026-08-22 — API de PyPI : SDK Python cohere en 7.0.9, téléversé le 2026-08-19T11:03:22Z. La version du paquet de distribution est établie ; la documentation et les pages produit de l’éditeur restent refusées par la politique de sortie réseau, de sorte que disponibilité, prix et régions ne sont pas réévalués et conservent le niveau de preuve du dernier contrôle effectif."
     },
     {
       "name": "IBM",
@@ -172,8 +172,8 @@
       "flagship": "watsonx · Granite 4.1",
       "belgium": "Contrôles entreprise structurés",
       "status": "non revérifié",
-      "last_verified_at": "2026-08-21",
-      "verificationStatus": "Non revérifié le 2026-08-21 — domaine éditeur refusé par la politique réseau sortante ; aucun canal primaire lisible pour cet acteur ce jour, statut de contrôle renouvelé et aucun élément contraire trouvé"
+      "last_verified_at": "2026-08-22",
+      "verificationStatus": "Non revérifié au contrôle du 2026-08-22 — canal officiel de l’éditeur refusé par la politique de sortie réseau depuis l’environnement du run ; niveau de preuve du dernier contrôle effectif conservé sans réévaluation"
     },
     {
       "name": "GitHub Copilot",
@@ -181,8 +181,8 @@
       "flagship": "Copilot · agents et modèles multiples",
       "belgium": "Disponible selon abonnement",
       "status": "non revérifié",
-      "last_verified_at": "2026-08-21",
-      "verificationStatus": "Non revérifié le 2026-08-21 — domaine éditeur refusé par la politique réseau sortante ; aucun canal primaire lisible pour cet acteur ce jour, statut de contrôle renouvelé et aucun élément contraire trouvé"
+      "last_verified_at": "2026-08-22",
+      "verificationStatus": "Non revérifié au contrôle du 2026-08-22 — canal officiel de l’éditeur refusé par la politique de sortie réseau depuis l’environnement du run ; niveau de preuve du dernier contrôle effectif conservé sans réévaluation"
     },
     {
       "name": "Perplexity",
@@ -190,8 +190,8 @@
       "flagship": "Recherche sourcée · Perplexity Computer",
       "belgium": "Disponible, checkout à vérifier",
       "status": "non revérifié",
-      "last_verified_at": "2026-08-21",
-      "verificationStatus": "Non revérifié le 2026-08-21 — domaine éditeur refusé par la politique réseau sortante ; aucun canal primaire lisible pour cet acteur ce jour, statut de contrôle renouvelé et aucun élément contraire trouvé"
+      "last_verified_at": "2026-08-22",
+      "verificationStatus": "Non revérifié au contrôle du 2026-08-22 — canal officiel de l’éditeur refusé par la politique de sortie réseau depuis l’environnement du run ; niveau de preuve du dernier contrôle effectif conservé sans réévaluation"
     },
     {
       "name": "Cursor",
@@ -199,8 +199,8 @@
       "flagship": "IDE agentique · Router",
       "belgium": "Acquisition SpaceX en cours de clôture",
       "status": "non revérifié",
-      "last_verified_at": "2026-08-21",
-      "verificationStatus": "Non revérifié le 2026-08-21 — domaine éditeur refusé par la politique réseau sortante ; aucun canal primaire lisible pour cet acteur ce jour, statut de contrôle renouvelé et aucun élément contraire trouvé"
+      "last_verified_at": "2026-08-22",
+      "verificationStatus": "Non revérifié au contrôle du 2026-08-22 — canal officiel de l’éditeur refusé par la politique de sortie réseau depuis l’environnement du run ; niveau de preuve du dernier contrôle effectif conservé sans réévaluation"
     },
     {
       "name": "Replit",
@@ -208,8 +208,8 @@
       "flagship": "Agent · environnement de développement",
       "belgium": "Disponibilité web, prix à vérifier",
       "status": "non revérifié",
-      "last_verified_at": "2026-08-21",
-      "verificationStatus": "Non revérifié le 2026-08-21 — domaine éditeur refusé par la politique réseau sortante ; aucun canal primaire lisible pour cet acteur ce jour, statut de contrôle renouvelé et aucun élément contraire trouvé"
+      "last_verified_at": "2026-08-22",
+      "verificationStatus": "Non revérifié au contrôle du 2026-08-22 — canal officiel de l’éditeur refusé par la politique de sortie réseau depuis l’environnement du run ; niveau de preuve du dernier contrôle effectif conservé sans réévaluation"
     },
     {
       "name": "Hugging Face",
@@ -217,8 +217,8 @@
       "flagship": "Hub · Inference · écosystème",
       "belgium": "Disponible, vigilance sécurité",
       "status": "partiellement revérifié",
-      "last_verified_at": "2026-08-21",
-      "verificationStatus": "Partiellement revérifié le 2026-08-21 — API de PyPI : Transformers en 5.15.1, publiée le 19 août. Le contenu du changement n’est pas établi et huggingface.co reste refusé : aucun dépôt de poids ni fichier de licence n’a pu être lu."
+      "last_verified_at": "2026-08-22",
+      "verificationStatus": "Partiellement revérifié en source primaire le 2026-08-22 — API de PyPI : huggingface-hub en 1.28.0 (2026-08-18T12:27:12Z) et transformers en 5.15.1 (2026-08-19T11:28:16Z). La version du paquet de distribution est établie ; la documentation et les pages produit de l’éditeur restent refusées par la politique de sortie réseau, de sorte que disponibilité, prix et régions ne sont pas réévalués et conservent le niveau de preuve du dernier contrôle effectif."
     },
     {
       "name": "Moonshot / Kimi",
@@ -226,8 +226,8 @@
       "flagship": "Kimi K3 · Kimi Code · API",
       "belgium": "Disponibilité commerciale à confirmer",
       "status": "non revérifié",
-      "last_verified_at": "2026-08-21",
-      "verificationStatus": "Non revérifié le 2026-08-21 — domaine éditeur refusé par la politique réseau sortante ; aucun canal primaire lisible pour cet acteur ce jour, statut de contrôle renouvelé et aucun élément contraire trouvé"
+      "last_verified_at": "2026-08-22",
+      "verificationStatus": "Non revérifié au contrôle du 2026-08-22 — canal officiel de l’éditeur refusé par la politique de sortie réseau depuis l’environnement du run ; niveau de preuve du dernier contrôle effectif conservé sans réévaluation"
     },
     {
       "name": "Z.AI / GLM",
@@ -235,8 +235,8 @@
       "flagship": "GLM-5.3 (poids retenus) · GLM-5.2 (MIT)",
       "belgium": "Abonnement hors UE ; poids 5.3 non publiés",
       "status": "non revérifié",
-      "last_verified_at": "2026-08-21",
-      "verificationStatus": "Non revérifié le 2026-08-21 — domaine éditeur refusé par la politique réseau sortante ; aucun canal primaire lisible pour cet acteur ce jour, statut de contrôle renouvelé et aucun élément contraire trouvé"
+      "last_verified_at": "2026-08-22",
+      "verificationStatus": "Non revérifié au contrôle du 2026-08-22 — canal officiel de l’éditeur refusé par la politique de sortie réseau depuis l’environnement du run ; niveau de preuve du dernier contrôle effectif conservé sans réévaluation"
     }
   ],
   "hardware": [
@@ -423,21 +423,21 @@
       "residency": "Inférence et stockage à vérifier endpoint par endpoint. Le SDK Python, en 3.3.1 le 19 août, porte depuis 3.3.0 la désignation d’endpoints de résidence de données par leur nom ; la liste des zones offertes et la portée exacte de la résidence ne sont pas établies, la documentation de la plateforme restant refusée",
       "confidence": 95,
       "sourceId": "R01",
-      "last_verified_at": "2026-08-21",
-      "verificationStatus": "Partiellement revérifié le 2026-08-21 — le mécanisme d’endpoint de résidence nommé est établi au journal de version du SDK officiel, mais la page de résidence de l’éditeur reste refusée ; niveau de preuve du dernier contrôle effectif conservé pour les régions"
+      "last_verified_at": "2026-08-22",
+      "verificationStatus": "Non revérifié au contrôle du 2026-08-22 — canal officiel de l’éditeur refusé par la politique de sortie réseau depuis l’environnement du run ; niveau de preuve du dernier contrôle effectif conservé sans réévaluation"
     },
     {
       "developer": "Anthropic",
       "model": "Familles Claude via API directe",
       "distributor": "Anthropic",
       "channel": "API managée",
-      "region": "Option de résidence selon offre",
-      "belgium": "Disponible sous conditions",
-      "residency": "Global par défaut ; option d’inférence US via inference_geo (×1,1). Résidence UE non publiée pour l’API directe",
-      "confidence": 92,
+      "region": "Routage global par défaut ; inférence tenue aux États-Unis en option payante. Aucune option d’inférence européenne",
+      "belgium": "Accessible depuis la Belgique ; aucune résidence d’inférence européenne offerte",
+      "residency": "Deux réglages indépendants, documentés en source primaire le 22 août 2026. L’inférence est gouvernée par le paramètre inference_geo de POST /v1/messages, qui n’accepte que deux valeurs : « global » (défaut, l’inférence peut s’exécuter dans n’importe quelle géographie disponible, prix standard) et « us » (inférence exclusivement sur infrastructure américaine, multiplicateur tarifaire 1,1× sur toutes les catégories de jetons, entrée, sortie, écritures et lectures de cache). La documentation de résidence ne propose aucune valeur européenne : il n’existe pas de pinning d’inférence dans l’EEE sur l’API directe. Le paramètre n’est accepté que sur Claude 4.6 et versions ultérieures ; sur Opus 4.5, Sonnet 4.5, Haiku 4.5 et antérieurs il renvoie une erreur 400. Le stockage au repos et les traitements d’endpoint (transcodage d’images, exécution de code) relèvent d’un réglage distinct, le Workspace geo, configuré au niveau de l’espace de travail dans la console. La réponse renvoie usage.inference_geo, ce qui permet de contrôler après coup où l’inférence a effectivement tourné",
+      "confidence": 96,
       "sourceId": "R02",
-      "last_verified_at": "2026-08-21",
-      "verificationStatus": "Contrôlé le 2026-08-21 — source de résidence refusée par la politique réseau sortante ; niveau de preuve du dernier contrôle effectif conservé"
+      "last_verified_at": "2026-08-22",
+      "verificationStatus": "Revérifié en source primaire le 2026-08-22 — page de résidence des données et page tarifaire de la plateforme Claude relues en accès direct ; l’absence de valeur européenne pour inference_geo est établie par relecture exhaustive de la page, qui ne contient aucune occurrence d’une géographie européenne"
     },
     {
       "developer": "Anthropic",
@@ -449,8 +449,8 @@
       "residency": "Routage cross-region et journaux à contrôler",
       "confidence": 92,
       "sourceId": "R06",
-      "last_verified_at": "2026-08-21",
-      "verificationStatus": "Contrôlé le 2026-08-21 — source de résidence refusée par la politique réseau sortante ; niveau de preuve du dernier contrôle effectif conservé"
+      "last_verified_at": "2026-08-22",
+      "verificationStatus": "Non revérifié au contrôle du 2026-08-22 — canal officiel de l’éditeur refusé par la politique de sortie réseau depuis l’environnement du run ; niveau de preuve du dernier contrôle effectif conservé sans réévaluation"
     },
     {
       "developer": "Anthropic",
@@ -462,21 +462,21 @@
       "residency": "Ne réside pas automatiquement dans la région Azure choisie",
       "confidence": 90,
       "sourceId": "R05",
-      "last_verified_at": "2026-08-21",
-      "verificationStatus": "Contrôlé le 2026-08-21 — source de résidence refusée par la politique réseau sortante ; niveau de preuve du dernier contrôle effectif conservé"
+      "last_verified_at": "2026-08-22",
+      "verificationStatus": "Non revérifié au contrôle du 2026-08-22 — canal officiel de l’éditeur refusé par la politique de sortie réseau depuis l’environnement du run ; niveau de preuve du dernier contrôle effectif conservé sans réévaluation"
     },
     {
       "developer": "Anthropic",
       "model": "Claude via Google Cloud (Agent Platform, ex-Vertex AI)",
       "distributor": "Google Cloud",
       "channel": "Cloud partenaire",
-      "region": "Global, US Multi-Region, EU Multi-Region, us-east5, europe-west1, asia-southeast1, asia-east1",
-      "belgium": "Disponible selon projet, par une région ou multi-région UE",
-      "residency": "La grille tarifaire nomme sept endpoints pour les modèles Claude — Global, US Multi-Region, EU Multi-Region, us-east5, europe-west1, asia-southeast1, asia-east1 — sous l’intitulé « Models with regional pricing », et applique bien une tarification régionale : deux tables successives des mêmes modèles, une table Global (Claude Sonnet 5 à 2,00/10,00 USD/M, Opus 5 à 5,00/25,00) et une table régionale non globale à +10 % (Sonnet 5 à 2,20/11,00, Opus 5 à 5,50/27,50) couvrant EU Multi-Region et europe-west1. Garder l’inférence Claude en région UE coûte donc +10 % par rapport à l’endpoint Global. La grille nomme les endpoints et leur prix mais ne documente ni la résidence de l’inférence, ni celle du stockage, ni celle des journaux, qui restent gouvernées par la configuration du projet et n’ont pas pu être relues, docs.cloud.google.com étant refusé",
-      "confidence": 93,
+      "region": "Volets Global, US Multi-Region et EU Multi-Region pour la génération 5 ; volets monorégionaux (dont europe-west1) limités à la génération 4.x",
+      "belgium": "Disponible ; la région belge europe-west1 n’offre pas la génération 5",
+      "residency": "Sur la grille des modèles partenaires, récupérée trois fois le 22 août 2026 et lue par le balisage de ses onglets, la section Claude compte sept volets de région. Le volet Global facture Claude Sonnet 5 à 2,00/10,00 USD par million de jetons et Opus 5 à 5,00/25,00. Les volets US Multi-Region et EU Multi-Region facturent exactement +10 % : Sonnet 5 à 2,20/11,00, Opus 5 à 5,50/27,50, Fable 5 à 11,00/55,00. Les quatre volets monorégionaux — us-east5, europe-west1, asia-southeast1, asia-east1 — ne contiennent aucun modèle de génération 5 et s’arrêtent à Opus 4.6/4.5, Sonnet 4.6/4.5 et Haiku 4.5, eux aussi à +10 %. Sur cette surface, l’inférence est déterminée par l’URL de l’endpoint ou le profil d’inférence, et non par le paramètre inference_geo, qui n’y est pas applicable",
+      "confidence": 95,
       "sourceId": "R04",
-      "last_verified_at": "2026-08-21",
-      "verificationStatus": "Contrôlé le 2026-08-21 — grille tarifaire de Google Cloud relue en accès direct et récupérée deux fois ; tarification régionale des modèles Claude confirmée (+10 % sur endpoints non globaux dont EU Multi-Region et europe-west1)"
+      "last_verified_at": "2026-08-22",
+      "verificationStatus": "Revérifié en source primaire le 2026-08-22 — triple récupération de la grille tarifaire et rattachement de chaque table à son onglet de région par l’attribut aria-labelledby ; résultat identique sur les trois copies"
     },
     {
       "developer": "Google",
@@ -488,8 +488,8 @@
       "residency": "Disponibilité EEE ne vaut pas résidence garantie. Pour Gemini 3.7 Flash, aucun point de terminaison monorégional ni multirégional UE n’est confirmé dans ce run",
       "confidence": 88,
       "sourceId": "R03",
-      "last_verified_at": "2026-08-21",
-      "verificationStatus": "Contrôlé le 2026-08-21 — grille tarifaire de Google Cloud relue en accès direct, sept régions partenaires publiées dont EU Multi-Region et europe-west1"
+      "last_verified_at": "2026-08-22",
+      "verificationStatus": "Non revérifié au contrôle du 2026-08-22 — canal officiel de l’éditeur refusé par la politique de sortie réseau depuis l’environnement du run ; niveau de preuve du dernier contrôle effectif conservé sans réévaluation"
     },
     {
       "developer": "Google",
@@ -501,8 +501,8 @@
       "residency": "Données et journaux gouvernés par la configuration Cloud. La grille tarifaire, relue ce jour, distingue un niveau global et un niveau non global supérieur de 10 % exactement, y compris sur les unités de débit réservé : une région ou multi-région européenne se paie donc explicitement",
       "confidence": 95,
       "sourceId": "R04",
-      "last_verified_at": "2026-08-21",
-      "verificationStatus": "Contrôlé le 2026-08-21 — grille tarifaire de Google Cloud relue en accès direct, sept régions partenaires publiées dont EU Multi-Region et europe-west1"
+      "last_verified_at": "2026-08-22",
+      "verificationStatus": "Non revérifié au contrôle du 2026-08-22 — canal officiel de l’éditeur refusé par la politique de sortie réseau depuis l’environnement du run ; niveau de preuve du dernier contrôle effectif conservé sans réévaluation"
     },
     {
       "developer": "OpenAI",
@@ -514,8 +514,8 @@
       "residency": "Vérifier région de déploiement et fonctions annexes",
       "confidence": 95,
       "sourceId": "R05",
-      "last_verified_at": "2026-08-21",
-      "verificationStatus": "Contrôlé le 2026-08-21 — source de résidence refusée par la politique réseau sortante ; niveau de preuve du dernier contrôle effectif conservé"
+      "last_verified_at": "2026-08-22",
+      "verificationStatus": "Non revérifié au contrôle du 2026-08-22 — canal officiel de l’éditeur refusé par la politique de sortie réseau depuis l’environnement du run ; niveau de preuve du dernier contrôle effectif conservé sans réévaluation"
     },
     {
       "developer": "Multiples",
@@ -527,8 +527,8 @@
       "residency": "Chaque modèle, outil et routage doit être vérifié",
       "confidence": 95,
       "sourceId": "R06",
-      "last_verified_at": "2026-08-21",
-      "verificationStatus": "Contrôlé le 2026-08-21 — source de résidence refusée par la politique réseau sortante ; niveau de preuve du dernier contrôle effectif conservé"
+      "last_verified_at": "2026-08-22",
+      "verificationStatus": "Non revérifié au contrôle du 2026-08-22 — canal officiel de l’éditeur refusé par la politique de sortie réseau depuis l’environnement du run ; niveau de preuve du dernier contrôle effectif conservé sans réévaluation"
     },
     {
       "developer": "Mistral AI",
@@ -540,8 +540,8 @@
       "residency": "Inférence dans la région choisie, sous réserve de transferts encadrés vers des sous-traitants hors région. Exiger DPA et liste des sous-traitants.",
       "confidence": 92,
       "sourceId": "R07",
-      "last_verified_at": "2026-08-21",
-      "verificationStatus": "Contrôlé le 2026-08-21 — source de résidence refusée par la politique réseau sortante ; niveau de preuve du dernier contrôle effectif conservé"
+      "last_verified_at": "2026-08-22",
+      "verificationStatus": "Non revérifié au contrôle du 2026-08-22 — canal officiel de l’éditeur refusé par la politique de sortie réseau depuis l’environnement du run ; niveau de preuve du dernier contrôle effectif conservé sans réévaluation"
     },
     {
       "developer": "Hugging Face",
@@ -553,8 +553,8 @@
       "residency": "DPA Enterprise et configuration endpoint à vérifier",
       "confidence": 90,
       "sourceId": "R08",
-      "last_verified_at": "2026-08-21",
-      "verificationStatus": "Contrôlé le 2026-08-21 — source de résidence refusée par la politique réseau sortante ; niveau de preuve du dernier contrôle effectif conservé"
+      "last_verified_at": "2026-08-22",
+      "verificationStatus": "Non revérifié au contrôle du 2026-08-22 — canal officiel de l’éditeur refusé par la politique de sortie réseau depuis l’environnement du run ; niveau de preuve du dernier contrôle effectif conservé sans réévaluation"
     },
     {
       "developer": "Meta, Mistral, Qwen, NVIDIA, IBM et autres",
@@ -566,8 +566,8 @@
       "residency": "Sous contrôle de l’exploitant, y compris logs et sauvegardes",
       "confidence": 95,
       "sourceId": "R07/R08/R12/R14",
-      "last_verified_at": "2026-08-21",
-      "verificationStatus": "Contrôlé le 2026-08-21 — source de résidence refusée par la politique réseau sortante ; niveau de preuve du dernier contrôle effectif conservé"
+      "last_verified_at": "2026-08-22",
+      "verificationStatus": "Non revérifié au contrôle du 2026-08-22 — canal officiel de l’éditeur refusé par la politique de sortie réseau depuis l’environnement du run ; niveau de preuve du dernier contrôle effectif conservé sans réévaluation"
     },
     {
       "developer": "Cohere",
@@ -579,8 +579,8 @@
       "residency": "Non publiée avec assez de précision dans ce run",
       "confidence": 70,
       "sourceId": "R13",
-      "last_verified_at": "2026-08-21",
-      "verificationStatus": "Contrôlé le 2026-08-21 — source de résidence refusée par la politique réseau sortante ; niveau de preuve du dernier contrôle effectif conservé"
+      "last_verified_at": "2026-08-22",
+      "verificationStatus": "Non revérifié au contrôle du 2026-08-22 — canal officiel de l’éditeur refusé par la politique de sortie réseau depuis l’environnement du run ; niveau de preuve du dernier contrôle effectif conservé sans réévaluation"
     },
     {
       "developer": "DeepSeek, Qwen, Kimi et GLM",
@@ -592,8 +592,8 @@
       "residency": "DPA, transferts et rétention insuffisamment documentés. Pour DeepSeek, la voie défendable depuis la Belgique est l’auto-hébergement des poids MIT plutôt que l’API directe",
       "confidence": 60,
       "sourceId": "R11 + docs fournisseurs",
-      "last_verified_at": "2026-08-21",
-      "verificationStatus": "Contrôlé le 2026-08-21 — source de résidence refusée par la politique réseau sortante ; niveau de preuve du dernier contrôle effectif conservé"
+      "last_verified_at": "2026-08-22",
+      "verificationStatus": "Non revérifié au contrôle du 2026-08-22 — canal officiel de l’éditeur refusé par la politique de sortie réseau depuis l’environnement du run ; niveau de preuve du dernier contrôle effectif conservé sans réévaluation"
     },
     {
       "developer": "xAI (SpaceXAI)",
@@ -605,8 +605,8 @@
       "residency": "À confirmer. Entité contractante susceptible de changer à la clôture de l’acquisition d’Anysphere par SpaceX.",
       "confidence": 60,
       "sourceId": "S139",
-      "last_verified_at": "2026-08-21",
-      "verificationStatus": "Contrôlé le 2026-08-21 — source de résidence refusée par la politique réseau sortante ; niveau de preuve du dernier contrôle effectif conservé"
+      "last_verified_at": "2026-08-22",
+      "verificationStatus": "Non revérifié au contrôle du 2026-08-22 — canal officiel de l’éditeur refusé par la politique de sortie réseau depuis l’environnement du run ; niveau de preuve du dernier contrôle effectif conservé sans réévaluation"
     }
   ],
   "documents": [
@@ -675,7 +675,7 @@
     }
   ],
   "verificationNotice": {
-    "checkedAt": "2026-08-21",
+    "checkedAt": "2026-08-22",
     "level": "warning",
     "title": "Cinq canaux de preuve primaire pleinement ouverts, les six points d’entrée de veille toujours refusés",
     "detail": "Les 55 sources du référentiel ont été retestées une à une le 21 août 2026 : 5 répondent pleinement (platform.claude.com/docs, PyPI, registre npm, blog.modelcontextprotocol.io, api.github.com), 2 partiellement (raw.githubusercontent.com accessible par chemin de fichier ; cloud.google.com sur ses pages tarifaires, /docs/ refusé) et 48 sont refusées au tunnel CONNECT du mandataire de sortie, qui répond 403. Profil identique à la veille, pour le onzième contrôle consécutif. La totalité des six points d’entrée obligatoires reste refusée — TLDR AI, TechCrunch, VentureBeat, TestingCatalog, AI Frontiers et NVIDIA Research —, de sorte qu’aucun signal précoce TestingCatalog n’a pu être collecté et qu’aucun sujet n’a été retenu depuis une source secondaire. La documentation de la plateforme Claude porte les faits dominants du jour, et cloud.google.com reste ouvert sur ses pages tarifaires. Angles morts inchangés : dépôts de poids ouverts, pages tarifaires d’OpenAI et de DeepSeek, et le change.",
