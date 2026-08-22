@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="fr-BE">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Choisir un modèle LLM local selon la RAM, la VRAM et le matériel disponible.">
+  <link rel="canonical" href="https://bourguignonsimon.github.io/DailyRun/modeles-locaux.html">
+  <title>LLM locaux par matériel — Observatoire LLM</title><link rel="stylesheet" href="styles.css">
+</head>
+<body class="simple-page" data-page="local">
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+  <header class="site-header"><a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">OL</span><span><strong>Observatoire LLM</strong><small>Exécution locale</small></span></a><div class="run-chip" id="run-chip" aria-live="polite"><span class="status-dot"></span><span>Chargement…</span></div></header>
+  <nav class="section-nav primary-nav" aria-label="Navigation principale de l’observatoire"><a href="index.html">Accueil</a><a href="choisir-un-modele.html">Choisir</a><a href="actualites.html">Actualités</a><a href="outils.html">Outils</a><a href="modeles-locaux.html" aria-current="page">LLM locaux</a><a href="localisation.html">Localisation</a><a href="explorer.html">Mode expert</a></nav>
+  <main id="contenu">
+    <section class="page-intro"><span class="eyebrow">HORS LIGNE · <span id="edition-date">—</span></span><h1>Quel modèle tient <em>sur votre matériel ?</em></h1><p>Choisissez une configuration réaliste. Les estimations supposent une quantification adaptée, un contexte modéré et une marge mémoire.</p></section>
+    <section class="local-section standalone-section" id="local"><div class="hardware-layout"><div class="hardware-picker" id="hardware-picker" role="listbox" aria-label="Configuration matérielle"></div><article class="hardware-result" id="hardware-result" aria-live="polite"></article></div><a class="section-link inverse" href="modeles-locaux-par-hardware.html">Voir quantifications, licences et limites détaillées →</a></section>
+  </main>
+  <footer><p>Mesurez toujours la vitesse et le cache KV sur la machine cible.</p><p id="footer-run">Dernière publication : —</p></footer>
+  <script src="app.js" defer></script>
+</body>
+</html>

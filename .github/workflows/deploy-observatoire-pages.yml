@@ -41,6 +41,7 @@ jobs:
           python -m json.tool ObservationLLM/dashboard/data/announcements.json >/dev/null
           python -m json.tool ObservationLLM/dashboard/data/tools-catalog.json >/dev/null
           python -m json.tool ObservationLLM/dashboard/data/formations.json >/dev/null
+          python -m json.tool ObservationLLM/dashboard/data/use-case-recommendations.json >/dev/null
 
       - name: Vérifier les cadences et le catalogue
         shell: bash
@@ -52,6 +53,7 @@ jobs:
           data = Path("ObservationLLM/dashboard/data")
           cadence = json.loads((data / "research-cadence.json").read_text(encoding="utf-8"))
           tools = json.loads((data / "tools-catalog.json").read_text(encoding="utf-8"))
+          recommendations = json.loads((data / "use-case-recommendations.json").read_text(encoding="utf-8"))
           lanes = cadence.get("lanes", [])
           assert len(lanes) == 5, "Le planning doit contenir cinq lignes"
           assert len({lane["id"] for lane in lanes}) == 5, "Les identifiants de cadence doivent être uniques"
@@ -59,6 +61,17 @@ jobs:
           assert sum(lane["cadence"] == "Chaque jour" for lane in lanes) == 1, "Une ligne quotidienne est requise"
           assert sum(lane["cadence"] == "Dès détection" for lane in lanes) == 1, "Une ligne événementielle est requise"
           assert len(tools.get("tools", [])) == 100, "Le catalogue doit contenir exactement 100 outils"
+          use_cases = recommendations.get("useCases", [])
+          products = recommendations.get("products", {})
+          assert len(use_cases) == 12, "Le guide doit contenir exactement douze types d’utilisation"
+          assert len({item["id"] for item in use_cases}) == 12, "Les identifiants d’usage doivent être uniques"
+          assert all(1 <= len(item.get("recommendations", [])) <= 3 for item in use_cases), "Chaque usage doit proposer un à trois produits"
+          referenced = {
+              recommendation["productId"]
+              for item in use_cases
+              for recommendation in item.get("recommendations", [])
+          }
+          assert referenced <= products.keys(), f"Références produit inconnues : {sorted(referenced - products.keys())}"
           PY
 
       - name: Vérifier le JavaScript
@@ -71,6 +84,13 @@ jobs:
         shell: bash
         run: |
           test -f ObservationLLM/dashboard-dist/index.html
+          test -f ObservationLLM/dashboard-dist/explorer.html
+          test -f ObservationLLM/dashboard-dist/actualites.html
+          test -f ObservationLLM/dashboard-dist/choisir-un-modele.html
+          test -f ObservationLLM/dashboard-dist/outils.html
+          test -f ObservationLLM/dashboard-dist/localisation.html
+          test -f ObservationLLM/dashboard-dist/modeles-locaux.html
+          test -f ObservationLLM/dashboard-dist/sources-confiance.html
           test -f ObservationLLM/dashboard-dist/synthese.html
           test -f ObservationLLM/dashboard-dist/comparatif.html
           test -f ObservationLLM/dashboard-dist/analyse-detaillee.html
@@ -81,6 +101,17 @@ jobs:
           test -f ObservationLLM/dashboard-dist/outils-ecosysteme-ia.html
           test -f ObservationLLM/dashboard-dist/formations-ia-gratuites.html
           test -f ObservationLLM/dashboard-dist/sources.html
+          test -f ObservationLLM/dashboard-dist/recommandations-modeles-par-usage.html
+
+      - name: Vérifier les métadonnées des pages publiques
+        shell: bash
+        run: |
+          for page in index explorer actualites choisir-un-modele outils localisation modeles-locaux sources-confiance; do
+            file="ObservationLLM/dashboard-dist/$page.html"
+            test "$(grep -o '<h1[ >]' "$file" | wc -l)" -eq 1
+            test "$(grep -o 'rel="canonical"' "$file" | wc -l)" -eq 1
+            grep -q '<html lang="fr-BE">' "$file"
+          done
 
   deploy:
     name: Publier sur GitHub Pages

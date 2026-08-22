@@ -14,6 +14,7 @@ Contrôle: **21 août 2026**. **Servir Claude en région européenne sur Google 
 - [Synthèse décisionnelle](synthese.md)
 - [Comparatif structuré](comparatif.md)
 - [Analyse détaillée](analyse-detaillee.md)
+- [Modèles recommandés par type d’utilisation](recommandations-modeles-par-usage.md)
 - [Bonnes pratiques de développement](bonnes-pratiques-developpement.md)
 - [Modèles locaux par matériel](modeles-locaux-par-hardware.md)
 - [Localisation, distribution et hébergement des modèles](localisation-modeles.md)

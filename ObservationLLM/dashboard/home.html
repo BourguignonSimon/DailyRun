@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="fr-BE">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Observatoire européen des LLM et agents IA : actualités vérifiées, recommandations par usage, localisation et modèles locaux.">
+  <meta name="theme-color" content="#101512">
+  <link rel="canonical" href="https://bourguignonsimon.github.io/DailyRun/">
+  <title>Observatoire LLM — choisir, vérifier, décider</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="simple-page" data-page="home">
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Accueil de l’observatoire"><span class="brand-mark" aria-hidden="true">OL</span><span><strong>Observatoire LLM</strong><small>Perspective européenne · repère belge</small></span></a>
+    <div class="run-chip" id="run-chip" aria-live="polite"><span class="status-dot"></span><span>Chargement…</span></div>
+  </header>
+  <nav class="section-nav primary-nav" aria-label="Navigation principale de l’observatoire">
+    <a href="index.html" aria-current="page">Accueil</a>
+    <a href="choisir-un-modele.html">Choisir</a>
+    <a href="actualites.html">Actualités</a>
+    <a href="outils.html">Outils</a>
+    <a href="modeles-locaux.html">LLM locaux</a>
+    <a href="localisation.html">Localisation</a>
+    <a href="explorer.html">Mode expert</a>
+  </nav>
+  <main id="contenu">
+    <section class="hero compact-hero" id="overview">
+      <div class="eyebrow">ÉDITION <span id="edition-date">—</span></div>
+      <div class="hero-grid">
+        <div>
+          <h1>Une veille publique, <em>datée et sourcée.</em></h1>
+          <p class="hero-copy">Comprenez ce qui a changé, choisissez les modèles adaptés à votre usage et vérifiez où vos données peuvent être traitées. Les détails complets restent accessibles en mode expert.</p>
+          <div class="hero-actions">
+            <a class="button primary" href="choisir-un-modele.html">Choisir un modèle</a>
+            <a class="button secondary" href="actualites.html">Voir les changements du jour</a>
+          </div>
+        </div>
+        <aside class="signal-card compact-signal" aria-label="Fait principal du dernier contrôle">
+          <span class="signal-label">À RETENIR</span>
+          <strong id="headline-change">Chargement…</strong>
+          <details><summary>Lire le détail vérifié</summary><p id="headline-detail"></p></details>
+        </aside>
+      </div>
+    </section>
+
+    <section class="task-section" aria-labelledby="task-title">
+      <div class="section-heading"><div><span class="eyebrow">COMMENCER ICI</span><h2 id="task-title">Que cherchez-vous ?</h2></div><p>Quatre portes d’entrée, sans parcourir l’intégralité du référentiel.</p></div>
+      <div class="task-grid">
+        <a class="task-card" href="actualites.html"><span>01</span><strong>Ce qui a changé</strong><small>Annonces récentes, retraits, prix et incidents.</small></a>
+        <a class="task-card featured" href="choisir-un-modele.html"><span>02</span><strong>Quel modèle choisir</strong><small>Recommandations par usage, coût et confidentialité.</small></a>
+        <a class="task-card" href="localisation.html"><span>03</span><strong>Où vont mes données</strong><small>Distributeurs, régions et limites de résidence.</small></a>
+        <a class="task-card" href="modeles-locaux.html"><span>04</span><strong>Ce qui tourne chez moi</strong><small>Du Raspberry Pi à la carte graphique 24 Go.</small></a>
+      </div>
+    </section>
+
+    <section class="metrics compact-metrics" aria-label="Chiffres clés">
+      <article><span>Entités suivies</span><strong id="metric-entities">—</strong><small>catalogue courant</small></article>
+      <article><span>Revérifiées</span><strong id="metric-verified">—</strong><small>pendant ce run</small></article>
+      <article><span>Annonces</span><strong id="metric-announcements">—</strong><small>signaux qualifiés</small></article>
+      <article><span>Outils</span><strong id="metric-tools">—</strong><small>catalogue suivi</small></article>
+      <article><span>Profils locaux</span><strong id="metric-hardware">—</strong><small>matériels couverts</small></article>
+    </section>
+
+    <section class="decision-section" id="recommendations">
+      <div class="section-heading"><div><span class="eyebrow">RECOMMANDATIONS</span><h2>Les choix les plus demandés</h2></div><p>Une présélection n’est pas un classement universel : vérifiez-la sur vos tâches.</p></div>
+      <div class="recommendation-preview" id="recommendation-preview"></div>
+      <a class="section-link" href="choisir-un-modele.html">Comparer les modèles par type d’utilisation →</a>
+    </section>
+
+    <section class="announcements-section compact-announcements" id="announcements">
+      <div class="section-heading"><div><span class="eyebrow">DERNIER RELEVÉ</span><h2>Six informations à lire</h2></div><p>Le reste du relevé reste disponible dans la vue Actualités.</p></div>
+      <div class="announcement-grid" id="announcement-grid" data-limit="6" aria-live="polite"></div>
+      <p class="empty-state" id="announcement-empty" hidden>Aucune annonce disponible.</p>
+      <a class="section-link inverse" href="actualites.html">Voir toutes les annonces →</a>
+    </section>
+
+    <section class="proof-section">
+      <div class="section-heading"><div><span class="eyebrow">TRANSPARENCE</span><h2>Ce que le run n’a pas pu vérifier</h2></div><p>Une source inaccessible est signalée, jamais remplacée par une certitude.</p></div>
+      <div class="run-notice" id="run-notice" role="status" hidden><strong id="run-notice-title"></strong><p id="run-notice-detail"></p><p class="run-notice-fix" id="run-notice-fix"></p></div>
+      <div class="proof-links"><a href="sources-confiance.html">Consulter les sources</a><a href="analyse-detaillee.html">Lire la méthode complète</a><a href="explorer.html">Ouvrir le mode expert</a></div>
+    </section>
+  </main>
+  <footer><p>Analyse informative — ni conseil juridique ni benchmark universel.</p><p id="footer-run">Dernière publication : —</p></footer>
+  <noscript>Les données dynamiques nécessitent JavaScript. Les rapports HTML restent accessibles depuis le mode expert.</noscript>
+  <script src="app.js" defer></script>
+</body>
+</html>
