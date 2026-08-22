@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-08-21",
+  "checkedAt": "2026-08-22",
   "methodology": "Les flux X et la presse spécialisée servent à détecter rapidement une annonce. La confiance finale dépend de la corroboration par une source primaire durable et directement responsable du fait. Lorsque le domaine officiel est injoignable depuis l’environnement d’exécution, la mention en est faite dans confidenceReason et la note est plafonnée à 89/100.",
   "announcements": [
     {
@@ -8,12 +8,12 @@
       "publishedAt": "2026-08-20",
       "actor": "Anthropic",
       "category": "Outillage / SDK",
-      "title": "Le SDK Python officiel d’Anthropic atteint la version majeure 1.0.0, avec guide de migration v1 (ruptures d’API) ; le SDK TypeScript reste en 0.120.0",
-      "summary": "L’API de PyPI, interrogée le 21 août 2026, donne anthropic 1.0.0 comme version courante du paquet, téléversée le 2026-08-20 à 19:58:58 UTC, immédiatement après la série 0.123.0/0.124.0/0.125.0 des 18–19 août. La fiche du paquet 1.0.0 exige Python 3.10 ou supérieur, reste sous licence MIT, propose les extras aiohttp, Bedrock/AWS, Google Cloud, MCP, Vertex AI et webhooks, et renvoie explicitement à un « guide de migration v1 » pour les projets venant des versions 0.x — marqueur d’une version majeure porteuse de ruptures d’API. La montée est propre au SDK Python : le SDK TypeScript @anthropic-ai/sdk reste en 0.120.0 (2026-08-19 22:05 UTC), ce qui écarte une renumérotation coordonnée de toute la famille de SDK.",
-      "confidence": 90,
-      "confidenceLabel": "Registre de distribution primaire pour l’existence et la date ; contenu de rupture non lu ligne à ligne",
-      "confidenceReason": "L’existence et la date de 1.0.0 sont établies deux fois sur canal primaire : l’API de PyPI donne 1.0.0 comme version courante et l’horodatage de téléversement, et la fiche du paquet 1.0.0 sur PyPI confirme Python 3.10+, la licence et le renvoi au guide de migration v1. Le troisième angle est corroborant sans être une confirmation directe du contenu : le SDK TypeScript resté en 0.120.0. Plafond de 90 : github.com étant refusé par la politique réseau sortante, le détail des ruptures du guide de migration v1 n’a pas pu être lu ligne à ligne — un registre prouve qu’une version existe et à quelle date, non ce qu’elle change.",
-      "belgiumImpact": "Un développeur belge qui dépend du SDK Python d’Anthropic doit lire le guide de migration v1 avant de monter en production : une version majeure 1.0.0 porte des ruptures d’API et le verrouillage de version reste non négociable. Le SDK TypeScript n’est pas concerné (0.120.0). Aucune restriction géographique.",
+      "title": "Le SDK Python officiel d’Anthropic passe en 1.0 : la couche HTTP quitte httpx pour httpx2, et les paramètres d’échantillonnage comme l’API Text Completions disparaissent ; le SDK TypeScript reste en 0.120.0",
+      "summary": "Les notes de version de la plateforme Claude, datées du 20 août 2026, annoncent la version 1.0 du SDK Python et en détaillent les ruptures. La couche HTTP passe de httpx à httpx2, un fork maintenu et compatible avec l’API d’origine : les objets http_client, Timeout et transport personnalisés doivent désormais être construits depuis httpx2 (les aides DefaultHttpxClient sont inchangées), et un appel à httpx2.alias_httpx() au démarrage reste nécessaire pour les bibliothèques de traçage ou de simulation qui instrumentent httpx. La version 1.0 exige Python 3.10 ou supérieur et retire des surfaces dépréciées de longue date : l’API Text Completions historique, les paramètres temperature, top_p et top_k sur les méthodes Messages, et le compaction_control côté client du lanceur d’outils. Sur le client asynchrone, les résultats .with_raw_response demandent maintenant await response.parse(), et AnthropicBedrock bascule par défaut sur us-east-1. L’API de PyPI date le téléversement du paquet 1.0.0 au 2026-08-20 à 19:58:58 UTC et confirme l’exigence Python 3.10+. La montée est propre au SDK Python : le SDK TypeScript @anthropic-ai/sdk reste en 0.120.0 (2026-08-19 22:05 UTC).",
+      "confidence": 96,
+      "confidenceLabel": "Notes de version officielles datées de l’éditeur, corroborées par le registre de distribution",
+      "confidenceReason": "Deux canaux primaires indépendants et concordants. Les notes de version de la plateforme Claude, datées du 20 août 2026, énoncent le contenu des ruptures ligne à ligne (httpx→httpx2, retrait de Text Completions, retrait de temperature/top_p/top_k sur Messages, await response.parse() en asynchrone, AnthropicBedrock sur us-east-1). L’API de PyPI donne indépendamment 1.0.0 comme version courante, son horodatage de téléversement au 2026-08-20 19:58:58 UTC et l’exigence Python 3.10+. Le troisième angle est corroborant : le SDK TypeScript resté en 0.120.0 écarte une renumérotation coordonnée de la famille de SDK. Plafond de 96 : le guide de migration v1 lui-même n’a pas été relu ligne à ligne depuis cet environnement.",
+      "belgiumImpact": "Sans effet de disponibilité en Belgique, mais effet direct sur toute base de code belge qui dépend du SDK Python. Une montée non verrouillée de 0.x vers 1.x casse la construction si le projet importe httpx pour bâtir son client ou ses délais, s’il passe encore temperature, top_p ou top_k aux méthodes Messages, ou s’il utilise l’API Text Completions. Le verrouillage de version dans le fichier de dépendances reste la protection ; la migration se prépare en lisant le guide v1 avant de monter.",
       "signals": [
         "API de PyPI (métadonnées du paquet anthropic)",
         "Fiche du paquet anthropic 1.0.0 sur PyPI",
@@ -21,19 +21,24 @@
       ],
       "evidence": [
         {
-          "label": "PyPI — métadonnées du paquet anthropic (version courante 1.0.0, téléversée 2026-08-20 19:58:58 UTC)",
-          "url": "https://pypi.org/pypi/anthropic/json",
-          "accessedAt": "2026-08-21"
+          "label": "Notes de version de la plateforme Claude — 20 août 2026, « We've released v1.0 of the Python SDK »",
+          "url": "https://platform.claude.com/docs/en/release-notes/overview",
+          "accessedAt": "2026-08-22"
         },
         {
-          "label": "PyPI — fiche du paquet anthropic 1.0.0 (Python 3.10+, guide de migration v1)",
-          "url": "https://pypi.org/project/anthropic/1.0.0/",
-          "accessedAt": "2026-08-21"
+          "label": "API de PyPI — paquet anthropic, version 1.0.0",
+          "url": "https://pypi.org/pypi/anthropic/json",
+          "accessedAt": "2026-08-22"
+        },
+        {
+          "label": "Registre npm — @anthropic-ai/sdk, version courante 0.120.0",
+          "url": "https://registry.npmjs.org/@anthropic-ai/sdk",
+          "accessedAt": "2026-08-22"
         }
       ],
-      "caveat": "Un registre de distribution prouve l’existence et la date d’une version, non le détail de ce qu’elle change. Le contenu des ruptures du guide de migration v1 n’a pas pu être lu, anthropic.com et github.com étant refusés.",
-      "verificationStatus": "Vérifié en source primaire le 2026-08-21 sur l’API PyPI et la fiche du paquet ; contenu de rupture non établi ligne à ligne",
-      "lastCheckedAt": "2026-08-21"
+      "caveat": "Le guide de migration v1 n’a pas été relu ligne à ligne ; la liste des ruptures reprise ici est celle publiée par les notes de version, non un inventaire exhaustif du dépôt.",
+      "verificationStatus": "Vérifié en source primaire le 2026-08-22 sur deux canaux indépendants",
+      "lastCheckedAt": "2026-08-22"
     },
     {
       "id": "A20260819-ANTHROPIC-COMPUTER-BROWSER-TOOLS",
@@ -90,26 +95,26 @@
       "publishedAt": "2026-08-21",
       "actor": "Google Cloud / Anthropic",
       "category": "Prix / facturation",
-      "title": "Sur la grille des modèles partenaires de Google Cloud, Claude a une tarification régionale : les endpoints non globaux (dont EU Multi-Region et europe-west1) sont facturés +10 % par rapport à l’endpoint Global",
-      "summary": "La grille tarifaire de l’IA générative de Google Cloud, relue en accès direct le 21 août 2026 et récupérée deux fois, publie la section « Anthropic’s Claude models » sous l’intitulé « Models with regional pricing » qui énumère sept endpoints : Global, US Multi-Region (US), EU Multi-Region (EU), us-east5, europe-west1, asia-southeast1 et asia-east1. La section contient deux tables successives des mêmes modèles Claude, chacune à deux colonnes de volume de contexte identiques (« Price (/1M tokens) =< 200K input tokens » et « > 200K input tokens »). La première table, l’endpoint Global, place Claude Sonnet 5 à 2,00 USD par million de jetons d’entrée et 10,00 USD en sortie ; Claude Opus 5 à 5,00/25,00 ; Claude Fable 5 à 10,00/50,00 ; Opus 4.8 et 4.7 à 5,00/25,00. La seconde table, les endpoints régionaux non globaux, applique exactement +10 % : Claude Sonnet 5 à 2,20/11,00, batch 1,10/5,50, écriture de cache 5 minutes 2,75, 1 heure 4,40, lecture de cache 0,22 ; Claude Opus 5 à 5,50/27,50. Cette lecture corrige celle publiée par l’observatoire au run précédent, qui avait conclu à tort à l’absence de tarif régional pour Claude : le run précédent n’avait repéré que la première table et cherché en vain le libellé littéral « non-global » dans la section, alors que la nature régionale de la seconde table est portée par l’intitulé de section et par la structure Global-puis-régional. Servir Claude Sonnet 5 depuis EU Multi-Region ou europe-west1 coûte donc 2,20/11,00 USD/M, soit 10 % de plus que l’endpoint Global à 2,00/10,00.",
-      "confidence": 93,
-      "confidenceLabel": "Source primaire durable du fournisseur qui facture, double récupération et vérification positionnelle ; corrige une lecture antérieure de l’observatoire",
-      "confidenceReason": "La page a été récupérée deux fois le 2026-08-21, dont une avec URL de langue explicite ; les deux copies donnent des montants identiques. La section Anthropic a été délimitée par position dans le document aplati : elle contient bien deux tables des mêmes modèles, la seconde à +10 % exactement sur chaque ligne (2,00→2,20, 10,00→11,00, 5,00→5,50, 25,00→27,50), sous un intitulé de section « Models with regional pricing » qui énumère l’endpoint Global et six endpoints non globaux dont EU Multi-Region et europe-west1. La prime régionale de 10 % s’applique donc aux modèles Claude, contrairement à ce que le run du 20 août avait conclu. Plafond de 93 : la page ne porte aucune date de mise à jour, seule la grille au 21 août est établie ; l’écart de +10 % est cohérent avec le multiplicateur ×1,1 des Regional Endpoints de l’API directe.",
-      "belgiumImpact": "Arbitrage de résidence direct pour un développeur belge : garder l’inférence Claude dans l’Espace économique européen sur Google Cloud — EU Multi-Region ou europe-west1 — se paie +10 %. Claude Sonnet 5 y est à 2,20/11,00 USD/M au lieu de 2,00/10,00 sur l’endpoint Global ; Claude Opus 5 à 5,50/27,50 au lieu de 5,00/25,00. La résidence UE n’est donc pas neutre en coût sur cette surface, exactement comme les Regional Endpoints de l’API directe Anthropic (inference_geo ×1,1). Le prix du jeton redevient un critère d’arbitrage entre endpoint global moins cher et endpoint UE conforme.",
+      "title": "Sur la grille des modèles partenaires de Google Cloud, Claude a une tarification régionale : les endpoints multirégionaux non globaux (US et EU Multi-Region) sont facturés +10 % par rapport à l’endpoint Global, et la génération 5 n’est pas offerte sur europe-west1",
+      "summary": "La grille tarifaire de l’IA générative de Google Cloud, récupérée trois fois le 22 août 2026, publie la section « Anthropic’s Claude models » sous l’intitulé « Models with regional pricing ». Cette section est un onglet à sept volets, identifiés dans le balisage par leurs libellés d’onglet : Global, US Multi-Region (US), EU Multi-Region (EU), us-east5, europe-west1, asia-southeast1 et asia-east1 ; chaque volet porte sa propre table, à deux colonnes de volume de contexte (« =< 200K input tokens » et « > 200K input tokens »). Le volet Global place Claude Sonnet 5 à 2,00 USD par million de jetons d’entrée et 10,00 USD en sortie, Claude Opus 5 à 5,00/25,00 et Claude Fable 5 à 10,00/50,00. Les volets US Multi-Region et EU Multi-Region portent exactement +10 % : Claude Sonnet 5 à 2,20/11,00, batch 1,10/5,50, écriture de cache 5 minutes 2,75, 1 heure 4,40, lecture de cache 0,22 ; Claude Opus 5 à 5,50/27,50 ; Claude Fable 5 à 11,00/55,00. Les quatre volets monorégionaux — us-east5, europe-west1, asia-southeast1, asia-east1 — ne contiennent aucun modèle de génération 5 : ils s’arrêtent à Claude Opus 4.6 et 4.5, Sonnet 4.6 et 4.5 et Haiku 4.5, eux aussi facturés +10 % (Sonnet 4.6 à 3,30/16,50 contre 3,00/15,00 en Global, Haiku 4.5 à 1,10/5,50). Obtenir Claude Sonnet 5 ou Opus 5 avec une inférence tenue dans l’Espace économique européen passe donc obligatoirement par EU Multi-Region, à +10 %.",
+      "confidence": 95,
+      "confidenceLabel": "Source primaire durable du fournisseur qui facture ; triple récupération et lecture structurelle du balisage des onglets",
+      "confidenceReason": "La page a été récupérée trois fois le 2026-08-22 ; les trois copies donnent des montants identiques. La lecture ne repose pas sur le texte aplati mais sur la structure : le groupe d’onglets « tab-ucj-164-g1 » porte sept boutons role=\"tab\" dont les libellés ont été extraits un à un (Global, US Multi-Region, EU Multi-Region, us-east5, europe-west1, asia-southeast1, asia-east1), et chaque table a été rattachée à son onglet par l’attribut aria-labelledby de son role=\"tabpanel\". Les prix ont ensuite été extraits volet par volet par le même analyseur sur les trois copies, avec un résultat identique. L’écart régional est de +10 % exactement sur chaque ligne (2,00→2,20, 10,00→11,00, 5,00→5,50, 25,00→27,50). L’absence de génération 5 dans les quatre volets monorégionaux est établie par la même méthode : la chaîne « Claude Sonnet 5 » est absente de ces volets. Plafond de 95 : la page ne porte aucune date de mise à jour, seule la grille observée le 22 août est établie.",
+      "belgiumImpact": "Arbitrage de résidence direct pour un développeur belge, avec une contrainte que la seule lecture des prix ne montre pas. La région belge de Google Cloud, europe-west1 (Saint-Ghislain), existe bien au catalogue Claude, mais elle ne sert que la génération 4.x : ni Claude Sonnet 5, ni Opus 5, ni Fable 5 n’y sont proposés. Un développeur belge qui veut à la fois un modèle de génération 5 et une inférence tenue dans l’EEE doit donc viser EU Multi-Region, et non la région belge, et accepter +10 % : Claude Sonnet 5 à 2,20/11,00 USD/M au lieu de 2,00/10,00 sur l’endpoint Global, Claude Opus 5 à 5,50/27,50 au lieu de 5,00/25,00. Rester à Saint-Ghislain implique de rester en génération 4.x, elle aussi à +10 %. La résidence UE n’est donc neutre ni en coût ni en choix de modèle.",
       "signals": [
-        "Page tarifaire officielle du fournisseur qui facture (double récupération)",
-        "Délimitation positionnelle de la section Anthropic"
+        "Page tarifaire officielle du fournisseur qui facture (triple récupération)",
+        "Rattachement de chaque table à son onglet de région par le balisage aria-labelledby"
       ],
       "evidence": [
         {
-          "label": "Google Cloud — grille tarifaire de l’IA générative, section « Anthropic’s Claude models » (« Models with regional pricing »)",
+          "label": "Google Cloud — grille tarifaire de l’IA générative, section « Anthropic’s Claude models » (« Models with regional pricing »), volets Global / US Multi-Region / EU Multi-Region / europe-west1",
           "url": "https://cloud.google.com/vertex-ai/generative-ai/pricing",
-          "accessedAt": "2026-08-21"
+          "accessedAt": "2026-08-22"
         }
       ],
-      "caveat": "La page tarifaire ne porte pas de date de mise à jour ; seule la grille observée le 21 août est établie. La correspondance des endpoints (quelle région = quel prix) suit la structure Global/non-global standard de Google Cloud ; le contrat de résidence exact doit être vérifié projet par projet.",
-      "verificationStatus": "Vérifié en source primaire le 2026-08-21, double récupération et délimitation positionnelle ; corrige la lecture du run du 20 août",
-      "lastCheckedAt": "2026-08-21"
+      "caveat": "La page tarifaire ne porte pas de date de mise à jour ; seule la grille observée le 22 août est établie. L’absence de génération 5 sur europe-west1 est établie sur la page tarifaire ; la disponibilité effective d’un modèle dans une région doit être reconfirmée dans la console du projet avant tout engagement.",
+      "verificationStatus": "Vérifié en source primaire le 2026-08-22, triple récupération et lecture structurelle des onglets",
+      "lastCheckedAt": "2026-08-22"
     },
     {
       "id": "A20260819-ANTHROPIC-FILES-SKILLS-GA",
@@ -190,35 +195,35 @@
       "lastCheckedAt": "2026-08-20"
     },
     {
-      "id": "A20260820-ANTHROPIC-CLAUDE-CODE-2-1-238",
-      "publishedAt": "2026-08-20",
+      "id": "A20260821-ANTHROPIC-CLAUDE-CODE-2-1-239",
+      "publishedAt": "2026-08-21",
       "actor": "Anthropic",
-      "category": "Sécurité",
-      "title": "Claude Code atteint 2.1.238 : après 2.1.236 (durcissement des règles de refus de lecture du bac à sable macOS) et 2.1.237, la 2.1.238 ajoute keybindingFlavor, le headersHelper des marketplaces de plugins et des options self-hosted-runner, et corrige une fuite mémoire en session longue",
-      "summary": "Le journal de version de Claude Code, lu en contenu brut le 21 août 2026, publie 2.1.238 au sommet, datée du 2026-08-20 18:01 UTC par l’API du registre npm. Elle ajoute un réglage keybindingFlavor (mode readline pour Ctrl+W), un headersHelper sur les marketplaces de plugins qui frappe des en-têtes HTTP éphémères pour les téléchargements de catalogue, deux options self-hosted-runner — --defer-shutdown-max-min qui garde les sessions attachées vivantes après un SIGTERM et --proxy-authorization-command/-file qui émet un en-tête Proxy-Authorization neuf par connexion —, corrige une fuite mémoire en session interactive longue (les résultats d’outils des sous-agents sont libérés dès qu’ils quittent la fenêtre d’affichage) et met à jour la skill claude-api embarquée pour la publication Managed Agents du 19 août. Elle suit 2.1.236 (2026-08-19 18:45 UTC), qui durcit la précédence des règles de refus de lecture à motif générique dans le bac à sable macOS et introduit ANTHROPIC_DEFAULT_MODEL, et 2.1.237 (2026-08-19 23:57 UTC), qui corrige le cache de prompt derrière une passerelle. L’étiquette npm stable reste dix versions en retrait, en 2.1.228.",
-      "confidence": 96,
-      "confidenceLabel": "Double corroboration primaire : journal de version du dépôt éditeur et API du registre de distribution",
-      "confidenceReason": "Journal de version versionné dans le dépôt public, lu en contenu brut le 2026-08-21, et API du registre npm qui date indépendamment 2.1.238 au 2026-08-20 18:01 UTC, 2.1.236 au 19 août 18:45 UTC et 2.1.237 au 19 août 23:57 UTC. Plafond de 96 : la page des publications de version sur github.com est refusée par la politique réseau sortante.",
-      "belgiumImpact": "Le durcissement du bac à sable macOS (2.1.236) reste pertinent pour les indépendants belges majoritairement sur Mac : une règle de refus à motif générique du type **/.env l’emporte dans une région de lecture autorisée et ne peut plus être contournée par un renommage. La 2.1.238 ajoute pour l’auto-hébergement de runner --proxy-authorization-command/-file, utile derrière un mandataire d’entreprise, et corrige une fuite mémoire en session longue. Rester sur l’étiquette npm stable 2.1.228, dix versions en retrait, c’est ne pas avoir ces correctifs.",
+      "category": "Outillage / Assistant de code",
+      "title": "Claude Code 2.1.239 fait apparaître la prime d’inférence américaine ×1,1 dans ses estimations de coût, ajoute une commande de migration du SDK Python 0.x vers 1.x et corrige une facturation doublée sur Bedrock",
+      "summary": "Le journal des versions de Claude Code, lu en contenu brut, ouvre sur la version 2.1.239 ; le registre npm date sa publication du 2026-08-21 à 17:18:54 UTC. Trois éléments portent un effet matériel. D’abord la facturation : les estimations de coût — la commande /cost, la ligne d’état et l’option --max-budget-usd — intègrent désormais la prime de 1,1× d’inférence exclusivement américaine appliquée aux espaces de travail sous contrainte de résidence des données, prime qui jusque-là n’apparaissait pas dans les montants affichés à l’utilisateur. Ensuite l’outillage de migration : une commande /claude-api upgrade migre les projets Python du paquet anthropic 0.x vers 1.x, et la référence Python de la compétence associée est mise à jour pour la série 1.x, où les délais d’attente se construisent avec anthropic.Timeout et non httpx.Timeout. Enfin une correction de facturation : le flux Bedrock derrière un mandataire qui retire l’en-tête Content-Type de la réponse était silencieusement rejoué hors flux à chaque tour, ce qui doublait le nombre d’appels d’API facturés. La version corrige par ailleurs le blocage au démarrage derrière un mandataire HTTPS avec Bedrock et un profil SSO, et charge les greffons natifs sur les constructions Alpine/musl.",
+      "confidence": 95,
+      "confidenceLabel": "Journal de version de l’éditeur en contenu brut, daté indépendamment par le registre de distribution",
+      "confidenceReason": "Deux canaux primaires indépendants et concordants. Le journal des versions du dépôt anthropics/claude-code, récupéré en contenu brut, porte la section 2.1.239 en tête et en énumère le contenu ligne à ligne. Le registre npm, interrogé séparément, donne 2.1.239 comme version courante du paquet @anthropic-ai/claude-code et l’horodate au 2026-08-21T17:18:54Z, à la suite régulière de 2.1.238 (2026-08-20T18:01:54Z) et 2.1.237. La date de publication ne dépend donc pas du journal, qui ne porte pas de dates. Plafond de 95 : le comportement décrit n’a pas été reproduit dans cet environnement, seules les affirmations de l’éditeur sont établies.",
+      "belgiumImpact": "Effet de transparence tarifaire directement utile depuis la Belgique, mais qui doit être lu sans contresens. La prime de 1,1× désormais affichée porte sur l’inférence exclusivement américaine (inference_geo « us »), pas sur une inférence européenne : l’API directe d’Anthropic n’offre aucun pinning d’inférence dans l’Espace économique européen. Un développeur belge qui n’impose rien reste sur le routage global au prix standard ; celui dont l’organisation a fixé une contrainte de résidence américaine verra enfin le surcoût réel dans /cost au lieu de le découvrir sur la facture. La correction du flux Bedrock derrière mandataire concerne directement les environnements d’entreprise belges qui sortent par un proxy filtrant, où la facturation pouvait être doublée sans signe visible.",
       "signals": [
-        "Journal de version du dépôt public de Claude Code",
-        "API du registre npm"
+        "Journal de version officiel du dépôt de l’éditeur (contenu brut)",
+        "Registre npm pour la datation indépendante de la version"
       ],
       "evidence": [
         {
-          "label": "Anthropic — journal de version de Claude Code, entrées 2.1.236 et 2.1.237",
+          "label": "Journal des versions de Claude Code — section 2.1.239",
           "url": "https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md",
-          "accessedAt": "2026-08-21"
+          "accessedAt": "2026-08-22"
         },
         {
-          "label": "Registre npm — métadonnées du paquet @anthropic-ai/claude-code, dates de publication et étiquettes de distribution",
-          "url": "https://registry.npmjs.org/@anthropic-ai%2fclaude-code",
-          "accessedAt": "2026-08-21"
+          "label": "Registre npm — @anthropic-ai/claude-code, version 2.1.239 horodatée au 2026-08-21T17:18:54Z",
+          "url": "https://registry.npmjs.org/@anthropic-ai/claude-code",
+          "accessedAt": "2026-08-22"
         }
       ],
-      "caveat": "Le correctif de bac à sable n’est décrit que par son entrée de journal ; aucun identifiant de vulnérabilité ni avis de sécurité n’a pu être consulté, github.com étant refusé. L’étiquette stable du registre reste neuf versions en retrait.",
-      "verificationStatus": "Vérifié en source primaire le 2026-08-21 sur le journal de version brut et l’API du registre npm",
-      "lastCheckedAt": "2026-08-21"
+      "caveat": "Le journal des versions ne porte pas de dates ; la datation vient du registre npm. Les comportements décrits n’ont pas été reproduits localement.",
+      "verificationStatus": "Vérifié en source primaire le 2026-08-22 sur deux canaux indépendants",
+      "lastCheckedAt": "2026-08-22"
     },
     {
       "id": "A20260819-ANTHROPIC-ADMIN-USERMGMT-GA",
@@ -1606,7 +1611,7 @@
     }
   ],
   "verificationNotice": {
-    "checkedAt": "2026-08-21",
+    "checkedAt": "2026-08-22",
     "level": "warning",
     "title": "Huit canaux de preuve primaire exploitables, les six points d’entrée de veille toujours refusés",
     "detail": "Les 55 sources du référentiel ont été retestées une à une le 21 août 2026 : 6 répondent pleinement, 2 partiellement et 47 sont refusées au tunnel CONNECT du mandataire de sortie, qui répond 403. Profil identique à celui de la veille, pour le dixième contrôle consécutif : c’est une caractéristique stable de l’environnement d’exécution, non un incident. La totalité des six points d’entrée obligatoires reste refusée — TLDR AI, TechCrunch, VentureBeat, TestingCatalog, AI Frontiers et NVIDIA Research —, de sorte qu’aucun signal précoce TestingCatalog n’a pu être collecté et qu’aucun sujet n’a été retenu depuis une source secondaire. Les faits du jour proviennent tous de canaux primaires directs : notes de version et documentation de la plateforme Claude, journal de version de Claude Code, journaux de version en contenu brut des dépôts publics Anthropic et OpenAI, grille tarifaire de Google Cloud, API de PyPI et API du registre npm.",

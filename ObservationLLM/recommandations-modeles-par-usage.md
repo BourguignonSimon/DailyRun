@@ -1,6 +1,6 @@
 # Modèles recommandés par type d’utilisation
 
-Dernière vérification : **21 août 2026**.
+Dernière vérification : **22 août 2026** — *statut de contrôle renouvelé sans réévaluation du fond*. La sélection par usage n’a pas été rejouée à ce contrôle : les canaux officiels des éditeurs concernés restent refusés par la politique de sortie réseau depuis l’environnement du run, et elle conserve le niveau de preuve de son dernier contrôle effectif, le **21 août 2026**. Un point la concerne toutefois directement et a été vérifié ce jour en source primaire : sur Google Cloud, la région belge `europe-west1` ne sert **aucun modèle Claude de génération 5**, et l’inférence européenne se paie **+10 %** (voir *Localisation et hébergement*).
 
 Ce guide transforme le référentiel de l’Observatoire en courtes listes utilisables. Il ne constitue pas un classement universel : le meilleur choix dépend du canal d’accès, du budget, de la sensibilité des données, de la langue et du niveau d’autonomie confié au système.
 
